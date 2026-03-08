@@ -1,0 +1,177 @@
+Meeting Title: Agentberlin SEO services exploration with Steve Magnus
+Date: Jan 5
+
+Transcript:
+ 
+Them: Sherin.  
+Me: Hey. Macnas are. Steve. What should I call you?  
+Them: Steve magnus.  
+Me: All right.  
+Them: All good. How are you doing?  
+Me: Doing you well, Steve. So how are the issues with the climate there?  
+Them: Oh, we're having probably the most Canadian winter we've had in a decade.  
+Me: Really?  
+Them: It will not stop snowing. Yeah, it's been terrible.  
+Me: Which part of Canada?  
+Them: It's the only way. I'm just outside of Toronto.  
+Me: Okay? I have a bunch of friends and colleagues in Toronto.  
+Them: Yeah. Oh, nice. Yeah. Normally Toronto doesn't get a lot of snow. They'll get one or two good ones a year and a little bit.  
+Me: I. See?  
+Them: But this year is like no other.  
+Me: Yeah. That.  
+Them: So. Tell me about Agentberlin.  
+Me: A little bit of history is that I previously ran. I'm an engineer by profession, and I ran a marketing agency for a while. And we started to, because of my engineering background, we started automating a lot of stuff where this is like early days of ChatGPT. We sort of automated a lot with AI agents and early versions of AI agents. And then one point we thought of convert everything that we wrote, as in general automation, to a service.  
+Them: Yeah.  
+Me: That we can sell to other agencies or other Our customers. So First Customers were essentially our first agency clients itself. So Asntic space has evolved a lot. We wanted Berlin to be a single agent that you can, as a founder, you can outsource.  
+Them: Yeah.  
+Me: About 90% of your SEO tasks, too. Well, all the inbound tasks, because SEOs also evolves a lot.  
+Them: Y.  
+Me: So we sort of internally, we call it inbound marketing rather than SEO now.  
+Them: Es.  
+Me: Because it's social media, it's pr, it's everything else, right?  
+Them: Yep.  
+Me: We want building to be something that you can outsource 90 percentage of your mundane inbound marketing tasks too. And then you sort of jump in. Or building would ask you to jump in when there is a creative space needed or when there is something that requires a brand specific information or something that a human being can contribute to. I think SEO is probably the only space has this problem. Right. So the problem where the tooling that optimization exports would use. Is evolving, which are the based on agents. But also what you're optimizing for is also changing. That is also becoming aging. Right. I don't think people instead of going to Google, they are ChatGPT. And ChatGPT has been up like 15 agents to get that results for. So you sort of have to optimize for both spectrum. And because of that, there is a lot of snake oil out there. We want to make sure it's local so people can try it and then scale it as required. So that's the goal of building.  
+Them: Right.  
+Me: Tell me about. What do you guys do?  
+Them: So I own. Two marketing agencies. One is your traditional. It's for small business. So we do SEO, we do paid ads, Meta and Google. We do sort of web maintenance and some quick WordPress or Wix setups.  
+Me: Yes.  
+Them: So for that in particular, You know, it's a smaller price point client, so we're sort of catering to the low hanging fruit.  
+Me: Yes.  
+Them: Which is fine. We tend to work with a lot of franchises.  
+Me: Yeah.  
+Them: And stuff like that. And so we have been adding a broader content strategy to our SEO. So let's call that our AEO side of it. And, you know, just based on a lot of experimentation and learnings and stuff like that, you know, we're quite successful at it. You know, as far as getting, like, solid citations. Even for some challenging B2B type clients and stuff like that, that are very niche. But when you find something that's niche, you always find that there's a group of companies that have been at that niche for several years. So it does take a little more time. My other agency is Media Buying. So we do the advertising on behalf of clients. So if my particular niche in that is sort of gray market, so dating sites, gaming sites, Nutri, that sort of stuff. So I've been around the block as far as ad buying, ad selling. And sort of everything else. On the automation side of things. I sort of jumped in when everybody else jumped. Know, early adopter to everything. I pretty much have, you know, paid multiple LLMs just because I use them for different things. And I have started to build out automations, especially for SEO.  
+Me: Yeah.  
+Them: But, you know, as good as that is, and the calls are good and cheap.  
+Me: Yeah.  
+Them: You know, it's something that is internal. I can't really share it with the team. I can, you know, I can give them access to things like N and N, or I can give access to spreadsheets. But then I'm. I'm still finding that I'm doing all the work or the research and stuff like that.  
+Me: Y.  
+Them: So that's basically what I do. So what am I looking, you know, 20, 26, what am I looking to do? I need to get more stuff off my plate because I would like to get more acquisition. As much as the controversy between SEO and aeo, it's funny, like, we are getting hit up by our clients, and we are getting hit up by new clients.  
+Me: Es. Yeah. Yeah.  
+Them: Because everyone's hearing about it, or they're starting to use ChatGPT as their, their sort of question answer thing and they're seeing that they're not being cited. So obviously I want to expand in that.  
+Me: Yeah. Yeah. Y. Eah. Y. Eah.  
+Them: To a degree.  
+Me: Y. Eah.  
+Them: So, yeah, I believe I saw your product on LinkedIn, and I thought it was kind of interesting, so I'm sure.  
+Me: Y.  
+Them: You're. You're aware of Air Ops, and I'm sure you've done their 14 day. Things. What are your thoughts on air ops?  
+Me: Eah, it was pretty good. You need to be. So I did this. I think probably when Kevin and Deke, you know, Kevin. The guy who does a lot of research came from Shopify.  
+Them: Yeah.  
+Me: So when he did the first article few months ago. I don't know how Erupts evolved into what shape it is right now. But I think I always looked at Europe's not as a competitor. Or almost all the AO tools out there because they're target very specific segment of people who are ultra good at certain things and they tube all the workflows and stuff like that. So Berlin sort of goes. Not going that direction, right? So we try to go to a direction where. It's not workflow building. It's giving you. The tools and capabilities that you don't really have to build a workflow, of course, that won't be flexible enough for everyone.  
+Them: Yeah.  
+Me: And if it's not flexible enough for you, then you're probably not the target audience that we are targeting at.  
+Them: Right.  
+Me: Right. Yeah. So that's where it is. And we sort of have this very specific agents that works really well at scale. So something that we recently built is this content coverage system that sort of goes and figures out. Well, it's like, Throwing a lot of things and see what sticks and figures out what is the coverage of your content, which is like a very direct correlation to topical authority. And then doing internal linking at scale. Figuring out 404 page at scale. And all of this is sort of, like, automated because we sort of control your cms.  
+Them: Yeah.  
+Me: And then would reach out to you. When it requires some help from you. Like creating a landing page that requires some design, which we could do with Cloud, but we are not there yet.  
+Them: Yes.  
+Me: So, yeah, that's where we are.  
+Them: Okay, that's interesting. So it sounds like your agents will do, like, sort of a technical scan and then sort of a topical view of all your content, and then it'll give you, what, actionable insights and suggestions, basically, and then.  
+Me: Yeah. So you're pretty much like, It's a very simplified version of what dollar and yes.  
+Them: Y.  
+Me: But what we try to achieve, which I don't think any other product or any other product in the market does, is that we sort of collate all of these, even the very smaller details, into very courable form, which cost us a lot. But that's sort of gives agents.  
+Them: Es.  
+Me: Really good data to make decisions on. Then we have this playbook, which we want to eventually editable for customers, especially for people from agencies where they know what they're doing. So it's sort of editable, but it's all prompt, so you don't really get into, like, workflows that in Air Ops, right?  
+Them: Right.  
+Me: So it's all prompts that you control different sets of things that it's also the thing is that with workflows, you sort of control your existing third party tools. But with Berlin, you don't really have those third party tools. You have the internal tools that we have built, which are far superior than the third party tools. Because, like, because these are LLM force tools, like Google Search console. It's not an LLM force data. Right. You sort of have to convert that to an LLM first data to four LLMs to understand.  
+Them: Right.  
+Me: So we made this wrappers on, not just on. Source Console or Google Analytics, but also on your website, your computer's website. Thousands of Reddit pages, thousands of KR pages. Like all the different signals, there are around 57 signals.  
+Them: Right.  
+Me: See, sort of convert that into very, very queryable form, which then exports, which is then exposed to LLMs. Does that make sense?  
+Them: Okay? Yep. Are you. Are you guys set up for agencies, or is this better for like, a, you know, just a business with, you know, basically one website?  
+Me: Yeah, we do have two agencies trying it out. They both are on pilot. So we have realized it's much so this initial goal was to just focus on founders, SMB founders.  
+Them: Yeah.  
+Me: But then we realized going off for agencies would give us a validation or we're not validation we already validated. But figuring out edge cases that these founders haven't seen because founders are not experts, right?  
+Them: Y.  
+Me: So going after agencies would give us that ability. So now we are sort of trying to get there. The two forks are trying it out right now. But like I said, so this is where all of this learning come from. Firebook is something that they want to have edit access to because they have a more control or more opinion about how certain things should go, things like that, right?  
+Them: Eah. Right.  
+Me: Yeah, but right now it's not bad, but. Yeah, so we do have building out that agency face for the product.  
+Them: Okay? What do you think the ETA is on some of your findings for that would be.  
+Me: Before I could answer that. Gray ask you a few questions?  
+Them: Yeah, of course.  
+Me: So what's your typical SEO process look like right now?  
+Them: The typical SEO process? Well, I mean, I think like most people, you know, we start with an audit. We do the research, whether it's keywords, what they have on the site, as far as a content strategy.  
+Me: Yeah.  
+Them: What their, you know, pillar pages look like, how they're doing their internal linking.  
+Me: Yeah.  
+Them: You know, so and then, you know, obviously into their GA4 and their search console. And just sort of see how it all ties together.  
+Me: Y. Eah.  
+Them: And then we. We start to build out basically our corrections from there. Or, you know, whatever work is needed from that point of view. And then the ongoing optimization process, right? So I'm finding that.  
+Me: Right.  
+Them: You know, in this. SEO has been around for so long, but I mean. When we do audits, the amount of little things that are missed. Basically is quite incredible.  
+Me: Yeah. Yeah. Yeah. I mean, yeah. Sorry. Go on.  
+Them: No, no, but that. That's what I meant. So. And then, you know, for now that, you know, AEO is sort of in the picture. And, you know, clients, industries. Obviously there's questions from people and stuff like that. So, you know, we do a lot of prompt monitoring. I do a lot of. Digging into logs and seeing what the actual questions are and stuff like that. So that, like you said, it's evolved into something more. But that's basically. I think we're pretty standard in that regard, like, as far as how we do our setup. And our audit process and stuff like that.  
+Me: Okay, I think two more questions. One, what are the tools that you're using right now? Just to understand the capabilities that you. That's enabling you to do the job that you want to do.  
+Them: Yeah. So, I mean, obviously search console and GA4. We do use Answer the public we do use Uber suggest we do use Ahrefs, but I'm probably going to scale back on Ahrefs just because I've built enough workflows through direct APIs. Where I can get the data I need. Plus years and years in Google Ads. As well. I still find that there are keyword planners still somewhat effective.  
+Me: Y. Eah. Yeah.  
+Them: And now, you know, I've started adding APIs for AI overview and LLM searches, which are best guests from what I'm seeing.  
+Me: Y. Eah. Yeah, makes sense. When you say APIs, what do you mean? What is the data that API is sitting on?  
+Them: Well, I mean, like data for SEO, for instance, is an API, like a company that I use extensively. And then, you know, I know you know it. So I don't have to go through the long list of I have it tied into Claude code. I have a tied into nadad and workflows. I have it sort of sitting kind of everywhere I am. And then. Yeah, it's fascinating now that we can have a client meeting when we're trying to sell our services, and in real time, and instantly I can give them a snapshot of what they or their competitors look like.  
+Me: Start. Up. Y. Es. Y. Eah. Yeah, just a message. Chat Message. Right.  
+Them: Yeah. So what I'd like to do is I'd like to maybe get a. More like, I don't know, if you. If you guys do a demo or something like that. It'd be awesome.  
+Me: Yeah. Yeah. Yeah. So we can set that up. I'll. I'll try to see if there is. Okay. What is the segment of. What are the segment of customers that you serve mostly?  
+Them: What kind of customers? Well, we do a lot of home services. So you know these septic guys? Plumbers. Water delivery. So we are running.  
+Me: Yeah. Nice.  
+Them: Basically the marketing for an in home senior care company. So they do, like, companion care and sort of private nursing, I guess you could say.  
+Me: Okay? Yeah.  
+Them: We have tons of their clients.  
+Me: Okay?  
+Them: So we're kind of, if we look at it, we're them and we are home. Services, I would say, are probably our biggest.  
+Me: Is it okay if you can share one of the website? I can show with one of the existing clientele, but if you have.  
+Them: Yeah, of course. So. Yeah. Here. Comfort keepers. Ca. Why don't you just.  
+Me: Com. Fort. Comfort keepers.  
+Them: Put it in the chat here.  
+Me: Big of a team do you have?  
+Them: I've got 13.  
+Me: Pretty good.  
+Them: Yeah, well, I mean, it's everyone. Everyone works from home. We don't have a. Got rid of the office and all that fun stuff.  
+Me: And. Yeah. Yeah, yeah. And what percentage of that 13 works on SEO? Or inbound model.  
+Them: We have three.  
+Me: Okay? Okay, what is the biggest portal?  
+Them: Yeah. So we have a junior.  
+Me: Mac.  
+Them: Our biggest bottleneck is we. We're kind of at the tipping point of, like, I don't want to hire another person in this day and age, because we're almost there. So time, obviously. Right. So we. We have a lot on our plate with what we currently have.  
+Me: Y. Eah. Y. Eah.  
+Them: You know, between that and SEM clients, I mean, that's, you know, it's a lot of. A lot of work.  
+Me: Yeah. Okay. So, yeah, thank you for that. So among the list of things that you listed, which is typically a typical process for any SEO expert.  
+Them: Y.  
+Me: There's a keyword research or parameter search or whatever the user search query is. There is quantum gap analysis or competitor gap analysis. There is content writing specifically for AEO.  
+Them: Ep. Y. Ep.  
+Me: If you say so. There's also maybe the pr, like the citation, like Reddit or whatever. Do you guys do that?  
+Them: No, because. It wasn't something I got into. I should have. I should have did. The. The demeanor added a company or business.  
+Me: Okay?  
+Them: So I've been on Reddit since, I think, 09 or something like that.  
+Me: Okay?  
+Them: But, you know, I'm one of these people that I don't like when I'm seeing all this subtle Spam. And now I'm seeing it, like, now that I know that this is a thing.  
+Me: Y.  
+Them: You know, it's constant with anyone. Try this product. I hear they're more expensive than this or something. I know, but it looks like it's very effective. And when I'm looking at the logs, I can see the questions are coming through.  
+Me: Eah. Y. Eah. Yeah. Yeah. Y. Eah. Yeah, yeah, yeah, yeah, yeah. So. Okay, so Reddit is not a strategy that you have in your. List of things, so I'm assuming.  
+Them: It's strategy for research. It's not an implementation for us at this point. I know. It's important, right?  
+Me: It's okay. Got it. Got it. No, no, that makes sense. I mean, the importance could flip anytime. Yeah, we don't know.  
+Them: 100%.  
+Me: Yeah. So then the technical SEO, which would sort of include Rock and Link's structure. Since you follow Aerob's, I'm pretty sure you sort of. Found their analysis on how schema would affect FAQ breadcrumb schema these are the schema would affect the output the outcome and then there are linking. These are the typical set of things that you do. If you were to. I mean, maybe there are a few more, but if you list these items, Which one do you say would be most time consuming? If you can say from top of your head?  
+Them: Well as a pain in the ass because most of our articles now have some sort of bullet point or FAQ aspect to it.  
+Me: Y. Eah. Yeah.  
+Them: So we added. I know there's a debate as to. You know how effective. But you know what? It's not hurting anything.  
+Me: Y.  
+Them: To err on the side of caution, right?  
+Me: Eah. Yeah.  
+Them: So that's definitely time consuming. Internal linking is the other one because, you know, if you put out a new piece of content that is about a specific topic, Now you have to cross reference with your sitemap. And it'd be nice to grab, like, two or three other articles to help link that over. Yeah, that's a time crunch as well, you know.  
+Me: Yeah. Okay?  
+Them: And I find right now, we're going to go back. And, you know, all the 2025 articles are now going to be 2026 articles, so we got to go back and do that.  
+Me: Y. Eah, yeah. Yeah, yeah. Okay. Yeah. So this is good. So what I'm going to do is I'll take this website, do my initial scan.  
+Them: Yeah.  
+Me: With that bullet does. And then we can sit for another call, like. Or I can send you a video of me showing that around. Whatever works for both of us.  
+Them: Whatever's easiest for you. If a loom makes more sense, do a loom, that's fine. Or whatever. Whatever.  
+Me: Yeah. Yeah, yeah, yeah, yeah. Yeah. And then we'll see where it takes that. So, especially on the agency side. Like I said. We wanted to have more exports helping us.  
+Them: Yes.  
+Me: In return of, you know, making it easier for the experts to do certain things.  
+Them: Yeah.  
+Me: So unlike a typical client service provider relation, we sort of could work together. And sort of take a lot of feedback from your side and build the product very specific for the requirements that you would have, which would also shape the product to shea boom to be a better product. So that's probably a direction that I would look at it right now because, because of the state we are in,  
+Them: Right.  
+Me: So I'll take this and then send you a video.  
+Them: Yeah, that'd be great.  
+Me: Or.  
+Them: Yeah. Okay, that sounds good. That's a good start. All right. Good. Well, I appreciate your time.  
+Me: Yeah, same here. Thank you so much. Yeah. So I'll get back to you in a day or. Two.  
+Them: All right, perfect. Can't wait to see it. Cheers.  
+Me: Bye. 

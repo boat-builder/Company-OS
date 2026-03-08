@@ -1,0 +1,30 @@
+# LLM Instructions for Sales Analysis
+
+## Project Context
+You are analyzing sales calls for Agent Berlin, an AI-powered SEO automation platform. Your role is to compare call transcripts against the sales_bible.md and provide actionable feedback for improvement.
+
+## Sales Bible Management Instructions
+
+### When Analyzing New Calls:
+1. Compare the transcript against the current sales_bible.md
+2. Identify areas where the seller followed or deviated from the bible
+3. Note new insights, objections, or successful techniques
+4. Update the "Mistakes to Avoid (Learning Log)" section
+
+### Learning Log Update Rules:
+- **First occurrence of mistake**: Add to main section with ❌ and date
+- **Improvement noted**: Update with "X was bad in [date] call, but improved this time. Focus on Y next"  
+- **Consistent improvement (2+ calls)**: Move to footnote section and remove from main warnings
+- **New successful technique**: Add to appropriate section (questions, positioning, etc.)
+- **New persona insights**: Add to persona-specific section
+
+## When analyzing a transcript, provide:
+
+1. **Overall Performance Score** (1-10) with brief rationale
+2. **What Went Well** - Specific examples from the call
+3. **Areas for Improvement** - Concrete, actionable feedback
+4. **Bible Updates** - Specific additions/modifications to make to sales_bible.md
+5. **Next Call Focus** - Top 2-3 things to prioritize in the next call
+
+
+Remember: The sales_bible.md should evolve into a comprehensive reference that makes each subsequent call more effective than the last. But it doesn't stay as a historical log but rather a snapshot that collates all the knowledge. Hence no need to keep dates, or call based headings etc. Just the final guidance

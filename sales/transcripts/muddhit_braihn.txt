@@ -1,0 +1,149 @@
+Speaker 1
+
+Yesterday, 8:29 PM
+Hey. Hi. Just a sec. Okay.
+Is her.
+Speaker 2
+
+Yesterday, 8:30 PM
+Have you seen his
+Speaker 1
+
+Yesterday, 8:30 PM
+story? Sorry? Have we seen each other in in any of the have a house? No.
+Speaker 3
+
+Yesterday, 8:30 PM
+I don't think I haven't attended with you yet. Yeah.
+I mean, might have seen me somewhere on LinkedIn or WhatsApp.
+Yeah.
+Yeah. Right. Right.
+Yes.
+Yeah. Shoot me. Yeah. Where where do you wanna start? So Yeah. You can try about what Berlin Can do and if Berlin doesn't work for you, what Yeah. Compression that he can go
+Speaker 3
+
+Yesterday, 8:30 PM
+Yeah.
+Speaker 2
+
+Yesterday, 8:30 PM
+Sure.
+Speaker 1
+
+Yesterday, 8:30 PM
+Yeah.
+Speaker 3
+
+Yesterday, 8:30 PM
+Could I'll just give you my main two requirements first. After that, I think you can tell me what you're working can looked at, use for so I actually, I'm not the main owner of the platform, but I'm looking for assisting and figuring out the solution of SEO, GUE, everything for him.
+So we have the marketplace kind of platform. Now mainly since right now, it's a marketplace marketplace, but the professionals which will be working in that Firstly, we don't have confidence with the geo thing because no one can guarantee how will it can spend some money, but still not sure about whether it will work or not. Then other thing is, even since we he's, like, this is very new platform for him to just restart it. He don't want to like, heavily spend on ad ads and just apart from ads also, I think the service cost for SEO is, like, company and other tools also we are trying out.
+Speaker 1
+
+Yesterday, 8:34 PM
+So you since you said you said the the delivery is what where where you guys want to scale the speaking. Okay. So couple of questions to on. To set the premise. Do you so since he was working on another marketplace, does he know what worked for them?
+Speaker 3
+
+Yesterday, 8:35 PM
+So I'm mostly what I feel is I think, yeah, the web mostly which are platform used to work with previously. The marketplace used to do, I think, ad spends on their side. And used to get leads from that platform directly. I think not not Yes.
+Ads might not be directly from the personal. Maybe I think since yeah. So might be doing something or because of reviews and only might be getting more
+Speaker 1
+
+Yesterday, 8:35 PM
+Okay. And our focus is not to get traffic for individuals, but traffic for the marketplace. Correct?
+Speaker 3
+
+Yesterday, 8:36 PM
+Makes sense. Yes. Correct.
+Speaker 1
+
+Yesterday, 8:36 PM
+Okay.
+Yeah. So the like, so I run a marketing agency.
+And then sort of figures out what best content for you. Like, different schema, whatever works for. Right? Yeah. Then sort of auto publish to the platform that you are on, etcetera.
+And then also give you red citation of opportunities.
+Speaker 4
+
+Yesterday, 8:39 PM
+Yeah. So we sort of figures out these things.
+We are planning to get into video generation. We are planning to get into, you know, Reddit citation or Reddit come in auto generate.
+Run the autopilot. But then you can anywhere jump in and say, yeah. Don't post this, but give me the draft. I'll modify it. Once I modify it, yeah, go and post this. Right? So you have those So that's what we are going to.
+Now coming back to the website, I have a couple of questions. Okay. So marketplace So when I when when you told me this example sorry. This the the the I told you there's an overlap because we sort of work with a bunch of not marketplace, but bunch of that operates in this tax compliance space. Especially in India.
+So we sort of have that overlap there.
+Do you already do do we already have a CMS? Where we publish content?
+Speaker 5
+
+Yesterday, 8:40 PM
+No. Right now, we are doing it inside the website So since it's a NextJS based app, so we are doing it inside it.
+Speaker 4
+
+Yesterday, 8:40 PM
+Right. And it's basically a marked on file or a HTML file. Inside. Okay. Makes sense. And who writes the blocks now?
+Speaker 5
+
+Yesterday, 8:40 PM
+So right now, mostly, there are very limited blocks. I think it is AI generated content or mostly blogs. We have more of such calculator type of guides. Where we add income tax, tedious calculator, attention calculator. I think those are most used in the sales in the sectors. So mostly right now, with those, we have added some FAQs and all those.
+Speaker 4
+
+Yesterday, 8:41 PM
+Got it. So okay. So I assume you assume you would need help with the the content generation as well. Mhmm. Yeah. Basically, optimizing for schema as metadata. Yeah. Okay. That makes sense. That's the capability Berlin currently has.
+Somebody who can go and you know, post in Reddit or talk about the product in Reddit.
+Or I don't know, like, create a video in YouTube. Do we have that time available?
+Speaker 5
+
+Yesterday, 8:41 PM
+We can do that. But the main users which he's targeting I'm not sure if will that be like, little relevant for them because he's targeting mostly use around Bangalore and Hyderabad. Mostly, these two cities right now, Maybe after six months, he'll be targeting metro main metro cities of India.
+This this if for that, if we do need to do that, then we can do. Obviously, he is okay to do that.
+Speaker 4
+
+Yesterday, 8:42 PM
+Yeah. Okay. So yeah. So here's this is gonna work. Right? So Berlin is gonna do is Berlin sort of limit the user search from Bangalore, Hyderabad, or whatever. Yeah. See what comes up. Yes. Coming up, then we do have to optimize for you just span. Right? Okay. It's the same thing with Reddit. So we need to know what is cost
+Speaker 5
+
+Yesterday, 8:42 PM
+Makes the brand. Correct.
+Speaker 4
+
+Yesterday, 8:42 PM
+What is affecting the optimize for that. But Okay. We need to have site the site needs to have a good foundation. So Right. So, yeah, I think this is a this is a good start, but I don't I I don't think expecting a result in a month is optimistic. Yeah.
+Speaker 5
+
+Yesterday, 8:42 PM
+That's fine. Michael. Can hear that fine. It was very nice. You clearly mentioned it upfront. But not in a month, but what do what do you expect? Maybe after two months or three months, when will we get actual good results? What do you think?
+Speaker 4
+
+Yesterday, 8:43 PM
+Well, you should start seeing the the the the things picking up in three, four weeks. Right? Oh. Not be it'll not be significant, but you would Yeah. Start to see some signals that things are working. Nice. I mean, maybe four weeks, maybe five weeks, six weeks, but it should not take more than Regardless of whether Berlin does some agency does it. It happens. It has to happen in less than eight weeks for sure. Right? You have Makes sense. Signals in less than eight weeks. I have a counter question. You said you guys were going after agencies. Were were you going after agencies in Bangalore, and how much were they charging, if you don't mind me
+Speaker 5
+
+Yesterday, 8:43 PM
+I actually don't have that clear idea, but I think I have to have that random ballpark figure which he mentioned me. I think monthly service cost, they're somewhere asking for around 1 to 1.5 lakh. Apart from this spends on marketing spend and other things. So which
+Speaker 4
+
+Yesterday, 8:43 PM
+is. Yeah.
+Speaker 5
+
+Yesterday, 8:43 PM
+Thanks for just to starting first month, maybe I think even one to two weeks of marketing pure marketing can be done. But in general, for sustaining for two, three months, he feels like that's too much cost. I think initially, he wants to be organic and Yeah.
+Speaker 4
+
+Yesterday, 8:44 PM
+Yeah. Yeah. 1.5 is that we don't cost these sites. So when we do the so I only work with US clients. We work cost was starting at two two point Right? So for a US client. So I think 1.5 is a bit on the higher side. Yeah. Yeah. But doesn't matter. It's it's So the bigger problem with it any agencies is agencies does not have the skills to get there. Yeah. Move very slow. I we have agencies as our clients. Like, big agencies sort of seeing that the biggest agency to their clients. And they don't have in house skills. Just yes. Their their capability to build that because it requires a lot of I mean, as you probably know. Right? Yeah. It need to be very technically sound to get to a place where we can build that skill. Okay.
+Yeah. So how do you wanna proceed? So what we can How do you wanna proceed with the the with this one?
+Speaker 5
+
+Yesterday, 8:45 PM
+Tell me how what will be the process if we want to proceed with this one? Will it be completely dependent on the platform? Like, we can take the subscription for a month and see on how you can guide us like, what should be the process going forward. If there's something apart from platform separately as a service, which will which you can offer, that also we can discuss.
+So that is what I want to know. I clicked, like, kind of since from I'm not from the marketing background. I have very less idea on this. I think on the other thing rocket PM bit, we can have a separate meeting tomorrow. I'll be in my office with someone from my my my like, either someone from my marketing team or engineering manager, which which we'll have a better discussion about regarding how our sales and other strategy should be regarding that. So right now, especially focusing on this, you can tell us what you can offer here.
+Speaker 4
+
+Yesterday, 8:46 PM
+Yeah. Okay. I I assume you have created I got a notification that you created the project. Yes. Then let me take a look at that and let me look at the competitors list also. But Yeah. Berlin must Have given you a bunch of competitors. Right? Yes. Yeah. Did you have you verified those competitors are good or
+Speaker 5
+
+Yesterday, 8:46 PM
+Yeah. Kind of good. It made sense. I added two, three more. I think since the the short term focuses on the finance space, but long term focus is for like, long term focus might be to taking competitors as the other marketplace providers. Might be Talktel or other ones. So right now, whatever the computers were shown, I think that I think as I think as per I think as the But, yeah, it can be after six months, you might would want to change the strategy.
+Speaker 4
+
+Yesterday, 8:46 PM
+Yeah. Yeah. So I think the the foundational thing that Berlin built the whole profile.

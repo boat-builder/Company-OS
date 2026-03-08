@@ -1,0 +1,620 @@
+Speaker 1
+
+Today, 2:31 PM
+Hey, Alan. How are you, man?
+Speaker 2
+
+Today, 2:31 PM
+We're good. I think our cameras are slightly messed up.
+Speaker 3
+
+Today, 2:31 PM
+We that's that's all we need.
+Speaker 2
+
+Today, 2:31 PM
+I'll I'll join from the laptop.
+Don't know whether it has Zoom settings. Yeah. I feel yeah. It's working. Good. Yeah.
+Speaker 3
+
+Today, 2:31 PM
+I don't think we have met. I've from?
+Speaker 2
+
+Today, 2:31 PM
+From Kerala.
+Speaker 3
+
+Today, 2:31 PM
+Okay. Yeah. Sorry. Good. Yeah.
+Speaker 2
+
+Today, 2:31 PM
+That's that's good.
+Speaker 3
+
+Today, 2:32 PM
+Somewhere in the North? Okay. I am not. Yeah. All this is yeah. We met yesterday.
+Speaker 3
+
+Today, 2:32 PM
+Manav, where are you in Kerala? Somewhere in the North
+Speaker 2
+
+Today, 2:32 PM
+Side or In Calcutta. Yes. North
+Speaker 3
+
+Today, 2:32 PM
+Calcutta. Yeah. Alright. Right. Yeah. I'm from Patanandita.
+Yeah. Okay. So, Maji, Vangrish Majji, he's, my cofounder. So we we are building Berlin to the next stage right now. So I quickly wanted to we have about thirty minutes. So what I think what I want to understand is based on the description yesterday, there are a couple of questions that I wanna understand, like, the process and stuff. So probably about five, ten minutes at. And we could take questions from you about what are your expectations and comparing, sorry, comparing couple of things that I think you have tried prompting company or some other products. Right? So we could majji take questions from that and then take it from there. That makes sense?
+Speaker 1
+
+Today, 2:33 PM
+Yeah.
+Speaker 2
+
+Today, 2:33 PM
+Yep.
+Speaker 3
+
+Today, 2:33 PM
+Alright. So what's your would you tell me that you use currently have a marketing team of three or four people Right. Do you know what's the current process of doing SEO? So I I did a quick scan, and I I saw dark 300 pages. Like, probably half of them or maybe more of most of them are slash academy slash pages. Assuming some of teaching material.
+Yeah. So
+Speaker 2
+
+Today, 2:33 PM
+it's it's some clarification. I think we had recently had this rebranding exercise. Right? And it's And the pages are very limited. Those academic pages are not relevant now, and
+Speaker 4
+
+Today, 2:33 PM
+I think some I'm not sure if we still publicly we should keep them or
+Speaker 2
+
+Today, 2:33 PM
+not. Yeah. We'll have the like, whether we need to retain those Because based on the relevance of those pages, Got
+Speaker 1
+
+Today, 2:34 PM
+it. So
+Speaker 2
+
+Today, 2:34 PM
+right now, we might have less than 20 pages. Yeah. I think for
+Speaker 4
+
+Today, 2:34 PM
+the new rebranded website, it obviously rocketium.com.ai are on both are redirected to same page. But, yeah, the older pages are not relevant to the story right now, which we are pitching to the customers.
+Speaker 3
+
+Today, 2:34 PM
+Got it. So thanks for the clarification. What's the so then I'm assuming we don't we're not really focusing you on SEO at this point. Is that right?
+Speaker 2
+
+Today, 2:34 PM
+We are focusing on SEO at this point. So we want So we want we want be well what do you call, captured by probably the search engines as well as the engines for LLMs. That is one one of our requirements. Second is that how do we also make sure that the quality of the leads the visitors that are coming on to the website that are also high. So right now, even though we have a lot of customers coming in, we're not sure if they are the right ICP.
+Speaker 3
+
+Today, 2:35 PM
+Makes sense. What's the traffic right now, if I may
+Speaker 1
+
+Today, 2:35 PM
+ask?
+Speaker 2
+
+Today, 2:35 PM
+I don't know how much is it. I
+Speaker 4
+
+Today, 2:35 PM
+think it was around 8 k per month maybe.
+Speaker 3
+
+Today, 2:35 PM
+Yeah. Sense. So so what's the process? So I think the 20 pages that you have right now, you've got Right. To that or probably with the help of somebody who SEO or an agency or a tool.
+Speaker 2
+
+Today, 2:35 PM
+No. Not specifically. So I think the mandate came from our founder saying that this is a prediction that we want to go ahead with. And then we just were created. Within inside, property itself, by the marketing team. Got it. And that got reviewed anand that is it. There was no external agency involved from an SEO point of view.
+Speaker 3
+
+Today, 2:35 PM
+Got it. So do we have a system on to find are the relevant things to publish? Or we are sort of stuck there. Trying to where where is the
+Speaker 2
+
+Today, 2:36 PM
+anything. So
+Speaker 3
+
+Today, 2:36 PM
+the Yeah. Well, an honor of the Sysio process at all,
+Speaker 4
+
+Today, 2:36 PM
+Yeah. But the the for one person who wants the content to our marketing area. I think, generally, he is the one who was wanting a few products. I'm not sure. What is the expertise or specifically how much of time they in this thing. But, yeah, he owns the content part.
+Speaker 3
+
+Today, 2:36 PM
+Okay. Makes sense. Do you have a presence on well, or not presence, but also trying to log on any particular social media.
+Speaker 4
+
+Today, 2:36 PM
+Mostly on LinkedIn. We LinkedIn and other platforms, I'm not sure from The US, which might be let me see if there are any other platforms LinkedIn
+Speaker 1
+
+Today, 2:36 PM
+is a whole I think LinkedIn
+Speaker 4
+
+Today, 2:36 PM
+is, like, measure, maybe 905% of LinkedIn.
+Speaker 3
+
+Today, 2:36 PM
+Okay. Got it.
+It. So, yeah, I'll get to the LinkedIn part. But I'm trying to understand social media that has a public fence where people or LLMs sort of under overseas. Right?
+Speaker 4
+
+Today, 2:37 PM
+Okay. Something like credit.
+Speaker 2
+
+Today, 2:37 PM
+Yeah. I'm just providing a good one.
+Speaker 4
+
+Today, 2:37 PM
+Yeah, we don't we don't have that on hand.
+Speaker 3
+
+Today, 2:37 PM
+LinkedIn LinkedIn pulse pages sort of comes up in Google. Reddit have much much higher other in search engines, but LinkedIn pulse rates also comes up. So there was a point about five, six months ago, there was a point when LinkedIn pulse pages were much more important than ready pages but then that prioritized again. Yeah. So we sort of need to from an SEO point. Right? We need to sort of figure this out we need to figure out what works right now because LMS here is sort of very, very naive very volatile. The algorithm changes or is basically changing the prompt. Right? So the things change is much cheaper. Than the traditional SEO.
+Okay. So so if I understand you correctly, your current board, like, is probably two plus time. Is that right? Or anything that I missed?
+Speaker 2
+
+Today, 2:38 PM
+I think that should
+Speaker 4
+
+Today, 2:38 PM
+be it. I think this maybe right now, we don't have that process which works for us. So yeah. We want the process to work, which can scale up in the long term.
+Speaker 3
+
+Today, 2:38 PM
+Okay. Okay. Makes sense.
+What are so
+Speaker 2
+
+Today, 2:38 PM
+do you
+Speaker 3
+
+Today, 2:38 PM
+geo specific client acquisition or is it just global?
+Speaker 4
+
+Today, 2:38 PM
+It's very limited, I think, right now.
+Speaker 2
+
+Today, 2:38 PM
+G oh, no. I think US and EU Our focus is US and EU. But I don't think we have created content specifically to target those geographies.
+Speaker 3
+
+Today, 2:38 PM
+Yeah. Not not from SEO point. Like, in general, company's direction is geo specific. It's for a
+Speaker 2
+
+Today, 2:38 PM
+Right. Yeah. So for example, to answer your question, I believe, when events anand Okay. Our team goes to events that are happening in these two regions.
+So physical presence is Yeah. On on those.
+Speaker 1
+
+Today, 2:39 PM
+Majji spending is on that area of growth as a sponsor or as a participant group.
+Speaker 3
+
+Today, 2:39 PM
+Correct. So who would be your target ICP? Like, if you have if you have to pick one or two industry or segment of group segment of people or customers,
+Speaker 2
+
+Today, 2:39 PM
+So basically brands are what we are focusing on. For example, Yeah. Right?
+Speaker 1
+
+Today, 2:39 PM
+They
+Speaker 4
+
+Today, 2:39 PM
+and EU, maybe, like, I don't know the name. What is this For example, this company is like
+Speaker 2
+
+Today, 2:39 PM
+let's say, Publian Method. Right? I I believe that they create electronics or we make a brand. Right? Yeah. Electrolux is a brand.
+Speaker 4
+
+Today, 2:39 PM
+In case of if you want to take a Indian example, we have we used to work with Shipcart, Amazon, or other ecommerce companies. It was similarly same for US and EU. I think Grappi, who is in famous European company. I work with them. So retail companies also? Retail companies. Amazon advertising platform used to be one of our customers previously, but now more of US retail advertising platforms. Got it.
+Got
+Speaker 1
+
+Today, 2:40 PM
+it.
+Speaker 3
+
+Today, 2:40 PM
+Okay. Makes sense. Yeah. I think I have only one or two more case And I I think no answer to a accent, but I'm I'm I'm I I wanna make sure I got right. When you evaluate a tool like Berlin, that is making or making your SEO process easier.
+What are the highest priority things that you are looking for?
+Speaker 2
+
+Today, 2:40 PM
+So I think probably the key words that one know the kind of keywords that we have right now how is it improving with respect to the people coming in? One.
+Second would be like, understanding the this is what we have to offer. Are the keywords that you suggest so that probably we create more content or like, giving us suggestions so that we are able to capture more Got it. Yeah.
+Speaker 3
+
+Today, 2:41 PM
+So since you mentioned that you have a marketing team, who else would be involved in a decision like this?
+Would they be involved? Do we have to understand what's their position is.
+Speaker 2
+
+Today, 2:41 PM
+Mostly the founder founder and the marketing team. It's very small team right now. So maybe, like, four people in total.
+Speaker 3
+
+Today, 2:41 PM
+Okay.
+And one last question I think. Us being the urgency to do this right now. Just SEO. Have you seen any your ranking or it's just like just wanted just part of the company's new direction. There's
+Speaker 2
+
+Today, 2:42 PM
+no urgency as such, but it's just that we have done the rebranding. We want to know like, more like, as a data driven approach, we wanted to take. Okay. So right we have created a right now 20 pages What should we do now? That is yeah.
+Speaker 3
+
+Today, 2:42 PM
+Comments. Okay. So I'll give you some a very high level on what Berlin would do and what what Berlin
+Speaker 4
+
+Today, 2:42 PM
+And then
+Speaker 3
+
+Today, 2:42 PM
+yeah. So that's like I said, the second part of the agenda that I wanna cover. So we started building with the same problem. Right? We both come from background of building and running SaaS companies. And this is like a pre AI era or, like, early days of AIs time. And some problem that we all struggle with. So we when we looked around companies operating in the space, what we saw was, a lot of them operate at in monitoring and tracking level. So they would help you track your stuff, but still have to be an expert. So it's basically all the tools are for marketing teams. Right? Mhmm. Somebody who knows the stuff and has the time to We wanted to build something that takes away all the work that you would have to do in SEO, and this year has a lot of manual work that you have to do, which is, like, you know, keyword tracking and then constantly picking what's the ranking and your are you dropping? Is your comment is coming up? What is called the competitive gap analysis? Is your page doing well, like a thousand different things. So we wanna take away all of this from the customers and then automate all auto as much as we can with those intelligent elements that we have, and then give the control to our users to be able to step when they want to and then make a decision if they have to.
+Another big missing piece that we have saw seen that most of the brand or when when we try to build this was they either tracking or people basically help you do stuff, but then they don't monitor the impact of what you have done. So you publish a blog. So the 20 blogs that you published, are they doing well? Or the academy pages that you have. Right? Are they doing well? Do we have to keep those Are they ranking in, GSE? Does that align with the core concept, what you have, defined as the company company's direction? If not, you need to take that down because you're sort of costing the crawl budget because every alum has I don't know, like, 5,000, 10,000, some number, which is your crawl So they don't crawl more than that. Mhmm. And early days, when your company has a very limited number, of pages, the crawl budget would be one or two or three or five. Mhmm. You wanna make sure you are using that crawl budget. And only then when publish something, that would immediately go to, the crawlers and then crawl by the crawlers search engines and stuff.
+Yeah, so we wanted to make sure existing pages that publish through us, not in action in a social media, publish a post. Figured out there was a Reddit thread that where you can be you're not. Right? And then you went anand made a comment and make sure the comment still exists and the brand, separated owner, did not come and removed it. Right?
+So these things doesn't exist. So we are analyzing, I think, about one fifty three companies that operates in the space. Because the gold mine apparently right now. Nobody does this. Right? So we wanted to make sure we stand by the customer and then sort of sort of solve these problems. Even if the customer does not have CEO skill set. So, yeah, so this is action that we are going.
+Yes. From far from what I described, do you have any specific questions that you wanna ask, especially if you wanna compare with or from because you're coming from a background of trying out a few tools and then already know the space more or maybe majji better. Do you have any specific question that I can help you answer?
+Speaker 2
+
+Today, 2:46 PM
+Right. So one question is that what is your ICP? Like, what are the kind kind of companies that you Berlin, works very well
+Speaker 1
+
+Today, 2:46 PM
+for.
+Speaker 3
+
+Today, 2:46 PM
+Right. So so far, we have I think our biggest our local SEOs and SaaS.
+Our second biggest are probably different versions SEO. So, you know, companies who offers So SaaS is definitely on the top. Right? So I think we operate as a I was asking when Muddhit reached out to me. I was asking, what's the business anand if that doesn't fit with the capability we have, then I did not wanna continue the conversation. So, Sam, on the top.
+The second biggest is local SEO. Especially so so local SEO has different variants. That's what I was trying to get into, but I think it's a combo conversation. But local SEO, that has importance on geo specific So you have a physical location where people come to
+Speaker 4
+
+Today, 2:47 PM
+Okay.
+Speaker 2
+
+Today, 2:47 PM
+Okay. So what changes? For example, let's say if we are, like, using Berlin for the our SEO, What is the realistic expectation that we can have from, let's say, a one month point of view, three months point of view, and probably, like, six months? What changes for us?
+Speaker 4
+
+Today, 2:47 PM
+I I have one question, Sherin. Anurag, remind do you see a fact that how the traffic is coming
+Speaker 2
+
+Today, 2:47 PM
+to your competitor's website today? I meant, does the ecom brands right now searching for do you do they use
+Speaker 5
+
+Today, 2:47 PM
+ChagPT maybe for shopping or, like, looking for reasons is like not agencies. Agencies are your direct competitors. Right? Creative agencies
+Speaker 1
+
+Today, 2:48 PM
+or something. Right.
+Speaker 4
+
+Today, 2:48 PM
+Do you have a fact
+Speaker 5
+
+Today, 2:48 PM
+or some numbers or something from this
+Speaker 1
+
+Today, 2:48 PM
+buyer?
+Speaker 2
+
+Today, 2:48 PM
+As fact as such, we do have we now we use the tools like Actors. Right? Which are
+Speaker 5
+
+Today, 2:48 PM
+Actors. Okay.
+Speaker 2
+
+Today, 2:48 PM
+Right? Which to the companies where the people are working. Like, we're setting the website. Right. Right. Right. Right. So I think recently, we have started seeing a trend where we've noticed that the source of the traffic is from Casualty.
+Oh, factors. Do you start? We have phones like that. We have multiple tools we're doing. Okay. So yeah. Dealfront is one tool that helps us see that.
+So like, most of the companies still come come from, like, organic Google search.
+We would like, now we'll start to see this trend of longevity.
+So
+Speaker 4
+
+Today, 2:49 PM
+that is
+Speaker 1
+
+Today, 2:49 PM
+one thing that I can Makes sense.
+Speaker 3
+
+Today, 2:49 PM
+Just yeah.
+Speaker 5
+
+Today, 2:49 PM
+Conclude.
+Speaker 1
+
+Today, 2:49 PM
+Just to
+Speaker 2
+
+Today, 2:49 PM
+let Also, like, one one thing that we've noticed with the deal like, it says that it is organic, and we don't know what they search for. Right? So I believe this is some change that Google recently brought in where they stopped sharing the keywords for organic search. Is that correct? Or is it
+Speaker 1
+
+Today, 2:49 PM
+something
+Speaker 5
+
+Today, 2:49 PM
+Yeah. So the the one more question just associated with the same one is if your if a competitor like, let's say, a competing competitor is seeing some traffic
+Speaker 1
+
+Today, 2:49 PM
+Let's say if we have a fact.
+Speaker 5
+
+Today, 2:49 PM
+What is that something that they are doing that is bringing the traffic? Do we have anything benchmark like that, let's say,
+Speaker 1
+
+Today, 2:49 PM
+or no? I think
+Speaker 4
+
+Today, 2:49 PM
+that is we felt might be a CEO or geo point of view We might be lacking where this area we thought. Because clearly, when we try to search for AI design software or AI studio or somewhere around that keywords, we see some smaller tools ranking on Chargebee, cloud, public three easily. But Canva, Adobe, Microsoft, and all those, their design studio are also there. Some smaller design tools are also there. But we still are not on the top 10, top 20, top 20. So that's why we don't have the data how they are what they are doing correctly. But feels like there is something different which like, there's a tool called designs dot a I s. Remember. It is ranking as second in almost all searches in charge of the cloud of complexity. When it's air design software.
+Right? Our boss wanna make noise, sir, the air design software.
+I canva, Adobe, or these results are being shown in an equation where we see Canva as a result, I think rocketium should also be in third or fourth option. Because we have a lot of overlap there. But direct computer, if you want, there are other companies like Dubref, .com, which was previously created by. So those three full companies that are directly competing to us, and they were also ranking higher. So we feel there's something else which we might be missing that we we don't have the data. Around what they are doing differently.
+Speaker 3
+
+Today, 2:51 PM
+Yeah. So students are a couple of questions that came up. Right? So one, I'll start from the latest one. So I was just crawling the science.ai. So they are, like, probably about 10 to 20 x actually, no. Yeah. They're way way more, like, about like, they have about 700 or 800 pages compared to pages that we have.
+Speaker 1
+
+Today, 2:51 PM
+That's okay.
+Speaker 3
+
+Today, 2:51 PM
+Website's foundation has to be good. Regardless of whether so that page shows up in Google or sorry. Llms.org. But patient has to be
+Speaker 1
+
+Today, 2:52 PM
+good. Yes.
+Speaker 3
+
+Today, 2:52 PM
+Then thing we have to do. Now we don't know if designs.a I hired Mhmm. To go and comment in, like, all the Muddhit threads. I've seen that So, yeah, I think that's a good thing. I think that's a good thing. Mhmm. But
+Speaker 6
+
+Today, 2:52 PM
+to go and comment in, like, all the Reddit threads. I've seen that trend a lot.
+Speaker 3
+
+Today, 2:52 PM
+Things so because we are in an early stage, there are also lot of things that we can do to capture the low And that's what and again, thing is to get the website foundation ready. So if he goes out what are the topics, the details that we we wanna stand on? And then go and find the the gap Is so right now, it's not it's not a gap. Right? Because we have we don't really have anything.
+We need to find what are the that we wanna stand on and then basically start creating this content. Makes it as simple as possible for the user and also start creating tools or been be present in social media, make sure your website has good speed. That's if I haven't really checked the speed. Typically, framework is known for some your website down. But there are some framework sites which are performing well as well. So it depends on the theme that you So, yeah, so all of these are the things that would affect your performance. Now coming back to, Anand question, about the results, See, like, there is forward in the world promise a result to you. But look at the space, looking at the competitors, and looking at the profile that we have, Rocket GM has I think the initial growth would be faster. So you should start seeing some signals of growth in the one one and a half months timeline.
+It it would not be significant, but you should see. Like, regardless of whether you have internal team doing it or Berlin doing it or an agency you should start to see signals of growth in the first one, one and a half months. It's a compound effect. Right? So as you do more things, you would see the the exponential curve rather than a linear curve. But there are, you know, thousands and factors that would affect this research Like, what if your competitors competitors are also doing super heavy work on SEO. So you then you have to ramp it up. So these are the things that and what if LRM changes the algorithm? Like, there is there is a thousand variables that would affect results. But if if you keep all the variables certain, if that those doesn't change Mhmm. You would be in
+Speaker 5
+
+Today, 2:54 PM
+a good path
+Speaker 3
+
+Today, 2:54 PM
+in the three months down the line. But regardless of that, you should be in a good path because we should be able to identify the variables and the variables changing, and then do whatever it requires to get up. Yeah.
+Speaker 4
+
+Today, 2:54 PM
+Like, content
+Speaker 3
+
+Today, 2:54 PM
+creation is commoditized. Anyone can create any number of articles much quicker The value comes from how you inform and sorry. Come from how well you inform the NLMs that you are a topical authority. And you are the place where the customer has to come.
+So so what I was trying to say is everyone is gonna start printing blogs 100 blocks a month, 200 blocks a month.
+So we need to play the game the right way rather than just, you know, scaling it up. Does that answer your question?
+Speaker 1
+
+Today, 2:55 PM
+Yeah. Okay. Okay.
+Speaker 5
+
+Today, 2:55 PM
+I I'm trying to understand, Adam, from your let's say, whatever the current knowledge you have, maybe either you would be speaking to a SEO anand CRM looking for a a SEO tools or something. Right? What is an ideal outcome you are actually looking for?
+Speaker 2
+
+Today, 2:55 PM
+So to be frank, quickly, like, we have not approached any agency. We're from the engineering team. We started exploring tools which could help improve the traffic to the website. That was the context in which Muddhit and I started this project.
+So our reference comes from this one. The browser from the company. So prompting company is the moment we started. They told us, like, they did an evaluation and told us, like, for your keywords, this is where you are right now. And these are the companies that are right now on on the top. And they suggested that you do the the x y z things. We did that. And then they started showing that, okay. This is now the what do you call the the listing has changed. Now instead of the eighth page, we you're at the fourth page. So we were able to see like, where we stand right now, what actions we had to do, and when we started doing that, what changed for us. So for us, it became very easy to correlate our actions to the outcome. So that that's what we expect right now. We don't we don't come from an agency background or as nothing. We don't they're like we don't have any of the baggage or even knowledge to even answer that question extremely accurately, but this is what our experience is. So far.
+Speaker 4
+
+Today, 2:57 PM
+Even one more point I'll add to our response. So even if it could have been the case of agency, it could have been way tough for us to reach out on the do We want the system or process to be set up Maybe one time, I think, we'll invest some more some effort from others. And, obviously, someone in marketing will help But we want that to be automated so it should not be like, we are replacing our current process entirely. We want this to show results. And once we are convinced, then obviously, my team will take up and do this activity on their own with either any tool like Berlin or any other tool. So as what our point is, I
+Speaker 1
+
+Today, 2:57 PM
+think if
+Speaker 4
+
+Today, 2:57 PM
+there's lack of information or the information doesn't reach it around this new agent team so the agent team so our work will be taught how do
+Speaker 1
+
+Today, 2:57 PM
+we make
+Speaker 4
+
+Today, 2:58 PM
+accurate to them as fast as possible.
+Speaker 3
+
+Today, 2:58 PM
+I have one question.
+You say you said the prompting company thing was working and was simple and easy. What went wrong? Why didn't you you
+Speaker 4
+
+Today, 2:58 PM
+Yeah. I'll tell you we just went it with seven days trial anand it's we that we tried on our own. We didn't involve any marketing team person. So they didn't have that bandwidth to try. So just fail to go ahead with the trial. We felt when they have the time, they come back and and again buy the plan. So just we went for it for seven days for the questions they gave. They give a lot of portion that try make blogs and they told you to publish this blog and then you'll see the results. So that was one kind of data that thing which we felt if we do this 100 blocks which they say, we will hire at least not a 100%, at least 60%. That is also what we were feeling. This might help because the day we started to start integrating that one majji maybe some content, we saw some difference. But, yeah, obviously, to see the results, we might need to use at least for one or two months So that's why we can't come to a conclusion.
+Speaker 1
+
+Today, 2:59 PM
+Yeah.
+Speaker 3
+
+Today, 2:59 PM
+Makes sense. Yeah. So this this is super useful. The the context stuff from Wingkami, I Why didn't you continue?
+So in the prompt case, the time requirement, what was that time for? That was for publishing the blog, or do you did you have to write the blog? How did
+Speaker 1
+
+Today, 2:59 PM
+that work?
+Speaker 4
+
+Today, 2:59 PM
+Mainly, again, it was I think writing blogs can be done by our team internally also. But writing at a scale which list of questions and doing it scale and writing the blogs on the questions which we want users to come with. So that was one problem which we didn't have how to figure that out. That is one thing. Yeah. And then one problem.
+Speaker 1
+
+Today, 2:59 PM
+Yeah. I think
+Speaker 5
+
+Today, 2:59 PM
+let's see.
+Speaker 2
+
+Today, 2:59 PM
+I believe marketing team has an entirely they have they don't course of action or the strategy that they want to pursue. Right? So I believe we couldn't get their time to even look at what this tool was asking them to do. That would
+Speaker 4
+
+Today, 3:00 PM
+that would fine. Yeah. Yeah. They're trying one more tool named interact gen dot a I. I haven't found I haven't talked with them about what what was their experience with the tool like. But, yeah, they were, like, exploring that tool too. But since, I think the there is, like, too much of things like, all all done and done in parallel. So on tool front, they might not be able to try lot of things. That's why freely whatever we can.
+Speaker 3
+
+Today, 3:00 PM
+Right.
+Sent. So I'm assuming the the the next step would be the call with the founder or the marketing team. Is that
+Speaker 1
+
+Today, 3:00 PM
+right?
+Speaker 4
+
+Today, 3:00 PM
+Yeah. Mostly, I think, I mean, can bring someone from either you with my that might be the final decision making point. Right. If the other person either from our US team or Indian team or any of them are agreeing, then mostly we don't have founders. So say after that mostly we can
+Speaker 2
+
+Today, 3:01 PM
+work. Do you have, like, a trial that we can, like, use so that we we also, like, get to see what the plan is? So that we can
+Speaker 4
+
+Today, 3:01 PM
+show you to market
+Speaker 2
+
+Today, 3:01 PM
+understand.
+Speaker 3
+
+Today, 3:01 PM
+On the offer, this point because because of the expenses and stuff, things like that.
+Yeah. We don't we don't offer at this point.
+Speaker 2
+
+Today, 3:01 PM
+So if we have to, let's say, get onboarded on, like, Berlin, what is the like, is it that monthly pricing that we have to be onboard or what like, access to Berlin?
+Speaker 1
+
+Today, 3:01 PM
+It's
+Speaker 5
+
+Today, 3:01 PM
+Yeah. It's similar to other tools as well, Alan. It's a SaaS model. But that's where we are trying to understand what is the object that you are looking for?
+And how how fast do you want to reach?
+Right? So it's not just about just the articles.
+Let's let's say, what are the types of types that are actively ecom let's say, brands involved. So it it depends on the volume that
+Speaker 1
+
+Today, 3:02 PM
+you would
+Speaker 5
+
+Today, 3:02 PM
+we would be acting on. Right? So we are we are trying to understand what is that ideal outcome you are looking for first. Right? Please with kind of kind of some difference difference.
+Yeah.
+Speaker 4
+
+Today, 3:02 PM
+I feel not not as equal to any other existing tool like designs.ai or Nava or Adobe. But at least if within three months of time frame time frame, we are at least on what from current stage, if we are able to, like, have 30 or 40% more traffic.
+Account. Even after three months, then we can reevaluate and say, no. This strategy won't work. And so we need to see differently with our different our different competitors right now, right now, who are approaching to which what strategy. That is what that is what I think. I mean, note something
+Speaker 1
+
+Today, 3:03 PM
+is
+Speaker 2
+
+Today, 3:03 PM
+possible, I think one one would be would be getting an evaluation on where we stand right now right now with respect to what Anand And and then like, all all the all the suggestions either through either through, but lay not generate like like a sanity checks that we have to set it up. If we are if we are able to see the growth and the growth of the progress, that will also help us. Yeah.
+Speaker 4
+
+Today, 3:03 PM
+Our outcome is mainly to be in, like, not exponential growth within one month that won't scale after two months, three months, or three months. So we just we just want to be on that path. So if so if it is, like, kind of which we are doing will be scalable. Even after that period, we maybe we can keep changing place, what place, where we should be. We can we can, again, again, answer with taking from marketing team's perspective perspective also.
+Speaker 5
+
+Today, 3:10 PM
+Don't look from what is our marketing efforts. Okay. Come from how is the ICT behaving AI post AI world? Let's say, yours brands in US today, Let's say, you take you take New York or Florida or one of the fastest growing areas, How they're actually behaving today Let's say, do they ask questions in ready do they ask LinkedIn? Do they ask questions in in YouTube? Where do they look for when they're looking for your kind of a company?
+Speaker 4
+
+Today, 3:10 PM
+Got
+Speaker 2
+
+Today, 3:10 PM
+it. Like, it comes from that direction
+Speaker 1
+
+Today, 3:10 PM
+direction.
+Speaker 5
+
+Today, 3:10 PM
+See, what we are saying is Berlin has all the capability to act from every angle. Right? From not only just articles. Articles just cannot alone bring the class the class ticket, but where we can able to find the relevant and trustworthy content that the audience are going to discuss. Discussing about question like, q and a. Right? That is where where we can able to bring the transcript from. Cool. I see. So for that, we need to act from every angle. Yes. So that is where we are looking for. Right? If if this the tools cannot solve the entire problem. But if you have one or two resources who can actually go and act, the traffic can be you can come doesn't matter It really it really doesn't matter discussing that.
+Timeline. Mhmm. But the point is, ideally, we should be acting from the ICP aspect of it, not from the tool or what is our capability. Yeah. Yeah. Makes sense. If we are not capable, it's okay.
+Yeah.

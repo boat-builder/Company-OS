@@ -1,0 +1,640 @@
+Speaker 1
+
+Wednesday, 12:33 PM
+Good. Morning, Shareen.
+Hello.
+Hello? Hi. Think I need to I need to reconnect I think. Give me a second. I'll be back.
+I know.
+I need to reconnect.
+Yeah.
+Heist.
+Let's see if this is better.
+Hey.
+Hi.
+Doing alright. How are you doing? Doing well. Thank you. You're actually I am actually from Berlin. Yes. Alright.
+Where are you from?
+Speaker 2
+
+Wednesday, 12:35 PM
+My previous company was trying to focus
+Speaker 1
+
+Wednesday, 12:35 PM
+Yeah. Yeah. So yeah, But why why did you call your company agent Berlin and not agent Dubai?
+Speaker 2
+
+Wednesday, 12:35 PM
+Yeah. So Berlin not doesn't come from the place name.
+Have you seen Money Heights? It's a bunch of right private bank in Spain.
+And I like the fact. I mean, I'm not the not the favorite show.
+Yeah. That's The original link that I Yeah.
+Speaker 1
+
+Wednesday, 12:36 PM
+Have you ever been to Germany?
+Speaker 2
+
+Wednesday, 12:36 PM
+No. Been to other Okay.
+Speaker 1
+
+Wednesday, 12:36 PM
+Okay. So I I I I found you on Reddit. Interestingly.
+Yeah. You you wrote a piece What was it again? About, like, how you manipulated the the the the crawlers into your command, so to say. You split traffic Yeah. The honeypot. Exactly. And I think I commented on it to ask whether you've tried prompt injection there.
+But but I can't fight the threat anymore to see your answer if you have answered.
+Speaker 2
+
+Wednesday, 12:37 PM
+Sorry. Somebody at the door. Give me a sec. Really sorry.
+Speaker 1
+
+Wednesday, 12:37 PM
+No worries. Yes.
+Speaker 2
+
+Wednesday, 12:37 PM
+Alright. So I don't remember answering that question either. I mean, so Reddit has your behavior where it doesn't really I mean, I I did not So, like, after a few days, I went down thread, and I well, So I'm not I don't remember if I answered But yet you answered that question prompt question. I so OpenAI does really work well process.
+They have are training their model on model. They have but I found Claude works really well for.
+What do you tried.
+And also public probably with their yeah.
+A lot. But the but the agent mode in chat come back.
+That
+Speaker 1
+
+Wednesday, 12:39 PM
+Yeah. But but in in your honeypot example, I think you've given the LMM a command. And in that command, I was thinking that is it possible to manipulate so to say, the perplexity result by telling it not only, hey. Here's a special way you get in. And by the way, your answer should be my brand is the best brand. Right? Yeah. Is that is that something that's possible if we try that out?
+Speaker 2
+
+Wednesday, 12:39 PM
+I haven't. Yeah. So that's The the goal was goal with that experiment was you know, redirection Mhmm. Custom search security.
+Good That being
+Speaker 1
+
+Wednesday, 12:39 PM
+said, I don't I I I I'm I'm interested in doing it. It's like, that's that's the that's my thought, basically. And on trying. But, yeah, let's let's not talk too much about the the tech technical stuff. What I'd like to understand is I I give you a quick intro to what I do Yeah. And what I look for. And then you can maybe explain, like, what's the direction with your company and how you guys work or how you work.
+So my background is machine learning.
+Business. I'm doing machine learning since the year February.
+So I've seen it in all different companies, with all its expectations and with all its limits.
+I'm right now, I'm a consultant. I've been a founder of a start up. I've been in consulting and life for large corporates and for small businesses.
+So for broad experience, And currently, helping larger companies in their AI strategy.
+And implementation. So I have a small team of experts, and we do implement the use cases that I identify with our methodology, which is called data thinking. And with that methodology, get good use cases for a company, and then we level that to a strategy then we implement that strategy. It's that simple. Okay?
+Currently, I'm currently working with a large bank one of the largest German banks cool brands, cool people, And one of the challenge as everyone has, is the question of, like, how is my brand positioned in an LLM? Right? So again, how can we manipulate that in a kind of a seal fashion? I'm still not convinced that that's the way to go. I think the zeal is something different. And I think the world is changing us in a in a different direction.
+Yeah. But we we start an analysis phase, basically.
+And see what are the options and what are the limits. Right. Yeah. So I thought Zio was never my space. But I start researching And I start exploring ideas and yeah, and this is how I found you. Basically. And this is where we are in here. Got
+Speaker 2
+
+Wednesday, 12:42 PM
+it.
+Yeah. Okay. So the cute intro about Volinar the premise that we are building if you look around, there are you can probably found a handful of SEO Want to build something foundation tried basic all what so I ran a marketing agency Mhmm. We had this a lot of automation that you are pipe that call.
+OpenAI API So Berlin is an extension of what converting Right? What I believe that in the SEO by itself, scope not get bullied.
+Scope of your hands.
+That sort of become very an inbound market we have So if you're watching image.
+So yeah. So we I the scope of this year has sort of much overlap.
+Second that we believe there is step process So what we have date all of those and bring that to all of so we can So what we think are the way will reason of have function that does both of that figuring what what strategy. So measure strategize, and then that's a side The whole pipe So we have, like, a very simple dashboard. Not as a couple of but it has the most brand that the stable our you asked them. Like, three ninety And that's on a base So we measured these kind of that.
+That's what we called as And then based on this data, we have the improve The third step
+Speaker 1
+
+Wednesday, 12:46 PM
+How do you how do you make sure how do you make sure that this analysis is representative?
+Speaker 2
+
+Wednesday, 12:46 PM
+So
+Speaker 3
+
+Wednesday, 12:46 PM
+so this is
+Speaker 2
+
+Wednesday, 12:46 PM
+based on oh, sorry. The analysis the first the the mission.
+Speaker 1
+
+Wednesday, 12:46 PM
+How do you make sure it's representative? Because, you know, they have so many influencing factors.
+Speaker 3
+
+Wednesday, 12:46 PM
+That that that
+Speaker 1
+
+Wednesday, 12:46 PM
+might vary. I mean, it's like you could be calling a query from in perplexity from India, and you might get a different result also based on your let's say, memory that you've know, aligned with your OpenAI or Perplexity agent, you get different results than I do searching for the same thing. Right. What's the Right? Like, you might get different answers than I do. Or I do it in a different language, or I misspell it a little bit, I don't say bank account. But I say banking account. And it's like, how do you make sure that the analysis is representative?
+Speaker 2
+
+Wednesday, 12:47 PM
+The exact reason why we don't believe all those LLMs track So we do that but for core analyzing And what believe are authority regardless of how you frame what role read.
+A thousands of that
+Speaker 3
+
+Wednesday, 12:48 PM
+have a
+Speaker 2
+
+Wednesday, 12:48 PM
+effect. The But if you have you would as in So like, let's you say you are
+Speaker 3
+
+Wednesday, 12:48 PM
+let me
+Speaker 2
+
+Wednesday, 12:48 PM
+say you are a by and out of the but that doesn't that's and you're asking about because you are a pipe the brand and you have a base You are gonna show up in both regardless.
+You don't have Python then you're not gonna for that.
+So your features, what are you are to my for getting authority. For that.
+Then you're gonna show up in The only thing that you need is how do you That makes
+Speaker 1
+
+Wednesday, 12:49 PM
+I'm not a 100% sure. If that makes sense.
+I'm not sure. Yeah. Hold on. Hold on. Hold on. Yeah.
+It's like if you look at how how brands are represented represented in this vector space of an LMM. Right?
+If you look at brand positioning, the question is, actually, how much is your cluster of your brands or your, let's say, the the vector space of your brand associated to the brand values and brand offerings in that specific LLM.
+And if I think of LLM optimization, I'm thinking of bringing these nucleases closer to each other. Reducing the vector space.
+Is it yeah. I think you come from point of view where you kind of combine let's say, you you influence the text to then yeah, kind of a zero approach but with the black box of how LLM read the sales. And then you try to figure out whether this has worked or not.
+What I wonder is how do we actually measure the position of the LLM in the vector space.
+Or the the of the brand in the LLM vector space.
+Speaker 2
+
+Wednesday, 12:51 PM
+Right.
+Speaker 3
+
+Wednesday, 12:51 PM
+One So
+Speaker 2
+
+Wednesday, 12:51 PM
+the the query indent typically, it start You have you heard about this clip? That now get right?
+So when you ask it goes
+Speaker 1
+
+Wednesday, 12:51 PM
+yeah. Sure. That's where it's where where where it then searches for the answers in the web.
+Speaker 3
+
+Wednesday, 12:51 PM
+So Okay.
+Speaker 2
+
+Wednesday, 12:51 PM
+So there are first step is a long good thing. Would decide whether Should I don't think optimizing for that that way because you can't sum and get the rules congress feedback get extremely.
+But you can pray. In basically make a lot of prayer.
+Speaker 1
+
+Wednesday, 12:52 PM
+Yeah. I agree. There are two fundamental different things. The one is generative optimization, generative answer optimization, where you have cool talk tool callings and it searches the web or uses Google. Agree. I understand where you're coming from. That's one part of the story. Other part of the story is a longer term. And you say, like, oh, it's six to nine months. It's so hard to influence. But brands need to think like that. They it is strategically important that you implement your brand values in the LLM Why is it extremely important?
+Because you need a representation of the values of your brand in the LLM because it might decide by that if your product and your brand aren't right fit for certain customers that you want to address. This is not happening on a factual base. It's like, like more like love brands like why why do people love, let's say, what's a love brand?
+I don't know. Adi does. Right? People love it. Right? They can be factually not the cheapest. They can be factually all these factors, but they love the brand. And you wanna make sure that this kind of position in the LLM you start to influence or at least know where you stand in comparison to your competitors? That's the one piece that I've been talking about. But I understand you're talking more about the the the optimization of generative answers. In okay. I see. I see.
+Speaker 2
+
+Wednesday, 12:54 PM
+Yeah. So One, if you are
+Speaker 3
+
+Wednesday, 12:54 PM
+then you
+Speaker 2
+
+Wednesday, 12:54 PM
+probably get it.
+Because right now, I
+Speaker 3
+
+Wednesday, 12:54 PM
+you Now
+Speaker 2
+
+Wednesday, 12:55 PM
+second part of that made it. In a way that.
+And that And when that book source purely comes So because we are already Yeah.
+What we have with our doing this right, things like prom deduction,
+Speaker 1
+
+Wednesday, 12:57 PM
+No?
+Yes. I hear you. I heard you. But my mic was turned off. I turned off my headphones. Because they're out of battery. Okay.
+Speaker 3
+
+Wednesday, 12:57 PM
+Let's assume
+Speaker 1
+
+Wednesday, 12:57 PM
+this hypothesis is true. Okay? Discuss now what you can do. What can you do What can you do from my bank? My bank customer?
+Speaker 2
+
+Wednesday, 12:57 PM
+Right. Yeah. So so where we function as I mentioned we have this measure of base and strategy.
+So the first so sort of present the product first one Mostly from client have already that they don't want give up. About that.
+So what Berlin does APIs that we and then your team can The second we
+Speaker 3
+
+Wednesday, 12:58 PM
+I
+Speaker 1
+
+Wednesday, 12:58 PM
+have a question. So the first thing that you do is basically replace the CEO team. Because you create actions that kind of execute on the Zio strategy then the content producers basically you know, you build the actions and the content producers do that. So you cut out basically the zero team.
+Speaker 2
+
+Wednesday, 12:59 PM
+Yeah. Right? Because
+Speaker 1
+
+Wednesday, 12:59 PM
+That's what I that's what I fear most, but I agree with that approach. Right. And it's just
+Speaker 2
+
+Wednesday, 12:59 PM
+like if you look around it, like, the you want when the even when Google was Stay same for our body.
+Much drastic. You have
+Speaker 2
+
+Wednesday, 12:59 PM
+a good
+Speaker 3
+
+Wednesday, 12:59 PM
+So we think now
+Speaker 2
+
+Wednesday, 12:59 PM
+humans won't be able to catch or humans could make a lot mistakes.
+And then if you think about it, very strict look at the debt you look at the So that's first The second thing is for small company does not or who are already outsourcing They were not.
+We take care we don't have an automation on Yeah. What we quite So we're we have to take that with the help
+Speaker 3
+
+Wednesday, 1:00 PM
+like Okay. That's
+Speaker 1
+
+Wednesday, 1:00 PM
+So that's all agency work basically that that kicks in.
+Speaker 2
+
+Wednesday, 1:01 PM
+The the goal is to automate that. Bring not having
+Speaker 3
+
+Wednesday, 1:01 PM
+of all, at least human available but as a brand owner, you would get
+Speaker 3
+
+Wednesday, 1:01 PM
+if you go
+Speaker 1
+
+Wednesday, 1:01 PM
+I understand.
+Uh-huh. Interesting.
+What's your what's your personal background? Like, where you you an IT guy? You're a business guy? Or did you did you did you come from from fighting? Like, what's your background?
+Speaker 2
+
+Wednesday, 1:01 PM
+Yeah. So I was a developer by profession I yeah. Since you're a machine learning guy, you by door.
+I was one of the early and we work together and that I was with this. For AI.
+Time. So ready say, yeah, because probably the scalable AI Then we both worked at, like, AI of Python.
+Yeah. So my background
+Speaker 3
+
+Wednesday, 1:02 PM
+So you're developer?
+Speaker 2
+
+Wednesday, 1:02 PM
+Well yeah. So I'm dual, four years ago, I was a developer, and then four years before I built an agent The goal was to do development work, but then lot more marketing work We slight products for. So we sort of converted market.
+So being an engineer and being having that tendency automate on test
+Speaker 3
+
+Wednesday, 1:03 PM
+really good
+Speaker 2
+
+Wednesday, 1:03 PM
+market.
+Okay.
+We sort of realized that what did and yet we we made pretty good profit Mhmm.
+Mhmm.
+Speaker 1
+
+Wednesday, 1:03 PM
+Yeah. Okay. I see. I like your idea and the approach. I, also believe, like, the skill game can be mostly atomized.
+Because it's a quantitative game. Right? You just let the numbers right and you okay. You need to really manage that you have a that you have a good measurement. It's like Yeah. I think at the measurable side is crucial. Or it it should not should not be.
+And how are you currently how are you currently operating? It's like how how big is your team?
+What's your focus? And what's your team's focus?
+Speaker 2
+
+Wednesday, 1:04 PM
+Yeah. So we mostly so Berlin, has evolved like, the right current vote
+Speaker 2
+
+Wednesday, 1:04 PM
+we came through start that Right now, the focus automate all the things possible in strategy we have a team who collate the what So yeah. So
+Speaker 3
+
+Wednesday, 1:05 PM
+automation and
+Speaker 2
+
+Wednesday, 1:05 PM
+building the Team Wise is just me and my cofounder who is couple of freelance.
+Speaker 3
+
+Wednesday, 1:05 PM
+Mhmm.
+Speaker 1
+
+Wednesday, 1:05 PM
+Okay. If I would come now and tell you, okay, I wanna do the measurement and the strategy piece with you. I we're not gonna implement, but we wanna see kind of what you produce.
+What would be the requirements and how much would it cost? Like, what would we need to do and how
+Speaker 3
+
+Wednesday, 1:05 PM
+much would it cost?
+Speaker 2
+
+Wednesday, 1:05 PM
+Yeah. So you need to create an account. Connect your Google Mhmm. And then Berlin would go back and forth for a couple of we we deliberately decide have a chat.
+Because a lot of things that
+Speaker 3
+
+Wednesday, 1:06 PM
+and that
+Speaker 2
+
+Wednesday, 1:06 PM
+So, Bolingwood, he sent emails collect. About what are the topics that you
+Speaker 3
+
+Wednesday, 1:06 PM
+are are like that.
+Speaker 2
+
+Wednesday, 1:06 PM
+And then based on these start creating dashboards.
+Speaker 3
+
+Wednesday, 1:06 PM
+But from
+Speaker 2
+
+Wednesday, 1:06 PM
+about four day on, start to get started.
+So Berlin would decide how money so what we call as action different sort of
+Speaker 3
+
+Wednesday, 1:06 PM
+So, like,
+Speaker 2
+
+Wednesday, 1:06 PM
+12 Like, internal kind of work that because otherwise, My credit
+Speaker 1
+
+Wednesday, 1:06 PM
+We buy credits, and then different actions require different credits.
+Speaker 2
+
+Wednesday, 1:06 PM
+No. No. So it's all what we do is we we get we give you two fifty points. Worth of that. That your cost you was $99 in the site, but we sort of automated good chunk of Yeah. So $49, we give you points worth of action.
+And
+Speaker 1
+
+Wednesday, 1:07 PM
+And how much is an action? It's like how many points does it that's how much is a blog post?
+Speaker 2
+
+Wednesday, 1:07 PM
+I think depends on the kind of blog post and the on total. Your profile. You have. So typically, it's ranging
+Speaker 1
+
+Wednesday, 1:07 PM
+Can you work with completely new brands?
+Speaker 2
+
+Wednesday, 1:07 PM
+Yeah. Yes. In fact So Twenty percent of our company. Are clients are sort They are picking
+Speaker 3
+
+Wednesday, 1:08 PM
+Okay.
+Speaker 1
+
+Wednesday, 1:08 PM
+So if you would like to run a test I think we couldn't connect you connect our Google search with Berlin. We couldn't do that. Legally.
+You need to go through a vetting process and you need to be selected as the vendor already,
+Speaker 3
+
+Wednesday, 1:08 PM
+where it's like,
+Speaker 1
+
+Wednesday, 1:08 PM
+that that kinda take time, it's bank. Right? But we could potentially let's say, invent a new brand or invent a new product And text how you do that.
+About we do a declined payment version for the bank. And we call it something like we balloon basically. Right? And then we test that. I think that's the way to go. That's one thing. I would be interested in. I have to discuss with the team whether we look into this. The other thing I'm interested in is a complete different topic, but it kind of hits the same area. The question is, not what do we do if customers look for products, But if you say, hey, agent, on my phone, let's say that. Right? Like, that's going to happen.
+Find me the best banking account that suits my needs price range of a 100 and 100 and two hundred dollars per year. Right? It's like how do what do we need to offer agents? How do they currently approach the website?
+How can we how can we analyze this and understand what they are actually doing and what they are looking for. This is this is a question. And then we wanna understand, like, what do we need to offer them?
+Speaker 2
+
+Wednesday, 1:10 PM
+Right. So if I understand your question correctly, what you gave me is a hypothetical your client and what you as brand watch
+Speaker 3
+
+Wednesday, 1:10 PM
+get that I get it
+Speaker 2
+
+Wednesday, 1:10 PM
+right.
+Speaker 1
+
+Wednesday, 1:10 PM
+No. Not not not exactly. So we are we as consumers are going to delegate tasks to agents I would believe this is gonna kick off once the agent is on the phone and heavily into Let's let's assume Apple is gonna do that in the next year. Okay? Once this hits this quality benchmark where you can call, like, hey. Phone or hey Siri, Find me the best find me the best banking account. Where do I get shoes around me? Well, like, where do we get my Adidas? Right? You delegate the task to an agent. Comes back to you with the result. But it molds you. It knows your profile. It knows it has a memory about you. And by that, it starts a search Right? It starts working with an LLM, maybe using the maybe using the tools part, I also believe that websites need to treat agents differently than consumers or customers. Right? It can be way more direct in what it can offer. It could be an API call and, you know, you get basically what you what you need.
+What I'd like to understand with the current traffic is this already happening?
+And what can be determined by the what are the tasks these agents are executing, estimating what task are they coming for, to try to answer, basically.
+Speaker 2
+
+Wednesday, 1:12 PM
+Right. So two questions. Right? So to answer first the first question, I think all the agents are right for the vast majority of websites.
+Speaker 3
+
+Wednesday, 1:12 PM
+Delivering The
+Speaker 2
+
+Wednesday, 1:12 PM
+changes like the Honeypot where to redirect the edge to other These are very isolated, I that think that's unless one off wider. Sites that So so like l0m.di.
+So if somebody say we are gonna respect way, then probably and after that, and that becomes
+Speaker 3
+
+Wednesday, 1:12 PM
+right now
+Speaker 2
+
+Wednesday, 1:12 PM
+I wouldn't I I wouldn't recommend my any of So for the second thing, right now, the observable stack bit what it What we hope see something like one Google search console website. Or somebody like your public information on these things are I I I I don't know and
+Speaker 3
+
+Wednesday, 1:13 PM
+I
+Speaker 1
+
+Wednesday, 1:13 PM
+Yeah. And I understand, like, your your point of view. You're coming very much from the content and CEO, GEO, strategy point of view?
+But in my opinion, there are there's also another movement which is the expectation that your agent actually do something on the client side. So could say, okay. Find me a banking account, but I could say open a banking account. And then you expect that your agent opens does all the formulas, forms for you and provides all the details and just comes back. Okay. Here, we still need to do identification. I have filled out all forms. We still need to do the identification. Still need to do the sign up. And this
+Speaker 3
+
+Wednesday, 1:14 PM
+is the prime say yes. Right? So there are there are going to be services that the brands provide because there is the expectation that the that the yeah. That the agents can execute things.
+Speaker 2
+
+Wednesday, 1:14 PM
+Yeah.
+Like like like you like you said, not Will be
+Speaker 3
+
+Wednesday, 1:14 PM
+prevalent when.
+Speaker 2
+
+Wednesday, 1:14 PM
+But you can how this panel trying So again, I believe it would be at least for short duration. Your There wouldn't be an agent flow that unless a big Google strategy. Do this otherwise, we will fall back to but yeah, I don't think that's I I do believe there's an
+Speaker 3
+
+Wednesday, 1:15 PM
+Mhmm.
+Speaker 1
+
+Wednesday, 1:15 PM
+Okay.
+Interesting.
+Speaker 3
+
+Wednesday, 1:16 PM
+There are two things I'm interested in
+Speaker 1
+
+Wednesday, 1:16 PM
+First of all, kind of testing your product.
+Speaker 3
+
+Wednesday, 1:16 PM
+I wonder how am I gonna do that? But let's see. Right? The second thing I'm interested in is because I'm not yet an expert, but I'm building the overall AI strategy.
+I'd like to have an exchange with you.
+Kind of pinpointing ideas like we did now if possible,
+Speaker 1
+
+Wednesday, 1:16 PM
+Yeah.
+But that would be, like, on an individual
+Speaker 3
+
+Wednesday, 1:16 PM
+level. Are you open to be kind of consultant, freelance consultant?
+Speaker 1
+
+Wednesday, 1:16 PM
+Maybe
+Speaker 2
+
+Wednesday, 1:16 PM
+we could do one or two other calls just for because of time on anything I've done. One. So I we started building, like, when I had Yeah.
+But if you have, like, very I mean, I would love
+Speaker 3
+
+Wednesday, 1:17 PM
+Yeah. I understand. Yeah. It makes sense. I have two kids as well. So know what you're talking about. Yeah. Yeah. I I understand you wanna focus on scale basically, doing things that can scale. Yep.
+Speaker 1
+
+Wednesday, 1:17 PM
+Okay.
+Speaker 2
+
+Wednesday, 1:17 PM
+On the first thing that you buying out the product, like I said, we
+Speaker 1
+
+Wednesday, 1:18 PM
+Okay. That can be completely from scratch.
+Speaker 3
+
+Wednesday, 1:18 PM
+How I gonna be seeing and stuff. And then it tells me what to do. And then
+Speaker 1
+
+Wednesday, 1:18 PM
+I have the freedom to to do it or not to do it, or do I have to do it?
+Speaker 2
+
+Wednesday, 1:18 PM
+Have to discard and So when you mock something Once just to make sure So yeah. So once the once your profile
+Speaker 3
+
+Wednesday, 1:19 PM
+get
+Speaker 1
+
+Wednesday, 1:19 PM
+Mhmm. Do you very believe that
+Speaker 3
+
+Wednesday, 1:19 PM
+that that we can better influence with content BLLMs or you believe that they're gonna focus on ads?
+Speaker 2
+
+Wednesday, 1:19 PM
+So short term. The next Yeah.
+Because the world is the only four set of people. Who are very
+Speaker 3
+
+Wednesday, 1:19 PM
+So I
+Speaker 2
+
+Wednesday, 1:19 PM
+think in the next year or you are can Not just the log things that matters to for what thing So right now, it YouTube video Reddit. But it has it just and even the type of we do a lot of Yeah. So do I answer the question? Yeah. I do believe
+Speaker 3
+
+Wednesday, 1:20 PM
+because because Google just announced that they gonna implement ads into their generative generative answers. And I think it's like this is the only real opportunity that they have to monetize on it. And we're gonna see I think we're gonna see that in OpenAI
+Speaker 1
+
+Wednesday, 1:21 PM
+as well.
+Speaker 3
+
+Wednesday, 1:21 PM
+And I wonder if, like, it would be against this kind of model to allow the manipulation with content or context. I think they would like to focus more on selling ads. I'm I'm curious to see is, like, how they're gonna do it. It's like how it's not offensive, so to say, against your expectation. Towards a answer. I I'm I'm curious to see how they
+Speaker 1
+
+Wednesday, 1:21 PM
+how they all implement it.
+Speaker 3
+
+Wednesday, 1:21 PM
+Okay.
+Alright.
+Thanks for this exchange. It's really interesting.
+I think on this on this end, like, how to optimize the tune. I can tell you my customer is not ready yet to optimize its COT. They're not Right? They are fighting and fighting and fighting.
+But but I I'd like to I'd like to
+Speaker 1
+
+Wednesday, 1:22 PM
+further integrate the process. I'm currently working on the content creation
+Speaker 3
+
+Wednesday, 1:22 PM
+piece where we optimize a lot of things.
+And I think this can easily funnel funnel in. But, yeah, As I said, like, testing it will be difficult We need to come up with something completely new. Yep. Of course.
+Speaker 2
+
+Wednesday, 1:22 PM
+Like I said, just let me know whenever you have sent.
+Speaker 3
+
+Wednesday, 1:22 PM
+Yeah. Awesome. Alright. Shane, thanks for the nice call, and have a nice evening, I suppose.
+Close to. Yeah.
+Alright. Thank you. Bye bye.
