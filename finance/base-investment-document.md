@@ -3,10 +3,6 @@
 > This is the single source of truth for all fundraising materials. Use this document to feed pitch decks, one-pagers, executive summaries, and data rooms.
 
 ---
-
-concerns
-- The current revenue and user count
-- First party data (keywords is actually coming from semrush and dataforseo)
 ## 1. Company Overview
 
 - **Company Name:** Agent Berlin (Berlin)
@@ -28,7 +24,7 @@ Berlin's current positioning is the result of focused product discovery over ~10
 
 1. **Conversational SEO data layer (mid-2025):** Built a chat interface for marketers to query and explore their SEO data in natural language. Validated that teams desperately needed unified data access — but learned that *talking to data* wasn't enough. Users wanted the platform to *do the work*, not just answer questions.
 
-2. **Automated SEO assistant (late 2025):** Evolved into an end-to-end automated SEO assistant, executing full workflows autonomously. Validated the automation thesis — but discovered that one-size-fits-all automation didn't match how teams actually operate. Agencies and in-house teams need workflows they can build, customize, schedule, and govern.
+2. **Automated SEO assistant for founders (late 2025):** Evolved into an end-to-end automated SEO assistant targeting startup founders. Validated the automation thesis — but learned that founders rarely treat SEO as a primary priority; they either outsource it to an agency or hire a dedicated marketer. This insight clarified that the real buyers are the agencies and marketers who actually own SEO day-to-day, directly shaping the repositioning that followed.
 
 3. **Programmable agentic workflow infrastructure (early 2026 – current):** Repositioned as programmable infrastructure — a unified data, workflow, and intelligence layer where teams build and run their own agentic workflows without engineering overhead. This is where product-market fit signals are strongest, with agencies and enterprise marketing teams engaging as Founding Partners.
 
@@ -132,7 +128,7 @@ This explains Berlin's pricing power: customers compare the platform to a hire, 
 
 4. **The shift from tools to infrastructure.** The market is moving from "SEO tools" (things you check) to "SEO infrastructure" (systems that run). Berlin sits at this transition — it doesn't just surface data, it executes workflows, schedules operations, and acts on behalf of teams.
 
-5. **First-party data is becoming essential.** Tightening privacy laws (GDPR/CCPA) and third-party cookie deprecation are driving companies to build their own data repositories. Berlin's proprietary crawlers and keyword databases provide privacy-safe, continuously refreshed data.
+5. **Owning the data layer is becoming essential.** Tightening privacy laws (GDPR/CCPA) and third-party cookie deprecation are driving companies to consolidate their data infrastructure. Berlin's proprietary crawlers and its cached keyword database (sourced from leading providers, stored and served from Berlin's own infrastructure) provide a privacy-safe, continuously refreshed data layer that reduces costs over time as the cache compounds.
 
 ### VC Validation
 
@@ -142,21 +138,27 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 ---
 
-## 4. The Solution [need a lot of modification]
+## 4. The Solution
 
 - **What have you built?**
-  Berlin is programmable infrastructure for inbound growth. It combines a first-party SEO data engine (keyword intelligence, site crawlers, competitor monitoring), a unified data access and action layer (connecting GSC, GA4, Bing Webmaster Tools, CMS, social media accounts and more), an agentic workflow builder (no-code, chat-based), and an interoperability layer that exposes all of this as tools inside external LLM apps (Claude, ChatGPT). On top of this sits organizational intelligence — brand context memory, team management, and governance.
+  Berlin is programmable infrastructure for inbound growth. It combines an integrated SEO data engine (keyword intelligence sourced from providers like Semrush and DataForSEO and cached in Berlin's own database, proprietary site crawlers, competitor monitoring), a unified data access and action layer (connecting GSC, GA4, Bing Webmaster Tools, CMS, social media accounts and more), an agentic workflow builder (no-code, chat-based), and an interoperability layer that exposes all of this as tools inside external LLM apps (Claude, ChatGPT). On top of this sits organizational intelligence — brand context memory, team management, and governance.
+
+  A core layer of the platform is the **agentic workflow marketplace** — a library of pre-built, vetted workflows that automate complex, multi-step SEO operations and can be run with a single click. These aren't simple templates; they are fully structured agentic workflows that orchestrate data retrieval, analysis, LLM reasoning, and action-taking across multiple systems. The marketplace lowers the barrier to automation dramatically — teams get immediate value from expert-built workflows without needing to understand the underlying orchestration, while still retaining the ability to build custom workflows for anything the marketplace doesn't cover.
+
+  Berlin is also building an expanding integration layer across a wide range of third-party systems — data sources, CMS platforms, social media channels, indexing APIs, and more — with the goal of becoming a **consolidated agentic system**. Users connect their tools once; Berlin handles authentication, data normalization, and orchestration across all of them. The result is that teams no longer need to subscribe to and manage a fragmented stack of point tools — Berlin's subscription covers the infrastructure, the data, and the integrations in one place.
 
 - **How does it work? (plain language)**
-  Users connect their data sources and action parties (like CMS and social media accounts) once. Berlin normalizes everything into a single queryable/actionable layer alongside its own proprietary keyword and crawl data. Users then describe what they need in natural language — Berlin generates structured, multi-step workflows that can be run on demand, scheduled, shared across the org, and governed with human-in-the-loop review. The same capabilities are accessible from Claude, ChatGPT, or any LLM environment via Berlin's tool layer.
+  Users connect their data sources and action endpoints (CMS, social media accounts, analytics platforms, etc.) once. Berlin normalizes everything into a single queryable and actionable layer alongside its integrated keyword data (sourced from leading providers, cached in Berlin's own database) and proprietary crawl data. From there, users have two paths: they can browse the workflow marketplace and run pre-built, vetted workflows with a single click — covering the most common and complex SEO operations out of the box — or they can describe what they need in natural language and Berlin generates structured, multi-step custom workflows. All workflows can be run on demand, scheduled, shared across the org, and governed with human-in-the-loop review. The same capabilities are accessible from Claude, ChatGPT, or any LLM environment via Berlin's tool layer.
 
 - **Core value proposition:**
-  - For agencies: More clients, same team size, better deliverables, plus a new AI visibility service line to sell
-  - For in-house teams: Unified data layer, no dev dependency, AI visibility metrics for leadership, SEO→pipeline attribution
+  - For agencies: More clients, same team size, better deliverables, plus a new AI visibility service line to sell. The workflow marketplace gives agencies instant access to proven, complex workflows without building from scratch — reducing ramp-up time for new clients and standardizing delivery quality.
+  - For in-house teams: Unified data layer, no dev dependency, AI visibility metrics for leadership, SEO→pipeline attribution. One subscription replaces an entire stack of point tools — teams no longer pay separately for keyword data, crawling, rank tracking, and workflow automation across multiple vendors.
 
 - **Key differentiators vs. alternatives:**
   - **Not a chatbot — operational infrastructure.** Workflows are persistent, scheduled, shared, and governed. Berlin runs continuously, not just when someone is typing.
-  - **First-party data engine.** Built-in keyword database, crawlers, and competitor monitoring — no third-party subscriptions required for core SEO data.
+  - **Agentic workflow marketplace.** A curated library of pre-built, vetted workflows that handle complex multi-step operations with a single click. Users get immediate automation value on day one without building anything. No competitor offers a marketplace of ready-to-run agentic workflows at this level of complexity and reliability.
+  - **Consolidated platform — one subscription replaces many.** Berlin is building integrations across a broad set of third-party systems (data providers, CMS platforms, social channels, analytics tools, indexing APIs) and bundling them into a single agentic platform. Users don't need to pay for or manage separate subscriptions for keyword data, site auditing, rank tracking, or content distribution — Berlin's subscription covers the infrastructure, the data, and the integrations.
+  - **Integrated data engine.** Keyword intelligence sourced from providers like Semrush and DataForSEO, cached and served through Berlin's own database — users never need their own third-party subscriptions. Crawling infrastructure (Snake.blue) is fully proprietary. Once data is pulled, it's stored in Berlin's own DB and cached, drastically reducing data costs over time for both Berlin and its users.
   - **No engineering overhead.** Handles complexity that typically requires developer involvement, with significantly higher accuracy than typical AI-assisted SEO tools.
   - **Interoperability by design.** Berlin is infrastructure, not a destination app. Works inside whatever LLM environment users already live in.
   - **Brand context memory.** Organizational knowledge persists across every interaction, keeping outputs consistent and on-brand without re-explaining.
@@ -169,7 +171,7 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 | Feature                                   | Description                                                                                                                                                                                                              | Status           |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
-| **Keyword Intelligence**                  | Built-in keyword database comparable to leading data providers. Keyword research, volume, difficulty, and SERP data without third-party subscriptions.                                                                   | Live             |
+| **Keyword Intelligence**                  | Keyword research, volume, difficulty, and SERP data sourced from providers (Semrush, DataForSEO) and cached in Berlin's own database. Users get access to leading-provider-quality data without needing their own third-party subscriptions — Berlin handles sourcing, caching, and cost optimization. | Live             |
 | **Site Crawling & Competitor Monitoring** | Automated crawlers keeping site and competitor data fresh and queryable. Technical SEO, content structure, internal linking, and page-level metrics always up to date.                                                   | Live             |
 | **Unified Data Access Layer**             | Single API interface connecting all SEO data sources (GSC, GA4, Bing Webmaster Tools, etc.). Connect once, available across all workflows and conversations.                                                             | Live             |
 | **Third-Party Integrations**              | Pre-built connections to Google Search, SERP APIs, Reddit, CMS platforms, and expanding list of data sources and action endpoints. Platform handles auth and data normalization.                                         | Live & Expanding |
@@ -248,14 +250,14 @@ The strongest market validation is where top-tier capital is deploying. In the A
 > **Current phase:** Pre-commercial launch. Berlin completed a significant product repositioning in late 2025, evolving from a conversational SEO tool to programmable agentic workflow infrastructure targeting agencies and enterprise marketing teams. The company is currently in its Founding Partner Program, validating product-market fit with design partners before scaling go-to-market.
 
 - **MRR / ARR:**
-  - Legacy product: ~$800 MRR (~$9.6K ARR) from ~20 active paid users carried over from the pre-pivot product. These users are on a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). This revenue is not representative of the new platform's target market or pricing.
-  - New platform: Pre-revenue. Currently in Founding Partner Program phase with unpaid design partners.
+  - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity but churned when that Stripe account was closed. All historical paid users were on the previous version of the product — none on the current platform.
+  - New platform: Pre-revenue. Currently in Founding Partner Program phase with unpaid design partners. Several pilot partners have agreed to convert to paid upon requirements being met, but no revenue has been recognized.
 
 - **Growth rate:** N/A — pre-commercial launch on new platform.
 
 - **Number of customers / users:**
-  - 20 legacy paid users (pre-pivot ICP)
-  - 5 active pilot partners on the new platform (Founding Partner Program)
+  - 5 total historical paid users (pre-pivot ICP, via Stripe — no longer active)
+  - 5 active pilot partners on the new platform (Founding Partner Program, unpaid)
 
 - **Retention / churn:** Insufficient data on the new platform. Legacy product retention data is not representative of the current positioning and ICP.
 
@@ -321,7 +323,7 @@ Berlin is building one fully autonomous affiliate marketing website — managed 
 
 ### Owned Infrastructure: Snake.blue Crawler
 
-Berlin operates Snake.blue, an AI-first web crawler with native MCP support. Snake.blue underpins Berlin's first-party data engine and is also exposed as standalone infrastructure — extending Berlin's surface area as a platform and reinforcing the company's credibility as a builder of AI-native SEO tooling, not just a wrapper around third-party data.
+Berlin operates Snake.blue, an AI-first web crawler with native MCP support — this is fully proprietary infrastructure built by the team. Snake.blue underpins Berlin's crawl data layer and is also exposed as standalone infrastructure — extending Berlin's surface area as a platform. For keyword intelligence, Berlin sources data from providers like Semrush and DataForSEO, caches it in its own database, and serves it to users — so users never need their own third-party subscriptions. The caching layer means data costs decrease significantly over time as the database grows, creating both a cost advantage and a compounding data asset.
 
 ### Sales Motion
 
@@ -395,7 +397,7 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 
 | Capability | Berlin | Profound | AirOps | Semrush | Ahrefs | n8n/Make | DataForSEO |
 |---|---|---|---|---|---|---|---|
-| First-party keyword database | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ |
+| Integrated keyword database (cached, no user subscription needed) | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ |
 | Site crawlers & competitor monitoring | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ |
 | AI search / GEO visibility | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
 | Custom workflow building (no-code) | ✅ | ❌ | Partial | ❌ | ❌ | ✅* | ❌ |
@@ -416,14 +418,14 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 
 **vs. Incumbents (Semrush, Ahrefs, Conductor, Botify):** Incumbents are data companies adding AI features to existing dashboard architectures. Berlin is infrastructure-first — built from day one for agentic workflow orchestration, not retrofitted. Rebuilding as an agentic platform requires fundamental architectural changes that incumbents can't make without disrupting their core products.
 
-**vs. DIY automation (n8n, Make, DataForSEO):** Powerful but fragile, expensive in aggregate, and inaccessible to non-technical team members. Berlin bundles the data layer, workflow engine, and governance into a single platform — no separate API subscriptions, no engineering overhead, no hallucination problems from juggling multiple MCPs.
+**vs. DIY automation (n8n, Make, DataForSEO):** Powerful but fragile, expensive in aggregate, and inaccessible to non-technical team members. Berlin bundles the data layer (keyword data sourced from providers and cached, proprietary crawlers), workflow engine, and governance into a single platform — users don't need their own API subscriptions, no engineering overhead, no hallucination problems from juggling multiple MCPs.
 
 **vs. Autonomous agents (Search Atlas/OTTO, Relixir):** Black-box systems where the agent decides and executes. Berlin gives teams control — build custom workflows, govern execution with human-in-the-loop review, and share across the organization. Infrastructure teams build on, not a service that runs for you.
 
 ### Defensibility
 
-- **Technology / IP** — Agentic workflow engine, first-party data infrastructure, 80+ ranking signal intelligence layer. Purpose-built architecture for workflow orchestration that incumbents cannot retrofit without fundamental rebuilds.
-- **Data moat** — First-party keyword database, crawl data, and continuous competitive monitoring create proprietary data assets that compound over time. Every workflow execution enriches the platform's understanding of search patterns.
+- **Technology / IP** — Agentic workflow engine, proprietary crawl infrastructure (Snake.blue), integrated keyword data layer with compounding cache, 80+ ranking signal intelligence layer. Purpose-built architecture for workflow orchestration that incumbents cannot retrofit without fundamental rebuilds.
+- **Data moat** — Proprietary crawl infrastructure (Snake.blue), cached keyword database (sourced from providers, stored in Berlin's own DB), and continuous competitive monitoring create compounding data assets. As the cache grows, data costs decrease drastically while coverage increases. Every workflow execution enriches the platform's understanding of search patterns.
 - **Switching costs** — Deep integration with data sources, brand context, workflow libraries, and team processes create high switching costs once embedded. Agencies building client delivery on Berlin's workflows face significant migration friction.
 - **Speed of execution** — Founder combines AI infrastructure engineering + digital marketing agency experience. This rare overlap enables faster iteration than pure-tech competitors (who don't understand SEO operations) or pure-marketing competitors (who can't build the infrastructure).
 - **Network effects (emerging)** — Workflow template library grows with every customer deployment. As Founding Partners create proven workflows, the template marketplace becomes a self-reinforcing distribution channel. Community effects from r/agent_seo (3.3K members) and education content create organic awareness loops.
@@ -471,7 +473,7 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 
 ### Historical Summary
 
-Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company carries ~$800/month in legacy MRR from ~20 pre-pivot users on a different ICP (individual SEOs at ~$49/month avg); this revenue is expected to churn as the company shifts focus to its new agency/enterprise ICP. There has been no material revenue from the new platform, which is in the Founding Partner Program phase with unpaid design partners.
+Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company had 5 total historical paid users (via Stripe) on the pre-pivot product, plus an additional cohort that paid through a previous Dubai entity — all have since churned. There is no active MRR. The new platform is in the Founding Partner Program phase with unpaid design partners; several have agreed to convert to paid upon requirements being met.
 
 ### Current State
 
@@ -481,7 +483,7 @@ Berlin has operated lean through its product evolution phase (May 2025 – prese
   - LLM API costs: ~$300
   - Logistics & transportation: ~$300
   - Software subscriptions: ~$200
-- **Legacy MRR:** ~$800 (expected to churn — different ICP from new platform)
+- **Legacy MRR:** $0 (all historical paid users have churned)
 - **Runway at current burn:** ~10 months
 - **Runway at planned burn (with marketing spend):** ~2 months
 
@@ -604,21 +606,23 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
   - Intelligence infrastructure built (80+ ranking signals, automated prioritization, GSC/GA integrations)
   - Agentic workflow engine live and operational
   - LLM interoperability layer (MCP) live — works inside Claude, ChatGPT
-  - First-party keyword database and crawlers operational
+  - Integrated keyword database (sourced from leading providers, cached in own DB) and proprietary crawlers operational
   - Founding Partner Program launched — 5 active design partners including Fliki.ai (~$1M MRR), Webandcrafts (100+ client agency), BlockSurvey, and Search Indicators (20+ client agency)
 
 ---
 
 ## 17. Risks & Mitigations
 
-| Risk | Likelihood | Impact | Mitigation |
-|------|-----------|--------|------------|
-| **Incumbents add AI/workflow features** | Medium | High | Berlin's architecture is workflow-first, not bolted on. Incumbents (Ahrefs, SEMrush) are data companies — rebuilding as agentic platforms requires fundamental architectural changes. Speed of execution and founder-market fit are key advantages. |
-| **LLM platform risk (OpenAI, Anthropic)** | Low-Medium | Medium | Berlin is LLM-agnostic — it's the data and workflow layer, not the model. Interoperability with multiple LLMs is a core design principle. |
-| **Agency market adoption speed** | Medium | Medium | Founding Partner Program validates with real users before scaling. Proof-first approach de-risks product direction. |
-| **AI search landscape evolving rapidly** | High | Medium | Berlin's flexible workflow architecture can adapt to new search paradigms. First-party data and GEO/AEO capabilities position us ahead of the curve. |
-| **Data privacy / crawler compliance** | Low-Medium | Medium | Crawlers only access publicly available data, respect robots.txt, and collect no personal information. GDPR/CCPA compliance roadmap in progress for enterprise readiness. |
-| **Single founder / key-person risk** | Medium | High | First GTM hire planned with this raise to reduce single-point-of-failure. Founder's combined AI engineering + agency background is hard to replicate but the hire plan builds operational depth. |
+| Risk                                      | Likelihood | Impact | Mitigation                                                                                                                                                                                                                                                                                          |
+| ----------------------------------------- | ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Incumbents add AI/workflow features**   | Medium     | High   | Berlin's architecture is workflow-first, not bolted on. Incumbents (Ahrefs, SEMrush) are data companies — rebuilding as agentic platforms requires fundamental architectural changes. Speed of execution and founder-market fit are key advantages.                                                 |
+| **LLM platform risk (OpenAI, Anthropic)** | Low-Medium | Medium | Berlin is LLM-agnostic — it's the data and workflow layer, not the model. Interoperability with multiple LLMs is a core design principle.                                                                                                                                                           |
+| **Agency market adoption speed**          | Medium     | Medium | Founding Partner Program validates with real users before scaling. Proof-first approach de-risks product direction.                                                                                                                                                                                 |
+| **AI search landscape evolving rapidly**  | High       | Medium | Berlin's flexible workflow architecture can adapt to new search paradigms. Proprietary crawl infrastructure, integrated keyword data layer, and GEO/AEO capabilities position us ahead of the curve.                                                                                                |
+| **Data privacy / crawler compliance**     | Low-Medium | Medium | Crawlers only access publicly available data, respect robots.txt, and collect no personal information. GDPR/CCPA compliance roadmap in progress for enterprise readiness.                                                                                                                           |
+| **Single founder / key-person risk**      | Medium     | High   | First GTM hire planned with this raise to reduce single-point-of-failure. Founder's combined AI engineering + agency background is hard to replicate but the hire plan builds operational depth. Also actively looking for a co-founder who can compliment the skills and expertise to build Berlin |
+| **Fundamental shift in how the web works** | Medium    | High   | If agents fully reshape how people search and buy online, the current SEO paradigm could become unrecognizable. However, the core assumption holds: regardless of the medium, users will always need to search for and purchase things. Berlin's architecture is workflow-first, not SEO-mechanic-first — workflows are the first-class citizen, not any particular search engine's ranking algorithm. The platform can retarget its workflow engine, data layer, and integrations toward whatever the web becomes (agent-to-agent commerce, conversational discovery, etc.) without a fundamental rebuild. |
+| **AI-native competitors expand into workflow orchestration** | Medium | High | Well-funded AI-native platforms like Profound ($1B valuation, Sequoia/Kleiner Perkins/Lightspeed backed) have already begun expanding beyond monitoring into execution — Profound recently launched "Profound Agents" for autonomous campaign execution. Other GEO-focused startups (Peec AI, Relixir, Search Party) could follow the same trajectory. Mitigation: these platforms are monitoring-first and content-first by architecture — bolting on workflow orchestration is fundamentally different from building it as the core product. Berlin's workflow engine, integrated data layer, interoperability (MCP), and agentic workflow marketplace create structural advantages that monitoring platforms cannot replicate by adding an "agents" feature. The same architectural constraint that limits incumbents applies here: retrofitting execution onto an analytics platform is a different engineering challenge than building execution-first infrastructure. |
 
 ---
 
@@ -638,5 +642,3 @@ _Last updated: March 2026_
 _Document owner: Sherin Chacko Thomas_
 
 ---
-
-> **Note:** Sections 14 (The Ask), 15 (Cap Table & Legal), 12 (Team), 16 (Social Proof), and 17 (Risks) have been completed. Remaining sections (3, 7, 8, 13) may still require founder review and updates as the business evolves.
