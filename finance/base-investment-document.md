@@ -458,12 +458,12 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 
 | Name | Role | Background | LinkedIn |
 |------|------|------------|----------|
-| Sherin Chacko Thomas | Founder & CEO (Sole Member) | Co-built RedisAI (most performant runtime for AI in production at the time). Infrastructure engineer at Lightning.ai (creators of PyTorch Lightning, one of the most popular deep learning libraries). Author of the first published book on PyTorch. Founded and scaled a dev + marketing agency in Dubai to $350K revenue in year two. Combines deep AI infrastructure engineering with firsthand understanding of SEO workflows, agency pain points, and client dynamics. | [LinkedIn](https://linkedin.com/in/sherinchackothomas) |
+| Sherin Chacko Thomas | Founder & CEO (Sole Member) | Co-built RedisAI (most performant runtime for AI in production at the time). Infrastructure engineer at Lightning.ai (creators of PyTorch Lightning, one of the most popular deep learning libraries). Author of the first published book on PyTorch. Founded and scaled a dev + marketing agency in Dubai to $350K revenue in year two. Combines deep AI infrastructure engineering with firsthand understanding of SEO workflows, agency pain points, and client dynamics. | [LinkedIn](https://linkedin.com/in/hhsecond) |
 
-- **Key hires planned:**
+- **Key hires planned:** First GTM hire (growth marketer / community manager) with this raise. Additionally, early co-founder discussions in progress with Ticku Mammen Koshy for a CMO / Head of Growth role — a marketing professional who has served as an advisor to Berlin since its early days.
 
 - **Why is this team uniquely positioned to win?**
-  Founder combines AI infrastructure engineering with hands-on agency experience — a rare combination that is precisely what this product requires. Co-built RedisAI (the most performant AI-in-production runtime at the time), then built AI app infrastructure at Lightning.ai (creators of PyTorch Lightning). Authored the first published book on PyTorch. After Lightning, founded a dev + digital marketing agency in Dubai, scaling to $350K in year two before shutting it down to go all-in on Berlin. This background means the founder has both built production AI systems at scale and personally experienced the exact agency pain points Berlin solves.
+  Founder combines AI infrastructure engineering with hands-on agency experience — a rare combination that is precisely what this product requires. Co-built RedisAI (the most performant AI-in-production runtime at the time), then built AI app infrastructure at Lightning.ai (creators of PyTorch Lightning). Authored the first published book on PyTorch. After Lightning, founded a dev + digital marketing agency in Dubai, scaling to $350K in year two before shutting it down to go all-in on Berlin. This background means the founder has both built production AI systems at scale and personally experienced the exact agency pain points Berlin solves. The potential addition of a marketing co-founder would complement the technical foundation with dedicated GTM leadership.
 
 ---
 
