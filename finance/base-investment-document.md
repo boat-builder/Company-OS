@@ -1,3 +1,6 @@
+> [!WARNING]
+> **SYNC CHECK REQUIRED**: This markdown is the source of truth. When updating this document, verify that any corresponding data in `funding-page/index.html` does not diverge. The HTML is the investor-facing deck and contains a curated subset of this information — ensure consistency where overlap exists.
+
 # Investment Base Document — Agent Berlin
 
 > This is the single source of truth for all fundraising materials. Use this document to feed pitch decks, one-pagers, executive summaries, and data rooms.
@@ -635,6 +638,11 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 - Technical architecture overview
 - Data privacy & AI usage disclosures
 - Any other supporting materials
+
+---
+
+> [!WARNING]
+> **SYNC CHECK REQUIRED**: If you updated this document, verify that `funding-page/index.html` reflects any changes to shared data points. The HTML deck contains only a curated subset of this information — check for divergence, not parity.
 
 ---
 
