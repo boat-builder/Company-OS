@@ -4,6 +4,9 @@
 
 ---
 
+concerns
+- The current revenue and user count
+- First party data (keywords is actually coming from semrush and dataforseo)
 ## 1. Company Overview
 
 - **Company Name:** Agent Berlin (Berlin)
@@ -336,31 +339,95 @@ No geographic restriction in this phase. Berlin's product is cloud-native and la
 
 ## 10. Competitive Landscape
 
-- **Direct competitors:**
-  `[FILL IN — any AI-native SEO platforms, workflow-first SEO tools]`
+The AI search optimization space has attracted significant venture capital since 2024, validating the market but also creating a crowded landscape. Berlin's competitive advantage lies in its unique positioning as *programmable infrastructure* — not a dashboard, not a point solution, and not a black-box agent, but the operational layer that teams build on.
 
-- **Indirect competitors / incumbents:**
-  - **Point tools:** Ahrefs, SEMrush, Moz, Screaming Frog (data but no workflow orchestration, no AI search)
-  - **DIY automation:** n8n, custom scripts, DataForSEO API direct (powerful but fragile, not team-accessible)
-  - **Generic AI assistants:** ChatGPT/Claude used directly for SEO (no persistent workflows, no data integration, no governance)
+### Direct Competitors: AI-Native SEO & GEO Platforms
 
-- **The "do nothing" alternative:**
-  - Continue cobbling together 5–10 tools with spreadsheets and manual work
-  - Hire more people to handle growing workload
-  - Ignore AI search visibility entirely
+**Profound** — $1B valuation, $155M raised (Sequoia, Kleiner Perkins, Lightspeed). Tracks brand visibility across 10+ AI engines (ChatGPT, Claude, Perplexity, Google AI Overviews, Gemini, Copilot, DeepSeek, Grok). 700+ enterprise customers including 10% of Fortune 500. Recently launched "Profound Agents" for autonomous campaign execution. *Limitation:* Profound is a monitoring-first platform expanding into automation. It tells enterprises where they're visible in AI search but doesn't provide the unified SEO data layer, custom workflow building, or traditional SEO infrastructure that Berlin offers. Enterprises still need separate tools for keyword research, site auditing, and workflow orchestration.
 
-- **Competitive positioning (what you do better):**
-  - **vs. Ahrefs/SEMrush:** Berlin is a workflow and automation layer, not just a data provider. It combines data from multiple sources (including its own) into executable, scheduled workflows — no developer required.
-  - **vs. DIY automations:** Berlin provides team-accessible, governed, shareable workflows with brand context. No brittle scripts to maintain, no technical barrier for non-dev team members.
-  - **vs. Generic AI chat:** Berlin has structured, reliable workflows (not one-off chat), persistent data connections, scheduling, reporting, review/approval — operational infrastructure, not a chatbot.
+**AirOps** — $225M valuation, $60M raised (Greylock, Unusual Ventures, Wing). Content engineering platform that analyzes brand performance across on-site and off-site channels, then creates and refreshes brand-consistent content at scale. Clients include Ramp, Webflow, Kayak, Klaviyo, Wiz. Grew from 20 to ~100 employees in 2025. *Limitation:* AirOps is content-first with modular workflow steps ("Power Steps"). It excels at content creation and optimization but doesn't provide the broader SEO data infrastructure (keyword databases, crawlers, GSC/GA4 integration) or the general-purpose workflow orchestration that Berlin offers. Teams still need separate tools for technical SEO, rank tracking, and competitive monitoring.
 
-- **Defensibility:**
-  - [x] Technology / IP — Agentic workflow engine, first-party data infrastructure, 80+ ranking signal intelligence layer
-  - [ ] Network effects — `[FILL IN — potential for workflow template marketplace, community effects]`
-  - [x] Data moat — First-party keyword database, crawl data, and continuous competitive monitoring create proprietary data assets
-  - [x] Switching costs — Deep integration with data sources, brand context, workflow libraries, and team processes create high switching costs once embedded
-  - [x] Speed of execution — Founder combines AI infrastructure engineering + digital marketing agency experience; uniquely positioned to iterate faster than pure-tech or pure-marketing competitors
-  - [ ] Brand / trust — `[FILL IN]`
+**Daydream** — $23.4M raised (First Round Capital, Basis Set Ventures). Automates programmatic SEO for AI search by connecting product feeds, databases, and internal docs to generate and manage large volumes of structured content pages. *Limitation:* Narrowly focused on programmatic content generation from structured data. Lacks broader SEO workflow automation, doesn't provide keyword intelligence or crawler infrastructure, and isn't designed for cross-functional SEO operations or agency multi-client management.
+
+**Peec AI** — $100M+ valuation (tripled in 4 months), $21M raised (Singular). Berlin-based European GEO leader using proprietary UI scraping to simulate real user interactions with AI search engines. 1,300+ companies and agencies; $4M+ ARR in 10 months. Clients include Axel Springer, Chanel, n8n, ElevenLabs, TUI. *Limitation:* Dashboard-focused visibility tracking and sentiment analysis. No workflow orchestration, no programmable infrastructure, no first-party SEO data engine.
+
+**Search Atlas / OTTO SEO** — Won Best AI Search Software at Global Search Awards two years running. OTTO is an autonomous AI SEO agent that auto-detects and deploys technical fixes, content optimizations, and link building. Centralizes keyword research, content optimization, technical audits, and rank tracking. *Limitation:* Black-box automation — the system decides and executes rather than letting teams build custom workflows. Not programmable or extensible; doesn't serve as infrastructure that teams build on top of.
+
+**Frase** — Agentic SEO/GEO platform with 80+ specialized AI agent skills spanning research, creation, optimization, and tracking. Offers MCP integration for use inside Claude and other LLM apps. Recently added GEO tracking across multiple AI platforms. *Limitation:* Content-centric — strong on research and writing workflows but lacks the unified data engine (keyword databases, crawlers, competitive monitoring) and the multi-client operational infrastructure that agencies need.
+
+**Relixir** — YC S25, autonomous GEO agent ("Rex") that monitors AI visibility, generates optimized content, and auto-publishes. Claims 17% lead lift and 80 hours/month saved per customer. *Limitation:* Managed autonomous agent, not programmable infrastructure. The system runs its own playbook — teams can't build custom workflows or govern execution at a granular level.
+
+**Search Party** — $3.5M seed (Fuse VC). Founded by the GRIN team (built $1B+ influencer platform). Maps where AI engines source answers and activates workflows to influence those sources. *Limitation:* Early stage (beta). Focused on AI source influence rather than comprehensive SEO operations.
+
+**GenFlux** — $4.2M seed (Symbolic Capital). Multi-engine tracking across 8+ AI platforms with proprietary "Answer Rank Scoring." *Limitation:* Analytics-only — tracks visibility but doesn't automate the response.
+
+**Otterly AI** — Integrated into Semrush App Center. Tracks brand visibility across ChatGPT, Perplexity, and AI Overviews within Semrush's dashboard. *Limitation:* Monitoring add-on, not a standalone platform. No workflow automation or execution capability.
+
+### Indirect Competitors / Incumbents
+
+**Semrush** — $443.6M revenue (2025), 117K+ paying customers. Launched "Semrush One" (Q4 2025) unifying traditional SEO toolkit with AI Visibility Toolkit tracking brand presence across ChatGPT, Perplexity, Gemini, and AI Overviews. Added AI-powered Keyword Strategy Builder, Content Optimizer, and GBP Agent. Customers paying $50K+/year grew 72% YoY. *Critical development:* Acquired by Adobe (announced Nov 2025, expected close H1 2026). *Limitation:* Feature-rich but tools-first, not workflow-first. AI features are bolted onto an existing dashboard architecture. No agentic workflow orchestration, no custom automation building for agencies, API access restricted to $499+/month tier. Adobe acquisition may slow independent innovation and shift focus toward enterprise marketing cloud integration.
+
+**Ahrefs** — ~$149M revenue (2024, 49% YoY growth), bootstrapped. Added "Brand Radar" for tracking mentions across ChatGPT, Perplexity, and AI Overviews (100M+ prompt database). Launched MCP integration for AI-powered report generation and AI Keyword Suggestions. *Limitation:* Best-in-class backlink data but minimal workflow automation. MCP integration is data access, not orchestration. Still a dashboard tool, not programmable infrastructure.
+
+**Conductor** — Forrester Wave Leader (Q3 2025, highest scores in 16/23 criteria). Added 50+ enterprise AI customers in Q3 2025 including BlackRock, Four Seasons, TD Bank. First to launch official ChatGPT App for enterprise AI brand intelligence. Offers scaled AI content generation and end-to-end AEO/SEO measurement. *Limitation:* Most aggressive incumbent but still analytics-first. Content generation is templated at scale, not truly agentic. No programmable workflow layer for teams to build custom operations.
+
+**Botify** — Forrester Wave Strong Performer (Q3 2025, highest scores in AI-integrated SEO and workflow automation). "PageWorkers" autonomously deploy 50+ optimizations per quarter vs. 4 manually. 82% of customers using Botify Assist in workflows. Launched AI Visibility tracking (Oct 2025). *Limitation:* Most agentic of the incumbents but limited to technical SEO. Doesn't address keyword intelligence, content workflows, or broader inbound growth automation.
+
+**BrightEdge** — Trusted by 57% of Fortune 500. Launched "AI Catalyst" (April 2025) for tracking brand presence across generative AI engines. Produces widely-cited AI traffic research. *Limitation:* Measurement and reporting focused. No workflow automation or execution capability.
+
+**seoClarity** — Enterprise platform with "Content Fusion" blending strategy, performance data, and competitive context for AI-assisted content. AI search visibility tracking across ChatGPT, Gemini, Perplexity. *Limitation:* Template-based programmatic SEO, not truly agentic. Content-focused without broader workflow orchestration.
+
+### DIY Automation Alternatives
+
+**n8n / Make / Zapier** — General-purpose workflow automation platforms increasingly used for SEO. n8n offers 70+ AI nodes with LangChain integration and is the most powerful for custom SEO workflows. Make offers 7,000+ integrations at lower cost. *Limitation:* All require engineering skill to configure. None provide proprietary SEO data — teams must bring their own Ahrefs/Semrush/DataForSEO subscriptions and manage API authentication. Workflows are fragile, not team-accessible, and lack SEO-specific governance. The hallucination problem with LLMs handling multiple data sources via MCPs leads to frequent errors that go unnoticed.
+
+**DataForSEO** — Pay-as-you-go SEO API provider trusted by 750+ software companies. Recently added MCP Server for Claude Code integration. Comprehensive keyword, SERP, and backlink data at ~$30–$600/month. *Limitation:* Purely a data provider. No workflow execution, scheduling, orchestration, or team management. Teams must build the entire operational layer themselves.
+
+**Gumloop / Lindy AI** — General AI agent builders with some SEO use cases. Gumloop offers 90+ templates including SEO workflows. Lindy enables multi-agent coordination. *Limitation:* Not SEO-native. Require external data providers, lack proprietary crawlers and keyword databases, and have no domain-specific accuracy guarantees.
+
+**Generic LLM usage** — ChatGPT/Claude used directly for SEO tasks, sometimes with MCPs for data access. *Limitation:* No persistent workflows, no scheduling, no data integration, no governance. Hallucination rates spike when handling multiple data sources through MCPs. One-off chat, not operational infrastructure.
+
+### The "Do Nothing" Alternative
+
+Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire more people to handle growing workload. Ignore AI search visibility entirely. This path is increasingly untenable as AI search captures more query volume and the velocity of SEO work exceeds what manual processes can handle.
+
+### Competitive Positioning Matrix
+
+| Capability | Berlin | Profound | AirOps | Semrush | Ahrefs | n8n/Make | DataForSEO |
+|---|---|---|---|---|---|---|---|
+| First-party keyword database | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ |
+| Site crawlers & competitor monitoring | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ |
+| AI search / GEO visibility | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Custom workflow building (no-code) | ✅ | ❌ | Partial | ❌ | ❌ | ✅* | ❌ |
+| Scheduled, persistent workflows | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| LLM interoperability (MCP) | ✅ | ❌ | ❌ | ❌ | Partial | ❌ | Partial |
+| Unified GSC/GA4 + proprietary data | ✅ | ❌ | ❌ | Partial | Partial | ❌ | ❌ |
+| Brand context / org memory | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Team governance & review | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| No engineering overhead | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+
+*n8n requires engineering to configure
+
+### Competitive Positioning Summary
+
+**vs. GEO/AEO platforms (Profound, Peec AI, GenFlux, Otterly):** These platforms tell you where you're visible in AI search. Berlin lets you *do something about it* — build workflows that optimize, monitor, and execute across both traditional and AI search from a single platform with its own data engine.
+
+**vs. Content platforms (AirOps, Daydream, Frase):** These optimize content creation. Berlin orchestrates the entire SEO operation — from keyword research and competitive intelligence through content optimization, technical SEO, and AI visibility — as persistent, scheduled, governed workflows.
+
+**vs. Incumbents (Semrush, Ahrefs, Conductor, Botify):** Incumbents are data companies adding AI features to existing dashboard architectures. Berlin is infrastructure-first — built from day one for agentic workflow orchestration, not retrofitted. Rebuilding as an agentic platform requires fundamental architectural changes that incumbents can't make without disrupting their core products.
+
+**vs. DIY automation (n8n, Make, DataForSEO):** Powerful but fragile, expensive in aggregate, and inaccessible to non-technical team members. Berlin bundles the data layer, workflow engine, and governance into a single platform — no separate API subscriptions, no engineering overhead, no hallucination problems from juggling multiple MCPs.
+
+**vs. Autonomous agents (Search Atlas/OTTO, Relixir):** Black-box systems where the agent decides and executes. Berlin gives teams control — build custom workflows, govern execution with human-in-the-loop review, and share across the organization. Infrastructure teams build on, not a service that runs for you.
+
+### Defensibility
+
+- **Technology / IP** — Agentic workflow engine, first-party data infrastructure, 80+ ranking signal intelligence layer. Purpose-built architecture for workflow orchestration that incumbents cannot retrofit without fundamental rebuilds.
+- **Data moat** — First-party keyword database, crawl data, and continuous competitive monitoring create proprietary data assets that compound over time. Every workflow execution enriches the platform's understanding of search patterns.
+- **Switching costs** — Deep integration with data sources, brand context, workflow libraries, and team processes create high switching costs once embedded. Agencies building client delivery on Berlin's workflows face significant migration friction.
+- **Speed of execution** — Founder combines AI infrastructure engineering + digital marketing agency experience. This rare overlap enables faster iteration than pure-tech competitors (who don't understand SEO operations) or pure-marketing competitors (who can't build the infrastructure).
+- **Network effects (emerging)** — Workflow template library grows with every customer deployment. As Founding Partners create proven workflows, the template marketplace becomes a self-reinforcing distribution channel. Community effects from r/agent_seo (3.3K members) and education content create organic awareness loops.
+- **Interoperability moat** — MCP integration means Berlin is embedded inside users' daily Claude/ChatGPT environments. Competitors that don't offer this level of interoperability are limited to their own UI — Berlin becomes invisible infrastructure that's harder to rip out.
 
 ---
 
@@ -401,23 +468,29 @@ No geographic restriction in this phase. Berlin's product is cloud-native and la
 
 ## 13. Financials
 
-### Historical
+### Historical Summary
 
-| Metric | Month 1 | Month 2 | Month 3 | ... |
-|--------|---------|---------|---------|-----|
-| Revenue |        |         |         |     |
-| Expenses |       |         |         |     |
-| Net Burn |       |         |         |     |
+Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company carries ~$800/month in legacy MRR from ~20 pre-pivot users on a different ICP (individual SEOs at ~$49/month avg); this revenue is expected to churn as the company shifts focus to its new agency/enterprise ICP. There has been no material revenue from the new platform, which is in the Founding Partner Program phase with unpaid design partners.
 
 ### Current State
 
-- **Monthly burn rate:** $___
-- **Cash on hand:** $___
-- **Runway remaining:** ___ months
+- **Cash on hand:** ~$10,000
+- **Monthly burn rate:** ~$1,050 (product evolution phase)
+  - Cloud infrastructure: ~$250
+  - LLM API costs: ~$300
+  - Logistics & transportation: ~$300
+  - Software subscriptions: ~$200
+- **Legacy MRR:** ~$800 (expected to churn — different ICP from new platform)
+- **Runway at current burn:** ~10 months
+- **Runway at planned burn (with marketing spend):** ~2 months
+
+### Inflection Point
+
+The company is transitioning from product development to go-to-market. The current burn rate reflects a build-only phase with near-zero marketing spend. As Berlin begins active marketing and sales motions — required to convert design partner learnings into paid customers — monthly expenses will increase significantly. At projected go-to-market spend levels, current cash reserves support approximately 2 months of operations, making this raise critical to capitalizing on the product momentum and design partner traction already established.
 
 ### Projections (2–3 year)
 
-- _(Attach or summarize financial model with key assumptions)_
+- _TODO_
 
 ---
 
