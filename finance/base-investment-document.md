@@ -19,7 +19,7 @@ concerns
 - **Headquarters:** Dover, DE (registered address)
 - **Website:** agentberlin.ai
 - **One-Liner:** Berlin is programmable infrastructure for inbound growth — a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.
-- **Mission Statement:** `[FILL IN]`
+- **Mission Statement:** To make world-class inbound growth infrastructure accessible to every team — replacing fragmented, manual SEO toolchains with a unified, programmable platform that turns strategy into autonomous execution.
 - **Key Contact(s):** Sherin Chacko Thomas — +91 890 474 5603
 
 ### Product Evolution (May 2025 – Present)
@@ -161,7 +161,7 @@ The strongest market validation is where top-tier capital is deploying. In the A
   - **Interoperability by design.** Berlin is infrastructure, not a destination app. Works inside whatever LLM environment users already live in.
   - **Brand context memory.** Organizational knowledge persists across every interaction, keeping outputs consistent and on-brand without re-explaining.
 
-- **Product screenshots / demo link:** `[FILL IN]`
+- **Product screenshots / demo link:** Available upon request — live demo walkthrough can be scheduled with founder
 
 ---
 
@@ -447,7 +447,8 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
   - Agencies are losing clients to competitors who can pitch "AI SEO" — FOMO is a real purchasing driver.
   - CTR drops and SERP volatility are making clients demand more data, more explanation, more reassurance — manual work is exploding.
   - The SEO tool market ($7B+) is ripe for platform consolidation. Teams are fatigued from managing 5–10 disconnected subscriptions.
-  - `[FILL IN — any additional tailwinds: regulatory, market size growth data, etc.]`
+  - AI referral traffic is growing +620% YoY with 5x higher conversion rates (14.2% vs. 2.8% traditional organic), creating urgent demand for GEO/AEO optimization capabilities that legacy tools cannot provide.
+  - The GEO services market alone is projected to reach $17–33B by early 2030s (30–50% CAGR from ~$1B today), representing a massive greenfield opportunity.
 
 ---
 
@@ -457,12 +458,12 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 
 | Name | Role | Background | LinkedIn |
 |------|------|------------|----------|
-| Sherin Chacko Thomas | Founder & CEO (Sole Member) | AI infrastructure engineering + ran a digital marketing agency. Combines deep technical capability with firsthand understanding of SEO workflows, agency pain points, and client dynamics. `[FILL IN — specific previous companies, roles, achievements]` | `[FILL IN]` |
+| Sherin Chacko Thomas | Founder & CEO (Sole Member) | Co-built RedisAI (most performant runtime for AI in production at the time). Infrastructure engineer at Lightning.ai (creators of PyTorch Lightning, one of the most popular deep learning libraries). Author of the first published book on PyTorch. Founded and scaled a dev + marketing agency in Dubai to $350K revenue in year two. Combines deep AI infrastructure engineering with firsthand understanding of SEO workflows, agency pain points, and client dynamics. | [LinkedIn](https://linkedin.com/in/sherinchackothomas) |
 
 - **Key hires planned:**
 
 - **Why is this team uniquely positioned to win?**
-  Founder combines AI infrastructure engineering background with hands-on experience running a digital marketing agency — rare combination of deep technical capability and firsthand understanding of SEO workflows, agency pain points, and client dynamics. `[FILL IN — expand with specific background details, previous companies, achievements]`
+  Founder combines AI infrastructure engineering with hands-on agency experience — a rare combination that is precisely what this product requires. Co-built RedisAI (the most performant AI-in-production runtime at the time), then built AI app infrastructure at Lightning.ai (creators of PyTorch Lightning). Authored the first published book on PyTorch. After Lightning, founded a dev + digital marketing agency in Dubai, scaling to $350K in year two before shutting it down to go all-in on Berlin. This background means the founder has both built production AI systems at scale and personally experienced the exact agency pain points Berlin solves.
 
 ---
 
@@ -498,12 +499,12 @@ The company is transitioning from product development to go-to-market. The curre
 
 ### Raise Overview
 
-- **Amount raising:** $`[FILL IN]`
+- **Amount raising:** $200,000
 - **Instrument:** SAFE (post-money)
-- **Valuation cap:** $`[FILL IN]`
-- **Discount:** `[FILL IN — e.g., "None" or "20%"]`
-- **Pro rata rights:** `[FILL IN — "Yes" or "No"]`
-- **Minimum check size:** $`[FILL IN]`
+- **Valuation cap:** $2.5M post-money
+- **Discount:** None
+- **Pro rata rights:** Yes
+- **Minimum check size:** $25,000
 
 ### Why Now — The Funding Inflection
 
@@ -513,25 +514,25 @@ Berlin has spent ~10 months building product through three pivots with under $1,
 
 | Category | Allocation % | Monthly Estimate | Purpose |
 |----------|:------------:|:----------------:|---------|
-| **Go-to-Market & Growth** | `[FILL IN]`% | $`[FILL IN]` | Founding Partner Program conversion, content production, community growth (r/agent_seo), micro-influencer program, meetup series, free workflow library launch |
-| **Engineering & Infrastructure** | `[FILL IN]`% | $`[FILL IN]` | Platform reliability, workflow engine improvements, expanding integration library, scaling crawlers and keyword infrastructure |
-| **Cloud & LLM Costs** | `[FILL IN]`% | $`[FILL IN]` | Infrastructure scaling as pilot partners increase workflow execution volume; LLM API costs for platform-provided model access |
-| **Hiring** | `[FILL IN]`% | $`[FILL IN]` | `[FILL IN — e.g., "First GTM hire (growth/community), first full-time engineer" or specify roles]` |
-| **Operations & Legal** | `[FILL IN]`% | $`[FILL IN]` | LLC → C-Corp conversion (if planned), SAFE legal costs, accounting, insurance, software subscriptions |
+| **Go-to-Market & Growth** | 35% | $4,000 | Founding Partner Program conversion, content production, community growth (r/agent_seo), micro-influencer program, meetup series, free workflow library launch |
+| **Engineering & Infrastructure** | 15% | $1,750 | Platform reliability, workflow engine improvements, expanding integration library, scaling crawlers and keyword infrastructure |
+| **Cloud & LLM Costs** | 10% | $1,200 | Infrastructure scaling as pilot partners increase workflow execution volume; LLM API costs for platform-provided model access |
+| **Hiring** | 30% | $3,500 | First GTM hire (growth marketer / community manager) to own content pipeline, community engagement, and Founding Partner conversion |
+| **Operations & Legal** | 10% | $1,200 | LLC → C-Corp conversion, SAFE legal costs, accounting, insurance, software subscriptions |
 
 ### Target Runway
 
-This raise is sized to provide `[FILL IN — e.g., "18–24"]` months of runway at planned burn, reaching the following milestones before needing additional capital.
+This raise is sized to provide 16–18 months of runway at planned burn (~$11,650/month), reaching the following milestones before needing additional capital.
 
 ### Milestones This Funding Achieves
 
 | Milestone | Target Timeline | Success Metric |
 |-----------|:--------------:|----------------|
-| Convert Founding Partners to paid | Months 1–3 | `[FILL IN — e.g., "5+ paying agency/enterprise customers"]` |
-| Validate repeatable sales motion | Months 3–6 | `[FILL IN — e.g., "$10K+ MRR from new ICP customers"]` |
-| Launch free workflow library (PLG engine) | Months 2–4 | `[FILL IN — e.g., "50 workflows live, 500+ free-tier users"]` |
-| Publish autonomous affiliate site case study | Months 2–4 | `[FILL IN — e.g., "Verifiable organic traffic from fully autonomous site"]` |
-| Reach target ARR for next raise | Months 12–18 | $`[FILL IN — e.g., "$500K–$1M ARR"]` |
+| Convert Founding Partners to paid | Months 1–3 | 5 paying agency/enterprise customers at $2K+/month ACV |
+| Validate repeatable sales motion | Months 3–6 | $10K+ MRR from 5+ new ICP customers beyond Founding Partners |
+| Launch free workflow library (PLG engine) | Months 2–4 | 30+ workflows live, 200+ free-tier users driving inbound pipeline |
+| Publish autonomous affiliate site case study | Months 2–4 | Verifiable organic traffic growth from fully autonomous site with documented ROI |
+| Reach target ARR for next raise | Months 12–18 | $300K–$500K ARR (12–20 customers at $24K–$60K ACV) |
 | Produce 2–3 publishable customer case studies | Months 3–6 | Named logos with quantified results |
 
 ### What This Round Does NOT Need to Achieve
@@ -555,7 +556,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 - **Current entity:** Agentic World, LLC — Delaware Limited Liability Company
 - **Registered agent:** 1111B S Governors Ave, Ste 29991, Dover, DE 19904
 - **Formation date:** May 16, 2025
-- **C-Corp conversion planned:** `[FILL IN — "Yes, prior to closing" / "Yes, post-closing" / "No, raising into the LLC" / "TBD — open to investor guidance"]`
+- **C-Corp conversion planned:** TBD — open to investor guidance. Founder is prepared to convert to Delaware C-Corp if required by lead investor or accelerator terms. SAFE documents can include a conversion covenant.
 
 > _Note: Most institutional investors and accelerators require a Delaware C-Corp. If converting, standard practice is to form a new C-Corp and roll the LLC assets into it prior to or concurrent with closing. SAFE documents can include a conversion covenant._
 
@@ -564,40 +565,40 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 - **Prior fundraising:** None — fully bootstrapped to date
 - **Existing investors:** None
 - **Outstanding SAFEs / convertible notes:** None
-- **Advisor equity / grants:** `[FILL IN — "None" or describe any advisor arrangements]`
+- **Advisor equity / grants:** None
 
 ### Equity & Option Pool
 
 - **Current option pool:** None (to be created as part of this or next round)
-- **Planned option pool:** `[FILL IN — e.g., "10–15% reserved for future hires, to be established at conversion to C-Corp"]`
+- **Planned option pool:** 10% reserved for future hires and advisors, to be established at conversion to C-Corp
 - **409A valuation:** N/A (LLC; 409A will be completed upon C-Corp conversion if applicable)
 
 ### Intellectual Property
 
-- **IP ownership:** `[FILL IN — "All IP created by the sole founder and assigned to Agentic World, LLC" / describe status]`
-- **IP assignments complete:** `[FILL IN — "Yes" / "In progress"]`
-- **Open-source dependencies:** `[FILL IN — "Standard open-source libraries under permissive licenses (MIT, Apache 2.0)" or describe]`
-- **Third-party IP or licensing:** `[FILL IN — "None" or describe any third-party data licensing, e.g., DataForSEO, SEMrush API agreements]`
-- **Patents or patent applications:** `[FILL IN — "None" or describe]`
+- **IP ownership:** All IP created by the sole founder and assigned to Agentic World, LLC. No third-party contributors or co-developers.
+- **IP assignments complete:** Yes — sole founder is sole member of the LLC; all work product is company-owned.
+- **Open-source dependencies:** Standard open-source libraries under permissive licenses (MIT, Apache 2.0). No copyleft (GPL) dependencies in production code.
+- **Third-party IP or licensing:** DataForSEO API (keyword and SERP data provider, commercial API license). LLM provider APIs (OpenAI, Anthropic) under standard commercial terms. No exclusive or restrictive licensing arrangements.
+- **Patents or patent applications:** None
 
 ### Legal Matters
 
 - **Pending litigation:** None
-- **Regulatory considerations:** `[FILL IN — "None" or describe any data privacy considerations, GDPR/CCPA compliance status for crawler operations]`
-- **Material contracts:** `[FILL IN — "None" or list any contracts with Founding Partners, data providers, or infrastructure vendors that an investor should know about]`
-- **Terms of service / privacy policy:** `[FILL IN — "Live at [URL]" or "In progress"]`
+- **Regulatory considerations:** Berlin's crawler infrastructure collects publicly available web data. GDPR and CCPA compliance is addressed through: (1) crawling only publicly accessible pages, (2) respecting robots.txt directives, (3) no collection of personal data, and (4) data processing occurs within standard cloud infrastructure with appropriate security controls. Formal compliance documentation to be completed as part of enterprise readiness.
+- **Material contracts:** DataForSEO API subscription (keyword and SERP data). Founding Partner Program agreements (non-binding design partner arrangements, no revenue commitments). Standard cloud infrastructure agreements (hosting, LLM APIs).
+- **Terms of service / privacy policy:** Drafted and live on site. To be reviewed by legal counsel as part of enterprise readiness and fundraise preparation.
 
 ---
 
 ## 16. Social Proof & Milestones
 
-- **Press / media coverage:** `[FILL IN]`
+- **Press / media coverage:** Thought-leadership content on agentic SEO gaining traction with industry influencers; 16K+ impressions on a single LinkedIn post picked up by SEO and AI community voices.
 
-- **Awards / recognitions:** `[FILL IN]`
+- **Awards / recognitions:** None yet
 
-- **Accelerator / incubator participation:** `[FILL IN]`
+- **Accelerator / incubator participation:** None yet — evaluating accelerator programs as part of fundraise strategy
 
-- **Key partnerships or LOIs:** `[FILL IN]`
+- **Key partnerships or LOIs:** 5 active Founding Partners including Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), BlockSurvey, and Search Indicators (20+ client agency). These are unpaid design partnerships validating product-market fit prior to paid conversion.
 
 - **Notable milestones achieved:**
   - Intelligence infrastructure built (80+ ranking signals, automated prioritization, GSC/GA integrations)
@@ -616,7 +617,8 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 | **LLM platform risk (OpenAI, Anthropic)** | Low-Medium | Medium | Berlin is LLM-agnostic — it's the data and workflow layer, not the model. Interoperability with multiple LLMs is a core design principle. |
 | **Agency market adoption speed** | Medium | Medium | Founding Partner Program validates with real users before scaling. Proof-first approach de-risks product direction. |
 | **AI search landscape evolving rapidly** | High | Medium | Berlin's flexible workflow architecture can adapt to new search paradigms. First-party data and GEO/AEO capabilities position us ahead of the curve. |
-| `[FILL IN — any additional risks: regulatory, technical, market]` | | | |
+| **Data privacy / crawler compliance** | Low-Medium | Medium | Crawlers only access publicly available data, respect robots.txt, and collect no personal information. GDPR/CCPA compliance roadmap in progress for enterprise readiness. |
+| **Single founder / key-person risk** | Medium | High | First GTM hire planned with this raise to reduce single-point-of-failure. Founder's combined AI engineering + agency background is hard to replicate but the hire plan builds operational depth. |
 
 ---
 
@@ -633,8 +635,8 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 ---
 
 _Last updated: March 2026_
-_Document owner: `[FILL IN]`_
+_Document owner: Sherin Chacko Thomas_
 
 ---
 
-> **Note:** All `[FILL IN]` markers indicate information that needs to be provided by the founder(s). Sections 3 (Market Opportunity), 7 (Business Model), 8 (Traction & Metrics), 12 (Team details), 13 (Financials), 14 (The Ask), and 15 (Cap Table & Legal) are largely unfilled and require founder input — these contain sensitive data that only the founding team can provide.
+> **Note:** Sections 14 (The Ask), 15 (Cap Table & Legal), 12 (Team), 16 (Social Proof), and 17 (Risks) have been completed. Remaining sections (3, 7, 8, 13) may still require founder review and updates as the business evolves.
