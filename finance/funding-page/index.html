@@ -3,23 +3,1407 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agent Berlin — Funding</title>
+  <title>Agent Berlin — Investment Deck</title>
   <style>
+    :root {
+      --primary: #1a1a1a;
+      --secondary: #4b5563;
+      --accent: #0ea5e9;
+      --accent-dark: #0284c7;
+      --bg: #fafafa;
+      --bg-card: #ffffff;
+      --border: #e5e7eb;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fafafa; color: #1a1a1a; }
-    .container { max-width: 720px; margin: 0 auto; padding: 80px 24px; }
-    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .tagline { color: #666; font-size: 1.1rem; margin-bottom: 3rem; }
-    .placeholder { border: 2px dashed #ddd; border-radius: 8px; padding: 48px; text-align: center; color: #999; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Sections */
+    section {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      position: relative;
+    }
+
+    .section-content {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: var(--secondary);
+      font-size: 1.125rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--secondary);
+      max-width: 600px;
+    }
+
+    /* Navigation Dots */
+    .nav-dots {
+      position: fixed;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .nav-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      position: relative;
+    }
+
+    .nav-dot:hover {
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+
+    .nav-dot.active {
+      background: var(--accent);
+      transform: scale(1.3);
+    }
+
+    .nav-dot::before {
+      content: attr(data-label);
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      font-size: 0.75rem;
+      color: var(--secondary);
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+
+    .nav-dot:hover::before {
+      opacity: 1;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent);
+      z-index: 100;
+      width: 0%;
+      transition: width 0.1s;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Grid Layouts */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+
+    /* Big Numbers */
+    .big-number {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .big-number-label {
+      font-size: 0.875rem;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 8px;
+    }
+
+    /* Stats */
+    .stat-card {
+      text-align: center;
+      padding: 32px 24px;
+    }
+
+    /* Expandable Content */
+    .expandable {
+      cursor: pointer;
+    }
+
+    .expandable .expand-indicator {
+      display: inline-block;
+      transition: transform 0.3s;
+      margin-left: 8px;
+      color: var(--accent);
+    }
+
+    .expandable.expanded .expand-indicator {
+      transform: rotate(180deg);
+    }
+
+    .expand-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 24px;
+    }
+
+    .expandable.expanded + .expand-content,
+    .expand-content.expanded {
+      max-height: 2000px;
+      padding: 24px;
+    }
+
+    /* Tags / Badges */
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-live { background: #d1fae5; color: #065f46; }
+    .badge-expanding { background: #dbeafe; color: #1e40af; }
+    .badge-primary { background: #e0f2fe; color: #0369a1; }
+    .badge-secondary { background: #f3f4f6; color: #374151; }
+
+    /* Logo Wall */
+    .logo-wall {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 0;
+    }
+
+    .logo-item {
+      padding: 16px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 24px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -38px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+
+    /* Pie Chart (CSS) */
+    .pie-chart {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    /* Use of Funds Chart */
+    .fund-bar {
+      height: 32px;
+      border-radius: 4px;
+      display: flex;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+
+    .fund-segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* Matrix/Table */
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-top: 24px;
+    }
+
+    .matrix th, .matrix td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .matrix th {
+      background: var(--bg);
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+    }
+
+    .matrix .check { color: var(--success); }
+    .matrix .cross { color: var(--danger); }
+
+    /* Risk Indicators */
+    .risk-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .risk-high { background: #fee2e2; color: #991b1b; }
+    .risk-medium { background: #fef3c7; color: #92400e; }
+    .risk-low { background: #d1fae5; color: #065f46; }
+
+    /* CTA Buttons */
+    .cta {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+    }
+
+    .cta-secondary {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .cta-secondary:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-dots { right: 12px; }
+      .nav-dot { width: 8px; height: 8px; }
+      section { padding: 40px 16px; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    }
+
+    /* Hero Gradient */
+    #hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      color: white;
+    }
+
+    #hero .section-label { color: #38bdf8; }
+    #hero .subtitle { color: #94a3b8; }
+
+    /* Alternating backgrounds */
+    section:nth-child(even) { background: #f8fafc; }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-hint span {
+      font-size: 0.75rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .scroll-hint svg {
+      width: 24px;
+      height: 24px;
+      stroke: #64748b;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* Founder Card */
+    .founder-card {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .founder-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .founder-info h3 { margin-bottom: 4px; }
+    .founder-info .title { color: var(--secondary); font-size: 0.95rem; margin-bottom: 12px; }
+
+    .credential-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    /* ICP Cards */
+    .icp-card {
+      border-left: 4px solid var(--accent);
+    }
+
+    .icp-card h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .icp-card .pain {
+      font-size: 0.875rem;
+      color: var(--danger);
+      margin-bottom: 8px;
+    }
+
+    .icp-card .value {
+      font-size: 0.875rem;
+      color: var(--success);
+    }
+
+    /* Feature Grid */
+    .feature-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: #e0f2fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .feature-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
+    }
+
+    /* Milestone Timeline */
+    .milestone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .milestone-card {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .milestone-card .timeframe {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .milestone-card h4 {
+      font-size: 0.95rem;
+      margin: 8px 0 4px;
+    }
+
+    .milestone-card p {
+      font-size: 0.8rem;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation Dots -->
+<nav class="nav-dots" id="navDots">
+  <button class="nav-dot active" data-section="hero" data-label="Overview"></button>
+  <button class="nav-dot" data-section="problem" data-label="Problem"></button>
+  <button class="nav-dot" data-section="market" data-label="Market"></button>
+  <button class="nav-dot" data-section="solution" data-label="Solution"></button>
+  <button class="nav-dot" data-section="features" data-label="Features"></button>
+  <button class="nav-dot" data-section="icp" data-label="Customers"></button>
+  <button class="nav-dot" data-section="business" data-label="Business Model"></button>
+  <button class="nav-dot" data-section="traction" data-label="Traction"></button>
+  <button class="nav-dot" data-section="gtm" data-label="GTM"></button>
+  <button class="nav-dot" data-section="competition" data-label="Competition"></button>
+  <button class="nav-dot" data-section="whynow" data-label="Why Now"></button>
+  <button class="nav-dot" data-section="team" data-label="Team"></button>
+  <button class="nav-dot" data-section="financials" data-label="Financials"></button>
+  <button class="nav-dot" data-section="ask" data-label="The Ask"></button>
+</nav>
+
+<!-- Section 1: Hero -->
+<section id="hero">
+  <div class="section-content" style="text-align: center;">
+    <p class="section-label">Investment Opportunity</p>
     <h1>Agent Berlin</h1>
-    <p class="tagline">The SEO operating system for agencies</p>
-    <div class="placeholder">
-      <p>Funding page content goes here.</p>
+    <p class="subtitle" style="margin: 0 auto 32px;">Programmable infrastructure for inbound growth — a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.</p>
+
+    <div class="grid-4" style="margin-top: 48px; text-align: center;">
+      <div>
+        <div class="big-number" style="color: #38bdf8;">$200K</div>
+        <div class="big-number-label" style="color: #94a3b8;">Raising</div>
+      </div>
+      <div>
+        <div class="big-number" style="color: #38bdf8;">$2.5M</div>
+        <div class="big-number-label" style="color: #94a3b8;">Valuation Cap</div>
+      </div>
+      <div>
+        <div class="big-number" style="color: #38bdf8;">May '25</div>
+        <div class="big-number-label" style="color: #94a3b8;">Founded</div>
+      </div>
+      <div>
+        <div class="big-number" style="color: #38bdf8;">5</div>
+        <div class="big-number-label" style="color: #94a3b8;">Founding Partners</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll to explore</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
     </div>
   </div>
+</section>
+
+<!-- Section 2: The Problem -->
+<section id="problem">
+  <div class="section-content">
+    <p class="section-label">The Problem</p>
+    <h2>SEO teams are drowning in manual, fragmented workflows</h2>
+    <p class="subtitle" style="margin-bottom: 48px;">They cobble together 5-10 disconnected tools with no unified data layer, no automation capability without developers, and no way to address AI search.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Tool Fragmentation</h3>
+        <p style="font-size: 0.95rem;">Teams pay $500-$2,000+/month for multiple point tools (Ahrefs, SEMrush, GSC, GA4, spreadsheets) with no unified layer.</p>
+      </div>
+      <div class="card">
+        <h3>Manual Work Explosion</h3>
+        <p style="font-size: 0.95rem;">Agencies report <strong>15-20 hours per week per client</strong> on manual SEO research and strategy work.</p>
+      </div>
+      <div class="card">
+        <h3>AI Search Blindspot</h3>
+        <p style="font-size: 0.95rem;">Zero-click searches hit 69%. When AI Overviews appear, organic CTR drops 61%. Existing tools don't address this.</p>
+      </div>
+    </div>
+
+    <div class="card expandable" style="margin-top: 32px;" onclick="toggleExpand(this)">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0;">Who experiences this pain?</h3>
+        <span class="expand-indicator">&#9660;</span>
+      </div>
+    </div>
+    <div class="expand-content card" style="margin-top: -1px; border-top: none; border-radius: 0 0 12px 12px;">
+      <div class="grid-3" style="gap: 24px;">
+        <div>
+          <span class="badge badge-primary">Primary</span>
+          <h4 style="margin-top: 12px;">SEO Agencies</h4>
+          <p style="font-size: 0.9rem;">1-50+ clients, trying to scale delivery without proportional headcount growth. Turning away work due to capacity.</p>
+        </div>
+        <div>
+          <span class="badge badge-secondary">Secondary</span>
+          <h4 style="margin-top: 12px;">In-House Teams</h4>
+          <p style="font-size: 0.9rem;">Series B-C SaaS marketing teams struggling to justify SEO budget and attribute SEO to pipeline.</p>
+        </div>
+        <div>
+          <span class="badge badge-secondary">Emerging</span>
+          <h4 style="margin-top: 12px;">E-Commerce</h4>
+          <p style="font-size: 0.9rem;">Managing thousands of pages, AI shopping invisible, programmatic SEO blocked.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Market Opportunity -->
+<section id="market">
+  <div class="section-content">
+    <p class="section-label">Market Opportunity</p>
+    <h2>A $85B+ market at an inflection point</h2>
+
+    <div class="grid-3" style="margin: 48px 0;">
+      <div class="card stat-card">
+        <div class="big-number">$85-93B</div>
+        <div class="big-number-label">TAM (2025)</div>
+        <p style="font-size: 0.85rem; margin-top: 8px;">Growing to $266B+ by 2034<br>13.5% CAGR</p>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">$11.5-50B</div>
+        <div class="big-number-label">SAM (2025)</div>
+        <p style="font-size: 0.85rem; margin-top: 8px;">Enterprise SEO platforms<br>Growing to $58B+ by 2035</p>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">$350M-1B</div>
+        <div class="big-number-label">SOM (3-5 years)</div>
+        <p style="font-size: 0.85rem; margin-top: 8px;">~5,000 agencies at<br>$24K-$60K ACV</p>
+      </div>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, #0f172a, #1e3a5f); color: white; padding: 32px;">
+      <h3 style="color: #38bdf8; margin-bottom: 16px;">The AI Search Inflection</h3>
+      <div class="grid-4">
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 700; color: #38bdf8;">$1B</div>
+          <div style="font-size: 0.8rem; color: #94a3b8;">GEO/AEO Market 2025</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 700; color: #38bdf8;">$17B+</div>
+          <div style="font-size: 0.8rem; color: #94a3b8;">Projected by 2034</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 700; color: #38bdf8;">+620%</div>
+          <div style="font-size: 0.8rem; color: #94a3b8;">AI Traffic YoY Growth</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 700; color: #38bdf8;">5-23x</div>
+          <div style="font-size: 0.8rem; color: #94a3b8;">Higher Conversion</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card expandable" style="margin-top: 24px;" onclick="toggleExpand(this)">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0;">VC Validation & Market Trends</h3>
+        <span class="expand-indicator">&#9660;</span>
+      </div>
+    </div>
+    <div class="expand-content card" style="margin-top: -1px; border-top: none; border-radius: 0 0 12px 12px;">
+      <div class="grid-2" style="gap: 32px;">
+        <div>
+          <h4>VC Validation</h4>
+          <ul style="font-size: 0.9rem; color: var(--secondary); padding-left: 20px;">
+            <li><strong>Profound</strong> — $1B valuation in 18 months (Sequoia, Kleiner Perkins)</li>
+            <li><strong>AirOps</strong> — $225M valuation (Greylock-led)</li>
+            <li><strong>Peec AI</strong> — $100M+ valuation in 4 months</li>
+            <li><strong>Daydream</strong> — $16.6M Series A (First Round Capital)</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Key Trends</h4>
+          <ul style="font-size: 0.9rem; color: var(--secondary); padding-left: 20px;">
+            <li>Tool consolidation accelerating (40-60% cost savings)</li>
+            <li>86% of SEO pros now use AI in workflows</li>
+            <li>Semrush $50K+/year customers grew 72% YoY</li>
+            <li>62% of search volume from AI by 2030</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: The Solution -->
+<section id="solution">
+  <div class="section-content">
+    <p class="section-label">The Solution</p>
+    <h2>Programmable infrastructure for SEO operations</h2>
+    <p class="subtitle" style="margin-bottom: 48px;">Berlin combines an integrated SEO data engine, unified data layer, agentic workflow builder, and LLM interoperability — all in one platform.</p>
+
+    <div class="grid-2" style="gap: 24px;">
+      <div class="card" style="border-left: 4px solid var(--accent);">
+        <h3>Integrated Data Engine</h3>
+        <p style="font-size: 0.95rem;">Keyword intelligence from Semrush/DataForSEO cached in Berlin's database. Proprietary crawlers (Snake.blue). Users never need separate subscriptions.</p>
+      </div>
+      <div class="card" style="border-left: 4px solid var(--accent);">
+        <h3>Unified Data Access Layer</h3>
+        <p style="font-size: 0.95rem;">Single API connecting GSC, GA4, Bing Webmaster, CMS, social media. Connect once, available across all workflows.</p>
+      </div>
+      <div class="card" style="border-left: 4px solid var(--accent);">
+        <h3>Agentic Workflow Builder</h3>
+        <p style="font-size: 0.95rem;">Chat-based, no-code interface. Build multi-step workflows, run on-demand or scheduled, share across org with human-in-the-loop review.</p>
+      </div>
+      <div class="card" style="border-left: 4px solid var(--accent);">
+        <h3>LLM Interoperability (MCP)</h3>
+        <p style="font-size: 0.95rem;">Same infrastructure exposed as tools inside Claude, ChatGPT. Work from your preferred environment.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 32px; background: #f0fdf4; border-color: #bbf7d0;">
+      <h3 style="color: #166534;">Workflow Marketplace</h3>
+      <p style="font-size: 0.95rem; color: #166534;">A library of pre-built, vetted workflows that automate complex multi-step SEO operations with a single click. Users get immediate value on day one without building anything.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Features -->
+<section id="features">
+  <div class="section-content">
+    <p class="section-label">Product</p>
+    <h2>11 Live Features</h2>
+    <p class="subtitle" style="margin-bottom: 48px;">Complete platform infrastructure, all operational.</p>
+
+    <div class="grid-3">
+      <div class="card feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <strong>Keyword Intelligence</strong>
+            <span class="badge badge-live">Live</span>
+          </div>
+          <p style="font-size: 0.85rem;">Enterprise-grade data without third-party subscriptions</p>
+        </div>
+      </div>
+      <div class="card feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <strong>Site Crawling</strong>
+            <span class="badge badge-live">Live</span>
+          </div>
+          <p style="font-size: 0.85rem;">Automated crawlers, competitor monitoring, always fresh</p>
+        </div>
+      </div>
+      <div class="card feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <strong>Unified Data Layer</strong>
+            <span class="badge badge-live">Live</span>
+          </div>
+          <p style="font-size: 0.85rem;">Single API for all SEO data sources</p>
+        </div>
+      </div>
+      <div class="card feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <strong>Workflow Builder</strong>
+            <span class="badge badge-live">Live</span>
+          </div>
+          <p style="font-size: 0.85rem;">Chat-based, no-code, scheduled execution</p>
+        </div>
+      </div>
+      <div class="card feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <strong>LLM Integration</strong>
+            <span class="badge badge-live">Live</span>
+          </div>
+          <p style="font-size: 0.85rem;">Works inside Claude, ChatGPT via MCP</p>
+        </div>
+      </div>
+      <div class="card feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <strong>Team Management</strong>
+            <span class="badge badge-live">Live</span>
+          </div>
+          <p style="font-size: 0.85rem;">Multi-user, access control, multi-project</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--secondary);">
+      + Brand Context, Report Center, Review Center, Third-Party Integrations, Workflow Templates
+    </p>
+  </div>
+</section>
+
+<!-- Section 6: ICP -->
+<section id="icp">
+  <div class="section-content">
+    <p class="section-label">Customers</p>
+    <h2>Ideal Customer Profile</h2>
+    <p class="subtitle" style="margin-bottom: 48px;">Primary: SEO Agencies. Secondary: In-House Marketing Teams.</p>
+
+    <div class="grid-2" style="gap: 24px;">
+      <div class="card icp-card">
+        <span class="badge badge-primary" style="margin-bottom: 12px;">Primary ICP</span>
+        <h4>Large Agencies (11-50 clients)</h4>
+        <p class="pain"><strong>Pain:</strong> Reporting doesn't scale, no GEO/AEO story, no dev access</p>
+        <p class="value"><strong>Value:</strong> Build once, run across all clients; sell AI visibility as new service</p>
+        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--secondary);"><em>Buyers: Agency Owner, Director of SEO, Head of Ops</em></p>
+      </div>
+      <div class="card icp-card">
+        <span class="badge badge-primary" style="margin-bottom: 12px;">Primary ICP</span>
+        <h4>Small Agencies (1-10 clients)</h4>
+        <p class="pain"><strong>Pain:</strong> Can't afford full toolstack, manual reporting, need to win pitches</p>
+        <p class="value"><strong>Value:</strong> Force multiplier, punch above weight class, lead gen hooks</p>
+        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--secondary);"><em>Buyers: Agency Founder, Principal Consultant</em></p>
+      </div>
+      <div class="card icp-card">
+        <span class="badge badge-secondary" style="margin-bottom: 12px;">Secondary</span>
+        <h4>Series B-C SaaS In-House</h4>
+        <p class="pain"><strong>Pain:</strong> SEO-to-pipeline attribution broken, AI discovery invisible</p>
+        <p class="value"><strong>Value:</strong> Unified data layer, LLM integration, AI visibility metrics for leadership</p>
+        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--secondary);"><em>Buyers: Head of SEO, VP Growth</em></p>
+      </div>
+      <div class="card icp-card">
+        <span class="badge badge-secondary" style="margin-bottom: 12px;">Emerging</span>
+        <h4>E-Commerce / Marketplaces</h4>
+        <p class="pain"><strong>Pain:</strong> Thousands of pages, AI shopping invisible, programmatic SEO blocked</p>
+        <p class="value"><strong>Value:</strong> Scale infrastructure, AI visibility for shopping queries</p>
+        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--secondary);"><em>Buyers: Head of SEO, VP Digital</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 7: Business Model -->
+<section id="business">
+  <div class="section-content">
+    <p class="section-label">Business Model</p>
+    <h2>Subscription + Usage-Based Credits</h2>
+
+    <div class="grid-3" style="margin: 48px 0;">
+      <div class="card" style="text-align: center;">
+        <h3 style="color: var(--secondary);">Free / Explorer</h3>
+        <div class="big-number" style="font-size: 2rem;">$0</div>
+        <p style="font-size: 0.85rem; margin-top: 12px;">Connect domain, run pre-built workflows, explore data layer</p>
+      </div>
+      <div class="card" style="text-align: center; border: 2px solid var(--accent);">
+        <h3 style="color: var(--accent);">Pro</h3>
+        <div class="big-number" style="font-size: 2rem;">$100<span style="font-size: 1rem; color: var(--secondary);">/mo</span></div>
+        <p style="font-size: 0.85rem; margin-top: 12px;">Full execution, custom workflows, multi-client support</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3 style="color: var(--secondary);">Enterprise</h3>
+        <div class="big-number" style="font-size: 2rem;">Custom</div>
+        <p style="font-size: 0.85rem; margin-top: 12px;">Higher allocations, unlimited automation, Forward Deployed Marketers</p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap: 24px;">
+      <div class="card">
+        <h3>Target ACV</h3>
+        <p style="font-size: 2rem; font-weight: 700; color: var(--accent);">$24K - $60K<span style="font-size: 1rem; color: var(--secondary);">/year</span></p>
+        <p style="font-size: 0.9rem; margin-top: 8px;">Customers compare Berlin to a hire ($60K-$120K/year), not a tool ($200/seat).</p>
+      </div>
+      <div class="card">
+        <h3>Gross Margin</h3>
+        <p style="font-size: 2rem; font-weight: 700; color: var(--accent);">~80%</p>
+        <p style="font-size: 0.9rem; margin-top: 8px;">On core platform infrastructure. LLM tokens at cost (strategic decision). BYO-LLM option available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 8: Traction -->
+<section id="traction">
+  <div class="section-content">
+    <p class="section-label">Traction</p>
+    <h2>Founding Partner Program</h2>
+    <p class="subtitle" style="margin-bottom: 48px;">Pre-commercial launch. Validating product-market fit with design partners.</p>
+
+    <div class="grid-4" style="margin-bottom: 48px;">
+      <div class="card stat-card">
+        <div class="big-number">5</div>
+        <div class="big-number-label">Active Pilots</div>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">~20</div>
+        <div class="big-number-label">Workflows Created</div>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">4</div>
+        <div class="big-number-label">Conversations This Week</div>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">8 wks</div>
+        <div class="big-number-label">To Case Studies</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: 16px;">Founding Partners</h3>
+    <div class="logo-wall">
+      <div class="logo-item">
+        <strong>Fliki.ai</strong>
+        <span style="display: block; font-size: 0.75rem; font-weight: 400;">~$1M MRR SaaS</span>
+      </div>
+      <div class="logo-item">
+        <strong>Webandcrafts</strong>
+        <span style="display: block; font-size: 0.75rem; font-weight: 400;">100+ client agency</span>
+      </div>
+      <div class="logo-item">
+        <strong>BlockSurvey</strong>
+        <span style="display: block; font-size: 0.75rem; font-weight: 400;">Privacy survey platform</span>
+      </div>
+      <div class="logo-item">
+        <strong>Search Indicators</strong>
+        <span style="display: block; font-size: 0.75rem; font-weight: 400;">20+ client agency</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 9: GTM -->
+<section id="gtm">
+  <div class="section-content">
+    <p class="section-label">Go-to-Market</p>
+    <h2>Founder-led, Community-driven</h2>
+    <p class="subtitle" style="margin-bottom: 48px;">Immediate objective: 20 Founding Partners in 50 days.</p>
+
+    <div class="grid-2" style="gap: 24px;">
+      <div class="card">
+        <h3>Content Engine</h3>
+        <p style="font-size: 0.95rem;">Founder-led thought leadership on LinkedIn. Agent-native expertise (not SEO-first) fills a clear market gap. 16K+ impressions on single posts.</p>
+      </div>
+      <div class="card">
+        <h3>Community</h3>
+        <p style="font-size: 0.95rem;">r/agent_seo subreddit (3.3K members). Pre-built workflow demos shared as educational content. Self-reinforcing distribution channel.</p>
+      </div>
+      <div class="card">
+        <h3>PLG Flywheel</h3>
+        <p style="font-size: 0.95rem;">~50 free workflows automating 90% of daily SEO tasks. Platform becomes indispensable before any sales conversation.</p>
+      </div>
+      <div class="card">
+        <h3>Proof-of-Concept</h3>
+        <p style="font-size: 0.95rem;">Building autonomous affiliate site managed end-to-end by Berlin. ~2 month timeline. Ultimate "show, don't tell" asset.</p>
+      </div>
+    </div>
+
+    <div class="card expandable" style="margin-top: 24px;" onclick="toggleExpand(this)">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0;">Sales Motion Evolution</h3>
+        <span class="expand-indicator">&#9660;</span>
+      </div>
+    </div>
+    <div class="expand-content card" style="margin-top: -1px; border-top: none; border-radius: 0 0 12px 12px;">
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>Current</strong>
+          <p style="font-size: 0.9rem;">Founder-led inbound and outbound, converting through Founding Partner Program</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Near-term</strong>
+          <p style="font-size: 0.9rem;">PLG-assisted sales — prospects self-qualify through free workflow usage</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Long-term</strong>
+          <p style="font-size: 0.9rem;">Sales-led with PLG underpinning, supported by case studies and community proof</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 10: Competition -->
+<section id="competition">
+  <div class="section-content">
+    <p class="section-label">Competition</p>
+    <h2>Programmable Infrastructure, Not a Dashboard</h2>
+    <p class="subtitle" style="margin-bottom: 32px;">Berlin's unique positioning vs. GEO platforms, content tools, and incumbents.</p>
+
+    <div class="card" style="overflow-x: auto;">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Berlin</th>
+            <th>Profound</th>
+            <th>AirOps</th>
+            <th>Semrush</th>
+            <th>n8n/Make</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Integrated keyword database</td>
+            <td class="check">&#10003;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+            <td class="check">&#10003;</td>
+            <td class="cross">&#10005;</td>
+          </tr>
+          <tr>
+            <td>Custom workflow building (no-code)</td>
+            <td class="check">&#10003;</td>
+            <td class="cross">&#10005;</td>
+            <td style="color: var(--warning);">Partial</td>
+            <td class="cross">&#10005;</td>
+            <td class="check">&#10003;*</td>
+          </tr>
+          <tr>
+            <td>LLM interoperability (MCP)</td>
+            <td class="check">&#10003;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+          </tr>
+          <tr>
+            <td>Brand context / org memory</td>
+            <td class="check">&#10003;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+          </tr>
+          <tr>
+            <td>Team governance & review</td>
+            <td class="check">&#10003;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+            <td class="cross">&#10005;</td>
+          </tr>
+          <tr>
+            <td>No engineering overhead</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+            <td class="cross">&#10005;</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.75rem; color: var(--secondary); margin-top: 12px;">*n8n requires engineering to configure</p>
+    </div>
+
+    <div class="card expandable" style="margin-top: 24px;" onclick="toggleExpand(this)">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0;">Defensibility Moat</h3>
+        <span class="expand-indicator">&#9660;</span>
+      </div>
+    </div>
+    <div class="expand-content card" style="margin-top: -1px; border-top: none; border-radius: 0 0 12px 12px;">
+      <div class="grid-2" style="gap: 16px;">
+        <div><strong>Technology:</strong> Agentic workflow engine, Snake.blue crawlers, integrated keyword data</div>
+        <div><strong>Data Moat:</strong> Cached keyword database compounds over time, reducing costs</div>
+        <div><strong>Switching Costs:</strong> Deep integration with data sources, brand context, team workflows</div>
+        <div><strong>Speed:</strong> Founder combines AI infrastructure + marketing agency experience</div>
+        <div><strong>Network Effects:</strong> Workflow template library grows with every deployment</div>
+        <div><strong>Interoperability:</strong> MCP integration embeds Berlin inside Claude/ChatGPT daily use</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 11: Why Now -->
+<section id="whynow">
+  <div class="section-content">
+    <p class="section-label">Timing</p>
+    <h2>Why Now?</h2>
+    <p class="subtitle" style="margin-bottom: 48px;">Three converging factors create the perfect storm.</p>
+
+    <div class="grid-3">
+      <div class="card" style="text-align: center; padding: 32px;">
+        <div style="font-size: 3rem; margin-bottom: 16px;">&#128161;</div>
+        <h3>AI Search Disruption</h3>
+        <p style="font-size: 0.9rem;">ChatGPT, Perplexity, Google AI Overviews reshaping discovery. GEO/AEO visibility crisis that legacy tools don't address.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 32px;">
+        <div style="font-size: 3rem; margin-bottom: 16px;">&#9889;</div>
+        <h3>LLM Maturity</h3>
+        <p style="font-size: 0.9rem;">Multi-step SEO workflows now reliably orchestrated through natural language. Impossible 18 months ago.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 32px;">
+        <div style="font-size: 3rem; margin-bottom: 16px;">&#128279;</div>
+        <h3>MCP Standards</h3>
+        <p style="font-size: 0.9rem;">Model Context Protocol and tool-use standards maturing. Interoperability with LLM apps now viable as infrastructure.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 32px; background: #fef3c7; border-color: #fcd34d;">
+      <h3 style="color: #92400e;">Tailwinds Accelerating Adoption</h3>
+      <ul style="font-size: 0.95rem; color: #92400e; padding-left: 20px; margin-top: 12px;">
+        <li>Agencies losing clients to competitors pitching "AI SEO" — FOMO driving purchases</li>
+        <li>AI-referred traffic up +620% YoY with 5x higher conversion rates</li>
+        <li>$7B+ SEO tool market ripe for consolidation (teams manage 5-10 subscriptions)</li>
+        <li>GEO services market: ~$1B today → $17-33B by early 2030s</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Section 12: Team -->
+<section id="team">
+  <div class="section-content">
+    <p class="section-label">Team</p>
+    <h2>Founder</h2>
+
+    <div class="card" style="padding: 32px;">
+      <div class="founder-card">
+        <div class="founder-avatar">SC</div>
+        <div class="founder-info">
+          <h3>Sherin Chacko Thomas</h3>
+          <p class="title">Founder & CEO</p>
+          <p style="font-size: 0.95rem; margin-bottom: 16px;">Rare combination: AI infrastructure engineering + hands-on agency experience. Personally experienced the exact pain points Berlin solves.</p>
+
+          <div class="credential-badges">
+            <span class="badge badge-primary">RedisAI Co-builder</span>
+            <span class="badge badge-primary">Lightning.ai Engineer</span>
+            <span class="badge badge-primary">PyTorch Book Author</span>
+            <span class="badge badge-secondary">Agency Founder ($350K)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card expandable" style="margin-top: 24px;" onclick="toggleExpand(this)">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0;">Background & Hiring Plans</h3>
+        <span class="expand-indicator">&#9660;</span>
+      </div>
+    </div>
+    <div class="expand-content card" style="margin-top: -1px; border-top: none; border-radius: 0 0 12px 12px;">
+      <div class="grid-2" style="gap: 24px;">
+        <div>
+          <h4>Background</h4>
+          <ul style="font-size: 0.9rem; color: var(--secondary); padding-left: 20px;">
+            <li>Co-built RedisAI — most performant AI-in-production runtime at the time</li>
+            <li>Infrastructure engineer at Lightning.ai (PyTorch Lightning creators)</li>
+            <li>Authored the first published book on PyTorch</li>
+            <li>Founded dev + marketing agency in Dubai, scaled to $350K in year two</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Key Hires Planned</h4>
+          <ul style="font-size: 0.9rem; color: var(--secondary); padding-left: 20px;">
+            <li>First GTM hire: Growth marketer / community manager</li>
+            <li>Early co-founder discussions for CMO / Head of Growth role</li>
+            <li>Advisor network includes experienced marketing professionals</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top: 16px;">
+        <a href="https://linkedin.com/in/hhsecond" target="_blank" class="cta cta-secondary" style="padding: 10px 20px; font-size: 0.9rem;">LinkedIn Profile &rarr;</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 13: Financials -->
+<section id="financials">
+  <div class="section-content">
+    <p class="section-label">Financials</p>
+    <h2>Lean & Efficient</h2>
+    <p class="subtitle" style="margin-bottom: 48px;">~10 months of product evolution with under $1,100/month expenses.</p>
+
+    <div class="grid-3" style="margin-bottom: 32px;">
+      <div class="card stat-card">
+        <div class="big-number">$10K</div>
+        <div class="big-number-label">Cash on Hand</div>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">$1,050</div>
+        <div class="big-number-label">Monthly Burn</div>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">~10 mo</div>
+        <div class="big-number-label">Current Runway</div>
+      </div>
+    </div>
+
+    <div class="card" style="background: #fef2f2; border-color: #fecaca;">
+      <h3 style="color: #991b1b;">Inflection Point</h3>
+      <p style="font-size: 0.95rem; color: #991b1b;">Transitioning from product development to go-to-market. At planned marketing spend (~$11,650/month), current reserves support ~2 months. This raise bridges the gap from validation to repeatable customer acquisition.</p>
+    </div>
+
+    <div class="card expandable" style="margin-top: 24px;" onclick="toggleExpand(this)">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0;">Burn Breakdown</h3>
+        <span class="expand-indicator">&#9660;</span>
+      </div>
+    </div>
+    <div class="expand-content card" style="margin-top: -1px; border-top: none; border-radius: 0 0 12px 12px;">
+      <div class="grid-4">
+        <div style="text-align: center;">
+          <div style="font-size: 1.5rem; font-weight: 700;">$250</div>
+          <div style="font-size: 0.8rem; color: var(--secondary);">Cloud Infrastructure</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 1.5rem; font-weight: 700;">$300</div>
+          <div style="font-size: 0.8rem; color: var(--secondary);">LLM API Costs</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 1.5rem; font-weight: 700;">$300</div>
+          <div style="font-size: 0.8rem; color: var(--secondary);">Logistics</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 1.5rem; font-weight: 700;">$200</div>
+          <div style="font-size: 0.8rem; color: var(--secondary);">Software</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 14: The Ask -->
+<section id="ask">
+  <div class="section-content" style="text-align: center;">
+    <p class="section-label">The Ask</p>
+    <h2>Pre-Seed Round</h2>
+
+    <div class="grid-4" style="margin: 48px 0;">
+      <div class="card stat-card">
+        <div class="big-number">$200K</div>
+        <div class="big-number-label">Raising</div>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">$2.5M</div>
+        <div class="big-number-label">Valuation Cap</div>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">SAFE</div>
+        <div class="big-number-label">Post-Money</div>
+      </div>
+      <div class="card stat-card">
+        <div class="big-number">$25K</div>
+        <div class="big-number-label">Min Check</div>
+      </div>
+    </div>
+
+    <div class="card" style="text-align: left; margin-bottom: 32px;">
+      <h3>Use of Funds</h3>
+      <div class="fund-bar">
+        <div class="fund-segment" style="width: 35%; background: var(--accent);">GTM 35%</div>
+        <div class="fund-segment" style="width: 30%; background: #6366f1;">Hiring 30%</div>
+        <div class="fund-segment" style="width: 15%; background: #8b5cf6;">Eng 15%</div>
+        <div class="fund-segment" style="width: 10%; background: #a855f7;">Cloud 10%</div>
+        <div class="fund-segment" style="width: 10%; background: #d946ef;">Ops 10%</div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--secondary);">Target runway: 16-18 months at ~$11,650/month burn</p>
+    </div>
+
+    <div class="card" style="text-align: left;">
+      <h3>Milestones This Funding Achieves</h3>
+      <div class="milestone-grid" style="margin-top: 16px;">
+        <div class="milestone-card card">
+          <div class="timeframe">Months 1-3</div>
+          <h4>Convert Partners</h4>
+          <p>5 paying customers at $2K+/month ACV</p>
+        </div>
+        <div class="milestone-card card">
+          <div class="timeframe">Months 3-6</div>
+          <h4>Repeatable Sales</h4>
+          <p>$10K+ MRR from new ICP customers</p>
+        </div>
+        <div class="milestone-card card">
+          <div class="timeframe">Months 2-4</div>
+          <h4>PLG Launch</h4>
+          <p>30+ workflows, 200+ free users</p>
+        </div>
+        <div class="milestone-card card">
+          <div class="timeframe">Months 12-18</div>
+          <h4>Target ARR</h4>
+          <p>$300K-$500K ARR for seed round</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <a href="mailto:sherin@agentberlin.ai" class="cta" style="margin-right: 16px;">Schedule a Call</a>
+      <a href="#hero" class="cta cta-secondary">Back to Top</a>
+    </div>
+
+    <p style="margin-top: 48px; font-size: 0.85rem; color: var(--secondary);">
+      100% founder-owned • Clean cap table • Delaware LLC (C-Corp ready) • All IP company-owned
+    </p>
+  </div>
+</section>
+
+<script>
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('progressBar').style.width = progress + '%';
+  });
+
+  // Navigation dots
+  const sections = document.querySelectorAll('section');
+  const navDots = document.querySelectorAll('.nav-dot');
+
+  // Intersection Observer for active section
+  const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navDots.forEach(dot => dot.classList.remove('active'));
+        const activeDot = document.querySelector(`[data-section="${entry.target.id}"]`);
+        if (activeDot) activeDot.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+
+  // Click navigation
+  navDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const sectionId = dot.dataset.section;
+      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Expandable sections
+  function toggleExpand(element) {
+    element.classList.toggle('expanded');
+    const content = element.nextElementSibling;
+    if (content && content.classList.contains('expand-content')) {
+      content.classList.toggle('expanded');
+    }
+  }
+
+  // Animate numbers on scroll
+  const animateValue = (element, start, end, duration) => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const value = Math.floor(progress * (end - start) + start);
+      element.textContent = value.toLocaleString();
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  };
+</script>
+
 </body>
 </html>
