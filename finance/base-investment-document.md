@@ -496,47 +496,96 @@ The company is transitioning from product development to go-to-market. The curre
 
 ## 14. The Ask
 
-- **Amount raising:** $___
+### Raise Overview
 
-- **Instrument:** _(SAFE, priced equity, convertible note)_
+- **Amount raising:** $`[FILL IN]`
+- **Instrument:** SAFE (post-money)
+- **Valuation cap:** $`[FILL IN]`
+- **Discount:** `[FILL IN — e.g., "None" or "20%"]`
+- **Pro rata rights:** `[FILL IN — "Yes" or "No"]`
+- **Minimum check size:** $`[FILL IN]`
 
-- **Valuation / cap:** $___
+### Why Now — The Funding Inflection
 
-- **Use of funds:**
+Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, the first design partners are in, and the GTM engine is designed. What's missing is fuel: the company is transitioning from build-mode to go-to-market, and current cash reserves (~$10K) support approximately 2 months of operations at planned marketing spend levels. This raise bridges the gap from Founding Partner validation to repeatable, paid customer acquisition.
 
-| Category | Allocation | Purpose |
-|----------|-----------|---------|
-| Engineering |         |         |
-| Sales & Marketing |  |         |
-| Operations |         |         |
-| Hiring |             |         |
-| Other |              |         |
+### Use of Funds
 
-- **Milestones this funding achieves:**
+| Category | Allocation % | Monthly Estimate | Purpose |
+|----------|:------------:|:----------------:|---------|
+| **Go-to-Market & Growth** | `[FILL IN]`% | $`[FILL IN]` | Founding Partner Program conversion, content production, community growth (r/agent_seo), micro-influencer program, meetup series, free workflow library launch |
+| **Engineering & Infrastructure** | `[FILL IN]`% | $`[FILL IN]` | Platform reliability, workflow engine improvements, expanding integration library, scaling crawlers and keyword infrastructure |
+| **Cloud & LLM Costs** | `[FILL IN]`% | $`[FILL IN]` | Infrastructure scaling as pilot partners increase workflow execution volume; LLM API costs for platform-provided model access |
+| **Hiring** | `[FILL IN]`% | $`[FILL IN]` | `[FILL IN — e.g., "First GTM hire (growth/community), first full-time engineer" or specify roles]` |
+| **Operations & Legal** | `[FILL IN]`% | $`[FILL IN]` | LLC → C-Corp conversion (if planned), SAFE legal costs, accounting, insurance, software subscriptions |
+
+### Target Runway
+
+This raise is sized to provide `[FILL IN — e.g., "18–24"]` months of runway at planned burn, reaching the following milestones before needing additional capital.
+
+### Milestones This Funding Achieves
+
+| Milestone | Target Timeline | Success Metric |
+|-----------|:--------------:|----------------|
+| Convert Founding Partners to paid | Months 1–3 | `[FILL IN — e.g., "5+ paying agency/enterprise customers"]` |
+| Validate repeatable sales motion | Months 3–6 | `[FILL IN — e.g., "$10K+ MRR from new ICP customers"]` |
+| Launch free workflow library (PLG engine) | Months 2–4 | `[FILL IN — e.g., "50 workflows live, 500+ free-tier users"]` |
+| Publish autonomous affiliate site case study | Months 2–4 | `[FILL IN — e.g., "Verifiable organic traffic from fully autonomous site"]` |
+| Reach target ARR for next raise | Months 12–18 | $`[FILL IN — e.g., "$500K–$1M ARR"]` |
+| Produce 2–3 publishable customer case studies | Months 3–6 | Named logos with quantified results |
+
+### What This Round Does NOT Need to Achieve
+
+This is a pre-seed raise designed to get Berlin from validated product to validated GTM. The goal is not profitability — it is repeatable evidence that agencies and enterprise teams will pay $24K–$60K/year for programmable SEO infrastructure, supported by case studies and a functioning PLG engine. That evidence positions Berlin for a seed round at significantly higher valuation.
 
 ---
 
 ## 15. Cap Table & Legal
 
-- **Current ownership breakdown:**
+### Current Ownership
 
-| Shareholder | Ownership % | Type |
-|-------------|-------------|------|
-| Sherin Chacko Thomas | `[FILL IN]` | Sole Member, LLC |
+| Shareholder | Ownership | Type | Notes |
+|-------------|:---------:|------|-------|
+| Sherin Chacko Thomas | 100% | Sole Member, LLC | Founder & CEO |
 
-- **Entity structure:** Delaware LLC, sole member
+The company is 100% founder-owned with no outside investors, no outstanding SAFEs, no convertible notes, and no option pool. The cap table is completely clean.
 
-- **Existing investors:** `[FILL IN — or "None" if bootstrapped]`
+### Entity Structure
 
-- **Outstanding SAFEs / notes:** `[FILL IN — or "None"]`
+- **Current entity:** Agentic World, LLC — Delaware Limited Liability Company
+- **Registered agent:** 1111B S Governors Ave, Ste 29991, Dover, DE 19904
+- **Formation date:** May 16, 2025
+- **C-Corp conversion planned:** `[FILL IN — "Yes, prior to closing" / "Yes, post-closing" / "No, raising into the LLC" / "TBD — open to investor guidance"]`
 
-- **Option pool:** `[FILL IN]`% (allocated / unallocated)
+> _Note: Most institutional investors and accelerators require a Delaware C-Corp. If converting, standard practice is to form a new C-Corp and roll the LLC assets into it prior to or concurrent with closing. SAFE documents can include a conversion covenant._
 
-- **409A valuation:** `[FILL IN — or "N/A for LLC"]`
+### Investor History
 
-- **IP assignments:** `[FILL IN — complete? Y/N]`
+- **Prior fundraising:** None — fully bootstrapped to date
+- **Existing investors:** None
+- **Outstanding SAFEs / convertible notes:** None
+- **Advisor equity / grants:** `[FILL IN — "None" or describe any advisor arrangements]`
 
-- **Any pending legal matters:** `[FILL IN — or "None"]`
+### Equity & Option Pool
+
+- **Current option pool:** None (to be created as part of this or next round)
+- **Planned option pool:** `[FILL IN — e.g., "10–15% reserved for future hires, to be established at conversion to C-Corp"]`
+- **409A valuation:** N/A (LLC; 409A will be completed upon C-Corp conversion if applicable)
+
+### Intellectual Property
+
+- **IP ownership:** `[FILL IN — "All IP created by the sole founder and assigned to Agentic World, LLC" / describe status]`
+- **IP assignments complete:** `[FILL IN — "Yes" / "In progress"]`
+- **Open-source dependencies:** `[FILL IN — "Standard open-source libraries under permissive licenses (MIT, Apache 2.0)" or describe]`
+- **Third-party IP or licensing:** `[FILL IN — "None" or describe any third-party data licensing, e.g., DataForSEO, SEMrush API agreements]`
+- **Patents or patent applications:** `[FILL IN — "None" or describe]`
+
+### Legal Matters
+
+- **Pending litigation:** None
+- **Regulatory considerations:** `[FILL IN — "None" or describe any data privacy considerations, GDPR/CCPA compliance status for crawler operations]`
+- **Material contracts:** `[FILL IN — "None" or list any contracts with Founding Partners, data providers, or infrastructure vendors that an investor should know about]`
+- **Terms of service / privacy policy:** `[FILL IN — "Live at [URL]" or "In progress"]`
 
 ---
 
