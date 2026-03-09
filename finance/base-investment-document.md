@@ -280,29 +280,57 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 ## 9. Go-to-Market Strategy
 
-- **Current GTM phase:** Founding Partner Program
-  - Status: Building with users, not for users
-  - Selecting a small number of agencies as founding partners
-  - Value exchange: 50% off forever + direct product influence in return for weekly calls (8 weeks), workflow walkthroughs, and honest feedback
-  - Goal: Validate product-market fit, generate case studies, create champions
+### Phase & Objective
 
-- **Current acquisition channels:**
-  - Outbound founder-led sales (calls, demos)
-  - Social / content (positioning around AI SEO, GEO/AEO thought leadership)
-  - `[FILL IN — any other channels: referrals, communities, etc.]`
+Berlin is in founder-led, community-driven GTM mode. The immediate objective is to acquire 20 Founding Partners within 50 days — design-partner customers who validate product-market fit, generate case studies, and become the first wave of champions. Every channel below feeds this singular near-term goal.
 
-- **Sales motion:** Founder-led sales → transitioning to sales-led with PLG elements (LLM integration is inherently PLG)
+### Founding Partner Program
 
-- **Marketing strategy:** `[FILL IN — content marketing, social, community, events, etc.]`
+The Founding Partner Program is Berlin's primary conversion mechanism during this phase. A small cohort of agencies and in-house SEO teams receive 50% off in perpetuity plus direct product influence, in exchange for 8 weeks of weekly calls, workflow walkthroughs, and candid feedback. Founding Partners receive hands-on workflow buildout support from Berlin's Forward Deployed Marketers — embedded specialists who design and optimize agentic workflows for each partner's specific operations. This accelerates time-to-value and produces battle-tested workflow templates that feed back into the platform's library. The program is designed to produce 2–3 publishable case studies, a library of proven workflow templates, and organic word-of-mouth from practitioners who helped build the platform.
 
-- **Partnerships:** `[FILL IN — any strategic partnerships, integrations, co-marketing]`
+### Content as the Primary GTM Engine
 
-- **Expansion / upsell strategy:**
-  - Land with one use case (e.g., reporting automation), expand to full workflow stack
-  - Per-client/project pricing encourages agencies to add more clients
-  - LLM integration creates stickiness as users embed Berlin into daily workflows
+Content is Berlin's trump card. In a market where every SEO tool company publishes content *about* SEO, Berlin's founder brings a fundamentally different angle: an agentic AI infrastructure expert who turned to SEO — not an SEO who picked up AI tooling. This distinction matters. Most "agentic SEO" content in the market comes from the latter perspective and stays at a surface level. Content from an agent-native builder is more tactical, more practical, and more credible to the technical SEO practitioners Berlin targets.
 
-- **Geographic focus:** `[FILL IN]`
+**Founder-led thought leadership (LinkedIn)** is the primary channel. Sherin publishes educational and strategic content that fills a clear gap in the current SEO conversation — practical agentic workflow knowledge that the SEO community can't get elsewhere. This positions Berlin's founder as the go-to voice on agentic workflows for search, drives qualified inbound to the Founding Partner Program, and builds the personal brand that early-stage B2B companies depend on for trust.
+
+### Agentic SEO Education & Community
+
+Berlin is building the definitive education layer for agentic AI in SEO. Rather than competing on features alone, Berlin is investing in making the entire market smarter about agentic workflows — and positioning the platform as the natural home for practitioners who want to act on what they learn.
+
+This takes several forms. Berlin operates r/agent_seo, a growing Reddit community (3.3K members) where pre-built workflow demos are shared as educational content, exposing prospective users to Berlin's capabilities before any sales conversation. The community is being scaled as a self-reinforcing distribution channel where practitioners share workflows, ask questions, and organically discover the platform. Berlin is also publishing "Agentic AI for SEO," a micro-book written from the same agent-expert angle, heavy on practical workflow examples — serving as a lead magnet, a reference asset, and a credibility builder. And Berlin is launching a meetup series for SEO professionals focused on building and running agents for SEO, with heavy live demos. Because Berlin has interoperability with LLM apps like Claude Code and OpenAI Codex, demos run inside environments the audience already knows and trusts, which dramatically increases credibility and approachability.
+
+Every education touchpoint — subreddit post, book chapter, meetup demo — is built around Berlin's pre-built workflows, creating a direct path from learning to platform adoption.
+
+### Micro-Influencer Program
+
+Berlin is building a network of micro-influencers — SEO practitioners and agency operators — who demo Berlin's workflows on their own channels. Influencers receive free platform access and earn affiliate commissions on referrals. The strategy prioritizes authentic workflow demos over polished ads: practitioners showing real results with real workflows, which builds trust and drives qualified inbound.
+
+### Product-Led Growth Engine: Free Workflow Library
+
+Berlin is building a library of ~50 pre-built workflows that automate the most common, mundane SEO tasks agencies and in-house teams perform daily. These workflows will be available for free — usable through a Berlin account or the desktop app — with execution costs minimized to near-zero on Berlin's side. The thesis: if 90% of what agencies do day-to-day can be automated through Berlin's free tier, the platform becomes indispensable before any commercial conversation begins. This is the primary PLG flywheel — users adopt free workflows, experience the platform's value, and convert to paid when they need custom workflows, multi-client management, or advanced capabilities.
+
+Each workflow doubles as a marketing asset: video walkthroughs, social media demos, and influencer content are built around individual workflows, creating a steady stream of highly specific, highly shareable content.
+
+### Proof-of-Concept: Autonomous Affiliate Site
+
+Berlin is building one fully autonomous affiliate marketing website — managed end-to-end by Berlin's agentic workflows — that acquires organic traffic without human intervention. This project has a ~2-month timeline to show initial results and is informed by an advisor with proven examples of this exact playbook. Once results are established, it will be published as a public case study: transparent, verifiable proof that agentic SEO workflows can independently drive traffic. This is the ultimate "show, don't tell" asset — a live, growing website that prospects can inspect and verify.
+
+### Owned Infrastructure: Snake.blue Crawler
+
+Berlin operates Snake.blue, an AI-first web crawler with native MCP support. Snake.blue underpins Berlin's first-party data engine and is also exposed as standalone infrastructure — extending Berlin's surface area as a platform and reinforcing the company's credibility as a builder of AI-native SEO tooling, not just a wrapper around third-party data.
+
+### Sales Motion
+
+Current: founder-led inbound and outbound, converting through the Founding Partner Program. Near-term: as the free workflow library and community channels scale, the motion shifts toward PLG-assisted sales — prospects self-qualify through free workflow usage, and founder-led sales closes high-value accounts. Longer-term: sales-led with PLG underpinning, supported by case studies, community proof, and the autonomous affiliate site as a reference.
+
+### Expansion & Upsell
+
+Land with free workflows or a single use case (e.g., reporting automation), expand to full workflow stack and custom workflow creation. Per-client/per-project pricing encourages agencies to add more clients. LLM app integration creates deep stickiness as teams embed Berlin into their daily Claude/ChatGPT environments.
+
+### Geographic Focus
+
+No geographic restriction in this phase. Berlin's product is cloud-native and language-agnostic for core SEO operations. Initial traction is founder-network-driven (spanning US, India, EU, and Nordics based on current pilot distribution). Meetup locations will follow community density rather than a predetermined geographic playbook.
 
 ---
 
