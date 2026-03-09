@@ -4,17 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agent Berlin — Investment Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1a1a1a;
-      --secondary: #4b5563;
-      --accent: #0ea5e9;
-      --accent-dark: #0284c7;
-      --bg: #fafafa;
-      --bg-card: #ffffff;
-      --border: #e5e7eb;
-      --success: #10b981;
-      --warning: #f59e0b;
+      --bg-primary: #09090b;
+      --bg-secondary: #18181b;
+      --bg-tertiary: #27272a;
+      --bg-card: rgba(39, 39, 42, 0.5);
+      --bg-glass: rgba(255, 255, 255, 0.03);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.15);
+      --text-primary: #fafafa;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent: #8b5cf6;
+      --accent-secondary: #a78bfa;
+      --accent-glow: rgba(139, 92, 246, 0.4);
+      --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+      --gradient-2: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+      --gradient-3: linear-gradient(180deg, rgba(139, 92, 246, 0.15) 0%, transparent 100%);
+      --success: #22c55e;
+      --warning: #eab308;
       --danger: #ef4444;
     }
 
@@ -26,11 +38,27 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
+    }
+
+    /* Ambient background effects */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 50%, rgba(6, 182, 212, 0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 0% 80%, rgba(236, 72, 153, 0.08), transparent);
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* Sections */
@@ -40,105 +68,140 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 60px 24px;
+      padding: 80px 24px;
       position: relative;
     }
 
     .section-content {
-      max-width: 1000px;
+      max-width: 1100px;
       width: 100%;
     }
 
     .section-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
       color: var(--accent);
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--accent);
     }
 
     h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     h2 {
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, #d4d4d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     h3 {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 600;
       margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
     }
 
     p {
-      color: var(--secondary);
-      font-size: 1.125rem;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
     .subtitle {
-      font-size: 1.25rem;
-      color: var(--secondary);
-      max-width: 600px;
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 650px;
+      font-weight: 400;
     }
 
     /* Navigation Dots */
     .nav-dots {
       position: fixed;
-      right: 24px;
+      right: 28px;
       top: 50%;
       transform: translateY(-50%);
       z-index: 100;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
 
     .nav-dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--border);
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border: none;
       position: relative;
     }
 
     .nav-dot:hover {
       background: var(--accent);
-      transform: scale(1.2);
+      box-shadow: 0 0 20px var(--accent-glow);
+      transform: scale(1.3);
     }
 
     .nav-dot.active {
       background: var(--accent);
-      transform: scale(1.3);
+      box-shadow: 0 0 20px var(--accent-glow);
+      transform: scale(1.4);
     }
 
     .nav-dot::before {
       content: attr(data-label);
       position: absolute;
-      right: 20px;
+      right: 24px;
       top: 50%;
       transform: translateY(-50%);
       white-space: nowrap;
-      font-size: 0.75rem;
-      color: var(--secondary);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
       opacity: 0;
-      transition: opacity 0.2s;
+      transition: all 0.2s;
       pointer-events: none;
+      background: var(--bg-secondary);
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
     }
 
     .nav-dot:hover::before {
       opacity: 1;
+      right: 28px;
     }
 
     /* Progress Bar */
@@ -146,51 +209,72 @@
       position: fixed;
       top: 0;
       left: 0;
-      height: 3px;
-      background: var(--accent);
+      height: 2px;
+      background: var(--gradient-1);
       z-index: 100;
       width: 0%;
       transition: width 0.1s;
+      box-shadow: 0 0 20px var(--accent-glow);
     }
 
-    /* Cards */
+    /* Cards - Glassmorphism */
     .card {
-      background: var(--bg-card);
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: all 0.3s ease;
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
     }
 
     .card:hover {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
 
     /* Grid Layouts */
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 
     /* Big Numbers */
     .big-number {
       font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 700;
-      color: var(--accent);
+      font-weight: 800;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       line-height: 1;
     }
 
     .big-number-label {
-      font-size: 0.875rem;
-      color: var(--secondary);
+      font-size: 0.75rem;
+      color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 8px;
+      letter-spacing: 0.1em;
+      margin-top: 12px;
+      font-weight: 500;
     }
 
     /* Stats */
     .stat-card {
       text-align: center;
-      padding: 32px 24px;
+      padding: 36px 24px;
     }
 
     /* Expandable Content */
@@ -199,112 +283,146 @@
     }
 
     .expandable .expand-indicator {
-      display: inline-block;
-      transition: transform 0.3s;
-      margin-left: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--bg-tertiary);
+      transition: all 0.3s;
+      font-size: 0.8rem;
       color: var(--accent);
+    }
+
+    .expandable:hover .expand-indicator {
+      background: var(--accent);
+      color: white;
     }
 
     .expandable.expanded .expand-indicator {
       transform: rotate(180deg);
+      background: var(--accent);
+      color: white;
     }
 
     .expand-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-      padding: 0 24px;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+      padding: 0 28px;
     }
 
     .expandable.expanded + .expand-content,
     .expand-content.expanded {
       max-height: 2000px;
-      padding: 24px;
+      padding: 28px;
     }
 
     /* Tags / Badges */
     .badge {
       display: inline-block;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 100px;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
     }
 
-    .badge-live { background: #d1fae5; color: #065f46; }
-    .badge-expanding { background: #dbeafe; color: #1e40af; }
-    .badge-primary { background: #e0f2fe; color: #0369a1; }
-    .badge-secondary { background: #f3f4f6; color: #374151; }
+    .badge-live {
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    .badge-expanding {
+      background: rgba(6, 182, 212, 0.15);
+      color: #22d3ee;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+    .badge-primary {
+      background: rgba(139, 92, 246, 0.15);
+      color: var(--accent-secondary);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+    .badge-secondary {
+      background: rgba(161, 161, 170, 0.1);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
 
     /* Logo Wall */
     .logo-wall {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 16px;
       align-items: center;
       justify-content: center;
       padding: 32px 0;
     }
 
     .logo-item {
-      padding: 16px 24px;
-      background: var(--bg-card);
+      padding: 20px 28px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 12px;
       font-weight: 600;
-      color: var(--secondary);
+      color: var(--text-primary);
+      transition: all 0.3s;
+    }
+
+    .logo-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+    }
+
+    .logo-item span {
+      color: var(--text-muted) !important;
     }
 
     /* Timeline */
     .timeline {
       position: relative;
-      padding-left: 32px;
+      padding-left: 36px;
     }
 
     .timeline::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 0;
-      bottom: 0;
+      top: 8px;
+      bottom: 8px;
       width: 2px;
-      background: var(--border);
+      background: linear-gradient(180deg, var(--accent), transparent);
+      border-radius: 2px;
     }
 
     .timeline-item {
       position: relative;
-      padding-bottom: 24px;
+      padding-bottom: 28px;
     }
 
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -38px;
-      top: 4px;
-      width: 12px;
-      height: 12px;
+      left: -42px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
       background: var(--accent);
-      border: 3px solid var(--bg);
-    }
-
-    /* Pie Chart (CSS) */
-    .pie-chart {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      position: relative;
+      box-shadow: 0 0 20px var(--accent-glow);
     }
 
     /* Use of Funds Chart */
     .fund-bar {
-      height: 32px;
-      border-radius: 4px;
+      height: 40px;
+      border-radius: 12px;
       display: flex;
       overflow: hidden;
-      margin: 16px 0;
+      margin: 20px 0;
+      background: var(--bg-tertiary);
     }
 
     .fund-segment {
@@ -312,192 +430,223 @@
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: all 0.3s;
+    }
+
+    .fund-segment:hover {
+      filter: brightness(1.2);
     }
 
     /* Matrix/Table */
     .matrix {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       margin-top: 24px;
     }
 
     .matrix th, .matrix td {
-      padding: 12px;
+      padding: 16px;
       text-align: left;
       border-bottom: 1px solid var(--border);
     }
 
     .matrix th {
-      background: var(--bg);
+      background: var(--bg-secondary);
       font-weight: 600;
-      position: sticky;
-      top: 0;
+      color: var(--text-primary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .matrix .check { color: var(--success); }
-    .matrix .cross { color: var(--danger); }
-
-    /* Risk Indicators */
-    .risk-badge {
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 600;
+    .matrix td {
+      color: var(--text-secondary);
     }
 
-    .risk-high { background: #fee2e2; color: #991b1b; }
-    .risk-medium { background: #fef3c7; color: #92400e; }
-    .risk-low { background: #d1fae5; color: #065f46; }
+    .matrix tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .matrix .check { color: var(--success); font-size: 1.1rem; }
+    .matrix .cross { color: var(--danger); opacity: 0.6; }
 
     /* CTA Buttons */
     .cta {
-      display: inline-block;
-      padding: 14px 28px;
-      background: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: var(--gradient-1);
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 12px;
       font-weight: 600;
-      transition: all 0.2s;
+      font-size: 0.95rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border: none;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s;
     }
 
     .cta:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 40px rgba(139, 92, 246, 0.4);
+    }
+
+    .cta:hover::before {
+      opacity: 1;
     }
 
     .cta-secondary {
       background: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
     }
 
     .cta-secondary:hover {
-      background: var(--accent);
-      color: white;
+      background: var(--bg-glass);
+      border-color: var(--accent);
+      box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .nav-dots { right: 12px; }
-      .nav-dot { width: 8px; height: 8px; }
-      section { padding: 40px 16px; }
+      .nav-dots { right: 16px; }
+      .nav-dot { width: 6px; height: 6px; }
+      section { padding: 60px 20px; }
       .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .founder-card { flex-direction: column; align-items: center; text-align: center; }
     }
 
-    /* Hero Gradient */
+    /* Hero */
     #hero {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
-      color: white;
+      background: transparent;
     }
 
-    #hero .section-label { color: #38bdf8; }
-    #hero .subtitle { color: #94a3b8; }
-
-    /* Alternating backgrounds */
-    section:nth-child(even) { background: #f8fafc; }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 100% 100% at 50% 0%, rgba(139, 92, 246, 0.2), transparent 50%),
+        radial-gradient(ellipse 80% 60% at 80% 50%, rgba(6, 182, 212, 0.1), transparent);
+      pointer-events: none;
+    }
 
     /* Scroll indicator */
     .scroll-hint {
       position: absolute;
-      bottom: 40px;
+      bottom: 50px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      animation: bounce 2s infinite;
+      gap: 10px;
+      animation: float 3s ease-in-out infinite;
     }
 
     .scroll-hint span {
-      font-size: 0.75rem;
-      color: #64748b;
+      font-size: 0.65rem;
+      color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
+      font-weight: 500;
     }
 
     .scroll-hint svg {
-      width: 24px;
-      height: 24px;
-      stroke: #64748b;
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
+      stroke-width: 2;
     }
 
-    @keyframes bounce {
+    @keyframes float {
       0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(8px); }
+      50% { transform: translateX(-50%) translateY(10px); }
     }
 
     /* Founder Card */
     .founder-card {
       display: flex;
-      gap: 24px;
+      gap: 28px;
       align-items: flex-start;
     }
 
     .founder-avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      background: var(--gradient-1);
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       flex-shrink: 0;
+      box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
     }
 
     .founder-info h3 { margin-bottom: 4px; }
-    .founder-info .title { color: var(--secondary); font-size: 0.95rem; margin-bottom: 12px; }
+    .founder-info .title { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; }
 
     .credential-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
+      gap: 10px;
+      margin-top: 16px;
     }
 
     /* ICP Cards */
     .icp-card {
-      border-left: 4px solid var(--accent);
+      border-left: 3px solid var(--accent);
+      padding-left: 24px;
     }
 
     .icp-card h4 {
       font-size: 1rem;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     .icp-card .pain {
-      font-size: 0.875rem;
-      color: var(--danger);
-      margin-bottom: 8px;
+      font-size: 0.85rem;
+      color: #f87171;
+      margin-bottom: 10px;
     }
 
     .icp-card .value {
-      font-size: 0.875rem;
-      color: var(--success);
+      font-size: 0.85rem;
+      color: #4ade80;
     }
 
     /* Feature Grid */
     .feature-item {
       display: flex;
-      gap: 16px;
+      gap: 18px;
       align-items: flex-start;
     }
 
     .feature-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: #e0f2fe;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -513,30 +662,108 @@
     /* Milestone Timeline */
     .milestone-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px;
     }
 
     .milestone-card {
       text-align: center;
-      padding: 20px;
+      padding: 24px;
     }
 
     .milestone-card .timeframe {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--accent);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
     }
 
     .milestone-card h4 {
-      font-size: 0.95rem;
-      margin: 8px 0 4px;
+      font-size: 1rem;
+      margin: 12px 0 8px;
     }
 
     .milestone-card p {
       font-size: 0.8rem;
+    }
+
+    /* Highlight cards */
+    .highlight-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .highlight-card:hover {
+      border-color: rgba(139, 92, 246, 0.4);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15);
+    }
+
+    /* Warning card */
+    .warning-card {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .warning-card h3 {
+      color: #f87171;
+    }
+
+    .warning-card p {
+      color: #fca5a5;
+    }
+
+    /* Success card */
+    .success-card {
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .success-card h3 {
+      color: #4ade80;
+    }
+
+    .success-card p {
+      color: #86efac;
+    }
+
+    /* Glow effects for important numbers */
+    .glow-text {
+      text-shadow: 0 0 40px var(--accent-glow);
+    }
+
+    /* Accent border cards */
+    .accent-left {
+      border-left: 3px solid var(--accent);
+      padding-left: 24px;
+    }
+
+    /* Subtle pattern overlay */
+    .pattern-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
     }
   </style>
 </head>
@@ -568,30 +795,30 @@
   <div class="section-content" style="text-align: center;">
     <p class="section-label">Investment Opportunity</p>
     <h1>Agent Berlin</h1>
-    <p class="subtitle" style="margin: 0 auto 32px;">Programmable infrastructure for inbound growth — a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.</p>
+    <p class="subtitle" style="margin: 0 auto 40px;">Programmable infrastructure for inbound growth — a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.</p>
 
-    <div class="grid-4" style="margin-top: 48px; text-align: center;">
-      <div>
-        <div class="big-number" style="color: #38bdf8;">$200K</div>
-        <div class="big-number-label" style="color: #94a3b8;">Raising</div>
+    <div class="grid-4" style="margin-top: 60px; text-align: center;">
+      <div class="card stat-card">
+        <div class="big-number glow-text">$200K</div>
+        <div class="big-number-label">Raising</div>
       </div>
-      <div>
-        <div class="big-number" style="color: #38bdf8;">$2.5M</div>
-        <div class="big-number-label" style="color: #94a3b8;">Valuation Cap</div>
+      <div class="card stat-card">
+        <div class="big-number glow-text">$2.5M</div>
+        <div class="big-number-label">Valuation Cap</div>
       </div>
-      <div>
-        <div class="big-number" style="color: #38bdf8;">May '25</div>
-        <div class="big-number-label" style="color: #94a3b8;">Founded</div>
+      <div class="card stat-card">
+        <div class="big-number glow-text">May '25</div>
+        <div class="big-number-label">Founded</div>
       </div>
-      <div>
-        <div class="big-number" style="color: #38bdf8;">5</div>
-        <div class="big-number-label" style="color: #94a3b8;">Founding Partners</div>
+      <div class="card stat-card">
+        <div class="big-number glow-text">5</div>
+        <div class="big-number-label">Founding Partners</div>
       </div>
     </div>
 
     <div class="scroll-hint">
       <span>Scroll to explore</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 5v14M5 12l7 7 7-7"/>
       </svg>
     </div>
@@ -672,24 +899,24 @@
       </div>
     </div>
 
-    <div class="card" style="background: linear-gradient(135deg, #0f172a, #1e3a5f); color: white; padding: 32px;">
-      <h3 style="color: #38bdf8; margin-bottom: 16px;">The AI Search Inflection</h3>
+    <div class="card highlight-card" style="padding: 36px;">
+      <h3 style="background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; font-size: 1.3rem;">The AI Search Inflection</h3>
       <div class="grid-4">
         <div style="text-align: center;">
-          <div style="font-size: 2rem; font-weight: 700; color: #38bdf8;">$1B</div>
-          <div style="font-size: 0.8rem; color: #94a3b8;">GEO/AEO Market 2025</div>
+          <div class="big-number" style="font-size: 2.2rem;">$1B</div>
+          <div class="big-number-label">GEO/AEO Market 2025</div>
         </div>
         <div style="text-align: center;">
-          <div style="font-size: 2rem; font-weight: 700; color: #38bdf8;">$17B+</div>
-          <div style="font-size: 0.8rem; color: #94a3b8;">Projected by 2034</div>
+          <div class="big-number" style="font-size: 2.2rem;">$17B+</div>
+          <div class="big-number-label">Projected by 2034</div>
         </div>
         <div style="text-align: center;">
-          <div style="font-size: 2rem; font-weight: 700; color: #38bdf8;">+620%</div>
-          <div style="font-size: 0.8rem; color: #94a3b8;">AI Traffic YoY Growth</div>
+          <div class="big-number" style="font-size: 2.2rem;">+620%</div>
+          <div class="big-number-label">AI Traffic YoY Growth</div>
         </div>
         <div style="text-align: center;">
-          <div style="font-size: 2rem; font-weight: 700; color: #38bdf8;">5-23x</div>
-          <div style="font-size: 0.8rem; color: #94a3b8;">Higher Conversion</div>
+          <div class="big-number" style="font-size: 2.2rem;">5-23x</div>
+          <div class="big-number-label">Higher Conversion</div>
         </div>
       </div>
     </div>
@@ -733,27 +960,27 @@
     <p class="subtitle" style="margin-bottom: 48px;">Berlin combines an integrated SEO data engine, unified data layer, agentic workflow builder, and LLM interoperability — all in one platform.</p>
 
     <div class="grid-2" style="gap: 24px;">
-      <div class="card" style="border-left: 4px solid var(--accent);">
+      <div class="card accent-left">
         <h3>Integrated Data Engine</h3>
-        <p style="font-size: 0.95rem;">Keyword intelligence from Semrush/DataForSEO cached in Berlin's database. Proprietary crawlers (Snake.blue). Users never need separate subscriptions.</p>
+        <p>Keyword intelligence from Semrush/DataForSEO cached in Berlin's database. Proprietary crawlers (Snake.blue). Users never need separate subscriptions.</p>
       </div>
-      <div class="card" style="border-left: 4px solid var(--accent);">
+      <div class="card accent-left">
         <h3>Unified Data Access Layer</h3>
-        <p style="font-size: 0.95rem;">Single API connecting GSC, GA4, Bing Webmaster, CMS, social media. Connect once, available across all workflows.</p>
+        <p>Single API connecting GSC, GA4, Bing Webmaster, CMS, social media. Connect once, available across all workflows.</p>
       </div>
-      <div class="card" style="border-left: 4px solid var(--accent);">
+      <div class="card accent-left">
         <h3>Agentic Workflow Builder</h3>
-        <p style="font-size: 0.95rem;">Chat-based, no-code interface. Build multi-step workflows, run on-demand or scheduled, share across org with human-in-the-loop review.</p>
+        <p>Chat-based, no-code interface. Build multi-step workflows, run on-demand or scheduled, share across org with human-in-the-loop review.</p>
       </div>
-      <div class="card" style="border-left: 4px solid var(--accent);">
+      <div class="card accent-left">
         <h3>LLM Interoperability (MCP)</h3>
-        <p style="font-size: 0.95rem;">Same infrastructure exposed as tools inside Claude, ChatGPT. Work from your preferred environment.</p>
+        <p>Same infrastructure exposed as tools inside Claude, ChatGPT. Work from your preferred environment.</p>
       </div>
     </div>
 
-    <div class="card" style="margin-top: 32px; background: #f0fdf4; border-color: #bbf7d0;">
-      <h3 style="color: #166534;">Workflow Marketplace</h3>
-      <p style="font-size: 0.95rem; color: #166534;">A library of pre-built, vetted workflows that automate complex multi-step SEO operations with a single click. Users get immediate value on day one without building anything.</p>
+    <div class="card success-card" style="margin-top: 32px;">
+      <h3>Workflow Marketplace</h3>
+      <p>A library of pre-built, vetted workflows that automate complex multi-step SEO operations with a single click. Users get immediate value on day one without building anything.</p>
     </div>
   </div>
 </section>
@@ -840,7 +1067,7 @@
       </div>
     </div>
 
-    <p style="text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--secondary);">
+    <p style="text-align: center; margin-top: 28px; font-size: 0.85rem; color: var(--text-muted);">
       + Brand Context, Report Center, Review Center, Third-Party Integrations, Workflow Templates
     </p>
   </div>
@@ -859,28 +1086,28 @@
         <h4>Large Agencies (11-50 clients)</h4>
         <p class="pain"><strong>Pain:</strong> Reporting doesn't scale, no GEO/AEO story, no dev access</p>
         <p class="value"><strong>Value:</strong> Build once, run across all clients; sell AI visibility as new service</p>
-        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--secondary);"><em>Buyers: Agency Owner, Director of SEO, Head of Ops</em></p>
+        <p style="font-size: 0.8rem; margin-top: 12px; color: var(--text-muted);"><em>Buyers: Agency Owner, Director of SEO, Head of Ops</em></p>
       </div>
       <div class="card icp-card">
         <span class="badge badge-primary" style="margin-bottom: 12px;">Primary ICP</span>
         <h4>Small Agencies (1-10 clients)</h4>
         <p class="pain"><strong>Pain:</strong> Can't afford full toolstack, manual reporting, need to win pitches</p>
         <p class="value"><strong>Value:</strong> Force multiplier, punch above weight class, lead gen hooks</p>
-        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--secondary);"><em>Buyers: Agency Founder, Principal Consultant</em></p>
+        <p style="font-size: 0.8rem; margin-top: 12px; color: var(--text-muted);"><em>Buyers: Agency Founder, Principal Consultant</em></p>
       </div>
       <div class="card icp-card">
         <span class="badge badge-secondary" style="margin-bottom: 12px;">Secondary</span>
         <h4>Series B-C SaaS In-House</h4>
         <p class="pain"><strong>Pain:</strong> SEO-to-pipeline attribution broken, AI discovery invisible</p>
         <p class="value"><strong>Value:</strong> Unified data layer, LLM integration, AI visibility metrics for leadership</p>
-        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--secondary);"><em>Buyers: Head of SEO, VP Growth</em></p>
+        <p style="font-size: 0.8rem; margin-top: 12px; color: var(--text-muted);"><em>Buyers: Head of SEO, VP Growth</em></p>
       </div>
       <div class="card icp-card">
         <span class="badge badge-secondary" style="margin-bottom: 12px;">Emerging</span>
         <h4>E-Commerce / Marketplaces</h4>
         <p class="pain"><strong>Pain:</strong> Thousands of pages, AI shopping invisible, programmatic SEO blocked</p>
         <p class="value"><strong>Value:</strong> Scale infrastructure, AI visibility for shopping queries</p>
-        <p style="font-size: 0.8rem; margin-top: 8px; color: var(--secondary);"><em>Buyers: Head of SEO, VP Digital</em></p>
+        <p style="font-size: 0.8rem; margin-top: 12px; color: var(--text-muted);"><em>Buyers: Head of SEO, VP Digital</em></p>
       </div>
     </div>
   </div>
@@ -894,32 +1121,33 @@
 
     <div class="grid-3" style="margin: 48px 0;">
       <div class="card" style="text-align: center;">
-        <h3 style="color: var(--secondary);">Free / Explorer</h3>
-        <div class="big-number" style="font-size: 2rem;">$0</div>
-        <p style="font-size: 0.85rem; margin-top: 12px;">Connect domain, run pre-built workflows, explore data layer</p>
+        <h3 style="color: var(--text-muted);">Free / Explorer</h3>
+        <div class="big-number" style="font-size: 2.5rem;">$0</div>
+        <p style="font-size: 0.85rem; margin-top: 16px;">Connect domain, run pre-built workflows, explore data layer</p>
       </div>
-      <div class="card" style="text-align: center; border: 2px solid var(--accent);">
-        <h3 style="color: var(--accent);">Pro</h3>
-        <div class="big-number" style="font-size: 2rem;">$100<span style="font-size: 1rem; color: var(--secondary);">/mo</span></div>
-        <p style="font-size: 0.85rem; margin-top: 12px;">Full execution, custom workflows, multi-client support</p>
+      <div class="card highlight-card" style="text-align: center;">
+        <span class="badge badge-primary" style="margin-bottom: 12px;">Most Popular</span>
+        <h3>Pro</h3>
+        <div class="big-number" style="font-size: 2.5rem;">$100<span style="font-size: 1rem; color: var(--text-muted);">/mo</span></div>
+        <p style="font-size: 0.85rem; margin-top: 16px;">Full execution, custom workflows, multi-client support</p>
       </div>
       <div class="card" style="text-align: center;">
-        <h3 style="color: var(--secondary);">Enterprise</h3>
-        <div class="big-number" style="font-size: 2rem;">Custom</div>
-        <p style="font-size: 0.85rem; margin-top: 12px;">Higher allocations, unlimited automation, Forward Deployed Marketers</p>
+        <h3 style="color: var(--text-muted);">Enterprise</h3>
+        <div class="big-number" style="font-size: 2.5rem;">Custom</div>
+        <p style="font-size: 0.85rem; margin-top: 16px;">Higher allocations, unlimited automation, Forward Deployed Marketers</p>
       </div>
     </div>
 
     <div class="grid-2" style="gap: 24px;">
       <div class="card">
         <h3>Target ACV</h3>
-        <p style="font-size: 2rem; font-weight: 700; color: var(--accent);">$24K - $60K<span style="font-size: 1rem; color: var(--secondary);">/year</span></p>
-        <p style="font-size: 0.9rem; margin-top: 8px;">Customers compare Berlin to a hire ($60K-$120K/year), not a tool ($200/seat).</p>
+        <div class="big-number" style="font-size: 2rem; margin: 12px 0;">$24K - $60K<span style="font-size: 1rem; color: var(--text-muted);">/year</span></div>
+        <p style="margin-top: 8px;">Customers compare Berlin to a hire ($60K-$120K/year), not a tool ($200/seat).</p>
       </div>
       <div class="card">
         <h3>Gross Margin</h3>
-        <p style="font-size: 2rem; font-weight: 700; color: var(--accent);">~80%</p>
-        <p style="font-size: 0.9rem; margin-top: 8px;">On core platform infrastructure. LLM tokens at cost (strategic decision). BYO-LLM option available.</p>
+        <div class="big-number" style="font-size: 2rem; margin: 12px 0;">~80%</div>
+        <p style="margin-top: 8px;">On core platform infrastructure. LLM tokens at cost (strategic decision). BYO-LLM option available.</p>
       </div>
     </div>
   </div>
@@ -1056,7 +1284,7 @@
             <td>Custom workflow building (no-code)</td>
             <td class="check">&#10003;</td>
             <td class="cross">&#10005;</td>
-            <td style="color: var(--warning);">Partial</td>
+            <td style="color: #fbbf24;">Partial</td>
             <td class="cross">&#10005;</td>
             <td class="check">&#10003;*</td>
           </tr>
@@ -1094,7 +1322,7 @@
           </tr>
         </tbody>
       </table>
-      <p style="font-size: 0.75rem; color: var(--secondary); margin-top: 12px;">*n8n requires engineering to configure</p>
+      <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 16px;">*n8n requires engineering to configure</p>
     </div>
 
     <div class="card expandable" style="margin-top: 24px;" onclick="toggleExpand(this)">
@@ -1124,26 +1352,32 @@
     <p class="subtitle" style="margin-bottom: 48px;">Three converging factors create the perfect storm.</p>
 
     <div class="grid-3">
-      <div class="card" style="text-align: center; padding: 32px;">
-        <div style="font-size: 3rem; margin-bottom: 16px;">&#128161;</div>
+      <div class="card" style="text-align: center; padding: 36px;">
+        <div style="width: 60px; height: 60px; margin: 0 auto 20px; border-radius: 16px; background: rgba(139, 92, 246, 0.15); display: flex; align-items: center; justify-content: center;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        </div>
         <h3>AI Search Disruption</h3>
-        <p style="font-size: 0.9rem;">ChatGPT, Perplexity, Google AI Overviews reshaping discovery. GEO/AEO visibility crisis that legacy tools don't address.</p>
+        <p>ChatGPT, Perplexity, Google AI Overviews reshaping discovery. GEO/AEO visibility crisis that legacy tools don't address.</p>
       </div>
-      <div class="card" style="text-align: center; padding: 32px;">
-        <div style="font-size: 3rem; margin-bottom: 16px;">&#9889;</div>
+      <div class="card" style="text-align: center; padding: 36px;">
+        <div style="width: 60px; height: 60px; margin: 0 auto 20px; border-radius: 16px; background: rgba(6, 182, 212, 0.15); display: flex; align-items: center; justify-content: center;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
         <h3>LLM Maturity</h3>
-        <p style="font-size: 0.9rem;">Multi-step SEO workflows now reliably orchestrated through natural language. Impossible 18 months ago.</p>
+        <p>Multi-step SEO workflows now reliably orchestrated through natural language. Impossible 18 months ago.</p>
       </div>
-      <div class="card" style="text-align: center; padding: 32px;">
-        <div style="font-size: 3rem; margin-bottom: 16px;">&#128279;</div>
+      <div class="card" style="text-align: center; padding: 36px;">
+        <div style="width: 60px; height: 60px; margin: 0 auto 20px; border-radius: 16px; background: rgba(236, 72, 153, 0.15); display: flex; align-items: center; justify-content: center;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
         <h3>MCP Standards</h3>
-        <p style="font-size: 0.9rem;">Model Context Protocol and tool-use standards maturing. Interoperability with LLM apps now viable as infrastructure.</p>
+        <p>Model Context Protocol and tool-use standards maturing. Interoperability with LLM apps now viable as infrastructure.</p>
       </div>
     </div>
 
-    <div class="card" style="margin-top: 32px; background: #fef3c7; border-color: #fcd34d;">
-      <h3 style="color: #92400e;">Tailwinds Accelerating Adoption</h3>
-      <ul style="font-size: 0.95rem; color: #92400e; padding-left: 20px; margin-top: 12px;">
+    <div class="card highlight-card" style="margin-top: 32px;">
+      <h3 style="background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Tailwinds Accelerating Adoption</h3>
+      <ul style="color: var(--text-secondary); padding-left: 20px; margin-top: 16px; display: flex; flex-direction: column; gap: 10px;">
         <li>Agencies losing clients to competitors pitching "AI SEO" — FOMO driving purchases</li>
         <li>AI-referred traffic up +620% YoY with 5x higher conversion rates</li>
         <li>$7B+ SEO tool market ripe for consolidation (teams manage 5-10 subscriptions)</li>
@@ -1203,8 +1437,11 @@
           </ul>
         </div>
       </div>
-      <p style="margin-top: 16px;">
-        <a href="https://linkedin.com/in/hhsecond" target="_blank" class="cta cta-secondary" style="padding: 10px 20px; font-size: 0.9rem;">LinkedIn Profile &rarr;</a>
+      <p style="margin-top: 20px;">
+        <a href="https://linkedin.com/in/hhsecond" target="_blank" class="cta cta-secondary" style="padding: 12px 24px; font-size: 0.85rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn Profile
+        </a>
       </p>
     </div>
   </div>
@@ -1232,9 +1469,9 @@
       </div>
     </div>
 
-    <div class="card" style="background: #fef2f2; border-color: #fecaca;">
-      <h3 style="color: #991b1b;">Inflection Point</h3>
-      <p style="font-size: 0.95rem; color: #991b1b;">Transitioning from product development to go-to-market. At planned marketing spend (~$11,650/month), current reserves support ~2 months. This raise bridges the gap from validation to repeatable customer acquisition.</p>
+    <div class="card warning-card">
+      <h3>Inflection Point</h3>
+      <p>Transitioning from product development to go-to-market. At planned marketing spend (~$11,650/month), current reserves support ~2 months. This raise bridges the gap from validation to repeatable customer acquisition.</p>
     </div>
 
     <div class="card expandable" style="margin-top: 24px;" onclick="toggleExpand(this)">
@@ -1294,13 +1531,13 @@
     <div class="card" style="text-align: left; margin-bottom: 32px;">
       <h3>Use of Funds</h3>
       <div class="fund-bar">
-        <div class="fund-segment" style="width: 35%; background: var(--accent);">GTM 35%</div>
-        <div class="fund-segment" style="width: 30%; background: #6366f1;">Hiring 30%</div>
-        <div class="fund-segment" style="width: 15%; background: #8b5cf6;">Eng 15%</div>
-        <div class="fund-segment" style="width: 10%; background: #a855f7;">Cloud 10%</div>
-        <div class="fund-segment" style="width: 10%; background: #d946ef;">Ops 10%</div>
+        <div class="fund-segment" style="width: 35%; background: linear-gradient(135deg, #8b5cf6, #7c3aed);">GTM 35%</div>
+        <div class="fund-segment" style="width: 30%; background: linear-gradient(135deg, #06b6d4, #0891b2);">Hiring 30%</div>
+        <div class="fund-segment" style="width: 15%; background: linear-gradient(135deg, #ec4899, #db2777);">Eng 15%</div>
+        <div class="fund-segment" style="width: 10%; background: linear-gradient(135deg, #f59e0b, #d97706);">Cloud 10%</div>
+        <div class="fund-segment" style="width: 10%; background: linear-gradient(135deg, #10b981, #059669);">Ops 10%</div>
       </div>
-      <p style="font-size: 0.85rem; color: var(--secondary);">Target runway: 16-18 months at ~$11,650/month burn</p>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">Target runway: 16-18 months at ~$11,650/month burn</p>
     </div>
 
     <div class="card" style="text-align: left;">
@@ -1329,14 +1566,22 @@
       </div>
     </div>
 
-    <div style="margin-top: 48px;">
-      <a href="mailto:sherin@agentberlin.ai" class="cta" style="margin-right: 16px;">Schedule a Call</a>
-      <a href="#hero" class="cta cta-secondary">Back to Top</a>
+    <div style="margin-top: 56px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="mailto:sherin@agentberlin.ai" class="cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Schedule a Call
+      </a>
+      <a href="#hero" class="cta cta-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        Back to Top
+      </a>
     </div>
 
-    <p style="margin-top: 48px; font-size: 0.85rem; color: var(--secondary);">
-      100% founder-owned • Clean cap table • Delaware LLC (C-Corp ready) • All IP company-owned
-    </p>
+    <div style="margin-top: 48px; padding: 20px; background: var(--bg-glass); border: 1px solid var(--border); border-radius: 12px; display: inline-block;">
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">
+        100% founder-owned • Clean cap table • Delaware LLC (C-Corp ready) • All IP company-owned
+      </p>
+    </div>
   </div>
 </section>
 
