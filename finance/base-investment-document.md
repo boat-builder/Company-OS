@@ -260,7 +260,7 @@ The strongest market validation is where top-tier capital is deploying. In the A
   - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity but churned when that Stripe account was closed. All historical paid users were on the previous version of the product — none on the current platform.
   - New platform: Pre-revenue. Currently in Founding Partner Program phase with unpaid design partners. Several pilot partners have agreed to convert to paid upon requirements being met, but no revenue has been recognized.
 
-> **Context on timing:** The current platform version launched in late February 2026 — less than three weeks ago. The Founding Partner Program is deliberately structured as an 8-week engagement with clear conversion milestones. Several partners have verbally committed to paid subscriptions upon specific feature requirements being met. The $1.8M cap appropriately reflects this pre-revenue, pre-conversion stage while providing upside for early believers.
+> **Context on timing:** The current platform version launched in late February 2026 — less than three weeks ago. The Founding Partner Program is deliberately structured as an 8-week engagement with clear conversion milestones. Several partners have verbally committed to paid subscriptions upon specific feature requirements being met. The $2M cap appropriately reflects this pre-revenue, pre-conversion stage while providing upside for early believers.
 
 - **Growth rate:** N/A — pre-commercial launch on new platform.
 
@@ -524,7 +524,7 @@ The company is transitioning from product development to go-to-market. The curre
 
 - **Amount raising:** $100,000
 - **Instrument:** SAFE (post-money)
-- **Valuation cap:** $1.8M post-money
+- **Valuation cap:** $2M post-money
 - **Discount:** None
 - **Pro rata rights:** Yes
 - **Minimum check size:** $25,000
