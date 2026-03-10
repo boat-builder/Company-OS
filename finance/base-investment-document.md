@@ -19,6 +19,7 @@
 - **Website:** agentberlin.ai
 - **One-Liner:** Berlin is programmable infrastructure for inbound growth — a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.
 - **Mission Statement:** To make world-class inbound growth infrastructure accessible to every team — replacing fragmented, manual SEO toolchains with a unified, programmable platform that turns strategy into autonomous execution.
+- **Current Phase:** Platform launched late February 2026 (<3 weeks ago). Pre-commercial, in Founding Partner Program with 5 active design partners validating product-market fit before scaling GTM.
 - **Key Contact(s):** Sherin Chacko Thomas — +91 890 474 5603
 
 ### Product Evolution (May 2025 – Present)
@@ -259,6 +260,8 @@ The strongest market validation is where top-tier capital is deploying. In the A
   - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity but churned when that Stripe account was closed. All historical paid users were on the previous version of the product — none on the current platform.
   - New platform: Pre-revenue. Currently in Founding Partner Program phase with unpaid design partners. Several pilot partners have agreed to convert to paid upon requirements being met, but no revenue has been recognized.
 
+> **Context on timing:** The current platform version launched in late February 2026 — less than three weeks ago. The Founding Partner Program is deliberately structured as an 8-week engagement with clear conversion milestones. Several partners have verbally committed to paid subscriptions upon specific feature requirements being met. The $1.8M cap appropriately reflects this pre-revenue, pre-conversion stage while providing upside for early believers.
+
 - **Growth rate:** N/A — pre-commercial launch on new platform.
 
 - **Number of customers / users:**
@@ -422,6 +425,18 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 
 **vs. Content platforms (AirOps, Daydream, Frase):** These optimize content creation. Berlin orchestrates the entire SEO operation — from keyword research and competitive intelligence through content optimization, technical SEO, and AI visibility — as persistent, scheduled, governed workflows.
 
+**vs. AI-native competitors (Profound, AirOps, Peec AI):** Well-funded AI-native platforms present a different competitive dynamic than incumbents:
+
+1. **Architectural origin still matters.** Profound started monitoring-first, AirOps content-first. Adding "agents" is grafting execution onto existing architecture. Berlin is workflow-infrastructure-first — the fundamental architecture is built for orchestration, not retrofitted.
+
+2. **Different market entry.** Profound and AirOps are pursuing enterprise blitzscaling with massive capital ($155M and $60M raised respectively). Berlin is capital-efficient, targeting agencies first — lower CAC, faster feedback loops, and a customer base that becomes champions as the platform expands upmarket.
+
+3. **Technical moat.** Berlin's thin MCP architecture solves context overflow and hallucination — the fundamental reliability problem that breaks complex multi-source workflows. Neither Profound nor AirOps has demonstrated this capability.
+
+4. **Skill gap in market.** The majority of the SEO world lacks automation knowledge or technical skills. Founder's unique combination of AI engineering + SEO agency background, combined with education-first GTM (community, micro-book, meetups), positions Berlin to capture the underserved segment of practitioners who need guidance — not just tools. Well-funded competitors are building developer-heavy products for sophisticated buyers; Berlin is building accessible infrastructure for the long tail.
+
+5. **Market size validates multiple approaches.** The $85B+ market supports multiple winning strategies. Berlin doesn't need to out-raise Profound — it needs to execute a capital-efficient playbook that reaches profitability with a different customer segment.
+
 **vs. Incumbents (Semrush, Ahrefs, Conductor, Botify):** Incumbents are data companies adding AI features to existing dashboard architectures. Berlin is infrastructure-first — built from day one for agentic workflow orchestration, not retrofitted. Rebuilding as an agentic platform requires fundamental architectural changes that incumbents can't make without disrupting their core products.
 
 **vs. DIY automation (n8n, Make, DataForSEO):** Powerful but fragile, expensive in aggregate, and inaccessible to non-technical team members. Berlin bundles the data layer (keyword data sourced from providers and cached, proprietary crawlers), workflow engine, and governance into a single platform — users don't need their own API subscriptions, no engineering overhead, and no hallucination problems. Berlin's thin MCP architecture routes data through its unified layer rather than filling the LLM context, solving the accuracy degradation that plagues DIY automation with multiple data sources.
@@ -468,7 +483,7 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 |------|------|------------|----------|
 | Sherin Chacko Thomas | Founder & CEO (Sole Member) | Co-built RedisAI (most performant runtime for AI in production at the time). Infrastructure engineer at Lightning.ai (creators of PyTorch Lightning, one of the most popular deep learning libraries). Author of the first published book on PyTorch. Founded and scaled a dev + marketing agency in Dubai to $350K revenue in year two. Combines deep AI infrastructure engineering with firsthand understanding of SEO workflows, agency pain points, and client dynamics. | [LinkedIn](https://linkedin.com/in/hhsecond) |
 
-- **Key hires planned:** First GTM hire (growth marketer / community manager) with this raise. Additionally, early co-founder discussions in progress with Ticku Mammen Koshy for a CMO / Head of Growth role — a marketing professional who has served as an advisor to Berlin since its early days.
+- **Key hires planned:** First GTM hire (growth marketer / community manager) with this raise. Co-founder discussions with Ticku Mammen Koshy are in final stages, with a decision expected by mid-April 2026. Ticku brings 15+ years of marketing experience, including SEO leadership for major enterprise clients in Dubai, and is currently based in the US. He has served as an advisor to Berlin since its early days and would take on the CMO / Head of Growth role.
 
 - **Why is this team uniquely positioned to win?**
   Founder combines AI infrastructure engineering with hands-on agency experience — a rare combination that is precisely what this product requires. Co-built RedisAI (the most performant AI-in-production runtime at the time), then built AI app infrastructure at Lightning.ai (creators of PyTorch Lightning). Authored the first published book on PyTorch. After Lightning, founded a dev + digital marketing agency in Dubai, scaling to $350K in year two before shutting it down to go all-in on Berlin. This background means the founder has both built production AI systems at scale and personally experienced the exact agency pain points Berlin solves. The potential addition of a marketing co-founder would complement the technical foundation with dedicated GTM leadership.
@@ -507,9 +522,9 @@ The company is transitioning from product development to go-to-market. The curre
 
 ### Raise Overview
 
-- **Amount raising:** $200,000
+- **Amount raising:** $100,000
 - **Instrument:** SAFE (post-money)
-- **Valuation cap:** $2.5M post-money
+- **Valuation cap:** $1.8M post-money
 - **Discount:** None
 - **Pro rata rights:** Yes
 - **Minimum check size:** $25,000
@@ -522,26 +537,26 @@ Berlin has spent ~10 months building product through three pivots with under $1,
 
 | Category | Allocation % | Monthly Estimate | Purpose |
 |----------|:------------:|:----------------:|---------|
-| **Go-to-Market & Growth** | 35% | $4,000 | Founding Partner Program conversion, content production, community growth (r/agent_seo), micro-influencer program, meetup series, free workflow library launch |
-| **Engineering & Infrastructure** | 15% | $1,750 | Platform reliability, workflow engine improvements, expanding integration library, scaling crawlers and keyword infrastructure |
-| **Cloud & LLM Costs** | 10% | $1,200 | Infrastructure scaling as pilot partners increase workflow execution volume; LLM API costs for platform-provided model access |
-| **Hiring** | 30% | $3,500 | First GTM hire (growth marketer / community manager) to own content pipeline, community engagement, and Founding Partner conversion |
-| **Operations & Legal** | 10% | $1,200 | LLC → C-Corp conversion, SAFE legal costs, accounting, insurance, software subscriptions |
+| **Go-to-Market & Growth** | 25% | $2,075 | Founder-led direct sales to convert 5 existing Founding Partners and close 4+ qualified conversations already in pipeline; content production and community growth (r/agent_seo); micro-influencer program as secondary pipeline tactic |
+| **Engineering & Infrastructure** | 15% | $1,250 | Platform reliability, workflow engine improvements, expanding integration library, scaling crawlers |
+| **Cloud & LLM Costs** | 10% | $830 | Infrastructure scaling as pilot partners increase workflow execution volume; LLM API costs |
+| **Hiring** | 40% | $3,320 | First GTM hire (growth marketer / community manager) based in India, where $3.3K/month is highly competitive for senior marketing talent with 5+ years experience |
+| **Operations & Legal** | 10% | $830 | LLC → C-Corp conversion, SAFE legal costs, accounting, insurance |
 
 ### Target Runway
 
-This raise is sized to provide 16–18 months of runway at planned burn (~$11,650/month), reaching the following milestones before needing additional capital.
+This raise is sized to provide 12 months of runway at planned burn (~$8,300/month), reaching the following milestones before needing additional capital.
 
 ### Milestones This Funding Achieves
 
 | Milestone | Target Timeline | Success Metric |
 |-----------|:--------------:|----------------|
-| Convert Founding Partners to paid | Months 1–3 | 5 paying agency/enterprise customers at $2K+/month ACV |
-| Validate repeatable sales motion | Months 3–6 | $10K+ MRR from 5+ new ICP customers beyond Founding Partners |
-| Launch free workflow library (PLG engine) | Months 2–4 | 30+ workflows live, 200+ free-tier users driving inbound pipeline |
+| Convert Founding Partners to paid | Months 1–2 | 5 paying agency/enterprise customers at $2K+/month ACV |
+| Validate repeatable sales motion | Months 3–5 | $10K+ MRR from 5+ new ICP customers beyond Founding Partners |
+| Launch free workflow library (PLG engine) | Months 2–3 | 30+ workflows live, 200+ free-tier users driving inbound pipeline |
 | Publish autonomous affiliate site case study | Months 2–4 | Verifiable organic traffic growth from fully autonomous site with documented ROI |
-| Reach target ARR for next raise | Months 12–18 | $300K–$500K ARR (12–20 customers at $24K–$60K ACV) |
-| Produce 2–3 publishable customer case studies | Months 3–6 | Named logos with quantified results |
+| Reach target ARR for next raise | Months 9–12 | $150K–$250K ARR (6–10 customers at $24K–$36K ACV) |
+| Produce 2–3 publishable customer case studies | Months 3–5 | Named logos with quantified results |
 
 ### What This Round Does NOT Need to Achieve
 
@@ -626,7 +641,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 | **Agency market adoption speed**                             | Medium     | Medium | Founding Partner Program validates with real users before scaling. Proof-first approach de-risks product direction.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **AI search landscape evolving rapidly**                     | High       | Medium | Berlin's flexible workflow architecture can adapt to new search paradigms. Proprietary crawl infrastructure, integrated keyword data layer, and GEO/AEO capabilities position us ahead of the curve.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Data privacy / crawler compliance**                        | Low-Medium | Medium | Crawlers only access publicly available data, respect robots.txt, and collect no personal information. GDPR/CCPA compliance roadmap in progress for enterprise readiness.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Single founder / key-person risk**                         | Medium     | High   | First GTM hire planned with this raise to reduce single-point-of-failure. Founder's combined AI engineering + agency background is hard to replicate but the hire plan builds operational depth. Also actively looking for a co-founder who can compliment the skills and expertise to build Berlin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Single founder / key-person risk**                         | Medium     | High   | First GTM hire planned with this raise to reduce single-point-of-failure. Co-founder discussions with Ticku Mammen Koshy (15+ years marketing, SEO leadership for enterprise clients, US-based) are in final stages with a decision expected by mid-April 2026. Founder's combined AI engineering + agency background is hard to replicate but the hire plan and imminent co-founder addition build operational depth.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Fundamental shift in how the web works**                   | Medium     | High   | If agents fully reshape how people search and buy online, the current SEO paradigm could become unrecognizable. However, the core assumption holds: regardless of the medium, users will always need to search for and purchase things. Berlin's architecture is workflow-first, not SEO-mechanic-first — workflows are the first-class citizen, not any particular search engine's ranking algorithm. The platform can retarget its workflow engine, data layer, and integrations toward whatever the web becomes (agent-to-agent commerce, conversational discovery, etc.) without a fundamental rebuild.                                                                                                                                                                                                                                                                                                                                                                 |
 | **AI-native competitors expand into workflow orchestration** | Medium     | High   | Well-funded AI-native platforms like Profound ($1B valuation, Sequoia/Kleiner Perkins/Lightspeed backed) have already begun expanding beyond monitoring into execution — Profound recently launched "Profound Agents" for autonomous campaign execution. Other GEO-focused startups (Peec AI, Relixir, Search Party) could follow the same trajectory. Mitigation: these platforms are monitoring-first and content-first by architecture — bolting on workflow orchestration is fundamentally different from building it as the core product. Berlin's workflow engine, integrated data layer, interoperability (MCP), and agentic workflow marketplace create structural advantages that monitoring platforms cannot replicate by adding an "agents" feature. The same architectural constraint that limits incumbents applies here: retrofitting execution onto an analytics platform is a different engineering challenge than building execution-first infrastructure. |
 
