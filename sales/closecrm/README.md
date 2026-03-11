@@ -20,12 +20,6 @@ CLOSE_API_KEY=api_xxxxxxxxxxxxx
 
 You can find your API key in Close: **Settings > API Keys**
 
-### 3. Make it Executable (Optional)
-
-```bash
-chmod +x close_cli.py
-```
-
 ## Usage
 
 ```bash
@@ -35,215 +29,156 @@ python close_cli.py [COMMAND] [SUBCOMMAND] [OPTIONS]
 ### Get Help
 
 ```bash
-# General help
 python close_cli.py --help
-
-# Help for a specific command group
-python close_cli.py task --help
 python close_cli.py lead --help
-
-# Help for a specific subcommand
-python close_cli.py task create --help
+python close_cli.py lead create --help
 ```
+
+---
 
 ## Commands
 
-### Task Management
-
-#### Create a Task
-
-```bash
-python close_cli.py task create --lead-id <LEAD_ID> --text "Task description"
-```
-
-**Options:**
-| Option | Short | Required | Description |
-|--------|-------|----------|-------------|
-| `--lead-id` | `-l` | Yes | Lead ID (e.g., `lead_xxx`) |
-| `--text` | `-t` | Yes | Task description |
-| `--due-date` | `-d` | No | Due date (YYYY-MM-DD), defaults to tomorrow |
-| `--assigned-to` | `-a` | No | User ID to assign task to |
-
-**Examples:**
-
-```bash
-# Create a task due tomorrow (default)
-python close_cli.py task create -l lead_abc123 -t "Follow up on proposal"
-
-# Create a task with specific due date
-python close_cli.py task create -l lead_abc123 -t "Send contract" -d 2026-01-20
-
-# Assign task to specific user
-python close_cli.py task create -l lead_abc123 -t "Call client" -a user_xyz789
-```
-
-#### List Tasks
-
-```bash
-python close_cli.py task list
-```
-
-**Options:**
-| Option | Short | Description |
-|--------|-------|-------------|
-| `--lead-id` | `-l` | Filter tasks by lead ID |
-
-**Examples:**
-
-```bash
-# List all tasks
-python close_cli.py task list
-
-# List tasks for a specific lead
-python close_cli.py task list -l lead_abc123
-```
-
----
-
 ### Lead Management
 
-#### List Leads
-
 ```bash
+# Create a lead
+python close_cli.py lead create -n "Acme Corp" -u "https://acme.com" -d "Enterprise prospect"
+
+# List leads (with optional filters)
 python close_cli.py lead list
+python close_cli.py lead list -l 25 --status-id stat_xxx --sort -date_updated
+
+# Search leads
+python close_cli.py lead search -q "acme"
+python close_cli.py lead search -n "Acme" --status-id stat_xxx
+
+# Get lead details (includes contacts)
+python close_cli.py lead get lead_xxx
+
+# Update a lead
+python close_cli.py lead update lead_xxx -n "Acme Corp Inc" --status-id stat_yyy
+
+# Delete a lead
+python close_cli.py lead delete lead_xxx
+python close_cli.py lead delete lead_xxx --yes   # skip confirmation
 ```
 
-**Options:**
-| Option | Short | Default | Description |
-|--------|-------|---------|-------------|
-| `--limit` | `-n` | 10 | Maximum number of leads to return |
-
-**Examples:**
+### Contact Management
 
 ```bash
-# List first 10 leads
-python close_cli.py lead list
+# Add a contact to a lead (emails, phones, urls are repeatable)
+python close_cli.py contact create lead_xxx -n "Jane Doe" -t "CEO" -e "jane@acme.com" -p "+1-555-1234" -u "https://linkedin.com/in/janedoe"
 
-# List first 25 leads
-python close_cli.py lead list -n 25
+# Add multiple emails
+python close_cli.py contact create lead_xxx -n "Bob" -e "bob@acme.com" -e "bob@gmail.com"
+
+# List contacts for a lead
+python close_cli.py contact list lead_xxx
+
+# Get contact details
+python close_cli.py contact get cont_xxx
+
+# Update a contact
+python close_cli.py contact update cont_xxx -n "Jane Smith" -t "CTO"
+
+# Delete a contact
+python close_cli.py contact delete cont_xxx
 ```
 
-#### Search Leads
+### Task Management
 
 ```bash
-python close_cli.py lead search --query "search term"
+# Create a task (due date defaults to tomorrow)
+python close_cli.py task create -l lead_xxx -t "Follow up on proposal"
+python close_cli.py task create -l lead_xxx -t "Send contract" -d 2026-03-15
+
+# List tasks
+python close_cli.py task list
+python close_cli.py task list --pending --show-lead
+python close_cli.py task list -l lead_xxx
+
+# Update a task
+python close_cli.py task update task_xxx --text "Updated description" --due-date 2026-03-20
+
+# Complete a task
+python close_cli.py task complete task_xxx
+
+# Delete a task
+python close_cli.py task delete task_xxx
 ```
 
-**Options:**
-| Option | Short | Description |
-|--------|-------|-------------|
-| `--query` | `-q` | Raw search query (supports Close search syntax) |
-| `--name` | `-n` | Search by exact lead name |
-| `--limit` | `-l` | Maximum number of results (default: 10) |
-
-**Examples:**
+### Notes
 
 ```bash
-# Search by keyword
-python close_cli.py lead search -q "influx"
+# Add a note to a lead
+python close_cli.py note create lead_xxx -t "Had a great intro call, interested in our platform"
 
-# Search with Close query syntax
-python close_cli.py lead search -q "status:Potential"
-
-# Limit results
-python close_cli.py lead search -q "marketing" -l 5
+# List notes for a lead
+python close_cli.py note list lead_xxx
+python close_cli.py note list lead_xxx -l 20
 ```
 
-#### Get Lead Details
+### Utilities
 
 ```bash
-python close_cli.py lead get <LEAD_ID>
-```
-
-**Example:**
-
-```bash
-python close_cli.py lead get lead_abc123
-```
-
----
-
-### Lead Statuses
-
-#### List All Statuses
-
-```bash
+# List all lead statuses (with IDs for filtering)
 python close_cli.py status list
-```
 
-This shows all available lead statuses with their IDs, useful for filtering or creating leads.
-
----
-
-### Utility Commands
-
-#### Show Current User
-
-```bash
+# Show current authenticated user
 python close_cli.py whoami
 ```
 
-Displays the authenticated user's name, email, and user ID.
+---
+
+## Example Workflows
+
+### Onboard a new lead with contacts
+
+```bash
+python close_cli.py lead create -n "New Corp" -u "https://newcorp.com"
+# Copy the lead_xxx ID from output
+
+python close_cli.py contact create lead_xxx -n "Alice Lee" -t "VP Marketing" -e "alice@newcorp.com"
+python close_cli.py contact create lead_xxx -n "Bob Chen" -t "CTO" -e "bob@newcorp.com"
+python close_cli.py task create -l lead_xxx -t "Schedule intro call"
+python close_cli.py note create lead_xxx -t "Referred by existing customer"
+```
+
+### Find and follow up on a lead
+
+```bash
+python close_cli.py lead search -n "Acme"
+python close_cli.py lead get lead_xxx
+python close_cli.py contact list lead_xxx
+python close_cli.py task create -l lead_xxx -t "Send proposal" -d 2026-03-20
+python close_cli.py note create lead_xxx -t "Discussed pricing, following up with proposal"
+```
 
 ---
 
 ## Extending the CLI
 
-The CLI is built with [Click](https://click.palletsprojects.com/) and designed to be easily extensible.
-
-### Adding a New Command Group
-
-```python
-@cli.group()
-def mygroup():
-    """Description of your command group."""
-    pass
-
-@mygroup.command("subcommand")
-@click.option("--option", "-o", help="Option description")
-@click.pass_context
-def mygroup_subcommand(ctx, option):
-    """Description of subcommand."""
-    api: CloseAPI = ctx.obj["api"]
-    # Your implementation here
-```
+The CLI is built with [Click](https://click.palletsprojects.com/) and designed to be easily extensible. All API methods live in the `CloseAPI` class, and CLI commands use Click's group/command decorators with context passing.
 
 ### Adding API Methods
 
-Add new methods to the `CloseAPI` class:
-
 ```python
 class CloseAPI:
-    # ... existing methods ...
-
-    def my_new_method(self, param: str) -> dict:
-        """Description of what this does."""
+    def my_method(self, param: str) -> dict:
         return self.get(f"/endpoint/{param}/")
 ```
 
-### Common Patterns
+### Adding CLI Commands
 
-**Making a GET request:**
 ```python
-result = api.get("/endpoint/", params={"key": "value"})
-```
-
-**Making a POST request:**
-```python
-result = api.post("/endpoint/", json={"key": "value"})
-```
-
-**Displaying colored output:**
-```python
-click.echo(click.style("Success!", fg="green"))
-click.echo(click.style("Warning!", fg="yellow"))
-click.echo(click.style("Error!", fg="red"))
-```
-
-**Handling errors:**
-```python
-raise click.ClickException("Something went wrong")
-raise click.UsageError("Invalid option combination")
+@lead.command("mycommand")
+@click.argument("lead_id")
+@click.pass_context
+def lead_mycommand(ctx, lead_id: str):
+    """Description."""
+    api: CloseAPI = ctx.obj["api"]
+    result = api.my_method(lead_id)
+    click.echo(click.style("Done!", fg="green"))
 ```
 
 ---
@@ -252,28 +187,9 @@ raise click.UsageError("Invalid option combination")
 
 - [Close API Documentation](https://developer.close.com/)
 - [Lead Endpoints](https://developer.close.com/resources/leads)
+- [Contact Endpoints](https://developer.close.com/resources/contacts)
 - [Task Endpoints](https://developer.close.com/resources/tasks)
-- [Search Query Syntax](https://developer.close.com/topics/searching)
-
----
-
-## Examples Workflow
-
-### Quick follow-up workflow
-
-```bash
-# 1. Search for a lead
-python close_cli.py lead search -q "acme"
-
-# 2. Get lead details (copy the lead ID from search results)
-python close_cli.py lead get lead_abc123
-
-# 3. Create a follow-up task
-python close_cli.py task create -l lead_abc123 -t "Send pricing proposal" -d 2026-01-15
-
-# 4. Verify task was created
-python close_cli.py task list -l lead_abc123
-```
+- [Activity Endpoints](https://developer.close.com/resources/activities)
 
 ---
 
@@ -281,9 +197,7 @@ python close_cli.py task list -l lead_abc123
 
 ### "CLOSE_API_KEY not found in .env file"
 
-Make sure your `.env` file:
-- Is in the same directory as `close_cli.py`
-- Contains `CLOSE_API_KEY=your_key` (no quotes around the key)
+Make sure your `.env` file is in the same directory as `close_cli.py` and contains `CLOSE_API_KEY=your_key` (no quotes around the key).
 
 ### "API Error (401): Unauthorized"
 
@@ -291,4 +205,4 @@ Your API key may be invalid or expired. Generate a new one in Close: **Settings 
 
 ### "API Error (404): Not Found"
 
-The resource ID (lead_id, task_id, etc.) doesn't exist. Double-check the ID.
+The resource ID doesn't exist. Use `lead list`, `contact list`, or `task list` to find valid IDs.
