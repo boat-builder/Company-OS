@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Berlin Investment Briefing</title>
+  <style>
+    :root {
+      --bg: #f5efe4;
+      --bg-deep: #e8e2d7;
+      --panel: rgba(255, 255, 255, 0.84);
+      --panel-strong: #fffdf8;
+      --ink: #10202e;
+      --muted: #5e6b75;
+      --line: rgba(16, 32, 46, 0.12);
+      --accent: #0f6b73;
+      --accent-soft: rgba(15, 107, 115, 0.12);
+      --accent-2: #d47a32;
+      --accent-2-soft: rgba(212, 122, 50, 0.14);
+      --accent-3: #21553a;
+      --danger: #aa3a32;
+      --warn: #a56a11;
+      --shadow: 0 18px 50px rgba(16, 32, 46, 0.10);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --content: 1320px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(15, 107, 115, 0.16), transparent 22rem),
+        radial-gradient(circle at top left, rgba(212, 122, 50, 0.14), transparent 18rem),
+        linear-gradient(180deg, #f8f4ed 0%, var(--bg) 42%, var(--bg-deep) 100%);
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(16, 32, 46, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 32, 46, 0.035) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.36), transparent 82%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--content));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 30px 0 20px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .panel,
+    .section {
+      position: relative;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      animation: rise 0.7s ease both;
+    }
+
+    .hero-card::after,
+    .panel::after,
+    .section::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -70px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(15, 107, 115, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-card {
+      padding: 34px;
+      min-height: 100%;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(16, 32, 46, 0.06);
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+    }
+
+    .hero-card p {
+      margin: 14px 0 0;
+      font-size: 1.02rem;
+      color: var(--muted);
+      max-width: 62rem;
+    }
+
+    .lede {
+      font-size: 1.16rem;
+      color: var(--ink);
+      max-width: 56rem;
+    }
+
+    .chip-row,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .chip,
+    .tag,
+    .status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(16, 32, 46, 0.10);
+      background: rgba(255, 255, 255, 0.72);
+      font-size: 0.9rem;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .chip strong,
+    .tag strong {
+      font-weight: 700;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .panel h3 {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+    }
+
+    .snapshot-grid,
+    .metric-grid,
+    .card-grid,
+    .three-grid,
+    .four-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .snapshot-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 16px;
+    }
+
+    .metric-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 22px;
+    }
+
+    .card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .three-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .four-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .fact,
+    .metric,
+    .mini-card,
+    .comp-card,
+    .timeline-item,
+    .step,
+    .trend,
+    .risk-card {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(16, 32, 46, 0.10);
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .fact-label,
+    .mini-label,
+    .table-caption {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+    }
+
+    .fact strong,
+    .metric strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .metric strong {
+      font-size: 2rem;
+      line-height: 1;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    }
+
+    .metric span,
+    .fact span,
+    .mini-card p,
+    .comp-card p,
+    .timeline-item p,
+    .step p,
+    .trend p,
+    .risk-card p,
+    .section p,
+    li {
+      color: var(--muted);
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.94rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+      margin: 20px auto 26px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 253, 248, 0.88);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      overflow: visible;
+    }
+
+    nav .nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--ink);
+      background: rgba(15, 107, 115, 0.12);
+      transform: translateY(-1px);
+    }
+
+    main {
+      padding-bottom: 60px;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 28px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading {
+      max-width: 56rem;
+    }
+
+    .section-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(15, 107, 115, 0.18), rgba(212, 122, 50, 0.20));
+      border: 1px solid rgba(16, 32, 46, 0.08);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .two-col,
+    .split {
+      display: grid;
+      gap: 18px;
+    }
+
+    .two-col {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .split {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .callout,
+    .accent-box,
+    .quote-box {
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(16, 32, 46, 0.10);
+      background: linear-gradient(135deg, rgba(15, 107, 115, 0.10), rgba(255, 255, 255, 0.78));
+    }
+
+    .accent-box {
+      background: linear-gradient(135deg, rgba(212, 122, 50, 0.12), rgba(255, 255, 255, 0.82));
+    }
+
+    .quote-box {
+      background: linear-gradient(135deg, rgba(33, 85, 58, 0.12), rgba(255, 255, 255, 0.82));
+    }
+
+    .callout strong,
+    .accent-box strong,
+    .quote-box strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 12px 0 0 18px;
+      padding: 0;
+    }
+
+    li + li {
+      margin-top: 7px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(15, 107, 115, 0.10);
+    }
+
+    .timeline-item h4,
+    .comp-card h4,
+    .mini-card h4,
+    .step h4,
+    .trend h4,
+    .risk-card h4 {
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bar-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .bar-row {
+      display: grid;
+      gap: 8px;
+    }
+
+    .bar-row strong {
+      font-size: 0.98rem;
+    }
+
+    .bar-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .bar {
+      width: 100%;
+      height: 13px;
+      border-radius: 999px;
+      background: rgba(16, 32, 46, 0.09);
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .bar.alt span {
+      background: linear-gradient(90deg, var(--accent-2), #f4b96f);
+    }
+
+    .bar.green span {
+      background: linear-gradient(90deg, var(--accent-3), #66a57f);
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .step {
+      min-height: 100%;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .step-number {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(15, 107, 115, 0.12);
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .table-wrap {
+      margin-top: 16px;
+      border: 1px solid rgba(16, 32, 46, 0.10);
+      border-radius: var(--radius-md);
+      overflow: auto;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(16, 32, 46, 0.08);
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background: rgba(245, 239, 228, 0.96);
+      color: var(--ink);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .status-live {
+      background: rgba(33, 85, 58, 0.12);
+      color: var(--accent-3);
+    }
+
+    .status-expand {
+      background: rgba(212, 122, 50, 0.12);
+      color: #8a511f;
+    }
+
+    .status-partial {
+      background: rgba(16, 32, 46, 0.08);
+      color: var(--ink);
+    }
+
+    .badge-low,
+    .badge-medium,
+    .badge-high,
+    .badge-low-medium {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .badge-low {
+      color: var(--accent-3);
+      background: rgba(33, 85, 58, 0.12);
+    }
+
+    .badge-medium {
+      color: #785110;
+      background: rgba(165, 106, 17, 0.14);
+    }
+
+    .badge-high {
+      color: var(--danger);
+      background: rgba(170, 58, 50, 0.12);
+    }
+
+    .badge-low-medium {
+      color: #6e5426;
+      background: rgba(140, 118, 60, 0.14);
+    }
+
+    .footer {
+      margin: 26px 0 50px;
+      padding: 22px 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.86);
+      box-shadow: var(--shadow);
+    }
+
+    .footer small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .big-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(16, 32, 46, 0.10);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .big-stat strong {
+      font-size: clamp(1.4rem, 2.5vw, 2.25rem);
+      line-height: 1.15;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      word-break: break-word;
+      hyphens: none;
+    }
+
+    .big-stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .comp-card {
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .comp-card .tag-row {
+      margin-top: 12px;
+    }
+
+    .comp-card strong.inline {
+      display: inline;
+      font-size: inherit;
+    }
+
+    .mini-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mini-card p,
+    .comp-card p {
+      margin: 0;
+    }
+
+    .note {
+      margin-top: 14px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    details {
+      margin-top: 16px;
+      border: 1px solid rgba(16, 32, 46, 0.10);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.70);
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 18px;
+      font-weight: 700;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details > div {
+      padding: 0 18px 18px;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .two-col,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-grid,
+      .four-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .three-grid,
+      .process {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .comp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(calc(100% - 20px), var(--content));
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero-card,
+      .panel,
+      .section {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .snapshot-grid,
+      .metric-grid,
+      .card-grid,
+      .three-grid,
+      .four-grid,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        flex-direction: column;
+      }
+
+      .section-index {
+        width: 52px;
+        height: 52px;
+      }
+
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      body::before,
+      .hero-card::after,
+      .panel::after,
+      .section::after {
+        display: none;
+      }
+
+      nav {
+        position: static;
+      }
+
+      .hero-card,
+      .panel,
+      .section,
+      .footer {
+        box-shadow: none;
+        backdrop-filter: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="hero" id="top">
+      <div class="hero-grid">
+        <section class="hero-card">
+          <span class="kicker">Investor Briefing • March 2026 • Pre-commercial launch</span>
+          <h1>Agent Berlin</h1>
+          <p class="lede">
+            Programmable infrastructure for inbound growth: a unified data, workflow, and intelligence layer that lets teams build, run, and scale SEO and AI-search operations without engineering overhead.
+          </p>
+          <p>
+            Mission: make world-class inbound growth infrastructure accessible to every team by replacing fragmented, manual SEO toolchains with a unified, programmable platform that turns strategy into autonomous execution.
+          </p>
+          <div class="chip-row">
+            <span class="chip"><strong><3 weeks</strong> since platform launch</span>
+            <span class="chip"><strong>$100K</strong> SAFE raise</span>
+            <span class="chip"><strong>$2M</strong> post-money cap</span>
+            <span class="chip"><strong>5</strong> active pilot partners</span>
+            <span class="chip"><strong>20+</strong> workflows created</span>
+            <span class="chip"><strong>$24K-$36K</strong> target ACV</span>
+            <span class="chip"><strong>12 months</strong> target runway after raise</span>
+          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>5</strong>
+              <span>5 active pilot partners in the Founding Partner Program</span>
+            </div>
+            <div class="metric">
+              <strong>4</strong>
+              <span>Qualified conversations scheduled this week</span>
+            </div>
+            <div class="metric">
+              <strong>$10K</strong>
+              <span>Cash on hand</span>
+            </div>
+            <div class="metric">
+              <strong>~10 mo</strong>
+              <span>Runway at current ~$1,050 burn</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel">
+          <h3>Company + Raise Snapshot</h3>
+          <div class="snapshot-grid">
+            <div class="fact">
+              <span class="fact-label">Legal Entity</span>
+              <strong>Agentic World, LLC</strong>
+              <span>Delaware LLC</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Founded</span>
+              <strong>May 16, 2025</strong>
+              <span>Sole member: Sherin Chacko Thomas</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Headquarters</span>
+              <strong>Dover, DE</strong>
+              <span>1111B S Governors Ave, Ste 29991, Dover, DE 19904</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Contact</span>
+              <strong>Sherin Chacko Thomas</strong>
+              <span>+91 890 474 5603</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Website</span>
+              <strong><a href="https://agentberlin.ai" target="_blank" rel="noreferrer">agentberlin.ai</a></strong>
+              <span>Live demo walkthrough available on request</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Instrument</span>
+              <strong>SAFE (post-money)</strong>
+              <span>No discount, pro rata rights, $25K minimum check</span>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 16px;">
+            <strong>Current phase</strong>
+            Berlin completed a major repositioning in late 2025 and is now validating programmable SEO infrastructure through a Founding Partner Program before scaling go-to-market.
+          </div>
+          <div class="tag-row">
+            <span class="tag">Fliki.ai</span>
+            <span class="tag">Webandcrafts</span>
+            <span class="tag">BlockSurvey</span>
+            <span class="tag">Search Indicators</span>
+            <span class="tag">1 additional agency in progress</span>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <nav aria-label="Section navigation">
+      <div class="nav-row">
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#market">Market</a>
+        <a href="#solution">Product</a>
+        <a href="#icp">Customers</a>
+        <a href="#traction">Validation</a>
+        <a href="#gtm">GTM</a>
+        <a href="#competition">Competition</a>
+        <a href="#why-now">Timing</a>
+        <a href="#team">Team</a>
+        <a href="#financials">Financials</a>
+        <a href="#ask">Raise + Legal</a>
+        <a href="#social-proof">Proof</a>
+        <a href="#risks">Risks</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="section" id="overview">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">1</div>
+            <h2>Company Overview</h2>
+            <p>Berlin is pitching a workflow-first operating layer for SEO and AI search, not another dashboard tool. The section below preserves the legal facts, positioning, mission, and product evolution path.</p>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="stack">
+            <div class="card-grid">
+              <div class="mini-card">
+                <span class="mini-label">Company identity</span>
+                <h4>Agent Berlin (Berlin)</h4>
+                <p>Legal entity: Agentic World, LLC. Entity type: Limited Liability Company (LLC). Incorporation state: Delaware.</p>
+              </div>
+              <div class="mini-card">
+                <span class="mini-label">Registered details</span>
+                <h4>Dover, Delaware</h4>
+                <p>Registered address and headquarters: 1111B S Governors Ave, Ste 29991, Dover, DE 19904. Sole member: Sherin Chacko Thomas.</p>
+              </div>
+              <div class="mini-card">
+                <span class="mini-label">Positioning</span>
+                <h4>Programmable infrastructure for inbound growth</h4>
+                <p>Unified data, workflow, and intelligence layer for teams to build, run, and scale any SEO operation without engineering overhead.</p>
+              </div>
+              <div class="mini-card">
+                <span class="mini-label">Mission + contact</span>
+                <h4>Accessible growth infrastructure</h4>
+                <p>Replace fragmented manual SEO toolchains with a unified programmable platform. Key contact: Sherin Chacko Thomas, +91 890 474 5603.</p>
+              </div>
+            </div>
+            <div class="callout">
+              <strong>Source one-liner</strong>
+              Berlin is programmable infrastructure for inbound growth: a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.
+            </div>
+          </div>
+          <div class="panel" style="padding: 22px;">
+            <h3>Product Evolution: May 2025 to present</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h4>Mid-2025: conversational SEO data layer</h4>
+                <p>Built a chat interface for marketers to query SEO data in natural language. Validated demand for unified data access, but users wanted the platform to do work, not only answer questions.</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Late 2025: automated SEO assistant for founders</h4>
+                <p>Validated automation demand, but learned founders rarely own SEO as a top priority. Agencies and marketers who run SEO day-to-day emerged as the real buyers.</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Early 2026 to current: programmable agentic workflow infrastructure</h4>
+                <p>Repositioned around a unified data, workflow, and intelligence layer for teams to run their own agentic workflows without engineering overhead. This is where PMF signals are strongest through Founding Partners.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="problem">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">2</div>
+            <h2>The Problem</h2>
+            <p>The pain is not only too many tools. It is fragmented data, brittle automation, rising AI-search complexity, and the inability to scale SEO work without headcount.</p>
+          </div>
+        </div>
+        <div class="three-grid">
+          <div class="mini-card">
+            <span class="mini-label">Workflow sprawl</span>
+            <h4>5-10 disconnected tools per team</h4>
+            <p>Ahrefs, Semrush, GSC, GA4, spreadsheets, crawlers, and point tools have no unified data layer and no automation capability without developers.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Automation dead-end</span>
+            <h4>n8n / Make still require technical skill</h4>
+            <p>Teams must wire direct APIs or many MCPs, deal with authentication complexity, and absorb model hallucinations across fragmented data flows.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">AI search shift</span>
+            <h4>Visibility crisis</h4>
+            <p>ChatGPT, Perplexity, and Google AI Overviews create new visibility and reporting requirements that legacy SEO workflows do not address well.</p>
+          </div>
+        </div>
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="stack">
+            <div class="panel" style="padding: 22px;">
+              <h3>Who experiences the problem?</h3>
+              <ul>
+                <li><strong>Primary:</strong> SEO agencies with 1-50+ clients trying to scale delivery without proportional headcount growth.</li>
+                <li><strong>Secondary:</strong> In-house marketing and SEO teams at Series B-C SaaS companies and mid-market businesses that struggle to justify SEO budget, attribute SEO to pipeline, and operate without dev support.</li>
+                <li><strong>Emerging:</strong> E-commerce and marketplace SEO teams managing thousands of pages, plus growth engineers replacing brittle custom scripts.</li>
+              </ul>
+            </div>
+            <div class="panel" style="padding: 22px;">
+              <h3>How teams cope today</h3>
+              <ul>
+                <li>Pay $500-$2,000+ per month for multiple disconnected tools.</li>
+                <li>Manually stitch data together in spreadsheets.</li>
+                <li>Build fragile internal automations in n8n, custom scripts, or direct APIs like DataForSEO.</li>
+                <li>Hire more people to handle growing SEO workload.</li>
+                <li>Ignore AI search entirely or improvise with clients.</li>
+                <li>Use Claude Code or similar LLM setups with MCPs but automate unreliably because of hallucination and orchestration issues.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="big-stat">
+              <strong>15-20 hrs</strong>
+              <span>Manual SEO research and strategy per week per client for agencies.</span>
+            </div>
+            <div class="big-stat">
+              <strong>High churn risk</strong>
+              <span>Agencies lose trust when they cannot explain AI search or articulate a clear AI-visibility service line.</span>
+            </div>
+            <div class="big-stat">
+              <strong>Budget at risk</strong>
+              <span>In-house teams often cannot prove SEO to pipeline attribution internally.</span>
+            </div>
+            <div class="big-stat">
+              <strong>Wrong actions</strong>
+              <span>Automation failures and hallucinations can go unnoticed and trigger bad decisions.</span>
+            </div>
+          </div>
+        </div>
+        <div class="accent-box" style="margin-top: 18px;">
+          <strong>Additional operating pressure</strong>
+          SEO and AEO change quickly. Teams constantly face new reports, monitoring needs, and execution motions; when the workflow burden spikes, they either ignore the new landscape or handle it badly.
+        </div>
+      </section>
+
+      <section class="section" id="market">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">3</div>
+            <h2>Market Opportunity</h2>
+            <p>The thesis combines large SEO software spend, a fast-growing AI-search layer, and a labor replacement wedge that supports much higher pricing than seat-based tooling.</p>
+          </div>
+        </div>
+        <div class="split">
+          <div class="panel" style="padding: 22px;">
+            <h3>TAM / SAM / SOM</h3>
+            <div class="bar-stack">
+              <div class="bar-row">
+                <strong>TAM: ~$85-93B in 2025, growing to $266B+ by 2034 at 13.5% CAGR</strong>
+                <div class="bar-meta"><span>Global SEO software + broader tool/workflow spend</span><span>100%</span></div>
+                <div class="bar"><span style="width: 100%;"></span></div>
+              </div>
+              <div class="bar-row">
+                <strong>SAM: ~$11.5-50B in 2025, growing to $58B+ by 2035</strong>
+                <div class="bar-meta"><span>Enterprise SEO platforms and teams needing automation + governance</span><span>54%</span></div>
+                <div class="bar alt"><span style="width: 54%;"></span></div>
+              </div>
+              <div class="bar-row">
+                <strong>SOM: ~$350M-1B over 3-5 years</strong>
+                <div class="bar-meta"><span>Initial beachhead: ~5,000 agencies + ~2,000 enterprise teams</span><span>2%</span></div>
+                <div class="bar green"><span style="width: 22%;"></span></div>
+              </div>
+            </div>
+            <p class="note">
+              Headline TAM figures include software plus services depending on the source. Pure SEO software spend is estimated closer to $3-5B based on combined revenues of known players.
+            </p>
+            <ul>
+              <li>Large enterprises account for ~60% of the market, with SMEs the fastest-growing segment.</li>
+              <li>Adjacent marketing automation software is $7.23B in 2025 at 12% CAGR.</li>
+              <li>Broader MarTech is $557.94B in 2025 at 19.4% CAGR.</li>
+              <li>Market Research Future sizes enterprise SEO platforms at $11.35B in 2025, growing to $58.29B by 2035.</li>
+              <li>Bottom-up competitor validation: Semrush $411.6M ARR, Ahrefs ~$149M, BrightEdge ~$120M.</li>
+              <li>Moderate SOM framing: 2% of a $50B SAM implies ~$1B.</li>
+            </ul>
+          </div>
+          <div class="panel" style="padding: 22px;">
+            <h3>The AI Search Inflection</h3>
+            <div class="four-grid">
+              <div class="big-stat">
+                <strong>~1B</strong>
+                <span>ChatGPT weekly active users; 4th most visited site globally.</span>
+              </div>
+              <div class="big-stat">
+                <strong>2B</strong>
+                <span>Monthly Google AI Overviews reach across 200+ countries.</span>
+              </div>
+              <div class="big-stat">
+                <strong>50%</strong>
+                <span>Consumers intentionally seeking AI-powered search engines (McKinsey, Aug 2025).</span>
+              </div>
+              <div class="big-stat">
+                <strong>62%+</strong>
+                <span>Projected share of total search volume captured by AI search by 2030.</span>
+              </div>
+            </div>
+            <ul>
+              <li>Google AI Overviews appear on roughly 16-25% of U.S. queries.</li>
+              <li>AI-powered search will influence $750B in U.S. consumer spending by 2028.</li>
+              <li>GEO/AEO market projections cluster around 30-50% CAGR, reaching $17B+ by the early 2030s.</li>
+              <li>This market essentially did not exist before 2024 and is already about ~$1B in 2025.</li>
+              <li>This is one of the fastest-growing segments in marketing technology.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="split" style="margin-top: 18px;">
+          <div class="panel" style="padding: 22px;">
+            <h3>Traffic and conversion shift</h3>
+            <div class="three-grid">
+              <div class="big-stat">
+                <strong>69%</strong>
+                <span>Zero-click searches (up from 56% in one year).</span>
+              </div>
+              <div class="big-stat">
+                <strong>−61%</strong>
+                <span>Organic CTR drop when AI Overviews appear.</span>
+              </div>
+              <div class="big-stat">
+                <strong>93%</strong>
+                <span>Zero-click rate in Google AI Mode.</span>
+              </div>
+              <div class="big-stat">
+                <strong>+620%</strong>
+                <span>AI-referred traffic YoY across content sites.</span>
+              </div>
+              <div class="big-stat">
+                <strong>+752%</strong>
+                <span>AI-referred traffic YoY for e-commerce.</span>
+              </div>
+              <div class="big-stat">
+                <strong>5–23×</strong>
+                <span>Higher conversion rates for AI-referred traffic (14.2% vs 2.8%).</span>
+              </div>
+            </div>
+            <p class="note">35-45% of Fortune 1000 companies already have dedicated AEO programs; 42% of B2B marketers are shifting budget from traditional SEO to AEO.</p>
+          </div>
+          <div class="panel" style="padding: 22px;">
+            <h3>Labor-addressable market</h3>
+            <ul>
+              <li>Direct SEO labor spend: ~$15.5B (207K professionals × $75K average).</li>
+              <li>Broader marketing professionals doing SEO work: $30-45B.</li>
+              <li>Agency labor is 50-60%+ of revenue across roughly 25,000 agencies globally.</li>
+              <li>If 5,000 agencies each save one headcount worth of work at $60K+, that is $300M+ of bottoms-up SOM.</li>
+            </ul>
+            <div class="quote-box" style="margin-top: 14px;">
+              <strong>Pricing-power implication</strong>
+              Berlin can be sold against labor budgets, not just tool budgets. That supports $2K-$5K per month team contracts instead of $200 per-seat subscriptions.
+            </div>
+          </div>
+        </div>
+
+        <div class="three-grid" style="margin-top: 18px;">
+          <div class="trend">
+            <h4>1. Tool consolidation</h4>
+            <p>Agencies pay for 4-6 separate tools today. Consolidated platforms can cut costs by 40-60%, creating room for a single operational layer.</p>
+          </div>
+          <div class="trend">
+            <h4>2. Manual SEO is breaking</h4>
+            <p>86% of SEO professionals use AI in workflows and 67% cite repetitive-task automation as the main benefit. Work volume and velocity now exceed manual handling capacity.</p>
+          </div>
+          <div class="trend">
+            <h4>3. Enterprise spend is growing fastest</h4>
+            <p>Semrush customers paying $50K+ per year grew 72% YoY. Enterprise already commands 60% of total market revenue.</p>
+          </div>
+          <div class="trend">
+            <h4>4. Shift from tools to infrastructure</h4>
+            <p>The market is moving from things teams check toward systems that run. Berlin is positioned at that transition.</p>
+          </div>
+          <div class="trend">
+            <h4>5. Owning the data layer matters</h4>
+            <p>Privacy regulation and cookie deprecation push companies toward consolidated data infrastructure. Berlin's proprietary crawlers and cached keyword database improve economics as usage compounds.</p>
+          </div>
+          <div class="trend">
+            <h4>VC validation</h4>
+            <p>Profound hit a $1B valuation in 18 months; AirOps reached $225M; Peec AI crossed $100M+; Daydream raised $16.6M Series A. Venture funding for AI search infrastructure reached $225.8B in 2025.</p>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 18px;">
+          <strong>Why Berlin matters in this market</strong>
+          Traditional SEO tools were built for Google's blue links. New AI-search point solutions monitor visibility but do not automate the response. Berlin aims to be the operational layer from data to insight to action to scheduled execution across both traditional and AI search.
+        </div>
+        <p class="note">Full market research, source tables, granular statistics, and competitive funding detail are available separately in “Berlin Market Opportunity Research: Comprehensive Report.”</p>
+      </section>
+
+      <section class="section" id="solution">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">4</div>
+            <h2>The Solution</h2>
+            <p>Berlin combines a proprietary and integrated data foundation with a workflow marketplace, custom no-code orchestration, and LLM interoperability.</p>
+          </div>
+        </div>
+        <div class="panel" style="padding: 22px;">
+          <h3>How the platform is structured</h3>
+          <div class="process">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h4>Integrated data engine</h4>
+              <p>Keyword intelligence sourced from providers like Semrush and DataForSEO and cached in Berlin's own database, plus proprietary site crawlers and competitor monitoring.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h4>Unified access + action layer</h4>
+              <p>Connect once to GSC, GA4, Bing Webmaster Tools, CMS platforms, social accounts, and more. Berlin handles auth, normalization, and shared access.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h4>Agentic workflows</h4>
+              <p>No-code, chat-based workflow builder plus a marketplace of pre-built workflows for complex multi-step SEO operations.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <h4>Thin MCP + governance</h4>
+              <p>Proprietary thin MCP layer exposes Berlin inside agentic coding environments (Claude Code, Claude Cowork, ChatGPT Codex, Openclaw) without context overflow or hallucination — plus brand context, review center, sharing, scheduling, and team governance.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="stack">
+            <div class="panel" style="padding: 22px;">
+              <h3>What Berlin has built</h3>
+              <ul>
+                <li>Integrated SEO data engine with keyword intelligence, proprietary crawlers, and competitor monitoring.</li>
+                <li>Unified data access and action layer that connects analytics, search, CMS, social, and action endpoints.</li>
+                <li>Agentic workflow builder for natural-language workflow creation without code.</li>
+                <li>Agentic workflow marketplace: pre-built, vetted workflows that orchestrate retrieval, analysis, LLM reasoning, and action-taking.</li>
+                <li>Expanding integration layer aiming to become a consolidated agentic system covering data sources, CMS platforms, social channels, indexing APIs, and more.</li>
+                <li>Organizational intelligence: brand context memory, team management, and governance.</li>
+              </ul>
+            </div>
+            <div class="panel" style="padding: 22px;">
+              <h3>How it works in plain language</h3>
+              <ul>
+                <li>Users connect their data sources and action endpoints once.</li>
+                <li>Berlin normalizes those systems alongside cached keyword data and proprietary crawl data into one queryable and actionable layer.</li>
+                <li>Users either run a pre-built workflow from the marketplace or describe their need in natural language and Berlin generates a structured custom workflow.</li>
+                <li>Workflows can run on demand, on schedule, be shared across the org, and be governed with human-in-the-loop review.</li>
+                <li>The exact same capabilities remain accessible inside agentic coding environments (Claude Code, Claude Cowork, ChatGPT Codex, Openclaw) through Berlin's thin MCP layer.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="callout">
+              <strong>Core value for agencies</strong>
+              More clients with the same team size, better deliverables, standardized workflows across clients, and a new AI-visibility service line that can be sold immediately.
+            </div>
+            <div class="accent-box">
+              <strong>Core value for in-house teams</strong>
+              Unified data layer, no dev dependency, AI visibility metrics for leadership, SEO-to-pipeline attribution, and one subscription replacing multiple point solutions.
+            </div>
+            <div class="quote-box">
+              <strong>Demo availability</strong>
+              Product screenshots and a live demo walkthrough are available upon request and can be scheduled directly with the founder.
+            </div>
+          </div>
+        </div>
+
+        <div class="three-grid" style="margin-top: 18px;">
+          <div class="mini-card">
+            <span class="mini-label">Differentiator</span>
+            <h4>Not a chatbot</h4>
+            <p>Persistent, scheduled, shared, governed workflows that run continuously rather than only when a user types.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Differentiator</span>
+            <h4>Workflow marketplace</h4>
+            <p>Complex, ready-to-run workflows deliver day-one automation value without requiring users to understand orchestration.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Differentiator</span>
+            <h4>One subscription replaces many</h4>
+            <p>Bundled infrastructure, data, and integrations reduce or eliminate the need for separate keyword, crawling, tracking, and distribution subscriptions.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Differentiator</span>
+            <h4>Integrated data engine</h4>
+            <p>Keyword data is sourced, cached, and served by Berlin; users do not need their own third-party subscriptions. Snake.blue crawling infrastructure is proprietary.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Differentiator</span>
+            <h4>No engineering overhead</h4>
+            <p>Berlin handles complexity that usually requires developer involvement while aiming for higher accuracy than typical AI-assisted SEO tools.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Differentiator</span>
+            <h4>Thin MCP solves hallucination</h4>
+            <p>Standard MCP fills LLM context and degrades accuracy at scale. Berlin's proprietary thin MCP layer routes data through its unified layer instead, enabling reliable multi-source operations that break other AI tools.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Differentiator</span>
+            <h4>Interoperability + memory</h4>
+            <p>Works inside agentic coding environments — Claude Code, Claude Cowork, ChatGPT Codex, Openclaw — with accuracy guarantees standard MCP cannot provide. Organizational brand context persists across all interactions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">5</div>
+            <h2>Features &amp; Product Details</h2>
+            <p>The feature map below is presented as an operator's checklist: capability, description, and present status.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Description</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Keyword Intelligence</strong></td>
+                <td>Keyword research, volume, difficulty, and SERP data sourced from providers such as Semrush and DataForSEO, then cached in Berlin's own database so users do not need their own third-party subscriptions.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+              <tr>
+                <td><strong>Site Crawling &amp; Competitor Monitoring</strong></td>
+                <td>Automated crawlers keep site and competitor data fresh and queryable across technical SEO, content structure, internal linking, and page-level metrics.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+              <tr>
+                <td><strong>Unified Data Access Layer</strong></td>
+                <td>Single API interface connecting GSC, GA4, Bing Webmaster Tools, and related SEO data sources. Connect once and use everywhere.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+              <tr>
+                <td><strong>Third-Party Integrations</strong></td>
+                <td>Pre-built connections to Google Search, SERP APIs, Reddit, CMS platforms, and an expanding list of data sources and action endpoints with Berlin-managed authentication and normalization.</td>
+                <td><span class="status status-expand">Live &amp; Expanding</span></td>
+              </tr>
+              <tr>
+                <td><strong>Agentic Workflow Builder</strong></td>
+                <td>Chat-based interface for building multi-step SEO workflows without code. Workflows run on demand, on schedule, and can be shared across the organization.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+              <tr>
+                <td><strong>Agentic Coding Environment Integration (Thin MCP)</strong></td>
+                <td>Proprietary thin MCP layer exposes Berlin inside agentic coding environments (Claude Code, Claude Cowork, ChatGPT Codex, Openclaw). Unlike standard MCP that fills context and degrades accuracy, Berlin's unified data layer handles retrieval and execution outside the LLM context — enabling complex multi-source operations without hallucination.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+              <tr>
+                <td><strong>Brand Context</strong></td>
+                <td>Shared knowledge layer for brand guidelines, terminology, and audience details available to workflows and LLM conversations like org-wide memory.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+              <tr>
+                <td><strong>Team &amp; Org Management</strong></td>
+                <td>Add team members, manage access, share credits, and operate multiple projects or brands within one organization.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+              <tr>
+                <td><strong>Report Center</strong></td>
+                <td>Centralized collection of workflow outputs.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+              <tr>
+                <td><strong>Review Center</strong></td>
+                <td>Human-in-the-loop approval before actions execute.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+              <tr>
+                <td><strong>Workflow Templates</strong></td>
+                <td>Library of expert-built workflow templates that users can apply to their own data.</td>
+                <td><span class="status status-live">Live</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="icp">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">6</div>
+            <h2>Ideal Customer Profile</h2>
+            <p>Detailed ICP files exist in `/marketing/ICP/`. This page preserves the summary segmentation, buying signals, and deprioritized customer groups.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Primary ICP: SEO / Marketing Agencies</th>
+                <th>Core Pain</th>
+                <th>Value Hook</th>
+                <th>Top Roles</th>
+                <th>Buying Signal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ICP 1 — Large Agencies (11-50 clients)</strong></td>
+                <td>Reporting does not scale; no GEO/AEO story; no dev access.</td>
+                <td>Build once and run across all clients; sell AI visibility as a new service.</td>
+                <td>Agency Owner, Director of SEO, Head of Ops</td>
+                <td>FOMO on AI SEO; client churn risk</td>
+              </tr>
+              <tr>
+                <td><strong>ICP 2 — Small Agencies (1-10 clients)</strong></td>
+                <td>Cannot afford a full toolstack; manual reporting; need to win pitches.</td>
+                <td>Force multiplier; punch above weight class; lead-gen hooks.</td>
+                <td>Agency Founder, Principal Consultant</td>
+                <td>Growth-focused; cost consolidation</td>
+              </tr>
+              <tr>
+                <td><strong>ICP 7 — E-Commerce / Marketplaces</strong></td>
+                <td>Thousands of pages; AI shopping invisibility; blocked programmatic SEO.</td>
+                <td>Scale infrastructure; AI visibility for shopping queries; competitor intelligence.</td>
+                <td>Head of SEO, E-Commerce SEO Manager, VP Digital</td>
+                <td>Revenue attribution; programmatic SEO focus</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap" style="margin-top: 16px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Secondary ICP: In-house Marketing Teams</th>
+                <th>Core Pain</th>
+                <th>Value Hook</th>
+                <th>Top Roles</th>
+                <th>Buying Signal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ICP 3 — Series B-C SaaS In-House</strong></td>
+                <td>SEO-to-pipeline attribution is broken; AI discovery is invisible; no dev support.</td>
+                <td>Unified data layer; LLM integration; AI visibility metrics for leadership.</td>
+                <td>Head of SEO, VP Growth, SEO Manager</td>
+                <td>Need to justify SEO budget internally</td>
+              </tr>
+              <tr>
+                <td><strong>ICP 4 — Growth Eng / Marketing Ops</strong></td>
+                <td>Fragmented SEO data; brittle scripts; AI search not instrumented.</td>
+                <td>Programmable infrastructure; replace custom scripts; API-first.</td>
+                <td>Growth Engineer, Head of Marketing Ops</td>
+                <td>Dev time savings; reduce marketing requests</td>
+              </tr>
+              <tr>
+                <td><strong>ICP 5 — SMB/Startup SEOs</strong></td>
+                <td>Doing 3 jobs; no dev time; tight budget; AI search stress.</td>
+                <td>One tool replaces many; LLM integration; pre-built workflows.</td>
+                <td>SEO Manager, Growth Marketing Manager, Founder</td>
+                <td>Time savings; cost consolidation</td>
+              </tr>
+              <tr>
+                <td><strong>ICP 6 — Mid-Market (no dev support)</strong></td>
+                <td>Traffic is declining; cannot explain AI impact; manual scaling breaks.</td>
+                <td>Pre-built workflows; new narrative for leadership; automation at scale.</td>
+                <td>SEO Director, Senior SEO Manager, VP Marketing</td>
+                <td>Internal credibility; defend SEO to executives</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="accent-box" style="margin-top: 18px;">
+          <strong>Deprioritized for now</strong>
+          Individual founders doing their own SEO, AI/ML consultants (niche and low-volume), and marketplace founders that are too early-stage or budget-constrained.
+        </div>
+      </section>
+
+      <section class="section" id="model">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">7</div>
+            <h2>Business Model</h2>
+            <p>Berlin is monetized as subscription software with usage-based credits, and it is deliberately underpriced during PMF exploration to maximize learning velocity.</p>
+          </div>
+        </div>
+        <div class="three-grid">
+          <div class="mini-card">
+            <span class="mini-label">Revenue model</span>
+            <h4>Subscription + credits</h4>
+            <p>Base tier includes workflow execution credits. Additional credits are available on-demand. LLM compute is passed through at cost, and users can bring their own LLM via Berlin's interoperability layer.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Contract value</span>
+            <h4>Current vs. target ACV</h4>
+            <p>Current PMF pricing implies ~$1,200 yearly ACV. Target ACV after pricing maturity is $24K-$36K per year for agency and enterprise accounts.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Gross margin</span>
+            <h4>~80% infrastructure margin</h4>
+            <p>Core platform infrastructure carries ~80% gross margin. Berlin-provided LLM tokens are zero-margin by design to maintain pricing parity with native LLM apps and remove adoption friction; BYO-LLM usage removes token cost from Berlin's P&amp;L and improves blended margin toward infrastructure levels.</p>
+          </div>
+        </div>
+        <div class="table-wrap" style="margin-top: 16px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Tier</th>
+                <th>Price</th>
+                <th>What's Included</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Free / Explorer</strong></td>
+                <td>$0</td>
+                <td>Connect domain, run pre-built simple workflows, explore the unified data layer.</td>
+                <td>PLG top-of-funnel; let teams experience the platform before committing.</td>
+              </tr>
+              <tr>
+                <td><strong>Pro</strong></td>
+                <td>$100/month</td>
+                <td>Full workflow execution including premium workflows, custom workflow creation, multi-client and multi-project support, base credit allocation.</td>
+                <td>Core self-serve tier for PMF validation.</td>
+              </tr>
+              <tr>
+                <td><strong>Agency / Enterprise</strong></td>
+                <td>Custom</td>
+                <td>Higher credit allocations, unlimited automation, priority support, and Forward Deployed Marketers who help set up and optimize workflows on site.</td>
+                <td>High-touch tier for agencies and enterprise teams with complex needs.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="panel" style="padding: 22px;">
+            <h3>Pricing evolution</h3>
+            <p>Current $100/month pricing is intentionally flat during PMF exploration so every feature stays accessible. As product-market fit solidifies, Berlin expects to move multi-client and multi-project capabilities plus premium automation into higher tiers and use per-client or per-project add-on pricing to drive expansion revenue.</p>
+            <p class="note">The target ACV of $24K-$36K/year is aligned with labor replacement value rather than point-tool pricing.</p>
+          </div>
+          <div class="panel" style="padding: 22px;">
+            <h3>Forward Deployed Marketers</h3>
+            <p>A planned services layer where Berlin's marketing specialists embed with customers to design, build, and optimize agentic workflows. The function serves both time-to-value and workflow-template creation.</p>
+            <p class="note">Pricing is TBD and likely to be bundled into enterprise contracts or sold as a separate onboarding package.</p>
+          </div>
+        </div>
+        <div class="panel" style="padding: 22px; margin-top: 18px;">
+          <h3>Unit economics status</h3>
+          <ul>
+            <li><strong>CAC:</strong> not yet measurable at scale. Current customers come from founder-led inbound via LinkedIn content, conferences, and network.</li>
+            <li><strong>LTV:</strong> too early to calculate because the current platform lacks mature cohort data.</li>
+            <li><strong>LTV:CAC ratio:</strong> TBD post-PMF.</li>
+            <li><strong>Payback period:</strong> TBD post-PMF.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="traction">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">8</div>
+            <h2>Traction &amp; Metrics</h2>
+            <p>Berlin is pre-revenue on the new platform, but the product is live, design partners are active, and the pipeline is forming around the Founding Partner Program.</p>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Current phase</strong>
+          Pre-commercial launch. Berlin completed a significant repositioning in late 2025 from a conversational SEO tool to programmable agentic workflow infrastructure for agencies and enterprise marketing teams.
+        </div>
+        <div class="three-grid" style="margin-top: 18px;">
+          <div class="mini-card">
+            <span class="mini-label">Legacy product</span>
+            <h4>No active MRR</h4>
+            <p>Historically there were 5 paid users via Stripe at roughly $49/month average on the old ICP. An additional cohort paid through a prior Dubai entity but churned when that Stripe account closed.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">New platform</span>
+            <h4>Pre-revenue</h4>
+            <p>Current platform is in a Founding Partner Program with unpaid design partners. Several pilots have agreed to convert once requirements are met, but no revenue has been recognized.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Growth rate</span>
+            <h4>N/A for now</h4>
+            <p>The current platform has not yet launched commercially, so growth-rate reporting is not meaningful.</p>
+          </div>
+        </div>
+        <div class="metric-grid" style="margin-top: 18px;">
+          <div class="metric">
+            <strong>5</strong>
+            <span>Active pilot partners in Founding Partner Program</span>
+          </div>
+          <div class="metric">
+            <strong>5-6</strong>
+            <span>Companies actively using the new platform</span>
+          </div>
+          <div class="metric">
+            <strong>~20</strong>
+            <span>Workflows created across pilot partners</span>
+          </div>
+          <div class="metric">
+            <strong>8 weeks</strong>
+            <span>Window in which engagement data should become more meaningful</span>
+          </div>
+        </div>
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="panel" style="padding: 22px;">
+            <h3>Pipeline</h3>
+            <ul>
+              <li><strong>Fliki.ai</strong> — AI video platform at roughly $1M MRR; in-house marketing team piloting Berlin for SEO operations.</li>
+              <li><strong>Webandcrafts</strong> — Full-service digital agency with 100+ clients; evaluating Berlin for cross-client workflow automation and scaled delivery.</li>
+              <li><strong>BlockSurvey</strong> — Privacy-focused survey platform at roughly $20K MRR; piloting Berlin for SEO and content workflows.</li>
+              <li><strong>Search Indicators</strong> — SEO agency with 20+ clients; piloting Berlin for multi-client delivery.</li>
+              <li><strong>Additional agency partnership</strong> — One Swedish agency with high-profile enterprise clients is in progress.</li>
+              <li><strong>New conversations</strong> — 4 qualified conversations scheduled this week with potential high-value partners.</li>
+            </ul>
+          </div>
+          <div class="stack">
+            <div class="panel" style="padding: 22px;">
+              <h3>Retention, engagement, and signal quality</h3>
+              <ul>
+                <li>Retention and churn data are insufficient on the new platform.</li>
+                <li>Legacy retention is not representative of the current positioning or ICP.</li>
+                <li>Pilots are already executing workflows across multiple projects and clients.</li>
+              </ul>
+            </div>
+            <div class="accent-box">
+              <strong>Case studies and proof</strong>
+              Strong relationships already exist with Fliki.ai and Webandcrafts for case-study development. The Founding Partner Program is explicitly designed to produce 2-3 publishable case studies within 8 weeks.
+            </div>
+          </div>
+        </div>
+        <div class="tag-row" style="margin-top: 18px;">
+          <span class="tag">Notable logos: Fliki.ai</span>
+          <span class="tag">Webandcrafts</span>
+          <span class="tag">BlockSurvey</span>
+          <span class="tag">Search Indicators</span>
+          <span class="tag">5 total historical paid users (legacy)</span>
+        </div>
+      </section>
+
+      <section class="section" id="gtm">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">9</div>
+            <h2>Go-to-Market Strategy</h2>
+            <p>The current motion is founder-led and community-driven with one near-term objective: convert 20 Founding Partners within 50 days and turn them into proof, templates, and paid pipeline.</p>
+          </div>
+        </div>
+        <div class="quote-box">
+          <strong>Phase objective</strong>
+          Acquire 20 Founding Partners within 50 days. Every GTM channel in this phase feeds that single goal.
+        </div>
+        <div class="three-grid" style="margin-top: 18px;">
+          <div class="mini-card">
+            <span class="mini-label">Founding Partner Program</span>
+            <h4>Primary conversion mechanism</h4>
+            <p>Partners receive 50% off in perpetuity plus direct product influence in exchange for 8 weeks of weekly calls, workflow walkthroughs, and candid feedback. Forward Deployed Marketers support workflow buildout.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Founder-led LinkedIn</span>
+            <h4>Primary content engine</h4>
+            <p>Sherin publishes thought leadership from an agent-infrastructure perspective rather than from a traditional SEO-tool perspective, creating a differentiated voice in the market.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Education + community</span>
+            <h4>Build the category</h4>
+            <p>Berlin operates r/agent_seo with 3.3K members, is publishing a micro-book called “Agentic AI for SEO,” and is launching meetups with live demos inside tools the audience already trusts.</p>
+          </div>
+        </div>
+        <div class="three-grid" style="margin-top: 14px;">
+          <div class="mini-card">
+            <span class="mini-label">Micro-influencer program</span>
+            <h4>Workflow demos over ads</h4>
+            <p>SEO practitioners and agency operators receive free access plus affiliate commissions for demoing Berlin workflows on their own channels.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">PLG engine</span>
+            <h4>~50 free workflows</h4>
+            <p>Berlin plans a free workflow library of roughly 50 workflows that can be used through a Berlin account or the desktop app, with near-zero execution cost on Berlin's side. The thesis is that if 90% of day-to-day agency work can be automated for free, the platform becomes indispensable before any commercial conversation.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Proof-of-concept asset</span>
+            <h4>Autonomous affiliate site</h4>
+            <p>One fully autonomous affiliate website will be built and run end-to-end by Berlin's workflows, with a roughly 2-month timeline to show early traffic results and a public case study.</p>
+          </div>
+        </div>
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="panel" style="padding: 22px;">
+            <h3>Owned infrastructure and sales motion</h3>
+            <ul>
+              <li><strong>Snake.blue crawler:</strong> AI-first proprietary web crawler with native MCP support. It underpins Berlin's crawl layer and can also stand alone as infrastructure.</li>
+              <li><strong>Keyword economics:</strong> data is sourced from providers like Semrush and DataForSEO, cached in Berlin's database, and served without forcing customer-managed third-party subscriptions.</li>
+              <li><strong>Sales motion now:</strong> founder-led inbound and outbound converting through the Founding Partner Program.</li>
+              <li><strong>Near-term motion:</strong> PLG-assisted sales as free workflows and community channels self-qualify prospects.</li>
+              <li><strong>Long-term motion:</strong> sales-led with PLG underpinning, powered by case studies, community proof, and the autonomous site.</li>
+            </ul>
+          </div>
+          <div class="panel" style="padding: 22px;">
+            <h3>Expansion, upsell, and geography</h3>
+            <ul>
+              <li>Land with free workflows or a single use case such as reporting automation, then expand into full workflow stacks and custom workflow creation.</li>
+              <li>Per-client and per-project pricing gives agencies a clear expansion path.</li>
+              <li>Agentic coding environment integration creates daily-product stickiness inside Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw.</li>
+              <li>No geographic restriction at this stage: product is cloud-native and language-agnostic for core SEO operations.</li>
+              <li>Initial traction is network-driven across the U.S., India, EU, and Nordics; meetup locations will follow community density.</li>
+            </ul>
+          </div>
+        </div>
+        <details>
+          <summary>Program detail and content logic</summary>
+          <div>
+            <p>The Founding Partner Program is designed to produce 2-3 publishable case studies, a library of proven workflow templates, and organic word-of-mouth from practitioners who helped build the platform.</p>
+            <p>The micro-book “Agentic AI for SEO” is intentionally practical and workflow-heavy, reinforcing Berlin's position as the natural home for practitioners who want to act on what they learn.</p>
+            <p>Every education touchpoint is built around Berlin's pre-built workflows, and each workflow doubles as a marketing asset through subreddit posts, book chapters, meetup demos, video walkthroughs, and influencer content.</p>
+            <p>Because Berlin interoperates with agentic coding environments like Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw, demos run inside environments the audience already knows and trusts, which materially improves credibility and approachability.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="section" id="competition">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">10</div>
+            <h2>Competitive Landscape</h2>
+            <p>Berlin is positioned as programmable infrastructure: not a dashboard, not a point solution, and not a black-box agent. The competitive section below preserves the full market map, matrix, summary, and defensibility case.</p>
+          </div>
+        </div>
+
+        <div class="panel" style="padding: 22px;">
+          <h3>Direct competitors: AI-native SEO &amp; GEO platforms</h3>
+          <div class="comp-grid">
+            <div class="comp-card">
+              <h4>Profound</h4>
+              <p>$1B valuation, $155M raised from Sequoia, Kleiner Perkins, and Lightspeed. Tracks brand visibility across 10+ AI engines and has 700+ enterprise customers including 10% of the Fortune 500. Recently launched “Profound Agents.” Limitation: monitoring-first platform that still does not provide Berlin's unified SEO data layer, custom workflow building, or traditional SEO infrastructure.</p>
+            </div>
+            <div class="comp-card">
+              <h4>AirOps</h4>
+              <p>$225M valuation, $60M raised from Greylock, Unusual Ventures, and Wing. Content engineering platform used by Ramp, Webflow, Kayak, Klaviyo, and Wiz. Limitation: content-first with modular workflow steps, but lacks Berlin's broader keyword, crawl, analytics, and orchestration stack.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Daydream</h4>
+              <p>$23.4M raised from First Round Capital and Basis Set Ventures. Automates programmatic SEO for AI search through product feeds, databases, and internal docs. Limitation: narrowly focused on structured-content generation, not full SEO workflow infrastructure.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Peec AI</h4>
+              <p>$100M+ valuation after tripling in 4 months; $21M raised from Singular. Uses proprietary UI scraping to simulate AI-search user interactions and has 1,300+ companies and agencies with $4M+ ARR in 10 months. Clients include Axel Springer, Chanel, n8n, ElevenLabs, and TUI. Limitation: dashboard-focused tracking and sentiment analysis rather than programmable infrastructure.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Search Atlas / OTTO SEO</h4>
+              <p>Won Best AI Search Software at Global Search Awards two years in a row. OTTO is an autonomous SEO agent handling technical fixes, content optimizations, and link building while centralizing keyword research, content optimization, technical audits, and rank tracking. Limitation: black-box automation rather than user-programmable infrastructure.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Frase</h4>
+              <p>Agentic SEO/GEO platform with 80+ specialized AI agent skills, MCP integration for use inside Claude and other LLM apps, and recent GEO tracking across multiple AI platforms. Limitation: strong on research and writing, but weaker on unified data infrastructure and multi-client operational depth.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Relixir</h4>
+              <p>YC S25 autonomous GEO agent (“Rex”) claiming 17% lead lift and 80 hours saved per month. Limitation: managed autonomous agent, not programmable infrastructure with granular governance.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Search Party</h4>
+              <p>$3.5M seed from Fuse VC, founded by the GRIN team. Maps where AI engines source answers and activates workflows to influence those sources. Limitation: early-stage and focused on AI source influence rather than full SEO operations.</p>
+            </div>
+            <div class="comp-card">
+              <h4>GenFlux</h4>
+              <p>$4.2M seed from Symbolic Capital. Multi-engine AI visibility tracking across 8+ platforms using “Answer Rank Scoring.” Limitation: analytics-only.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Otterly AI</h4>
+              <p>Integrated into the Semrush App Center for ChatGPT, Perplexity, and AI Overviews visibility. Limitation: monitoring add-on, not a workflow-execution platform.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="padding: 22px; margin-top: 18px;">
+          <h3>Indirect competitors and incumbents</h3>
+          <div class="comp-grid">
+            <div class="comp-card">
+              <h4>Semrush</h4>
+              <p>$443.6M revenue in 2025 with 117K+ paying customers. Launched Semrush One in Q4 2025, adding AI Visibility Toolkit across ChatGPT, Perplexity, Gemini, and AI Overviews plus AI-powered Keyword Strategy Builder, Content Optimizer, and a GBP Agent. Customers paying $50K+ grew 72% YoY. Adobe acquisition was announced in November 2025 and expected to close in H1 2026. Limitation: tools-first dashboard architecture with restricted API access and possible innovation drag post-acquisition.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Ahrefs</h4>
+              <p>~$149M revenue in 2024 with 49% YoY growth. Added Brand Radar for tracking mentions across ChatGPT, Perplexity, and AI Overviews using a 100M+ prompt database, plus MCP integration and AI Keyword Suggestions. Limitation: great backlink data, minimal workflow orchestration.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Conductor</h4>
+              <p>Forrester Wave Leader in Q3 2025, added 50+ enterprise AI customers in one quarter including BlackRock, Four Seasons, and TD Bank. First to launch an official ChatGPT App for enterprise AI brand intelligence, alongside scaled AI content generation and end-to-end AEO/SEO measurement. Limitation: analytics-first and templated rather than truly agentic.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Botify</h4>
+              <p>Forrester Wave Strong Performer with especially high marks in AI-integrated SEO and workflow automation. “PageWorkers” autonomously deploy 50+ optimizations per quarter versus 4 manually, 82% of customers use Botify Assist in workflows, and AI Visibility tracking launched in October 2025. Limitation: strongest on technical SEO, not a broader inbound-growth workflow layer.</p>
+            </div>
+            <div class="comp-card">
+              <h4>BrightEdge</h4>
+              <p>Trusted by 57% of the Fortune 500 and launched AI Catalyst in April 2025 for AI-engine brand tracking. The company also publishes widely cited AI traffic research. Limitation: measurement and reporting oriented rather than execution oriented.</p>
+            </div>
+            <div class="comp-card">
+              <h4>seoClarity</h4>
+              <p>Enterprise platform with Content Fusion blending strategy, performance data, and competitive context, plus AI-search visibility across ChatGPT, Gemini, and Perplexity. Limitation: programmatic and content-centric rather than a true agentic workflow system.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="padding: 22px; margin-top: 18px;">
+          <h3>DIY automation alternatives</h3>
+          <div class="comp-grid">
+            <div class="comp-card">
+              <h4>n8n / Make / Zapier</h4>
+              <p>General-purpose workflow tools increasingly used for SEO. n8n is the most powerful for custom SEO flows and Make offers 7,000+ integrations. Limitation: engineering-heavy, no proprietary SEO data, fragile workflows, poor governance, and persistent hallucination issues when LLMs juggle multiple data sources through standard MCP. Berlin's thin MCP architecture solves this accuracy problem.</p>
+            </div>
+            <div class="comp-card">
+              <h4>DataForSEO</h4>
+              <p>Pay-as-you-go SEO API provider trusted by 750+ software companies, recently with MCP support for Claude Code. Limitation: purely a data provider with no orchestration, governance, scheduling, or team layer.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Gumloop / Lindy AI</h4>
+              <p>General AI agent builders with some SEO use cases. Limitation: not SEO-native, depend on external data providers, and lack Berlin's crawl and keyword data foundation.</p>
+            </div>
+            <div class="comp-card">
+              <h4>Generic LLM usage</h4>
+              <p>ChatGPT or Claude used directly for SEO tasks, often with MCPs. Limitation: standard MCP fills the context window, causing hallucination spikes on multi-source operations. Berlin's thin MCP routes data through its unified layer, enabling reliable automation that generic MCP usage cannot match.</p>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 14px;">
+            <strong>The “do nothing” alternative</strong>
+            Continue stitching together 5-10 tools, spreadsheets, and manual work while ignoring AI-search visibility. Berlin's view is that this path is becoming structurally untenable.
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top: 18px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th>Berlin</th>
+                <th>Profound</th>
+                <th>AirOps</th>
+                <th>Semrush</th>
+                <th>Ahrefs</th>
+                <th>n8n/Make</th>
+                <th>DataForSEO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Integrated keyword database (cached, no user subscription needed)</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td>Site crawlers &amp; competitor monitoring</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+              </tr>
+              <tr>
+                <td>AI search / GEO visibility</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+              </tr>
+              <tr>
+                <td>Custom workflow building (no-code)</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>Partial</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>✅*</td>
+                <td>❌</td>
+              </tr>
+              <tr>
+                <td>Scheduled, persistent workflows</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>✅</td>
+                <td>❌</td>
+              </tr>
+              <tr>
+                <td>LLM interoperability (thin MCP, no context overflow)</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>Partial</td>
+                <td>❌</td>
+                <td>Partial</td>
+              </tr>
+              <tr>
+                <td>Unified GSC/GA4 + proprietary data</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>Partial</td>
+                <td>Partial</td>
+                <td>❌</td>
+                <td>❌</td>
+              </tr>
+              <tr>
+                <td>Brand context / org memory</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+              </tr>
+              <tr>
+                <td>Team governance &amp; review</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>❌</td>
+              </tr>
+              <tr>
+                <td>No engineering overhead</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">*n8n requires engineering to configure.</p>
+
+        <div class="three-grid" style="margin-top: 18px;">
+          <div class="mini-card">
+            <span class="mini-label">Positioning summary</span>
+            <h4>Vs. GEO/AEO platforms</h4>
+            <p>Those platforms show where a brand is visible in AI search. Berlin is built to let teams do something about it through persistent workflows across both traditional and AI search.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Positioning summary</span>
+            <h4>Vs. content platforms</h4>
+            <p>Content tools optimize creation. Berlin aims to orchestrate the full SEO operation: research, competitive analysis, technical SEO, content, measurement, and AI visibility.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Positioning summary</span>
+            <h4>Vs. incumbents</h4>
+            <p>Incumbents are data companies bolting AI features onto dashboard architectures. Berlin is workflow-first from the ground up.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Positioning summary</span>
+            <h4>Vs. DIY automation</h4>
+            <p>Berlin bundles data, workflows, and governance into one system with a thin MCP architecture that solves the accuracy degradation plaguing DIY multi-source automation.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Positioning summary</span>
+            <h4>Vs. autonomous agents</h4>
+            <p>Black-box agents decide and act for the user. Berlin emphasizes control: custom workflows, human review, and organizational sharing.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Defensibility</span>
+            <h4>Six layers</h4>
+            <p>Workflow engine + thin MCP architecture + Snake.blue crawl layer + cached keyword data + switching costs + speed of execution + emerging network effects.</p>
+          </div>
+        </div>
+
+        <div class="panel" style="padding: 22px; margin-top: 18px;">
+          <h3>Defensibility detail</h3>
+          <ul>
+            <li><strong>Technology / IP:</strong> workflow engine, proprietary crawling, integrated keyword cache, 80+ ranking-signal intelligence layer, and thin MCP architecture that solves the hallucination problem inherent in standard tool-use protocols.</li>
+            <li><strong>Data moat:</strong> crawl infrastructure, cached keyword database, and continuous competitive monitoring compound over time as data costs fall and coverage rises; every workflow execution enriches the platform's understanding of search patterns.</li>
+            <li><strong>Switching costs:</strong> deep integration with customer data sources, brand context, workflow libraries, and team processes creates migration friction.</li>
+            <li><strong>Speed of execution:</strong> founder blends AI infrastructure engineering with hands-on digital marketing agency experience.</li>
+            <li><strong>Network effects:</strong> workflow template library and r/agent_seo community grow with each deployment.</li>
+            <li><strong>Interoperability moat:</strong> thin MCP embeds Berlin inside agentic coding environments (Claude Code, Claude Cowork, ChatGPT Codex, Openclaw) with accuracy guarantees standard MCP cannot provide. Competitors must skip interoperability or accept degraded reliability.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="why-now">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">11</div>
+            <h2>Why Now?</h2>
+            <p>The timing case rests on a simultaneous platform shift in search, a workflow shift in AI tooling, and enough protocol maturity to make external LLM interoperability viable.</p>
+          </div>
+        </div>
+        <div class="three-grid">
+          <div class="mini-card">
+            <span class="mini-label">Macro shift</span>
+            <h4>AI-powered search changed discovery</h4>
+            <p>ChatGPT, Perplexity, and Google AI Overviews are reshaping how users find information, creating a GEO/AEO visibility crisis that traditional SEO stacks were not built to solve.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Technical enabler</span>
+            <h4>LLMs became usable for workflows</h4>
+            <p>Claude and ChatGPT now support complex multi-step orchestration through natural language with enough reliability to be operationally useful.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Protocol enabler</span>
+            <h4>MCP matured — but with limits Berlin solves</h4>
+            <p>MCP enabled LLM interoperability, but standard implementations fill the context window and degrade accuracy. Berlin's thin MCP architecture (inspired by 2024 codemode research) routes data through its own unified layer, reducing hallucination to near zero.</p>
+          </div>
+        </div>
+        <div class="split" style="margin-top: 18px;">
+          <div class="panel" style="padding: 22px;">
+            <h3>Why this was impractical 2-3 years ago</h3>
+            <ul>
+              <li>LLMs were not reliable enough for structured, multi-step SEO execution.</li>
+              <li>There was no standardized protocol such as MCP for exposing tool capabilities into external AI environments — and even now, standard MCP implementations suffer from context overflow and hallucination. Berlin's thin MCP architecture solves this.</li>
+              <li>AI search was too nascent; agencies and in-house teams were not yet panicking about visibility in ChatGPT or Perplexity.</li>
+            </ul>
+          </div>
+          <div class="panel" style="padding: 22px;">
+            <h3>Tailwinds accelerating adoption</h3>
+            <ul>
+              <li>Agencies are losing pitches and clients to competitors with an “AI SEO” story.</li>
+              <li>CTR drops and SERP volatility are increasing reporting and explanation workload.</li>
+              <li>The SEO tool market ($7B+) is ripe for platform consolidation as teams fatigue from 5-10 subscriptions.</li>
+              <li>AI referral traffic is growing +620% YoY with much higher conversion rates, forcing demand for GEO/AEO capabilities.</li>
+              <li>The GEO services market alone may reach $17-33B by the early 2030s from roughly $1B today.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="team">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">12</div>
+            <h2>Team</h2>
+            <p>Founder-market fit is central to the case: deep AI infrastructure background combined with direct agency and SEO operating experience.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Background</th>
+                <th>LinkedIn</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sherin Chacko Thomas</strong></td>
+                <td>Founder &amp; CEO (Sole Member)</td>
+                <td>Co-built RedisAI, worked as an infrastructure engineer at Lightning.ai, authored the first published book on PyTorch, then founded and scaled a dev + marketing agency in Dubai to $350K revenue in year two.</td>
+                <td><a href="https://linkedin.com/in/hhsecond" target="_blank" rel="noreferrer">linkedin.com/in/hhsecond</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="panel" style="padding: 22px;">
+            <h3>Planned hires and founder expansion</h3>
+            <ul>
+              <li>First GTM hire from this raise: growth marketer / community manager.</li>
+              <li>Co-founder discussions with Ticku Mammen Koshy are in final stages, with a decision expected by mid-April 2026. Ticku brings 15+ years of marketing experience, including SEO leadership for major enterprise clients in Dubai, and is currently based in the US.</li>
+              <li>He has served as an advisor to Berlin since its early days and would take on the CMO / Head of Growth role.</li>
+            </ul>
+          </div>
+          <div class="panel" style="padding: 22px;">
+            <h3>Why this team can win</h3>
+            <p>The founder has built AI systems in production at scale, understands the operational realities of agencies firsthand, and has already navigated multiple product iterations based on direct user feedback. That overlap between infrastructure depth and marketing-operating context is unusually strong for this category.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="financials">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">13</div>
+            <h2>Financials</h2>
+            <p>Berlin has operated lean through its product-evolution phase. The bottleneck is not build efficiency; it is financing the move from product to GTM.</p>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Historical summary</strong>
+          Average monthly expense since May 2025 has been about ~$1,050. The company had 5 historical paid users on the pre-pivot product and no active MRR today. The current platform is in unpaid design-partner mode.
+        </div>
+        <div class="metric-grid" style="margin-top: 18px;">
+          <div class="metric">
+            <strong>$10K</strong>
+            <span>Cash on hand</span>
+          </div>
+          <div class="metric">
+            <strong>~$1,050</strong>
+            <span>Current monthly burn during product evolution phase</span>
+          </div>
+          <div class="metric">
+            <strong>~10 mo</strong>
+            <span>Runway at current burn</span>
+          </div>
+          <div class="metric">
+            <strong>~2 mo</strong>
+            <span>Runway at planned GTM burn</span>
+          </div>
+        </div>
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="panel" style="padding: 22px;">
+            <h3>Current cost structure</h3>
+            <div class="bar-stack">
+              <div class="bar-row">
+                <strong>Cloud infrastructure</strong>
+                <div class="bar-meta"><span>~$250 / month</span><span>24%</span></div>
+                <div class="bar"><span style="width: 24%;"></span></div>
+              </div>
+              <div class="bar-row">
+                <strong>LLM API costs</strong>
+                <div class="bar-meta"><span>~$300 / month</span><span>29%</span></div>
+                <div class="bar alt"><span style="width: 29%;"></span></div>
+              </div>
+              <div class="bar-row">
+                <strong>Logistics &amp; transportation</strong>
+                <div class="bar-meta"><span>~$300 / month</span><span>29%</span></div>
+                <div class="bar green"><span style="width: 29%;"></span></div>
+              </div>
+              <div class="bar-row">
+                <strong>Software subscriptions</strong>
+                <div class="bar-meta"><span>~$200 / month</span><span>19%</span></div>
+                <div class="bar"><span style="width: 19%;"></span></div>
+              </div>
+            </div>
+            <p class="note">Legacy MRR is $0 because all historical paid users churned from the previous product version.</p>
+          </div>
+          <div class="stack">
+            <div class="panel" style="padding: 22px;">
+              <h3>Inflection point</h3>
+              <p>The current burn reflects a build-only phase with near-zero marketing spend. To capitalize on product momentum and partner traction, Berlin must transition into active marketing and sales, which lifts burn substantially.</p>
+            </div>
+            <div class="accent-box">
+              <strong>Projections (2-3 year)</strong>
+              TODO.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ask">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">14</div>
+            <h2>The Ask</h2>
+            <p>This is a pre-seed bridge from validated product to validated GTM, sized to fund 12 months of focused execution.</p>
+          </div>
+        </div>
+        <div class="four-grid">
+          <div class="big-stat">
+            <strong>$100K</strong>
+            <span>Amount raising</span>
+          </div>
+          <div class="big-stat">
+            <strong>SAFE</strong>
+            <span>Post-money instrument</span>
+          </div>
+          <div class="big-stat">
+            <strong>$2M</strong>
+            <span>Post-money valuation cap</span>
+          </div>
+          <div class="big-stat">
+            <strong>$25K</strong>
+            <span>Minimum check size; no discount; pro rata rights included</span>
+          </div>
+        </div>
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="panel" style="padding: 22px;">
+            <h3>Why now: funding inflection</h3>
+            <p>Berlin has spent roughly 10 months building through three pivots on under $1,100/month and no outside capital. The infrastructure is live, design partners are active, and the GTM engine is ready. What is missing is enough fuel to move from build-mode to repeatable customer acquisition.</p>
+          </div>
+          <div class="quote-box">
+            <strong>Target runway</strong>
+            This round is sized to provide 12 months of runway at a planned burn of roughly ~$8,300 per month.
+          </div>
+        </div>
+        <div class="table-wrap" style="margin-top: 16px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Use of funds</th>
+                <th>Allocation</th>
+                <th>Monthly estimate</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Go-to-Market &amp; Growth</strong></td>
+                <td>25%</td>
+                <td>$2,075</td>
+                <td>Founder-led direct sales to convert Founding Partners and close qualified pipeline; content production and community growth (r/agent_seo); micro-influencer program</td>
+              </tr>
+              <tr>
+                <td><strong>Engineering &amp; Infrastructure</strong></td>
+                <td>15%</td>
+                <td>$1,250</td>
+                <td>Reliability, workflow-engine improvements, expanding integrations, and scaling crawl / keyword infrastructure.</td>
+              </tr>
+              <tr>
+                <td><strong>Cloud &amp; LLM Costs</strong></td>
+                <td>10%</td>
+                <td>$830</td>
+                <td>Support increased pilot and customer workflow execution volume plus platform-provided model access.</td>
+              </tr>
+              <tr>
+                <td><strong>Hiring</strong></td>
+                <td>40%</td>
+                <td>$3,320</td>
+                <td>First GTM hire (growth marketer / community manager) based in India, where $3.3K/month is competitive for senior talent</td>
+              </tr>
+              <tr>
+                <td><strong>Operations &amp; Legal</strong></td>
+                <td>10%</td>
+                <td>$830</td>
+                <td>LLC-to-C-Corp conversion, SAFE legal costs, accounting, insurance, and software subscriptions.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel" style="padding: 22px; margin-top: 18px;">
+          <h3>Milestones this funding should achieve</h3>
+          <div class="table-wrap" style="margin-top: 12px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Milestone</th>
+                  <th>Target timeline</th>
+                  <th>Success metric</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Convert Founding Partners to paid</td>
+                  <td>Months 1-2</td>
+                  <td>5 paying agency / enterprise customers at $2K+ / month ACV</td>
+                </tr>
+                <tr>
+                  <td>Validate repeatable sales motion</td>
+                  <td>Months 3-5</td>
+                  <td>$10K+ MRR from 5+ new ICP customers beyond Founding Partners</td>
+                </tr>
+                <tr>
+                  <td>Launch free workflow library (PLG engine)</td>
+                  <td>Months 2-3</td>
+                  <td>30+ workflows live and 200+ free-tier users driving inbound pipeline</td>
+                </tr>
+                <tr>
+                  <td>Publish autonomous affiliate site case study</td>
+                  <td>Months 2-4</td>
+                  <td>Verifiable organic traffic growth with documented ROI</td>
+                </tr>
+                <tr>
+                  <td>Reach target ARR for next raise</td>
+                  <td>Months 9-12</td>
+                  <td>$150K-$250K ARR from 6-10 customers at $24K-$36K ACV</td>
+                </tr>
+                <tr>
+                  <td>Produce 2-3 publishable customer case studies</td>
+                  <td>Months 3-5</td>
+                  <td>Named logos with quantified results</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="accent-box" style="margin-top: 18px;">
+          <strong>What this round does not need to achieve</strong>
+          The objective is not profitability. It is repeatable evidence that agencies and enterprise teams will pay $24K-$36K per year for programmable SEO infrastructure, backed by case studies and a working PLG engine.
+        </div>
+      </section>
+
+      <section class="section" id="legal">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">15</div>
+            <h2>Cap Table &amp; Legal</h2>
+            <p>The company is cleanly structured, founder-owned, and has no prior financing complexity.</p>
+          </div>
+        </div>
+        <div class="split">
+          <div class="panel" style="padding: 22px;">
+            <h3>Ownership and entity structure</h3>
+            <div class="table-wrap" style="margin-top: 12px;">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Shareholder</th>
+                    <th>Ownership</th>
+                    <th>Type</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sherin Chacko Thomas</td>
+                    <td>100%</td>
+                    <td>Sole Member, LLC</td>
+                    <td>Founder &amp; CEO</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <ul>
+              <li>Current entity: Agentic World, LLC, a Delaware Limited Liability Company.</li>
+              <li>Registered agent / address: 1111B S Governors Ave, Ste 29991, Dover, DE 19904.</li>
+              <li>Formation date: May 16, 2025.</li>
+              <li>C-Corp conversion: TBD and open to investor guidance; founder is prepared to convert if required by investors or accelerators, and SAFE documents can include a conversion covenant.</li>
+            </ul>
+          </div>
+          <div class="panel" style="padding: 22px;">
+            <h3>Investor history and option pool</h3>
+            <ul>
+              <li>Prior fundraising: none.</li>
+              <li>Existing investors: none.</li>
+              <li>Outstanding SAFEs / convertible notes: none.</li>
+              <li>Advisor equity / grants: none.</li>
+              <li>Current option pool: none.</li>
+              <li>Planned option pool: 10% for future hires and advisors, to be established at C-Corp conversion.</li>
+              <li>409A valuation: not applicable yet for the LLC; will be completed upon conversion if needed.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="panel" style="padding: 22px;">
+            <h3>Intellectual property</h3>
+            <ul>
+              <li>All IP has been created by the sole founder and assigned to Agentic World, LLC. There are no third-party contributors or co-developers.</li>
+              <li>IP assignments are complete because the founder is also the sole member.</li>
+              <li>Open-source dependencies are standard permissive licenses (MIT, Apache 2.0); no GPL dependencies in production.</li>
+              <li>Third-party commercial dependencies include DataForSEO and LLM provider APIs from OpenAI and Anthropic, with no exclusive or restrictive licensing arrangements.</li>
+              <li>Patents or patent applications: none.</li>
+            </ul>
+          </div>
+          <div class="panel" style="padding: 22px;">
+            <h3>Legal matters</h3>
+            <ul>
+              <li>Pending litigation: none.</li>
+              <li>Regulatory considerations: publicly available web data only, robots.txt respected, no personal data collection, and GDPR/CCPA compliance documentation to be formalized for enterprise readiness.</li>
+              <li>Material contracts: DataForSEO subscription, non-binding Founding Partner agreements, and standard cloud / LLM provider agreements.</li>
+              <li>Terms of service and privacy policy are drafted and live, with legal review planned as part of fundraise and enterprise readiness.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote-box" style="margin-top: 18px;">
+          <strong>Cap-table summary</strong>
+          100% founder-owned, no outside investors, no SAFEs, no notes, no option pool yet, and no advisor grants. The source document explicitly describes the cap table as completely clean.
+        </div>
+      </section>
+
+      <section class="section" id="social-proof">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">16</div>
+            <h2>Social Proof &amp; Milestones</h2>
+            <p>Formal institutional proof is still early, but category visibility, pilot logos, and shipped infrastructure already create usable investor signal.</p>
+          </div>
+        </div>
+        <div class="three-grid">
+          <div class="mini-card">
+            <span class="mini-label">Press / media</span>
+            <h4>Thought leadership traction</h4>
+            <p>Agentic SEO content is gaining attention with industry influencers; one LinkedIn post generated 16K+ impressions.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Awards / accelerators</span>
+            <h4>Still open</h4>
+            <p>No awards yet. No accelerator or incubator participation yet, though programs are being evaluated as part of the fundraise strategy.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-label">Partnerships / LOIs</span>
+            <h4>5 active Founding Partners</h4>
+            <p>Includes Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), BlockSurvey, and Search Indicators (20+ client agency).</p>
+          </div>
+        </div>
+        <div class="panel" style="padding: 22px; margin-top: 18px;">
+          <h3>Notable milestones already achieved</h3>
+          <ul>
+            <li>Intelligence infrastructure built with 80+ ranking signals, automated prioritization, and GSC / GA integrations.</li>
+            <li>Agentic workflow engine is live and operational.</li>
+            <li>Thin MCP interoperability layer is live inside Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw — with proprietary architecture that solves standard MCP's hallucination issues.</li>
+            <li>Integrated keyword database and proprietary crawlers are operational.</li>
+            <li>Founding Partner Program launched with 5 active design partners.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="risks">
+        <div class="section-header">
+          <div class="section-heading">
+            <div class="section-index">17</div>
+            <h2>Risks &amp; Mitigations</h2>
+            <p>The risk table below mirrors the source document while translating likelihood and impact into visual severity markers.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Risk</th>
+                <th>Likelihood</th>
+                <th>Impact</th>
+                <th>Mitigation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Incumbents add AI/workflow features</strong></td>
+                <td><span class="badge-medium">Medium</span></td>
+                <td><span class="badge-high">High</span></td>
+                <td>Berlin's architecture is workflow-first, not bolted on. Rebuilding incumbent products around agentic workflows requires deeper architectural change than shipping incremental features.</td>
+              </tr>
+              <tr>
+                <td><strong>LLM platform risk (OpenAI, Anthropic)</strong></td>
+                <td><span class="badge-low-medium">Low-Medium</span></td>
+                <td><span class="badge-medium">Medium</span></td>
+                <td>Berlin is LLM-agnostic by design and treats models as interchangeable execution layers, not the core product.</td>
+              </tr>
+              <tr>
+                <td><strong>Agency market adoption speed</strong></td>
+                <td><span class="badge-medium">Medium</span></td>
+                <td><span class="badge-medium">Medium</span></td>
+                <td>Founding Partner Program validates direction with real users before scaling and de-risks product direction with proof-first learning.</td>
+              </tr>
+              <tr>
+                <td><strong>AI search landscape evolving rapidly</strong></td>
+                <td><span class="badge-high">High</span></td>
+                <td><span class="badge-medium">Medium</span></td>
+                <td>Flexible workflow architecture plus proprietary crawling, integrated data, and GEO/AEO capability should allow Berlin to adapt faster than narrower products.</td>
+              </tr>
+              <tr>
+                <td><strong>Data privacy / crawler compliance</strong></td>
+                <td><span class="badge-low-medium">Low-Medium</span></td>
+                <td><span class="badge-medium">Medium</span></td>
+                <td>Crawlers only access public data, respect robots.txt, and collect no personal information. Enterprise-ready GDPR/CCPA documentation is on the roadmap.</td>
+              </tr>
+              <tr>
+                <td><strong>Single founder / key-person risk</strong></td>
+                <td><span class="badge-medium">Medium</span></td>
+                <td><span class="badge-high">High</span></td>
+                <td>First GTM hire planned with this raise. Co-founder discussions with Ticku Mammen Koshy (15+ years marketing, US-based) in final stages with decision expected mid-April 2026.</td>
+              </tr>
+              <tr>
+                <td><strong>Fundamental shift in how the web works</strong></td>
+                <td><span class="badge-medium">Medium</span></td>
+                <td><span class="badge-high">High</span></td>
+                <td>Berlin is workflow-first rather than SEO-mechanic-first. If discovery and commerce shift toward agents, the same workflow engine and data layer can be retargeted without a fundamental rebuild.</td>
+              </tr>
+              <tr>
+                <td><strong>AI-native competitors expand into orchestration</strong></td>
+                <td><span class="badge-medium">Medium</span></td>
+                <td><span class="badge-high">High</span></td>
+                <td>Monitoring-first and content-first competitors would still need to re-architect around execution, workflow control, integrated data, interoperability, and marketplace depth.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <small>Agent Berlin • Programmable infrastructure for inbound growth.</small>
+      <small>For investor follow-up: agentberlin.ai • Sherin Chacko Thomas • +91 890 474 5603</small>
+    </footer>
+
+  </div>
+</body>
+</html>
