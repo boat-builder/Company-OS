@@ -475,10 +475,55 @@
       .nav-hint {
         display: none;
       }
+
+      .details-link {
+        top: 12px;
+        right: 12px;
+        padding: 8px 14px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Fixed Details Link */
+    .details-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .details-link:hover {
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    .details-link svg {
+      width: 16px;
+      height: 16px;
     }
   </style>
 </head>
 <body>
+  <a href="/details" class="details-link">
+    Full Details
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+
   <div class="slides-wrapper" id="slides">
     <!-- Slide 1: Title -->
     <div class="slide">

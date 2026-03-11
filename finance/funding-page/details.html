@@ -795,9 +795,54 @@
         backdrop-filter: none;
       }
     }
+
+    .home-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .home-btn:hover {
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    .home-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 760px) {
+      .home-btn {
+        top: 12px;
+        left: 12px;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <a href="/" class="home-btn" aria-label="Back to pitch deck">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+    Pitch Deck
+  </a>
   <div class="shell">
     <header class="hero" id="top">
       <div class="hero-grid">
