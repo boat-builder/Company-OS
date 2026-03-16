@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Berlin - Investor Pitch</title>
+  <style>
+    :root {
+      --bg: #f5efe4;
+      --bg-deep: #e8e2d7;
+      --panel: rgba(255, 255, 255, 0.84);
+      --panel-strong: #fffdf8;
+      --ink: #10202e;
+      --muted: #5e6b75;
+      --line: rgba(16, 32, 46, 0.12);
+      --accent: #0f6b73;
+      --accent-soft: rgba(15, 107, 115, 0.12);
+      --accent-2: #d47a32;
+      --accent-2-soft: rgba(212, 122, 50, 0.14);
+      --accent-3: #21553a;
+      --shadow: 0 18px 50px rgba(16, 32, 46, 0.10);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(15, 107, 115, 0.16), transparent 22rem),
+        radial-gradient(circle at top left, rgba(212, 122, 50, 0.14), transparent 18rem),
+        linear-gradient(180deg, #f8f4ed 0%, var(--bg) 42%, var(--bg-deep) 100%);
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(16, 32, 46, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 32, 46, 0.035) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.36), transparent 82%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* Slides Container */
+    .slides-wrapper {
+      display: flex;
+      width: 700vw;
+      height: 100vh;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      flex-shrink: 0;
+    }
+
+    .slide-content {
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Slide Typography */
+    .slide h1 {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      margin-bottom: 20px;
+    }
+
+    .slide h2 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 24px;
+    }
+
+    .tagline {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(16, 32, 46, 0.06);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .stat {
+      padding: 16px 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      min-width: 140px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      color: var(--accent);
+    }
+
+    .stat span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Problem/Solution Cards */
+    .card-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      padding: 24px 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .card.highlight {
+      background: linear-gradient(135deg, rgba(15, 107, 115, 0.10), rgba(255, 255, 255, 0.78));
+      border-color: rgba(15, 107, 115, 0.2);
+    }
+
+    /* Market Bars */
+    .market-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 700px;
+      margin: 32px auto 0;
+      text-align: left;
+    }
+
+    .market-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .market-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .market-bar-label {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .market-bar-value {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+
+    .market-bar-track {
+      height: 18px;
+      background: rgba(16, 32, 46, 0.09);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .market-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .market-bar-fill.sam {
+      background: linear-gradient(90deg, var(--accent-2), #f4b96f);
+    }
+
+    .market-bar-fill.som {
+      background: linear-gradient(90deg, var(--accent-3), #66a57f);
+    }
+
+    .market-bar-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Traction */
+    .partners-grid {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 28px 0;
+    }
+
+    .partner-tag {
+      padding: 12px 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .traction-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 32px;
+    }
+
+    .traction-stat {
+      text-align: center;
+    }
+
+    .traction-stat strong {
+      display: block;
+      font-size: 2.5rem;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      color: var(--accent);
+    }
+
+    .traction-stat span {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Why Now */
+    .timing-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      max-width: 900px;
+      margin: 32px auto 0;
+      text-align: left;
+    }
+
+    .timing-point {
+      padding: 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .timing-point h4 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--accent-2);
+    }
+
+    .timing-point p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Ask Slide */
+    .ask-grid {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+
+    .ask-item {
+      padding: 28px 36px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      min-width: 180px;
+    }
+
+    .ask-item strong {
+      display: block;
+      font-size: 2.2rem;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      color: var(--accent);
+    }
+
+    .ask-item span {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Navigation */
+    .nav-dots {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      padding: 12px 20px;
+      background: rgba(255, 253, 248, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      z-index: 100;
+    }
+
+    .nav-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(16, 32, 46, 0.15);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-dot:hover {
+      transform: scale(1.2);
+    }
+
+    .nav-dot.active {
+      background: var(--accent);
+    }
+
+    .nav-hint {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.85rem;
+      color: var(--muted);
+      opacity: 0.7;
+    }
+
+    .nav-arrows {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    .nav-arrow {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-arrow:hover {
+      background: var(--accent-soft);
+      transform: scale(1.05);
+    }
+
+    .nav-arrow svg {
+      width: 20px;
+      height: 20px;
+      color: var(--ink);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .slide {
+        padding: 24px;
+      }
+
+      .stats-grid, .traction-stats, .ask-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stat, .ask-item {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .nav-arrows {
+        right: 16px;
+        bottom: 100px;
+      }
+
+      .nav-hint {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="slides-wrapper" id="slides">
+    <!-- Slide 1: Title -->
+    <div class="slide">
+      <div class="slide-content">
+        <span class="kicker">Investor Briefing - March 2026</span>
+        <h1>Agent Berlin</h1>
+        <p class="tagline">Programmable infrastructure for inbound growth: a unified data, workflow, and intelligence layer that lets teams build, run, and scale SEO operations without engineering overhead.</p>
+        <div class="stats-grid">
+          <div class="stat">
+            <strong>$100K</strong>
+            <span>SAFE Raise</span>
+          </div>
+          <div class="stat">
+            <strong>$2M</strong>
+            <span>Post-money Cap</span>
+          </div>
+          <div class="stat">
+            <strong>5</strong>
+            <span>Active Pilots</span>
+          </div>
+          <div class="stat">
+            <strong>&lt;3 wks</strong>
+            <span>Since Launch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Problem -->
+    <div class="slide">
+      <div class="slide-content">
+        <h2>The Problem</h2>
+        <p class="tagline">SEO teams are stuck with fragmented toolchains that don't scale</p>
+        <div class="card-stack">
+          <div class="card">
+            <h4>Fragmented Tools</h4>
+            <p>Teams juggle 5-10+ disconnected tools for crawling, keyword research, rank tracking, content optimization, and reporting. No single source of truth.</p>
+          </div>
+          <div class="card">
+            <h4>Manual Processes</h4>
+            <p>Most SEO work is still manual: exporting CSVs, building spreadsheets, copying between tools. Strategy rarely becomes automated execution.</p>
+          </div>
+          <div class="card">
+            <h4>Engineering Overhead</h4>
+            <p>Custom automation requires engineering resources most SEO teams don't have. Building internal tools is expensive and maintenance-heavy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Solution -->
+    <div class="slide">
+      <div class="slide-content">
+        <h2>The Solution</h2>
+        <p class="tagline">One programmable platform that turns strategy into autonomous execution</p>
+        <div class="card-stack">
+          <div class="card highlight">
+            <h4>Unified Data Layer</h4>
+            <p>All your SEO data in one place: crawl data, keywords, rankings, analytics, Search Console. Query anything, combine everything.</p>
+          </div>
+          <div class="card highlight">
+            <h4>Workflow Engine</h4>
+            <p>Build repeatable workflows that run on schedule or on-demand. From simple reports to complex multi-step automations.</p>
+          </div>
+          <div class="card highlight">
+            <h4>AI Intelligence</h4>
+            <p>AI agents that understand SEO context. They don't just execute tasks - they make decisions and adapt to findings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Market -->
+    <div class="slide">
+      <div class="slide-content">
+        <h2>Market Opportunity</h2>
+        <p class="tagline">Massive market with strong tailwinds from AI disruption</p>
+        <div class="market-bars">
+          <div class="market-bar">
+            <div class="market-bar-header">
+              <span class="market-bar-label">TAM</span>
+              <span class="market-bar-value">$85B - $266B</span>
+            </div>
+            <div class="market-bar-track">
+              <div class="market-bar-fill" style="width: 100%;"></div>
+            </div>
+            <span class="market-bar-note">~$85-93B in 2025, growing to $266B+ by 2034 at 13.5% CAGR</span>
+          </div>
+          <div class="market-bar">
+            <div class="market-bar-header">
+              <span class="market-bar-label">SAM</span>
+              <span class="market-bar-value">$11B - $58B</span>
+            </div>
+            <div class="market-bar-track">
+              <div class="market-bar-fill sam" style="width: 60%;"></div>
+            </div>
+            <span class="market-bar-note">~$11.5-50B in 2025, growing to $58B+ by 2035</span>
+          </div>
+          <div class="market-bar">
+            <div class="market-bar-header">
+              <span class="market-bar-label">SOM</span>
+              <span class="market-bar-value">$350M - $1B</span>
+            </div>
+            <div class="market-bar-track">
+              <div class="market-bar-fill som" style="width: 25%;"></div>
+            </div>
+            <span class="market-bar-note">Achievable over 3-5 years with current positioning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: Traction -->
+    <div class="slide">
+      <div class="slide-content">
+        <h2>Early Traction</h2>
+        <p class="tagline">Founding Partner Program validating product-market fit</p>
+        <div class="partners-grid">
+          <span class="partner-tag">Fliki.ai</span>
+          <span class="partner-tag">Webandcrafts</span>
+          <span class="partner-tag">BlockSurvey</span>
+          <span class="partner-tag">Search Indicators</span>
+          <span class="partner-tag">+ 1 agency in progress</span>
+        </div>
+        <div class="traction-stats">
+          <div class="traction-stat">
+            <strong>5</strong>
+            <span>Active Pilots</span>
+          </div>
+          <div class="traction-stat">
+            <strong>20+</strong>
+            <span>Workflows Created</span>
+          </div>
+          <div class="traction-stat">
+            <strong>4</strong>
+            <span>Qualified Calls This Week</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6: Why Now -->
+    <div class="slide">
+      <div class="slide-content">
+        <h2>Why Now?</h2>
+        <p class="tagline">A rare window where AI disrupts how search works</p>
+        <div class="timing-points">
+          <div class="timing-point">
+            <h4>AI Search Emergence</h4>
+            <p>ChatGPT, Perplexity, and AI Overviews are changing how people find information. SEO teams need new capabilities.</p>
+          </div>
+          <div class="timing-point">
+            <h4>Agentic Coding Wave</h4>
+            <p>Claude Code, Cursor, and similar tools let non-engineers build automations. Berlin rides this wave.</p>
+          </div>
+          <div class="timing-point">
+            <h4>Legacy Tool Fatigue</h4>
+            <p>Semrush, Ahrefs, Moz built for a different era. Teams want programmable infrastructure, not more dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7: Ask -->
+    <div class="slide">
+      <div class="slide-content">
+        <h2>The Ask</h2>
+        <p class="tagline">Join us in building the operating layer for inbound growth</p>
+        <div class="ask-grid">
+          <div class="ask-item">
+            <strong>$100K</strong>
+            <span>SAFE Raise</span>
+          </div>
+          <div class="ask-item">
+            <strong>$2M</strong>
+            <span>Post-money Cap</span>
+          </div>
+          <div class="ask-item">
+            <strong>$25K</strong>
+            <span>Minimum Check</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav-dots">
+    <div class="nav-dot active" data-slide="0"></div>
+    <div class="nav-dot" data-slide="1"></div>
+    <div class="nav-dot" data-slide="2"></div>
+    <div class="nav-dot" data-slide="3"></div>
+    <div class="nav-dot" data-slide="4"></div>
+    <div class="nav-dot" data-slide="5"></div>
+    <div class="nav-dot" data-slide="6"></div>
+  </div>
+
+  <div class="nav-hint">Use arrow keys or click dots to navigate</div>
+
+  <div class="nav-arrows">
+    <div class="nav-arrow" id="prevBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </div>
+    <div class="nav-arrow" id="nextBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    const slidesWrapper = document.getElementById('slides');
+    const dots = document.querySelectorAll('.nav-dot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const totalSlides = 7;
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+
+      currentSlide = index;
+      slidesWrapper.style.transform = `translateX(-${currentSlide * 100}vw)`;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    // Dot navigation
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goToSlide(parseInt(dot.dataset.slide));
+      });
+    });
+
+    // Button navigation
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
