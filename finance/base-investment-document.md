@@ -19,7 +19,7 @@
 - **Website:** agentberlin.ai
 - **One-Liner:** Berlin is programmable infrastructure for inbound growth — a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.
 - **Mission Statement:** To make world-class inbound growth infrastructure accessible to every team — replacing fragmented, manual SEO toolchains with a unified, programmable platform that turns strategy into autonomous execution.
-- **Current Phase:** Platform launched late February 2026 (<3 weeks ago). Pre-commercial, in Founding Partner Program with 5 active design partners — 3 of whom use the platform daily, working through early-stage friction to integrate Berlin into their workflows. This level of engagement at 3 weeks is a strong signal; now converting to paid customers.
+- **Current Phase:** Platform launched late February 2026 (~4 weeks ago). Pre-commercial, in Founding Partner Program with 7 active design partners — 3 of whom use the platform daily, working through early-stage friction to integrate Berlin into their workflows. Two partners (Webandcrafts and miniOrange) are in final stages of converting to paid customers, with strong product champions driving adoption internally at each company. This level of engagement at 4 weeks is a strong signal; now converting to paid customers.
 - **Key Contact(s):** Sherin Chacko Thomas — +91 890 474 5603
 
 ### Product Evolution (May 2025 – Present)
@@ -234,14 +234,20 @@ The strongest market validation is where top-tier capital is deploying. In the A
 | Tier | Price | What's Included | Purpose |
 |------|-------|-----------------|---------|
 | **Free / Explorer** | $0 | Connect domain, run pre-built simple workflows, explore the unified data layer | PLG top-of-funnel; let teams experience the platform before committing |
-| **Pro** | $100/month | Full workflow execution (including premium), custom workflow creation, multi-client & multi-project support, base credit allocation | Core self-serve tier; designed for rapid adoption |
+| **Pro** | $199/month | Full workflow execution (including premium), custom workflow creation, multi-client & multi-project support, base credit allocation | Core self-serve tier; designed for rapid adoption |
 | **Agency / Enterprise** | Custom | Higher credit allocations, unlimited automation, priority support, Forward Deployed Marketers (Berlin's team sets up and optimizes agentic workflows on-site) | High-touch tier for agencies and enterprise teams with complex, multi-client needs |
 
-*Pricing evolution:* Current $100/month pricing is intentionally flat during launch phase — every feature is accessible to maximize adoption. As the customer base scales, the tier structure will segment: multi-client/multi-project capabilities and premium automation features move to higher tiers, and per-client or per-project add-on pricing drives expansion revenue. The target ACV for agency and enterprise accounts is $24K–$60K/year, consistent with the platform's labor-replacement value proposition (customers compare Berlin to a hire at $60K–$120K/year, not a tool at $200/month per seat).
+*Pricing evolution (three phases):*
 
-  *Forward Deployed Marketers:* A planned services layer where Berlin's marketing specialists embed with customers to design, build, and optimize agentic workflows. Dual purpose: accelerates customer time-to-value and generates proprietary workflow templates that feed back into the platform's template library. Pricing TBD — likely bundled into enterprise contracts or offered as a separate onboarding package.
+  - **Phase 1 — Founding Partners (now → April 2026):** $199/month flat subscription with credit top-ups. All features accessible. The goal is learning velocity — understanding what workflows matter, what outcomes customers value, and what drives retention. 5 founding partners at $199/month = ~$1K MRR.
 
-- **Average contract value (ACV):** Current: ~$1,200/year (launch pricing). Target: $24K–$60K/year for agency/enterprise accounts as pricing matures.
+  - **Phase 2 — Early Growth (May → August 2026):** Expand customer base through founder-led sales supported by first GTM hire, plus early self-serve signups via the free workflow library. Blended ARPU rises to $300–$500/month as usage-based credit purchases increase and the tier structure begins to segment — multi-client/multi-project capabilities and premium automation features move to higher tiers.
+
+  - **Phase 3 — Outcome-Based Pricing (September 2026+):** Pricing anchored to labor replacement value. A typical junior marketer costs a company ~$4,000/month in the US and ~$700/month in India. Berlin targets outcome-based pricing in the $800–$1,200/month range — a fraction of the hire it replaces, supported by quantified results from founding partner case studies. This is when the platform's labor-replacement value proposition fully materializes: customers compare Berlin to a hire at $60K–$120K/year, not a tool at $200/month per seat.
+
+  *Forward Deployed Marketers:* A services layer where Berlin's marketing specialists embed with customers to design, build, and optimize agentic workflows. Priced at $2,000+/month. Dual purpose: accelerates customer time-to-value and generates proprietary workflow templates that feed back into the platform's template library. Available as a standalone service or bundled into agency/enterprise contracts.
+
+- **Average contract value (ACV):** Current: ~$2,400/year (launch pricing at $199/month). Target blended ACV: $6,000–$10,000/year as outcome-based pricing matures, with agency/enterprise accounts at the higher end ($14,000–$24,000+/year including Forward Deployed Marketer services).
 
 - **Gross margin:** ~80% on core platform infrastructure (data engine, integrations, workflow orchestration, crawlers). LLM tokens provided at cost (zero margin) — a strategic decision to maintain pricing parity with native LLM apps and remove adoption friction. Users who bring their own LLM via Berlin's interoperability layer eliminate this cost line entirely. Blended gross margin depends on the mix of BYO-LLM vs. Berlin-provided tokens; as interoperability adoption grows, blended margin trends toward the 80% infrastructure margin.
 
@@ -258,40 +264,43 @@ The strongest market validation is where top-tier capital is deploying. In the A
 > **Current phase:** Pre-commercial launch. Berlin completed a significant product repositioning in late 2025, evolving from a conversational SEO tool to programmable agentic workflow infrastructure targeting agencies and enterprise marketing teams. The company is currently in its Founding Partner Program, demonstrating strong engagement with design partners before converting to paid customers and scaling go-to-market.
 
 - **MRR / ARR:**
-  - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity but churned when that Stripe account was closed. All historical paid users were on the previous version of the product — none on the current platform.
-  - New platform: Pre-revenue. Currently in Founding Partner Program phase with unpaid design partners. Several pilot partners have agreed to convert to paid upon requirements being met, but no revenue has been recognized.
+  - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity. All historical paid users are on the previous version of the product — none on the current platform. Total historical revenue to date: ~$2,000 USD. These users have not yet churned but are expected to as the product positioning has evolved away from their use case — unless Berlin launches a services wing (under active consideration) that would continue to serve this segment.
+  - New platform: Pre-revenue. Currently in Founding Partner Program phase with unpaid design partners. Two partners (Webandcrafts and miniOrange) are in final stages of converting to paid customers, with dedicated product champions driving internal adoption at each company.
 
-> **Context on timing:** The current platform version launched in late February 2026 — less than three weeks ago. The Founding Partner Program is deliberately structured as an 8-week engagement with clear conversion milestones. Several partners have verbally committed to paid subscriptions upon specific feature requirements being met. The $2M cap appropriately reflects this pre-revenue, pre-conversion stage while providing upside for early believers.
+> **Context on timing:** The current platform version launched in late February 2026 — approximately four weeks ago. The Founding Partner Program is deliberately structured as an 8-week engagement with clear conversion milestones. Two partners are in active conversion discussions, with strong internal champions at each company. The $6M cap reflects this pre-revenue, pre-conversion stage while providing meaningful upside for early believers — well below the ~$10M median for pre-seed rounds in this raise range.
+
+- **Total revenue to date:** ~$2,000 USD (legacy product, pre-pivot)
 
 - **Growth rate:** N/A — pre-commercial launch on new platform.
 
 - **Number of customers / users:**
-  - 5 total historical paid users (pre-pivot ICP, via Stripe — no longer active)
-  - 5 active pilot partners on the new platform (Founding Partner Program, unpaid)
+  - 5 total historical paid users (pre-pivot ICP, via Stripe — still active but expected to churn as product positioning has evolved)
+  - 7 active pilot partners on the new platform (Founding Partner Program, unpaid — 2 in final stages of paid conversion)
 
 - **Retention / churn:** Insufficient data on the new platform. Legacy product retention data is not representative of the current positioning and ICP.
 
 - **Engagement metrics (early signals):**
-  - 5–6 companies actively using the new platform
-  - 3 of 5 partners use the platform daily, with multiple touchpoints per day
+  - 7 companies actively using the new platform
+  - 3 of 7 partners use the platform daily, with multiple touchpoints per day
   - Partners are working through early-stage friction to integrate Berlin into their workflows — a strong signal that the core value proposition resonates
   - ~20 workflows created across pilot partners
   - Pilots executing workflows across multiple projects and clients
   - Product has expected kinks at 3 weeks old, but engagement intensity indicates clear pull
 
 - **Pipeline:**
-  - 5 active pilots in Founding Partner Program:
+  - 7 active pilots in Founding Partner Program:
     - **Fliki.ai** — AI video platform, ~$1M MRR. In-house marketing team piloting Berlin for SEO operations.
-    - **Webandcrafts** — Full-service digital agency, 100+ clients. Evaluating Berlin for cross-client workflow automation and scaled delivery.
+    - **Webandcrafts** — Full-service digital agency, 100+ clients. Evaluating Berlin for cross-client workflow automation and scaled delivery. In final stages of converting to paid — has a dedicated product champion internally.
     - **BlockSurvey** — Privacy-focused survey platform, ~$20K MRR. Piloting Berlin for SEO and content workflows.
     - **Search Indicators** — SEO agency, 20+ clients. Piloting Berlin for multi-client delivery.
+    - **miniOrange** — Enterprise identity and security platform (miniorange.com). In final stages of converting to paid — has a dedicated product champion internally.
+    - **CSP Agency** — Canadian agency, actively working through Founding Partner Program. Has a dedicated product champion internally.
     - 1 additional agency partnership in progress (Swedish agency with high-profile enterprise clients)
-  - 4 qualified conversations scheduled this week with potential high-value partners
   - Active founder-led outreach ramping
 
-- **Notable customers / logos:** Fliki.ai, Webandcrafts, BlockSurvey, Search Indicators
+- **Notable customers / logos:** Fliki.ai, Webandcrafts, BlockSurvey, Search Indicators, miniOrange, CSP Agency
 
-- **Case studies or testimonials:** In progress. Strong relationships established with Fliki.ai and Webandcrafts for case study development. The Founding Partner Program is specifically designed to produce 2–3 publishable case studies within 8 weeks of engagement.
+- **Case studies or testimonials:** In progress. Strong relationships established with Fliki.ai, Webandcrafts, and miniOrange for case study development. The Founding Partner Program is specifically designed to produce 2–3 publishable case studies within 8 weeks of engagement.
 
 ---
 
@@ -299,11 +308,11 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 ### Phase & Objective
 
-Berlin is in founder-led, community-driven GTM mode. The immediate objective is to acquire 20 Founding Partners within 50 days — design-partner customers who convert to paid, generate case studies, and become the first wave of champions. Every channel below feeds this singular near-term goal.
+Berlin is in founder-led, community-driven GTM mode. The immediate objective is to convert 5 Founding Partners to paid customers by end of April 2026 — generating the first ~$1K MRR, producing case studies, and establishing the first wave of champions. Every channel below feeds this singular near-term goal. The GTM strategy is sequenced: close founding partners first, then activate the founder-led content engine (LinkedIn + Twitter) and outbound (LinkedIn outreach + email outreach) simultaneously, with community building continuing through Reddit. Influencer marketing spend scales up only after founding partners are closed and 2–3 testimonials and use cases are in hand.
 
 ### Founding Partner Program
 
-The Founding Partner Program is Berlin's primary conversion mechanism during this phase. A small cohort of agencies and in-house SEO teams receive 50% off in perpetuity plus direct product influence, in exchange for 8 weeks of weekly calls, workflow walkthroughs, and candid feedback. Founding Partners receive hands-on workflow buildout support from Berlin's Forward Deployed Marketers — embedded specialists who design and optimize agentic workflows for each partner's specific operations. This accelerates time-to-value and produces battle-tested workflow templates that feed back into the platform's library. The program is designed to produce 2–3 publishable case studies, a library of proven workflow templates, and organic word-of-mouth from practitioners who helped build the platform.
+The Founding Partner Program is Berlin's primary conversion mechanism during this phase. A small cohort of 5 agencies and in-house SEO teams receive direct product influence and free consultation on building AI marketing agents — including hands-on help designing and setting up their agentic workflows — in exchange for 8 weeks of weekly calls, workflow walkthroughs, and candid feedback. Founding Partners pay $199/month and receive embedded workflow buildout support from Berlin's team, who design and optimize agentic workflows for each partner's specific operations. This accelerates time-to-value and produces battle-tested workflow templates that feed back into the platform's library. The program is designed to produce 2–3 publishable case studies, a library of proven workflow templates, and organic word-of-mouth from practitioners who helped build the platform.
 
 ### Content as the Primary GTM Engine
 
@@ -315,7 +324,7 @@ Content is Berlin's trump card. In a market where every SEO tool company publish
 
 Berlin is building the definitive education layer for agentic AI in SEO. Rather than competing on features alone, Berlin is investing in making the entire market smarter about agentic workflows — and positioning the platform as the natural home for practitioners who want to act on what they learn.
 
-This takes several forms. Berlin operates r/agent_seo, a growing Reddit community (3.3K members) where pre-built workflow demos are shared as educational content, exposing prospective users to Berlin's capabilities before any sales conversation. The community is being scaled as a self-reinforcing distribution channel where practitioners share workflows, ask questions, and organically discover the platform. Berlin is also publishing "Agentic AI for SEO," a micro-book written from the same agent-expert angle, heavy on practical workflow examples — serving as a lead magnet, a reference asset, and a credibility builder. And Berlin is launching a meetup series for SEO professionals focused on building and running agents for SEO, with heavy live demos. Because Berlin has interoperability with agentic coding environments like Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw, demos run inside environments the audience already knows and trusts, which dramatically increases credibility and approachability.
+This takes several forms. Berlin operates r/agent_seo, a growing Reddit community (3.7K members) where pre-built workflow demos are shared as educational content, exposing prospective users to Berlin's capabilities before any sales conversation. The community is being scaled as a self-reinforcing distribution channel where practitioners share workflows, ask questions, and organically discover the platform. Berlin is also publishing "Agentic AI for SEO," a micro-book written from the same agent-expert angle, heavy on practical workflow examples — serving as a lead magnet, a reference asset, and a credibility builder. And Berlin is launching a meetup series for SEO professionals focused on building and running agents for SEO, with heavy live demos. Because Berlin has interoperability with agentic coding environments like Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw, demos run inside environments the audience already knows and trusts, which dramatically increases credibility and approachability.
 
 Every education touchpoint — subreddit post, book chapter, meetup demo — is built around Berlin's pre-built workflows, creating a direct path from learning to platform adoption.
 
@@ -337,9 +346,13 @@ Berlin is building one fully autonomous affiliate marketing website — managed 
 
 Berlin operates Snake.blue, an AI-first web crawler with native MCP support — this is fully proprietary infrastructure built by the team. Snake.blue underpins Berlin's crawl data layer and is also exposed as standalone infrastructure — extending Berlin's surface area as a platform. For keyword intelligence, Berlin sources data from providers like Semrush and DataForSEO, caches it in its own database, and serves it to users — so users never need their own third-party subscriptions. The caching layer means data costs decrease significantly over time as the database grows, creating both a cost advantage and a compounding data asset.
 
+### Outbound Engine
+
+Berlin is building a structured outbound motion alongside the inbound and community channels. **LinkedIn outbound** is the highest-priority channel — targeted outreach to agency owners, heads of SEO, and marketing ops leaders in the ICP, leveraging the founder's growing thought-leadership presence. **Email outreach** supplements LinkedIn as a parallel channel for prospects not active on social. **Twitter/X** serves as an additional content distribution and engagement channel. The outbound engine activates in full once founding partners are closed and initial testimonials are available to use as social proof in outreach sequences.
+
 ### Sales Motion
 
-Current: founder-led inbound and outbound, converting through the Founding Partner Program. Near-term: as the free workflow library and community channels scale, the motion shifts toward PLG-assisted sales — prospects self-qualify through free workflow usage, and founder-led sales closes high-value accounts. Longer-term: sales-led with PLG underpinning, supported by case studies, community proof, and the autonomous affiliate site as a reference.
+Current: founder-led inbound and outbound, converting through the Founding Partner Program. 2 partners (Webandcrafts and miniOrange) in final conversion stages. Near-term: as the free workflow library and community channels scale, the motion shifts toward PLG-assisted sales — prospects self-qualify through free workflow usage, and founder-led sales closes high-value accounts. Longer-term: sales-led with PLG underpinning, supported by case studies, community proof, and the autonomous affiliate site as a reference.
 
 ### Expansion & Upsell
 
@@ -452,7 +465,7 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 - **Data moat** — Proprietary crawl infrastructure (Snake.blue), cached keyword database (sourced from providers, stored in Berlin's own DB), and continuous competitive monitoring create compounding data assets. As the cache grows, data costs decrease drastically while coverage increases. Every workflow execution enriches the platform's understanding of search patterns.
 - **Switching costs** — Deep integration with data sources, brand context, workflow libraries, and team processes create high switching costs once embedded. Agencies building client delivery on Berlin's workflows face significant migration friction.
 - **Speed of execution** — Founder combines AI infrastructure engineering + digital marketing agency experience. This rare overlap enables faster iteration than pure-tech competitors (who don't understand SEO operations) or pure-marketing competitors (who can't build the infrastructure).
-- **Network effects (emerging)** — Workflow template library grows with every customer deployment. As Founding Partners create proven workflows, the template marketplace becomes a self-reinforcing distribution channel. Community effects from r/agent_seo (3.3K members) and education content create organic awareness loops.
+- **Network effects (emerging)** — Workflow template library grows with every customer deployment. As Founding Partners create proven workflows, the template marketplace becomes a self-reinforcing distribution channel. Community effects from r/agent_seo (3.7K members) and education content create organic awareness loops.
 - **Interoperability moat** — Berlin's thin MCP integration embeds the platform inside users' daily agentic coding environments (Claude Code, Claude Cowork, ChatGPT Codex, Openclaw) with accuracy guarantees that standard MCP implementations cannot provide. Competitors face a choice: skip interoperability entirely (limiting to their own UI) or use standard MCP (degrading reliability at scale). Berlin's proprietary architecture solves this tradeoff, making it invisible infrastructure that's harder to rip out.
 
 ---
@@ -486,7 +499,7 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 |------|------|------------|----------|
 | Sherin Chacko Thomas | Founder & CEO (Sole Member) | Co-built RedisAI (most performant runtime for AI in production at the time). Infrastructure engineer at Lightning.ai (creators of PyTorch Lightning, one of the most popular deep learning libraries). Author of the first published book on PyTorch. Founded and scaled a dev + marketing agency in Dubai to $350K revenue in year two. Combines deep AI infrastructure engineering with firsthand understanding of SEO workflows, agency pain points, and client dynamics. | [LinkedIn](https://linkedin.com/in/hhsecond) |
 
-- **Key hires planned:** First GTM hire (growth marketer / community manager) with this raise. This hire will reduce single-point-of-failure risk and allow the founder to focus on product and technical architecture while building repeatable go-to-market motions.
+- **Key hires planned:** Two key hires with this raise: (1) GTM hire (growth marketer / community manager) immediately after first 5 paying customers — to build the content flywheel, manage influencer outreach, and scale high-touch sales, reducing single-point-of-failure risk and allowing the founder to focus on product and technical architecture; (2) Full-stack developer at month 3–4 — to build the PLG self-serve experience, improve platform reliability, and expand the integration library. Both roles based in India. A Forward Deployed Marketer contractor will be added as needed for high-touch customer delivery.
 
 - **Why is this team uniquely positioned to win?**
   Founder combines AI infrastructure engineering with hands-on agency experience — a rare combination that is precisely what this product requires. Co-built RedisAI (the most performant AI-in-production runtime at the time), then built AI app infrastructure at Lightning.ai (creators of PyTorch Lightning). Authored the first published book on PyTorch. After Lightning, founded a dev + digital marketing agency in Dubai, scaling to $350K in year two before shutting it down to go all-in on Berlin. This background means the founder has both built production AI systems at scale and personally experienced the exact agency pain points Berlin solves — a dual perspective that's rare in this market and enables faster iteration than competitors who have only one side of the equation.
@@ -497,7 +510,7 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 
 ### Historical Summary
 
-Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company had 5 total historical paid users (via Stripe) on the pre-pivot product, plus an additional cohort that paid through a previous Dubai entity — all have since churned. There is no active MRR. The new platform is in the Founding Partner Program phase with unpaid design partners; several have agreed to convert to paid upon requirements being met.
+Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company had 5 total historical paid users (via Stripe) on the pre-pivot product, plus an additional cohort that paid through a previous Dubai entity — all have since churned. Total historical revenue to date: ~$2,000 USD. The new platform is in the Founding Partner Program phase with 7 active design partners; 2 are in final stages of converting to paid customers.
 
 ### Current State
 
@@ -508,20 +521,81 @@ Berlin has operated lean through its product evolution phase (May 2025 – prese
   - Logistics & transportation: ~$300
   - Software subscriptions: ~$200
   - Founder salary: $0 (founder not taking salary during this phase)
-- **Projected burn rate (at scale):** ~$3,000–4,000+
-  - Founder salary: ~$1,500 (to be added as revenue scales)
-  - LLM API costs: Expected to increase significantly as workflow execution volume grows with paying customers
 - **Legacy MRR:** $0 (all historical paid users have churned)
-- **Runway at current burn:** ~10 months
-- **Runway at planned burn (with GTM spend):** ~2 months
+- **Runway at current burn (pre-raise):** ~10 months
+- **Runway at current burn without raise (with GTM spend):** ~2 months
 
 ### Inflection Point
 
 The company is transitioning from product development to go-to-market. The current burn rate reflects a build-only phase with near-zero marketing spend. As Berlin begins active marketing and sales motions — required to convert design partner learnings into paid customers — monthly expenses will increase significantly. At projected go-to-market spend levels, current cash reserves support approximately 2 months of operations, making this raise critical to capitalizing on the product momentum and design partner traction already established.
 
-### Projections (2–3 year)
+### Burn Rate Evolution (Post-Raise)
 
-- _TODO_
+Monthly burn scales in phases as the team grows and revenue begins to offset costs:
+
+| Period | Key Cost Additions | Monthly Burn |
+|--------|-------------------|-------------|
+| **Months 1–2** (pre-conversion) | Baseline operating costs only (infra $250, LLM $300, logistics $300, software $200) | ~$1,050 |
+| **Months 2–3** (post-5 customers) | + Founder salary ($1,500) + GTM hire ($2,500) + LLM scaling (~$100) | ~$5,150 |
+| **Months 3–5** | + Developer ($2,500) + LLM scaling (~$100) | ~$7,750 |
+| **Months 5+** | + FDM contractor ($1,250) + LLM/infra scaling (~$200) | ~$9,200 |
+
+_Note: LLM API costs scale with customer usage volume. Berlin's architecture of passing LLM compute through at cost — combined with the BYO-LLM interoperability layer — keeps this from becoming a margin risk. At 50+ customers running workflows daily, LLM costs are projected at $1,000–$2,000/month, with the BYO-LLM option reducing this further as adoption grows._
+
+### Projections (12-Month — Conservative Base Case)
+
+Revenue projection assumes two growth engines: high-touch founder-led sales (primary in months 1–6) and product-led growth via the free workflow library (contributing from month 7+). ARPU rises as outcome-based pricing is introduced and the customer mix includes more agency accounts at higher price points. ~5% monthly churn is implicit in net customer adds.
+
+| Month | New Adds | Total Customers | Blended ARPU | MRR |
+|-------|----------|----------------|-------------|-----|
+| 1 (Apr '26) | 5 | 5 | $199 | $995 |
+| 2 (May) | 2 | 7 | $199 | $1,393 |
+| 3 (Jun) | 3 | 10 | $220 | $2,200 |
+| 4 (Jul) | 3 | 13 | $250 | $3,250 |
+| 5 (Aug) | 4 | 17 | $280 | $4,760 |
+| 6 (Sep) | 4 | 21 | $320 | $6,720 |
+| 7 (Oct) | 5 | 26 | $380 | $9,880 |
+| 8 (Nov) | 6 | 32 | $420 | $13,440 |
+| 9 (Dec) | 7 | 39 | $460 | $17,940 |
+| 10 (Jan '27) | 8 | 47 | $500 | $23,500 |
+| 11 (Feb) | 8 | 55 | $540 | $29,700 |
+| 12 (Mar '27) | 9 | 64 | $560 | $35,840 |
+
+**Month 12 ARR run rate: ~$430K**
+
+### Cash Flow Projection
+
+Starting cash: $260,000 ($250K raise + $10K existing). The company reaches cash-flow positive at month 7, with a low point of ~$239K at month 6.
+
+| Month | MRR | Monthly Burn | Net Cash Flow | Cash Balance |
+|-------|-----|-------------|--------------|-------------|
+| 0 (start) | — | — | +$260,000 | $260,000 |
+| 1 | $995 | $1,050 | -$55 | $259,945 |
+| 2 | $1,393 | $5,050 | -$3,657 | $256,288 |
+| 3 | $2,200 | $7,750 | -$5,550 | $250,738 |
+| 4 | $3,250 | $7,750 | -$4,500 | $246,238 |
+| 5 | $4,760 | $9,200 | -$4,440 | $241,798 |
+| 6 | $6,720 | $9,200 | -$2,480 | $239,318 |
+| 7 | $9,880 | $9,500 | +$380 | $239,698 |
+| 8 | $13,440 | $10,000 | +$3,440 | $243,138 |
+| 9 | $17,940 | $10,500 | +$7,440 | $250,578 |
+| 10 | $23,500 | $11,000 | +$12,500 | $263,078 |
+| 11 | $29,700 | $11,500 | +$18,200 | $281,278 |
+| 12 | $35,840 | $12,000 | +$23,840 | $305,118 |
+
+_Note: Burn scales modestly in months 7–12 to account for growing LLM/infrastructure costs and increased marketing spend as revenue supports it. In a downside scenario — slower customer acquisition, delayed PLG launch — the $250K provides 18+ months of runway to iterate without fundraising pressure._
+
+### Key Assumptions Driving Growth
+
+- **Pricing ceiling defined by labor replacement:** Customers compare Berlin to a marketing hire ($4,000+/month US, $700+/month India), not a SaaS tool. This anchors willingness-to-pay well above the $199 launch price and supports the transition to outcome-based pricing.
+- **Two-engine growth model:** Months 1–6 are driven by high-touch, founder-led sales (2–4 new customers/month). Months 7+ benefit from PLG self-serve via the free workflow library, increasing new customer adds to 5–9/month.
+- **ARPU expansion:** Blended ARPU grows from $199 to ~$560 over 12 months as outcome-based pricing is introduced, credit usage increases, and the customer mix shifts toward agency accounts at higher price points.
+- **Low churn assumption (~5% monthly):** Berlin's workflow-level integration creates meaningful switching costs — teams build operational processes on the platform, making churn structurally low once onboarded.
+- **Gross margin ~80%:** Core platform infrastructure (data engine, integrations, workflow orchestration, crawlers) operates at ~80% margin. LLM tokens at cost and BYO-LLM adoption keep blended margin healthy.
+
+### Break-Even Analysis
+
+Berlin reaches cash-flow positive at **month 7** (October 2026) when MRR (~$9,900) exceeds monthly burn (~$9,500). From this point, the company is self-sustaining on revenue and retains the majority of the raise as a strategic reserve. This positions Berlin to raise a seed round from a position of strength — with traction, profitability, and cash in the bank — rather than necessity.
 
 ---
 
@@ -529,47 +603,52 @@ The company is transitioning from product development to go-to-market. The curre
 
 ### Raise Overview
 
-- **Amount raising:** $100,000
+- **Amount raising:** $250,000
 - **Instrument:** SAFE (post-money)
-- **Valuation cap:** $2M post-money
+- **Valuation cap:** $6M post-money
 - **Discount:** None
 - **Pro rata rights:** Yes
 - **Minimum check size:** $25,000
 
 ### Why Now — The Funding Inflection
 
-Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, design partners are actively using the platform daily, and the GTM engine is designed. What's missing is fuel: the company is transitioning from build-mode to commercial traction, and current cash reserves (~$10K) support approximately 2 months of operations at planned marketing spend levels. This raise converts strong early engagement into paying customers and repeatable revenue.
+Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, design partners are actively using the platform daily, and the GTM engine is designed. 7 design partners are actively using the platform (3 daily), 2 are in final stages of paid conversion. What's missing is fuel: the company is transitioning from build-mode to commercial traction, and current cash reserves (~$10K) support approximately 2 months of operations at planned marketing spend levels. This raise funds the team and distribution needed to convert strong early engagement into paying customers, build the self-serve PLG engine, and reach cash-flow positive within 7 months.
 
 ### Use of Funds
 
-| Category | Allocation % | Monthly Estimate | Purpose |
-|----------|:------------:|:----------------:|---------|
-| **Go-to-Market & Growth*** | 25% | $2,075 | Founder-led direct sales to convert 5 existing Founding Partners and close 4+ qualified conversations already in pipeline; content production and community growth (r/agent_seo); micro-influencer program as secondary pipeline tactic |
-| **Engineering & Infrastructure** | 15% | $1,250 | Platform reliability, workflow engine improvements, expanding integration library, scaling crawlers |
-| **Cloud & LLM Costs** | 10% | $830 | Infrastructure scaling as pilot partners increase workflow execution volume; LLM API costs |
-| **Hiring*** | 40% | $3,320 | First GTM hire (growth marketer / community manager) based in India, where $3.3K/month is highly competitive for senior marketing talent with 5+ years experience |
-| **Operations & Legal** | 10% | $830 | LLC → C-Corp conversion, SAFE legal costs, accounting, insurance |
+| Category | Allocation % | Amount | Purpose |
+|----------|:------------:|:------:|---------|
+| **Hiring** | 30% | $75,000 | GTM hire (growth marketer / community manager) after first 5 paying customers; developer (full-stack) starting month 3–4 to build PLG self-serve experience. Both roles based in India, where $2,500–$3,000/month is highly competitive for senior talent. FDM contractor ($1,250/month) added as needed for high-touch delivery. |
+| **Go-to-Market & Distribution** | 20% | $50,000 | Content production and community growth (r/agent_seo); micro-influencer program; SEO newsletter sponsorships; free workflow library as lead generation engine; founder-led direct sales |
+| **Engineering & Infrastructure** | 15% | $37,500 | Platform reliability, workflow engine improvements, expanding integration library, scaling crawlers, self-serve onboarding build |
+| **Cloud & LLM Costs** | 10% | $25,000 | Infrastructure scaling as customer base grows; LLM API costs (mitigated by BYO-LLM interoperability) |
+| **Operations & Legal** | 10% | $25,000 | LLC → C-Corp conversion, SAFE legal costs, accounting, insurance |
+| **Reserve / Runway Buffer** | 15% | $37,500 | Strategic reserve for hiring iteration, unexpected costs, and extended runway in downside scenarios |
 
-> *_Note: GTM hire and GTM spending will commence only after securing the first 10 paid customers. Until then, funds allocated to these categories will be held in reserve, extending runway and ensuring capital efficiency._
+> *_Note: GTM hire, founder salary ($1,500/month), and GTM spending commence after securing the first 5 paid customers. Until then, funds allocated to these categories are held in reserve, extending runway and ensuring capital efficiency._
 
 ### Target Runway
 
-This raise is sized to provide 12 months of runway at planned burn (~$8,300/month), reaching the following milestones before needing additional capital.
+This raise is sized to reach cash-flow positive by month 7. In the base case, Berlin never exhausts the raise — revenue catches burn by October 2026, and the company ends month 12 with ~$305K in cash. In a downside scenario (slower customer acquisition, delayed PLG launch), the $250K provides 18+ months of runway to iterate without fundraising pressure.
 
 ### Milestones This Funding Achieves
 
 | Milestone | Target Timeline | Success Metric |
 |-----------|:--------------:|----------------|
-| Convert Founding Partners to paid | Months 1–2 | 5 paying agency/enterprise customers at $2K+/month ACV |
-| Validate repeatable sales motion | Months 3–5 | $10K+ MRR from 5+ new ICP customers beyond Founding Partners |
-| Launch free workflow library (PLG engine) | Months 2–3 | 30+ workflows live, 200+ free-tier users driving inbound pipeline |
-| Publish autonomous affiliate site case study | Months 2–4 | Verifiable organic traffic growth from fully autonomous site with documented ROI |
-| Reach target ARR for next raise | Months 9–12 | $150K–$250K ARR (6–10 customers at $24K–$36K ACV) |
-| Produce 2–3 publishable customer case studies | Months 3–5 | Named logos with quantified results |
+| Convert 5 Founding Partners to paid | Month 1 | ~$1K MRR at $199/month |
+| First GTM hire | Month 2–3 | Content flywheel and outreach ramping |
+| Launch free workflow library (PLG engine) | Month 2–3 | 30+ workflows live, free-tier signups beginning |
+| Developer hire, PLG build begins | Month 3–4 | Self-serve onboarding in development |
+| Produce 2–3 publishable customer case studies | Month 3–5 | Named logos with quantified results |
+| Publish autonomous affiliate site case study | Month 2–4 | Verifiable organic traffic growth from fully autonomous site with documented ROI |
+| PLG self-serve fully live | Month 6–7 | Customers signing up and converting without founder touch |
+| Reach $10K MRR | Month 7–8 | ~26–32 customers, PLG contributing |
+| Cash-flow positive | Month 7 | Revenue exceeds monthly burn |
+| Seed-ready traction | Month 10–12 | $30K–$36K MRR, ~$430K ARR run rate, 55–64 customers |
 
 ### What This Round Achieves
 
-This is a pre-seed raise designed to convert strong early engagement into commercial traction — scaling revenue from a product demonstrating clear pull, supported by case studies and a functioning PLG engine. That traction positions Berlin for a seed round at significantly higher valuation.
+This is a $250K pre-seed raise to convert strong founding partner engagement into a scalable, PLG-driven revenue engine. The funds hire a GTM lead to build the content and distribution flywheel, a developer to build self-serve infrastructure, and provide a marketing budget to drive top-of-funnel — the capabilities Berlin needs to move from founder-led sales to repeatable, scalable growth. The company reaches cash-flow positive by month 7 and targets ~$430K ARR run rate by month 12, positioning for a seed round at $8M–$15M+ valuation.
 
 ---
 
@@ -630,14 +709,14 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 
 - **Accelerator / incubator participation:** None yet — evaluating accelerator programs as part of fundraise strategy
 
-- **Key partnerships or LOIs:** 5 active Founding Partners including Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), BlockSurvey, and Search Indicators (20+ client agency). These are unpaid design partnerships with strong daily engagement, converting to paid customers.
+- **Key partnerships or LOIs:** 7 active Founding Partners including Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), miniOrange, CSP Agency, BlockSurvey, and Search Indicators (20+ client agency). These are unpaid design partnerships with strong daily engagement, converting to paid customers.
 
 - **Notable milestones achieved:**
   - Intelligence infrastructure built (80+ ranking signals, automated prioritization, GSC/GA integrations)
   - Agentic workflow engine live and operational
   - Thin MCP interoperability layer live — works inside Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw
   - Integrated keyword database (sourced from leading providers, cached in own DB) and proprietary crawlers operational
-  - Founding Partner Program launched — 5 active design partners including Fliki.ai (~$1M MRR), Webandcrafts (100+ client agency), BlockSurvey, and Search Indicators (20+ client agency)
+  - Founding Partner Program launched — 7 active design partners including Fliki.ai (~$1M MRR), Webandcrafts (100+ client agency), miniOrange, CSP Agency, BlockSurvey, and Search Indicators (20+ client agency)
 
 ---
 
@@ -647,7 +726,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 | ------------------------------------------------------------ | ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Incumbents add AI/workflow features**                      | Medium     | High   | Berlin's architecture is workflow-first, not bolted on. Incumbents (Ahrefs, SEMrush) are data companies — rebuilding as agentic platforms requires fundamental architectural changes. Speed of execution and founder-market fit are key advantages.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **LLM platform risk (OpenAI, Anthropic)**                    | Low-Medium | Medium | Berlin is LLM-agnostic — it's the data and workflow layer, not the model. Interoperability with multiple LLMs is a core design principle.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Agency market adoption speed**                             | Medium     | Medium | Founding Partner Program already shows strong daily engagement from 3 of 5 partners. Proof-first approach de-risks product direction and builds conversion pipeline.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Agency market adoption speed**                             | Medium     | Medium | Founding Partner Program already shows strong daily engagement from 3 of 7 partners. Proof-first approach de-risks product direction and builds conversion pipeline.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **AI search landscape evolving rapidly**                     | High       | Medium | Berlin's flexible workflow architecture can adapt to new search paradigms. Proprietary crawl infrastructure, integrated keyword data layer, and GEO/AEO capabilities position us ahead of the curve.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Data privacy / crawler compliance**                        | Low-Medium | Medium | Crawlers only access publicly available data, respect robots.txt, and collect no personal information. GDPR/CCPA compliance roadmap in progress for enterprise readiness.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Single founder / key-person risk**                         | Medium     | High   | First GTM hire planned with this raise to reduce single-point-of-failure and build operational depth. Founder's combined AI engineering + agency background is rare and hard to replicate, which cuts both ways: it's a key competitive advantage but also a concentration risk. Mitigating factors: (1) the product architecture is modular and well-documented, reducing bus-factor concerns; (2) the founder has a track record of operating lean and shipping through multiple pivots without a team; (3) the Founding Partner community and advisor network provide external support and accountability; (4) this raise specifically prioritizes hiring to distribute operational load.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
