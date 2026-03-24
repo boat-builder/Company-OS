@@ -19,7 +19,7 @@
 - **Website:** agentberlin.ai
 - **One-Liner:** Berlin is programmable infrastructure for inbound growth — a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.
 - **Mission Statement:** To make world-class inbound growth infrastructure accessible to every team — replacing fragmented, manual SEO toolchains with a unified, programmable platform that turns strategy into autonomous execution.
-- **Current Phase:** Platform launched late February 2026 (<3 weeks ago). Pre-commercial, in Founding Partner Program with 5 active design partners — 3 of whom use the platform daily, working through early-stage friction to integrate Berlin into their workflows. This level of engagement at 3 weeks is a strong signal; now converting to paid customers.
+- **Current Phase:** Platform launched late February 2026 (~4 weeks ago). Pre-commercial, in Founding Partner Program with 7 active design partners — 3 of whom use the platform daily, working through early-stage friction to integrate Berlin into their workflows. Two partners (Webandcrafts and miniOrange) are in final stages of converting to paid customers, with strong product champions driving adoption internally at each company. This level of engagement at 4 weeks is a strong signal; now converting to paid customers.
 - **Key Contact(s):** Sherin Chacko Thomas — +91 890 474 5603
 
 ### Product Evolution (May 2025 – Present)
@@ -258,40 +258,43 @@ The strongest market validation is where top-tier capital is deploying. In the A
 > **Current phase:** Pre-commercial launch. Berlin completed a significant product repositioning in late 2025, evolving from a conversational SEO tool to programmable agentic workflow infrastructure targeting agencies and enterprise marketing teams. The company is currently in its Founding Partner Program, demonstrating strong engagement with design partners before converting to paid customers and scaling go-to-market.
 
 - **MRR / ARR:**
-  - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity but churned when that Stripe account was closed. All historical paid users were on the previous version of the product — none on the current platform.
-  - New platform: Pre-revenue. Currently in Founding Partner Program phase with unpaid design partners. Several pilot partners have agreed to convert to paid upon requirements being met, but no revenue has been recognized.
+  - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity. All historical paid users are on the previous version of the product — none on the current platform. Total historical revenue to date: ~$2,000 USD. These users have not yet churned but are expected to as the product positioning has evolved away from their use case — unless Berlin launches a services wing (under active consideration) that would continue to serve this segment.
+  - New platform: Pre-revenue. Currently in Founding Partner Program phase with unpaid design partners. Two partners (Webandcrafts and miniOrange) are in final stages of converting to paid customers, with dedicated product champions driving internal adoption at each company.
 
-> **Context on timing:** The current platform version launched in late February 2026 — less than three weeks ago. The Founding Partner Program is deliberately structured as an 8-week engagement with clear conversion milestones. Several partners have verbally committed to paid subscriptions upon specific feature requirements being met. The $2M cap appropriately reflects this pre-revenue, pre-conversion stage while providing upside for early believers.
+> **Context on timing:** The current platform version launched in late February 2026 — approximately four weeks ago. The Founding Partner Program is deliberately structured as an 8-week engagement with clear conversion milestones. Two partners are in active conversion discussions, with strong internal champions at each company. The $2M cap appropriately reflects this pre-revenue, pre-conversion stage while providing upside for early believers.
+
+- **Total revenue to date:** ~$2,000 USD (legacy product, pre-pivot)
 
 - **Growth rate:** N/A — pre-commercial launch on new platform.
 
 - **Number of customers / users:**
-  - 5 total historical paid users (pre-pivot ICP, via Stripe — no longer active)
-  - 5 active pilot partners on the new platform (Founding Partner Program, unpaid)
+  - 5 total historical paid users (pre-pivot ICP, via Stripe — still active but expected to churn as product positioning has evolved)
+  - 7 active pilot partners on the new platform (Founding Partner Program, unpaid — 2 in final stages of paid conversion)
 
 - **Retention / churn:** Insufficient data on the new platform. Legacy product retention data is not representative of the current positioning and ICP.
 
 - **Engagement metrics (early signals):**
-  - 5–6 companies actively using the new platform
-  - 3 of 5 partners use the platform daily, with multiple touchpoints per day
+  - 7 companies actively using the new platform
+  - 3 of 7 partners use the platform daily, with multiple touchpoints per day
   - Partners are working through early-stage friction to integrate Berlin into their workflows — a strong signal that the core value proposition resonates
   - ~20 workflows created across pilot partners
   - Pilots executing workflows across multiple projects and clients
   - Product has expected kinks at 3 weeks old, but engagement intensity indicates clear pull
 
 - **Pipeline:**
-  - 5 active pilots in Founding Partner Program:
+  - 7 active pilots in Founding Partner Program:
     - **Fliki.ai** — AI video platform, ~$1M MRR. In-house marketing team piloting Berlin for SEO operations.
-    - **Webandcrafts** — Full-service digital agency, 100+ clients. Evaluating Berlin for cross-client workflow automation and scaled delivery.
+    - **Webandcrafts** — Full-service digital agency, 100+ clients. Evaluating Berlin for cross-client workflow automation and scaled delivery. In final stages of converting to paid — has a dedicated product champion internally.
     - **BlockSurvey** — Privacy-focused survey platform, ~$20K MRR. Piloting Berlin for SEO and content workflows.
     - **Search Indicators** — SEO agency, 20+ clients. Piloting Berlin for multi-client delivery.
+    - **miniOrange** — Enterprise identity and security platform (miniorange.com). In final stages of converting to paid — has a dedicated product champion internally.
+    - **CSP Agency** — Canadian agency, actively working through Founding Partner Program. Has a dedicated product champion internally.
     - 1 additional agency partnership in progress (Swedish agency with high-profile enterprise clients)
-  - 4 qualified conversations scheduled this week with potential high-value partners
   - Active founder-led outreach ramping
 
-- **Notable customers / logos:** Fliki.ai, Webandcrafts, BlockSurvey, Search Indicators
+- **Notable customers / logos:** Fliki.ai, Webandcrafts, BlockSurvey, Search Indicators, miniOrange, CSP Agency
 
-- **Case studies or testimonials:** In progress. Strong relationships established with Fliki.ai and Webandcrafts for case study development. The Founding Partner Program is specifically designed to produce 2–3 publishable case studies within 8 weeks of engagement.
+- **Case studies or testimonials:** In progress. Strong relationships established with Fliki.ai, Webandcrafts, and miniOrange for case study development. The Founding Partner Program is specifically designed to produce 2–3 publishable case studies within 8 weeks of engagement.
 
 ---
 
@@ -299,7 +302,7 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 ### Phase & Objective
 
-Berlin is in founder-led, community-driven GTM mode. The immediate objective is to acquire 20 Founding Partners within 50 days — design-partner customers who convert to paid, generate case studies, and become the first wave of champions. Every channel below feeds this singular near-term goal.
+Berlin is in founder-led, community-driven GTM mode. The immediate objective is to close 20 Founding Partners — design-partner customers who convert to paid, generate case studies, and become the first wave of champions. Every channel below feeds this singular near-term goal. The GTM strategy is sequenced: close 20 founding partners first, then activate the founder-led content engine (LinkedIn + Twitter) and outbound (LinkedIn outreach + email outreach) simultaneously, with community building continuing through Reddit. Influencer marketing spend scales up only after founding partners are closed and 2–3 testimonials and use cases are in hand.
 
 ### Founding Partner Program
 
@@ -315,7 +318,7 @@ Content is Berlin's trump card. In a market where every SEO tool company publish
 
 Berlin is building the definitive education layer for agentic AI in SEO. Rather than competing on features alone, Berlin is investing in making the entire market smarter about agentic workflows — and positioning the platform as the natural home for practitioners who want to act on what they learn.
 
-This takes several forms. Berlin operates r/agent_seo, a growing Reddit community (3.3K members) where pre-built workflow demos are shared as educational content, exposing prospective users to Berlin's capabilities before any sales conversation. The community is being scaled as a self-reinforcing distribution channel where practitioners share workflows, ask questions, and organically discover the platform. Berlin is also publishing "Agentic AI for SEO," a micro-book written from the same agent-expert angle, heavy on practical workflow examples — serving as a lead magnet, a reference asset, and a credibility builder. And Berlin is launching a meetup series for SEO professionals focused on building and running agents for SEO, with heavy live demos. Because Berlin has interoperability with agentic coding environments like Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw, demos run inside environments the audience already knows and trusts, which dramatically increases credibility and approachability.
+This takes several forms. Berlin operates r/agent_seo, a growing Reddit community (3.7K members) where pre-built workflow demos are shared as educational content, exposing prospective users to Berlin's capabilities before any sales conversation. The community is being scaled as a self-reinforcing distribution channel where practitioners share workflows, ask questions, and organically discover the platform. Berlin is also publishing "Agentic AI for SEO," a micro-book written from the same agent-expert angle, heavy on practical workflow examples — serving as a lead magnet, a reference asset, and a credibility builder. And Berlin is launching a meetup series for SEO professionals focused on building and running agents for SEO, with heavy live demos. Because Berlin has interoperability with agentic coding environments like Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw, demos run inside environments the audience already knows and trusts, which dramatically increases credibility and approachability.
 
 Every education touchpoint — subreddit post, book chapter, meetup demo — is built around Berlin's pre-built workflows, creating a direct path from learning to platform adoption.
 
@@ -337,9 +340,13 @@ Berlin is building one fully autonomous affiliate marketing website — managed 
 
 Berlin operates Snake.blue, an AI-first web crawler with native MCP support — this is fully proprietary infrastructure built by the team. Snake.blue underpins Berlin's crawl data layer and is also exposed as standalone infrastructure — extending Berlin's surface area as a platform. For keyword intelligence, Berlin sources data from providers like Semrush and DataForSEO, caches it in its own database, and serves it to users — so users never need their own third-party subscriptions. The caching layer means data costs decrease significantly over time as the database grows, creating both a cost advantage and a compounding data asset.
 
+### Outbound Engine
+
+Berlin is building a structured outbound motion alongside the inbound and community channels. **LinkedIn outbound** is the highest-priority channel — targeted outreach to agency owners, heads of SEO, and marketing ops leaders in the ICP, leveraging the founder's growing thought-leadership presence. **Email outreach** supplements LinkedIn as a parallel channel for prospects not active on social. **Twitter/X** serves as an additional content distribution and engagement channel. The outbound engine activates in full once 20 founding partners are closed and initial testimonials are available to use as social proof in outreach sequences.
+
 ### Sales Motion
 
-Current: founder-led inbound and outbound, converting through the Founding Partner Program. Near-term: as the free workflow library and community channels scale, the motion shifts toward PLG-assisted sales — prospects self-qualify through free workflow usage, and founder-led sales closes high-value accounts. Longer-term: sales-led with PLG underpinning, supported by case studies, community proof, and the autonomous affiliate site as a reference.
+Current: founder-led inbound and outbound, converting through the Founding Partner Program — with 2 partners (Webandcrafts and miniOrange) in final conversion stages. Near-term: as the free workflow library and community channels scale, the motion shifts toward PLG-assisted sales — prospects self-qualify through free workflow usage, and founder-led sales closes high-value accounts. Longer-term: sales-led with PLG underpinning, supported by case studies, community proof, and the autonomous affiliate site as a reference.
 
 ### Expansion & Upsell
 
@@ -497,7 +504,7 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work. Hire 
 
 ### Historical Summary
 
-Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company had 5 total historical paid users (via Stripe) on the pre-pivot product, plus an additional cohort that paid through a previous Dubai entity — all have since churned. There is no active MRR. The new platform is in the Founding Partner Program phase with unpaid design partners; several have agreed to convert to paid upon requirements being met.
+Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company had 5 total historical paid users (via Stripe) on the pre-pivot product, plus an additional cohort that paid through a previous Dubai entity — generating ~$2,000 in total historical revenue. These users have not yet churned but are expected to as the product positioning has evolved, unless Berlin launches a planned services wing that could continue serving this segment. There is no active MRR on the new platform. The new platform is in the Founding Partner Program phase with 7 design partners; two (Webandcrafts and miniOrange) are in final stages of converting to paid.
 
 ### Current State
 
@@ -538,13 +545,13 @@ The company is transitioning from product development to go-to-market. The curre
 
 ### Why Now — The Funding Inflection
 
-Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, design partners are actively using the platform daily, and the GTM engine is designed. What's missing is fuel: the company is transitioning from build-mode to commercial traction, and current cash reserves (~$10K) support approximately 2 months of operations at planned marketing spend levels. This raise converts strong early engagement into paying customers and repeatable revenue.
+Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, 7 design partners are actively using the platform (3 daily), 2 are in final stages of paid conversion, and the GTM engine is designed. What's missing is fuel: the company is transitioning from build-mode to commercial traction, and current cash reserves (~$10K) support approximately 2 months of operations at planned marketing spend levels. This raise converts strong early engagement into paying customers and repeatable revenue.
 
 ### Use of Funds
 
 | Category | Allocation % | Monthly Estimate | Purpose |
 |----------|:------------:|:----------------:|---------|
-| **Go-to-Market & Growth*** | 25% | $2,075 | Founder-led direct sales to convert 5 existing Founding Partners and close 4+ qualified conversations already in pipeline; content production and community growth (r/agent_seo); micro-influencer program as secondary pipeline tactic |
+| **Go-to-Market & Growth*** | 25% | $2,075 | Founder-led direct sales to convert 7 existing Founding Partners (2 in final conversion stages) and close pipeline; LinkedIn outbound + email outreach to reach 20 founding partners; content production and community growth (r/agent_seo, 3.7K members); micro-influencer program as secondary pipeline tactic (activated after founding partners closed with testimonials in hand) |
 | **Engineering & Infrastructure** | 15% | $1,250 | Platform reliability, workflow engine improvements, expanding integration library, scaling crawlers |
 | **Cloud & LLM Costs** | 10% | $830 | Infrastructure scaling as pilot partners increase workflow execution volume; LLM API costs |
 | **Hiring*** | 40% | $3,320 | First GTM hire (growth marketer / community manager) based in India, where $3.3K/month is highly competitive for senior marketing talent with 5+ years experience |
@@ -560,7 +567,7 @@ This raise is sized to provide 12 months of runway at planned burn (~$8,300/mont
 
 | Milestone | Target Timeline | Success Metric |
 |-----------|:--------------:|----------------|
-| Convert Founding Partners to paid | Months 1–2 | 5 paying agency/enterprise customers at $2K+/month ACV |
+| Convert Founding Partners to paid | Months 1–2 | 7 paying agency/enterprise customers at $2K+/month ACV (2 already in final conversion stages) |
 | Validate repeatable sales motion | Months 3–5 | $10K+ MRR from 5+ new ICP customers beyond Founding Partners |
 | Launch free workflow library (PLG engine) | Months 2–3 | 30+ workflows live, 200+ free-tier users driving inbound pipeline |
 | Publish autonomous affiliate site case study | Months 2–4 | Verifiable organic traffic growth from fully autonomous site with documented ROI |
@@ -630,14 +637,16 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 
 - **Accelerator / incubator participation:** None yet — evaluating accelerator programs as part of fundraise strategy
 
-- **Key partnerships or LOIs:** 5 active Founding Partners including Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), BlockSurvey, and Search Indicators (20+ client agency). These are unpaid design partnerships with strong daily engagement, converting to paid customers.
+- **Key partnerships or LOIs:** 7 active Founding Partners including Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), BlockSurvey, Search Indicators (20+ client agency), miniOrange (enterprise identity & security platform), and CSP Agency (Canadian agency). Two partners (Webandcrafts and miniOrange) are in final stages of paid conversion, each with dedicated internal product champions.
 
 - **Notable milestones achieved:**
   - Intelligence infrastructure built (80+ ranking signals, automated prioritization, GSC/GA integrations)
   - Agentic workflow engine live and operational
   - Thin MCP interoperability layer live — works inside Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw
   - Integrated keyword database (sourced from leading providers, cached in own DB) and proprietary crawlers operational
-  - Founding Partner Program launched — 5 active design partners including Fliki.ai (~$1M MRR), Webandcrafts (100+ client agency), BlockSurvey, and Search Indicators (20+ client agency)
+  - Founding Partner Program launched — 7 active design partners including Fliki.ai (~$1M MRR), Webandcrafts (100+ client agency), BlockSurvey, Search Indicators (20+ client agency), miniOrange (enterprise identity & security), and CSP Agency (Canada)
+  - 2 partners (Webandcrafts, miniOrange) in final stages of paid conversion with dedicated internal product champions
+  - r/agent_seo community grown to 3.7K members
 
 ---
 
@@ -647,7 +656,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 | ------------------------------------------------------------ | ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Incumbents add AI/workflow features**                      | Medium     | High   | Berlin's architecture is workflow-first, not bolted on. Incumbents (Ahrefs, SEMrush) are data companies — rebuilding as agentic platforms requires fundamental architectural changes. Speed of execution and founder-market fit are key advantages.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **LLM platform risk (OpenAI, Anthropic)**                    | Low-Medium | Medium | Berlin is LLM-agnostic — it's the data and workflow layer, not the model. Interoperability with multiple LLMs is a core design principle.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Agency market adoption speed**                             | Medium     | Medium | Founding Partner Program already shows strong daily engagement from 3 of 5 partners. Proof-first approach de-risks product direction and builds conversion pipeline.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Agency market adoption speed**                             | Medium     | Medium | Founding Partner Program already shows strong daily engagement from 3 of 7 partners, with 2 in final stages of paid conversion. Proof-first approach de-risks product direction and builds conversion pipeline.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **AI search landscape evolving rapidly**                     | High       | Medium | Berlin's flexible workflow architecture can adapt to new search paradigms. Proprietary crawl infrastructure, integrated keyword data layer, and GEO/AEO capabilities position us ahead of the curve.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Data privacy / crawler compliance**                        | Low-Medium | Medium | Crawlers only access publicly available data, respect robots.txt, and collect no personal information. GDPR/CCPA compliance roadmap in progress for enterprise readiness.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Single founder / key-person risk**                         | Medium     | High   | First GTM hire planned with this raise to reduce single-point-of-failure and build operational depth. Founder's combined AI engineering + agency background is rare and hard to replicate, which cuts both ways: it's a key competitive advantage but also a concentration risk. Mitigating factors: (1) the product architecture is modular and well-documented, reducing bus-factor concerns; (2) the founder has a track record of operating lean and shipping through multiple pivots without a team; (3) the Founding Partner community and advisor network provide external support and accountability; (4) this raise specifically prioritizes hiring to distribute operational load.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
