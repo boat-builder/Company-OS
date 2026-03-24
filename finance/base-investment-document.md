@@ -19,7 +19,7 @@
 - **Website:** agentberlin.ai
 - **One-Liner:** Berlin is programmable infrastructure for inbound growth — a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.
 - **Mission Statement:** To make world-class inbound growth infrastructure accessible to every team — replacing fragmented, manual SEO toolchains with a unified, programmable platform that turns strategy into autonomous execution.
-- **Current Phase:** Platform launched late February 2026 (<3 weeks ago). Pre-commercial, in Founding Partner Program with 5 active design partners validating product-market fit before scaling GTM.
+- **Current Phase:** Platform launched late February 2026 (<3 weeks ago). Pre-commercial, in Founding Partner Program with 5 active design partners — 3 of whom use the platform daily, working through early-stage friction to integrate Berlin into their workflows. This level of engagement at 3 weeks is a strong signal; now converting to paid customers.
 - **Key Contact(s):** Sherin Chacko Thomas — +91 890 474 5603
 
 ### Product Evolution (May 2025 – Present)
@@ -197,26 +197,27 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 > Detailed ICP files for each segment exist in the `/marketing/ICP/` folder. Summary below.
 
-### Primary ICP: SEO / Marketing Agencies
+### Primary ICP: Medium SEO / Marketing Agencies
 
 | Segment                                    | Core Pain                                                           | Value Hook                                                                 | Top Roles                                       | Buying Signal                               |
 | ------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------- |
-| **ICP 1 — Large Agencies (11–50 clients)** | Reporting doesn't scale; no GEO/AEO story; no dev access            | Build once, run across all clients; sell AI visibility as new service      | Agency Owner, Director of SEO, Head of Ops      | FOMO on AI SEO; client churn risk           |
-| **ICP 2 — Small Agencies (1–10 clients)**  | Can't afford full toolstack; manual reporting; need to win pitches  | Force multiplier; punch above weight class; lead gen hooks                 | Agency Founder, Principal Consultant            | Growth-focused; cost consolidation          |
-| **ICP 7 — E-Commerce / Marketplaces**      | Thousands of pages; AI shopping invisible; programmatic SEO blocked | Scale infrastructure; AI visibility for shopping queries; competitor intel | Head of SEO, E-Commerce SEO Manager, VP Digital | Revenue attribution; programmatic SEO focus |
+| **Medium Agencies (5–20 clients)** | Reporting doesn't scale; no GEO/AEO story; no dev access; need to grow without proportional headcount | Build once, run across all clients; sell AI visibility as new service; force multiplier to punch above weight class | Agency Owner, Director of SEO, Head of Ops | FOMO on AI SEO; client churn risk; growth-focused |
 
-### Secondary ICP: In-House Marketing Teams
+### Secondary ICP: Large Agencies, E-Commerce & In-House Teams
 
 | Segment | Core Pain | Value Hook | Top Roles | Buying Signal |
 |---------|-----------|------------|-----------|---------------|
-| **ICP 3 — Series B–C SaaS In-House** | SEO→pipeline attribution broken; AI discovery invisible; no dev support | Unified data layer; LLM integration; AI visibility metrics for leadership | Head of SEO, VP Growth, SEO Manager | Need to justify SEO budget internally |
-| **ICP 4 — Growth Eng / Marketing Ops** | Fragmented SEO data; brittle scripts; AI search not instrumented | Programmable infrastructure; replace custom scripts; API-first | Growth Engineer, Head of Marketing Ops | Dev time savings; reduce marketing requests |
-| **ICP 5 — SMB/Startup SEOs** | Doing 3 jobs; no dev time; tight budget; AI search stress | One tool replaces many; LLM integration; pre-built workflows | SEO Manager, Growth Marketing Mgr, Founder | Time savings; cost consolidation |
-| **ICP 6 — Mid-Market (no dev support)** | Traffic declining; can't explain AI impact; scale breaks manual work | Pre-built workflows; new narrative for leadership; automation at scale | SEO Director, Senior SEO Manager, VP Marketing | Internal credibility; defend SEO to execs |
+| **Large Agencies (20+ clients)** | Reporting doesn't scale at volume; no GEO/AEO story; enterprise governance needs | Build once, run across all clients; sell AI visibility as new service; team governance & review | Agency Owner, Director of SEO, Head of Ops | FOMO on AI SEO; client churn risk; capacity constraints |
+| **E-Commerce / Marketplaces** | Thousands of pages; AI shopping invisible; programmatic SEO blocked | Scale infrastructure; AI visibility for shopping queries; competitor intel | Head of SEO, E-Commerce SEO Manager, VP Digital | Revenue attribution; programmatic SEO focus |
+| **Series B–C SaaS In-House** | SEO→pipeline attribution broken; AI discovery invisible; no dev support | Unified data layer; LLM integration; AI visibility metrics for leadership | Head of SEO, VP Growth, SEO Manager | Need to justify SEO budget internally |
+| **Growth Eng / Marketing Ops** | Fragmented SEO data; brittle scripts; AI search not instrumented | Programmable infrastructure; replace custom scripts; API-first | Growth Engineer, Head of Marketing Ops | Dev time savings; reduce marketing requests |
+| **Mid-Market (no dev support)** | Traffic declining; can't explain AI impact; scale breaks manual work | Pre-built workflows; new narrative for leadership; automation at scale | SEO Director, Senior SEO Manager, VP Marketing | Internal credibility; defend SEO to execs |
 
 ### Deprioritized (for now)
 
+- Small agencies (1–4 clients) — budget constraints, limited scale benefits
 - Individual founders doing their own SEO
+- SMB/Startup SEOs — doing 3 jobs, tight budget, limited capacity for new tools
 - AI/ML consultants (niche, low volume)
 - Marketplace founders (too early stage, budget constraints)
 
@@ -228,33 +229,33 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 - **Pricing tiers / structure:**
 
-*Current pricing (PMF exploration phase — designed to minimize friction and maximize learning):*
+*Current pricing (launch phase — designed to minimize friction and maximize adoption):*
 
 | Tier | Price | What's Included | Purpose |
 |------|-------|-----------------|---------|
 | **Free / Explorer** | $0 | Connect domain, run pre-built simple workflows, explore the unified data layer | PLG top-of-funnel; let teams experience the platform before committing |
-| **Pro** | $100/month | Full workflow execution (including premium), custom workflow creation, multi-client & multi-project support, base credit allocation | Core self-serve tier; designed for PMF validation |
+| **Pro** | $100/month | Full workflow execution (including premium), custom workflow creation, multi-client & multi-project support, base credit allocation | Core self-serve tier; designed for rapid adoption |
 | **Agency / Enterprise** | Custom | Higher credit allocations, unlimited automation, priority support, Forward Deployed Marketers (Berlin's team sets up and optimizes agentic workflows on-site) | High-touch tier for agencies and enterprise teams with complex, multi-client needs |
 
-*Pricing evolution:* Current $100/month pricing is intentionally flat during PMF exploration — every feature is accessible to maximize learning velocity. As product-market fit solidifies, the tier structure will segment: multi-client/multi-project capabilities and premium automation features move to higher tiers, and per-client or per-project add-on pricing drives expansion revenue. The target ACV for agency and enterprise accounts is $24K–$60K/year, consistent with the platform's labor-replacement value proposition (customers compare Berlin to a hire at $60K–$120K/year, not a tool at $200/month per seat).
+*Pricing evolution:* Current $100/month pricing is intentionally flat during launch phase — every feature is accessible to maximize adoption. As the customer base scales, the tier structure will segment: multi-client/multi-project capabilities and premium automation features move to higher tiers, and per-client or per-project add-on pricing drives expansion revenue. The target ACV for agency and enterprise accounts is $24K–$60K/year, consistent with the platform's labor-replacement value proposition (customers compare Berlin to a hire at $60K–$120K/year, not a tool at $200/month per seat).
 
   *Forward Deployed Marketers:* A planned services layer where Berlin's marketing specialists embed with customers to design, build, and optimize agentic workflows. Dual purpose: accelerates customer time-to-value and generates proprietary workflow templates that feed back into the platform's template library. Pricing TBD — likely bundled into enterprise contracts or offered as a separate onboarding package.
 
-- **Average contract value (ACV):** Current: ~$1,200/year (PMF pricing). Target: $24K–$60K/year for agency/enterprise accounts as pricing matures post-PMF.
+- **Average contract value (ACV):** Current: ~$1,200/year (launch pricing). Target: $24K–$60K/year for agency/enterprise accounts as pricing matures.
 
 - **Gross margin:** ~80% on core platform infrastructure (data engine, integrations, workflow orchestration, crawlers). LLM tokens provided at cost (zero margin) — a strategic decision to maintain pricing parity with native LLM apps and remove adoption friction. Users who bring their own LLM via Berlin's interoperability layer eliminate this cost line entirely. Blended gross margin depends on the mix of BYO-LLM vs. Berlin-provided tokens; as interoperability adoption grows, blended margin trends toward the 80% infrastructure margin.
 
 - **Unit economics:**
   - Customer Acquisition Cost (CAC): Not yet measurable at scale. Current customers acquired through founder-led inbound (LinkedIn content, conferences, network). No outbound sales spend to date.
   - Lifetime Value (LTV): Too early to calculate — insufficient cohort data on the new platform.
-  - LTV:CAC Ratio: TBD post-PMF.
-  - Payback Period: TBD post-PMF.
+  - LTV:CAC Ratio: TBD as customer base scales.
+  - Payback Period: TBD as customer base scales.
 
 ---
 
 ## 8. Traction & Metrics
 
-> **Current phase:** Pre-commercial launch. Berlin completed a significant product repositioning in late 2025, evolving from a conversational SEO tool to programmable agentic workflow infrastructure targeting agencies and enterprise marketing teams. The company is currently in its Founding Partner Program, validating product-market fit with design partners before scaling go-to-market.
+> **Current phase:** Pre-commercial launch. Berlin completed a significant product repositioning in late 2025, evolving from a conversational SEO tool to programmable agentic workflow infrastructure targeting agencies and enterprise marketing teams. The company is currently in its Founding Partner Program, demonstrating strong engagement with design partners before converting to paid customers and scaling go-to-market.
 
 - **MRR / ARR:**
   - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity but churned when that Stripe account was closed. All historical paid users were on the previous version of the product — none on the current platform.
@@ -272,9 +273,11 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 - **Engagement metrics (early signals):**
   - 5–6 companies actively using the new platform
+  - 3 of 5 partners use the platform daily, with multiple touchpoints per day
+  - Partners are working through early-stage friction to integrate Berlin into their workflows — a strong signal that the core value proposition resonates
   - ~20 workflows created across pilot partners
   - Pilots executing workflows across multiple projects and clients
-  - Engagement data will become meaningful as Founding Partner Program matures over the next 8 weeks
+  - Product has expected kinks at 3 weeks old, but engagement intensity indicates clear pull
 
 - **Pipeline:**
   - 5 active pilots in Founding Partner Program:
@@ -296,7 +299,7 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 ### Phase & Objective
 
-Berlin is in founder-led, community-driven GTM mode. The immediate objective is to acquire 20 Founding Partners within 50 days — design-partner customers who validate product-market fit, generate case studies, and become the first wave of champions. Every channel below feeds this singular near-term goal.
+Berlin is in founder-led, community-driven GTM mode. The immediate objective is to acquire 20 Founding Partners within 50 days — design-partner customers who convert to paid, generate case studies, and become the first wave of champions. Every channel below feeds this singular near-term goal.
 
 ### Founding Partner Program
 
@@ -504,9 +507,13 @@ Berlin has operated lean through its product evolution phase (May 2025 – prese
   - LLM API costs: ~$300
   - Logistics & transportation: ~$300
   - Software subscriptions: ~$200
+  - Founder salary: $0 (founder not taking salary during this phase)
+- **Projected burn rate (at scale):** ~$3,000–4,000+
+  - Founder salary: ~$1,500 (to be added as revenue scales)
+  - LLM API costs: Expected to increase significantly as workflow execution volume grows with paying customers
 - **Legacy MRR:** $0 (all historical paid users have churned)
 - **Runway at current burn:** ~10 months
-- **Runway at planned burn (with marketing spend):** ~2 months
+- **Runway at planned burn (with GTM spend):** ~2 months
 
 ### Inflection Point
 
@@ -531,17 +538,19 @@ The company is transitioning from product development to go-to-market. The curre
 
 ### Why Now — The Funding Inflection
 
-Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, the first design partners are in, and the GTM engine is designed. What's missing is fuel: the company is transitioning from build-mode to go-to-market, and current cash reserves (~$10K) support approximately 2 months of operations at planned marketing spend levels. This raise bridges the gap from Founding Partner validation to repeatable, paid customer acquisition.
+Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, design partners are actively using the platform daily, and the GTM engine is designed. What's missing is fuel: the company is transitioning from build-mode to commercial traction, and current cash reserves (~$10K) support approximately 2 months of operations at planned marketing spend levels. This raise converts strong early engagement into paying customers and repeatable revenue.
 
 ### Use of Funds
 
 | Category | Allocation % | Monthly Estimate | Purpose |
 |----------|:------------:|:----------------:|---------|
-| **Go-to-Market & Growth** | 25% | $2,075 | Founder-led direct sales to convert 5 existing Founding Partners and close 4+ qualified conversations already in pipeline; content production and community growth (r/agent_seo); micro-influencer program as secondary pipeline tactic |
+| **Go-to-Market & Growth*** | 25% | $2,075 | Founder-led direct sales to convert 5 existing Founding Partners and close 4+ qualified conversations already in pipeline; content production and community growth (r/agent_seo); micro-influencer program as secondary pipeline tactic |
 | **Engineering & Infrastructure** | 15% | $1,250 | Platform reliability, workflow engine improvements, expanding integration library, scaling crawlers |
 | **Cloud & LLM Costs** | 10% | $830 | Infrastructure scaling as pilot partners increase workflow execution volume; LLM API costs |
-| **Hiring** | 40% | $3,320 | First GTM hire (growth marketer / community manager) based in India, where $3.3K/month is highly competitive for senior marketing talent with 5+ years experience |
+| **Hiring*** | 40% | $3,320 | First GTM hire (growth marketer / community manager) based in India, where $3.3K/month is highly competitive for senior marketing talent with 5+ years experience |
 | **Operations & Legal** | 10% | $830 | LLC → C-Corp conversion, SAFE legal costs, accounting, insurance |
+
+> *_Note: GTM hire and GTM spending will commence only after securing the first 10 paid customers. Until then, funds allocated to these categories will be held in reserve, extending runway and ensuring capital efficiency._
 
 ### Target Runway
 
@@ -558,9 +567,9 @@ This raise is sized to provide 12 months of runway at planned burn (~$8,300/mont
 | Reach target ARR for next raise | Months 9–12 | $150K–$250K ARR (6–10 customers at $24K–$36K ACV) |
 | Produce 2–3 publishable customer case studies | Months 3–5 | Named logos with quantified results |
 
-### What This Round Does NOT Need to Achieve
+### What This Round Achieves
 
-This is a pre-seed raise designed to get Berlin from validated product to validated GTM. The goal is not profitability — it is repeatable evidence that agencies and enterprise teams will pay $24K–$60K/year for programmable SEO infrastructure, supported by case studies and a functioning PLG engine. That evidence positions Berlin for a seed round at significantly higher valuation.
+This is a pre-seed raise designed to convert strong early engagement into commercial traction — scaling revenue from a product demonstrating clear pull, supported by case studies and a functioning PLG engine. That traction positions Berlin for a seed round at significantly higher valuation.
 
 ---
 
@@ -621,7 +630,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 
 - **Accelerator / incubator participation:** None yet — evaluating accelerator programs as part of fundraise strategy
 
-- **Key partnerships or LOIs:** 5 active Founding Partners including Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), BlockSurvey, and Search Indicators (20+ client agency). These are unpaid design partnerships validating product-market fit prior to paid conversion.
+- **Key partnerships or LOIs:** 5 active Founding Partners including Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), BlockSurvey, and Search Indicators (20+ client agency). These are unpaid design partnerships with strong daily engagement, converting to paid customers.
 
 - **Notable milestones achieved:**
   - Intelligence infrastructure built (80+ ranking signals, automated prioritization, GSC/GA integrations)
@@ -638,7 +647,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 | ------------------------------------------------------------ | ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Incumbents add AI/workflow features**                      | Medium     | High   | Berlin's architecture is workflow-first, not bolted on. Incumbents (Ahrefs, SEMrush) are data companies — rebuilding as agentic platforms requires fundamental architectural changes. Speed of execution and founder-market fit are key advantages.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **LLM platform risk (OpenAI, Anthropic)**                    | Low-Medium | Medium | Berlin is LLM-agnostic — it's the data and workflow layer, not the model. Interoperability with multiple LLMs is a core design principle.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Agency market adoption speed**                             | Medium     | Medium | Founding Partner Program validates with real users before scaling. Proof-first approach de-risks product direction.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Agency market adoption speed**                             | Medium     | Medium | Founding Partner Program already shows strong daily engagement from 3 of 5 partners. Proof-first approach de-risks product direction and builds conversion pipeline.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **AI search landscape evolving rapidly**                     | High       | Medium | Berlin's flexible workflow architecture can adapt to new search paradigms. Proprietary crawl infrastructure, integrated keyword data layer, and GEO/AEO capabilities position us ahead of the curve.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Data privacy / crawler compliance**                        | Low-Medium | Medium | Crawlers only access publicly available data, respect robots.txt, and collect no personal information. GDPR/CCPA compliance roadmap in progress for enterprise readiness.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Single founder / key-person risk**                         | Medium     | High   | First GTM hire planned with this raise to reduce single-point-of-failure and build operational depth. Founder's combined AI engineering + agency background is rare and hard to replicate, which cuts both ways: it's a key competitive advantage but also a concentration risk. Mitigating factors: (1) the product architecture is modular and well-documented, reducing bus-factor concerns; (2) the founder has a track record of operating lean and shipping through multiple pivots without a team; (3) the Founding Partner community and advisor network provide external support and accountability; (4) this raise specifically prioritizes hiring to distribute operational load.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
