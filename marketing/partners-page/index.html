@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Berlin - Partner Program</title>
+  <style>
+    :root {
+      --bg: #f5efe4;
+      --bg-deep: #e8e2d7;
+      --panel: rgba(255, 255, 255, 0.84);
+      --panel-strong: #fffdf8;
+      --ink: #10202e;
+      --muted: #5e6b75;
+      --line: rgba(16, 32, 46, 0.12);
+      --accent: #0f6b73;
+      --accent-soft: rgba(15, 107, 115, 0.12);
+      --accent-2: #d47a32;
+      --accent-2-soft: rgba(212, 122, 50, 0.14);
+      --accent-3: #21553a;
+      --accent-3-soft: rgba(33, 85, 58, 0.12);
+      --positive: #1a7a3a;
+      --positive-soft: rgba(26, 122, 58, 0.10);
+      --shadow: 0 18px 50px rgba(16, 32, 46, 0.10);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(15, 107, 115, 0.16), transparent 22rem),
+        radial-gradient(circle at top left, rgba(212, 122, 50, 0.14), transparent 18rem),
+        linear-gradient(180deg, #f8f4ed 0%, var(--bg) 42%, var(--bg-deep) 100%);
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(16, 32, 46, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 32, 46, 0.035) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.36), transparent 82%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* Slides Container */
+    .slides-wrapper {
+      display: flex;
+      width: 1000vw; /* 10 slides */
+      height: 100vh;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      flex-shrink: 0;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .slide-content {
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Slide Typography */
+    .slide h1 {
+      font-size: clamp(3.2rem, 7vw, 5.5rem);
+      margin-bottom: 16px;
+    }
+
+    .slide h2 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(16, 32, 46, 0.06);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .stat {
+      padding: 14px 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      min-width: 130px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.7rem;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      color: var(--accent);
+    }
+
+    .stat span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Cards */
+    .card-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      padding: 20px 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card.highlight {
+      background: linear-gradient(135deg, rgba(15, 107, 115, 0.10), rgba(255, 255, 255, 0.78));
+      border-color: rgba(15, 107, 115, 0.2);
+    }
+
+    .card.highlight-warm {
+      background: linear-gradient(135deg, rgba(212, 122, 50, 0.10), rgba(255, 255, 255, 0.78));
+      border-color: rgba(212, 122, 50, 0.2);
+    }
+
+    .card.highlight-warm h4 {
+      color: var(--accent-2);
+    }
+
+    .card.highlight-green {
+      background: linear-gradient(135deg, rgba(33, 85, 58, 0.10), rgba(255, 255, 255, 0.78));
+      border-color: rgba(33, 85, 58, 0.2);
+    }
+
+    .card.highlight-green h4 {
+      color: var(--accent-3);
+    }
+
+    /* Horizontal Cards */
+    .card-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    /* Partners / Logos */
+    .partners-grid {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .partner-tag {
+      padding: 10px 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .partner-tag.active {
+      border-color: rgba(15, 107, 115, 0.3);
+      background: linear-gradient(135deg, rgba(15, 107, 115, 0.08), var(--panel));
+    }
+
+    .traction-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .traction-stat {
+      text-align: center;
+    }
+
+    .traction-stat strong {
+      display: block;
+      font-size: 2.2rem;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      color: var(--accent);
+    }
+
+    .traction-stat span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Process Steps */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 900px;
+      margin: 28px auto 0;
+      text-align: left;
+    }
+
+    .process-step {
+      padding: 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .process-step .step-num {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .process-step h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    .process-step p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Differentiators */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      max-width: 900px;
+      margin: 24px auto 0;
+      text-align: left;
+    }
+
+    .diff-card {
+      padding: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .diff-card h4 {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+
+    .diff-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Pricing */
+    .pricing-card {
+      max-width: 500px;
+      margin: 24px auto 0;
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .pricing-card .price {
+      font-size: 3rem;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .pricing-card .price-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .pricing-features {
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    .pricing-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.95rem;
+      color: var(--ink);
+      list-style: none;
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-features li::before {
+      content: "✓";
+      color: var(--accent-3);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    /* CTA */
+    .cta-box {
+      max-width: 700px;
+      margin: 28px auto 0;
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(15, 107, 115, 0.12), rgba(255, 255, 255, 0.82));
+      border: 1px solid rgba(15, 107, 115, 0.2);
+      border-radius: var(--radius-lg);
+    }
+
+    .cta-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15, 107, 115, 0.25);
+    }
+
+    /* Labor anchor */
+    .labor-anchor {
+      max-width: 700px;
+      margin: 20px auto 0;
+      padding: 16px 24px;
+      background: var(--accent-2-soft);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    .labor-anchor strong {
+      color: var(--accent-2);
+    }
+
+    /* Slide number */
+    .slide-num {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      font-size: 0.75rem;
+      color: rgba(16, 32, 46, 0.2);
+      font-weight: 600;
+    }
+
+    /* Navigation */
+    .nav-dots {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      padding: 10px 18px;
+      background: rgba(255, 253, 248, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      z-index: 100;
+    }
+
+    .nav-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(16, 32, 46, 0.15);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-dot:hover {
+      transform: scale(1.2);
+    }
+
+    .nav-dot.active {
+      background: var(--accent);
+    }
+
+    .nav-hint {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      color: var(--muted);
+      opacity: 0.6;
+    }
+
+    .nav-arrows {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    .nav-arrow {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-arrow:hover {
+      background: var(--accent-soft);
+      transform: scale(1.05);
+    }
+
+    .nav-arrow svg {
+      width: 18px;
+      height: 18px;
+      color: var(--ink);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .slide {
+        padding: 24px 16px;
+      }
+
+      .stats-grid, .traction-stats {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stat {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .process-grid, .diff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-arrows {
+        right: 12px;
+        bottom: 90px;
+      }
+
+      .nav-hint {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="slides-wrapper" id="slides">
+
+    <!-- Slide 1: Title -->
+    <div class="slide">
+      <span class="slide-num">1 / 10</span>
+      <div class="slide-content">
+        <span class="kicker">Founding Partner Program</span>
+        <h1>Agent Berlin</h1>
+        <p class="tagline">Programmable SEO infrastructure for agencies. Build once, run across all clients. Replace manual work with workflows that execute while you sleep.</p>
+        <div class="stats-grid">
+          <div class="stat">
+            <strong>$199</strong>
+            <span>/month</span>
+          </div>
+          <div class="stat">
+            <strong>7</strong>
+            <span>Active Partners</span>
+          </div>
+          <div class="stat">
+            <strong>20+</strong>
+            <span>Workflows Created</span>
+          </div>
+          <div class="stat">
+            <strong>Day 1</strong>
+            <span>Value from Templates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide">
+      <span class="slide-num">2 / 10</span>
+      <div class="slide-content">
+        <h2>The Problem</h2>
+        <p class="tagline">Growing an agency shouldn't require growing your headcount at the same rate</p>
+        <div class="card-stack">
+          <div class="card">
+            <h4>15-20 Hours Per Week Per Client</h4>
+            <p>Manual research, reporting, and data stitching across Ahrefs, Semrush, GSC, GA4, and spreadsheets. Time that should go to strategy goes to grunt work.</p>
+          </div>
+          <div class="card">
+            <h4>5-10 Tools, No Single Source of Truth</h4>
+            <p>You're paying for multiple subscriptions and still connecting everything manually. Each client setup takes hours.</p>
+          </div>
+          <div class="card highlight-warm">
+            <h4>Clients Are Asking About AI Search</h4>
+            <p>ChatGPT, Perplexity, AI Overviews — your clients are hearing about it everywhere. Do you have a confident answer?</p>
+          </div>
+          <div class="card">
+            <h4>AI Tools Hallucinate</h4>
+            <p>You've tried AI automation. It works sometimes, breaks often, and you can't trust it for client deliverables.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: The Shift -->
+    <div class="slide">
+      <span class="slide-num">3 / 10</span>
+      <div class="slide-content">
+        <h2>The AI Search Shift</h2>
+        <p class="tagline">Your clients' visibility is fragmenting across new surfaces — and traditional tools weren't built for this</p>
+        <div class="card-row">
+          <div class="card highlight">
+            <h4>69% Zero-Click</h4>
+            <p>Zero-click searches jumped from 56% to 69% in one year. When AI Overviews appear, organic CTR drops 61%.</p>
+          </div>
+          <div class="card highlight">
+            <h4>+620% AI Traffic</h4>
+            <p>AI-referred traffic is exploding YoY. And it converts at 5-23x higher rates than traditional organic.</p>
+          </div>
+          <div class="card highlight">
+            <h4>New Service Line</h4>
+            <p>42% of B2B marketers are shifting budget from SEO to AEO. Agencies who can deliver this win the next wave.</p>
+          </div>
+        </div>
+        <div class="labor-anchor">
+          <strong>The opportunity:</strong> Agencies who can explain and execute on AI visibility will command premium positioning — and win clients from those who can't.
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: The Solution -->
+    <div class="slide">
+      <span class="slide-num">4 / 10</span>
+      <div class="slide-content">
+        <h2>The Solution</h2>
+        <p class="tagline">One platform: data + workflows + governance</p>
+        <div class="card-row">
+          <div class="card highlight">
+            <h4>Unified Data Engine</h4>
+            <p>Built-in keyword database, site crawlers, competitor monitoring. Plus GSC, GA4, Bing — all in one queryable layer. No separate subscriptions.</p>
+          </div>
+          <div class="card highlight">
+            <h4>Agentic Workflows</h4>
+            <p>Describe what you need in natural language. Berlin generates structured, executable workflows. No code, no nodes, no engineering.</p>
+          </div>
+          <div class="card highlight">
+            <h4>Workflow Marketplace</h4>
+            <p>Pre-built, vetted workflows for complex SEO operations. Day-one value without building anything.</p>
+          </div>
+          <div class="card highlight">
+            <h4>Multi-Client Architecture</h4>
+            <p>Built for agency economics. One platform, all your clients. Per-project organization, shared team access.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: How It Works -->
+    <div class="slide">
+      <span class="slide-num">5 / 10</span>
+      <div class="slide-content">
+        <h2>How It Works</h2>
+        <p class="tagline">Connect once, automate everything</p>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <h4>Connect</h4>
+            <p>Link your data sources (GSC, GA4, CMS) once. Berlin handles auth and normalization.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <h4>Build or Browse</h4>
+            <p>Create custom workflows in natural language, or run pre-built templates from the marketplace.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <h4>Review</h4>
+            <p>Human-in-the-loop approval before any action executes. Nothing goes to clients without your sign-off.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <h4>Scale</h4>
+            <p>Run the same workflow across all clients. Schedule it. Share it with your team. Let it run while you sleep.</p>
+          </div>
+        </div>
+        <div class="labor-anchor">
+          <strong>Works inside Claude & ChatGPT:</strong> Same capabilities, same accuracy — accessible from the LLM tools your team already uses.
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6: Differentiators -->
+    <div class="slide">
+      <span class="slide-num">6 / 10</span>
+      <div class="slide-content">
+        <h2>Why Berlin</h2>
+        <p class="tagline">Not another dashboard. Programmable infrastructure you build on.</p>
+        <div class="diff-grid">
+          <div class="diff-card">
+            <h4>No Hallucination</h4>
+            <p>Thin MCP architecture routes data through Berlin's layer, not the LLM context. Client-safe accuracy on complex operations.</p>
+          </div>
+          <div class="diff-card">
+            <h4>One Subscription</h4>
+            <p>Stop paying separately for keyword data, crawling, rank tracking. Berlin bundles it all.</p>
+          </div>
+          <div class="diff-card">
+            <h4>No Engineering</h4>
+            <p>Build sophisticated workflows without a developer. Describe it, run it.</p>
+          </div>
+          <div class="diff-card">
+            <h4>Persistent Workflows</h4>
+            <p>Systems that run continuously, not just when someone's typing. Scheduled, shared, governed.</p>
+          </div>
+          <div class="diff-card">
+            <h4>LLM Interoperability</h4>
+            <p>Works inside Claude and ChatGPT — your team's existing tools, Berlin's power.</p>
+          </div>
+          <div class="diff-card">
+            <h4>Brand Context</h4>
+            <p>Client voice and guidelines automatically applied to every output. Persistent memory.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7: Who's Using It -->
+    <div class="slide">
+      <span class="slide-num">7 / 10</span>
+      <div class="slide-content">
+        <h2>Who's Using It</h2>
+        <p class="tagline">7 partners in 4 weeks — 3 using daily, 2 converting to paid</p>
+        <div class="partners-grid">
+          <span class="partner-tag active">Fliki.ai</span>
+          <span class="partner-tag active">Webandcrafts</span>
+          <span class="partner-tag">BlockSurvey</span>
+          <span class="partner-tag">Search Indicators</span>
+          <span class="partner-tag active">miniOrange</span>
+          <span class="partner-tag">CSP Agency</span>
+        </div>
+        <div class="traction-stats">
+          <div class="traction-stat">
+            <strong>3 of 7</strong>
+            <span>Use Daily</span>
+          </div>
+          <div class="traction-stat">
+            <strong>20+</strong>
+            <span>Workflows Created</span>
+          </div>
+          <div class="traction-stat">
+            <strong>100+</strong>
+            <span>Clients Covered</span>
+          </div>
+        </div>
+        <p class="tagline" style="margin-top: 24px; margin-bottom: 0; font-size: 0.88rem;">Partners include Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), miniOrange (enterprise security), and Search Indicators (20+ client agency).</p>
+      </div>
+    </div>
+
+    <!-- Slide 8: Pricing -->
+    <div class="slide">
+      <span class="slide-num">8 / 10</span>
+      <div class="slide-content">
+        <h2>Founding Partner Pricing</h2>
+        <p class="tagline">Lock in early pricing + shape the product</p>
+        <div class="pricing-card">
+          <div class="price">$199<span style="font-size: 1rem; color: var(--muted);">/month</span></div>
+          <div class="price-label">Founding Partner Rate</div>
+          <ul class="pricing-features">
+            <li>Full platform access — all features, no limits</li>
+            <li>Workflow marketplace + custom workflow builder</li>
+            <li>Multi-client, multi-project support</li>
+            <li>Weekly calls with the founder</li>
+            <li>Direct influence on roadmap</li>
+            <li>Hands-on workflow setup support</li>
+            <li>Locked rate as pricing evolves</li>
+          </ul>
+        </div>
+        <div class="labor-anchor">
+          <strong>ROI frame:</strong> A single SEO specialist costs $6K-$8K/month. Berlin delivers equivalent workflow capacity at 3% of the cost.
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 9: What You Get -->
+    <div class="slide">
+      <span class="slide-num">9 / 10</span>
+      <div class="slide-content">
+        <h2>What Partners Get</h2>
+        <p class="tagline">This isn't just early access — it's co-building the tool you wish existed</p>
+        <div class="card-stack">
+          <div class="card highlight">
+            <h4>8 Weeks of Intensive Collaboration</h4>
+            <p>Weekly calls, async support, workflow walkthroughs. We're building this with you, not for you.</p>
+          </div>
+          <div class="card highlight-green">
+            <h4>Custom Workflow Development</h4>
+            <p>Tell us what you need automated. We'll help build it — and you get templates you can reuse across all clients.</p>
+          </div>
+          <div class="card">
+            <h4>Product Influence</h4>
+            <p>Your feedback shapes priorities. Features you need get built. Friction you hit gets fixed.</p>
+          </div>
+          <div class="card">
+            <h4>Locked Pricing</h4>
+            <p>$199/month is the founding rate. As we move to outcome-based pricing ($800-$1,200+), you keep your rate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 10: Next Step -->
+    <div class="slide">
+      <span class="slide-num">10 / 10</span>
+      <div class="slide-content">
+        <h2>Join the Founding Partner Program</h2>
+        <p class="tagline">Limited to 10 agencies. 7 spots taken.</p>
+        <div class="cta-box">
+          <h3>Ready to scale without scaling headcount?</h3>
+          <p>Book a 30-minute call. We'll walk through your current workflow, show you what Berlin can automate, and see if we're a fit.</p>
+          <a href="mailto:sherin@agentberlin.ai?subject=Founding Partner Program" class="cta-button">Schedule a Call</a>
+        </div>
+        <div class="traction-stats" style="margin-top: 32px;">
+          <div class="traction-stat">
+            <strong>3</strong>
+            <span>Spots Remaining</span>
+          </div>
+          <div class="traction-stat">
+            <strong>$199</strong>
+            <span>Locked Rate</span>
+          </div>
+          <div class="traction-stat">
+            <strong>8 Weeks</strong>
+            <span>Intensive Build</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav-dots">
+    <div class="nav-dot active" data-slide="0"></div>
+    <div class="nav-dot" data-slide="1"></div>
+    <div class="nav-dot" data-slide="2"></div>
+    <div class="nav-dot" data-slide="3"></div>
+    <div class="nav-dot" data-slide="4"></div>
+    <div class="nav-dot" data-slide="5"></div>
+    <div class="nav-dot" data-slide="6"></div>
+    <div class="nav-dot" data-slide="7"></div>
+    <div class="nav-dot" data-slide="8"></div>
+    <div class="nav-dot" data-slide="9"></div>
+  </div>
+
+  <div class="nav-hint">Use arrow keys or click dots to navigate</div>
+
+  <div class="nav-arrows">
+    <div class="nav-arrow" id="prevBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </div>
+    <div class="nav-arrow" id="nextBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    const slidesWrapper = document.getElementById('slides');
+    const dots = document.querySelectorAll('.nav-dot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const totalSlides = 10;
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+
+      currentSlide = index;
+      slidesWrapper.style.transform = `translateX(-${currentSlide * 100}vw)`;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    // Dot navigation
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goToSlide(parseInt(dot.dataset.slide));
+      });
+    });
+
+    // Button navigation
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
