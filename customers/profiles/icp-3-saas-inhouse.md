@@ -1,6 +1,8 @@
-# ICP 3 — Series B–C B2B SaaS In-House SEO/Growth Teams
+# ICP 3 — Series B–C B2B SaaS In-House SEO/Growth Teams [SECONDARY]
 
 > **Living document.** Base thesis below. Append new intel (interviews, social signals, objections, wins) as you learn it.
+>
+> **Priority tier:** SECONDARY — Strong opportunity with clear pain points. Activated as the primary agency beachhead is established and PLG self-serve scales.
 
 ---
 
@@ -9,10 +11,12 @@
 | Field | Detail |
 |-------|--------|
 | **Segment** | Series B–C SaaS In-House |
+| **Priority** | SECONDARY |
 | **Core Pain** | SEO→pipeline attribution broken; AI discovery invisible; no dev support |
-| **Value Hook** | Unified data layer; LLM integration; AI visibility metrics for leadership |
+| **Value Hook** | Unified data layer; LLM integration; AI visibility metrics for leadership; one subscription replaces fragmented toolstack |
 | **Top Roles** | Head of SEO, VP Growth, SEO Manager |
 | **Buying Signal** | Need to justify SEO budget internally |
+| **Pricing Anchor** | Tool consolidation + labor savings — Berlin replaces 4–6 separate subscriptions ($500–$2,000+/month) and eliminates dev dependency |
 
 ---
 
@@ -29,16 +33,20 @@
 
 ## Core Value Proposition
 
-This platform gives the team a unified intelligence layer that connects all their data sources (GSC, GA4, keywords, crawls, competitors) and lets them query and act on it without writing code or waiting for engineering. The workflow builder means they can finally ship the automations and analyses they've been waiting months for. The LLM integration is particularly compelling for this ICP: they're already working inside Claude or ChatGPT — now they can bring their full SEO data stack into those conversations without switching tools. Brand context ensures the whole team produces consistent outputs as they scale. And AI visibility monitoring gives them something new to report to leadership — a forward-looking metric that shows they're ahead of the curve on AI search.
+This platform gives the team a unified intelligence layer that connects all their data sources (GSC, GA4, keywords, crawls, competitors) and lets them query and act on it without writing code or waiting for engineering. The agentic workflow builder means they can finally ship the automations and analyses they've been waiting months for — and the workflow marketplace gives them immediate access to pre-built, vetted workflows that handle complex multi-step operations with a single click.
 
-**In short:** close the attribution gap, get back ahead of AI search, and ship faster without engineering.
+The thin MCP interoperability layer is particularly compelling for this ICP: they're already working inside Claude Code, Claude Cowork, ChatGPT Codex, or Openclaw — now they can bring their full SEO data stack into those environments with accuracy guarantees that standard MCP can't provide. Berlin routes data through its own unified layer rather than filling the LLM's context window, solving the hallucination problem that breaks complex workflows.
+
+One subscription replaces the fragmented toolstack: Berlin's integrated keyword intelligence (sourced from Semrush/DataForSEO, cached in Berlin's own DB), proprietary crawlers, and expanding integrations eliminate separate subscriptions for keyword data, crawling, and rank tracking. Brand context ensures the whole team produces consistent outputs as they scale. And AI visibility monitoring (GEO/AEO) gives them something new to report to leadership — a forward-looking metric that shows they're ahead of the curve on AI search.
+
+**In short:** close the attribution gap, get back ahead of AI search, ship faster without engineering, and consolidate the toolstack into one platform.
 
 ---
 
 ## Assumptions About Their Priorities
 
 - **Pipeline attribution is the metric that gets them budget and headcount.** If the platform helps them connect SEO activity to revenue, that's transformational for internal politics.
-- **They're already bought in on AI tools and want everything to work inside them.** LLM integration (Claude/ChatGPT) is not a nice-to-have — it's how they actually work.
+- **They're already bought in on AI tools and want everything to work inside them.** LLM interoperability (Claude Code, Claude Cowork, ChatGPT Codex, Openclaw) is not a nice-to-have — it's how they actually work. Berlin's thin MCP layer makes this seamless with accuracy guarantees.
 - **Speed of experimentation is critical.** They need to move fast to keep up with the company's growth stage. Tools that require onboarding time or slow iteration cycles will be abandoned.
 - **AI search visibility is an emerging, urgent concern.** They've read the same LinkedIn posts and reports everyone else has. They want to get ahead of it before leadership asks.
 - **They prefer depth over surface features.** This is a technically literate ICP. They'll explore the data layer, API, and workflow complexity before judging the product.
@@ -88,3 +96,10 @@ This platform gives the team a unified intelligence layer that connects all thei
 - [ ] How are Series B SEO leads currently presenting AI search impact to their VPs / CFO?
 - [ ] Is LLM integration a discovery feature or something they've been looking for?
 - [ ] What does "pipeline attribution" actually look like in their current stack — what tools are they using?
+- [ ] How much are they spending on separate SEO tool subscriptions? Is consolidation a meaningful value driver?
+- [ ] Are they already using Claude Code or ChatGPT Codex? Would thin MCP interoperability be an immediate hook?
+- [ ] Would pre-built workflows from the marketplace accelerate adoption vs. having to build custom workflows?
+
+---
+
+_Last synced with base investment document: March 2026_

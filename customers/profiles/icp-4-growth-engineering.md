@@ -1,6 +1,8 @@
-# ICP 4 — Growth Engineering / Marketing Ops Teams Inside SaaS
+# ICP 4 — Growth Engineering / Marketing Ops Teams Inside SaaS [SECONDARY]
 
 > **Living document.** Base thesis below. Append new intel (interviews, social signals, objections, wins) as you learn it.
+>
+> **Priority tier:** SECONDARY — Strong technical fit. Berlin's programmable infrastructure maps directly to how this ICP thinks. Activated as API-first and interoperability features mature.
 
 ---
 
@@ -9,10 +11,12 @@
 | Field | Detail |
 |-------|--------|
 | **Segment** | Growth Eng / Marketing Ops at SaaS companies |
+| **Priority** | SECONDARY |
 | **Core Pain** | Fragmented SEO data; brittle scripts; AI search not instrumented |
-| **Value Hook** | Programmable infrastructure; replace custom scripts; API-first |
+| **Value Hook** | Programmable infrastructure; replace custom scripts; API-first; thin MCP interoperability |
 | **Top Roles** | Growth Engineer, Head of Marketing Ops |
 | **Buying Signal** | Dev time savings; reduce marketing requests |
+| **Pricing Anchor** | Dev time savings — Berlin replaces custom scripts + multiple API subscriptions (DataForSEO, etc.) + maintenance overhead |
 
 ---
 
@@ -29,9 +33,15 @@
 
 ## Core Value Proposition
 
-This platform maps directly to how Growth Engineering / Marketing Ops already thinks: unified data layer, API-first access, programmable workflows. The unified data access layer (GSC, GA4, Bing, keyword data, crawl data) replaces a patchwork of scripts and gives a single queryable interface for all SEO data — with the platform handling auth and normalization. The workflow builder lets them create the automated SEO processes marketing needs without writing and maintaining custom code. The LLM integration is also compelling here: if they're building AI-powered internal tools, the platform's tool layer lets them expose SEO data to those apps natively. And as their org scales (team management, project/brand management), the infrastructure grows with them.
+This platform maps directly to how Growth Engineering / Marketing Ops already thinks: unified data layer, API-first access, programmable workflows. The unified data access layer (GSC, GA4, Bing Webmaster Tools, keyword intelligence, crawl data, CMS, social) replaces a patchwork of scripts and gives a single queryable interface for all SEO data — with the platform handling auth and normalization. No more managing separate DataForSEO subscriptions, Ahrefs API keys, or custom crawlers — Berlin's integrated keyword intelligence (sourced from Semrush/DataForSEO, cached in Berlin's own DB) and proprietary crawlers (Snake.blue) are built in.
 
-**In short:** replace a pile of brittle scripts with programmable, maintainable SEO infrastructure.
+The agentic workflow builder lets them create the automated SEO processes marketing needs without writing and maintaining custom code. The workflow marketplace provides pre-built, vetted workflows for common operations — further reducing the build burden.
+
+The thin MCP interoperability layer is the strongest hook for this ICP: Berlin exposes its entire infrastructure inside agentic coding environments (Claude Code, Claude Cowork, ChatGPT Codex, Openclaw) with accuracy guarantees that standard MCP can't provide. Standard MCP implementations fill the LLM's context window with every tool call, causing hallucination rates to spike on complex multi-source operations. Berlin's architecture routes data through its own unified layer, solving this problem — enabling the kind of reliable, multi-source automation that growth engineers have been trying to build with raw MCP and failing.
+
+As the org scales (team management, project/brand management, brand context memory), the infrastructure grows with them.
+
+**In short:** replace a pile of brittle scripts and API subscriptions with programmable, maintainable SEO infrastructure — with interoperability that actually works.
 
 ---
 
@@ -88,3 +98,10 @@ This platform maps directly to how Growth Engineering / Marketing Ops already th
 - [ ] Do they consider SEO infrastructure their problem to own, or do they hand it off to an SEO tool vendor?
 - [ ] What does their current SEO script/maintenance burden look like in hours per month?
 - [ ] Are they already exploring exposing SEO data to internal LLM apps?
+- [ ] Have they tried standard MCP integrations and hit the hallucination/context overflow problem?
+- [ ] What's their current aggregate spend on SEO data APIs (DataForSEO, Ahrefs API, etc.)?
+- [ ] Would Berlin's thin MCP layer be the primary hook, or is the workflow builder more compelling?
+
+---
+
+_Last synced with base investment document: March 2026_
