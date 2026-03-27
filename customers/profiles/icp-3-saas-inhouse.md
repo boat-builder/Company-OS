@@ -18,16 +18,16 @@ When adding new information, ask: _"Is this about who they are, what we built, o
 
 ## Quick Stats
 
-| Field | Detail |
-|-------|--------|
-| **Segment** | Series B–C SaaS In-House |
-| **Priority** | SECONDARY |
-| **Core Pain** | SEO→pipeline attribution broken; AI discovery invisible; no dev support |
-| **Top Roles** | Head of SEO, VP Growth, SEO Manager |
-| **Buying Signal** | Need to justify SEO budget internally |
-| **Typical Team Size** | Potentially sizable (10+ people across the broader SEO/content org); core SEO-specific team is often 2–4 |
-| **Verticals** | Cybersecurity, fintech, healthcare — verticals where content quality and accuracy are non-negotiable |
-| **Revenue Dependency** | Majority of company revenue dependent on inbound/organic |
+| Field                       | Detail                                                                                                                                                            |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Segment**                 | Series B–C SaaS In-House                                                                                                                                          |
+| **Priority**                | SECONDARY                                                                                                                                                         |
+| **Core Pain**               | SEO→pipeline attribution broken; AI discovery invisible; no dev support                                                                                           |
+| **Top Roles**               | Head of SEO, VP Growth, SEO Manager                                                                                                                               |
+| **Buying Signal**           | Need to justify SEO budget internally                                                                                                                             |
+| **Typical Team Size**       | Potentially sizable (10+ people across the broader SEO/content org); core SEO-specific team is often 2–4                                                          |
+| **Verticals**               | Cybersecurity, fintech, healthcare — verticals where content quality and accuracy are non-negotiable                                                              |
+| **Revenue Dependency**      | Majority of company revenue dependent on inbound/organic                                                                                                          |
 | **Current Toolstack Spend** | Typically 4–6 paid SEO subscriptions + 2–3 LLM subscriptions + automation tool in exploration stage; $1,500–$3,000+/month across subscriptions before labor costs |
 
 ---

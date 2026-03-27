@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berlin — The Operating System for SEO Agencies</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --card: #161616;
+    --border: #2a2a2a;
+    --border-light: #333333;
+    --text: #e8e8e8;
+    --text-dim: #888888;
+    --text-muted: #555555;
+    --accent: #c8ff00;
+    --accent-dim: rgba(200, 255, 0, 0.15);
+    --white: #ffffff;
+    --red: #ff4d4d;
+    --green: #00d47e;
+  }
+
+  html, body {
+    height: 100%;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--black);
+    color: var(--text);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Slide System ─── */
+  .deck { position: relative; width: 100vw; height: 100vh; }
+
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6vh 8vw;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+  .slide.active { opacity: 1; pointer-events: auto; }
+
+  /* ─── Progress Bar ─── */
+  .progress-bar {
+    position: fixed; top: 0; left: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+    z-index: 100;
+  }
+
+  /* ─── Slide Counter ─── */
+  .slide-counter {
+    position: fixed; bottom: 3vh; right: 4vw;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; color: var(--text-muted);
+    letter-spacing: 0.1em;
+    z-index: 100;
+  }
+
+  /* ─── Nav Hint ─── */
+  .nav-hint {
+    position: fixed; bottom: 3vh; left: 4vw;
+    font-size: 0.7rem; color: var(--text-muted);
+    letter-spacing: 0.05em;
+    z-index: 100;
+  }
+
+  /* ─── Typography ─── */
+  .eyebrow {
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--white);
+  }
+  h2 {
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 600; line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+  h3 {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight: 500; line-height: 1.4;
+    color: var(--text);
+  }
+  .subtitle {
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    font-weight: 300; line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 680px;
+    margin-top: 1.5rem;
+  }
+
+  /* ─── Divider ─── */
+  .thin-line {
+    width: 60px; height: 1px;
+    background: var(--accent);
+    margin: 2rem 0;
+  }
+
+  /* ─── Cards / Grids ─── */
+  .grid-2 {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; margin-top: 3rem;
+  }
+  .grid-3 {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .grid-4 {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.2rem; margin-top: 2.5rem;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  .card-label {
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .card h3 { margin-bottom: 0.75rem; }
+  .card p {
+    font-size: 0.9rem; line-height: 1.6;
+    color: var(--text-dim);
+  }
+
+  /* ─── Stat Cards ─── */
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .stat-number {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 700; color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 0.8rem; color: var(--text-dim);
+    margin-top: 0.5rem; line-height: 1.4;
+  }
+
+  /* ─── Comparison Table ─── */
+  .comparison-table {
+    width: 100%; border-collapse: collapse;
+    margin-top: 2rem; font-size: 0.85rem;
+  }
+  .comparison-table th {
+    text-align: left; padding: 1rem 1.2rem;
+    font-weight: 600; font-size: 0.7rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .comparison-table th:last-child { color: var(--accent); }
+  .comparison-table td {
+    padding: 0.85rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim); line-height: 1.5;
+    vertical-align: top;
+  }
+  .comparison-table td:last-child { color: var(--text); }
+  .comparison-table tr:last-child td { border-bottom: none; }
+
+  /* ─── List Items ─── */
+  .point-list { list-style: none; margin-top: 2rem; }
+  .point-list li {
+    position: relative;
+    padding: 1rem 0 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem; line-height: 1.5;
+    color: var(--text-dim);
+  }
+  .point-list li:last-child { border-bottom: none; }
+  .point-list li::before {
+    content: '';
+    position: absolute; left: 0; top: 1.55rem;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .point-list li strong { color: var(--white); font-weight: 500; }
+
+  /* ─── Flow Diagram ─── */
+  .flow-row {
+    display: flex; align-items: center;
+    gap: 1.5rem; margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+  .flow-step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    flex: 1; min-width: 140px;
+  }
+  .flow-step .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+  }
+  .flow-step .step-text {
+    font-size: 0.9rem; font-weight: 500;
+    color: var(--white);
+  }
+  .flow-step .step-sub {
+    font-size: 0.75rem; color: var(--text-muted);
+    margin-top: 0.3rem;
+  }
+  .flow-arrow {
+    color: var(--text-muted); font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  /* ─── Objection Row ─── */
+  .objection-row {
+    display: grid; grid-template-columns: 1fr 1.5fr;
+    gap: 2rem; margin-top: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .objection-row:last-child { border-bottom: none; }
+  .objection-q {
+    font-size: 0.9rem; font-weight: 500;
+    color: var(--red); font-style: italic;
+  }
+  .objection-a {
+    font-size: 0.85rem; color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* ─── Pricing ─── */
+  .pricing-card {
+    background: var(--card);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 3rem;
+    max-width: 480px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--accent);
+  }
+  .pricing-badge {
+    display: inline-block;
+    font-size: 0.6rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--black); background: var(--accent);
+    padding: 0.3rem 0.75rem; border-radius: 3px;
+    margin-bottom: 1.5rem;
+  }
+  .pricing-amount {
+    font-size: 3.5rem; font-weight: 700;
+    color: var(--white); letter-spacing: -0.03em;
+  }
+  .pricing-amount span { font-size: 1rem; font-weight: 400; color: var(--text-dim); }
+  .pricing-note {
+    font-size: 0.85rem; color: var(--text-dim);
+    margin-top: 0.5rem; line-height: 1.6;
+  }
+  .pricing-future {
+    margin-top: 1.5rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem; color: var(--text-muted);
+  }
+
+  /* ─── CTA Slide ─── */
+  .cta-box {
+    margin-top: 3rem;
+    padding: 2.5rem 3rem;
+    background: var(--accent-dim);
+    border: 1px solid rgba(200, 255, 0, 0.3);
+    border-radius: 8px;
+    max-width: 600px;
+  }
+  .cta-box p {
+    font-size: 1rem; color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ─── Two-col layout ─── */
+  .split {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start;
+  }
+
+  /* ─── Highlight text ─── */
+  .highlight { color: var(--accent); }
+  .strike { text-decoration: line-through; color: var(--text-muted); }
+
+  /* ─── Architecture Diagram ─── */
+  .arch-diagram {
+    margin-top: 2.5rem;
+    padding: 2.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .arch-layer {
+    display: flex; align-items: center;
+    gap: 1rem; padding: 1rem 0;
+  }
+  .arch-layer + .arch-layer {
+    border-top: 1px solid var(--border);
+  }
+  .arch-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 0.3rem 0.7rem; border-radius: 3px;
+    white-space: nowrap; min-width: 100px;
+    text-align: center;
+  }
+  .arch-desc {
+    font-size: 0.85rem; color: var(--text-dim);
+    line-height: 1.5;
+  }
+  .arch-arrow-down {
+    text-align: center; padding: 0.5rem 0;
+    color: var(--text-muted); font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* ─── Mobile Responsive ─── */
+  @media (max-width: 768px) {
+    .slide {
+      padding: 4vh 6vw;
+      justify-content: flex-start;
+      padding-top: 6vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    h1 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+    h2 { font-size: clamp(1.3rem, 5.5vw, 1.9rem); }
+    h3 { font-size: clamp(0.9rem, 3.5vw, 1.1rem); }
+    .subtitle { font-size: 0.9rem; margin-top: 1rem; }
+    .eyebrow { font-size: 0.6rem; margin-bottom: 1rem; }
+
+    .grid-2, .grid-3, .grid-4 {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .split {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .card { padding: 1.2rem; }
+    .stat-card { padding: 1.2rem; }
+    .stat-number { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+    .stat-label { font-size: 0.75rem; }
+
+    .comparison-table { font-size: 0.75rem; min-width: 580px; }
+    .comparison-table th,
+    .comparison-table td { padding: 0.6rem 0.8rem; }
+
+    .objection-row {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      padding: 1rem 0;
+    }
+
+    .flow-row {
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .flow-arrow {
+      transform: rotate(90deg);
+      font-size: 1rem;
+    }
+    .flow-step {
+      min-width: auto;
+      width: 100%;
+      padding: 1rem 1.5rem;
+    }
+
+    .arch-diagram { padding: 1.2rem; margin-top: 1.5rem; }
+    .arch-layer { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .arch-badge { min-width: auto; }
+    .arch-desc { font-size: 0.8rem; }
+
+    .pricing-card { padding: 1.5rem; max-width: 100%; }
+    .pricing-amount { font-size: 2.5rem; }
+
+    .cta-box { padding: 1.5rem; max-width: 100%; }
+
+    .nav-hint { font-size: 0.6rem; bottom: 2vh; left: 3vw; }
+    .slide-counter { font-size: 0.65rem; bottom: 2vh; right: 3vw; }
+
+    .thin-line { margin: 1.2rem 0; }
+  }
+
+  @media (max-width: 400px) {
+    .slide { padding: 3vh 5vw; padding-top: 5vh; }
+    .grid-2, .grid-3, .grid-4 { gap: 0.75rem; }
+    .card { padding: 1rem; }
+    .pricing-amount { font-size: 2rem; }
+    .comparison-table { min-width: 500px; }
+  }
+
+  /* ─── Animations ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .slide.active .anim {
+    animation: fadeUp 0.6s ease forwards;
+  }
+  .slide.active .anim-d1 { animation-delay: 0.1s; opacity: 0; }
+  .slide.active .anim-d2 { animation-delay: 0.2s; opacity: 0; }
+  .slide.active .anim-d3 { animation-delay: 0.35s; opacity: 0; }
+  .slide.active .anim-d4 { animation-delay: 0.5s; opacity: 0; }
+  .slide.active .anim-d5 { animation-delay: 0.65s; opacity: 0; }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+<div class="slide-counter" id="counter"></div>
+<div class="nav-hint" id="navHint">&#8592; &#8594; &nbsp; arrow keys to navigate</div>
+
+<div class="deck" id="deck">
+
+<!-- ════════════════════════════════════════════
+     SLIDE 1 — TITLE
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="0">
+  <div class="anim anim-d1">
+    <div class="eyebrow">For SEO &amp; Marketing Agencies</div>
+  </div>
+  <h1 class="anim anim-d2" style="max-width: 800px;">
+    Automate 70% of your agency's SEO work.
+  </h1>
+  <div class="thin-line anim anim-d3"></div>
+  <p class="subtitle anim anim-d4">
+    Serve more clients. Hire fewer people. One flat price, unlimited projects.
+  </p>
+  <p class="anim anim-d5" style="margin-top: 3rem; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.05em;">
+    Berlin &mdash; The SEO Agent Platform
+  </p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 2 — THE AGENCY REALITY
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="1">
+  <div class="eyebrow anim anim-d1">The reality</div>
+  <h2 class="anim anim-d2">Your team is drowning in deliverables,<br>not doing strategy.</h2>
+  <div class="grid-4 anim anim-d3">
+    <div class="stat-card" style="border-color: var(--accent);">
+      <div class="stat-number">70%</div>
+      <div class="stat-label">Of client work is manual &amp; repeatable<br><span style="font-size:0.7rem; color:var(--text-muted)">Rank tracking, audits, reporting, monitoring</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">4&ndash;6</div>
+      <div class="stat-label">Disconnected SEO subscriptions<br><span style="font-size:0.7rem; color:var(--text-muted)">$500&ndash;$2,000+/mo, none talk to each other</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">Hours</div>
+      <div class="stat-label">Per proposal &amp; SEO audit<br><span style="font-size:0.7rem; color:var(--text-muted)">Every enquiry is a manual bottleneck</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">$60K+</div>
+      <div class="stat-label">Per hire to scale capacity<br><span style="font-size:0.7rem; color:var(--text-muted)">The only way to take more clients today</span></div>
+    </div>
+  </div>
+  <p class="subtitle anim anim-d4" style="margin-top: 2rem;">
+    Every new client means more of the same manual work. You can't grow without hiring, and hiring eats your margin.
+  </p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 3 — WHAT YOU'VE TRIED
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="2">
+  <div class="eyebrow anim anim-d1">The problem</div>
+  <h2 class="anim anim-d2">You've tried automating.<br>Every path turns into an engineering project.</h2>
+  <div class="grid-3 anim anim-d3">
+    <div class="card">
+      <div class="card-label">n8n / Make</div>
+      <h3>Too technical, too fragile</h3>
+      <p>API authentication, node chaining, silent failures. Takes days to build what should take minutes. When the data gets complex, the AI hallucinates and the output can't be sent to clients.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Claude / ChatGPT</div>
+      <h3>Raw LLM calls break on real data</h3>
+      <p>Works for simple queries. Falls apart on the large, semantically similar datasets that SEO is made of. No integrations to your client data. No scheduling. No client branding.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Manual grind</div>
+      <h3>The default &mdash; and it doesn't scale</h3>
+      <p>Spreadsheet exports, copy-paste reporting, midnight formatting sessions. Your best people spend their days on work that should be automated. You know it, they know it.</p>
+    </div>
+  </div>
+  <p class="anim anim-d4" style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-dim);">
+    The question isn't <span class="highlight">"should we automate?"</span> &mdash; it's <span class="highlight">"we've tried and failed, why is this different?"</span>
+  </p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 4 — COST OF STATUS QUO
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="3">
+  <div class="eyebrow anim anim-d1">The cost</div>
+  <h2 class="anim anim-d2">What the status quo is costing your agency</h2>
+  <div class="split anim anim-d3" style="margin-top: 2.5rem;">
+    <div>
+      <div class="stat-card" style="border-color: var(--accent); margin-bottom: 2rem; text-align: left; padding: 1.5rem 2rem;">
+        <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;">The margin killer</div>
+        <div style="font-size: 2.8rem; font-weight: 700; color: var(--accent); line-height: 1;">70%</div>
+        <div style="font-size: 1rem; color: var(--text); margin-top: 0.3rem;">of client deliverables are manual, repeatable work</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Reporting, rank tracking, crawl analysis, competitor monitoring, keyword research &mdash; repeated for every client, every week</div>
+      </div>
+      <ul class="point-list">
+        <li><strong>Proposals take half a day each</strong> &mdash; every enquiry needs an SEO audit, competitor analysis, and formatted quote</li>
+        <li><strong>Reports are a weekly grind</strong> &mdash; pull data from 4 tools, stitch into a spreadsheet, format, send. Per client.</li>
+        <li><strong>Clients asking about AI search</strong> &mdash; and you don't have a good answer yet</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card" style="border-color: var(--red); background: rgba(255,77,77,0.05);">
+        <div class="card-label" style="color: var(--red);">The competitive risk</div>
+        <h3 style="font-size: 1.1rem;">Other agencies are already operationalizing AI.</h3>
+        <p style="margin-top: 1rem;">
+          Agencies that automate their delivery can serve more clients at higher quality with fewer people. Every month you spend on manual work is a month they're pulling ahead &mdash; lower costs, faster turnaround, services you can't offer yet.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 5 — INTRODUCING BERLIN
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="4">
+  <div class="eyebrow anim anim-d1">The solution</div>
+  <h2 class="anim anim-d2" style="max-width: 900px;">
+    Berlin automates 70% of your agency's manual work &mdash; <span class="highlight">in minutes, not months</span>.
+  </h2>
+  <div class="thin-line anim anim-d3"></div>
+  <p class="anim anim-d3" style="margin-top: 0; font-size: 1.1rem; color: var(--text);">
+    Describe what you need. Get a running agent. <span class="highlight" style="font-weight: 600;">No developers. No API wiring. No hallucinations.</span>
+  </p>
+  <div class="flow-row anim anim-d4">
+    <div class="flow-step">
+      <div class="step-num">01</div>
+      <div class="step-text">Describe</div>
+      <div class="step-sub">Tell Berlin what you need in plain English</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-step">
+      <div class="step-num">02</div>
+      <div class="step-text">Connect</div>
+      <div class="step-sub">OAuth into client GSC, GA4, CMS &mdash; once per client</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-step">
+      <div class="step-num">03</div>
+      <div class="step-text">Run</div>
+      <div class="step-sub">Agent runs across all clients &mdash; on demand or scheduled</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-step">
+      <div class="step-num">04</div>
+      <div class="step-text">Review &amp; Send</div>
+      <div class="step-sub">Branded reports, human-in-the-loop before delivery</div>
+    </div>
+  </div>
+  <p class="subtitle anim anim-d5">
+    Build once, run across every client. The marginal cost of adding a new client drops to near zero.
+  </p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 6 — THE PROOF POINT
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="5">
+  <div class="eyebrow anim anim-d1">Case study</div>
+  <h2 class="anim anim-d2">3 agents. 2 hours. 120 hours saved.</h2>
+  <p class="subtitle anim anim-d3" style="max-width: 600px;">
+    One agency. One ecommerce client with <span class="highlight" style="font-weight: 600;">2.5 million URLs</span>. Three agents built in a single working session.
+  </p>
+  <div class="grid-3 anim anim-d4" style="margin-top: 2.5rem;">
+    <div class="card" style="border-top: 2px solid var(--accent);">
+      <div class="card-label">Agent 1</div>
+      <h3>Unified Weekly Report</h3>
+      <p>Pulls 6 data points from different sources into a single consolidated report. Runs automatically every week. Previously took hours of manual stitching.</p>
+    </div>
+    <div class="card" style="border-top: 2px solid var(--accent);">
+      <div class="card-label">Agent 2</div>
+      <h3>Multi-Country Rank Tracker</h3>
+      <p>Tracks 100 keywords across 6 countries. Automated and scheduled. The team was doing this manually &mdash; checking rankings one by one, country by country.</p>
+    </div>
+    <div class="card" style="border-top: 2px solid var(--accent);">
+      <div class="card-label">Agent 3</div>
+      <h3>Smart 404 Redirect Engine</h3>
+      <p>Matched 12,000 broken URLs to the most appropriate destination &mdash; same product, same country, or the best category/home page. Logic that would take weeks manually.</p>
+    </div>
+  </div>
+  <div class="anim anim-d5" style="margin-top: 2rem; display: flex; gap: 2rem;">
+    <div class="stat-card" style="flex: 1; border-color: var(--accent);">
+      <div class="stat-number">2 hrs</div>
+      <div class="stat-label">To build all three agents</div>
+    </div>
+    <div class="stat-card" style="flex: 1; border-color: var(--green); ">
+      <div class="stat-number" style="color: var(--green);">120 hrs</div>
+      <div class="stat-label">Of manual work replaced</div>
+    </div>
+    <div class="stat-card" style="flex: 1;">
+      <div class="stat-number">60x</div>
+      <div class="stat-label">Return on time invested</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 7 — AUTOMATED PROPOSALS
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="6">
+  <div class="eyebrow anim anim-d1">New client acquisition</div>
+  <h2 class="anim anim-d2">Turn enquiries into clients &mdash;<br>minutes, not half a day.</h2>
+  <div class="split anim anim-d3" style="margin-top: 2.5rem;">
+    <div>
+      <p style="font-size: 0.95rem; color: var(--text-dim); line-height: 1.7;">
+        Every inbound enquiry needs a quote backed by an SEO audit. Site crawl, keyword analysis, competitor landscape, technical issues &mdash; all compiled into a branded document. This process takes <strong style="color: var(--red);">hours per prospect</strong> and it's the bottleneck between an enquiry and a closed deal.
+      </p>
+      <div class="thin-line"></div>
+      <p style="font-size: 0.95rem; color: var(--text-dim); line-height: 1.7;">
+        With Berlin, a single agent handles the entire proposal workflow. Prospect URL in &rarr; branded SEO audit out. <strong style="color: var(--accent);">Minutes, not hours.</strong> More enquiries processed, faster. More prospects become clients.
+      </p>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1.5rem; font-style: italic;">
+        Every enquiry that takes you half a day to audit is an enquiry your competitor closes first.
+      </p>
+    </div>
+    <div>
+      <div class="flow-step" style="margin-bottom: 1rem; text-align: left; padding: 1.5rem;">
+        <div class="step-num">STEP 1</div>
+        <div class="step-text" style="font-size: 0.85rem;">Prospect submits their URL</div>
+      </div>
+      <div style="text-align: center; color: var(--text-muted); padding: 0.3rem;">&#9660;</div>
+      <div class="flow-step" style="margin-bottom: 1rem; text-align: left; padding: 1.5rem;">
+        <div class="step-num">STEP 2</div>
+        <div class="step-text" style="font-size: 0.85rem;">Agent crawls site, pulls keywords, benchmarks competitors</div>
+      </div>
+      <div style="text-align: center; color: var(--text-muted); padding: 0.3rem;">&#9660;</div>
+      <div class="flow-step" style="margin-bottom: 1rem; text-align: left; padding: 1.5rem;">
+        <div class="step-num">STEP 3</div>
+        <div class="step-text" style="font-size: 0.85rem;">Identifies technical issues &amp; opportunities</div>
+      </div>
+      <div style="text-align: center; color: var(--text-muted); padding: 0.3rem;">&#9660;</div>
+      <div class="flow-step" style="text-align: left; padding: 1.5rem; border-color: var(--accent);">
+        <div class="step-num">OUTPUT</div>
+        <div class="step-text" style="font-size: 0.85rem; color: var(--accent);">Branded SEO audit ready to send</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 8 — SCHEDULED AGENTS & REPORTS
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="7">
+  <div class="eyebrow anim anim-d1">Operations</div>
+  <h2 class="anim anim-d2">The work runs while you sleep.</h2>
+  <div class="grid-3 anim anim-d3">
+    <div class="card" style="border-top: 2px solid var(--accent);">
+      <div class="card-label">Scheduled agents</div>
+      <h3>Set the cadence, forget the grind</h3>
+      <p>Weekly reports, daily rank checks, monthly audits, competitor alerts &mdash; agents run automatically on whatever schedule you set. No more "pull data, build report, format, send" ritual.</p>
+    </div>
+    <div class="card" style="border-top: 2px solid var(--accent);">
+      <div class="card-label">Branded reports</div>
+      <h3>Your agency's name, not ours</h3>
+      <p>Brand context stores each client's guidelines and your agency's identity. Reports come out carrying your branding automatically. Your clients never see Berlin &mdash; they see your work.</p>
+    </div>
+    <div class="card" style="border-top: 2px solid var(--accent);">
+      <div class="card-label">Review center</div>
+      <h3>Human-in-the-loop, always</h3>
+      <p>Every output lands in the Review Center before it goes to a client. Your team verifies, approves, sends. Automation amplifies expertise &mdash; it doesn't bypass judgment.</p>
+    </div>
+  </div>
+  <p class="subtitle anim anim-d4">
+    The manual ritual of reporting becomes: review and send. That's it.
+  </p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 9 — WHY IT DOESN'T HALLUCINATE
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="8">
+  <div class="eyebrow anim anim-d1">Under the hood</div>
+  <h2 class="anim anim-d2">Why Berlin doesn't hallucinate</h2>
+  <p class="subtitle anim anim-d3" style="max-width: 600px;">
+    You've seen AI tools produce garbage on SEO data. Here's why Berlin is different.
+  </p>
+  <div class="arch-diagram anim anim-d4">
+    <div class="arch-layer">
+      <div class="arch-badge">Your Team</div>
+      <div class="arch-desc">Describes the task in plain English &mdash; "Generate weekly ranking report for Client X across 6 countries"</div>
+    </div>
+    <div class="arch-arrow-down">&#9660;</div>
+    <div class="arch-layer">
+      <div class="arch-badge">LLM Layer</div>
+      <div class="arch-desc"><strong style="color:var(--white)">Orchestrates &amp; reasons</strong> &mdash; plans the steps, decides what data to pull, structures the output. Never touches raw data directly.</div>
+    </div>
+    <div class="arch-arrow-down">&#9660;</div>
+    <div class="arch-layer">
+      <div class="arch-badge" style="background: rgba(200,255,0,0.25);">Berlin MCP</div>
+      <div class="arch-desc"><strong style="color:var(--accent)">Handles all data retrieval &amp; processing</strong> &mdash; keywords, crawls, GSC, GA4, competitor data. Large datasets stay out of the LLM context window. Accurate results on 2.5M URL sites.</div>
+    </div>
+    <div class="arch-arrow-down">&#9660;</div>
+    <div class="arch-layer">
+      <div class="arch-badge">Data Sources</div>
+      <div class="arch-desc">GSC &middot; GA4 &middot; Client CMS &middot; Keyword DB &middot; Proprietary crawlers &middot; Competitor monitors &mdash; all unified, all queryable, per client</div>
+    </div>
+  </div>
+  <p class="anim anim-d5" style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-dim);">
+    Standard AI tools push everything through the LLM's context window. When the data is large or semantically similar &mdash; which is constant in SEO &mdash; the output is unreliable. Berlin's architecture solves this at the infrastructure level.
+  </p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 10 — AGENTS IN ACTION
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="9">
+  <div class="eyebrow anim anim-d1">Agents in action</div>
+  <h2 class="anim anim-d2">Work your team does every week &mdash; done in minutes</h2>
+  <div class="anim anim-d3" style="margin-top: 1.5rem; overflow-x: auto;">
+    <table class="comparison-table" style="font-size: 0.82rem;">
+      <thead>
+        <tr>
+          <th style="width: 22%;">Agent</th>
+          <th style="width: 36%;">What it does</th>
+          <th style="width: 14%;">Manually</th>
+          <th style="width: 14%;">With Berlin</th>
+          <th style="width: 14%;">Runs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color: var(--white); font-weight: 500;">Proposal &amp; Audit Generator</td>
+          <td>Crawls prospect site, pulls keyword data, benchmarks competitors, generates branded SEO audit</td>
+          <td><span style="color: var(--red); font-weight: 600;">3&ndash;6 hrs</span><br><span style="font-size: 0.7rem; color: var(--text-muted);">per prospect</span></td>
+          <td><span style="color: var(--green); font-weight: 600;">~15 min</span></td>
+          <td style="color: var(--text-dim);">Per enquiry</td>
+        </tr>
+        <tr>
+          <td style="color: var(--white); font-weight: 500;">Multi-Client Rank Tracker</td>
+          <td>Tracks keywords across multiple countries per client, consolidated report with trends</td>
+          <td><span style="color: var(--red); font-weight: 600;">2&ndash;4 hrs</span><br><span style="font-size: 0.7rem; color: var(--text-muted);">per client, weekly</span></td>
+          <td><span style="color: var(--green); font-weight: 600;">Automated</span></td>
+          <td style="color: var(--text-dim);">Weekly</td>
+        </tr>
+        <tr>
+          <td style="color: var(--white); font-weight: 500;">404 Redirect Mapper</td>
+          <td>Finds broken URLs, matches each to the best redirect target by content similarity, country, and product match</td>
+          <td><span style="color: var(--red); font-weight: 600;">Days&ndash;weeks</span><br><span style="font-size: 0.7rem; color: var(--text-muted);">at scale (12K+ URLs)</span></td>
+          <td><span style="color: var(--green); font-weight: 600;">~30 min</span></td>
+          <td style="color: var(--text-dim);">As needed</td>
+        </tr>
+        <tr>
+          <td style="color: var(--white); font-weight: 500;">Unified Reporting Agent</td>
+          <td>Pulls data from 6+ sources into one consolidated, branded report per client</td>
+          <td><span style="color: var(--red); font-weight: 600;">3&ndash;5 hrs</span><br><span style="font-size: 0.7rem; color: var(--text-muted);">per client, weekly</span></td>
+          <td><span style="color: var(--green); font-weight: 600;">Automated</span></td>
+          <td style="color: var(--text-dim);">Weekly</td>
+        </tr>
+        <tr>
+          <td style="color: var(--white); font-weight: 500;">AI Search Visibility Monitor</td>
+          <td>Tracks how client brands appear in ChatGPT, Perplexity, AI Overviews</td>
+          <td><span style="color: var(--red); font-weight: 600;">Not feasible</span><br><span style="font-size: 0.7rem; color: var(--text-muted);">at any useful scale</span></td>
+          <td><span style="color: var(--green); font-weight: 600;">Continuous</span></td>
+          <td style="color: var(--text-dim);">Always&nbsp;on</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="anim anim-d4" style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-dim); max-width: 700px;">
+    Pre-built in the workflow marketplace &mdash; run on day one, customize for each client. Build your own for anything not covered.
+  </p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 11 — AI SEARCH = NEW REVENUE
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="10">
+  <div class="eyebrow anim anim-d1">New revenue line</div>
+  <h2 class="anim anim-d2">Offer AI search visibility &mdash;<br>a service your competitors can't match.</h2>
+  <div class="split anim anim-d3" style="margin-top: 2.5rem;">
+    <div>
+      <p style="font-size: 0.95rem; color: var(--text-dim); line-height: 1.7;">
+        SEO is changing drastically with AI search. Your clients are asking &mdash; "Are we showing up in ChatGPT? What about Perplexity?" &mdash; and most agencies don't have answers.
+      </p>
+      <div class="thin-line"></div>
+      <p style="font-size: 0.95rem; color: var(--text-dim); line-height: 1.7;">
+        Berlin's GEO/AEO capabilities let you monitor and optimize client visibility across every AI search surface. This isn't just a feature &mdash; <strong style="color: var(--accent);">it's a new service you can package and charge for</strong>. Differentiate from every competitor still only talking about traditional rankings.
+      </p>
+    </div>
+    <div class="card" style="border-color: var(--accent);">
+      <div class="card-label">AI surfaces covered</div>
+      <ul class="point-list" style="margin-top: 0.5rem;">
+        <li>Google AI Overviews</li>
+        <li>ChatGPT Search</li>
+        <li>Perplexity</li>
+        <li>Bing Copilot</li>
+      </ul>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+        Monitor mentions, track citations, optimize for AI visibility &mdash; offer it as a premium service to every client on your roster.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 12 — COMPARISON
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="11">
+  <div class="eyebrow anim anim-d1">Comparison</div>
+  <h2 class="anim anim-d2">Berlin vs. the alternatives</h2>
+  <div class="anim anim-d3" style="margin-top: 1.5rem; overflow-x: auto;">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th style="width: 20%;">Dimension</th>
+          <th style="width: 25%;">Point tools</th>
+          <th style="width: 25%;">DIY (n8n + Claude)</th>
+          <th style="width: 30%;">Berlin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color: var(--text);">Multi-client scaling</td>
+          <td>Per-account; no cross-client automation</td>
+          <td>Must duplicate per client; maintenance nightmare</td>
+          <td>Build once, run across all clients. Unlimited projects</td>
+        </tr>
+        <tr>
+          <td style="color: var(--text);">Proposal generation</td>
+          <td>Manual &mdash; pull data, compile, format</td>
+          <td>Possible but requires heavy API setup per source</td>
+          <td>Single agent: URL in &rarr; branded audit out</td>
+        </tr>
+        <tr>
+          <td style="color: var(--text);">Reporting automation</td>
+          <td>Manual exports, spreadsheet assembly</td>
+          <td>Partially automatable but fragile; breaks silently</td>
+          <td>Scheduled agents produce branded reports. Review &amp; send</td>
+        </tr>
+        <tr>
+          <td style="color: var(--text);">Client branding</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>Brand context per client &mdash; reports auto-branded</td>
+        </tr>
+        <tr>
+          <td style="color: var(--text);">Reliability</td>
+          <td>N/A</td>
+          <td>Hallucination on complex data; silent failures</td>
+          <td>Thin MCP &mdash; LLM reasons, Berlin handles data</td>
+        </tr>
+        <tr>
+          <td style="color: var(--text);">AI search visibility</td>
+          <td>None or limited</td>
+          <td>Must build custom; no pre-built solution</td>
+          <td>Integrated GEO/AEO &mdash; new sellable service</td>
+        </tr>
+        <tr>
+          <td style="color: var(--text);">Monthly cost</td>
+          <td>$500&ndash;$2,000+ across tools</td>
+          <td>Low tool cost, high labor to build &amp; maintain</td>
+          <td><span class="highlight">$499/mo</span>, unlimited projects</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 13 — ROI MATH
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="12">
+  <div class="eyebrow anim anim-d1">ROI</div>
+  <h2 class="anim anim-d2">Compare it to a hire, not a tool.</h2>
+  <div class="split anim anim-d3" style="margin-top: 2.5rem;">
+    <div>
+      <h3 style="color: var(--text-muted); margin-bottom: 1.5rem;">What scaling costs today</h3>
+      <div class="grid-2" style="margin-top: 0; gap: 1rem;">
+        <div style="padding: 1rem; border: 1px solid var(--red); border-radius: 6px;">
+          <span style="font-size: 0.65rem; color: var(--red); font-weight: 600; letter-spacing: 0.1em;">HEADCOUNT</span>
+          <div style="font-size: 1.6rem; font-weight: 700; color: var(--red); margin-top: 0.3rem;">$60&ndash;120K</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">/year per hire to take more clients</div>
+        </div>
+        <div style="padding: 1rem; border: 1px solid var(--border); border-radius: 6px;">
+          <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.1em;">TOOLSTACK</span>
+          <div style="font-size: 1.6rem; font-weight: 700; color: var(--text); margin-top: 0.3rem;">$500&ndash;$2K+</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">/mo across 4&ndash;6 disconnected subs</div>
+        </div>
+      </div>
+      <ul class="point-list" style="margin-top: 1.5rem;">
+        <li><strong>Payroll is 50&ndash;60% of revenue</strong> &mdash; every hire directly impacts margin</li>
+        <li><strong>70% of their work is automatable</strong> &mdash; you're paying salaries for agent-level tasks</li>
+        <li><strong>Growth requires more people</strong> &mdash; the only current path to more clients</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color: var(--accent); margin-bottom: 1.5rem;">With Berlin</h3>
+      <div class="card" style="border-color: var(--accent);">
+        <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+          <span style="font-size: 3rem; font-weight: 700; color: var(--accent);">$499</span>
+          <span style="font-size: 0.9rem; color: var(--text-dim);">/mo &mdash; unlimited projects</span>
+        </div>
+        <div class="thin-line" style="margin: 1.5rem 0;"></div>
+        <ul class="point-list" style="margin-top: 0;">
+          <li><span style="color: var(--green);">&#10003;</span> &nbsp;70% of manual work automated across all clients</li>
+          <li><span style="color: var(--green);">&#10003;</span> &nbsp;At 10 clients: ~$50/client/mo</li>
+          <li><span style="color: var(--green);">&#10003;</span> &nbsp;At 20 clients: ~$25/client/mo</li>
+          <li><span style="color: var(--green);">&#10003;</span> &nbsp;At 50 clients: ~$10/client/mo</li>
+        </ul>
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+          Replaces 1&ndash;3 hires worth of manual work. The more clients you add, the better the math gets.
+        </p>
+      </div>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">
+        + credit top-ups for usage. Predictable costs &mdash; no token spirals.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 14 — OBJECTION HANDLING
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="13">
+  <div class="eyebrow anim anim-d1">Anticipated questions</div>
+  <h2 class="anim anim-d2">Questions you'll have</h2>
+  <div class="anim anim-d3" style="margin-top: 1.5rem;">
+    <div class="objection-row">
+      <div class="objection-q">"We already have Ahrefs / Semrush"</div>
+      <div class="objection-a">Berlin replaces them &mdash; same quality data (sourced from Semrush/DataForSEO), plus continuous crawling, unified access across all clients, and the automation layer none of those tools provide. One subscription instead of five.</div>
+    </div>
+    <div class="objection-row">
+      <div class="objection-q">"We tried n8n/Make and it didn't work"</div>
+      <div class="objection-a">That's exactly why Berlin exists. Berlin's architecture handles data retrieval separately from the AI's reasoning &mdash; accurate on the same tasks that hallucinate in n8n. No API auth setup, no node chaining, no maintenance.</div>
+    </div>
+    <div class="objection-row">
+      <div class="objection-q">"$499/mo is a lot for another tool"</div>
+      <div class="objection-a">Compare it to a hire: $60K&ndash;$120K/year. Berlin automates the work of 1&ndash;3 of those hires, unlimited projects. One agency built 3 agents in 2 hours that replaced 120 hours of work. The math speaks for itself.</div>
+    </div>
+    <div class="objection-row">
+      <div class="objection-q">"Reports need to look like they're from us"</div>
+      <div class="objection-a">Brand context stores your agency's identity and each client's guidelines. Reports come out carrying your branding automatically. Your clients never see Berlin &mdash; they see your agency's work.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 15 — WORKSPACE & TEAM
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="14">
+  <div class="eyebrow anim anim-d1">Operations</div>
+  <h2 class="anim anim-d2">All clients. All team members. One workspace.</h2>
+  <div class="grid-3 anim anim-d3">
+    <div class="card" style="border-top: 2px solid var(--accent);">
+      <div class="card-label">Multi-project</div>
+      <h3>Every client, organized</h3>
+      <p>Each client project lives in its own workspace. Brand context, connected data sources, agents, and reports &mdash; all scoped per client. No data leaks between accounts.</p>
+    </div>
+    <div class="card" style="border-top: 2px solid var(--accent);">
+      <div class="card-label">Team management</div>
+      <h3>Right people, right projects</h3>
+      <p>Add team members, scope permissions, assign to client projects. Everyone sees what they need, nothing they don't. Consistent output regardless of who runs the workflow.</p>
+    </div>
+    <div class="card" style="border-top: 2px solid var(--accent);">
+      <div class="card-label">Day 1 value</div>
+      <h3>Pre-built workflow marketplace</h3>
+      <p>Vetted, ready-to-run agents for the most common agency tasks. No building from scratch required. Your team gets value in the first hour &mdash; customize later if you want.</p>
+    </div>
+  </div>
+  <p class="subtitle anim anim-d4">
+    Works inside Claude, ChatGPT, and other LLM apps your team already uses &mdash; no extra token costs. Berlin adds the SEO data layer.
+  </p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 16 — FOUNDING PARTNER PRICING
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="15">
+  <div class="eyebrow anim anim-d1">Pricing</div>
+  <h2 class="anim anim-d2">Founding Partner Program</h2>
+  <div class="split anim anim-d3" style="margin-top: 2rem; align-items: start;">
+    <div>
+      <div class="pricing-card">
+        <div class="pricing-badge">Founding Partner &mdash; Locked in forever</div>
+        <div class="pricing-amount">$499<span>/mo</span></div>
+        <div class="pricing-note">Flat rate, <strong style="color: var(--accent);">unlimited projects</strong>. Built for teams managing multiple client accounts. <strong style="color: var(--accent);">This price never increases for Founding Partners.</strong></div>
+        <div class="pricing-future" style="margin-top: 1.2rem; padding-top: 1.2rem;">
+          <strong style="color: var(--text);">What others will pay:</strong><br>
+          Phase 2: $800&ndash;$1,000/mo<br>
+          Phase 3: $1,500&ndash;$2,500/mo<br><br>
+          <strong style="color: var(--text);">What drives the increase:</strong><br>
+          <span style="color: var(--text-dim);">The Strategy Layer &mdash; industry-specific SEO strategies from experimentation across agency verticals. Your agents get progressively smarter, learning what works for your clients' industries. Founding Partners get all of it at $499.</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 1rem;">Included for Founding Partners</h3>
+      <div class="card" style="margin-bottom: 1rem; border-color: var(--accent);">
+        <div class="card-label">Perk 1</div>
+        <h3 style="font-size: 0.95rem;">2-hour AI agent training session</h3>
+        <p style="font-size: 0.85rem;">Hands-on session for your team on building reliable AI agents for SEO &mdash; from real experience, not generic AI training.</p>
+      </div>
+      <div class="card" style="margin-bottom: 1rem; border-color: var(--accent);">
+        <div class="card-label">Perk 2</div>
+        <h3 style="font-size: 0.95rem;">1-month hands-on onboarding</h3>
+        <p style="font-size: 0.85rem;">Our team sits with yours for the first month. We build agents together, automate 70% of client work, and get you to full self-sufficiency by month two.</p>
+      </div>
+      <div class="card" style="margin-bottom: 0;">
+        <div class="card-label">Perk 3</div>
+        <h3 style="font-size: 0.95rem;">Direct roadmap influence</h3>
+        <p style="font-size: 0.85rem;">Founding Partners shape what gets built next. Your agency's use cases directly inform feature prioritization.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 17 — CTA
+     ════════════════════════════════════════════ -->
+<div class="slide" data-slide="16">
+  <div class="eyebrow anim anim-d1">Next steps</div>
+  <h2 class="anim anim-d2" style="max-width: 800px;">
+    3 agents. 2 hours. 120 hours saved.<br>See what Berlin does for your agency.
+  </h2>
+  <div class="thin-line anim anim-d3"></div>
+  <div class="cta-box anim anim-d4">
+    <p>
+      <strong style="color: var(--accent);">The ask:</strong> A 15-minute walkthrough where we build one of your actual workflows live &mdash; your data, your clients, your use case. See exactly how agents replace the manual work that's eating your margin.
+    </p>
+  </div>
+  <div class="anim anim-d5" style="margin-top: 3rem;">
+    <p style="font-size: 0.95rem; color: var(--text-dim); line-height: 1.7; max-width: 600px;">
+      Every enquiry that takes you half a day is an enquiry your competitor closes first.<br>
+      Every report built manually is time your team could spend on strategy.<br>
+      Every client you can't take on is revenue left on the table.
+    </p>
+    <p style="margin-top: 2rem; font-size: 0.8rem; color: var(--text-muted);">
+      Berlin &mdash; The SEO Agent Platform &nbsp;&middot;&nbsp; <span class="highlight">agentberlin.ai</span>
+    </p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+
+  function show(idx) {
+    if (idx < 0 || idx >= total) return;
+    slides[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+    document.getElementById('counter').textContent = String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+  }
+
+  show(0);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault(); show(current + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault(); show(current - 1);
+    } else if (e.key === 'Home') {
+      e.preventDefault(); show(0);
+    } else if (e.key === 'End') {
+      e.preventDefault(); show(total - 1);
+    }
+  });
+
+  // Touch support
+  let touchStartX = 0;
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+  document.addEventListener('touchend', function(e) {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? show(current + 1) : show(current - 1);
+    }
+  });
+
+  // Click to advance (right half) / go back (left half)
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('a, button, input')) return;
+    const x = e.clientX / window.innerWidth;
+    x > 0.5 ? show(current + 1) : show(current - 1);
+  });
+
+  // Show touch-friendly nav hint on mobile
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    document.getElementById('navHint').innerHTML = 'swipe to navigate';
+  }
+})();
+</script>
+</body>
+</html>
