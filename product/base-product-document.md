@@ -3,50 +3,48 @@
 > This is the single source of truth for what Berlin is at a structural and functional level. Every pitch deck, landing page, sales conversation, feature announcement, and product update should trace back to this document. It defines what Berlin **is**, not who it's for or why they should care — that translation happens downstream.
 >
 > If something feels missing, update this document first. Never add capabilities to downstream materials that don't exist here.
+>
+> **Note:** Berlin is one of two products from Agentic World, LLC. The other is USOL (Universal Search Optimization Layer). USOL has its own base document (`base-usol-document.md`). This document covers Berlin only — though the relationship between the two is defined below.
 
 ---
 
 ## Berlin in One Line
 
-> Berlin is programmable infrastructure for inbound growth — a unified data, workflow, and intelligence layer that lets teams build, run, and scale any SEO operation without engineering overhead.
+> Berlin is the AI agent platform for SEO and AEO — a chat-based system where teams build, run, schedule, and govern agentic workflows that automate search optimization operations without engineering overhead.
+
+Berlin is the **agent**. It is where automation happens — where natural language becomes structured, executable, multi-step workflows. Berlin sits on top of USOL, the infrastructure layer that provides the data, integrations, and intelligence Berlin's agents operate on.
 
 ---
 
-## The Six Pillars
+## The Foundation: USOL
 
-The pillars are not independent features. They form a stack — each layer builds on the ones below it.
+Berlin runs on USOL (Universal Search Optimization Layer) — the unified data, integration, and intelligence infrastructure that is also available as a standalone product. USOL provides:
 
-### Pillar 1: First-Party Data Engine
+- **First-party data engine** — keyword intelligence (sourced from Semrush, DataForSEO, cached in Berlin's database), site crawling and competitor monitoring via Snake.blue (proprietary AI-first crawler), and ranking signal intelligence (80+ signals with automated prioritization).
+- **Unified data and action layer** — single-authentication access to GSC, GA4, Bing Webmaster Tools, CMS platforms, social channels, Google Trends, Google Maps, review platforms, SERP APIs, and a continuously growing list of data sources and action endpoints.
+- **Semantic page and keyword intelligence** — brand and competitor pages and keywords auto-indexed as embeddings, searchable by meaning rather than exact match.
+- **Thin MCP architecture** — data retrieval and action execution routed through USOL's infrastructure rather than the LLM context window, eliminating hallucination from context overflow.
+- **Organizational intelligence** — brand context, team & org management, permissions, and governance. Shared across both products.
 
-Berlin generates its own proprietary SEO data. It is not purely a middleware layer connecting other people's data.
+For the full specification of USOL's capabilities, integrations, and architecture, see `base-usol-document.md`.
 
-**Keyword Intelligence.** Berlin sources keyword research, search volume, difficulty scores, and SERP data from providers (Semrush, DataForSEO) and caches everything in its own database. Users get leading-provider-quality keyword data without needing their own third-party subscriptions — Berlin handles sourcing, caching, and cost optimization. As the cache compounds over time, data costs decrease while coverage increases.
+Berlin inherits all of USOL's data and integrations automatically. Every workflow, every agent, and every scheduled operation in Berlin draws from this foundation. Users who subscribe to Berlin get USOL's full infrastructure as part of the platform — they never need to manage the data layer separately.
 
-**Site Crawling & Competitor Monitoring.** Berlin operates Snake.blue, a fully proprietary, AI-first web crawler with native MCP support. Automated crawlers keep site and competitor data continuously fresh and queryable — technical SEO data, content structure, internal linking, page-level metrics, and competitive intelligence are always up to date. Snake.blue also serves as standalone infrastructure, extending Berlin's surface area as a platform.
+---
 
-**Ranking Signal Intelligence.** Berlin has built an intelligence layer that tracks 80+ ranking signals across sites and competitors, with automated prioritization that surfaces what matters most. Combined with GSC and GA4 data, this layer turns raw crawl and keyword data into actionable, prioritized insights — not just dashboards to stare at.
+## Berlin's Pillars
 
-This data is the raw material that powers everything else in the platform.
+Berlin's unique value sits above the USOL foundation. These pillars define what Berlin adds: the agentic automation layer that turns USOL's data and integrations into executable, governed workflows.
 
-### Pillar 2: Unified Data & Action Layer
-
-A single interface that connects all of a user's data sources and all of their action endpoints.
-
-**Data sources** include Google Search Console, GA4, Bing Webmaster Tools, and others. **Action endpoints** include CMS platforms, social media channels, indexing APIs, and any system where a user publishes, submits, or triggers an outcome. Pre-built connections also exist for Google Search, SERP APIs, Reddit, and a growing list of external data sources.
-
-Users authenticate once per source. After that, every connected source is available across all workflows, all conversations, and all integrations — no repeated OAuth flows, no API key management, no per-tool configuration. Berlin handles authentication and data normalization.
-
-The integration layer is continuously expanding to cover any third-party source a team needs to read from or write to. First-party data from Pillar 1 sits alongside connected third-party data as a unified queryable and actionable surface.
-
-Berlin is building toward becoming a **consolidated platform** — users connect their tools once, and Berlin handles authentication, data normalization, and orchestration across all of them. The goal is that teams no longer need to subscribe to and manage a fragmented stack of point tools; Berlin's subscription covers the infrastructure, the data, and the integrations in one place.
-
-### Pillar 3: Agentic Workflow Engine
+### Pillar 1: Agentic Workflow Engine
 
 A chat-based interface where users describe what they need in natural language, and Berlin generates structured, executable, multi-step workflows — regardless of complexity.
 
 No node graphs. No developer required. No context-window limitations or hallucination problems introduced by raw MCP piping. No writing programs to extract insights from data before feeding them to an LLM. Berlin orchestrates data retrieval, analysis, LLM reasoning, and action-taking into reliable workflows with significantly higher accuracy and precision than typical AI-assisted SEO tools. It handles complexity that would otherwise require engineering involvement.
 
-### Pillar 4: Workflow Ecosystem & Operations
+Berlin's workflow engine is the key differentiator from USOL alone. USOL gives AI agents access to the data and tools — Berlin's engine structures that access into reliable, repeatable, multi-step automations that non-technical users can build conversationally.
+
+### Pillar 2: Workflow Ecosystem & Operations
 
 Workflows are not one-and-done executions. They are persistent, operational assets that can be scheduled, shared, templated, and governed.
 
@@ -62,56 +60,66 @@ Workflows are not one-and-done executions. They are persistent, operational asse
 
 This is what makes Berlin operational infrastructure rather than a chatbot — it is a system that runs continuously, not only when someone is typing.
 
-### Pillar 5: Interoperability Layer
+### Shared: Organizational Intelligence
 
-The same capabilities that power Berlin's native interface are exposed as a tool layer for external LLM applications. Users can work inside Claude Code, Claude Cowork, ChatGPT Codex, Openclaw, or any other AI environment and access their full Berlin data stack and workflow capabilities conversationally.
-
-**Thin MCP Architecture.** Standard MCP (Model Context Protocol) implementations suffer from context overflow — each tool call fills the LLM's context window, increasing hallucination rates and degrading accuracy as complexity grows. Berlin's thin MCP layer solves this by routing data retrieval and action execution through its own unified data layer rather than passing raw data through the LLM context. The LLM orchestrates; Berlin's infrastructure handles the heavy lifting. This reduces MCP-related accuracy issues to near zero, enabling complex multi-source operations that break other AI-assisted tools.
-
-Berlin does not force users into a single UI. The same tasks the workflow builder handles can be run from whichever LLM application a user already works in, without switching tools. This is a deliberate architectural choice: Berlin is infrastructure, not a destination app. It meets users where they already work.
-
-### Pillar 6: Organizational Intelligence
-
-A combined layer of team governance and persistent organizational memory.
-
-**Brand Context.** A shared knowledge layer where teams store brand guidelines, terminology, audience details, preferences, and other reusable context. This context is automatically available to every workflow and every LLM conversation, keeping outputs consistent and on-brand. It gets updated like org-wide memory — without anyone re-explaining it each session.
-
-**Team & Org Management.** Add team members, manage access, scope permissions, and share credits across the organization. Multiple brands or projects can live under a single account.
-
-Security, governance, and institutional knowledge are not afterthoughts — they are structural.
+Brand Context, Team & Org Management, and governance are **platform-level infrastructure shared between Berlin and USOL** — not Berlin-specific. They are defined in `base-usol-document.md` and apply across both products. Berlin workflows inherit brand context, permissions, and team structure automatically through this shared layer.
 
 ---
 
 ## How the Pillars Relate
 
-- **Pillar 1 (First-Party Data)** and **Pillar 2 (Unified Data & Action Layer)** together form the data foundation. Pillar 1 generates proprietary data; Pillar 2 connects and normalizes everything else alongside it.
-- **Pillar 3 (Agentic Workflow Engine)** sits on top of the data foundation. It is the intelligence that turns raw data into structured, executable action.
-- **Pillar 4 (Workflow Ecosystem)** wraps Pillar 3 in operational infrastructure — scheduling, reporting, review, marketplace, and sharing.
-- **Pillar 5 (Interoperability)** extends the entire stack into external environments, making Berlin's capabilities available wherever users work.
-- **Pillar 6 (Organizational Intelligence)** wraps around everything — the security, memory, and governance layer that ensures the entire system operates with context, consistency, and appropriate access control.
+- **USOL (Foundation)** provides the data engine, integrations, semantic intelligence, thin MCP architecture, and organizational intelligence (brand context, team management, governance). It is the infrastructure layer that both Berlin and standalone USOL users draw from.
+- **Pillar 1 (Agentic Workflow Engine)** sits on top of USOL. It is the intelligence that turns raw data and integrations into structured, executable, multi-step automations.
+- **Pillar 2 (Workflow Ecosystem)** wraps Pillar 1 in operational infrastructure — scheduling, reporting, review, marketplace, and sharing.
+
+---
+
+## Berlin and USOL: The Relationship
+
+Agent Berlin ships two products. They share infrastructure but serve different users and use cases.
+
+**USOL** is the infrastructure layer — the universal connector that gives any AI coding agent (Claude Cowork, Claude Code, Codex, etc.) access to the full SEO/AEO toolchain. USOL is for teams who already work inside AI coding environments and want to bring SEO data and actions into those environments without building custom integrations. USOL is a lower-abstraction product — it provides the tools, the user's AI agent provides the automation.
+
+**Berlin** is the agent platform — the higher-abstraction product where non-technical users build, run, schedule, and govern SEO/AEO workflows through a chat-based interface. Berlin uses USOL under the hood but adds the agentic workflow engine, the workflow marketplace, scheduling, reporting, and review. Berlin is for teams who want the automation done for them, not teams who want to wire it up themselves.
+
+**Organizational intelligence** (brand context, team management, governance) is shared platform infrastructure — available in both products. It lives in the USOL layer and is inherited by Berlin.
+
+**How to think about it:**
+- USOL = the layer. Gives AI agents the ability to do SEO/AEO work.
+- Berlin = the agent. Does the SEO/AEO work for you.
+- A Berlin subscription includes USOL. A USOL subscription does not include Berlin's agentic capabilities.
+
+**In practice:** An agency might use Berlin for their core delivery workflows (automated audits, scheduled reports, marketplace workflows) and also use USOL inside Claude Cowork for ad hoc analysis and custom one-off tasks. The same data, integrations, and brand context are available in both contexts.
 
 ---
 
 ## Feature Reference
 
-A flat reference of all current platform capabilities and their status.
+A flat reference of Berlin-specific capabilities and their status. For USOL's feature reference (data engine, integrations, thin MCP, semantic intelligence), see `base-usol-document.md`.
+
+### Berlin-Only Features (Require Berlin Subscription)
 
 | Feature | Description | Status |
 | --- | --- | --- |
-| **Keyword Intelligence** | Keyword research, volume, difficulty, and SERP data sourced from providers (Semrush, DataForSEO) and cached in Berlin's own database. Users get leading-provider-quality data without their own third-party subscriptions. | Live |
-| **Site Crawling & Competitor Monitoring** | Proprietary crawlers (Snake.blue) keeping site and competitor data fresh and queryable. Technical SEO, content structure, internal linking, and page-level metrics always up to date. Snake.blue is also exposed as standalone infrastructure. | Live |
-| **Ranking Signal Intelligence** | 80+ ranking signals tracked across sites and competitors with automated prioritization. Turns raw crawl, keyword, and analytics data into actionable, prioritized insights. | Live |
-| **Unified Data Access Layer** | Single API interface connecting all SEO data sources (GSC, GA4, Bing Webmaster Tools, etc.). Connect once, available across all workflows and conversations. | Live |
-| **Third-Party Integrations** | Pre-built connections to Google Search, SERP APIs, Reddit, CMS platforms, and expanding list of data sources and action endpoints. Platform handles auth and data normalization. | Live & Expanding |
 | **Agentic Workflow Builder** | Chat-based interface for building multi-step SEO workflows without code. Workflows can be run on demand, scheduled, shared across org. Handles complex multi-step operations with higher accuracy than typical AI tools. | Live |
 | **Agentic Workflow Marketplace** | Library of pre-built, vetted workflows that automate complex multi-step SEO operations with a single click. Fully structured agentic workflows, not simple templates. | Live |
-| **Agentic Coding Environment Integration (Thin MCP)** | Proprietary thin MCP layer exposes Berlin's infrastructure inside agentic coding environments (Claude Code, Claude Cowork, ChatGPT Codex, Openclaw). Routes data through Berlin's unified data layer instead of the LLM's context window, enabling complex multi-source operations without hallucination. | Live |
-| **Brand Context** | Shared knowledge layer for brand guidelines, terminology, audience details. Automatically available to workflows and LLM conversations. Updates like org-wide memory. | Live |
-| **Team & Org Management** | Add team members, manage access, share credits. Multiple projects (brands) within same org. | Live |
 | **Report Center** | Centralized collection of all workflow outputs. | Live |
 | **Review Center** | Human-in-the-loop approval before actions execute. | Live |
 | **Workflow Scheduling** | Workflows run on a schedule without human initiation. | Live |
 | **Workflow Sharing** | Workflows can be shared and standardized across teams, clients, and projects. | Live |
+
+### USOL Foundation Features (Included in Berlin, Also Available Standalone)
+
+| Feature | Description | Status |
+| --- | --- | --- |
+| **Keyword Intelligence** | Keyword research, volume, difficulty, and SERP data sourced from providers (Semrush, DataForSEO) and cached in Berlin's own database. | Live |
+| **Site Crawling & Competitor Monitoring** | Proprietary crawlers (Snake.blue) keeping site and competitor data fresh and queryable. | Live |
+| **Ranking Signal Intelligence** | 80+ ranking signals tracked with automated prioritization. | Live |
+| **Unified Data & Action Layer** | Single-authentication access to GSC, GA4, Bing Webmaster Tools, CMS, social, Google Trends, Maps, reviews, and more. | Live & Expanding |
+| **Semantic Page & Keyword Intelligence** | Brand and competitor pages/keywords auto-indexed as embeddings, searchable by meaning. | Live |
+| **Thin MCP Architecture** | Data routed through USOL's infrastructure instead of LLM context window, eliminating hallucination from context overflow. | Live |
+| **Brand Context** | Shared knowledge layer for brand guidelines, terminology, audience details. Automatically available to workflows and AI agent sessions. Updates like org-wide memory. | Live |
+| **Team & Org Management** | Add team members, manage access, share credits. Multiple projects (brands) within same org. | Live |
 
 ---
 
@@ -119,12 +127,13 @@ A flat reference of all current platform capabilities and their status.
 
 This is the canonical reference for what Berlin is at a structural and functional level. When crafting messaging for a specific audience:
 
-1. Start from the pillars and feature reference.
-2. Identify which pillars and features matter most to the target audience.
-3. Translate the structural description into the language of their pain and ambition.
-4. Never add a capability that doesn't exist here. If something feels missing, update this document first.
+1. Start from Berlin's pillars and feature reference for agentic/automation messaging.
+2. Reference `base-usol-document.md` for infrastructure, data, and integration messaging.
+3. Identify which capabilities matter most to the target audience — and whether they're Berlin capabilities (agentic workflows, marketplace, scheduling) or USOL capabilities (data, integrations, thin MCP).
+4. Translate the structural description into the language of their pain and ambition.
+5. Never add a capability that doesn't exist here or in the USOL document. If something feels missing, update the appropriate source document first.
 
 ---
 
 _Agentic World, LLC — Internal Foundation Document_
-_Last updated: March 2026_
+_Last updated: April 2026_
