@@ -11,6 +11,7 @@
 | Field | Detail |
 |-------|--------|
 | **Segment** | E-Commerce / Marketplaces |
+| **Archetype(s) served** | **eCommerce** and **Marketplace** (their own business model; [see taxonomy](../archetypes.md)). Scale-heavy SEO — thousands of SKUs/listings, AI shopping visibility, and programmatic SEO are core. |
 | **Priority** | SECONDARY |
 | **Core Pain** | Thousands of pages; AI shopping invisible; programmatic SEO blocked |
 | **Value Hook** | Scale infrastructure; AI visibility for shopping queries; competitor intel; one subscription replaces fragmented toolstack |

@@ -11,6 +11,7 @@
 | Field | Detail |
 |-------|--------|
 | **Segment** | Large SEO / Marketing Agencies (20+ clients) |
+| **Archetype(s) served** | Their clients span all archetypes ([see taxonomy](../archetypes.md)); portfolio typically includes **eCommerce**, **SaaS**, **Marketplace**, **Lead Gen (Services)**, **Media/Publisher**. Generalist portfolios are common at this size. |
 | **Priority** | SECONDARY |
 | **Core Pain** | Reporting doesn't scale at volume; no GEO/AEO story; enterprise governance needs |
 | **Value Hook** | Build once, run across all clients; sell AI visibility as new service; team governance & review |

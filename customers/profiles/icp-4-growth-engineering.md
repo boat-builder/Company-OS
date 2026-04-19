@@ -11,6 +11,7 @@
 | Field | Detail |
 |-------|--------|
 | **Segment** | Growth Eng / Marketing Ops at SaaS companies |
+| **Archetype(s) served** | **SaaS** (their own business model; [see taxonomy](../archetypes.md)). Programmable infrastructure mindset; thinks in APIs, pipelines, and attribution. |
 | **Priority** | SECONDARY |
 | **Core Pain** | Fragmented SEO data; brittle scripts; AI search not instrumented |
 | **Value Hook** | Programmable infrastructure; replace custom scripts; API-first; thin MCP interoperability |

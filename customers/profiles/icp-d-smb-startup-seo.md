@@ -13,6 +13,7 @@
 | Field | Detail |
 |-------|--------|
 | **Segment** | SMB/Startup SEOs |
+| **Archetype(s) served** | Varies ([see taxonomy](../archetypes.md)). Most common: **SaaS**, **eCommerce**, **Lead Gen (Services)**. Archetype is often immature/undifferentiated at this stage. |
 | **Priority** | DEPRIORITIZED |
 | **Core Pain** | Doing 3 jobs; no dev time; tight budget; AI search stress |
 | **Value Hook** | One tool replaces many; LLM integration; pre-built workflows |

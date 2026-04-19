@@ -11,6 +11,7 @@
 | Field | Detail |
 |-------|--------|
 | **Segment** | Mid-Market (no dev support) |
+| **Archetype(s) served** | Varies by company ([see taxonomy](../archetypes.md)). Most common: **SaaS**, **eCommerce**, **Media/Publisher**, **Lead Gen (Services)**. Messaging should be archetype-specific once the prospect is qualified. |
 | **Priority** | SECONDARY |
 | **Core Pain** | Traffic declining; can't explain AI impact; scale breaks manual work |
 | **Value Hook** | Pre-built workflows from marketplace; new narrative for leadership; automation at scale; one subscription replaces fragmented toolstack |

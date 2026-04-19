@@ -11,6 +11,7 @@
 | Field | Detail |
 |-------|--------|
 | **Segment** | Medium SEO / Marketing Agencies (5–20 clients) |
+| **Archetype(s) served** | Their clients span archetypes ([see taxonomy](../archetypes.md)). Most common: **eCommerce**, **SaaS**, **Lead Gen (Services)**, **Media/Publisher**. Agencies concentrated in 1–2 archetypes are easier to message. |
 | **Priority** | PRIMARY |
 | **Core Pain** | Reporting doesn't scale; no GEO/AEO story; no dev access; need to grow without proportional headcount |
 | **Value Hook** | Build once, run across all clients; sell AI visibility as new service; force multiplier to punch above weight class |

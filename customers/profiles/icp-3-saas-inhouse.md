@@ -21,6 +21,7 @@ When adding new information, ask: _"Is this about who they are, what we built, o
 | Field                       | Detail                                                                                                                                                            |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Segment**                 | Series B–C SaaS In-House                                                                                                                                          |
+| **Archetype(s) served**     | **SaaS** (their own business model; [see taxonomy](../archetypes.md)). SEO drives product adoption via educational content, use-case pages, and funnels.          |
 | **Priority**                | SECONDARY                                                                                                                                                         |
 | **Core Pain**               | SEO→pipeline attribution broken; AI discovery invisible; no dev support                                                                                           |
 | **Top Roles**               | Head of SEO, VP Growth, SEO Manager                                                                                                                               |

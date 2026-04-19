@@ -3,6 +3,8 @@
 > **Source of truth:** The [base investment document](/finance/base-investment-document.md) is the canonical reference for all fundraising materials. ICP definitions below are aligned with Section 6 of that document. When the investment doc evolves, this file and the individual ICP profiles should be updated to match.
 
 > **Individual ICP files** (the living bibles) are in the `profiles/` folder.
+>
+> **Archetype taxonomy:** Prospect archetype (eCommerce, SaaS, Marketplace, Aggregator, Media/Publisher, Lead Gen) is a cross-cutting categorization axis. See [archetypes.md](archetypes.md). Each ICP profile's Quick Stats references which archetypes it serves.
 
 ---
 
