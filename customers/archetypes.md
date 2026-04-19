@@ -10,14 +10,14 @@
 
 ## The Six Archetypes
 
-| Archetype | Description | SEO implication |
-|-----------|-------------|-----------------|
-| **eCommerce** | Sells products directly online. | SEO focuses on product and category pages to drive purchases. Scale (thousands of SKUs), AI shopping visibility, and programmatic SEO are defining problems. |
-| **SaaS** | Sells software. | SEO drives product adoption via educational content, use-case pages, and funnels. Attribution from organic → pipeline, and AI-assisted discovery, are core concerns. |
-| **Marketplace** | Matches buyers and sellers. | SEO scales via listings and category pages; depends on supply-demand liquidity. Indexation and template quality at scale are the main levers. |
-| **Aggregator** | Collects and organizes data from external sources. | SEO captures demand through large-scale, structured pages; no direct transactions. Content freshness, template quality, and scale are the main levers. |
-| **Media/Publisher** | Produces content for consumption. | SEO focuses on traffic volume, freshness, and topical authority. Monetization is via ads or subscriptions, so pageview economics drive everything. |
-| **Lead Gen (Services)** | Generates inquiries for services. | SEO targets high-intent keywords and converts via forms, calls, or bookings. Local/geo intent and conversion instrumentation matter more than volume. |
+| Archetype               | Description                                        | SEO implication                                                                                                                                                      |
+| ----------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **eCommerce**           | Sells products directly online.                    | SEO focuses on product and category pages to drive purchases. Scale (thousands of SKUs), AI shopping visibility, and programmatic SEO are defining problems.         |
+| **SaaS**                | Sells software.                                    | SEO drives product adoption via educational content, use-case pages, and funnels. Attribution from organic → pipeline, and AI-assisted discovery, are core concerns. |
+| **Marketplace**         | Matches buyers and sellers.                        | SEO scales via listings and category pages; depends on supply-demand liquidity. Indexation and template quality at scale are the main levers.                        |
+| **Aggregator**          | Collects and organizes data from external sources. | SEO captures demand through large-scale, structured pages; no direct transactions. Content freshness, template quality, and scale are the main levers.               |
+| **Media/Publisher**     | Produces content for consumption.                  | SEO focuses on traffic volume, freshness, and topical authority. Monetization is via ads or subscriptions, so pageview economics drive everything.                   |
+| **Lead Gen (Services)** | Generates inquiries for services.                  | SEO targets high-intent keywords and converts via forms, calls, or bookings. Local/geo intent and conversion instrumentation matter more than volume.                |
 
 
 ---
