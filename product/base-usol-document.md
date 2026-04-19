@@ -33,7 +33,7 @@ Today, if an SEO team wants to use AI agents with their existing tools, they hav
 
 USOL is a single connector that works with AI coding agents. Once connected, the AI agent can:
 
-- Pull data from any integrated platform (GSC, GA4, Google Trends, SERP data, review platforms, and more)
+- Pull data from any integrated platform (GSC, GA4, Google Trends, search results data, review platforms, and more)
 - Analyze and cross-reference data across sources
 - Take actions — update CMS content, push to social platforms, generate reports
 - Work with the brand's full context — pages, keywords, competitors, brand voice — all indexed and searchable
@@ -57,7 +57,7 @@ USOL provides a single access point to the tools and data sources SEO/AEO teams 
 **Search Intelligence**
 
 - Google Trends
-- Google SERP analysis
+- Google search results analysis
 - AI search providers (ChatGPT, Perplexity, and others) — for AEO/GEO monitoring
 
 **Local & Reputation**
