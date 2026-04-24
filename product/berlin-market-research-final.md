@@ -6,12 +6,12 @@
 
 ## 1. Executive Summary
 
-Berlin is positioning itself as **programmable infrastructure for inbound growth**, combining proprietary SEO data with unified integrations and an agentic workflow engine. The company operates at the intersection of two massive market shifts:
+Berlin is positioning itself as an **end-to-end SEO/AEO platform** — a single product that owns Strategy, Execution, and Tools for search optimization under one roof. The user talks to Berlin from a dashboard, and Berlin generates the strategy, sets up the execution, and does the operational work. The alternative Berlin is sold against is hiring an SEO agency or building an in-house SEO team, not a workflow automation tool. The company operates at the intersection of two massive market shifts:
 
-1. **The $85B+ SEO software market** is consolidating around platforms that automate workflows rather than just display data
+1. **The $85B+ SEO software market** is consolidating around platforms that deliver outcomes rather than just display data
 2. **The emergence of AI search (AEO/GEO)** is creating an entirely new optimization discipline that grew from zero to ~$1B in under two years
 
-Berlin's differentiated positioning addresses both traditional SEO automation and the new AI visibility challenge from a single platform. Unlike point solutions that either monitor AI visibility (Profound) or optimize content (AirOps), Berlin provides the operational layer where teams can go from data to insight to action to scheduled execution across both traditional and AI search.
+Berlin's differentiated positioning addresses both traditional SEO and the new AI visibility challenge from a single platform. Point solutions in the market today either monitor AI visibility (Profound), optimize individual pieces of content (AirOps), or automate narrow workflows. Berlin collapses the full SEO/AEO function — strategy through execution, across both traditional and AI search — into one platform that replaces the need to assemble a team, a toolchain, and a workflow layer separately.
 
 **Key investment highlights:**
 - TAM of ~$85-93B (2025) growing to $266B+ by 2034 at 13.5%+ CAGR
@@ -456,7 +456,7 @@ The market size figures above primarily measure tool and software spend. But Ber
 
 ### On AEO/GEO Momentum
 
-> "The rise of AI search - ChatGPT at 900M weekly users, AI Overviews on 25% of Google queries, AI referral traffic up 620% YoY - is creating a new discipline called GEO/AEO. This market went from zero to ~$1B in under two years, and Profound reached unicorn status in 18 months. But these are point solutions - they tell you where you're visible. Berlin is the operational layer that lets teams actually do something about it - build workflows, automate optimization, and execute across both traditional and AI search from one platform."
+> "The rise of AI search - ChatGPT at 900M weekly users, AI Overviews on 25% of Google queries, AI referral traffic up 620% YoY - is creating a new discipline called GEO/AEO. This market went from zero to ~$1B in under two years, and Profound reached unicorn status in 18 months. But these are point solutions - they tell you where you're visible. Berlin is the only end-to-end platform that owns strategy, execution, and tools across both traditional and AI search - customers describe the outcome they want and Berlin delivers, instead of hiring an agency or assembling a team to do it."
 
 ### On the Traffic Shift
 

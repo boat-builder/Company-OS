@@ -1,7 +1,7 @@
 # LLM Instructions for Sales Analysis
 
 ## Project Context
-You are analyzing sales calls for Agent Berlin, an AI-powered SEO automation platform. Your role is to compare call transcripts against the sales_bible.md and provide actionable feedback for improvement.
+You are analyzing sales calls for Agent Berlin, an end-to-end AI SEO/AEO platform that replaces hiring an SEO agency or in-house team — the user talks to a dashboard and Berlin handles strategy, execution, and the underlying tools. Your role is to compare call transcripts against the sales_bible.md and provide actionable feedback for improvement.
 
 ## Sales Bible Management Instructions
 

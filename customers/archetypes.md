@@ -1,10 +1,10 @@
 # Prospect Archetypes
 
-> **Context:** Archetype is one axis of prospect categorization, alongside company size, designation/role, geography, and tech stack. It classifies the prospect's **business model** — which determines the shape of their SEO problem and which Berlin value hooks resonate. A single ICP card (e.g. Medium Agencies) will typically touch several archetypes; a single archetype (e.g. eCommerce) will typically map to several ICPs.
+> **Context:** Archetype is one axis of prospect categorization, alongside buyer persona, company size, geography, and tech stack. It classifies the prospect's **business model** — which determines the shape of their SEO problem and how Berlin's end-to-end strategy/execution/tools offer lands. A single archetype (e.g. eCommerce) typically maps to multiple ICP cells in [icp.md](icp.md) (different buyer personas and price tiers).
 >
-> **Status:** Active experiment — We assumed these archetypes when writing the investment doc but never executed on them as a targeting/messaging dimension. This document tracks definitions, SEO implications, and validated evidence as it comes in.
+> **Status:** Active subset — Of the six archetypes below, three (**SaaS, eCommerce, Lead Gen / Services**) are the current targeting subset used by the 6-cell ICP grid in [icp.md](icp.md). The other three (Marketplace, Aggregator, Media/Publisher) remain documented but are not being targeted in this phase. This document tracks definitions, SEO implications, and validated evidence as it comes in.
 >
-> **Source of truth:** This file is the canonical reference for archetype definitions. Individual ICP profiles should reference these archetypes in their Quick Stats under "Archetype(s) served." Positioning and outreach experiments that use archetype as a cut should log outcomes back into the Evidence section below.
+> **Source of truth:** This file is the canonical reference for archetype definitions. The ICP cells in [icp.md](icp.md) reference these archetypes directly. Positioning and outreach experiments that use archetype as a cut should log outcomes back into the Evidence section below.
 
 ---
 

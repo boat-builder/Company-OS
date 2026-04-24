@@ -1,6 +1,6 @@
 # Sales Performance Analysis Project
 
-This project tracks and improves sales calls for Berlin, an AI-powered SEO automation platform.
+This project tracks and improves sales calls for Berlin, an end-to-end AI SEO/AEO platform that replaces hiring an SEO agency or in-house team — the user talks to a dashboard and Berlin handles strategy, execution, and the underlying tools.
 
 ## Files & Structure
 
