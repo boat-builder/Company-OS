@@ -19,7 +19,7 @@
 - **Website:** agentberlin.ai
 - **One-Liner:** Berlin is an end-to-end SEO/AEO platform — talk to Berlin in a dashboard and it delivers outcomes across strategy, execution, and the underlying tools, replacing the need to hire an agency or build an in-house SEO team.
 - **Mission Statement:** To make world-class SEO and AEO outcomes accessible to every company by delivering the work itself — strategy, execution, and tools — through a single agent-driven platform rather than a toolchain or a headcount.
-- **Current Phase:** Platform launched late February 2026, with a repositioning in April 2026 from an agentic workflow infrastructure play to an end-to-end SEO/AEO platform that owns strategy, execution, and the underlying tools. Pre-commercial, in Founding Partner Program with 7 active design partners — 3 of whom use the platform daily. Two partners (Webandcrafts and miniOrange) are in final stages of converting to paid customers, with strong product champions driving adoption internally at each company. Now converting partners to paid customers on the repositioned platform.
+- **Current Phase:** Platform launched late February 2026, with a repositioning in April 2026 from an agentic workflow infrastructure play to an end-to-end SEO/AEO platform that owns strategy, execution, and the underlying tools — now delivered as a product + Forward Deployed Marketer (FDM) service offering for mid-market and traditional businesses, plus a standalone platform version for agencies (without FDM). Two active commercial conversations are anchoring the commercial transition: **miniOrange** (enterprise identity/security) is deep in technical due diligence — working through compliance questions and concerns before contract — and **CSP Agency** (large Canadian agency) is at contract signing stage for a fully paid pilot program. Earlier Founding Partner cohort has wound down; the go-forward motion is product + FDM sales to traditional businesses and agency-tier sales to SEO agencies.
 - **Key Contact(s):** Sherin Chacko Thomas — +91 890 474 5603
 
 ### Product Evolution (May 2025 – Present)
@@ -32,7 +32,7 @@ Berlin's current positioning is the result of focused product discovery over ~10
 
 3. **Programmable agentic workflow infrastructure (early 2026):** Repositioned as programmable infrastructure — a unified data, workflow, and intelligence layer where teams build and run their own agentic workflows without engineering overhead. Agencies and enterprise marketing teams engaged as Founding Partners, and this phase produced the core data engine, thin MCP layer, and workflow marketplace that Berlin still runs on today. The learning: even with lower engineering overhead, "build your own workflows" still asked customers to supply strategy and own orchestration — and most SEO buyers wanted the outcome, not a better workbench.
 
-4. **End-to-end SEO/AEO platform (April 2026 – current):** Repositioned Berlin as an end-to-end SEO/AEO platform that owns all three pillars of SEO implementation — strategy (what to do and why), execution (doing the work), and tools (the integrations and data sources needed to act). Users come to a dashboard, talk to Berlin, and Berlin delivers outcomes: it brings best-practice strategy by default, sets up execution, and actually executes, while customers can optionally bring their own strategy. The unified data, workflow, and MCP infrastructure built in phase 3 is now internal plumbing (the "tools" pillar) rather than a standalone product. USOL, previously positioned as a separate product, is now internal infrastructure Berlin uses to execute. The company now has one product: Berlin. This shift was driven by direct Founding Partner signal — buyers consistently compared Berlin to hiring an SEO agency or in-house team, not to a workflow automation tool, and wanted Berlin to own the outcome end-to-end rather than hand them a better toolkit.
+4. **End-to-end SEO/AEO platform with Forward Deployed Marketer (April 2026 – current):** Repositioned Berlin as an end-to-end SEO/AEO platform that owns all three pillars of SEO implementation — strategy (what to do and why), execution (doing the work), and tools (the integrations and data sources needed to act). The core offering is now **product + Forward Deployed Marketer (FDM)**: the customer connects their domain and accounts (GSC, GA4, CMS, etc.) and Berlin executes autonomously — no conversations required — while an assigned FDM shapes strategy, reviews output, and owns the customer relationship. Customers can talk to Berlin if they want to, but they don't need to. A separate **agency version** of the platform is available for SEO agencies who want to use Berlin underneath their own client delivery; this version does not include an FDM. The unified data, workflow, and MCP infrastructure built in phase 3 is now internal plumbing (the "tools" pillar) rather than a standalone product. USOL, previously positioned as a separate product, is now internal infrastructure Berlin uses to execute. The company now has one product with two packaged offerings: **Berlin + FDM** for end customers, and **Berlin for Agencies**. This shift was driven by direct partner signal — buyers consistently compared Berlin to hiring an SEO agency or in-house team, not to a workflow automation tool, and wanted an assigned human to own the outcome alongside the platform.
 
 ---
 
@@ -44,8 +44,9 @@ Berlin's current positioning is the result of focused product discovery over ~10
   Berlin replaces that entire stack — the agency, the in-house hires, and the pile of SEO tools they use — with a single end-to-end SEO/AEO platform. The user comes to a dashboard, tells Berlin what they want, and Berlin delivers the outcome: it brings best-practice strategy by default, sets up execution, and actually executes using an integrated tool layer (keyword data, crawlers, GSC/GA4, CMS, social, AI-search visibility) underneath. Customers with their own strategy can bring it; those without get Berlin's. The alternative Berlin replaces is not "a workflow automation tool" — it is "hiring an SEO agency or building an in-house SEO team."
 
 - **Who experiences this problem?**
-  - **Primary:** Companies that need SEO/AEO outcomes and are currently paying an agency, staffing an in-house team, or trying to do both and feeling the cost and coordination pain. Especially acute at Series B–C SaaS, mid-market, and e-commerce where SEO is a real revenue channel but the team is small or stretched.
-  - **Secondary:** SEO agencies themselves — who face the same strategy + execution + tools burden, client-by-client, and are increasingly out-competed by AI-native delivery.
+  - **Primary (traditional businesses that default to agencies):** Warehouses, clinics, trading firms, and other B2B/services operators in the $500K–$2M MRR band who have no internal SEO resource and are either actively evaluating an agency or already paying one they're unhappy with. This segment has the sharpest pain: SEO is a meaningful revenue channel, but they have no way to judge agency quality, no leverage to switch, and no internal skill to run it themselves. Every agency they've tried has overpromised and underdelivered.
+  - **Also primary (SEO agencies themselves):** Face the same strategy + execution + tools burden, client-by-client, and are increasingly out-competed by AI-native delivery. They need a platform that lets them deliver more per account without proportional headcount. Berlin's agency-tier product targets exactly this.
+  - **Secondary:** Series B–C SaaS, mid-market, and e-commerce where SEO is a real revenue channel but the team is small or stretched.
   - **Emerging:** Companies that want an AEO/GEO story but cannot find an agency or hire that credibly delivers one.
 
 - **How are they currently dealing with it?**
@@ -154,12 +155,11 @@ The strongest market validation is where top-tier capital is deploying. In the A
   A core layer of the platform is a library of pre-built, vetted agentic workflows that Berlin draws on to execute common and complex SEO operations — keyword research, technical audits, content briefs, AEO monitoring and response, reporting, and more. These aren't simple templates; they are fully structured agentic workflows that orchestrate data retrieval, analysis, LLM reasoning, and action-taking across multiple systems. Users never have to assemble these themselves; Berlin selects, configures, and runs them based on the outcome the user asked for.
 
 - **How does it work? (plain language)**
-  The user opens Berlin, connects their domain and key accounts (GSC, GA4, CMS, social, etc.), and has a conversation with Berlin about what they want — more organic traffic, visibility in ChatGPT for a specific category, a technical audit, a content plan for a new product line, AEO monitoring and remediation, whatever the job is. Berlin proposes a strategy (or accepts the one the customer brings), lays out the execution plan, and starts doing the work: pulling and caching keyword data, crawling the site and competitors, generating briefs and drafts, pushing changes to the CMS via integrations, monitoring AI-search visibility, and reporting results back in the dashboard. Anything that needs human approval routes through a review step; everything else runs on its own schedule. The entire experience is "talk to Berlin, get outcomes" — not "learn a tool, build a workflow."
+  The customer connects their domain and the accounts Berlin needs to work with (GSC, GA4, CMS, social, etc.). From that point forward, Berlin executes on its own — pulling and caching keyword data, crawling the site and competitors, generating briefs and drafts, pushing changes to the CMS via integrations, monitoring AI-search visibility, and reporting results back in the dashboard. **No conversation is required.** Customers can talk to Berlin if they want to — to steer strategy, ask for a specific outcome, or inspect reasoning — but they don't need to. For end customers (mid-market and traditional businesses), the core offering is **Berlin + a Forward Deployed Marketer (FDM)**: an assigned human who shapes strategy, reviews output, and owns the relationship. For SEO agencies, a separate **agency-tier product** exposes Berlin as the execution layer beneath the agency's own delivery — this version does not include an FDM, because the agency provides that layer themselves. Anything that needs human approval routes through a review step; everything else runs on its own schedule.
 
 - **Core value proposition:**
-  - **For mid-market and enterprise companies:** Get agency-quality SEO and AEO outcomes without hiring an agency or building an in-house team. One platform covers strategy, execution, and the tools that execution depends on — at a fraction of the cost and ramp time of the alternatives.
-  - **For agencies:** Deliver more client outcomes with the same team by letting Berlin run the underlying strategy, execution, and tooling layer. Agencies focus on account relationships and senior judgment; Berlin does the work.
-  - **For in-house teams:** A single platform that delivers outcomes and reports on them, instead of a stack of dashboards and a hiring plan.
+  - **For mid-market and traditional businesses (warehouses, clinics, trading firms, B2B services at $500K–$2M MRR):** Get agency-quality SEO and AEO outcomes without hiring an agency or building an in-house team. Berlin + an assigned FDM cover strategy, execution, and the tools that execution depends on — at a fraction of the cost and ramp time of the alternatives. For companies already paying an agency they're unhappy with, Berlin + FDM delivers a better outcome at a fraction of the cost.
+  - **For SEO agencies:** Deliver more client outcomes with the same team by letting Berlin run the underlying strategy, execution, and tooling layer. Agencies focus on account relationships and senior judgment; Berlin does the work. The agency-tier product is priced and packaged without an FDM.
 
 - **Key differentiators vs. alternatives (agencies, in-house hires, and SEO tools):**
   - **End-to-end, not a tool.** Berlin owns strategy, execution, and tools in one place. Agencies deliver all three but at human cost and speed; SEO tools deliver only the last pillar. Berlin is the only option that delivers all three as a platform.
@@ -197,23 +197,28 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 ## 6. Ideal Customer Profile (ICP)
 
-> Detailed ICP files for each segment exist in the `/marketing/ICP/` folder. Summary below.
+> Full ICP discovery framework lives in `/customers/icp.md`. Summary below. The ICP is organized around two go-to-market motions: **Berlin + FDM** (sold to end customers) and **Berlin for Agencies** (sold to SEO agencies).
 
-### Primary ICP: Medium SEO / Marketing Agencies
+### Primary ICP (Berlin + FDM): Traditional Businesses with Agency Default
 
 | Segment                                    | Core Pain                                                           | Value Hook                                                                 | Top Roles                                       | Buying Signal                               |
 | ------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------- |
-| **Medium Agencies (5–20 clients)** | Reporting doesn't scale; no GEO/AEO story; can't grow without proportional headcount; margin compression | Deliver more client outcomes with the same team — Berlin owns strategy, execution, and tooling underneath agency account management; sell AI visibility as new service line | Agency Owner, Director of SEO, Head of Ops | FOMO on AI SEO; client churn risk; growth-focused |
+| **Traditional businesses, $500K–$2M MRR, no internal SEO resource** (warehouses, clinics, trading firms, B2B services, local/regional operators) | No one internally owns SEO; agencies are the default path but they've either been burned or are too expensive to commit to; AEO/GEO is a term they've started hearing and don't know what to do with | Berlin + an assigned FDM replaces the agency decision entirely — the platform executes, the FDM owns strategy and the relationship, at a fraction of an agency retainer | Founder/CEO, Head of Marketing (where one exists), Operations Lead | Actively considering an agency; previously burned by one; first inquiry about AI search visibility |
+| **Traditional businesses currently paying an agency they're unhappy with** | Paying $3K–$15K+/month with limited transparency and declining output; no AEO story; internal frustration with agency relationship but no obvious replacement | Berlin + FDM does the job better and at a fraction of the cost, with dashboard-level transparency the agency never provided | Founder/CEO, VP Marketing, Head of Growth | Agency contract renewal coming up; visible dissatisfaction in internal comms |
 
-### Secondary ICP: Large Agencies, E-Commerce & In-House Teams
+### Primary ICP (Berlin for Agencies): SEO / Marketing Agencies
+
+| Segment                                    | Core Pain                                                           | Value Hook                                                                 | Top Roles                                       | Buying Signal                               |
+| ------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------- |
+| **SEO / digital agencies (5–100+ clients)** | Reporting doesn't scale; no GEO/AEO story; can't grow without proportional headcount; margin compression | Deliver more client outcomes with the same team — Berlin owns strategy, execution, and tooling underneath the agency's account management; sell AI visibility as a new service line. The agency-tier product does not include an FDM — the agency provides that layer themselves. | Agency Owner, Director of SEO, Head of Ops | FOMO on AI SEO; client churn risk; growth-focused |
+
+### Secondary ICP: SaaS, E-Commerce & In-House Teams
 
 | Segment | Core Pain | Value Hook | Top Roles | Buying Signal |
 |---------|-----------|------------|-----------|---------------|
-| **Large Agencies (20+ clients)** | Reporting doesn't scale at volume; no GEO/AEO story; enterprise governance needs | Berlin delivers client outcomes underneath agency account management; AI visibility as new service; team governance & review | Agency Owner, Director of SEO, Head of Ops | FOMO on AI SEO; client churn risk; capacity constraints |
 | **E-Commerce / Marketplaces** | Thousands of pages; AI shopping invisible; can't staff enough SEO to cover catalog | Berlin executes at catalog scale across traditional and AI search; competitor intel included | Head of SEO, E-Commerce SEO Manager, VP Digital | Revenue attribution; programmatic SEO focus |
-| **Series B–C SaaS In-House** | Can't justify hiring a full SEO team; SEO→pipeline attribution broken; AI discovery invisible | Replace the hire (or the agency) with Berlin; outcomes + AI visibility metrics for leadership | Head of Growth, VP Marketing, Founder | Need to justify SEO spend internally |
-| **Mid-Market (no SEO team)** | Traffic declining; no one internally owns SEO; can't explain AI impact | Berlin supplies strategy and executes — customer doesn't need to hire before seeing outcomes | VP Marketing, Head of Growth, CMO | Can't afford agency retainer; can't hire fast enough |
-| **Companies currently paying an agency** | Paying $3K–$15K+/month with limited transparency; slow ramp; AEO capability thin | Berlin delivers the same outcomes at lower cost with full transparency and dashboard-level visibility | VP Marketing, CMO, Head of Growth | Retainer fatigue; underwhelming AEO story from agency |
+| **Series B–C SaaS In-House** | Can't justify hiring a full SEO team; SEO→pipeline attribution broken; AI discovery invisible | Replace the hire (or the agency) with Berlin + FDM; outcomes + AI visibility metrics for leadership | Head of Growth, VP Marketing, Founder | Need to justify SEO spend internally |
+| **Mid-Market SaaS (no SEO team)** | Traffic declining; no one internally owns SEO; can't explain AI impact | Berlin supplies strategy via the FDM and executes — customer doesn't need to hire before seeing outcomes | VP Marketing, Head of Growth, CMO | Can't afford agency retainer; can't hire fast enough |
 
 ### Deprioritized (for now)
 
@@ -235,21 +240,15 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 | Tier | Price | What's Included | Purpose |
 |------|-------|-----------------|---------|
-| **Free / Explorer** | $0 | Connect domain, get an initial SEO/AEO assessment and a sample of outcomes from Berlin | Top-of-funnel; let prospects experience Berlin's output before committing |
-| **Pro** | $199/month | Full end-to-end SEO/AEO execution for a single brand, base credit allocation, dashboard access | Core self-serve tier; designed for rapid adoption |
-| **Agency / Enterprise** | Custom | Multi-brand / multi-client, higher credit allocations, priority support, Forward Deployed Marketers (Berlin's team embeds to shape strategy and optimize execution on-site) | High-touch tier for agencies and enterprise customers with complex, multi-brand needs |
+| **Free / Explorer** | $0 | Connect domain, get an initial SEO/AEO assessment and a sample of outcomes from Berlin | Lightweight on-ramp; lets prospects see Berlin running on their own domain before engaging commercially |
+| **Berlin + FDM (end customers)** | Custom (tiered) | Full end-to-end SEO/AEO execution **with an assigned Forward Deployed Marketer** who owns strategy, reviews output, and owns the customer relationship | Core offering for mid-market and traditional businesses that would otherwise hire an agency or build an in-house team |
+| **Berlin for Agencies** | Custom (tiered) | Multi-brand / multi-client platform access, higher credit allocations, agency governance features. **No FDM** — the agency provides that layer themselves. | Agency-tier product for SEO / digital agencies running Berlin underneath their own client delivery |
 
-*Pricing evolution (three phases):*
+*Pricing evolution:* Not yet planned. The current pricing structure above reflects what's live today. The right next step on pricing — whether outcome-based pricing, tier restructure, or repricing the FDM layer — will be informed by the first paid cohort (CSP Agency, miniOrange, and early FDM pilots) rather than pre-committed in advance.
 
-  - **Phase 1 — Founding Partners (now → April 2026):** $199/month flat subscription with credit top-ups. All capabilities accessible. The goal is learning velocity — understanding which outcomes customers value most, what Berlin needs to own end-to-end, and what drives retention. 5 founding partners at $199/month = ~$1K MRR.
+  *Forward Deployed Marketers (core to the end-customer offering):* Berlin's FDMs embed with end customers to shape strategy, review execution, and own the relationship. **FDM is not a premium add-on — it is part of the core Berlin offering for mid-market and traditional businesses.** The agency-tier product is the only version sold without an FDM (agencies provide that layer themselves). Pricing for the combined Berlin + FDM offering is set at the tier level rather than as a standalone line item; the FDM layer also surfaces patterns that feed back into Berlin's default strategy and execution playbooks.
 
-  - **Phase 2 — Early Growth (May → August 2026):** Expand customer base through founder-led sales supported by first GTM hire, plus early self-serve signups. Blended ARPU rises to $300–$500/month as credit usage increases and the tier structure segments — multi-brand / multi-client support and higher-volume execution move to higher tiers.
-
-  - **Phase 3 — Outcome-Based Pricing (September 2026+):** Pricing anchored to the cost of the alternative — an SEO agency retainer or an in-house hire — not to software benchmarks. A fully loaded SEO specialist costs $90–97K/year in the US ($72K salary + 25–35% benefits/payroll taxes); mid-market agency retainers run $3K–$15K+/month. Berlin targets outcome-based pricing in the $800–$1,200/month range for mid-market customers — a fraction of those alternatives, supported by quantified results from founding partner case studies. Customers compare Berlin to an agency retainer or a headcount, not a tool at $200/month per seat.
-
-  *Forward Deployed Marketers:* A services layer where Berlin's marketing specialists embed with customers to shape strategy and optimize how Berlin executes against it. Priced at $2,000+/month. Dual purpose: accelerates customer time-to-value and surfaces patterns that feed back into Berlin's default strategy and execution playbooks. Available as a standalone service or bundled into agency/enterprise contracts.
-
-- **Average contract value (ACV):** Current: ~$2,400/year (launch pricing at $199/month). Target blended ACV: $6,000–$10,000/year as outcome-based pricing matures, with agency/enterprise accounts at the higher end ($14,000–$24,000+/year including Forward Deployed Marketer services).
+- **Average contract value (ACV):** Pre-revenue on the new offering; ACV to be established from the first paid cohort (CSP Agency paid pilot + initial Berlin + FDM closes). Target blended ACV is anchored to the alternatives customers compare Berlin to: for Berlin + FDM, an agency retainer ($3K–$15K+/month) or an SEO hire ($90–120K/year US, $700+/month India); for the agency-tier product, a per-seat/per-client platform plus tooling spend ($14K–$24K+/year per account at higher tiers).
 
 - **Gross margin:** ~80% on core platform infrastructure (data engine, integrations, execution runtime, crawlers). LLM tokens provided at cost (zero margin) — a strategic decision to maintain pricing parity with native LLM apps and remove adoption friction. Customers who bring their own LLM via Berlin's interoperability layer eliminate this cost line entirely. Blended gross margin depends on the mix of BYO-LLM vs. Berlin-provided tokens; as interoperability adoption grows, blended margin trends toward the 80% infrastructure margin.
 
@@ -263,46 +262,33 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 ## 8. Traction & Metrics
 
-> **Current phase:** Pre-commercial launch. Berlin has gone through two repositionings as understanding of the market has sharpened — first, in late 2025, from a conversational SEO tool to programmable agentic workflow infrastructure targeting agencies and enterprise marketing teams; and second, in April 2026, to an end-to-end SEO/AEO platform that owns strategy, execution, and tools, replacing the agency or in-house SEO team customers would otherwise hire. The company is currently in its Founding Partner Program, demonstrating strong engagement with design partners before converting to paid customers and scaling go-to-market.
+> **Current phase:** Pre-commercial launch. Berlin has gone through two repositionings as understanding of the market has sharpened — first, in late 2025, from a conversational SEO tool to programmable agentic workflow infrastructure targeting agencies and enterprise marketing teams; and second, in April 2026, to an end-to-end SEO/AEO platform (product + Forward Deployed Marketer) that replaces the agency or in-house SEO team customers would otherwise hire, with a separate agency-tier version for SEO agencies. The earlier Founding Partner cohort has wound down; the go-forward commercial motion is anchored by two active sales conversations — miniOrange (technical due diligence) and CSP Agency (contract signing for a fully paid pilot).
 
 - **MRR / ARR:**
-  - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity. All historical paid users are on the previous version of the product — none on the current platform. Total historical revenue to date: ~$2,000 USD. These users have not yet churned but are expected to as the product positioning has evolved away from their use case — unless Berlin launches a services wing (under active consideration) that would continue to serve this segment.
-  - New platform: Pre-revenue. Currently in Founding Partner Program phase with unpaid design partners. Two partners (Webandcrafts and miniOrange) are in final stages of converting to paid customers, with dedicated product champions driving internal adoption at each company.
+  - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity. All historical paid users are on the previous version of the product — none on the current platform. Total historical revenue to date: ~$2,000 USD.
+  - New platform: Pre-revenue. Two active commercial conversations: **miniOrange** (enterprise identity/security — stuck at technical/compliance due diligence, actively being worked through) and **CSP Agency** (large Canadian agency — at contract signing stage for a fully paid pilot program on the agency-tier version of the product).
 
-> **Context on timing:** The current platform version launched in late February 2026 — approximately four weeks ago. The Founding Partner Program is deliberately structured as an 8-week engagement with clear conversion milestones. Two partners are in active conversion discussions, with strong internal champions at each company. The $6M cap reflects this pre-revenue, pre-conversion stage while providing meaningful upside for early believers — well below the ~$10M median for pre-seed rounds in this raise range.
+> **Context on timing:** The current platform version launched in late February 2026. The earlier Founding Partner cohort produced direct product signal that drove the April 2026 repositioning to product + FDM; two of those conversations (miniOrange and CSP Agency) have matured into commercial discussions on the new offering. The $6M cap reflects this pre-revenue, pre-conversion stage while providing meaningful upside for early believers — well below the ~$10M median for pre-seed rounds in this raise range.
 
 - **Total revenue to date:** ~$2,000 USD (legacy product, pre-pivot)
 
 - **Growth rate:** N/A — pre-commercial launch on new platform.
 
 - **Number of customers / users:**
-  - 5 total historical paid users (pre-pivot ICP, via Stripe — still active but expected to churn as product positioning has evolved)
-  - 7 active pilot partners on the new platform (Founding Partner Program, unpaid — 2 in final stages of paid conversion)
+  - 5 total historical paid users (pre-pivot ICP, via Stripe)
+  - 2 active commercial conversations on the new platform (miniOrange, CSP Agency)
 
 - **Retention / churn:** Insufficient data on the new platform. Legacy product retention data is not representative of the current positioning and ICP.
 
-- **Engagement metrics (early signals):**
-  - 7 companies actively using the new platform
-  - 3 of 7 partners use the platform daily, with multiple touchpoints per day
-  - Partners are working through early-stage friction to integrate Berlin into their workflows — a strong signal that the core value proposition resonates
-  - ~20 workflows executed across pilot partners (Berlin running work on their behalf)
-  - Pilots using Berlin across multiple projects and clients
-  - Product has expected kinks at 3 weeks old, but engagement intensity indicates clear pull
+- **Active commercial conversations:**
+  - **miniOrange** — Enterprise identity and security platform (miniorange.com). Engaged on Berlin + FDM. Currently stuck in technical/compliance due diligence; Berlin is actively working with their team on compliance questions and concerns before contract.
+  - **CSP Agency** — Large Canadian agency. At **contract signing stage for a fully paid pilot program** on the agency-tier version of Berlin.
 
-- **Pipeline:**
-  - 7 active pilots in Founding Partner Program:
-    - **Fliki.ai** — AI video platform, ~$1M MRR. In-house marketing team piloting Berlin for SEO operations.
-    - **Webandcrafts** — Full-service digital agency, 100+ clients. Evaluating Berlin to deliver SEO/AEO outcomes across its client base at scale. In final stages of converting to paid — has a dedicated product champion internally.
-    - **BlockSurvey** — Privacy-focused survey platform, ~$20K MRR. Piloting Berlin for SEO and content workflows.
-    - **Search Indicators** — SEO agency, 20+ clients. Piloting Berlin for multi-client delivery.
-    - **miniOrange** — Enterprise identity and security platform (miniorange.com). In final stages of converting to paid — has a dedicated product champion internally.
-    - **CSP Agency** — Canadian agency, actively working through Founding Partner Program. Has a dedicated product champion internally.
-    - 1 additional agency partnership in progress (Swedish agency with high-profile enterprise clients)
-  - Active founder-led outreach ramping
+- **Pipeline signals (prior Founding Partner engagement):** The earlier Founding Partner cohort (Fliki.ai, BlockSurvey, Search Indicators, Swedish agency partnership in progress, and others) produced the direct buyer signal that drove the April 2026 shift to product + FDM — buyers consistently asked for an assigned human owner alongside the platform rather than "build your own workflows." Those conversations have been reshaped by the new offering; active commercial discussions have narrowed to the two above.
 
-- **Notable customers / logos:** Fliki.ai, Webandcrafts, BlockSurvey, Search Indicators, miniOrange, CSP Agency
+- **Notable customers / logos:** miniOrange, CSP Agency
 
-- **Case studies or testimonials:** In progress. Strong relationships established with Fliki.ai, Webandcrafts, and miniOrange for case study development. The Founding Partner Program is specifically designed to produce 2–3 publishable case studies within 8 weeks of engagement.
+- **Case studies or testimonials:** In progress. Case study development is anchored on CSP Agency (paid pilot) and miniOrange (once compliance is resolved and contract signs).
 
 ---
 
@@ -310,17 +296,19 @@ The strongest market validation is where top-tier capital is deploying. In the A
 
 ### Phase & Objective
 
-Berlin is in founder-led, community-driven GTM mode. The immediate objective is to convert 5 Founding Partners to paid customers by end of April 2026 — generating the first ~$1K MRR, producing case studies, and establishing the first wave of champions. Every channel below feeds this singular near-term goal. The GTM strategy is sequenced: close founding partners first, then activate the founder-led content engine (LinkedIn + Twitter) and outbound (LinkedIn outreach + email outreach) simultaneously, with community building continuing through Reddit. Influencer marketing spend scales up only after founding partners are closed and 2–3 testimonials and use cases are in hand.
+Berlin is in founder-led commercial GTM mode. The immediate objective is to close the two active commercial conversations (CSP Agency paid pilot, miniOrange enterprise) and build a repeatable pipeline for **Berlin + FDM** (end customers) and **Berlin for Agencies** (SEO agencies). The GTM strategy runs on two motions — product + FDM sales to end customers (with a specific emphasis on traditional businesses in India and similar markets), and agency-tier sales to SEO agencies — supported by content, community, outbound, micro-influencer, and a proof-of-concept autonomous affiliate site.
 
-### Founding Partner Program
+### India Field Sales (Traditional Businesses)
 
-The Founding Partner Program is Berlin's primary conversion mechanism during this phase. A small cohort of 5 agencies and in-house SEO teams receive direct product influence and embedded support from Berlin's team to shape strategy and optimize how Berlin executes against their specific operations — in exchange for 8 weeks of weekly calls, walkthroughs of Berlin's output, and candid feedback. Founding Partners pay $199/month. This accelerates time-to-value and produces battle-tested strategy and execution patterns that feed back into Berlin's default playbooks. The program is designed to produce 2–3 publishable case studies and organic word-of-mouth from practitioners who helped shape the platform.
+Because Berlin's current pricing works for the Indian market, Berlin is running a **physical field sales motion in India** — walking into shops, offices, clinics, warehouses, and trading firms in the $500K–$2M MRR band to generate leads and close customers directly. These are businesses that default to agencies when they start thinking about SEO; most have no internal SEO resource and most have either been burned by an agency or are dissatisfied with their current one. Physical outreach shortens the buying cycle dramatically for this segment — decision makers are on-site, the buying conversation is face-to-face, and Berlin's FDM (who can also be present or on a call) replaces the agency pitch directly.
+
+This motion is complementary to the founder-led inbound channels and is anchored to a specific geography where Berlin has network density and where the cost structure of the offering maps cleanly to local willingness-to-pay.
 
 ### Content as the Primary GTM Engine
 
 Content is Berlin's trump card. In a market where every SEO tool company publishes content *about* SEO, Berlin's founder brings a fundamentally different angle: an agentic AI infrastructure expert who turned to SEO — not an SEO who picked up AI tooling. This distinction matters. Most "agentic SEO" content in the market comes from the latter perspective and stays at a surface level. Content from an agent-native builder — explaining how AI-native systems actually deliver SEO and AEO outcomes — is more tactical, more practical, and more credible to the practitioners and buyers Berlin targets.
 
-**Founder-led thought leadership (LinkedIn)** is the primary channel. Sherin publishes educational and strategic content that fills a clear gap in the current SEO conversation — practical knowledge on how agents deliver SEO/AEO outcomes that the community can't get elsewhere. This positions Berlin's founder as the go-to voice on AI-native SEO, drives qualified inbound to the Founding Partner Program, and builds the personal brand that early-stage B2B companies depend on for trust.
+**Founder-led thought leadership (LinkedIn)** is the primary channel. Sherin publishes educational and strategic content that fills a clear gap in the current SEO conversation — practical knowledge on how agents deliver SEO/AEO outcomes that the community can't get elsewhere. This positions Berlin's founder as the go-to voice on AI-native SEO, drives qualified inbound to both the end-customer (Berlin + FDM) and agency-tier motions, and builds the personal brand that early-stage B2B companies depend on for trust.
 
 ### Agentic SEO Education & Community
 
@@ -332,13 +320,7 @@ Every education touchpoint — subreddit post, book chapter, meetup demo — is 
 
 ### Micro-Influencer Program
 
-Berlin is building a network of micro-influencers — SEO practitioners and agency operators — who demo Berlin on their own channels. Influencers receive free platform access and earn affiliate commissions on referrals. The strategy prioritizes authentic output demos over polished ads: practitioners showing real outcomes Berlin produced for real sites, which builds trust and drives qualified inbound.
-
-### Product-Led Growth Engine: Free Tier Outcomes
-
-Berlin's free tier is the top of the PLG funnel. A prospect connects their domain, and Berlin produces a real slice of outcomes — an AEO visibility snapshot, a technical audit, a first round of keyword and content recommendations — at minimal cost to Berlin. The thesis: if a prospect can see Berlin do real work on their own site in minutes, the platform becomes indispensable before any commercial conversation begins. Customers convert to paid once they want ongoing, multi-brand, or higher-volume execution.
-
-Each demonstrable outcome doubles as a marketing asset: video walkthroughs, social media demos, and influencer content are built around individual results, creating a steady stream of highly specific, highly shareable content.
+Berlin is building a network of micro-influencers — SEO practitioners and agency operators — who demo Berlin on their own channels. Influencers receive free platform access and earn affiliate commissions on referrals. The strategy prioritizes authentic output demos over polished ads: practitioners showing real outcomes Berlin produced for real sites, which builds trust and drives qualified inbound — especially for the agency-tier product where practitioners trust other practitioners.
 
 ### Proof-of-Concept: Autonomous Affiliate Site
 
@@ -350,19 +332,19 @@ Berlin operates Snake.blue, an AI-first web crawler with native MCP support — 
 
 ### Outbound Engine
 
-Berlin is building a structured outbound motion alongside the inbound and community channels. **LinkedIn outbound** is the highest-priority channel — targeted outreach to agency owners, heads of SEO, and marketing ops leaders in the ICP, leveraging the founder's growing thought-leadership presence. **Email outreach** supplements LinkedIn as a parallel channel for prospects not active on social. **Twitter/X** serves as an additional content distribution and engagement channel. The outbound engine activates in full once founding partners are closed and initial testimonials are available to use as social proof in outreach sequences.
+Berlin is building a structured outbound motion alongside the inbound, community, and field-sales channels. **LinkedIn outbound** is the highest-priority digital channel — targeted outreach to agency owners, heads of SEO, and marketing ops leaders in the ICP, leveraging the founder's growing thought-leadership presence. **Email outreach** supplements LinkedIn as a parallel channel for prospects not active on social. **Twitter/X** serves as an additional content distribution and engagement channel. Digital outbound complements the India field sales motion rather than replacing it — different segments respond to different outreach channels.
 
 ### Sales Motion
 
-Current: founder-led inbound and outbound, converting through the Founding Partner Program. 2 partners (Webandcrafts and miniOrange) in final conversion stages. Near-term: as the free tier and community channels scale, the motion shifts toward PLG-assisted sales — prospects self-qualify by seeing Berlin's output on their own domain, and founder-led sales closes high-value accounts. Longer-term: sales-led with PLG underpinning, supported by case studies, community proof, and the autonomous affiliate site as a reference.
+Current: founder-led, fully sales-led across two tracks — (1) product + FDM sales to end customers, with CSP Agency at contract signing and miniOrange in compliance due diligence, and (2) India field sales to traditional businesses in the $500K–$2M MRR band. Agency-tier sales are handled on the same founder-led motion, supported by the agency-native content and community channels. **Berlin is not pursuing a PLG channel at this time** — the offering centers on Berlin + FDM, which is inherently a sales-led motion, and the agency-tier product is also sold directly. As the team grows (FDM capacity, field reps), the sales motion scales by adding capacity rather than by switching to self-serve.
 
 ### Expansion & Upsell
 
-Land with the free tier or a single brand/outcome (e.g., AEO visibility plus remediation), expand into full SEO/AEO ownership and multi-brand coverage. Per-brand/per-client pricing encourages agencies to add more clients onto Berlin. Agentic coding environment integration creates deep stickiness for the subset of customers who want Berlin available inside Claude Code, Claude Cowork, ChatGPT Codex, or Openclaw alongside the dashboard.
+Land with a single brand/outcome and expand into full SEO/AEO ownership and multi-brand coverage. Per-brand/per-client pricing encourages agencies to add more clients onto Berlin. Agentic coding environment integration creates deep stickiness for the subset of customers who want Berlin available inside Claude Code, Claude Cowork, ChatGPT Codex, or Openclaw alongside the dashboard. FDM engagements deepen the relationship and create a structural hook for upsell into adjacent channels.
 
 ### Geographic Focus
 
-No geographic restriction in this phase. Berlin's product is cloud-native and language-agnostic for core SEO operations. Initial traction is founder-network-driven (spanning US, India, EU, and Nordics based on current pilot distribution). Meetup locations will follow community density rather than a predetermined geographic playbook.
+Two geographic emphases in this phase: **India** for field sales into traditional businesses (the segment where Berlin's pricing already works locally and where physical outreach is a legitimate channel), and **English-speaking markets globally** (US, Canada, EU, Nordics) for the agency-tier product and digital inbound/outbound. Berlin's product is cloud-native and language-agnostic for core SEO operations. Initial traction is founder-network-driven and spans US, India, EU, and Nordics; meetup locations will follow community density rather than a predetermined geographic playbook.
 
 ---
 
@@ -377,6 +359,18 @@ The AI search optimization space has attracted significant venture capital since
 **AirOps** — $225M valuation, $60M raised (Greylock, Unusual Ventures, Wing). Content engineering platform that analyzes brand performance across on-site and off-site channels, then creates and refreshes brand-consistent content at scale. Clients include Ramp, Webflow, Kayak, Klaviyo, Wiz. Grew from 20 to ~100 employees in 2025. *Limitation:* AirOps is content-first with modular workflow steps ("Power Steps") that customers compose themselves. It excels at content creation and optimization but covers only part of the execution pillar — customers still need strategy, technical SEO, rank tracking, competitive monitoring, and AEO response from somewhere else. Berlin covers all three pillars end-to-end.
 
 **Daydream** — $23.4M raised (First Round Capital, Basis Set Ventures). Automates programmatic SEO for AI search by connecting product feeds, databases, and internal docs to generate and manage large volumes of structured content pages. *Limitation:* Narrowly focused on programmatic content generation from structured data. Doesn't cover strategy, technical SEO, AEO monitoring, or broader execution — customers still need an agency or team on top.
+
+### Closest Competitive Category: Service-Built-Into-Product (FDM + Product)
+
+The most architecturally similar competitors are companies delivering a **managed service on top of their own product** — the same shape as Berlin + FDM. This is a distinct category from pure-SaaS SEO tools and from pure-service agencies.
+
+**Daydream (withdaydream.com)** — Covered above for its product capabilities; also operates a service layer on top of its programmatic SEO product, making it a genuine service-in-product competitor. *Limitation (for the service dimension):* Still scoped to programmatic content; the service layer helps customers run that specific use case rather than owning end-to-end SEO/AEO outcomes. Berlin + FDM is positioned to own the full outcome, not one sub-pillar.
+
+**Maintouch (maintouch.com)** — SEO and content operations delivered as a managed service on top of their own product platform. Same architectural shape as Berlin + FDM: product-native execution paired with a human service layer. *Limitation:* Targets a different buyer band and does not have Berlin's end-to-end execution stack (proprietary crawl, 80+ ranking signals, thin MCP architecture). The product underneath is narrower, which caps what the service layer can credibly own.
+
+**Gushwork (gushwork.ai)** — Service + product company delivering SEO outcomes through a managed motion with a proprietary platform underneath. Directly comparable in go-to-market shape to Berlin + FDM. *Limitation:* Weaker on AEO/GEO as a first-class capability and on the technical depth of the execution stack; their service layer depends on a product that was not built for autonomous end-to-end execution of the three SEO pillars. Berlin's architectural starting point — owning strategy, execution, and tools from day one — is structurally different.
+
+**Why Berlin wins in this category:** Same go-to-market shape (product + managed service), but Berlin's underlying platform is materially deeper — end-to-end execution across all three pillars, proprietary crawl infrastructure (Snake.blue), cached keyword intelligence, 80+ ranking signals, and thin MCP architecture that solves hallucination. The FDM layer sits on top of a product that is genuinely capable of autonomous execution; the competitors' service layers sit on top of narrower product bases and end up absorbing more of the work themselves, which caps margin and scale.
 
 **Peec AI** — $100M+ valuation (tripled in 4 months), $21M raised (Singular). Berlin-based European GEO leader using proprietary UI scraping to simulate real user interactions with AI search engines. 1,300+ companies and agencies; $4M+ ARR in 10 months. Clients include Axel Springer, Chanel, n8n, ElevenLabs, TUI. *Limitation:* Dashboard-focused visibility tracking and sentiment analysis. Tells you where you're visible; doesn't execute strategy, content, or technical fixes to change it. Not a replacement for an agency or in-house team — a complement to one.
 
@@ -464,6 +458,8 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work, or ke
 
 **vs. Autonomous agents (Search Atlas/OTTO, Relixir):** Black-box systems where the agent decides and executes with limited transparency, narrow scope (usually content or technical fixes only), and no strategy layer. Berlin covers all three pillars, keeps the user in the driver's seat via the dashboard, and exposes human-in-the-loop review where it matters.
 
+**vs. Service-built-into-product competitors (Daydream, Maintouch, Gushwork):** These are the closest analogues to Berlin + FDM in go-to-market shape — a managed human service wrapped around a proprietary product. The difference is depth of the product underneath. Daydream is narrow (programmatic content), Maintouch and Gushwork sit on narrower execution stacks than Berlin's. When the product underneath is genuinely capable of autonomous end-to-end execution across all three SEO pillars, the FDM layer is leverage — when the product is narrow, the service layer ends up doing the work and the economics degrade. Berlin is architected so the FDM is strategic and relational, not operational.
+
 ### Defensibility
 
 - **Technology / IP** — End-to-end SEO/AEO execution stack, proprietary crawl infrastructure (Snake.blue), integrated keyword data layer with compounding cache, 80+ ranking signal intelligence layer, and thin MCP architecture that solves the hallucination problem inherent in standard tool-use protocols. Purpose-built for agentic execution across the three pillars — incumbents cannot retrofit this without fundamental rebuilds.
@@ -497,16 +493,17 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work, or ke
 
 ## 12. Team
 
-### Founders
+### Founders and Leadership
 
 | Name | Role | Background | LinkedIn |
 |------|------|------------|----------|
 | Sherin Chacko Thomas | Founder & CEO (Sole Member) | Co-built RedisAI (most performant runtime for AI in production at the time). Infrastructure engineer at Lightning.ai (creators of PyTorch Lightning, one of the most popular deep learning libraries). Author of the first published book on PyTorch. Founded and scaled a dev + marketing agency in Dubai to $350K revenue in year two. Combines deep AI infrastructure engineering with firsthand understanding of SEO workflows, agency pain points, and client dynamics. | [LinkedIn](https://linkedin.com/in/hhsecond) |
+| Rhea David | CMO | Two-time founder. Led media and product marketing at WeWork India. Owns go-to-market, brand, and the FDM layer strategy. Combines marketing leadership at scale with founder-level ownership of commercial motions. | — |
 
-- **Key hires planned:** Two key hires with this raise: (1) GTM hire (growth marketer / community manager) immediately after first 5 paying customers — to build the content flywheel, manage influencer outreach, and scale high-touch sales, reducing single-point-of-failure risk and allowing the founder to focus on product and technical architecture; (2) Full-stack developer at month 3–4 — to build the PLG self-serve experience, improve platform reliability, and expand the integration library. Both roles based in India. A Forward Deployed Marketer contractor will be added as needed for high-touch customer delivery.
+- **Key hires planned:** Priority hires with this raise: (1) **FDM capacity** — scaling Forward Deployed Marketer headcount to support the Berlin + FDM offering as end-customer conversations close; this is the highest-leverage hire because the offering is rate-limited by FDM capacity. (2) **India field sales reps** — on-the-ground reps running physical outreach to traditional businesses (shops, offices, clinics, warehouses, trading firms) in the $500K–$2M MRR band. (3) **Full-stack developer** at month 3–4 to improve platform reliability, expand the integration library, and support the two product packages (Berlin + FDM and Berlin for Agencies). All roles based in India where cost structure is highly competitive for senior talent.
 
 - **Why is this team uniquely positioned to win?**
-  Founder combines AI infrastructure engineering with hands-on agency experience — a rare combination that is precisely what this product requires. Co-built RedisAI (the most performant AI-in-production runtime at the time), then built AI app infrastructure at Lightning.ai (creators of PyTorch Lightning). Authored the first published book on PyTorch. After Lightning, founded a dev + digital marketing agency in Dubai, scaling to $350K in year two before shutting it down to go all-in on Berlin. This background means the founder has both built production AI systems at scale and personally experienced the exact agency pain points Berlin solves — a dual perspective that's rare in this market and enables faster iteration than competitors who have only one side of the equation.
+  The founding team pairs a rare AI-infrastructure-plus-agency background at the CEO level with a two-time founder CMO who has run marketing at scale. Sherin combines AI infrastructure engineering with hands-on agency experience — co-built RedisAI (the most performant AI-in-production runtime at the time), built AI app infrastructure at Lightning.ai (creators of PyTorch Lightning), authored the first published book on PyTorch, and then founded a dev + digital marketing agency in Dubai that scaled to $350K in year two before being shut down to go all-in on Berlin. That gives Berlin a founder who has built production AI systems at scale and personally experienced the exact agency pain points Berlin solves. Rhea David (CMO) adds two-time founder experience plus media and product marketing leadership from WeWork India — directly relevant to both the India field sales motion and the brand/commercial build-out for the agency-tier product. Together this is a team that covers the two hard problems at once: building an AI-native product deep enough to own autonomous SEO/AEO execution, and running the commercial motion — including FDM services and field sales — needed to convert that into revenue.
 
 ---
 
@@ -514,7 +511,7 @@ Continue cobbling together 5–10 tools with spreadsheets and manual work, or ke
 
 ### Historical Summary
 
-Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company had 5 total historical paid users (via Stripe) on the pre-pivot product, plus an additional cohort that paid through a previous Dubai entity — all have since churned. Total historical revenue to date: ~$2,000 USD. The new platform is in the Founding Partner Program phase with 7 active design partners; 2 are in final stages of converting to paid customers.
+Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company had 5 total historical paid users (via Stripe) on the pre-pivot product, plus an additional cohort that paid through a previous Dubai entity. Total historical revenue to date: ~$2,000 USD. The new platform is pre-revenue with two active commercial conversations — CSP Agency at contract signing for a paid pilot on the agency-tier product, and miniOrange in technical/compliance due diligence on the Berlin + FDM offering.
 
 ### Current State
 
@@ -540,15 +537,15 @@ Monthly burn scales in phases as the team grows and revenue begins to offset cos
 | Period | Key Cost Additions | Monthly Burn |
 |--------|-------------------|-------------|
 | **Months 1–2** (pre-conversion) | Baseline operating costs only (infra $250, LLM $300, logistics $300, software $200) | ~$1,050 |
-| **Months 2–3** (post-5 customers) | + Founder salary ($1,500) + GTM hire ($2,500) + LLM scaling (~$100) | ~$5,150 |
+| **Months 2–3** (post first paid customers) | + Founder salary ($1,500) + first FDM / India field-sales hire ($2,500) + LLM scaling (~$100) | ~$5,150 |
 | **Months 3–5** | + Developer ($2,500) + LLM scaling (~$100) | ~$7,750 |
-| **Months 5+** | + FDM contractor ($1,250) + LLM/infra scaling (~$200) | ~$9,200 |
+| **Months 5+** | + additional FDM capacity ($1,250) + LLM/infra scaling (~$200) | ~$9,200 |
 
 _Note: LLM API costs scale with customer usage volume. Berlin's architecture of passing LLM compute through at cost — combined with the BYO-LLM interoperability layer — keeps this from becoming a margin risk. At 50+ customers running workflows daily, LLM costs are projected at $1,000–$2,000/month, with the BYO-LLM option reducing this further as adoption grows._
 
 ### Projections (12-Month — Conservative Base Case)
 
-Revenue projection assumes two growth engines: high-touch founder-led sales (primary in months 1–6) and product-led growth via the free tier that lets prospects see Berlin's outcomes on their own domain before paying (contributing from month 7+). ARPU rises as outcome-based pricing is introduced and the customer mix includes more agency accounts at higher price points. ~5% monthly churn is implicit in net customer adds.
+Revenue projection assumes two sales-led growth engines: (1) founder-led and FDM-supported sales into the Berlin + FDM offering (primarily mid-market and traditional businesses, including India field sales), and (2) founder-led sales of the agency-tier product to SEO / digital agencies. ARPU rises as the FDM-inclusive mix scales and as agency-tier deals land at higher price points. ~5% monthly churn is implicit in net customer adds. Projections remain directionally intact from the prior version of this document — the underlying unit economics (pricing anchored to an agency retainer or SEO hire, ~80% platform gross margin, low churn from deep integration) are unchanged.
 
 | Month | New Adds | Total Customers | Blended ARPU | MRR |
 |-------|----------|----------------|-------------|-----|
@@ -587,12 +584,12 @@ Starting cash: $260,000 ($250K raise + $10K existing). The company reaches cash-
 | 11 | $29,700 | $11,500 | +$18,200 | $281,278 |
 | 12 | $35,840 | $12,000 | +$23,840 | $305,118 |
 
-_Note: Burn scales modestly in months 7–12 to account for growing LLM/infrastructure costs and increased marketing spend as revenue supports it. In a downside scenario — slower customer acquisition, delayed PLG launch — the $250K provides 18+ months of runway to iterate without fundraising pressure._
+_Note: Burn scales modestly in months 7–12 to account for growing LLM/infrastructure costs, FDM capacity, and increased marketing spend as revenue supports it. In a downside scenario (slower customer acquisition, longer enterprise sales cycles), the $250K provides 18+ months of runway to iterate without fundraising pressure._
 
 ### Key Assumptions Driving Growth
 
 - **Pricing ceiling defined by labor replacement:** Customers compare Berlin to a fully loaded hire ($90–97K/year US, $700+/month India), not a SaaS tool. This anchors willingness-to-pay well above the $199 launch price and supports the transition to outcome-based pricing. For agencies, where payroll consumes 50–60% of revenue, the ROI case is immediate — Berlin's automation directly improves operating margin.
-- **Two-engine growth model:** Months 1–6 are driven by high-touch, founder-led sales (2–4 new customers/month). Months 7+ benefit from PLG self-serve via the free tier — prospects connect a domain, see Berlin produce real outcomes, and convert — increasing new customer adds to 5–9/month.
+- **Two-motion growth model:** Berlin + FDM sales to end customers (including India field sales to traditional businesses) plus agency-tier sales to SEO / digital agencies. Both motions are sales-led. New customer adds ramp as FDM capacity, field reps, and agency-tier outbound come online (2–4/month early, rising to 5–9/month as commercial infrastructure scales).
 - **ARPU expansion:** Blended ARPU grows from $199 to ~$560 over 12 months as outcome-based pricing is introduced, credit usage increases, and the customer mix shifts toward agency accounts at higher price points.
 - **Low churn assumption (~5% monthly):** Berlin's workflow-level integration creates meaningful switching costs — teams build operational processes on the platform, making churn structurally low once onboarded.
 - **Gross margin ~80%:** Core platform infrastructure (data engine, integrations, execution runtime, crawlers) operates at ~80% margin. LLM tokens at cost and BYO-LLM adoption keep blended margin healthy.
@@ -616,43 +613,42 @@ Berlin reaches cash-flow positive at **month 7** (October 2026) when MRR (~$9,90
 
 ### Why Now — The Funding Inflection
 
-Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, design partners are actively using the platform daily, and the GTM engine is designed. 7 design partners are actively using the platform (3 daily), 2 are in final stages of paid conversion. What's missing is fuel: the company is transitioning from build-mode to commercial traction, and current cash reserves (~$10K) support approximately 2 months of operations at planned marketing spend levels. This raise funds the team and distribution needed to convert strong early engagement into paying customers, build the self-serve PLG engine, and reach cash-flow positive within 7 months.
+Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, the product + FDM offering is defined, and the first paid pilot (CSP Agency) is at contract signing with a second enterprise conversation (miniOrange) working through compliance due diligence. What's missing is fuel: the company is transitioning from build-mode to commercial traction, and current cash reserves (~$10K) support approximately 2 months of operations at planned commercial spend levels. This raise funds the team, field sales, and distribution needed to convert the active pipeline into paying customers and build out the FDM service capacity required to scale the offering.
 
 ### Use of Funds
 
 | Category | Allocation % | Amount | Purpose |
 |----------|:------------:|:------:|---------|
-| **Hiring** | 30% | $75,000 | GTM hire (growth marketer / community manager) after first 5 paying customers; developer (full-stack) starting month 3–4 to build PLG self-serve experience. Both roles based in India, where $2,500–$3,000/month is highly competitive for senior talent. FDM contractor ($1,250/month) added as needed for high-touch delivery. |
-| **Go-to-Market & Distribution** | 20% | $50,000 | Content production and community growth (r/agent_seo); micro-influencer program; SEO newsletter sponsorships; free-tier outcomes experience as lead-generation engine; founder-led direct sales |
-| **Engineering & Infrastructure** | 15% | $37,500 | Platform reliability, execution runtime improvements, expanding integration library, scaling crawlers, self-serve onboarding build |
+| **Hiring** | 30% | $75,000 | FDM capacity (primary hiring priority — the offering is rate-limited by FDM headcount); India field sales reps for traditional-business outreach; full-stack developer starting month 3–4 for platform reliability, integrations, and supporting the two product packages. All roles based in India, where cost structure is highly competitive for senior talent. |
+| **Go-to-Market & Distribution** | 20% | $50,000 | India field sales operations (travel, on-ground activity for shops/offices/clinics/warehouses/trading firms); content production and community growth (r/agent_seo); micro-influencer program; SEO newsletter sponsorships; founder-led direct sales into agency-tier and enterprise accounts |
+| **Engineering & Infrastructure** | 15% | $37,500 | Platform reliability, execution runtime improvements, expanding integration library, scaling crawlers, and hardening the two packaged offerings (Berlin + FDM and Berlin for Agencies) |
 | **Cloud & LLM Costs** | 10% | $25,000 | Infrastructure scaling as customer base grows; LLM API costs (mitigated by BYO-LLM interoperability) |
 | **Operations & Legal** | 10% | $25,000 | LLC → C-Corp conversion, SAFE legal costs, accounting, insurance |
 | **Reserve / Runway Buffer** | 15% | $37,500 | Strategic reserve for hiring iteration, unexpected costs, and extended runway in downside scenarios |
 
-> *_Note: GTM hire, founder salary ($1,500/month), and GTM spending commence after securing the first 5 paid customers. Until then, funds allocated to these categories are held in reserve, extending runway and ensuring capital efficiency._
+> *_Note: Founder salary ($1,500/month) and the bulk of marketing spend commence after the first paid customers are live (CSP Agency pilot + first Berlin + FDM closes). Until then, funds allocated to these categories are held in reserve, extending runway and ensuring capital efficiency._
 
 ### Target Runway
 
-This raise is sized to reach cash-flow positive by month 7. In the base case, Berlin never exhausts the raise — revenue catches burn by October 2026, and the company ends month 12 with ~$305K in cash. In a downside scenario (slower customer acquisition, delayed PLG launch), the $250K provides 18+ months of runway to iterate without fundraising pressure.
+This raise is sized to reach cash-flow positive by month 7. In the base case, Berlin never exhausts the raise — revenue catches burn by October 2026, and the company ends month 12 with ~$305K in cash. In a downside scenario (slower customer acquisition, longer enterprise sales cycles, slower FDM hiring ramp), the $250K provides 18+ months of runway to iterate without fundraising pressure.
 
 ### Milestones This Funding Achieves
 
 | Milestone | Target Timeline | Success Metric |
 |-----------|:--------------:|----------------|
-| Convert 5 Founding Partners to paid | Month 1 | ~$1K MRR at $199/month |
-| First GTM hire | Month 2–3 | Content flywheel and outreach ramping |
-| Launch free-tier outcomes experience (PLG engine) | Month 2–3 | Self-serve flow producing real SEO/AEO outputs on a prospect's own domain; free-tier signups beginning |
-| Developer hire, PLG build begins | Month 3–4 | Self-serve onboarding in development |
-| Produce 2–3 publishable customer case studies | Month 3–5 | Named logos with quantified results |
+| Close CSP Agency paid pilot | Month 1 | Contract signed, first paid agency-tier customer live |
+| Resolve miniOrange compliance, convert to paid | Month 1–2 | Contract signed on Berlin + FDM |
+| First wave of FDM + field sales hires | Month 2–3 | FDM capacity and India field reps onboarded |
+| India field sales producing first closes | Month 3–5 | First traditional-business customers on Berlin + FDM closed via field motion |
+| Produce 2–3 publishable customer case studies | Month 3–5 | Named logos with quantified results (CSP Agency, miniOrange, and India field customers) |
 | Publish autonomous affiliate site case study | Month 2–4 | Verifiable organic traffic growth from fully autonomous site with documented ROI |
-| PLG self-serve fully live | Month 6–7 | Customers signing up and converting without founder touch |
-| Reach $10K MRR | Month 7–8 | ~26–32 customers, PLG contributing |
+| Reach $10K MRR | Month 7–8 | Mix of Berlin + FDM and agency-tier customers |
 | Cash-flow positive | Month 7 | Revenue exceeds monthly burn |
-| Seed-ready traction | Month 10–12 | $30K–$36K MRR, ~$430K ARR run rate, 55–64 customers |
+| Seed-ready traction | Month 10–12 | $30K–$36K MRR, ~$430K ARR run rate, proven repeatability across both motions |
 
 ### What This Round Achieves
 
-This is a $250K pre-seed raise to convert strong founding partner engagement into a scalable, PLG-driven revenue engine. The funds hire a GTM lead to build the content and distribution flywheel, a developer to build self-serve infrastructure, and provide a marketing budget to drive top-of-funnel — the capabilities Berlin needs to move from founder-led sales to repeatable, scalable growth. The company reaches cash-flow positive by month 7 and targets ~$430K ARR run rate by month 12, positioning for a seed round at $8M–$15M+ valuation.
+This is a $250K pre-seed raise to convert the active pipeline (CSP Agency paid pilot, miniOrange enterprise) into a repeatable, sales-led revenue engine across two motions: **Berlin + FDM** for end customers (including India field sales to traditional businesses) and **Berlin for Agencies** for SEO / digital agencies. The funds primarily hire FDM capacity and India field sales reps, plus a full-stack developer to harden the two product packages. The company reaches cash-flow positive by month 7 and targets ~$430K ARR run rate by month 12, positioning for a seed round at $8M–$15M+ valuation.
 
 ---
 
@@ -700,7 +696,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 
 - **Pending litigation:** None
 - **Regulatory considerations:** Berlin's crawler infrastructure collects publicly available web data. GDPR and CCPA compliance is addressed through: (1) crawling only publicly accessible pages, (2) respecting robots.txt directives, (3) no collection of personal data, and (4) data processing occurs within standard cloud infrastructure with appropriate security controls. Formal compliance documentation to be completed as part of enterprise readiness.
-- **Material contracts:** DataForSEO API subscription (keyword and SERP data). Founding Partner Program agreements (non-binding design partner arrangements, no revenue commitments). Standard cloud infrastructure agreements (hosting, LLM APIs).
+- **Material contracts:** DataForSEO API subscription (keyword and SERP data). Paid pilot agreement with CSP Agency (at contract signing). Standard cloud infrastructure agreements (hosting, LLM APIs). Earlier Founding Partner design-partner arrangements (non-binding, no revenue commitments) have wound down.
 - **Terms of service / privacy policy:** Drafted and live on site. To be reviewed by legal counsel as part of enterprise readiness and fundraise preparation.
 
 ---
@@ -713,15 +709,15 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 
 - **Accelerator / incubator participation:** None yet — evaluating accelerator programs as part of fundraise strategy
 
-- **Key partnerships or LOIs:** 7 active Founding Partners including Fliki.ai (~$1M MRR SaaS), Webandcrafts (100+ client agency), miniOrange, CSP Agency, BlockSurvey, and Search Indicators (20+ client agency). These are unpaid design partnerships with strong daily engagement, converting to paid customers.
+- **Key partnerships or LOIs:** Two active commercial conversations on the current offering — **miniOrange** (enterprise identity/security; in technical/compliance due diligence) and **CSP Agency** (large Canadian agency; at contract signing stage for a fully paid pilot on the agency-tier product).
 
 - **Notable milestones achieved:**
   - Intelligence infrastructure built (80+ ranking signals, automated prioritization, GSC/GA integrations)
-  - End-to-end SEO/AEO execution stack live — Berlin can plan and run multi-step SEO/AEO work on a customer's domain from the dashboard
+  - End-to-end SEO/AEO execution stack live — Berlin autonomously plans and runs multi-step SEO/AEO work on a customer's domain once they connect their accounts
   - Thin MCP interoperability layer live — Berlin also accessible inside Claude Code, Claude Cowork, ChatGPT Codex, and Openclaw
   - Integrated keyword database (sourced from leading providers, cached in own DB) and proprietary crawlers operational
-  - Repositioned (April 2026) from agentic workflow infrastructure to end-to-end SEO/AEO platform, consolidating former USOL surface into internal infrastructure and landing on a single product: Berlin
-  - Founding Partner Program launched — 7 active design partners including Fliki.ai (~$1M MRR), Webandcrafts (100+ client agency), miniOrange, CSP Agency, BlockSurvey, and Search Indicators (20+ client agency)
+  - Repositioned (April 2026) from agentic workflow infrastructure to an end-to-end SEO/AEO platform + Forward Deployed Marketer offering, with a separate agency-tier version of the product for SEO agencies
+  - First paid pilot (CSP Agency) at contract signing stage on the agency-tier product
 
 ---
 
@@ -731,10 +727,10 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 | ------------------------------------------------------------ | ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Incumbents add AI/outcome features**                       | Medium     | High   | Berlin is built as an end-to-end outcome platform from day one. Incumbents (Ahrefs, Semrush) are data companies — rebuilding as agent-driven, outcome-owning platforms requires fundamental architectural and business-model changes. Speed of execution and founder-market fit are key advantages.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **LLM platform risk (OpenAI, Anthropic)**                    | Low-Medium | Medium | Berlin is LLM-agnostic — it's the data, strategy, and execution layer, not the model. Interoperability with multiple LLMs is a core design principle.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **Mid-market / agency adoption speed**                       | Medium     | Medium | Founding Partner Program already shows strong daily engagement from 3 of 7 partners. Proof-first approach de-risks positioning and builds conversion pipeline. Buyers compare Berlin to an agency retainer or a hire, not a tool — a faster, clearer buying decision than "should we add another SaaS subscription."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Mid-market / agency adoption speed**                       | Medium     | Medium | CSP Agency at contract signing for a fully paid pilot and miniOrange working through compliance provide early proof of both the agency-tier and enterprise motions. Buyers compare Berlin + FDM to an agency retainer or a hire, not a tool — a faster, clearer buying decision than "should we add another SaaS subscription." Traditional businesses in India and similar markets, where agencies are the default and internal SEO is rare, shorten the buying cycle further.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | **AI search landscape evolving rapidly**                     | High       | Medium | Berlin's architecture treats strategy and execution as first-class, with the underlying tool layer swappable — as AI search evolves, Berlin updates its default strategy and execution playbooks without customers having to rebuild anything. Proprietary crawl infrastructure, integrated keyword data layer, and AEO/GEO coverage position us ahead of the curve.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Data privacy / crawler compliance**                        | Low-Medium | Medium | Crawlers only access publicly available data, respect robots.txt, and collect no personal information. GDPR/CCPA compliance roadmap in progress for enterprise readiness.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Single founder / key-person risk**                         | Medium     | High   | First GTM hire planned with this raise to reduce single-point-of-failure and build operational depth. Founder's combined AI engineering + agency background is rare and hard to replicate, which cuts both ways: it's a key competitive advantage but also a concentration risk. Mitigating factors: (1) the product architecture is modular and well-documented, reducing bus-factor concerns; (2) the founder has a track record of operating lean and shipping through multiple pivots without a team; (3) the Founding Partner community and advisor network provide external support and accountability; (4) this raise specifically prioritizes hiring to distribute operational load.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Key-person risk**                                          | Low-Medium | High   | Leadership has expanded beyond the single founder — Rhea David has joined as CMO (two-time founder, ex-WeWork India media and product marketing), materially reducing single-point-of-failure risk on the commercial side. Additional GTM and engineering hires planned with this raise to continue distributing operational load. Mitigating factors: (1) the product architecture is modular and well-documented, reducing bus-factor concerns; (2) the founder has a track record of operating lean and shipping through multiple pivots; (3) the CMO hire directly addresses prior concentration risk on GTM; (4) active commercial conversations (CSP Agency paid pilot, miniOrange enterprise) are spread across two motions, reducing dependence on any one relationship.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Fundamental shift in how the web works**                   | Medium     | High   | If agents fully reshape how people search and buy online, the current SEO paradigm could become unrecognizable. However, the core assumption holds: regardless of the medium, users will always need to search for and purchase things, and brands will always need to be discoverable. Berlin's architecture is outcome-first, not SEO-mechanic-first — the strategy and execution layers are decoupled from any particular search engine's ranking algorithm. The platform can retarget its strategy, execution, and integrations toward whatever the web becomes (agent-to-agent commerce, conversational discovery, etc.) without a fundamental rebuild.                                                                                                                                                                                                                                                                                                                |
 | **AI-native competitors expand into end-to-end SEO/AEO** | Medium     | High   | Well-funded AI-native platforms like Profound ($1B valuation, Sequoia/Kleiner Perkins/Lightspeed backed) have already begun expanding beyond monitoring into execution — Profound recently launched "Profound Agents" for autonomous campaign execution. Other GEO-focused startups (Peec AI, Relixir, Search Party) could follow the same trajectory. Mitigation: these platforms are monitoring-first and content-first by architecture — expanding to cover strategy, full execution, and the underlying tool layer is fundamentally different from bolting on an "agents" feature. Berlin's end-to-end execution stack, integrated data layer, thin MCP architecture, and three-pillar platform design create structural advantages that monitoring and content platforms cannot replicate without rebuilding. The same architectural constraint that limits incumbents applies here: retrofitting end-to-end delivery onto a narrowly scoped platform is a different engineering problem than building it from day one. |
 

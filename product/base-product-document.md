@@ -10,9 +10,17 @@
 
 ## Berlin in One Line
 
-> Berlin is an end-to-end SEO/AEO platform — the user talks to it, and it strategizes, sets up execution, and executes.
+> Berlin is an end-to-end SEO/AEO platform — the customer connects their domain and accounts, and Berlin strategizes, sets up execution, and executes autonomously. For end customers, the platform is delivered alongside a **Forward Deployed Marketer (FDM)** who owns strategy, reviews output, and owns the relationship.
 
-The alternative to Berlin is hiring an SEO agency or building an in-house SEO team. Berlin is not a workflow builder, not a set of connectors, and not a configuration surface. A user signs in, opens a dashboard, describes their brand and their goals, and Berlin delivers the outcomes — the keyword plan, the published content, the technical fixes, the ongoing monitoring — without the user having to assemble the work themselves.
+The alternative to Berlin is hiring an SEO agency or building an in-house SEO team. Berlin is not a workflow builder, not a set of connectors, and not a configuration surface. A user signs in, connects their domain and accounts (GSC, GA4, CMS, social, etc.), and Berlin delivers the outcomes — the keyword plan, the published content, the technical fixes, the ongoing monitoring — without the user having to assemble the work themselves. **No conversation is required** for Berlin to execute; the user can talk to Berlin if they want to steer or inspect, but it is optional.
+
+### Two Packaged Offerings
+
+Berlin is one product, sold in two packages:
+
+1. **Berlin + FDM (end customers).** The core offering for mid-market and traditional businesses. Platform execution plus an assigned Forward Deployed Marketer who shapes strategy, reviews Berlin's output, owns the customer relationship, and surfaces patterns back into Berlin's default playbooks. FDM is not a premium add-on — it is part of the core offering at this tier.
+
+2. **Berlin for Agencies.** A platform-only version of Berlin sold to SEO/digital agencies running Berlin underneath their own client delivery. This version **does not include an FDM** — the agency provides that layer themselves. Same underlying product, different packaging.
 
 ---
 
@@ -28,9 +36,11 @@ The user can optionally bring their own strategy. Teams with strong opinions can
 
 ## What Berlin Is
 
-### A Dashboard You Talk To
+### A Dashboard That Runs Itself (and That You Can Talk To)
 
-Berlin's interface is a dashboard. The user describes their brand, their market, and their goals. From there, Berlin sets the direction, proposes the work, and executes it. Progress, outputs, and next steps all surface in the dashboard rather than being chased across a dozen tools. There are no workflows to configure and no agents to wire together.
+Berlin's interface is a dashboard. Once the customer connects their domain and the accounts Berlin needs to work with (GSC, GA4, CMS, social, etc.), Berlin begins executing on its own — no conversation is required. Progress, outputs, and next steps all surface in the dashboard rather than being chased across a dozen tools. There are no workflows to configure and no agents to wire together.
+
+Customers can talk to Berlin if they want to — to steer strategy, ask for a specific outcome, or inspect reasoning — but it is optional. The default mode is autonomous execution with human review where it matters.
 
 ### Strategy by Default, Optional Override
 
@@ -43,6 +53,12 @@ Berlin actually does the operational work. Running audits and producing actionab
 ### Human Oversight
 
 Berlin operates with human oversight. Before taking actions that affect live systems (publishing content, making changes), Berlin surfaces what it intends to do for review. Teams can configure how much oversight they want — from reviewing every action to reviewing only certain categories of work.
+
+### Forward Deployed Marketer (End-Customer Offering)
+
+For end customers on the Berlin + FDM package, an assigned Forward Deployed Marketer works alongside the platform. The FDM shapes strategy, reviews Berlin's output, handles the customer relationship, and surfaces patterns back into Berlin's default strategy and execution playbooks. The FDM is not a consulting bolt-on — they are the human owner of the customer relationship in a model where the platform does the execution. This is the layer that lets Berlin replace an agency relationship cleanly for buyers who expect a human owner, not just software.
+
+The agency-tier version of the product does not include an FDM; agencies provide that layer themselves for their own clients.
 
 ---
 
@@ -103,7 +119,7 @@ A flat reference of Berlin's capabilities. These are all parts of one product; t
 
 This is the canonical reference for what Berlin is at a structural and functional level. When crafting messaging for a specific audience:
 
-1. Start from Berlin's core value proposition — an end-to-end SEO/AEO platform that owns Strategy, Execution, and Tools, and is the alternative to hiring an SEO team or agency.
+1. Start from Berlin's core value proposition — an end-to-end SEO/AEO platform that owns Strategy, Execution, and Tools, delivered with an assigned Forward Deployed Marketer for end customers (and without one in the agency-tier version). Berlin is the alternative to hiring an SEO team or agency.
 2. Reference `framework.md` for the three-pillar framework when the audience needs the structural argument.
 3. Reference `base-usol-document.md` only for internal architecture conversations; do not surface USOL as a product name to customers.
 4. Translate the structural description into the language of the audience's pain and ambition.
@@ -112,4 +128,4 @@ This is the canonical reference for what Berlin is at a structural and functiona
 ---
 
 _Agentic World, LLC — Internal Foundation Document_
-_Last updated: 2026-04-23_
+_Last updated: 2026-04-24_

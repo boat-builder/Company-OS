@@ -1,10 +1,45 @@
 # ICP — Discovery Framework
 
-> **Status:** Active discovery (April 20, 2026). Previous ICP selection (Agencies, Growth Eng, SMB/Startup SEO, etc.) has been retired — it was too broad and not well validated. This document replaces it.
+> **Status:** Updated April 24, 2026. The 6-cell discovery grid (3 archetypes × 2 buyer personas) remains the exploratory framework, but **one segment has been promoted to primary ICP based on direct observation of where the pain is sharpest: traditional businesses in the $500K–$2M MRR band with no internal SEO resource.** This segment sits inside the Lead Gen / Services archetype (Cell 5) but cuts across verticals — warehouses, clinics, trading firms, B2B services, local/regional operators — and is big enough and distinct enough to track on its own.
 >
-> **Premise:** We have narrowed the search space to **6 cells** — the product of 3 archetypes and 2 buyer personas. We do not yet know which cell is hottest. Discovery (interviews, outbound tests, inbound signal) will tell us. Until then, every cell is a hypothesis, not a commitment.
+> **Premise:** The 6-cell grid stays intact as a discovery framework for parallel exploration. On top of it, we now lead commercially with the traditional-business segment described below, delivered as **Berlin + Forward Deployed Marketer (FDM)**. A separate agency-tier product (no FDM) continues to serve SEO agencies.
 >
 > **Source of truth:** This file is the canonical ICP reference. [archetypes.md](archetypes.md) defines the broader archetype taxonomy (6 total) — the three used below (SaaS, eCommerce, Lead Gen/Services) are the active subset. The other three (Marketplace, Aggregator, Media/Publisher) remain documented but are not being targeted in this phase.
+
+---
+
+## Primary ICP (Promoted): Traditional Businesses That Default to Agencies
+
+**Segment:** Traditional, non-SaaS businesses in the $500K–$2M MRR band — warehouses, clinics, trading firms, B2B services, and similar operators — who have **no internal SEO-specific resource** and who either:
+
+1. Are actively thinking about hiring an agency but haven't committed; or
+2. Already work with an agency and are unhappy with the results.
+
+**Why this is the sharpest pain we've observed:**
+
+- SEO is a meaningful revenue channel but there is no one internally who owns it.
+- The default path is "hire an agency." Agencies in this price band consistently underdeliver; every business we've talked to in this segment either got burned by an agency or is bracing to be.
+- For businesses already paying an agency: **no one is happy with their existing agency.** Dissatisfaction is near-universal, which creates an unusually receptive audience for a better-priced alternative that demonstrably does a better job.
+- AEO/GEO is something they've started hearing about but have no path to acting on.
+
+**Why Berlin + FDM fits:**
+
+- Berlin delivers the execution; the assigned FDM provides the human layer that this buyer expects from an agency relationship — strategy ownership, reviews, the relationship.
+- Pricing sits materially below an agency retainer, which is the buyer's anchor point.
+- For the India-specific version of this segment, the pricing works locally, which unlocks field sales (physical outreach to shops, offices, clinics, warehouses, trading firms) as a viable GTM channel.
+
+**Buyer persona:** Founder/CEO, or Head of Marketing / Operations Lead where one exists. Budget authority is high; decision cycles are fast; buying conversations tend to be face-to-face or over a call, not procurement-led.
+
+**Discovery focus going forward:**
+
+- Which verticals inside this segment are sharpest (warehouses, clinics, trading firms, other B2B services)?
+- Geographic concentration — India field-sales motion vs. English-speaking markets globally.
+- Does the "unhappy with existing agency" sub-segment convert faster than "actively considering an agency"?
+- What does the FDM workload actually look like at scale per account?
+
+**Relationship to the 6-cell grid below:** This segment overlaps primarily with **Cell 5 (Lead Gen / Services × Founder)** but is broader in vertical scope. The 6-cell grid continues to exist as a discovery lens; the traditional-business segment is simply promoted above it as the current primary commercial target.
+
+---
 
 ---
 
@@ -182,10 +217,10 @@ Until then, every cell stays lightweight. Resist the temptation to write full pe
 
 ## What Changed (April 2026)
 
-Previously this document defined 7 ICP profiles around segmentation like "Medium Agencies," "SaaS In-House," "Growth Engineering," "Mid-Market No-Dev," and "SMB/Startup SEOs." That framing conflated archetype, buyer persona, size, and SEO maturity into a single axis. It was not well validated and didn't give discovery a crisp grid to work against.
+**April 20, 2026:** Previously this document defined 7 ICP profiles around segmentation like "Medium Agencies," "SaaS In-House," "Growth Engineering," "Mid-Market No-Dev," and "SMB/Startup SEOs." That framing conflated archetype, buyer persona, size, and SEO maturity into a single axis. It was not well validated and didn't give discovery a crisp grid to work against. The new framing separates **archetype** from **buyer persona** as two independent axes, produces 6 discrete cells, and treats each as an unvalidated hypothesis. Individual profile files (`profiles/icp-*.md`) have been deleted. All ICP information now lives in this single file.
 
-The new framing separates **archetype** from **buyer persona** as two independent axes, produces 6 discrete cells, and treats each as an unvalidated hypothesis. Individual profile files (`profiles/icp-*.md`) have been deleted. All ICP information now lives in this single file.
+**April 24, 2026:** Promoted **traditional businesses ($500K–$2M MRR, no internal SEO resource; either considering an agency or unhappy with their existing one)** to primary ICP based on direct observation of pain density. The 6-cell discovery grid remains in place for parallel exploration. Berlin's go-to-market is now organized around two motions: **Berlin + FDM** (sold to end customers, primary ICP above) and **Berlin for Agencies** (sold to SEO/digital agencies, no FDM).
 
 ---
 
-_Last updated: April 20, 2026_
+_Last updated: April 24, 2026_
