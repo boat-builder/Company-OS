@@ -1,7 +1,7 @@
-# Berlin Pre-Seed Investor Deck — Content Plan
+# Berlin Seed Investor Deck — Content Plan
 
 **Round:** $1M SAFE, $10M post-money cap
-**Audience:** Pre-seed investors
+**Audience:** Seed investors
 **Length:** 12 slides (main)
 
 ---
@@ -17,7 +17,7 @@ These two sentences carry disproportionate weight and should be visually emphasi
 
 ## Slide 1 — Title & Hook
 
-**Header (small):** Pre-Seed · Confidential · April 2026
+**Header (small):** Seed · Confidential · April 2026
 
 **Hero (centered):**
 - **Berlin** — the AI-native SEO/AEO agency. Platform underneath, Forward Deployed Marketer on top. Replaces the agency a company would otherwise sign.
@@ -159,7 +159,7 @@ Conservative beachhead: 7,000 mid-market and enterprise teams currently paying a
 | ---------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **Buyer**                          | Enterprise / well-funded startups (Product Hunt, Notion, Tome)         | Mid-market traditional businesses & SaaS founders (Reach Psych, Csuite.so)                                              |
 | **Price entry**                    | Agency price points                                                    | ~1/4 of equivalent agency cost ($499 entry, walks up with scope)                                                        |
-| **Capital raised**                 | $21M ($15M Series A Apr 2026, WndrCo)                                  | $1M pre-seed in flight at $10M post-money cap, clean cap table                                                          |
+| **Capital raised**                 | $21M ($15M Series A Apr 2026, WndrCo)                                  | $1M seed in flight at $10M post-money cap, clean cap table                                                          |
 | **Substrate**                      | Proprietary SEO agents; depth not publicly disclosed                   | Custom agentic framework on Go runtime, Snake.blue crawler, cached keyword/page store, 80+ ranking signals              |
 | **Founder edge**                   | Programmatic SEO operators (prior co. Flixed → 400K+ monthly visitors) | AI-infra engineer (RedisAI, Lightning.ai) **and** ran a marketing agency to $350K                                       |
 
@@ -248,7 +248,7 @@ Conservative beachhead: 7,000 mid-market and enterprise teams currently paying a
 ## Slide 12 — The Ask & 12-Month Milestones
 
 **Eyebrow:** THE ASK
-**Headline:** $1M pre-seed on SAFE, $10M post-money cap. Cash-flow positive month 8.
+**Headline:** $1M seed on SAFE, $10M post-money cap. Cash-flow positive month 8.
 **Subhead:** Clean cap table, 100% founder-owned. 10% dilution. Min check $50K. Pro rata rights included.
 
 **What we'll prove with this round:**
