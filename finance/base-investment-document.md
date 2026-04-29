@@ -19,7 +19,7 @@
 - **Website:** agentberlin.ai
 - **One-Liner:** Berlin is the AI-native SEO/AEO agency — an end-to-end platform underneath, with a dedicated Forward Deployed Marketer on top — that replaces the SEO agency a company would otherwise sign. (In-house marketing teams aren't the alternative; they outsource SEO grunt work to agencies anyway.)
 - **Mission Statement:** To make world-class SEO and AEO outcomes accessible to every company by delivering the work itself — strategy, execution, and tools — through a single agent-driven platform rather than a toolchain or a headcount.
-- **Current Phase:** Platform launched late February 2026, with a repositioning in April 2026 from an agentic workflow infrastructure play to an end-to-end SEO/AEO platform that owns strategy, execution, and the underlying tools — now delivered as a product + Forward Deployed Marketer (FDM) service offering. **First commercial cohort is live at $499/month:** **Reach Psych** (reachpsych.com — Bangalore clinic, primary ICP, India field sales motion) and **Csuite.so** (SaaS, early signal in the discovery grid) are paying customers; **miniOrange** (enterprise identity/security) is in technical/compliance due diligence on Berlin + FDM. Earlier Founding Partner cohort and one prior agency conversation (CSP Agency) wound down — both surfaced direct evidence that traditional businesses, not agencies, are the right primary commercial target. The go-forward motion is product + FDM sales to traditional businesses (with India field sales as a distinctive channel); the agency-tier SKU (Berlin for Agencies) remains a parallel offering but is not the primary motion.
+- **Current Phase:** Platform first launched in late February 2026 and was **publicly relaunched on April 28, 2026** on the new agency-shaped offering — a repositioning from an agentic workflow infrastructure play to an end-to-end SEO/AEO platform that owns strategy, execution, and the underlying tools, now delivered as a product + Forward Deployed Marketer (FDM) service offering. **First commercial cohort committed at launch on Berlin + FDM at $499/month:** **Reach Psych** (reachpsych.com — Bangalore clinic, primary ICP, India field sales motion; *used v1 through its rough UX and chose to continue on v2 at launch — direct proof that the underlying value lands before the product is polished*) and **Csuite.so** (SaaS, early signal in the discovery grid); **miniOrange** (enterprise identity/security) is in technical/compliance due diligence on Berlin + FDM. Earlier Founding Partner cohort and one prior agency conversation (CSP Agency) wound down — both surfaced direct evidence that traditional businesses, not agencies, are the right primary commercial target. The go-forward motion is product + FDM sales to traditional businesses (with India field sales as a distinctive channel); the agency-tier SKU (Berlin for Agencies) remains a parallel offering but is not the primary motion.
 - **Key Contact(s):** Sherin Chacko Thomas — sherin@agentberlin.ai · +91 890 474 5603
 
 ### Product Evolution (May 2025 – Present)
@@ -278,13 +278,13 @@ A separate packaged offering — **not an ICP** — for SEO / digital agencies r
 
 ## 8. Traction & Metrics
 
-> **Current phase:** First commercial cohort live. Berlin has gone through two repositionings as understanding of the market has sharpened — first, in late 2025, from a conversational SEO tool to programmable agentic workflow infrastructure; and second, in April 2026, to an AI-native SEO/AEO agency (platform + Forward Deployed Marketer) that replaces the SEO agency customers would otherwise sign. The earlier Founding Partner cohort wound down, and one prior agency conversation (CSP Agency) did not close — both surfaced direct evidence that traditional businesses, not agencies, are the right primary commercial target. Two paying customers landed at $499/month on the new offering within weeks of repositioning; one enterprise conversation (miniOrange) is in technical/compliance due diligence.
+> **Current phase:** First commercial cohort committed at launch. Berlin has gone through two repositionings as understanding of the market has sharpened — first, in late 2025, from a conversational SEO tool to programmable agentic workflow infrastructure; and second, in April 2026, to an AI-native SEO/AEO agency (platform + Forward Deployed Marketer) that replaces the SEO agency customers would otherwise sign. The earlier Founding Partner cohort wound down, and one prior agency conversation (CSP Agency) did not close — both surfaced direct evidence that traditional businesses, not agencies, are the right primary commercial target. The new agency-shaped offering **publicly relaunched on April 28, 2026** with two customers committed pre-launch at $499/month each — and one of them (Reach Psych) had used v1 through its rough UX and chose to continue on v2 at launch, direct proof that the underlying value lands before the product is polished. One enterprise conversation (miniOrange) is in technical/compliance due diligence on the same offering.
 
 - **MRR / ARR:**
-  - **Current platform: ~$998 MRR** (~$12K ARR run rate) — two paying customers on Berlin + FDM at $499/month each. Closed within weeks of the April 2026 repositioning. **$499/month is the Entry tier of Berlin's four-tier scope ladder (~1/4 of equivalent agency cost across all tiers): Entry $499, Mid $999–$1,999, Heavy $2,500–$4,000, Enterprise $5,000+.** Tier placement is scope-driven; subsequent cohorts open at progressively higher tiers as scope and FDM service depth expand.
+  - **Current platform: ~$998 MRR from launch** (~$12K ARR run rate) — two customers committed at launch on Berlin + FDM at $499/month each, both paying from the April 28, 2026 relaunch onward. **$499/month is the Entry tier of Berlin's four-tier scope ladder (~1/4 of equivalent agency cost across all tiers): Entry $499, Mid $999–$1,999, Heavy $2,500–$4,000, Enterprise $5,000+.** Tier placement is scope-driven; subsequent cohorts open at progressively higher tiers as scope and FDM service depth expand.
   - Legacy product: No active MRR. Berlin had 5 total paid users historically (via Stripe), all on the pre-pivot product targeting a different ICP (individual SEOs, small sites) at legacy pricing (~$49/month avg). An additional cohort of users paid through a previous Dubai entity. All historical paid users have churned. Total historical revenue from legacy product: ~$2,000 USD.
 
-> **Context on timing and valuation:** The current platform launched in late February 2026. Two paying customers landed in April 2026, validating both the primary ICP (Reach Psych — Bangalore clinic — proves the India field motion converts) and the discovery grid (Csuite.so — SaaS — paying signal in the SaaS × Founder cell). The round is sized at **$1M on a $10M post-money cap** (10% dilution) — the industry-standard pre-seed structure for AI-native vertical SaaS in 2026 with live revenue, an enterprise contract in DD, and a category just validated by Daydream's $15M Series A. The cap is a measured step-up from the original $6M framing (which was set pre-revenue) and is defensible against the Daydream comp ($21M total, agency-tier price points) plus founder edge (RedisAI / Lightning.ai infrastructure background combined with prior agency operating experience).
+> **Context on timing and valuation:** The current platform first launched in late February 2026 and publicly relaunched on the new agency-shaped offering on April 28, 2026 with two customers committed pre-launch. Those two customers validate both the primary ICP (Reach Psych — Bangalore clinic — proves the India field motion converts and that customers stay through a rough v1 into v2) and the discovery grid (Csuite.so — SaaS — paying signal in the SaaS × Founder cell). The round is sized at **$1M on a $10M post-money cap** (10% dilution) — the industry-standard pre-seed structure for AI-native vertical SaaS in 2026 with live revenue, an enterprise contract in DD, and a category just validated by Daydream's $15M Series A. The cap is a measured step-up from the original $6M framing (which was set pre-revenue) and is defensible against the Daydream comp ($21M total, agency-tier price points) plus founder edge (RedisAI / Lightning.ai infrastructure background combined with prior agency operating experience).
 
 - **Total revenue to date:** ~$2,000 USD legacy + ~$998/month recurring on the new platform (live).
 
@@ -298,8 +298,8 @@ A separate packaged offering — **not an ICP** — for SEO / digital agencies r
 - **Retention / churn:** Cohort too young for meaningful retention data on the current platform. Legacy product retention is not representative of the current positioning and ICP.
 
 - **Active customers and pipeline:**
-  - **Reach Psych** (reachpsych.com) — Clinic in Bangalore. Paying $499/month on Berlin + FDM. Sits in the primary ICP; closed via the India field sales motion.
-  - **Csuite.so** — SaaS company. Paying $499/month on Berlin + FDM. Early signal in the SaaS × Founder discovery cell.
+  - **Reach Psych** (reachpsych.com) — Clinic in Bangalore. Committed at launch on Berlin + FDM at $499/month; **used v1 through its rough UX and chose to continue on v2 at launch** — direct proof both that the India field motion converts and that customers stay through a rough relaunch when the underlying value lands. Sits in the primary ICP; closed via the India field sales motion.
+  - **Csuite.so** — SaaS company. Committed at launch on Berlin + FDM at $499/month. Early signal in the SaaS × Founder discovery cell.
   - **miniOrange** (miniorange.com) — Enterprise identity and security. Engaged on Berlin + FDM. Currently in technical/compliance due diligence; actively working through their compliance team toward contract.
 
 - **Public-site logos and testimonials:** The agentberlin.ai homepage displays additional logos (brandrep.io, wity.ai, elephantedge.ai, evoqins.com) for marketing purposes — these are *not* paying customers and should not appear in investor or fundraising materials. The only paying customers on the current platform are Reach Psych and Csuite.so. The Dr. Meena Gnanashekharan testimonial is tied to Reach Psych.
@@ -309,6 +309,24 @@ A separate packaged offering — **not an ICP** — for SEO / digital agencies r
 - **Notable customers / logos:** Reach Psych, Csuite.so, miniOrange
 
 - **Case studies or testimonials:** In progress. Case study development is anchored on Reach Psych (live, primary-ICP proof for the India field motion) and miniOrange (once compliance is resolved and contract signs).
+
+### Flagship Case (Substrate Proof) — 2.5M Pages, 12,000 Broken URLs, 15 Hours
+
+The clearest demonstration of Berlin's engineering substrate working in practice — and the result that drove the April 2026 repositioning.
+
+An e-commerce operator running a **2.5 million page catalogue across 6 countries** had **12,000 soft 404s** — pages returning a 200 status but serving nothing. Redirects had to stay within each country's site (a 200K+ row routing problem with country-aware constraints). Berlin's agents mapped the full link graph, classified each broken URL, and produced a country-aware redirect report in **15 hours**. A traditional agency had previously scoped the same work at **6 months and 600+ engineering hours**.
+
+| Dimension | Traditional Agency Scope | Berlin |
+|---|---|---|
+| Pages audited | 2,500,000 | 2,500,000 |
+| Broken URLs classified | 12,000 | 12,000 |
+| Scoped delivery time | ~6 months | **15 hours** |
+| Engineering hours | 600+ | **< 15** |
+| Country-aware routing | Manual | **Automated** |
+
+**What this proves and why it matters:**
+
+This work was delivered as a pilot underneath an agency running Berlin against their own client work — **substrate proof, not commercial traction**, and explicitly the result that taught us to *be* the agency rather than power one. The April 2026 repositioning to Berlin + FDM came directly from this case. The substrate (Snake.blue crawl, cached data, proprietary data routing architecture, ranking-signal coverage) is the structural reason one Berlin FDM ships agency-scoped outcomes in agency-fraction time — that's where the **~1/4 of agency cost pricing anchor** comes from, not from a discount strategy.
 
 ---
 
@@ -334,7 +352,7 @@ Content is Berlin's trump card. In a market where every SEO tool company publish
 
 Berlin is building the definitive education layer for agentic AI in SEO. Rather than competing on features alone, Berlin is investing in making the entire market smarter about what AI-native SEO/AEO actually looks like — and positioning the platform as the natural home for practitioners and buyers who want the outcomes they hear about.
 
-This takes several forms. Berlin operates r/agent_seo, a growing Reddit community (3.7K members) where demos of Berlin in action are shared as educational content, exposing prospective users to the platform's capabilities before any sales conversation. The community is being scaled as a self-reinforcing distribution channel where practitioners share results, ask questions, and organically discover the platform. Berlin is also publishing "Agentic AI for SEO," a micro-book written from the same agent-expert angle, heavy on practical examples — serving as a lead magnet, a reference asset, and a credibility builder. And Berlin is launching a meetup series for SEO professionals focused on agentic SEO/AEO, with heavy live demos against the Berlin platform itself.
+This takes several forms. Berlin operates r/agent_seo, a growing Reddit community (4,400 members) where demos of Berlin in action are shared as educational content, exposing prospective users to the platform's capabilities before any sales conversation. The community is being scaled as a self-reinforcing distribution channel where practitioners share results, ask questions, and organically discover the platform. Berlin is also publishing "Agentic AI for SEO," a micro-book written from the same agent-expert angle, heavy on practical examples — serving as a lead magnet, a reference asset, and a credibility builder. And Berlin is launching a meetup series for SEO professionals focused on agentic SEO/AEO, with heavy live demos against the Berlin platform itself.
 
 Every education touchpoint — subreddit post, book chapter, meetup demo — is built around Berlin delivering real SEO/AEO outcomes, creating a direct path from learning to platform adoption.
 
@@ -499,7 +517,7 @@ Berlin is the only operator with both halves already in production. The compound
 
 - **Custom agentic substrate that makes the unit economics work — built, shipped, hard to replicate.** A Go-based agentic runtime running thousands of concurrent agent loops (off-the-shelf Python orchestration tops out well under 100) and a proprietary data routing architecture (inspired by 2024 codemode research) that routes data through a unified layer instead of filling an LLM's context — reliability holds across long, multi-source SEO work without the hallucination cliff competitors hit. Built on the founder's prior production AI-runtime work at RedisAI and Lightning.ai. This is the *single* reason one Berlin FDM can ship agency-scoped outcomes at agency-fraction price. Surfaces as margin, FDM:client ratio, and the ability to price at ~1/4 of agency cost without breaking economics. The substrate is also genuinely autonomous-capable — leaving latent self-serve optionality for the future.
 - **FDM layer as the bridge while agents mature — and Berlin is already hiring it.** Until agents are reliable enough to own a customer relationship outright, the FDM is how outcomes get delivered — the same shape buyers already trust. Berlin pairs the substrate with FDM capacity scaling now (first FDM hire underway in Q2 2026, more from this raise). As agents become more reliable, the FDM:client ratio expands; the substrate was built for that future.
-- **FDM playbook compounds.** Every FDM engagement surfaces patterns about what strategy works for which customer profile; this flows back into Berlin's default strategy and execution playbooks and compounds across future customers. Community effects from r/agent_seo (3.7K members) and education content create organic awareness loops on top.
+- **FDM playbook compounds.** Every FDM engagement surfaces patterns about what strategy works for which customer profile; this flows back into Berlin's default strategy and execution playbooks and compounds across future customers. Community effects from r/agent_seo (4,400 members) and education content create organic awareness loops on top.
 - **Switching costs.** Berlin accumulates brand context, strategy history, a record of everything it has shipped on the customer's behalf, and deep integrations into the customer's CMS, analytics, and social accounts. Ripping it out means losing institutional knowledge and re-hiring an agency from scratch.
 - **Founder edge enables iteration speed.** Founder combines production AI-infrastructure engineering (RedisAI, Lightning.ai) with having personally run a digital marketing agency to $350K — a rare overlap that lets Berlin iterate faster than pure-tech competitors (who don't understand SEO operations) or pure-marketing competitors (who can't build the infrastructure).
 - **Latent self-serve optionality.** Because the substrate is genuinely autonomous-capable, Berlin can offer a self-serve mode once agents are reliable enough — without rebuilding the product. Pure-agency competitors can't. Not a current focus (Berlin is ultra-focused on the AI-native agency motion for the foreseeable future) — but the optionality is real and free.
@@ -546,12 +564,12 @@ Berlin is the only operator with both halves already in production. The compound
 
 ### Historical Summary
 
-Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company had 5 total historical paid users (via Stripe) on the pre-pivot product, plus an additional cohort that paid through a previous Dubai entity. Total historical revenue from the legacy product: ~$2,000 USD. The current platform launched late February 2026 and reached first commercial revenue in April 2026 — **two paying customers on Berlin + FDM at $499/month each (~$998 MRR live)**: Reach Psych (Bangalore clinic) and Csuite.so (SaaS). miniOrange is in technical/compliance due diligence on the same offering.
+Berlin has operated lean through its product evolution phase (May 2025 – present), with monthly expenses averaging ~$1,050. The company had 5 total historical paid users (via Stripe) on the pre-pivot product, plus an additional cohort that paid through a previous Dubai entity. Total historical revenue from the legacy product: ~$2,000 USD. The current platform first launched in late February 2026 and was **publicly relaunched on April 28, 2026** on the new agency-shaped offering — **two customers committed pre-launch on Berlin + FDM at $499/month each (~$998 MRR from launch)**: Reach Psych (Bangalore clinic; used v1 through its rough UX and chose to continue on v2 at launch) and Csuite.so (SaaS). miniOrange is in technical/compliance due diligence on the same offering.
 
 ### Current State
 
 - **Cash on hand:** ~$10,000
-- **Live MRR (current platform):** ~$998 (Reach Psych + Csuite.so at $499/month each)
+- **Live MRR (current platform):** ~$998 (Reach Psych + Csuite.so at $499/month each; both committed pre-launch and paying from the April 28, 2026 relaunch onward)
 - **Monthly burn rate:** ~$1,050 (product evolution phase)
   - Cloud infrastructure: ~$250
   - LLM API costs: ~$300
@@ -667,11 +685,9 @@ The category just got validated in April 2026 by Daydream's $15M Series A — fi
 | Category | Allocation % | Amount | Purpose |
 |----------|:------------:|:------:|---------|
 | **Hiring** | 40% | $400,000 | FDM capacity (4 by M9 vs. 1 in the original $250K plan — the offering is rate-limited by FDM headcount); India field sales reps (3 by M8) for traditional-business outreach; full-stack engineer starting M3, second engineer (platform / AI infra) starting M7. All roles India-based, where cost structure is highly competitive for senior talent. |
-| **Go-to-Market & Distribution** | 25% | $250,000 | India field sales operations (travel, on-ground activity for shops/offices/clinics/warehouses/trading firms); content production and community growth (r/agent_seo); micro-influencer program with affiliate payouts; SEO newsletter sponsorships; paid acquisition pilots; conferences and meetups; founder-led direct sales into enterprise accounts |
-| **Engineering & Infrastructure** | 10% | $100,000 | Platform reliability, execution runtime improvements, expanding integration library, scaling crawlers (Snake.blue), hardening Berlin + FDM offering and the parallel Berlin for Agencies SKU, enterprise-readiness work |
-| **Cloud & LLM Costs** | 5% | $50,000 | Infrastructure scaling as customer base grows; LLM API costs (mitigated by continued runtime optimization driving per-task token consumption down) |
-| **Operations & Legal** | 5% | $50,000 | LLC → C-Corp conversion, SAFE legal costs, accounting, insurance, enterprise compliance prep (SOC 2 readiness) |
-| **Reserve / Runway Buffer** | 15% | $150,000 | Strategic reserve for hiring iteration, unexpected costs, and extended runway in downside scenarios |
+| **GTM & Distribution** | 30% | $300,000 | India field sales operations (travel, on-ground activity for shops/offices/clinics/warehouses/trading firms); content production and community growth (r/agent_seo); micro-influencer program with affiliate payouts; SEO newsletter sponsorships; paid acquisition pilots; conferences and meetups; founder-led direct sales into enterprise accounts |
+| **Engineering & Infrastructure** | 15% | $150,000 | Platform reliability, execution runtime improvements, expanding integration library, scaling crawlers (Snake.blue), hardening Berlin + FDM offering and the parallel Berlin for Agencies SKU, enterprise-readiness work; cloud and LLM infrastructure scaling as customer base grows (mitigated by continued runtime optimization driving per-task token consumption down) |
+| **Reserve & Operations** | 15% | $150,000 | Strategic reserve for hiring iteration, unexpected costs, and extended runway in downside scenarios; LLC → C-Corp conversion, SAFE legal costs, accounting, insurance, enterprise compliance prep (SOC 2 readiness) |
 
 > *_Note: First paid customers are now live (Reach Psych and Csuite.so at $499/month each). Founder salary ($1,500/month) and the hiring/marketing ramp commence as the round closes; until then, funds allocated to these categories are held in reserve, extending runway and ensuring capital efficiency._
 
@@ -757,7 +773,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 
 - **Accelerator / incubator participation:** None yet — evaluating accelerator programs as part of fundraise strategy
 
-- **Key paying customers and pipeline:** Two paying customers live on Berlin + FDM at $499/month each — **Reach Psych** (reachpsych.com — Bangalore clinic, primary ICP, India field motion) and **Csuite.so** (SaaS, early signal in the discovery grid). **miniOrange** (enterprise identity/security) is in technical/compliance due diligence on Berlin + FDM.
+- **Key paying customers and pipeline:** Two customers committed pre-launch and live on Berlin + FDM from the April 28, 2026 relaunch at $499/month each — **Reach Psych** (reachpsych.com — Bangalore clinic, primary ICP, India field motion; returning from v1) and **Csuite.so** (SaaS, early signal in the discovery grid). **miniOrange** (enterprise identity/security) is in technical/compliance due diligence on Berlin + FDM.
 
 - **Notable milestones achieved:**
   - Intelligence infrastructure built (80+ ranking signals, automated prioritization, GSC/GA integrations)
@@ -765,7 +781,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
   - Proprietary data routing architecture live — keeps reliability intact across long, multi-source SEO/AEO work where naive agentic tool-use breaks down
   - Integrated keyword database (sourced from leading providers, cached in own DB) and proprietary crawlers operational
   - Repositioned (April 2026) from agentic workflow infrastructure to an end-to-end SEO/AEO platform + Forward Deployed Marketer offering; primary ICP narrowed to traditional businesses, with a parallel agency-tier SKU (Berlin for Agencies) retained but de-emphasized
-  - **First paying cohort live (April 2026):** Reach Psych and Csuite.so on Berlin + FDM at $499/month each; ~$998 MRR live
+  - **Public relaunch (April 28, 2026) with first commercial cohort committed pre-launch:** Reach Psych (returning from v1) and Csuite.so on Berlin + FDM at $499/month each; ~$998 MRR live from launch
 
 ---
 
@@ -801,7 +817,7 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 
 ---
 
-_Last updated: April 27, 2026_
+_Last updated: April 29, 2026_
 _Document owner: Sherin Chacko Thomas (sherin@agentberlin.ai)_
 
 ---
