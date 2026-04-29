@@ -256,7 +256,6 @@ A separate packaged offering — **not an ICP** — for SEO / digital agencies r
 
 | Tier | Price | What's Included | Purpose |
 |------|-------|-----------------|---------|
-| **Free / Explorer** | $0 | Connect domain, get an initial SEO/AEO assessment and a sample of outcomes from Berlin | Lightweight on-ramp; lets prospects see Berlin running on their own domain before engaging commercially |
 | **Berlin + FDM (end customers)** | **From $499/month** (current entry tier); next tier opens ~$999/month; higher tiers custom and scope-dependent | Full end-to-end SEO/AEO execution **with an assigned Forward Deployed Marketer** who owns strategy, reviews output, and owns the customer relationship | Core offering for traditional businesses (primary ICP) and discovery-cell customers — replaces the SEO agency they would otherwise sign |
 | **Berlin for Agencies** | Custom (tiered) | Multi-brand / multi-client platform access, higher credit allocations, agency governance features. **No FDM** — the agency provides that layer themselves. | Parallel SKU for SEO / digital agencies running Berlin underneath their own client delivery — not pitched on the public site |
 
