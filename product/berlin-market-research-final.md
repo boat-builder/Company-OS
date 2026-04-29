@@ -6,7 +6,7 @@
 
 ## 1. Executive Summary
 
-Berlin is positioning itself as an **end-to-end SEO/AEO platform** — a single product that owns Strategy, Execution, and Tools for search optimization under one roof. The user talks to Berlin from a dashboard, and Berlin generates the strategy, sets up the execution, and does the operational work. The alternative Berlin is sold against is hiring an SEO agency or building an in-house SEO team, not a workflow automation tool. The company operates at the intersection of two massive market shifts:
+Berlin is positioning itself as an **AI-native SEO/AEO agency** — an end-to-end platform underneath that owns Strategy, Execution, and Tools, with a dedicated Forward Deployed Marketer on top who owns the customer relationship. The alternative Berlin is sold against is hiring an SEO agency. (In-house marketing teams are not a competing alternative — they outsource SEO grunt work to agencies anyway, so the agency check still gets written.) The company operates at the intersection of two massive market shifts:
 
 1. **The $85B+ SEO software market** is consolidating around platforms that deliver outcomes rather than just display data
 2. **The emergence of AI search (AEO/GEO)** is creating an entirely new optimization discipline that grew from zero to ~$1B in under two years
@@ -131,7 +131,7 @@ North America holds about 38% of the AI-powered SEO software market.
 
 ### Trend 6: Shift Toward First-Party Data
 
-Tightening privacy laws (GDPR/CCPA) and the phase-out of third-party cookies are driving companies to build their own data repositories. Berlin's proprietary crawlers and keyword databases provide teams with privacy-safe, continuously refreshed data without dependence on third-party providers.
+Tightening privacy laws (GDPR/CCPA) and the phase-out of third-party cookies are pushing the industry toward first-party data architectures. Underneath the FDM, Berlin's engineering substrate is already first-party — Snake.blue crawl, cached keyword and page store, ranking-signal coverage in Berlin's own database. Customers don't see this as a feature; they see it indirectly as outputs that don't depend on third-party subscriptions and stay fresh as the company's data scales.
 
 ### Trend 7: Evolving Search Behaviors
 
@@ -310,23 +310,46 @@ Enterprise-grade AI visibility platform covering 10+ AI engines (ChatGPT, Claude
 | Round | Date | Amount | Lead |
 |-------|------|--------|------|
 | Series B | Nov 2025 | $40M | Greylock |
-| **Total** | | **$60M** | |
+| **Total** | | **$62.1M** | |
 
 Valued at **$225M**. Grew from 20 to ~100 employees in 2025. Content-engineering platform helping brands analyze performance across on-site and off-site channels. Clients include **Ramp, Webflow, Kayak, Klaviyo, Chime and Wiz**. Plans to double headcount and expand to Europe in 2026.
 
 **Sources:** [Fortune](https://fortune.com/2025/11/10/airops-raises-40-million-series-b-at-225-million-valuation-to-rethink-marketing-in-the-age-of-ai/), [BusinessWire](https://www.businesswire.com/news/home/20251110823725/en/AirOps-Raises-$40M-to-Redefine-How-Brands-Compete-in-the-Era-of-AI-Search)
 
-#### Daydream - First Round-Backed Programmatic SEO for AI Search
+#### Daydream - WndrCo-Led "AI-Native Agency for SEO"
 
 | Round | Date | Amount | Lead |
 |-------|------|--------|------|
-| Seed | - | $3.8M | - |
-| Series A | Jul 2025 | $16.6M | First Round Capital |
-| **Total** | | **$23.4M** | |
+| Seed | 2024 | ~$6M | - |
+| Series A | Apr 2026 | $15M | WndrCo (with First Round Capital, Basis Set Ventures continuing) |
+| **Total** | | **$21M** | |
 
-Automates programmatic SEO for AI search engines like ChatGPT and Gemini.
+Explicitly positions as "the world's best AI-native agency for SEO" per the April 2026 Series A press release. Hybrid model: proprietary "SEO agents" execute at scale, plus a dedicated human Growth Lead per customer who owns strategy and outcomes. Built around the proprietary "daydream method" framework covering seven levers from keyword strategy to AI visibility. Sells outcomes and execution capacity rather than tooling — competes against agencies, not against SEO software. The most direct GTM-shape match for Berlin + FDM in the AI-native field, distinct from the platform-positioned cluster (Maintouch, Gushwork) that brands explicitly *against* the agency model.
 
-**Source:** [WithDaydream](https://www.withdaydream.com/library/announcing-our-3-8m-seed)
+**Sources:** [PR Newswire — daydream Series A](https://www.prnewswire.com/news-releases/daydream-raises-15m-series-a-to-build-the-worlds-best-ai-native-agency-for-seo-302732302.html), [ContentGrip](https://www.contentgrip.com/daydream-15m-ai-seo-agency/), [WithDaydream — $3.8M seed](https://www.withdaydream.com/library/announcing-our-3-8m-seed)
+
+#### Maintouch - YC S23 Platform Positioned to Replace Agencies
+
+| Round | Date | Amount | Lead |
+|-------|------|--------|------|
+| YC | S23 | - | Y Combinator |
+| Subsequent | - | Undisclosed publicly | - |
+
+YC S23. Founder Nathan Lian came out of his family's 9-figure SEO agency. Brand is explicitly *anti-agency*: "replaces marketing agencies" with a platform — copy describes the product as a "system of action that autonomously plans and executes." Covers strategy, content, programmatic SEO, and link acquisition end-to-end as software, not a service. Public funding undisclosed; YC profile and job posts hint at past Series A revenue levels. Closest in shape to Berlin's product but with no human owner on the customer side — the platform-only motion fights buyer instincts when scope expands beyond clean automation.
+
+**Sources:** [Maintouch — YC profile](https://www.ycombinator.com/companies/maintouch), [Maintouch homepage](https://maintouch.com/)
+
+#### Gushwork - $9M Seed, Agentic AI Marketing Platform
+
+| Round | Date | Amount | Lead |
+|-------|------|--------|------|
+| Pre-seed | Jul 2023 | $2.1M | Lightspeed |
+| Seed | Feb 2026 | $9M | Susquehanna Asia VC (with Lightspeed, B Capital, Beenext, Sparrow, 2.2 Capital) |
+| **Total** | | **~$11M** | |
+
+Founded in 2023 by Nayrhit Bhattacharya and Adithya Venkatesh in India. Started as outsourced AI+human workflows; now positions as an "agentic AI marketing platform." AI agents auto-generate content and build backlinks via a 200–300 partner-site network; subscriptions average $800–$900/month — platform-priced rather than agency-priced. Reported $1.5M ARR in 90 days post-launch, 80% MoM growth, 1,000+ leads/month across the customer base, 300+ businesses live and 800+ on a waitlist. Customer base concentrated in U.S. high-ticket B2B services, industrial distributors, contract manufacturers. Hybrid in delivery but consciously branding away from "agency."
+
+**Sources:** [TechCrunch — Gushwork bets on AI search](https://techcrunch.com/2026/02/25/gushwork-bets-on-ai-search-for-customer-leads-and-early-results-are-emerging/), [Gushwork — Series Seed announcement](https://www.gushwork.ai/announcement/seed), [YourStory](https://yourstory.com/2026/02/gushwork-ai-raises-9-million-in-seed-round-led-by-susquehanna-asia-vc)
 
 #### Peec AI - European GEO Leader
 
@@ -365,6 +388,14 @@ Valuation **tripled to over $100M** in just 4 months. Provides GEO tools includi
 3. **Enterprise adoption driving growth:** Many companies serve Fortune 500 and blue-chip brands (Profound: 10% of Fortune 500; Peec AI: Axel Springer, Chanel)
 
 4. **Shift from measurement to action:** Newer entrants combine analytics, recommendation engines and automated workflows (Profound Agents, Search Party autonomous workflows, Yolando integrated recommendation engine)
+
+5. **Agency vs. platform split inside the AI-native field:** The execution-focused AI-natives are splitting into two structurally different bets. Daydream brands itself explicitly as "AI-native agency for SEO" (agents + dedicated human Growth Lead per customer), while Maintouch and Gushwork brand explicitly *against* the agency model and sell as platforms that replace human SEO services. Pricing reveals the split: Daydream operates at agency price points, Maintouch wants SaaS multiples, Gushwork sits in between at $800–900/mo. Berlin's product + FDM motion sits in the agency-shaped slot with materially deeper product underneath.
+
+6. **Bucketed competitor map (April 2026):**
+   - **AI-native SEO agency:** Daydream ($21M total)
+   - **AI SEO platform that automates SEO:** Maintouch (YC S23, undisclosed), Gushwork (~$11M total)
+   - **AI-native monitoring & content:** Profound ($155M total, $1B val), Peec AI ($29M total, $100M+ val), AirOps ($62.1M total, $225M val), Frase (acquired by Copysmith 2022)
+   - **Incumbent data platforms:** Semrush ($411M+ ARR, public NYSE:SEMR), Ahrefs (~$149M rev, bootstrapped), Conductor ($210M+ raised, employee-owned), Botify ($82.6M raised, Series C)
 
 ---
 
