@@ -180,7 +180,7 @@ Provider and Client are each referred to as a "Party" and collectively as the "P
 
 Signature: ___________________________
 
-Name: Sherin Chacko Thomas
+Name: Sherin Thomas
 
 Title: Managing Member
 

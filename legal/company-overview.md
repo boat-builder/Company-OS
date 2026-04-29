@@ -9,7 +9,7 @@
 - **DE File Number:** 10198329
 - **DE SR#:** 20252384030
 - **County:** New Castle
-- **Sole Member & Manager:** Sherin Chacko Thomas
+- **Sole Member & Manager:** Sherin Thomas
 - **EIN:** 32-0815200
 - **IRS Name Control:** AGEN
 - **EIN Effective Date:** May 30, 2025
@@ -33,7 +33,7 @@
 
 The Operating Agreement is a standard Stripe Atlas single-member LLC agreement. Key structural points:
 
-- **Management:** Manager-managed. Sherin Chacko Thomas is the sole initial Manager.
+- **Management:** Manager-managed. Sherin Thomas is the sole initial Manager.
 - **Authorized Units:** 10,000,000. No additional classes without Manager + Majority Interest consent.
 - **Voting:** One vote per unit held.
 - **Termination:** Requires written consent of Managers and a Majority Interest vote.
@@ -44,7 +44,7 @@ The Operating Agreement is a standard Stripe Atlas single-member LLC agreement. 
 ## Agreements on File
 
 - **Operating Agreement** — Standard Stripe Atlas single-member LLC operating agreement, effective May 16, 2025.
-- **CIIAA (Confidential Information and Invention Assignment Agreement)** — Signed by Sherin Chacko Thomas as Service Provider, effective May 19, 2025. Covers IP assignment, confidentiality obligations, non-solicitation (12 months post-termination), and invention disclosure requirements.
+- **CIIAA (Confidential Information and Invention Assignment Agreement)** — Signed by Sherin Thomas as Service Provider, effective May 19, 2025. Covers IP assignment, confidentiality obligations, non-solicitation (12 months post-termination), and invention disclosure requirements.
 - **Certificate of Formation** — Filed with Delaware Division of Corporations on May 16, 2025. Approved and authenticated May 19, 2025 (Authentication: 203722446).
 
 ## Annual Compliance

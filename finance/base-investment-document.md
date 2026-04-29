@@ -13,14 +13,14 @@
 - **Entity Type:** Limited Liability Company (LLC)
 - **Incorporation State:** Delaware
 - **Registered Address:** 1111B S Governors Ave, Ste 29991, Dover, DE 19904
-- **Sole Member:** Sherin Chacko Thomas
+- **Sole Member:** Sherin Thomas
 - **Founded:** May 16, 2025
 - **Headquarters:** Dover, DE (registered address)
 - **Website:** agentberlin.ai
 - **One-Liner:** Berlin is the AI-native SEO/AEO agency — an end-to-end platform underneath, with a dedicated Forward Deployed Marketer on top — that replaces the SEO agency a company would otherwise sign. (In-house marketing teams aren't the alternative; they outsource SEO grunt work to agencies anyway.)
 - **Mission Statement:** To make world-class SEO and AEO outcomes accessible to every company by delivering the work itself — strategy, execution, and tools — through a single agent-driven platform rather than a toolchain or a headcount.
 - **Current Phase:** Platform first launched in late February 2026 and was **publicly relaunched on April 28, 2026** on the new agency-shaped offering — a repositioning from an agentic workflow infrastructure play to an end-to-end SEO/AEO platform that owns strategy, execution, and the underlying tools, now delivered as a product + Forward Deployed Marketer (FDM) service offering. **First commercial cohort committed at launch on Berlin + FDM at $499/month:** **Reach Psych** (reachpsych.com — Bangalore clinic, primary ICP, India field sales motion; *used v1 through its rough UX and chose to continue on v2 at launch — direct proof that the underlying value lands before the product is polished*) and **Csuite.so** (SaaS, early signal in the discovery grid); **miniOrange** (enterprise identity/security) is in technical/compliance due diligence on Berlin + FDM. Earlier Founding Partner cohort and one prior agency conversation (CSP Agency) wound down — both surfaced direct evidence that traditional businesses, not agencies, are the right primary commercial target. The go-forward motion is product + FDM sales to traditional businesses (with India field sales as a distinctive channel); the agency-tier SKU (Berlin for Agencies) remains a parallel offering but is not the primary motion.
-- **Key Contact(s):** Sherin Chacko Thomas — sherin@agentberlin.ai · +91 890 474 5603
+- **Key Contact(s):** Sherin Thomas — sherin@agentberlin.ai · +91 890 474 5603
 
 ### Product Evolution (May 2025 – Present)
 
@@ -549,7 +549,7 @@ Berlin is the only operator with both halves already in production. The compound
 
 | Name | Role | Background | LinkedIn |
 |------|------|------------|----------|
-| Sherin Chacko Thomas | Founder & CEO (Sole Member) | Co-built RedisAI (most performant runtime for AI in production at the time). Infrastructure engineer at Lightning.ai (creators of PyTorch Lightning, one of the most popular deep learning libraries). Author of the first published book on PyTorch. Founded and scaled a dev + marketing agency in Dubai to $350K revenue in year two. Combines deep AI infrastructure engineering with firsthand understanding of SEO workflows, agency pain points, and client dynamics. | [LinkedIn](https://linkedin.com/in/hhsecond) |
+| Sherin Thomas | Founder & CEO (Sole Member) | Co-built RedisAI (most performant runtime for AI in production at the time). Infrastructure engineer at Lightning.ai (creators of PyTorch Lightning, one of the most popular deep learning libraries). Author of the first published book on PyTorch. Founded and scaled a dev + marketing agency in Dubai to $350K revenue in year two. Combines deep AI infrastructure engineering with firsthand understanding of SEO workflows, agency pain points, and client dynamics. | [LinkedIn](https://linkedin.com/in/hhsecond) |
 | Rhea David | CMO | Two-time founder. Led media and product marketing at WeWork India. Owns go-to-market, brand, and the FDM layer strategy. Combines marketing leadership at scale with founder-level ownership of commercial motions. | — |
 
 - **Key hires planned:** Priority hires with this raise: (1) **FDM capacity** — scaling Forward Deployed Marketer headcount to support the Berlin + FDM offering as end-customer conversations close; this is the highest-leverage hire because the offering is rate-limited by FDM capacity. (2) **India field sales reps** — on-the-ground reps running physical outreach to traditional businesses (shops, offices, clinics, warehouses, trading firms) in the $500K–$2M MRR band. Reach Psych is the live proof case for this motion. (3) **Full-stack developer** at month 3–4 to improve platform reliability and expand the integration library. All roles based in India where cost structure is highly competitive for senior talent.
@@ -721,7 +721,7 @@ This is a **$1M pre-seed raise** to scale the live $998 MRR cohort into a repeat
 
 | Shareholder | Ownership | Type | Notes |
 |-------------|:---------:|------|-------|
-| Sherin Chacko Thomas | 100% | Sole Member, LLC | Founder & CEO |
+| Sherin Thomas | 100% | Sole Member, LLC | Founder & CEO |
 
 The company is 100% founder-owned with no outside investors, no outstanding SAFEs, no convertible notes, and no option pool. The cap table is completely clean.
 
@@ -817,6 +817,6 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 ---
 
 _Last updated: April 29, 2026_
-_Document owner: Sherin Chacko Thomas (sherin@agentberlin.ai)_
+_Document owner: Sherin Thomas (sherin@agentberlin.ai)_
 
 ---

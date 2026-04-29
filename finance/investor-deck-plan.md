@@ -27,7 +27,7 @@ These two sentences carry disproportionate weight and should be visually emphasi
 - **Founder built production AI infra (RedisAI, Lightning.ai) and ran a marketing agency to $350K**
 - **$1M raise · $10M post · ~80% gross margin · cash-flow positive month 8**
 
-**Footer:** Sherin Chacko Thomas, Founder & CEO · sherin@agentberlin.ai · +91 890 474 5603
+**Footer:** Sherin Thomas, Founder & CEO · sherin@agentberlin.ai · +91 890 474 5603
 
 ---
 
@@ -226,7 +226,7 @@ Conservative beachhead: 7,000 mid-market and enterprise teams currently paying a
 **Headline:** AI infrastructure engineer who has actually run an agency, paired with a two-time founder leading GTM.
 **Subhead:** This team covers the two hard problems at once — building the product and running the commercial motion.
 
-**Sherin Chacko Thomas — Founder & CEO**
+**Sherin Thomas — Founder & CEO**
 - **RedisAI** — Co-built the most performant runtime for AI in production at the time
 - **Lightning.ai** — Infrastructure engineer at the creators of PyTorch Lightning
 - **PyTorch book** — Author of the first published book on PyTorch
