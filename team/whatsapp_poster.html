@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Berlin — SEO Strategist (WhatsApp / Instagram)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #1a1a1a; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #111;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .poster {
+    --cream: #F5EFE0;
+    --cream-2: #EFE6D2;
+    --ink: #1a1a1a;
+    --ink-soft: #2b2826;
+    --green: #1F3D2E;
+    --green-2: #2a5240;
+    --peach: #FAD7B9;
+    --lavender: #DCC9E0;
+    --line: rgba(26,26,26,0.10);
+    --muted: rgba(26,26,26,0.55);
+
+    background: var(--cream);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', system-ui, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .poster *, .poster *::before, .poster *::after { box-sizing: border-box; }
+
+  .glow {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 60% at 100% 100%, rgba(250, 215, 185, 0.85) 0%, rgba(250, 215, 185, 0) 55%),
+      radial-gradient(ellipse 55% 55% at 95% 35%, rgba(220, 201, 224, 0.75) 0%, rgba(220, 201, 224, 0) 60%),
+      radial-gradient(ellipse 60% 50% at 0% 0%, rgba(255, 248, 232, 0.6) 0%, rgba(255, 248, 232, 0) 60%);
+  }
+  .grid-bg {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(26,26,26,0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26,26,26,0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 60%, transparent 100%);
+  }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 6px 14px;
+    border: 1px solid rgba(26,26,26,0.35);
+    border-radius: 999px;
+    background: rgba(245, 239, 224, 0.4);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .pill .dot {
+    width: 7px; height: 7px; border-radius: 999px;
+    background: #1F3D2E;
+    box-shadow: 0 0 0 3px rgba(31,61,46,0.18);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+  .logo .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+
+  .display {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+  }
+  .display em {
+    font-style: italic;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .cta-pill {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #0f0f0f;
+    color: #f5efe0;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .cta-pill .arrow {
+    display: inline-flex; width: 18px; height: 18px; border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    align-items: center; justify-content: center;
+    font-size: 11px;
+  }
+
+  .meta-row {
+    display: flex; align-items: center; gap: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .meta-row .dot { width: 3px; height: 3px; background: var(--muted); border-radius: 999px; }
+
+  /* WhatsApp 1080 x 1080 */
+  .wa {
+    width: 1080px; height: 1080px;
+    padding: 48px 60px 48px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .wa .top {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .wa .body {
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: 14px;
+  }
+  .wa .eyebrow {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 22px;
+  }
+  .wa .eyebrow .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .wa .eyebrow .line { flex: 0 0 60px; height: 1px; background: rgba(26,26,26,0.35); }
+
+  .wa .headline {
+    font-size: 124px;
+    letter-spacing: -0.03em;
+  }
+  .wa .headline .small {
+    display: block;
+    font-size: 70px;
+    margin-top: 0;
+  }
+  .wa .sub {
+    margin-top: 28px;
+    font-size: 19px;
+    line-height: 1.45;
+    color: rgba(26,26,26,0.78);
+    max-width: 760px;
+  }
+  .wa .annot {
+    margin-top: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .wa .specs-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-top: 32px;
+  }
+  .wa .specs-strip > div {
+    padding: 14px 0;
+    border-right: 1px solid var(--line);
+  }
+  .wa .specs-strip > div:last-child { border-right: 0; }
+  .wa .specs-strip dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .wa .specs-strip dd {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .wa .bottom {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 22px;
+  }
+  .wa .bottom .left {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .wa .bottom .email {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .wa .bottom .email span { color: var(--muted); }
+
+  .reg {
+    position: absolute;
+    width: 22px; height: 22px;
+    border-color: rgba(26,26,26,0.35);
+    border-style: solid;
+  }
+  .reg.tl { top: 18px; left: 18px; border-width: 1px 0 0 1px; }
+  .reg.tr { top: 18px; right: 18px; border-width: 1px 1px 0 0; }
+  .reg.bl { bottom: 18px; left: 18px; border-width: 0 0 1px 1px; }
+  .reg.br { bottom: 18px; right: 18px; border-width: 0 1px 1px 0; }
+</style>
+</head>
+<body>
+
+<div class="poster wa">
+  <div class="glow"></div>
+  <div class="grid-bg"></div>
+  <span class="reg tl"></span><span class="reg tr"></span>
+  <span class="reg bl"></span><span class="reg br"></span>
+
+  <div class="top">
+    <div class="logo">Berlin<span class="tag">/ careers</span></div>
+    <span class="pill"><span class="dot"></span>Now hiring</span>
+  </div>
+
+  <div class="body">
+    <div class="eyebrow">
+      <span class="line"></span>
+      <span class="role">// open role · seo-strategist</span>
+    </div>
+
+    <h1 class="display headline">
+      <span class="small">We're hiring an</span>
+      SEO Strategist<br/>
+      <span class="small"><em>who ships.</em></span>
+    </h1>
+
+    <p class="sub">
+      Work the frontier of AI search visibility — every modern SEO, AEO &amp; GEO experiment worth running. Berlin, our AI agent, handles the research and execution grunt work at machine speed. You keep the strategy, the judgment, the fun parts. No more boring SEO.
+    </p>
+
+    <div class="annot">
+      // 2–4 yrs hands-on SEO · ecom, SaaS or local · fluent with AI tools · velocity is the job
+    </div>
+
+    <dl class="specs-strip">
+      <div><dt>Location</dt><dd>Remote</dd></div>
+      <div><dt>Experience</dt><dd>2–4 years</dd></div>
+      <div><dt>Type</dt><dd>Full-time</dd></div>
+      <div><dt>Reports to</dt><dd>Founders</dd></div>
+    </dl>
+  </div>
+
+  <div class="bottom">
+    <div class="left">
+      <div class="email">apply → <span>jobs@agentberlin.ai</span></div>
+      <div class="meta-row">
+        <span>no cover letters</span>
+        <span class="dot"></span>
+        <span>we care how you think</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
