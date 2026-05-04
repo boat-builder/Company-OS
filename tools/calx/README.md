@@ -1,6 +1,6 @@
 # calx — Cal.com CLI
 
-A lightweight, scriptable command-line tool for managing your personal [Cal.com](https://cal.com) calendar — block time (OOO), create/cancel/list bookings — without touching the dashboard.
+A lightweight, scriptable command-line tool for managing your personal [Cal.com](https://cal.com) calendar — block time (smart-routes between OOO and schedule overrides for hour granularity), create/cancel/list bookings — without touching the dashboard.
 
 Single Python file, runs via [uv](https://docs.astral.sh/uv/) with no install step (deps are declared inline using PEP 723).
 
@@ -67,8 +67,8 @@ The examples below assume you've aliased it as `calx`.
 
 ```bash
 calx --help
-calx busy --help
-calx busy add --help
+calx block --help
+calx block add --help
 ```
 
 ---
@@ -85,31 +85,70 @@ calx me
 calx event-types list
 ```
 
-### Block time (OOO / "busy")
+### Block time
+
+`calx block` is the unified entry point for marking yourself unavailable. Cal.com
+exposes two endpoints with different granularities and the CLI picks the right
+one for you:
+
+- **OOO** (`POST /me/ooo`) — day-level only. Anything you POST is normalized to
+  00:00–23:59 of the start/end date. Good for "I'm out Tue–Thu."
+- **Schedule overrides** (`PATCH /schedules/{id}.overrides`) — per-date windows
+  that *replace* the weekly availability for that date. Good for "block 10am–7pm
+  Tuesday."
+
+`block add` splits your time range into per-day chunks in your schedule's
+timezone, and per day:
+
+- if the chunk fully covers that day's available windows → OOO entry
+  (consecutive full-block days are merged into one multi-day OOO POST)
+- otherwise → a schedule override listing the windows that remain after
+  subtracting the block
+
+This means you can ignore the underlying mechanics and just say "block this
+range." Use `--dry-run` to see the computed plan before it sends.
 
 ```bash
 # Explicit start + end (human-friendly times work)
-calx busy add --start "2026-05-05T14:00" --end "2026-05-05T15:30"
-calx busy add --start "tomorrow 2pm" --end "tomorrow 4pm"
+calx block add --start "2026-05-05T14:00" --end "2026-05-05T15:30"
+calx block add --start "tomorrow 2pm" --end "tomorrow 4pm"
+
+# Crossing midnight or spanning days is fine — split happens automatically
+calx block add --start "wed 5:30pm" --end "thu 12pm"
 
 # Relative: start in 30m, last 90m
-calx busy add --in 30m --for 90m
+calx block add --in 30m --for 90m
 
 # Relative start, absolute end
-calx busy add --in 30m --until "tomorrow 5pm"
+calx block add --in 30m --until "tomorrow 5pm"
 
-# With reason and notes
-calx busy add --in 1h --for 2h --reason vacation --notes "Hawaii trip"
+# Multi-day: this becomes a single OOO POST (Mon-Fri full days)
+calx block add --start "next mon" --end "next sat" --reason vacation \
+  --notes "Hawaii trip"
 
-# Reasons: unspecified, vacation, travel, sick, public_holiday
+# Reasons (OOO only): unspecified, vacation, travel, sick, public_holiday
+# (--reason and --notes are ignored on override-only blocks; Cal.com's
+# override schema doesn't store them.)
 
-# Preview the request without sending
-calx busy add --in 30m --for 90m --dry-run
+# Preview the plan without sending
+calx block add --start "wed 5:30pm" --end "thu 12pm" --dry-run
 
-# List & delete
-calx busy list
-calx busy delete <ooo_id>
+# List active blocks (OOO entries + schedule overrides, with their IDs)
+calx block list
+
+# Delete by ID. Accepts:
+#   ooo:<numeric_id>     - OOO entry
+#   override:<YYYY-MM-DD> - all override entries for that date
+#   bare numeric ID      - treated as OOO
+#   bare YYYY-MM-DD      - treated as override
+calx block delete ooo:72424
+calx block delete override:2026-05-06
 ```
+
+> Note on override `--reason`/`--notes`: Cal.com's override API doesn't
+> accept reason or notes fields. They're attached to OOO entries only. If a
+> block produces both an OOO entry and overrides, the reason/notes attach to
+> the OOO half and silently drop on the override half.
 
 ### Bookings
 
