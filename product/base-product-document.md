@@ -35,7 +35,28 @@ Berlin + FDM pricing is anchored at roughly **1/4 of what an agency would charge
 
 Scope determines the tier; the agency-fraction anchor stays constant across all four. The first paid cohort (Reach Psych, Csuite.so on Berlin + FDM) sits at the Entry tier deliberately — to validate fit and build a clean reference cohort. ARPU expansion comes from **cohort mix shift across the ladder**, not from price increases on existing accounts: a customer at $499 stays at $499 unless their scope materially expands.
 
-Berlin for Agencies pricing is anchored differently — against per-seat platform spend plus tooling subscriptions an agency would otherwise carry. Custom-tiered, taken opportunistically on direct inbound rather than pitched on the public site.
+### Pricing Principle (Berlin for Agencies)
+
+Berlin for Agencies is anchored differently — against the per-seat platform spend plus tooling subscriptions an agency would otherwise carry, not against a retainer multiple. Custom-tiered, taken opportunistically on direct inbound rather than pitched on the public site.
+
+When an agency engages, Berlin offers a **channel partner discount band** off list price. The band exists so the discount level is principled rather than negotiated from scratch each time, and so deeper discounts are explicitly tied to volume or strategic commitments.
+
+| Anchor | Discount | Conditions |
+|---|---|---|
+| **Open** | **25% off list** | Standard channel partner pricing — offered to any agency engaging on Berlin for Agencies. No commitments required. |
+| **Target** | **35–40% off list** | Locked for 18 months. Tied to volume commitment (e.g., 5 paid client seats by M6, 10 by M12). Discount steps back to 25% if volume floor isn't met. |
+| **Floor** | **50% off list** | Only with bundled commitments — geographic exclusivity for 12 months, or a 12-month case study + co-marketing commitment. |
+| **Walk** | Below 50% | Below 50% off list, Berlin walks. Below that, Berlin is underwriting the agency's customer acquisition with its own equity. |
+
+**Structural rules that apply across the band:**
+
+- The discount applies to **platform list price only**. LLM pass-through is at cost and is **non-negotiable** — never discounted, never bundled.
+- **MFN-back clause:** if Berlin offers any other agency a deeper discount on equivalent volume, the agency on this contract gets matched.
+- **No MFN-forward:** the agency does not get future product additions or new SKUs at the same discount rate.
+- **Annual renewal subject to volume.** No perpetual lock. The discount level rebases each year against the partner's actual volume.
+- **Enterprise-tier carve-out:** Heavy/Enterprise customer seats (corresponding to Heavy/Enterprise scope tiers on the Berlin + FDM ladder) carve out to a smaller discount of 15–20% — full channel rates would erode unit economics on those seats.
+
+**Reference points used to set this band:** standard reseller 15–25%; premier/volume 25–35%; white-label 35–50%. Berlin's open at 25% sits at the top of the standard reseller range; the 50% floor is the white-label ceiling. Below that, Berlin walks.
 
 ---
 

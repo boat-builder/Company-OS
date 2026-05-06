@@ -663,7 +663,16 @@ Berlin reaches cash-flow positive at **month 8** (November 2026) when MRR (~$27,
 
 ## 14. The Ask
 
-### Raise Overview
+### Round Structure
+
+Berlin is raising in two tranches:
+
+1. **$50K angel/bridge round — open now.** Priced at **$50K-for-1% (effective $5M post-money cap)** — half the seed cap, structured as an early-trust discount for angels who commit before the seed opens. **$25K committed of $50K open** (May 2026). Hard ceiling for any single angel: 0.5% (i.e., max $25K-equivalent check on this tranche).
+2. **$1M pre-seed/seed — opens after the angel tranche closes.** Priced at **$10M post-money cap (10% dilution)** — industry-standard for AI-native vertical SaaS in 2026.
+
+The angel cap is set deliberately at 2x the seed price; the same structural fairness rule applies to any non-cash variants (e.g., services-for-equity) — they convert into the same SAFE at the same cap as the cash angels in the round, never at a different price.
+
+### Seed Raise Overview (the $1M tranche)
 
 - **Amount raising:** $1,000,000
 - **Instrument:** SAFE (post-money)
@@ -723,7 +732,7 @@ This is a **$1M pre-seed raise** to scale the live $998 MRR cohort into a repeat
 |-------------|:---------:|------|-------|
 | Sherin Thomas | 100% | Sole Member, LLC | Founder & CEO |
 
-The company is 100% founder-owned with no outside investors, no outstanding SAFEs, no convertible notes, and no option pool. The cap table is completely clean.
+The company is 100% founder-owned with no outside investors, no outstanding SAFEs, no convertible notes, and no option pool. The cap table is completely clean. *(In progress: $50K angel/bridge tranche at $5M cap — $25K soft-circled / committed of $50K open as of May 2026, not yet executed; see Section 14 for full structure.)*
 
 ### Entity Structure
 
@@ -737,8 +746,8 @@ The company is 100% founder-owned with no outside investors, no outstanding SAFE
 ### Investor History
 
 - **Prior fundraising:** None — fully bootstrapped to date
-- **Existing investors:** None
-- **Outstanding SAFEs / convertible notes:** None
+- **Existing investors:** None (angel tranche in progress — see Section 14)
+- **Outstanding SAFEs / convertible notes:** None executed yet ($25K soft-circled into the open $50K angel tranche at $5M cap)
 - **Advisor equity / grants:** None
 
 ### Equity & Option Pool
