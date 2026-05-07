@@ -24,7 +24,7 @@ These two sentences carry disproportionate weight and should be visually emphasi
 
 **Headline-stat strip (bottom — 3 callouts):**
 - **Launched April 28, 2026 with 2 customers committed pre-launch + enterprise in DD** — one customer returning from v1
-- **Founder built production AI infra (RedisAI, Lightning.ai) and ran a marketing agency to $350K**
+- **Founder built production AI infra (RedisAI, Lightning.ai) and ran a marketing agency to $500K**
 - **$1M raise · $10M post · ~80% gross margin · cash-flow positive month 8**
 
 **Footer:** Sherin Thomas, Founder & CEO · sherin@agentberlin.ai · +91 890 474 5603
@@ -161,13 +161,13 @@ Conservative beachhead: 7,000 mid-market and enterprise teams currently paying a
 | **Price entry**                    | Agency price points                                                    | ~1/4 of equivalent agency cost ($499 entry, walks up with scope)                                                        |
 | **Capital raised**                 | $21M ($15M Series A Apr 2026, WndrCo)                                  | $1M seed in flight at $10M post-money cap, clean cap table                                                          |
 | **Substrate**                      | Proprietary SEO agents; depth not publicly disclosed                   | Custom agentic framework on Go runtime, Snake.blue crawler, cached keyword/page store, 80+ ranking signals              |
-| **Founder edge**                   | Programmatic SEO operators (prior co. Flixed → 400K+ monthly visitors) | AI-infra engineer (RedisAI, Lightning.ai) **and** ran a marketing agency to $350K                                       |
+| **Founder edge**                   | Programmatic SEO operators (prior co. Flixed → 400K+ monthly visitors) | AI-infra engineer (RedisAI, Lightning.ai) **and** ran a marketing agency to $500K                                       |
 
 **Two structural reasons Berlin and Daydream don't compete head-to-head:**
 
 1. **Different buyer pool.** Daydream's price point and brand point at enterprise. Berlin's first paid cohort is a Bangalore clinic and a bootstrapped SaaS founder at $499/mo — a buyer Daydream's economics can't reach.
 
-2. **Different founder edge.** Daydream's founders came up as programmatic SEO operators. Berlin's founder built production AI runtimes at RedisAI and Lightning.ai *and* personally ran a marketing agency to $350K — a combination almost nobody else in this category has.
+2. **Different founder edge.** Daydream's founders came up as programmatic SEO operators. Berlin's founder built production AI runtimes at RedisAI and Lightning.ai *and* personally ran a marketing agency to $500K — a combination almost nobody else in this category has.
 
 **The line:** *April 2026 marks the first Series A in this exact shape. The category just got real — and Berlin is the differentiated bet underneath it.*
 
@@ -230,7 +230,7 @@ Conservative beachhead: 7,000 mid-market and enterprise teams currently paying a
 - **RedisAI** — Co-built the most performant runtime for AI in production at the time
 - **Lightning.ai** — Infrastructure engineer at the creators of PyTorch Lightning
 - **PyTorch book** — Author of the first published book on PyTorch
-- **Dubai agency** — Founded and scaled a dev + marketing agency to $350K revenue in year two
+- **Dubai agency** — Founded and scaled a dev + marketing agency to $500K revenue in year two
 
 **Rhea David — Fractional CMO**
 - Two-time founder
