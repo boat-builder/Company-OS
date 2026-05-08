@@ -26,6 +26,8 @@ brew install uv
    - Products
 4. Copy the key (starts with `rk_live_` or `rk_test_`).
 
+If you want richer access (e.g. for `customer show` to surface bank/card details, or to read account-level info), grant those Read scopes too. The CLI only ever calls read endpoints.
+
 A restricted key (`rk_`) was chosen over a secret key (`sk_`) deliberately — this CLI only reads. A read-only key can't move money, create customers, or modify subscriptions even if it leaks.
 
 ### 3. Configure
@@ -41,7 +43,7 @@ STRIPE_API_KEY=rk_live_xxxxxxxxxxxxx
 ### 4. Verify
 
 ```bash
-uv run stripe_cli.py me
+uv run stripe_cli.py customer find --name "test"
 ```
 
 The first run will install deps (click, stripe, rich) into a managed cache. Subsequent runs are instant.
@@ -84,26 +86,25 @@ stripex customer find --help
 
 ## Commands
 
-### Sanity check
-
-```bash
-# Confirms your API key works and shows your account
-stripex me
-```
-
 ### Find a customer
 
+`customer find` accepts exactly one of `--email`, `--domain`, or `--name`. All three go through the Stripe Search API — no client-side iteration, no scanning.
+
 ```bash
-# Exact email (uses Stripe Search)
+# Exact email match — email:'foo@bar.com'
 stripex customer find --email meena@reachpsych.com
 
-# By domain (Stripe Search doesn't support email substrings, so this
-# iterates customers and filters client-side)
+# Email domain (case-insensitive substring against the @domain suffix) — email~'@reachpsych.com'
 stripex customer find --domain reachpsych.com
 
+# Customer name (case-insensitive substring) — name~'meena'
+stripex customer find --name "Meena"
+
 # Limit results (default 20)
-stripex customer find --domain reachpsych.com --limit 5
+stripex customer find --domain gmail.com --limit 5
 ```
+
+If `--domain` returns nothing, the customer's billing email may be on a different domain than expected — try `--name` instead.
 
 ### Show a customer + their subscriptions
 
@@ -142,8 +143,8 @@ stripex invoice list --limit 50
 ## Typical workflow: "when does X's subscription end?"
 
 ```bash
-# 1. Find the customer
-stripex customer find --domain reachpsych.com
+# 1. Find the customer (try name first — most reliable when you know who they are)
+stripex customer find --name "Meena"
 
 # 2. Pipe the cus_id into customer show — gives you everything in one go
 stripex customer show cus_AbC123xyz
@@ -182,9 +183,11 @@ This mirrors the pattern used by [`tools/calx/`](../calx/).
 
 **Period fields moved.** In API versions before 2024-09-30, `current_period_start`/`current_period_end` lived on the Subscription object. In newer versions they moved to subscription items. `stripex` checks both locations so it works regardless of the API version your account is pinned to.
 
-**Email substring search isn't a thing.** Stripe's Search API supports exact match on `email` (e.g. `email:'foo@bar.com'`), but no `LIKE` / wildcard. That's why `--domain` falls back to iterating customers — fine for accounts up to a few thousand, slow beyond that. If you ever hit the safety stop at 5000 customers scanned, switch to `--email`.
+**Search supports both exact and substring on string fields.** Stripe's Search query language has `field:'value'` (exact match) and `field~'value'` (case-insensitive substring) for `email` and `name`. `stripex` uses both: `--email` is exact, `--domain` and `--name` are substring.
 
-**Restricted keys can be scoped tighter.** If you ever want to prevent this CLI from seeing certain resources (e.g. payment methods, payouts), just leave those permissions at "None" when creating the key. The CLI only ever calls Customer, Subscription, Invoice, Account, Plan, Price, and Product endpoints.
+**`StripeObject` is not a dict.** It supports `obj["key"]` but not `obj.get("key")`, and `bool(empty_obj)` is `True`. The CLI uses an internal `sg(obj, key, default)` helper to paper over that. If you extend the CLI and access fields that may be missing, use `sg` rather than `.get`.
+
+**Restricted keys can be scoped tighter or wider.** If you ever want to prevent this CLI from seeing certain resources, leave those permissions at "None" when creating the key. The CLI only ever calls Customer, Subscription, Invoice, Plan, Price, and Product endpoints — no Account, no Charges, no PaymentMethods.
 
 ---
 
@@ -205,6 +208,6 @@ This mirrors the pattern used by [`tools/calx/`](../calx/).
 
 **`No such permission` / 401 on a specific endpoint** — your restricted key is missing a Read scope. Edit the key at Stripe → Developers → API keys → click the key → tick the missing permission.
 
-**`No customers found` for `--domain` but they're definitely there** — the customer may have a different email domain than expected (e.g. `gmail.com` rather than the company domain). Try `--email` with their actual email.
+**`No customers found` for `--domain` but they're definitely there** — their billing email may be on a different domain than expected (e.g. `gmail.com` rather than the company domain). Try `--name` with their first or last name.
 
-**`scanned 5000 customers without filling --limit`** — the safety stop. The customer probably doesn't exist; double-check spelling, or use `--email` if you know it.
+**Stripe Search returns no result but you can see them in the dashboard** — Stripe's Search index lags writes by a few seconds. Brand-new customers may not appear immediately.

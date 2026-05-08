@@ -153,18 +153,6 @@ def cli() -> None:
     pass
 
 
-@cli.command(help="Sanity-check the API key (shows account info).")
-def me() -> None:
-    init_stripe()
-    acct = stripe.Account.retrieve()
-    console.print(f"[cyan]Account:[/cyan] {acct.id}")
-    biz = sg(acct, "business_profile") or {}
-    console.print(f"[cyan]Business:[/cyan] {sg(biz, 'name') or '—'}")
-    console.print(f"[cyan]Email:[/cyan] {sg(acct, 'email') or '—'}")
-    console.print(f"[cyan]Country:[/cyan] {sg(acct, 'country') or '—'}")
-    console.print(f"[cyan]Charges enabled:[/cyan] {sg(acct, 'charges_enabled')}")
-
-
 # =============================================================================
 # customer
 # =============================================================================
@@ -175,43 +163,50 @@ def customer_group() -> None:
     pass
 
 
-@customer_group.command(name="find", help="Find customers by email (exact) or domain (substring).")
-@click.option("--email", help="Exact email match (uses Stripe Search).")
-@click.option("--domain", help="Email domain, e.g. reachpsych.com. Iterates customers client-side.")
+@customer_group.command(
+    name="find",
+    help="Find customers by email (exact), email domain (substring), or name (substring).",
+)
+@click.option("--email", help="Exact email match. Uses Stripe Search: email:'value'.")
+@click.option(
+    "--domain",
+    help="Email domain, e.g. reachpsych.com. Uses Stripe Search: email~'@domain'.",
+)
+@click.option(
+    "--name",
+    "name_q",
+    help="Case-insensitive substring on customer name. Uses Stripe Search: name~'value'.",
+)
 @click.option("--limit", default=20, show_default=True, type=int, help="Max results to print.")
-def customer_find(email: Optional[str], domain: Optional[str], limit: int) -> None:
+def customer_find(
+    email: Optional[str],
+    domain: Optional[str],
+    name_q: Optional[str],
+    limit: int,
+) -> None:
     init_stripe()
-    if not (email or domain):
-        raise click.UsageError("Provide --email or --domain.")
-    if email and domain:
-        raise click.UsageError("Use --email OR --domain, not both.")
 
-    matches: list[Any] = []
+    given = [opt for opt in (email, domain, name_q) if opt]
+    if not given:
+        raise click.UsageError("Provide one of --email, --domain, or --name.")
+    if len(given) > 1:
+        raise click.UsageError("Use --email, --domain, or --name — only one at a time.")
 
+    # Stripe Search query language:
+    #   email:'foo@bar.com'  -> exact match
+    #   email~'@bar.com'     -> case-insensitive substring
+    #   name~'meena'         -> case-insensitive substring on name
+    # We escape single quotes in the user input so they don't break out of the literal.
     if email:
-        # Stripe Search supports exact email match.
-        result = stripe.Customer.search(query=f"email:'{email}'", limit=min(limit, 100))
-        matches = list(result)[:limit]
+        query = f"email:'{_q(email)}'"
+    elif domain:
+        d = domain.lstrip("@")
+        query = f"email~'@{_q(d)}'"
     else:
-        # Stripe doesn't support substring search on email natively.
-        # Iterate customers and filter client-side. Cheap on small accounts;
-        # bound by --limit to avoid scanning forever on large ones.
-        domain_l = domain.lower().lstrip("@")
-        scanned = 0
-        for cust in stripe.Customer.list(limit=100).auto_paging_iter():
-            scanned += 1
-            cust_email = (cust.email or "").lower()
-            if cust_email.endswith("@" + domain_l):
-                matches.append(cust)
-                if len(matches) >= limit:
-                    break
-            # Safety valve: don't scan forever.
-            if scanned >= 5000:
-                console.print(
-                    f"[yellow]Warning:[/yellow] scanned {scanned} customers without "
-                    f"filling --limit. Stopping. Consider --email instead."
-                )
-                break
+        query = f"name~'{_q(name_q)}'"
+
+    result = stripe.Customer.search(query=query, limit=min(limit, 100))
+    matches = list(result)[:limit]
 
     if not matches:
         click.echo("No customers found.")
@@ -225,6 +220,11 @@ def customer_find(email: Optional[str], domain: Optional[str], limit: int) -> No
     for c in matches:
         table.add_row(c.id, c.email or "—", c.name or "—", fmt_date(c.created))
     console.print(table)
+
+
+def _q(s: str) -> str:
+    """Escape a value for inclusion in a Stripe Search single-quoted literal."""
+    return s.replace("\\", "\\\\").replace("'", "\\'")
 
 
 @customer_group.command(name="show", help="Show customer details + all subscriptions.")
