@@ -212,7 +212,7 @@ tools/calx/
 └── cal_cli.py     # single-file CLI (PEP 723 inline deps)
 ```
 
-This mirrors the pattern used by [`sales/closecrm/`](../../sales/closecrm/).
+This mirrors the pattern used by sibling CLIs [`closex/`](../closex/) and [`stripex/`](../stripex/).
 
 ---
 

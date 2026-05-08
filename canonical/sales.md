@@ -437,10 +437,10 @@ Only if genuinely planned, and always paired with a CTA:
 ## Referenced Assets (Not Canonical Content)
 
 - `sales/transcripts/` — raw call transcripts (input for content, not canonical positioning)
-- `sales/closecrm/` — CRM scripts and integrations
+- `tools/closex/` — Close CRM CLI (moved from `sales/closecrm/` 2026-05-08; sibling to `tools/calx/` and `tools/stripex/`)
 - `sales/llm-instructions.prompt` — LLM prompt for sales-call assist
 - `sales/pipeline.md` — ephemeral active-deal tracker
 
 ---
 
-_Last updated: 2026-05-07_
+_Last updated: 2026-05-08_

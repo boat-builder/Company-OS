@@ -31,7 +31,8 @@ The existing top-level folders (`team/`, `marketing/`, `sales/`, `customers/`, `
 - `team/linkedin_poster.html`, `team/whatsapp_poster.html` — recruitment posters
 - `marketing/partners-page/` — partner-channel landing pages
 - `sales/transcripts/` — raw call transcripts
-- `sales/closecrm/`, `sales/llm-instructions.prompt` — CRM scripts and assist prompts
+- `tools/closex/` — Close CRM CLI (sibling to `tools/calx/` and `tools/stripex/`)
+- `sales/llm-instructions.prompt` — LLM prompt for sales-call assist
 - `sales/pipeline.md` — ephemeral active-deal tracker
 - `finance/funding-page/index.html` — investor-facing HTML deck
 - `product/berlin-market-research-final.md` — detailed source-cited market data appendix backing `market.md`
@@ -53,3 +54,4 @@ After this canonical/ directory was built, several previously-de-facto-canonical
 ---
 
 _Created: 2026-05-07_
+_Last updated: 2026-05-08 — `closecrm` moved from `sales/` to `tools/closex/`._

@@ -1,6 +1,8 @@
-# Close CRM CLI
+# closex — Close CRM CLI
 
-A command-line interface for interacting with Close CRM.
+A command-line interface for interacting with [Close CRM](https://close.com).
+
+Lives alongside the other personal CLIs under `tools/` (`calx`, `stripex`).
 
 ## Setup
 
