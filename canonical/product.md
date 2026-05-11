@@ -71,7 +71,7 @@ Full FDM model lives in `team.md`.
 
 ### A Dashboard That Runs Itself (and That You Can Talk To)
 
-Berlin's interface is a dashboard. Once the customer connects their domain and the accounts Berlin needs (GSC, GA4, CMS, social, etc.), Berlin begins executing on its own — **no conversation is required**. Progress, outputs, and next steps surface in the dashboard rather than being chased across a dozen tools. There are no workflows to configure and no agents to wire together.
+Berlin's interface is a dashboard. Once the customer connects their domain and the accounts Berlin needs (GSC; GA4 or Amplitude; CMS; social; etc.), Berlin begins executing on its own — **no conversation is required**. Progress, outputs, and next steps surface in the dashboard rather than being chased across a dozen tools. There are no workflows to configure and no agents to wire together.
 
 Customers can talk to Berlin if they want — to steer strategy, ask for a specific outcome, or inspect reasoning — but it is optional. The default mode is autonomous execution with human review where it matters.
 
@@ -83,7 +83,7 @@ Berlin has domain intelligence about what SEO/AEO strategies work today — what
 
 Berlin actually does the operational work — running audits, monitoring rankings, identifying and prioritizing optimization, executing content and technical improvements, tracking performance, surfacing what's changed. The goal is to take approximately **70% of the operational effort** off an SEO or marketing team's plate — not by answering questions or generating suggestions, but by producing **shipped work**.
 
-A concrete shape of this in practice: **Berlin runs a full site audit in under an hour — the same audit takes a typical agency three days.** Berlin then schedules the fixes, executes most of them automatically, and continuously monitors for regressions and new issues. Anything that genuinely cannot be automated is where the FDM steps in.
+A concrete shape of this in practice: **Berlin runs a full site audit in under an hour — the same audit takes a typical agency three days.** That is the one-shot, step-function comparison; in practice Berlin runs the same audit work *continuously* through its operating loop (see *How Berlin Operates* below). Berlin schedules the fixes, executes most of them automatically, and monitors for regressions and new issues. Anything that genuinely cannot be automated is where the FDM steps in.
 
 ### Human Oversight
 
@@ -94,6 +94,41 @@ Berlin operates with human oversight. Before taking actions that affect live sys
 For end customers on the Berlin + FDM package, an assigned FDM works alongside the platform. The FDM shapes strategy, reviews Berlin's output, handles the customer relationship, and surfaces patterns back into Berlin's default playbooks. **The FDM is not a consulting bolt-on — they are the human owner of the customer relationship in a model where the platform does the execution.** This is the layer that lets Berlin replace an agency relationship cleanly for buyers who expect a human owner, not just software.
 
 The agency-tier version of the product does not include an FDM; agencies provide that layer themselves for their own clients. Full model spec in `team.md`.
+
+---
+
+## How Berlin Operates — The Audit → Report → Act Loop
+
+Beneath the Strategy/Execution/Tools framework (which describes *who owns what part of the work*), Berlin's day-to-day operating model runs as a continuous loop with three modes: **audit**, **report**, **act**. The loop is not a one-time onboarding sequence — it is a cycle that keeps watching, synthesizing, and acting as the brand and the search landscape evolve.
+
+### Brand Grounding
+
+Before Berlin can operate on a brand, it builds a grounding layer.
+
+- **Brand profile.** A public-web pass assembles the brand's profile: name and description, industries, business model, company size, target customer segments, geographies, competitors, and a hierarchical topic tree describing what the brand is about. The user reviews and corrects this.
+- **Brand files.** Berlin auto-generates a *Brand Context* file from the enrichment pass — that is the only file Berlin creates automatically. On top of that, customers and FDMs can upload any additional files that help Berlin do SEO better — tone guides, keyword priorities, internal playbooks, style guides, product taxonomies, anything Berlin's agents should know. **The upload surface is a heavily used FDM tool, not an edge case.** The full file set is pre-seeded into the agent's working directory on every audit run and shapes every downstream decision: which workflows get selected, how the report reads, and what actions get generated.
+
+### Audit — Continuous Observability
+
+In Berlin's product terminology, *audit* is the **continuous observability mode**. Berlin draws from a curated strategy catalog — a vetted library of SEO/AEO strategies maintained by Berlin's in-house experts — and selects a brand-shaped portfolio of *workflows*. Each workflow is a scheduled watch job that polls a slice of the brand's SEO surface, brings back signal, and re-runs on its own cadence.
+
+The composition of the portfolio is what makes the audit personalized. A brand-new website mostly gets content workflows. An established brand with weak topical authority gets review-presence, citation, and authority-tracking workflows. A brand in a regulated industry gets a different shape again. **Audit is observability — it sets up the watching, not the doing.**
+
+This reconciles the "audit" terminology with the agency comparison: the one-hour full site audit is Berlin's pass at the same step-function audit an agency runs weekly, monthly, or quarterly to measure efficiency and gaps. The underlying work is the same — Berlin runs it continuously rather than as scheduled events, because agents are doing it.
+
+### Report — A Living Per-Brand Document
+
+With workflows producing data continuously, Berlin synthesizes a single living audit report per brand. It translates raw workflow signal into findings and prioritized focus areas, and stays current as new signal arrives. The report is the bridge between *what we're seeing* and *what to do about it*, and it surfaces in the Report Center.
+
+### Act — A Grounded Backlog
+
+From the report, Berlin generates discrete, well-scoped actions on the project's backlog. Each action has a short imperative title, a brief description tied to a specific finding, and falls into one of a controlled set of categories: **off-site citation work, content create, content update, technical fix, validation, custom**.
+
+The intent is that many actions auto-execute against connected systems — publishing to the CMS, fixing internal linking in place, updating metadata on flagged URLs. The rest land in the **Review Center** for human approval before going live.
+
+### The Loop
+
+Audit, report, and act are not onboarding steps — they are a cycle. Workflows keep watching on their cadences, the report stays current as new signal lands, and new actions get generated as new findings emerge. The brand profile and uploaded files keep tuning the agent's behavior as the brand evolves. The FDM owns the loop end-to-end for the accounts they're assigned to and can shape any phase: re-composing the audit portfolio, refining the report, picking up Review Center actions that aren't yet safe to fully automate.
 
 ---
 
@@ -149,6 +184,11 @@ A flat reference of Berlin's capabilities. These are all parts of one product; t
 | **Dashboard Interface** | The user-facing surface for Berlin. The user talks to Berlin here; Berlin surfaces plans, work, outputs, and status. | Live |
 | **Strategy Engine** | Berlin generates the SEO/AEO strategy by default from the brand's live data and current best practice. Users can optionally supply their own strategy. | Live |
 | **Execution Engine** | Berlin performs the operational work end-to-end — audits, content, technical fixes, reporting, monitoring. | Live |
+| **Brand Profile** | Public-web enrichment pass that builds the brand's profile — industries, business model, company size, target segments, geographies, competitors, topic tree, description. User reviews and corrects. | Live |
+| **Brand Files** | Auto-generated Brand Context file plus customer- and FDM-uploaded files (tone guides, keyword priorities, internal playbooks, style guides, product taxonomies). Pre-seeded into the agent's working directory on every audit run. Heavily used by FDMs. | Live |
+| **Continuous Audit** | Observability mode. Berlin runs a brand-shaped portfolio of scheduled workflows drawn from a curated strategy catalog, each polling a slice of the brand's SEO surface on its own cadence. | Live |
+| **Audit Report** | One living per-brand audit report synthesizing workflow signal into findings and prioritized focus areas. Stays current as new signal arrives. Surfaces in the Report Center. | Live |
+| **Action Backlog** | Discrete actions generated from the audit report, grounded in specific findings. Categories: off-site citation, content create, content update, technical fix, validation, custom. Many auto-execute; the rest route through the Review Center. | Live |
 | **Report Center** | Centralized collection of all outputs Berlin produces. | Live |
 | **Review Center** | Human-in-the-loop approval before actions execute. | Live |
 | **Scheduling** | Work runs on a schedule without human initiation. | Live |
@@ -167,7 +207,6 @@ Listed for internal and investor reference only. Not features Berlin sells, mess
 | **Unified Data & Action Layer** | Single-authentication access to GSC, GA4, Bing Webmaster Tools, CMS, social, Google Trends, Maps, reviews, and more. | Live & Expanding |
 | **Semantic Page & Keyword Intelligence** | Brand and competitor pages/keywords auto-indexed as embeddings, searchable by meaning. | Live |
 | **Proprietary Data Routing Architecture** | Data routed through Berlin's infrastructure instead of an LLM context window, eliminating hallucination from context overflow. | Live |
-| **Brand Context** | Shared knowledge layer for brand guidelines, terminology, audience details. Available to Berlin's agents as org-wide memory. | Live |
 | **Team & Org Management** | Add team members, manage access, share credits. Multiple projects (brands) within the same org. | Live |
 
 ---
@@ -184,10 +223,6 @@ Berlin + FDM pricing is anchored at roughly **1/4 of what an agency would charge
 | **Enterprise** | $20K+/mo | **$5,000+** | Compliance-heavy, multi-brand (miniOrange shape) |
 
 **Scope determines the tier; the agency-fraction anchor stays constant across all four.** The first paid cohort (Reach Psych, Csuite.so) sits at the Entry tier deliberately — to validate fit and build a clean reference cohort. **ARPU expansion comes from cohort mix shift across the ladder, not from price increases on existing accounts**: a customer at $499 stays at $499 unless their scope materially expands.
-
-### India market exception
-
-Local agencies in India charge ~₹60K/month (~$630). Berlin's $499 is **not** 1/4 of agency cost in this market. When competing locally, lead with marketer-to-client ratio (1:10–15 vs 1:4–8) and AI search authority work, not price. (Sales playbook: `sales.md`.)
 
 ---
 
@@ -227,4 +262,4 @@ When crafting messaging for a specific audience:
 
 ---
 
-_Last updated: 2026-05-07_
+_Last updated: 2026-05-11 — added the *How Berlin Operates — Audit → Report → Act Loop* section (brand grounding, continuous-audit observability mode, living per-brand report, action backlog with categories); reconciled the two senses of "audit" in *Execution Done for You*; added Brand Profile, Brand Files, Continuous Audit, Audit Report, and Action Backlog to the feature reference; moved Brand Context out of Tools Layer (it's user-facing grounding, not engineering substrate); noted Amplitude as an alternative to GA4 in the dashboard description. Earlier same day: India market exception moved out of pricing; tactical handling lives in `sales.md`._
