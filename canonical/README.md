@@ -17,7 +17,7 @@ One `.md` per topical domain. Each file is self-contained and cross-references t
 | [`customers.md`](customers.md) | Primary ICP (traditional businesses), 6-cell discovery grid, 6 archetype taxonomy, cell hypotheses, promotion criteria, India market reality |
 | [`team.md`](team.md) | Founder bios (Sherin + Rhea), full FDM model, operator ratios, May 2026 partner-agency setup, first FDM hire spec, hiring plan |
 | [`sales.md`](sales.md) | Sales positioning, qualification framework, call structure, persona-specific approaches, objection handling, closing motion, pricing discipline, learning log |
-| [`marketing.md`](marketing.md) | Content principles, audience definition, content goals, funnel, execution, channels, customer-facing language discipline |
+| [`marketing.md`](marketing.md) | Channels and their roles, adjacent initiatives (micro-influencer program, autonomous affiliate POC), customer-facing language discipline. **Content/outbound playbook lives in `marketing/content-playbook.md`.** |
 | [`market.md`](market.md) | TAM/SAM/SOM, AEO/GEO inflection, traffic shift, labor-addressable reframing, competitor landscape (4 buckets), why-now narrative, VC validation |
 | [`finance.md`](finance.md) | Current state, revenue model, traction, flagship case, projections, cash flow, round structure, use of funds, cap table, risks |
 
@@ -30,6 +30,7 @@ The existing top-level folders (`team/`, `marketing/`, `sales/`, `customers/`, `
 - `team/Forward-Deployed-SEO-JD.md` — public JD (asset; canonical role spec is in `team.md`)
 - `team/linkedin_poster.html`, `team/whatsapp_poster.html` — recruitment posters
 - `marketing/partners-page/` — partner-channel landing pages
+- `marketing/content-playbook.md` — content philosophy, audience discipline, funnel framing, execution craft, outbound-from-content (operational playbook; canonical channel facts are in `marketing.md`)
 - `sales/transcripts/` — raw call transcripts
 - `tools/closex/` — Close CRM CLI (sibling to `tools/calx/` and `tools/stripex/`)
 - `sales/llm-instructions.prompt` — LLM prompt for sales-call assist
@@ -54,4 +55,4 @@ After this canonical/ directory was built, several previously-de-facto-canonical
 ---
 
 _Created: 2026-05-07_
-_Last updated: 2026-05-08 — `closecrm` moved from `sales/` to `tools/closex/`._
+_Last updated: 2026-05-12 — `marketing.md` trimmed to canonical-only content (channels, initiatives, language discipline); content/outbound playbook extracted to `marketing/content-playbook.md`._
