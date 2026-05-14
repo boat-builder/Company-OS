@@ -1,1 +1,911 @@
-<p>Berlin is an end-to-end SEO/AEO platform — talk to Berlin in a dashboard and it delivers outcomes across strategy, execution, and the underlying tools, replacing the need to hire an agency or build an in-house SEO team.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Berlin — for prospective customers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --cream: #F4ECDC;
+    --cream-soft: #EEE3CE;
+    --ink: #15110C;
+    --ink-soft: #4A3F30;
+    --ink-faint: #8A7B61;
+    --rust: #A65A3A;
+    --rust-soft: #C2785A;
+    --line: #15110C;
+    --hairline: rgba(21, 17, 12, 0.18);
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: "SF Mono", ui-monospace, Menlo, Monaco, "Courier New", monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: var(--cream); color: var(--ink); }
+  body {
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+
+  /* ---------- Deck shell ---------- */
+  .deck { position: fixed; inset: 0; }
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    padding: 64px 96px 88px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 350ms ease;
+    overflow-y: auto;
+  }
+  .slide.active { opacity: 1; pointer-events: auto; }
+
+  /* ---------- Top bar ---------- */
+  .bar {
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 32px;
+  }
+  .bar .brand { color: var(--ink); letter-spacing: 0.22em; }
+  .bar .right { display: flex; gap: 24px; }
+
+  /* ---------- Eyebrow ---------- */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 28px;
+  }
+
+  /* ---------- Typography ---------- */
+  h1.cover-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(72px, 11vw, 180px);
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    color: var(--ink);
+  }
+  h1.cover-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(28px, 3.4vw, 52px);
+    color: var(--rust);
+    line-height: 1.15;
+    margin-top: 16px;
+    max-width: 22ch;
+  }
+
+  h2.title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 4.6vw, 72px);
+    letter-spacing: -0.022em;
+    line-height: 1.05;
+    color: var(--ink);
+    max-width: 22ch;
+  }
+  h2.title em { font-style: italic; color: var(--rust); }
+  h2.title .accent { color: var(--rust); font-style: italic; }
+
+  h3.sub {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 1.8vw, 28px);
+    line-height: 1.35;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin-top: 28px;
+  }
+
+  p, li {
+    font-family: var(--sans);
+    font-size: 17px; line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  p.lede { font-size: 19px; color: var(--ink); max-width: 60ch; }
+
+  .rule { height: 1px; background: var(--line); border: 0; margin: 24px 0; }
+  .rule-soft { height: 1px; background: var(--hairline); border: 0; }
+
+  /* ---------- Cover ---------- */
+  .slide.cover { padding: 96px 96px 96px; justify-content: space-between; }
+  .cover-block { margin-top: auto; margin-bottom: 60px; }
+  .cover-meta {
+    display: flex; gap: 56px; align-items: baseline;
+    font-family: var(--mono);
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink); padding-top: 28px;
+    border-top: 2px solid var(--ink); max-width: 920px;
+  }
+  .cover-meta .label { color: var(--ink-faint); }
+
+  /* ---------- Layouts ---------- */
+  .body-grid {
+    display: grid; gap: 56px;
+    margin-top: 56px;
+  }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+  .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .cols-2-wide { grid-template-columns: 1.1fr 1fr; gap: 80px; }
+
+  .panel { display: flex; flex-direction: column; gap: 14px; }
+  .panel .kicker {
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--rust);
+  }
+  .panel .h {
+    font-family: var(--serif); font-size: 28px; font-weight: 400;
+    line-height: 1.15; color: var(--ink);
+  }
+  .panel p { color: var(--ink-soft); font-size: 16px; }
+
+  /* ---------- Lists ---------- */
+  ul.tight { list-style: none; }
+  ul.tight li {
+    position: relative;
+    padding: 14px 0 14px 28px;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 17px;
+    color: var(--ink);
+  }
+  ul.tight li::before {
+    content: ""; position: absolute; left: 0; top: 26px;
+    width: 14px; height: 1px; background: var(--rust);
+  }
+  ul.tight li .desc { color: var(--ink-soft); font-size: 14px; display: block; margin-top: 4px; }
+  ul.tight li strong { font-weight: 600; }
+
+  ul.bare { list-style: none; }
+  ul.bare li {
+    padding: 10px 0;
+    font-size: 17px; color: var(--ink-soft);
+  }
+  ul.bare li::before {
+    content: "·"; color: var(--rust);
+    display: inline-block; width: 18px; font-weight: 700;
+  }
+
+  /* ---------- Big stat ---------- */
+  .stat {
+    display: flex; align-items: baseline; gap: 24px;
+    margin-top: 40px;
+  }
+  .stat .num {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(96px, 12vw, 200px);
+    letter-spacing: -0.04em; line-height: 0.9; color: var(--ink);
+  }
+  .stat .num em { color: var(--rust); font-style: italic; }
+  .stat .caption {
+    font-family: var(--serif); font-style: italic;
+    color: var(--rust); font-size: clamp(24px, 2.2vw, 36px);
+    max-width: 24ch; line-height: 1.2;
+  }
+
+  .arrow-row {
+    display: flex; align-items: baseline; gap: 32px; margin-top: 32px;
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(56px, 7vw, 110px);
+    letter-spacing: -0.03em; line-height: 1;
+  }
+  .arrow-row .from { color: var(--ink-faint); text-decoration: line-through; text-decoration-thickness: 2px; }
+  .arrow-row .arrow { color: var(--rust); font-style: italic; }
+  .arrow-row .to { color: var(--ink); }
+
+  /* ---------- Comparison table ---------- */
+  table.compare {
+    width: 100%; border-collapse: collapse; margin-top: 40px;
+    font-family: var(--sans);
+  }
+  table.compare th, table.compare td {
+    text-align: left;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--hairline);
+    vertical-align: top;
+    font-size: 16px;
+  }
+  table.compare th {
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faint);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 14px;
+  }
+  table.compare td.dim { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); width: 28%; }
+  table.compare td.agency { color: var(--ink-soft); }
+  table.compare td.berlin { color: var(--ink); font-weight: 500; }
+  table.compare td.berlin .b { color: var(--rust); }
+
+  /* ---------- Pricing ---------- */
+  .price-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; margin-top: 48px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .tier {
+    padding: 28px 24px;
+    border-right: 1px solid var(--hairline);
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .tier:last-child { border-right: 0; }
+  .tier .name {
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--rust);
+  }
+  .tier .price {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 32px; letter-spacing: -0.015em; color: var(--ink);
+  }
+  .tier .price small { font-size: 14px; color: var(--ink-faint); letter-spacing: 0; font-family: var(--mono); }
+  .tier .agency-anchor { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); }
+  .tier .agency-anchor s { color: var(--ink-faint); }
+  .tier .who { font-size: 14px; color: var(--ink-soft); line-height: 1.4; margin-top: 4px; }
+
+  /* ---------- Screenshot placeholder ---------- */
+  .shot {
+    background: var(--cream-soft);
+    border: 1px dashed var(--hairline);
+    border-radius: 6px;
+    aspect-ratio: 16 / 10;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    color: var(--ink-faint);
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    text-align: center;
+    padding: 24px;
+    gap: 8px;
+  }
+  .shot .ico {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--cream); border: 1px solid var(--hairline);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-style: italic; color: var(--rust);
+    font-size: 18px;
+  }
+  .shot .label { color: var(--ink-soft); }
+  .shot .hint { color: var(--ink-faint); font-size: 10px; letter-spacing: 0.16em; max-width: 32ch; }
+
+  /* ---------- Audit/Report/Act loop ---------- */
+  .loop {
+    display: grid; grid-template-columns: 1fr 24px 1fr 24px 1fr;
+    align-items: stretch; gap: 0; margin-top: 48px;
+  }
+  .loop .step {
+    padding: 28px; background: var(--cream-soft);
+    border-radius: 6px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .loop .arrowcell {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rust); font-family: var(--serif); font-style: italic; font-size: 28px;
+  }
+  .loop .step .num {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--rust);
+  }
+  .loop .step .h {
+    font-family: var(--serif); font-size: 26px; line-height: 1.1; color: var(--ink);
+  }
+  .loop .step p { font-size: 14px; }
+
+  /* ---------- Callout ---------- */
+  .callout {
+    margin-top: 40px; padding: 28px 32px;
+    background: var(--ink); color: var(--cream);
+    border-radius: 6px;
+    display: flex; align-items: baseline; gap: 24px;
+  }
+  .callout .big {
+    font-family: var(--serif); font-size: 44px; font-style: italic; color: var(--cream);
+    line-height: 1;
+  }
+  .callout .txt { font-size: 16px; color: var(--cream); max-width: 50ch; }
+  .callout .txt strong { color: #F4ECDC; }
+
+  /* ---------- CTA ---------- */
+  .cta-row { margin-top: 56px; display: flex; flex-direction: column; gap: 20px; }
+  .cta-row .cta {
+    display: inline-block;
+    background: var(--rust); color: var(--cream);
+    padding: 22px 36px;
+    border-radius: 4px;
+    font-family: var(--serif); font-style: italic; font-size: 28px;
+    text-decoration: none;
+    align-self: flex-start;
+  }
+  .cta-row .small {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .cta-row .small a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rust); padding-bottom: 1px; }
+
+  .timeline {
+    list-style: none; margin-top: 40px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 28px;
+  }
+  .timeline li {
+    border-top: 2px solid var(--line);
+    padding: 16px 0 0;
+  }
+  .timeline .when {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--rust); margin-bottom: 10px;
+  }
+  .timeline .what {
+    font-family: var(--serif); font-size: 20px; line-height: 1.25; color: var(--ink);
+  }
+  .timeline .what em { font-style: italic; color: var(--rust); }
+
+  /* ---------- Nav controls ---------- */
+  .nav {
+    position: fixed; bottom: 24px; left: 0; right: 0;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 96px; pointer-events: none;
+  }
+  .nav .counter, .nav .hint {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .nav .hint { pointer-events: none; }
+  .nav .arrows { display: flex; gap: 6px; pointer-events: auto; }
+  .nav .arrows button {
+    background: transparent; border: 1px solid var(--hairline);
+    width: 34px; height: 34px; border-radius: 50%;
+    color: var(--ink); cursor: pointer; font-family: var(--serif);
+    font-size: 16px; display: flex; align-items: center; justify-content: center;
+    transition: background 150ms ease, border-color 150ms ease;
+  }
+  .nav .arrows button:hover { background: var(--cream-soft); border-color: var(--ink); }
+  .nav .arrows button:disabled { opacity: 0.35; cursor: default; }
+
+  /* ---------- Footer brand line on each slide ---------- */
+  .footer-brand {
+    position: absolute; bottom: 24px; left: 96px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-faint); pointer-events: none;
+  }
+
+  /* ---------- Small-screen safety ---------- */
+  @media (max-width: 980px) {
+    .slide { padding: 32px 32px 80px; }
+    .nav { padding: 0 32px; }
+    .footer-brand { left: 32px; }
+    .cols-2, .cols-2-wide, .cols-3, .price-grid, .timeline {
+      grid-template-columns: 1fr !important;
+    }
+    .loop { grid-template-columns: 1fr; }
+    .loop .arrowcell { transform: rotate(90deg); height: 24px; }
+  }
+
+  /* ---------- Print: each slide on its own page ---------- */
+  @media print {
+    @page { size: 1280px 800px; margin: 0; }
+    html, body { background: var(--cream); }
+    .nav, .footer-brand { display: none !important; }
+    .deck { position: static; }
+    .slide {
+      position: relative; inset: auto;
+      opacity: 1 !important; pointer-events: auto !important;
+      page-break-after: always;
+      break-after: page;
+      min-height: 800px;
+      transition: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- ============ Slide 1: Cover ============ -->
+  <section class="slide cover active" data-slide="1">
+    <div style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint);">
+      AGENTIC&nbsp;WORLD,&nbsp;LLC &nbsp;·&nbsp; CONFIDENTIAL
+    </div>
+    <div class="cover-block">
+      <h1 class="cover-title">Berlin</h1>
+      <h1 class="cover-sub">The AI agent for SEO &amp; AI&nbsp;Search &mdash; and the platform underneath &mdash; that replaces your agency.</h1>
+      <div class="cover-meta">
+        <div><span class="label">For</span> &nbsp;Prospective customers</div>
+        <div><span class="label">Format</span> &nbsp;Overview · 10&ndash;15 min read</div>
+        <div><span class="label">Contact</span> &nbsp;sherin@agentberlin.ai</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Slide 2: The shift ============ -->
+  <section class="slide" data-slide="2">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>The shift</span><span>02 / 13</span></span>
+    </div>
+    <div class="eyebrow">Why this deck exists</div>
+    <h2 class="title">SEO in 2026 is roughly <em>10&times; harder</em> than it was three years ago.</h2>
+    <h3 class="sub">The blue-link game became the AI-search game &mdash; and the playbook for the new game isn&rsquo;t written down anywhere.</h3>
+
+    <div class="body-grid cols-3">
+      <div class="panel">
+        <div class="kicker">Surface expanded</div>
+        <p>You&rsquo;re no longer optimizing for one search engine. ChatGPT, Perplexity, Claude, Google&rsquo;s AI Mode, traditional Google, AI overviews &mdash; same buyer, six surfaces.</p>
+      </div>
+      <div class="panel">
+        <div class="kicker">Scope expanded</div>
+        <p>Review velocity, citation building, brand presence on the platforms LLMs cite from (Reddit, LinkedIn, niche forums), authority signals across multiple platforms &mdash; none of it on a 2022 SEO checklist.</p>
+      </div>
+      <div class="panel">
+        <div class="kicker">No playbook</div>
+        <p>Google and OpenAI publish nothing. The techniques that work shift week to week. Agencies and in-house teams don&rsquo;t have the bandwidth to run the experiments.</p>
+      </div>
+    </div>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 3: The old way ============ -->
+  <section class="slide" data-slide="3">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>The old way</span><span>03 / 13</span></span>
+    </div>
+    <div class="eyebrow">The agency model</div>
+    <h2 class="title">Agencies were built for the world <em>before</em> AI&nbsp;Search.</h2>
+
+    <div class="body-grid cols-2-wide">
+      <div>
+        <ul class="tight">
+          <li><strong>Quarterly audits.</strong><span class="desc">A real audit cycle is three days of human work. Run once a quarter, sometimes once.</span></li>
+          <li><strong>Narrow surface area.</strong><span class="desc">Built for blue links. AI Search citations, review velocity, and platform authority sit outside the standard scope.</span></li>
+          <li><strong>Slow turnarounds.</strong><span class="desc">Brief, draft, review, revise, push to CMS &mdash; weeks per page, billed by the hour.</span></li>
+          <li><strong>Priced for human throughput.</strong><span class="desc">$4K&ndash;$15K/mo for mid-market scope. The math forces narrow coverage.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="sub" style="margin-top: 0;">When you sign an agency today, you&rsquo;re paying for yesterday&rsquo;s playbook &mdash; delivered with tomorrow&rsquo;s results delayed.</h3>
+        <p class="lede" style="margin-top: 28px;">Among customers already paying an agency, dissatisfaction is near-universal in our discovery calls. Not because agency teams aren&rsquo;t good &mdash; the model itself doesn&rsquo;t fit 2026.</p>
+      </div>
+    </div>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 4: Berlin in one line ============ -->
+  <section class="slide" data-slide="4">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>What Berlin is</span><span>04 / 13</span></span>
+    </div>
+    <div class="eyebrow">What Berlin is</div>
+    <h2 class="title">Same scope as your agency.<br><span class="accent">~1/4</span> the cost. <span class="accent">~5&times;</span> the speed.</h2>
+    <h3 class="sub">An AI platform that does the SEO &amp; AI Search work end-to-end &mdash; with a Dedicated Marketer who owns the relationship the way an account lead would at a great agency.</h3>
+
+    <div class="body-grid cols-3" style="margin-top: 72px;">
+      <div class="panel">
+        <div class="kicker">Same scope</div>
+        <p class="lede" style="font-size: 17px;">Strategy, execution, monitoring, reporting. Plus the new surfaces an agency hasn&rsquo;t added to its scope yet.</p>
+      </div>
+      <div class="panel">
+        <div class="kicker">~1/4 the cost</div>
+        <p class="lede" style="font-size: 17px;">Anchored to agency retainer for the same scope. The platform does the operational work; one human can cover what an agency assigns three to.</p>
+      </div>
+      <div class="panel">
+        <div class="kicker">~5&times; the speed</div>
+        <p class="lede" style="font-size: 17px;">A full site audit in under an hour &mdash; the same audit an agency runs in three days. And we run it continuously, not quarterly.</p>
+      </div>
+    </div>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 5: How it works ============ -->
+  <section class="slide" data-slide="5">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>How it works</span><span>05 / 13</span></span>
+    </div>
+    <div class="eyebrow">Two layers</div>
+    <h2 class="title">The platform does the work.<br>A Dedicated Marketer <em>owns</em> the relationship.</h2>
+
+    <div class="body-grid cols-2-wide" style="margin-top: 56px;">
+      <div>
+        <div class="panel" style="margin-bottom: 32px;">
+          <div class="kicker">The platform</div>
+          <div class="h">An AI dashboard that runs your SEO program autonomously.</div>
+          <p>You connect Google Search Console, GA4, and your CMS. Berlin researches your brand, builds a strategy, runs the audits, generates the actions, pushes content updates to your CMS, executes technical fixes against the site, and keeps watching for new issues. No conversation required &mdash; you can talk to Berlin to steer it if you want.</p>
+        </div>
+        <div class="panel">
+          <div class="kicker">The Dedicated Marketer</div>
+          <div class="h">A senior SEO &amp; AI&nbsp;Search strategist assigned to your account.</div>
+          <p>Internally we call them <em>Forward Deployed Marketers</em>. They shape the strategy, review and approve Berlin&rsquo;s output before anything ships, and handle the work no agent can &mdash; manual posting on LinkedIn or Reddit, judgment calls, anything that needs a human ear. They own the relationship, the same way an agency account lead does &mdash; except they have an AI platform doing the operational work underneath them.</p>
+        </div>
+      </div>
+      <div>
+        <div class="shot">
+          <div class="ico">B</div>
+          <div class="label">Dashboard home &mdash; screenshot</div>
+          <div class="hint">Replace with: signed-in home view, showing brand profile + pending items</div>
+        </div>
+        <p style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); margin-top: 16px; text-align: center;">What the customer lands on after sign-in</p>
+      </div>
+    </div>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 6: Surface area ============ -->
+  <section class="slide" data-slide="6">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>Surface area</span><span>06 / 13</span></span>
+    </div>
+    <div class="eyebrow">What watches your brand, continuously</div>
+    <h2 class="title">A portfolio of <em>continuous watchers.</em></h2>
+    <h3 class="sub" style="margin-top: 16px;">Berlin builds workflows that watch slices of your SEO &amp; AI&nbsp;Search surface, each on its own cadence. The library is open-ended &mdash; what we run for you depends on your vertical and what&rsquo;s moving in your data.</h3>
+
+    <div class="body-grid cols-2-wide" style="margin-top: 36px; gap: 56px;">
+      <div>
+        <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 14px;">A few examples of what watchers look like</div>
+        <ul class="tight">
+          <li><strong>AI&nbsp;Search citation tracking</strong><span class="desc">Where you show up on ChatGPT, Perplexity, Google AI Mode, Claude.</span></li>
+          <li><strong>Striking-distance &amp; cannibalization</strong><span class="desc">Queries at positions 8&ndash;20. URLs competing with themselves.</span></li>
+          <li><strong>Title / meta / H1 watch</strong><span class="desc">CTR rewrite opportunities across every indexed URL.</span></li>
+          <li><strong>Off-site authority &amp; competitor pages</strong><span class="desc">Citations missing, competitors&rsquo; new content, what they&rsquo;re cited for.</span></li>
+        </ul>
+        <p style="margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint);">These are illustrative. Your portfolio is shaped to your brand.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="shot" style="aspect-ratio: 5 / 2;">
+          <div class="ico">W</div>
+          <div class="label">Workflow portfolio &mdash; screenshot</div>
+          <div class="hint">Replace with: workflows view showing watch jobs, cadence, last-run status</div>
+        </div>
+        <div class="panel" style="padding: 18px 20px; background: var(--cream-soft); border-radius: 6px;">
+          <div class="kicker">Agents on top</div>
+          <p style="font-size: 14px;">Agentic processes read the watchers&rsquo; outputs on a loop, weigh new signal against existing findings, and decide what becomes an action &mdash; without you having to triage.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 7: The 1-hour audit ============ -->
+  <section class="slide" data-slide="7">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>Speed</span><span>07 / 13</span></span>
+    </div>
+    <div class="eyebrow">Step-function speed</div>
+    <h2 class="title">The audit you&rsquo;d wait <em>three days</em> for, in under an hour.</h2>
+
+    <div class="arrow-row" style="margin-top: 60px;">
+      <span class="from">3 days</span>
+      <span class="arrow">&rarr;</span>
+      <span class="to">&lt; 1 hour</span>
+    </div>
+    <h3 class="sub" style="margin-top: 40px;">That&rsquo;s the one-shot comparison &mdash; an agency&rsquo;s full site audit vs Berlin&rsquo;s first pass. In practice we don&rsquo;t stop there: Berlin runs the same audit work <em>continuously</em>. New signal in, new findings out, every week.</h3>
+
+    <div class="body-grid cols-3" style="margin-top: 56px;">
+      <div class="panel">
+        <div class="kicker">Agency cadence</div>
+        <p>Once per quarter. Sometimes once at onboarding, then never again.</p>
+      </div>
+      <div class="panel">
+        <div class="kicker">Berlin cadence</div>
+        <p>Continuous. Most workflows weekly, some daily. The audit report stays current as new signal arrives.</p>
+      </div>
+      <div class="panel">
+        <div class="kicker">What this changes</div>
+        <p>A regression that would have taken your agency 90 days to notice gets caught the same week it happens.</p>
+      </div>
+    </div>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 8: Signal to shipped ============ -->
+  <section class="slide" data-slide="8">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>Signal to shipped</span><span>08 / 13</span></span>
+    </div>
+    <div class="eyebrow">From finding to shipped work</div>
+    <h2 class="title">Audit. Report. <em>Act.</em></h2>
+    <h3 class="sub" style="margin-top: 20px;">A loop, not a one-time onboarding. Findings turn into discrete actions; safe actions execute against your live systems; anything that needs a human eye routes to your Dedicated Marketer in the Review Center.</h3>
+
+    <div class="loop" style="margin-top: 36px;">
+      <div class="step">
+        <div class="num">01 &mdash; Audit</div>
+        <div class="h">Continuous observability.</div>
+        <p>Watchers poll your SEO &amp; AI&nbsp;Search surface on their own cadences. New signal lands constantly.</p>
+      </div>
+      <div class="arrowcell">&rarr;</div>
+      <div class="step">
+        <div class="num">02 &mdash; Report</div>
+        <div class="h">One living document.</div>
+        <p>Signal becomes findings and prioritized focus areas. Stays current; doesn&rsquo;t go stale the way an agency&rsquo;s quarterly deck does.</p>
+      </div>
+      <div class="arrowcell">&rarr;</div>
+      <div class="step">
+        <div class="num">03 &mdash; Act</div>
+        <div class="h">Shipped work, not suggestions.</div>
+        <p>Content updates push to your CMS. Technical fixes execute live. Human-judgment items route to the Review Center.</p>
+      </div>
+    </div>
+
+    <p class="lede" style="margin-top: 32px;">You&rsquo;re not in the loop unless you want to be. Default mode: autonomous execution with your Dedicated Marketer reviewing what matters &mdash; you can review every action or only the categories you flag.</p>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 9: The Dedicated Marketer ============ -->
+  <section class="slide" data-slide="9">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>The human owner</span><span>09 / 13</span></span>
+    </div>
+    <div class="eyebrow">The human owner</div>
+    <h2 class="title">One marketer covers what an agency assigns <em>three</em> to.</h2>
+
+    <div class="body-grid cols-2-wide" style="margin-top: 56px;">
+      <div>
+        <ul class="tight">
+          <li><strong>Reviews &amp; approves.</strong><span class="desc">Nothing ships to your site or your CMS without sign-off (unless you turn the threshold off).</span></li>
+          <li><strong>Shapes the workflow portfolio.</strong><span class="desc">Adds or retires watch jobs as your priorities shift &mdash; new geography, new product, new competitor.</span></li>
+          <li><strong>Does the work bots can&rsquo;t.</strong><span class="desc">Manual posting on LinkedIn or Reddit (where automation is blocked), judgment calls, anything that needs a human ear.</span></li>
+          <li><strong>Owns the relationship.</strong><span class="desc">One point of contact. Weekly check-ins. The way an account lead at a great agency would.</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout">
+          <span class="big">~70%</span>
+          <span class="txt">of your team&rsquo;s SEO operational work, <strong>off their plate</strong>. The remaining 30% is the strategic and judgment work your Dedicated Marketer owns &mdash; not work your team has to do.</span>
+        </div>
+        <div style="margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--hairline);">
+          <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px;">Marketer&thinsp;:&thinsp;client ratio</div>
+          <div style="display: flex; gap: 32px; align-items: baseline;">
+            <div>
+              <div style="font-family: var(--serif); font-size: 36px; color: var(--ink-faint);">1 : 4&ndash;8</div>
+              <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-top: 4px;">Traditional agency</div>
+            </div>
+            <div>
+              <div style="font-family: var(--serif); font-size: 36px; color: var(--ink);">1 : 10&ndash;15</div>
+              <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rust); margin-top: 4px;">Berlin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 10: Why this works ============ -->
+  <section class="slide" data-slide="10">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>Why this works</span><span>10 / 13</span></span>
+    </div>
+    <div class="eyebrow">The substrate</div>
+    <h2 class="title">This isn&rsquo;t a wrapper. There&rsquo;s real infrastructure <em>underneath.</em></h2>
+    <h3 class="sub">Three pieces of engineering that the comparison numbers actually rest on. You won&rsquo;t see any of this in the product &mdash; you&rsquo;ll just notice that the answers are current and the workflows don&rsquo;t break.</h3>
+
+    <div class="body-grid cols-3" style="margin-top: 56px;">
+      <div class="panel">
+        <div class="kicker">Our own crawler</div>
+        <div class="h">Snake.blue.</div>
+        <p>Berlin runs its own AI-first crawler against your site and your competitors continuously. What you see in the audit is current &mdash; not a Semrush export from last month.</p>
+      </div>
+      <div class="panel">
+        <div class="kicker">Our own data layer</div>
+        <div class="h">Queryable, not guessed.</div>
+        <p>Millions of keywords and pages sit behind a fast query layer that agents hit <em>directly</em>. Not retrieved from an LLM&rsquo;s context window, not hallucinated. The reason long, multi-step audit runs don&rsquo;t fall over.</p>
+      </div>
+      <div class="panel">
+        <div class="kicker">80+ ranking signals</div>
+        <div class="h">Tracked automatically.</div>
+        <p>The signal capture and prioritization that, at an agency, would be an analyst&rsquo;s full week of manual work. At Berlin, it&rsquo;s a tool the platform calls in the background.</p>
+      </div>
+    </div>
+
+    <h3 class="sub" style="margin-top: 56px;">Why we bother saying this: it&rsquo;s the reason one Dedicated Marketer can cover the depth an agency assigns three people to &mdash; and why pricing lands at ~1/4 of agency cost without breaking the unit economics.</h3>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 11: Agency vs Berlin ============ -->
+  <section class="slide" data-slide="11">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>Side by side</span><span>11 / 13</span></span>
+    </div>
+    <div class="eyebrow">Side by side</div>
+    <h2 class="title">What changes when you <em>switch.</em></h2>
+
+    <table class="compare">
+      <thead>
+        <tr>
+          <th style="width: 28%;">Dimension</th>
+          <th style="width: 36%;">Traditional agency</th>
+          <th style="width: 36%;">Berlin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dim">Full site audit</td>
+          <td class="agency">3 days, once per quarter</td>
+          <td class="berlin"><span class="b">&lt; 1 hour</span>, continuous</td>
+        </tr>
+        <tr>
+          <td class="dim">Surface area</td>
+          <td class="agency">Blue links (Google)</td>
+          <td class="berlin">Google <span class="b">+ AI Search + reviews + authority + competitors</span></td>
+        </tr>
+        <tr>
+          <td class="dim">Cost</td>
+          <td class="agency">From $1.5K&ndash;$20K+&thinsp;/&thinsp;mo (scope-based)</td>
+          <td class="berlin"><span class="b">From $499</span>&thinsp;/&thinsp;mo (scope-based, ~1/4 of agency)</td>
+        </tr>
+        <tr>
+          <td class="dim">Marketer&thinsp;:&thinsp;client ratio</td>
+          <td class="agency">1 : 4&ndash;8</td>
+          <td class="berlin"><span class="b">1 : 10&ndash;15</span></td>
+        </tr>
+        <tr>
+          <td class="dim">Reporting</td>
+          <td class="agency">Quarterly deck</td>
+          <td class="berlin">Living document, <span class="b">updates as new signal lands</span></td>
+        </tr>
+        <tr>
+          <td class="dim">Time to shipped fix</td>
+          <td class="agency">2&ndash;4 weeks</td>
+          <td class="berlin"><span class="b">Same day</span> on most actions</td>
+        </tr>
+        <tr>
+          <td class="dim">Commitment</td>
+          <td class="agency">6&ndash;12 month retainer</td>
+          <td class="berlin"><span class="b">Month-to-month</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 12: Pricing ============ -->
+  <section class="slide" data-slide="12">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>Pricing</span><span>12 / 13</span></span>
+    </div>
+    <div class="eyebrow">Pricing</div>
+    <h2 class="title">Same scope as your agency. <em>~1/4</em> the price.</h2>
+    <h3 class="sub">Subscription pricing on a scope-based ladder &mdash; anchored against the agency retainer for equivalent scope at every step.</h3>
+
+    <div style="margin-top: 64px; display: flex; align-items: baseline; gap: 32px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--hairline); padding: 32px 0;">
+      <div>
+        <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 10px;">Starts at</div>
+        <div style="font-family: var(--serif); font-weight: 400; font-size: clamp(64px, 8vw, 120px); letter-spacing: -0.03em; line-height: 0.95; color: var(--ink);">$499<span style="font-size: 0.35em; color: var(--ink-faint); font-family: var(--mono); letter-spacing: 0.1em;">&nbsp;/&nbsp;MO</span></div>
+      </div>
+      <div style="flex: 1; padding-left: 32px; border-left: 1px solid var(--hairline);">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ink); line-height: 1.35;">Larger scopes ladder up from there &mdash; the agency-fraction anchor stays the same.</p>
+        <p style="margin-top: 14px; font-size: 14px; color: var(--ink-soft);">We&rsquo;ll quote your tier on the next call, based on what we saw in discovery.</p>
+      </div>
+    </div>
+
+    <p style="margin-top: 40px; font-size: 15px; color: var(--ink-soft); max-width: 80ch;"><strong style="color: var(--ink);">Included at every tier:</strong> the platform, your Dedicated Marketer, SEO + AI&nbsp;Search coverage, the audit + report + action loop, CMS integration, the Review Center. Month-to-month.</p>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+  <!-- ============ Slide 13: Next steps ============ -->
+  <section class="slide" data-slide="13">
+    <div class="bar">
+      <span class="brand">BERLIN</span>
+      <span class="right"><span>Next steps</span><span>13 / 13</span></span>
+    </div>
+    <div class="eyebrow">What happens next</div>
+    <h2 class="title">Week 1 with Berlin.</h2>
+
+    <ol class="timeline">
+      <li>
+        <div class="when">Day 1 &mdash; 0:00</div>
+        <div class="what">You connect <em>GSC, GA4, and your CMS.</em> Berlin starts researching your brand and competitors.</div>
+      </li>
+      <li>
+        <div class="when">Day 1 &mdash; 1:00</div>
+        <div class="what">First <em>full audit</em> completes. Your living report is live.</div>
+      </li>
+      <li>
+        <div class="when">Week 1</div>
+        <div class="what">First actions land in your <em>Review Center.</em> Safe ones auto-execute against your site.</div>
+      </li>
+      <li>
+        <div class="when">Week 4</div>
+        <div class="what">First review against the <em>metrics we agree on</em> before kickoff.</div>
+      </li>
+    </ol>
+
+    <div class="cta-row">
+      <a class="cta" href="https://cal.link/berlin">Pick a start date &nbsp;&rarr;</a>
+      <div class="small">
+        Reply to start &nbsp;·&nbsp; <a href="mailto:sherin@agentberlin.ai">sherin@agentberlin.ai</a> &nbsp;·&nbsp;
+        <a href="https://agentberlin.ai">agentberlin.ai</a> &nbsp;·&nbsp;
+        <a href="#" data-video-link>Watch the 3-min walkthrough</a>
+      </div>
+    </div>
+    <div class="footer-brand">BERLIN &nbsp;·&nbsp; FOR&nbsp;PROSPECTIVE&nbsp;CUSTOMERS</div>
+  </section>
+
+</div>
+
+<!-- ============ Nav ============ -->
+<div class="nav">
+  <span class="counter" id="counter">01 / 13</span>
+  <span class="hint">&larr; / &rarr; &nbsp;to navigate &nbsp;·&nbsp; P to print</span>
+  <span class="arrows">
+    <button id="prev" aria-label="Previous slide">&larr;</button>
+    <button id="next" aria-label="Next slide">&rarr;</button>
+  </span>
+</div>
+
+<script>
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var counter = document.getElementById('counter');
+    var prevBtn = document.getElementById('prev');
+    var nextBtn = document.getElementById('next');
+    var current = 0;
+    var total = slides.length;
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function show(i) {
+      i = Math.max(0, Math.min(total - 1, i));
+      slides.forEach(function (s, idx) {
+        s.classList.toggle('active', idx === i);
+      });
+      current = i;
+      counter.textContent = pad(i + 1) + ' / ' + pad(total);
+      prevBtn.disabled = i === 0;
+      nextBtn.disabled = i === total - 1;
+      if (history.replaceState) {
+        history.replaceState(null, '', '#' + (i + 1));
+      }
+    }
+
+    function next() { show(current + 1); }
+    function prev() { show(current - 1); }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { next(); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { prev(); e.preventDefault(); }
+      else if (e.key === 'Home') { show(0); e.preventDefault(); }
+      else if (e.key === 'End') { show(total - 1); e.preventDefault(); }
+      else if (e.key === 'p' || e.key === 'P') { window.print(); }
+    });
+
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
+
+    // Honor #N hash on load
+    var hash = (location.hash || '').replace('#', '');
+    var n = parseInt(hash, 10);
+    if (!isNaN(n) && n >= 1 && n <= total) show(n - 1);
+    else show(0);
+
+    // Touch / swipe (basic)
+    var startX = 0;
+    document.addEventListener('touchstart', function (e) {
+      if (e.touches && e.touches.length) startX = e.touches[0].clientX;
+    }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+      var endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : startX;
+      var dx = endX - startX;
+      if (Math.abs(dx) > 60) { if (dx < 0) next(); else prev(); }
+    }, { passive: true });
+  })();
+</script>
+
+</body>
+</html>
