@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A 2-week diagnostic for brew.tv — Agent Berlin</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --rule: #e5e2dc;
+    --paper: #fbfaf7;
+    --accent: #b8431f;
+    --tag-bg: #f1ede5;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Charter', 'Iowan Old Style', 'Georgia', serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 48px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .masthead .logo { color: var(--ink); font-weight: 600; }
+
+  h1 {
+    font-family: 'Charter', 'Iowan Old Style', 'Georgia', serif;
+    font-size: 36px;
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+
+  .deck {
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin: 0 0 40px;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 40px 0 14px;
+    padding-top: 8px;
+  }
+
+  h3 {
+    font-family: 'Charter', 'Iowan Old Style', 'Georgia', serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 24px 0 8px;
+    letter-spacing: -0.005em;
+  }
+
+  p { margin: 0 0 14px; }
+  p + p { margin-top: 0; }
+
+  .lede {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  ul {
+    margin: 8px 0 16px;
+    padding-left: 22px;
+  }
+  ul li { margin-bottom: 8px; }
+  ul li::marker { color: var(--accent); }
+
+  .findings {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 20px;
+    margin: 20px 0 28px;
+  }
+
+  .findings h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+
+  .findings p { margin-bottom: 10px; }
+
+  .findings code,
+  p code {
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 14px;
+    background: var(--tag-bg);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--ink);
+  }
+
+  .workstreams {
+    margin: 18px 0 8px;
+    padding: 4px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .workstream {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 16px;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .workstream:last-child { border-bottom: 0; }
+
+  .workstream .ws-mark {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .workstream .ws-body {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .workstream .ws-body strong { font-weight: 600; color: var(--ink); }
+
+  .caveat {
+    margin-top: 18px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .deliverable {
+    display: flex;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .deliverable:last-child { border-bottom: 0; }
+  .deliverable .marker {
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+  .deliverable .body { font-size: 16px; }
+  .deliverable .body strong { font-weight: 600; }
+
+  .pricebox {
+    margin-top: 36px;
+    padding: 24px 28px;
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+
+  .pricebox .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pricebox .row:last-child { border-bottom: 0; }
+  .pricebox .row .label { color: var(--ink-soft); }
+  .pricebox .row .value { font-weight: 600; }
+
+  .walkaway {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--tag-bg);
+    border-radius: 4px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .walkaway strong { color: var(--ink); }
+
+  footer.signoff {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+    color: var(--ink-soft);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+
+  footer.signoff strong { color: var(--ink); font-weight: 600; }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 24px 0; max-width: 100%; }
+    h2 { page-break-after: avoid; }
+    .findings, .pricebox, .walkaway { page-break-inside: avoid; }
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 32px 24px 64px; }
+    h1 { font-size: 28px; }
+    .week { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <span class="logo">Agent Berlin</span>
+    <span>For Brew &nbsp;·&nbsp; May 15, 2026</span>
+  </header>
+
+  <h1>A two-week diagnostic for brew.tv</h1>
+  <p class="deck">A focused look at why ~200K of your pages are stuck in &ldquo;crawled, currently not indexed,&rdquo; and what we&rsquo;d do about it.</p>
+
+  <p class="lede">Below is what we found in a short look at brew.tv after our call, the hypothesis we&rsquo;d test, and the shape of the engagement. The aim is to give you something concrete you can say yes or no to.</p>
+
+  <h2>What we saw in a quick look</h2>
+
+  <p>We spent about half an hour on brew.tv after our call — enough to look at a few page types, but not enough to see what&rsquo;s actually happening inside GSC. The technical fundamentals look OK on the surface: pages return 200, render server-side, carry self-referential canonicals, and titles on streamable films read reasonably (<code>Ghich Pich (2025) – Watch Exclusively on Brew</code>). But one pattern stood out — the kind a generic audit tool wouldn&rsquo;t flag.</p>
+
+  <div class="findings">
+    <h3>Pages don&rsquo;t clearly signal &ldquo;watch&rdquo; intent, even when you stream the film</h3>
+    <p>Body content on both streamable and non-streamable films follows a similar template: plot synopsis + critics&rsquo; reviews scraped from third parties + structured data. The differentiation between &ldquo;a page where you watch this film&rdquo; and &ldquo;a page about this film&rdquo; is subtle.</p>
+    <p>A rough count of streaming-intent terms (rent / buy / subscribe / watch now / streaming / $) on two pages of similar size:</p>
+    <ul style="margin-top: 0;">
+      <li><strong>Ghich Pich</strong> (streamed in India): 9 occurrences</li>
+      <li><strong>Ema</strong> (not streamed in India): 3 occurrences</li>
+    </ul>
+    <p>Brew is differentiating — but 9 vs 3 on a 280KB page is a soft signal. For Googlebot trying to tell whether a URL is a destination or an info page, the line is fuzzy. Under Google&rsquo;s post-2024 Helpful Content and scaled-content-abuse systems, low-info-gain pages at scale create a site-wide quality drag that can keep them stuck in &ldquo;crawled, currently not indexed&rdquo; indefinitely.</p>
+  </div>
+
+  <h2>Working hypothesis</h2>
+  <p>The clearest pattern from a surface inspection is <strong>information-gain at scale</strong> — too many pages reading as templated wrappers around third-party data, without enough unique value or unmistakable user-intent signal. That fits the symptom (large blocks of pages crawled but not indexed) and matches a well-documented post-2024 Google behaviour.</p>
+  <p>But this is one hypothesis from thirty minutes of looking. The things we can&rsquo;t see from outside — and that often matter as much or more — include canonical and sitemap composition across /in/, /us/, and other locales; which URL patterns sit in &ldquo;crawled, currently not indexed&rdquo; vs &ldquo;discovered, currently not indexed&rdquo;; rendering and crawl-budget behaviour over time in GSC; and how the indexed-vs-discovered ratio is trending week-on-week.</p>
+  <p>The point of the diagnostic is to look at those alongside the info-gain hypothesis and tell you which actually drives your indexation gap — instead of guessing from the outside.</p>
+
+  <h2>The two weeks</h2>
+
+  <p>Investigation and synthesis run together rather than splitting into two distinct phases. Four work streams across the engagement:</p>
+
+  <div class="workstreams">
+    <div class="workstream">
+      <div class="ws-mark">A</div>
+      <div class="ws-body"><strong>Bucket the 200K.</strong> Pull the unindexed URLs from GSC and group them by likely cause — redirect waste, render failure, low info gain, canonical/sitemap quirks, technical errors. The shape of the split often points to the real driver.</div>
+    </div>
+    <div class="workstream">
+      <div class="ws-mark">B</div>
+      <div class="ws-body"><strong>Berlin audits at scale.</strong> Alongside the bucketing work, Berlin runs a site-wide pass to surface the long tail of secondary GSC issues — 404s, redirect chains, canonical conflicts, sitemap drift.</div>
+    </div>
+    <div class="workstream">
+      <div class="ws-mark">C</div>
+      <div class="ws-body"><strong>Find the content wins.</strong> A focused look at the small set of pages where adding genuine information gain — regional availability, cast/crew context, watch FAQs, age guidance — could move indexation and ranking together. Where the win is obvious, we work through the specifics rather than just listing the candidate.</div>
+    </div>
+    <div class="workstream">
+      <div class="ws-mark">D</div>
+      <div class="ws-body"><strong>Synthesise + walk through.</strong> Write up what we found and walk through it together at the end of week two.</div>
+    </div>
+  </div>
+
+  <p class="caveat">No fixes are shipped during these two weeks — the deliverable is a clear, evidence-backed picture you can act on, internally or with us.</p>
+
+  <h2>What you get</h2>
+
+  <div class="deliverable">
+    <div class="marker">01</div>
+    <div class="body">
+      <strong>A written report</strong> — one document, three parts:
+      <ul style="margin: 8px 0 10px;">
+        <li><strong>Indexation diagnostic.</strong> What&rsquo;s actually driving the gap, ranked by evidence, with what to do about each cause.</li>
+        <li><strong>GSC hygiene findings.</strong> The long tail of secondary issues — 404s, redirect chains, canonical conflicts, sitemap drift — and the order to address them.</li>
+        <li><strong>Content wins.</strong> Pages and patterns where adding genuine information gain could move indexation and ranking together.</li>
+      </ul>
+      Every action item is something you can execute internally. Berlin makes the same work dramatically faster — that&rsquo;s the only difference.
+    </div>
+  </div>
+  <div class="deliverable">
+    <div class="marker">02</div>
+    <div class="body"><strong>Walkthrough.</strong> A call at the end of week two to walk through the report together.</div>
+  </div>
+
+  <div class="pricebox">
+    <div class="row"><span class="label">Duration</span><span class="value">2 weeks</span></div>
+    <div class="row"><span class="label">Team</span><span class="value">1 FDM + Berlin</span></div>
+    <div class="row"><span class="label">Investment</span><span class="value">$300 &nbsp;<span style="font-weight: 400; color: var(--ink-soft); font-size: 14px;">for the two-week diagnostic</span></span></div>
+    <div class="row"><span class="label">If you continue</span><span class="value">&asymp; &frac14; of comparable agency cost &nbsp;<span style="font-weight: 400; color: var(--ink-soft); font-size: 14px;">scoped to the work</span></span></div>
+    <div class="row"><span class="label">Starts</span><span class="value">On GSC + GA4 access &nbsp;<span style="font-weight: 400; color: var(--ink-soft); font-size: 14px;">CMS optional</span></span></div>
+  </div>
+
+  <div class="walkaway">
+    <strong>After the two weeks.</strong> The report is yours regardless. If you want to act on what we find — at scale, without anyone touching pages one by one — Berlin handles that side of the work. And beyond fixing what&rsquo;s broken, Berlin keeps the SEO surface in good shape over time: catching new issues as they appear, surfacing fresh opportunities, and tightening the profile week-on-week. If that&rsquo;s not useful, we part ways. No commitment beyond the diagnostic.
+  </div>
+
+  <footer class="signoff">
+    <p><strong>Sherin Thomas</strong> &nbsp;·&nbsp; Agent Berlin<br>
+    sherin@agentberlin.ai</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
