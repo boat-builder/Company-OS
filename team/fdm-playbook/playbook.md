@@ -270,7 +270,47 @@ Same rule as findings: the report is shaped via Claude (with `Use Agent Berlin M
 
 ---
 
-## 9. Putting it all together — a day in the life
+## 9. Working with Claude + Agent Berlin MCP
+
+Most of what you do as an FDM happens in a Claude session talking to Berlin through the Agent Berlin MCP. The mechanics matter — small habits compound into either clean, useful artifacts or a tangled mess.
+
+> **Not Claude-specific in principle.** Everything in this section applies to *any* MCP-compatible LLM client that can talk to Berlin — ChatGPT, OpenClaw, and others. We've verified the workflow most thoroughly with **Claude**, which is why the rest of this section refers to Claude by name. If you're using a different LLM, treat the rules as the same and substitute the client name; the only thing that changes is the surface you're prompting from.
+
+### Setup
+
+- **Connect the Agent Berlin MCP** to your Claude environment. **Allow egress** during setup, or the MCP won't be able to reach Berlin.
+
+### Prompting habits
+
+- **Always include `Use Agent Berlin MCP` at the end of every prompt** that touches Berlin (findings, workflows, reports, skills, actions). Without that phrase, Claude often fails to detect the Agent Berlin MCP at all and falls back to generic behavior.
+- **Don't use vague, high-level instructions.** Claude can't be expected to know what *you* mean by "do keyword research for this brand." Specify the steps: what sources, what queries, what filters, what output shape. Detailed, low-level prompts followed by *"…then execute with Berlin"* give dramatically better results than a high-level ask.
+- **Ask Claude to confirm before any write or modification in Berlin.** Whether it's a finding, workflow, report, action, or skill — make Claude pause and confirm with you before pushing. A loose prompt can write the wrong thing into Berlin and you'll have to clean it up after.
+- **Expect back-and-forth.** Good research with Claude + Berlin is iterative — you'll drill down over multiple turns to get something useful. One-shot prompts rarely produce what you want.
+
+### Disambiguating Berlin's vocabulary
+
+The terms **report**, **action**, **workflow**, **skill**, and **finding** are all common English words. Claude will frequently interpret them in their generic sense — for example, "create a report" often produces a `.docx` file rather than a Berlin report.
+
+When you mean the Berlin object, say so explicitly. Example: *"Create a **report in Berlin** — check the Berlin docs for more details about reports."* The same applies to actions, workflows, skills, and findings.
+
+### Verify locally before pushing to Berlin
+
+Never push Claude's output directly into Berlin without an intermediate review step. The mechanism depends on the artifact:
+
+- **Skills and findings** — ask Claude (with `Use Agent Berlin MCP`) to **generate the content as a local Markdown file first.** Read the `.md`, edit it (add what's missing, prune what isn't), and only then ask Claude to create or update the skill/finding in Berlin from that file. This is the same `.md` → finding pipeline described in Section 5.
+- **Workflows, reports, and actions** — instead of a Markdown file, have Claude **describe in chat what it intends to create and why.** It should give you a list (e.g. "I'll create these 6 workflows: X to monitor A, Y to monitor B, …"). Verify the list in the chat. Only after you approve it, ask Claude to actually generate the artifacts in Berlin.
+
+The shared principle: **review before write.** Berlin's artifacts shape every downstream agent run, so anything you push lives in the system and influences future work.
+
+### Capturing reusable processes as skills
+
+If you've gone through a research or operational process in a Claude session and you're likely to do it again — possibly across brands — **ask Claude to create a skill in Berlin for that process.** Skills are how you make a process repeatable instead of re-deriving it every time.
+
+Don't skill-ify everything: one-off processes aren't worth it. But the moment you catch yourself thinking "I've done this kind of analysis before," that's the cue to capture it as a skill.
+
+---
+
+## 10. Putting it all together — a day in the life
 
 A rough mental loop for a working day:
 
@@ -287,7 +327,7 @@ A rough mental loop for a working day:
 
 ---
 
-## 10. Tips, warnings, and reasoning to internalize
+## 11. Tips, warnings, and reasoning to internalize
 
 A consolidated list of the small rules that prevent big mistakes:
 
@@ -307,10 +347,10 @@ A consolidated list of the small rules that prevent big mistakes:
 
 ---
 
-## 11. What's coming in the next module
+## 12. What's coming in the next module
 
 The **Act** phase — how findings, workflows, and the report combine into discrete actions, and how those move through the Review Center. Will be added after the audit-side process is solid in practice.
 
 ---
 
-_Last updated: 2026-05-19 — added Section 1 orchestration note (no scheduled agents; FDM triggers every loop), Section 2 brand-profile-runtime-injection note and user-persona example for Files, new Section 3 on Skills as the cross-brand instruction layer, and Section 7 workflow technical anatomy (Python script + schedule + infra spec + output spec, JSON-only output for agents). 2026-05-18 — initial module covering Audit, Findings, Workflows, and Reports. Act phase to be added in a follow-up._
+_Last updated: 2026-05-19 (later in day) — added new Section 9 "Working with Claude + Agent Berlin MCP" covering setup (allow egress), prompting habits (`Use Agent Berlin MCP` suffix, low-level prompts, confirm-before-write, iterative back-and-forth), Berlin-vs-generic vocabulary disambiguation, local-verify-before-push patterns for each artifact type, and when to capture a process as a skill. Also added a top-of-section callout noting the same rules apply to any external LLM client (ChatGPT, OpenClaw, etc.), while keeping the section Claude-focused because that's what we've verified. 2026-05-19 (earlier) — added Section 1 orchestration note (no scheduled agents; FDM triggers every loop), Section 2 brand-profile-runtime-injection note and user-persona example for Files, new Section 3 on Skills as the cross-brand instruction layer, and Section 7 workflow technical anatomy (Python script + schedule + infra spec + output spec, JSON-only output for agents). 2026-05-18 — initial module covering Audit, Findings, Workflows, and Reports. Act phase to be added in a follow-up._
