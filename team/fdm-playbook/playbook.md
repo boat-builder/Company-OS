@@ -114,6 +114,26 @@ A finding is a research artifact you create about the brand. Each finding has:
 
 Findings replace the old habit of sending research outputs over WhatsApp or scattering them across files. **Everything you find during research belongs in a finding** — it's the single place where your work persists in a form Berlin and Claude can use.
 
+### Findings vs. skills vs. actions
+
+Findings are research output — observations about the brand that future agent execution should be able to draw on. Not everything that comes out of your work belongs as a finding, though, and as you go deeper it helps to know what *else* the output of your work could become.
+
+The working split:
+
+- **Raw research observations** → finding. *Example:* a keyword list you decided was worth working on, plus the page-keyword mapping you derived from analyzing those keywords.
+- **The strategy or method** you used to get from research to a plan → a **skill** (see [Section 3](#3-skills--the-cross-brand-instruction-layer)). It's reusable across brands.
+- **The concrete things to do** that came out of applying that strategy to those findings → **actions** (covered in the next module).
+
+A worked example: you do keyword research, decide which keywords matter, and build a page-keyword mapping. Those are findings. You then apply a content strategy to that mapping and produce a content plan. The instinct is often to save the content plan as another finding — and that's not technically wrong; if it works for you, it works. But the cleaner shape is:
+
+- Keep the keywords and the page-keyword mapping as **findings** (the base research).
+- Capture the content strategy as a **skill** (so the next brand benefits from the same method).
+- Turn the content plan items into **actions**.
+
+That way each artifact is built for what it actually is: the base findings that contributed, the strategy that decided what to do, and the things to do themselves.
+
+This is **guidance, not a rule.** Save what makes sense to you as a finding. But when you catch yourself saving something that's really "a plan derived from existing findings plus a strategy I keep using," that's the cue to consider routing the strategy into a skill and the plan into actions instead.
+
 ### How findings are surfaced to agents
 
 This is the part to understand carefully:
@@ -279,6 +299,22 @@ Most of what you do as an FDM happens in a Claude session talking to Berlin thro
 ### Setup
 
 - **Connect the Agent Berlin MCP** to your Claude environment. **Allow egress** during setup, or the MCP won't be able to reach Berlin.
+- **Sessions are domain-scoped — `configure` runs transparently.** Once the MCP is connected, the LLM client is instructed to run a `configure` step at the start of the session that ties everything you do in that session to a specific brand/domain. You don't trigger this yourself and you don't see it happen, but the consequence matters: every operation in the session is implicitly for that brand and for the primary goal the session was opened for — **you don't need to repeat the domain in your prompts.**
+- **Open a new session when the goal changes.** Because the session is scoped to one domain and one primary goal, if you shift to a different brand or a meaningfully different objective, start a fresh session rather than continuing the existing one. Don't try to multitask across brands or unrelated goals in one chat.
+
+### Per-client setup notes
+
+How you start a session differs between **ephemeral** clients (Claude cowork) and **non-ephemeral** ones (Claude Code, ChatGPT desktop, and most others). The differences are small but matter.
+
+**Claude cowork (ephemeral):**
+
+- **Default to no attached directory.** Berlin is the system of record — findings, brand files, actions, workflows, reports, and predominantly findings. If you don't attach a directory, the LLM has no persistent disk to write to, and you don't have to clean up after it later.
+- **Attach a directory only when you genuinely need to share files between sessions.** The most common reason is the `.md` consolidation workflow in [Section 5](#5-working-with-findings-day-to-day), where multiple parallel sessions append to the same file before it's pushed to Berlin. Even then, ask first whether copy-pasting context between sessions would be enough — it usually is, and it skips the cleanup. Reach for an attached directory only when there's a real reason copy-paste won't work.
+
+**Claude Code and other non-ephemeral clients:**
+
+- **Upgrade the `agentberlin` package before each session.** Non-ephemeral clients keep the previously installed version around, and stale versions are a frequent source of confusing failures.
+- **Clean up the working directory before each session.** Leftover files from previous work pollute the LLM's context and can produce unrelated, confusing agent behavior.
 
 ### Prompting habits
 
@@ -332,16 +368,19 @@ A rough mental loop for a working day:
 A consolidated list of the small rules that prevent big mistakes:
 
 - **Always include `Use Agent Berlin MCP` in Claude prompts that touch Berlin findings/workflows/reports.** Without it, Claude doesn't know how to reach Berlin's data.
+- **MCP sessions are domain-scoped via `configure` (transparent to you).** When the brand or primary goal changes, start a new session instead of continuing the existing one.
 - **Findings live only behind the MCP / Berlin's agent — there is no UI to edit them.** This is deliberate (we don't want customers editing them).
 - **Title + description of every finding are always loaded into the agent's context.** Keep them concise and specific. The body is fetched on demand.
 - **Don't dump everything into findings.** Too many findings = degraded agent performance. Aim for 1–2 a day, sometimes zero.
 - **Don't create findings for live-fetchable data** (e.g. Lighthouse). Exception: expensive fetches needed many times.
+- **Findings, skills, and actions are different artifacts.** Research output → finding. Reusable strategy/method → skill. Concrete things to do → action. Don't pack all three into findings.
 - **Never blindly accept what Claude generates** — for findings, workflows, or report changes. Always review, prune, and verify.
 - **After a workflow runs, verify its output is actually useful.** A confidently-running but wrong workflow is worse than no workflow.
 - **Be organized with finding files, but don't agonize.** Creating an extra file or missing a split are both recoverable.
 - **Update existing artifacts before creating new ones** — finding, workflow, or report page. Avoid sprawl.
 - **Free-form `findings` content is fine** — there's no required structure. Use sections and frameworks if they help you and the agent reason about it later; skip them if they don't.
 - **Workflows are monitors, for now.** Don't try to use them for one-off tasks.
+- **Match setup to your client.** In Claude cowork (ephemeral), default to no attached directory. In Claude Code and other non-ephemeral clients, upgrade `agentberlin` and clean the working directory before each session.
 - **Reports keep us accountable.** If something has been a known issue for weeks and the report still surfaces it, that's a signal we need to act, not hide it.
 - **Bring product feedback.** If something about Berlin makes the FDM workflow harder, surface it — FDM feedback is part of the role and shapes the roadmap. But: collect feedback and let priorities sort it; not every issue needs to be fixed immediately.
 
@@ -350,7 +389,3 @@ A consolidated list of the small rules that prevent big mistakes:
 ## 12. What's coming in the next module
 
 The **Act** phase — how findings, workflows, and the report combine into discrete actions, and how those move through the Review Center. Will be added after the audit-side process is solid in practice.
-
----
-
-_Last updated: 2026-05-19 (later in day) — added new Section 9 "Working with Claude + Agent Berlin MCP" covering setup (allow egress), prompting habits (`Use Agent Berlin MCP` suffix, low-level prompts, confirm-before-write, iterative back-and-forth), Berlin-vs-generic vocabulary disambiguation, local-verify-before-push patterns for each artifact type, and when to capture a process as a skill. Also added a top-of-section callout noting the same rules apply to any external LLM client (ChatGPT, OpenClaw, etc.), while keeping the section Claude-focused because that's what we've verified. 2026-05-19 (earlier) — added Section 1 orchestration note (no scheduled agents; FDM triggers every loop), Section 2 brand-profile-runtime-injection note and user-persona example for Files, new Section 3 on Skills as the cross-brand instruction layer, and Section 7 workflow technical anatomy (Python script + schedule + infra spec + output spec, JSON-only output for agents). 2026-05-18 — initial module covering Audit, Findings, Workflows, and Reports. Act phase to be added in a follow-up._
