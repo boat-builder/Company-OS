@@ -110,6 +110,22 @@ A finding is a research artifact you create about the brand. Each finding has:
 - A **short description** of what the finding is
 - A **body** with the actual content (analysis, data, evidence)
 
+### Supported file formats for findings
+
+A finding's body has to be in a format Berlin and Claude can parse cleanly. We only support:
+
+- **Markdown** (`.md`) — the default; use this unless there's a reason not to.
+- **JSON** (`.json`) — for structured data like keyword lists, mappings, or scrape outputs.
+- **CSV / TSV** (`.csv`, `.tsv`) — for tabular data.
+
+Anything else (PDF, DOCX, XLSX, etc.) **must be converted to one of the formats above before being pushed as a finding.** Typical conversions:
+
+- PDF → Markdown
+- DOCX → Markdown
+- XLSX → CSV (or TSV if your data contains commas)
+
+Do the conversion locally first, verify the output is clean, *then* ask Claude (with `Use Agent Berlin MCP`) to update or create the finding from the converted file. This is the same review-before-pushing discipline as the `.md` → finding pipeline in [Section 5](#5-working-with-findings-day-to-day).
+
 ### Why findings exist (and where they fit)
 
 Findings replace the old habit of sending research outputs over WhatsApp or scattering them across files. **Everything you find during research belongs in a finding** — it's the single place where your work persists in a form Berlin and Claude can use.
@@ -169,7 +185,7 @@ You'll often run research across multiple parallel Claude sessions (different ta
 4. Repeat for every session feeding the same finding.
 5. When the `.md` is complete, ask Claude (with `Use Agent Berlin MCP`) to **update or create the finding in Berlin from this file.**
 
-> **Tip:** This `.md` → finding pipeline keeps findings clean and lets you control exactly what ends up in Berlin's context.
+> **Tip:** This `.md` → finding pipeline keeps findings clean and lets you control exactly what ends up in Berlin's context. The same review-before-push discipline applies to JSON and CSV/TSV findings — see [Section 4: Supported file formats for findings](#supported-file-formats-for-findings) for the full list and what to do with unsupported formats.
 
 ### When to update vs. create vs. archive a finding
 
@@ -379,6 +395,7 @@ A consolidated list of the small rules that prevent big mistakes:
 - **Be organized with finding files, but don't agonize.** Creating an extra file or missing a split are both recoverable.
 - **Update existing artifacts before creating new ones** — finding, workflow, or report page. Avoid sprawl.
 - **Free-form `findings` content is fine** — there's no required structure. Use sections and frameworks if they help you and the agent reason about it later; skip them if they don't.
+- **Findings only accept Markdown, JSON, and CSV/TSV.** Convert other formats (PDF/DOCX → Markdown, XLSX → CSV) locally before pushing. See [Section 4: Supported file formats for findings](#supported-file-formats-for-findings).
 - **Workflows are monitors, for now.** Don't try to use them for one-off tasks.
 - **Match setup to your client.** In Claude cowork (ephemeral), default to no attached directory. In Claude Code and other non-ephemeral clients, upgrade `agentberlin` and clean the working directory before each session.
 - **Reports keep us accountable.** If something has been a known issue for weeks and the report still surfaces it, that's a signal we need to act, not hide it.
