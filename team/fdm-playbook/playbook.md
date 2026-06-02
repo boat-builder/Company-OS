@@ -18,6 +18,8 @@ Berlin's day-to-day operating model is a continuous loop with three phases:
 
 This module covers everything an FDM does in the **Audit** phase and how that flows into the **Report**. The Act phase will be covered separately.
 
+> **Everything traces back to a finding.** Every report and every action must be grounded in the data and information captured in findings — nothing is asserted in a report and nothing is acted on that can't be traced to a finding. This keeps the whole system auditable: any claim a customer reads, or any action the system takes, can be walked back to the finding it came from. If you can't ground it in a finding, it doesn't belong in a report or an action — create the finding first.
+
 ### The shift you need to internalize
 
 The original premise was *"audit is automated, FDMs report and act."* In practice, **audit is rarely fully automatable** — there are too many branches and origins to cover with one autonomous loop, and the system has hard limits on agent loop counts. So:
@@ -383,6 +385,7 @@ A rough mental loop for a working day:
 
 A consolidated list of the small rules that prevent big mistakes:
 
+- **Everything traces back to a finding.** Every report and every action must be grounded in findings — so the whole system stays auditable and any claim or action can be traced to its source finding. If it isn't grounded in a finding, create the finding first.
 - **Always include `Use Agent Berlin MCP` in Claude prompts that touch Berlin findings/workflows/reports.** Without it, Claude doesn't know how to reach Berlin's data.
 - **MCP sessions are domain-scoped via `configure` (transparent to you).** When the brand or primary goal changes, start a new session instead of continuing the existing one.
 - **Findings live only behind the MCP / Berlin's agent — there is no UI to edit them.** This is deliberate (we don't want customers editing them).
