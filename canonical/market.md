@@ -141,6 +141,17 @@ The market sorts into four buckets right now:
 
 The real competition for Berlin is **not another SaaS tool — it is the agency retainer a company would otherwise sign.** SEO agencies deliver strategy, execution, and tool coverage at $3K–$15K+/month, with 3–6 month ramp, variable quality, and limited transparency. *Limitation:* Human-limited — bandwidth, speed, and cost all scale linearly with headcount. Most agencies were not designed for AEO/GEO and are currently learning it on the customer's dime.
 
+The most relevant named agencies are the established SEO/content shops now repositioning around AEO/GEO — the incumbents whose retainers Berlin's FDM model displaces:
+
+| Agency | Profile | AEO/GEO posture | *Limitation vs. Berlin* |
+|---|---|---|---|
+| **iPullRank** (ipullrank.com) | Enterprise SEO + content strategy agency, NYC, founded 2014 by Mike King. $4B+ documented organic results; Fortune 500 clients (SAP, American Express, HSBC, Nordstrom). | The most cited technical voice in the category. Coined "Relevance Engineering"; King named Search Engine Land's AI Search Marketer of the Year (2025). | Premium human consultancy priced at the high end of the agency band. Thought leadership and bespoke engineering, not a productized platform + integrated data layer; bandwidth scales with senior headcount. |
+| **Graphite** (graphite.io) | AI-powered growth/SEO agency, ~130 people, co-founded by Ethan Smith & Marcos Ciarrocchi. Clients include MasterClass, Robinhood, BetterUp, Webflow. | Runs both SEO and AEO offerings; launched a self-serve "Graphite Platform" for topical SEO on top of the agency. | Closest in shape (agency + emerging platform) but enterprise-priced and agency-led; no FDM-per-customer model, no proprietary crawl/cache substrate driving unit economics. |
+| **Foundation Inc** (foundationinc.co) | B2B/SaaS content marketing agency (Ross Simmonds), fully remote. SEO-led content creation, distribution, and repurposing. | Offers a dedicated Generative Engine Optimization service for B2B teams. | Content/distribution-centric; covers part of execution, not strategy + technical + tool layer end to end. Human-limited, retainer-priced. |
+| **Animalz** (animalz.co) | B2B SaaS content marketing agency, NYC, founded 2015, ~$11.5M revenue. Clients include Google, Amazon, GoDaddy, Zendesk. | Known for thought leadership + product-led content; now layering in AEO. | Content-first agency; no integrated tooling or data layer, no end-to-end SEO/AEO execution, scales linearly with writers/strategists. |
+
+*Note:* **Daydream** (withdaydream.com) is the direct AI-native agency competitor and is profiled in **Bucket 1** above rather than here, since its platform + Growth Lead shape mirrors Berlin's rather than the traditional human-agency model.
+
 *A note on in-house teams:* Not a competing alternative. SEO grunt work routinely gets outsourced to agencies regardless of how much marketing headcount a company has — the agency check still gets written.
 
 ### DIY tool stacks
