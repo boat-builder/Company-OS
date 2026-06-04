@@ -14,11 +14,11 @@ One `.md` per topical domain. Each file is self-contained and cross-references t
 |------|--------------|
 | [`company.md`](company.md) | Legal entity, governance, banking, registered agent, agreements on file, annual compliance, C-Corp conversion plan |
 | [`product.md`](product.md) | What Berlin is, three-pillar framework, two packaged offerings, capability surfaces, Tools layer, engineering moat, full pricing (Berlin + FDM scope ladder + Berlin for Agencies channel discount band) |
-| [`customers.md`](customers.md) | Primary ICP (traditional businesses), 6-cell discovery grid, 6 archetype taxonomy, cell hypotheses, promotion criteria, India market reality |
+| [`customers.md`](customers.md) | Primary ICP (SEO/marketing-literate teams & founders), traditional-business segment (secondary/historical), 6-cell discovery grid, 6 archetype taxonomy, cell hypotheses, promotion criteria, India market reality |
 | [`team.md`](team.md) | Founder bios (Sherin + Rhea), full FDM model, operator ratios, May 2026 partner-agency setup, first FDM hire spec, hiring plan |
 | [`sales.md`](sales.md) | Sales positioning, qualification framework, call structure, persona-specific approaches, objection handling, closing motion, pricing discipline, learning log |
 | [`marketing.md`](marketing.md) | Channels and their roles, adjacent initiatives (micro-influencer program, autonomous affiliate POC), customer-facing language discipline. **Content/outbound playbook lives in `marketing/content-playbook.md`.** |
-| [`market.md`](market.md) | TAM/SAM/SOM, AEO/GEO inflection, traffic shift, labor-addressable reframing, competitor landscape (4 buckets), why-now narrative, VC validation |
+| [`market.md`](market.md) | TAM/SAM/SOM, AEO/GEO inflection, traffic shift, labor-addressable reframing, Berlin's category (Forward-Deployed SEO/AEO Platform — the tool↔agency spectrum middle), competitor landscape (4 buckets), why-now narrative, VC validation |
 | [`finance.md`](finance.md) | Current state, revenue model, traction, flagship case, projections, cash flow, round structure, use of funds, cap table, risks |
 
 ---

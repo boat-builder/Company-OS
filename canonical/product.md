@@ -10,11 +10,17 @@
 
 ## Berlin in One Line
 
-> Berlin is an end-to-end SEO/AEO platform — the customer connects their domain and accounts, and Berlin strategizes, sets up execution, and executes autonomously. For end customers, the platform is delivered alongside a **Forward Deployed Marketer (FDM)** who owns strategy, reviews output, and owns the relationship.
+> Berlin is two things sold as one, equally weighted: an end-to-end SEO/AEO **platform** the customer's team operates on, and a **Forward Deployed Marketer (FDM)** who executes on that platform alongside them. The platform strategizes, sets up execution, and executes; the FDM — fluent in AI, fluent in Berlin, an exceptional SEO/AEO experimenter — does the work effectively for the customer in a space evolving too fast for any single operator to track alone. **Product and FDM are co-equal. Neither is the headline; together they are the offering.**
 
-The alternative to Berlin is **hiring an SEO agency**. Berlin is not a workflow builder, not a set of connectors, and not a configuration surface. A user signs in, connects their domain and accounts (GSC, GA4, CMS, social, etc.), and Berlin delivers the outcomes — keyword plan, published content, technical fixes, ongoing monitoring — without the user having to assemble the work themselves. **No conversation is required** for Berlin to execute; the user can talk to Berlin if they want to steer or inspect, but it is optional.
+### Where Berlin Sits — The Spectrum
 
-(In-house marketing teams aren't a competing alternative — they routinely outsource SEO grunt work to agencies anyway, so the agency comparison still applies.)
+Berlin's position is the **middle of a spectrum**:
+
+- **Left — tool buyers.** SEO-skilled operators who buy a tool and apply their own skill: Ahrefs, Profound, and similar, increasingly with an agent bolted on. They have the function; they want leverage.
+- **Right — agency buyers.** Teams that hire an agency (Daydream and a thousand others) because they lack SEO skill, don't want to build the function, or are too small to. They have the budget; they want it handled.
+- **Middle — Berlin.** We give SEO/marketing-literate teams a **platform to operate on** *and* an **FDM who executes on it with them**. Not just a tool to wield, not just an agency to hand off to — the platform and an embedded expert operator, together. Berlin's name for this middle category is a **Forward-Deployed SEO/AEO Platform** (see `market.md` → *Berlin's Category*).
+
+Berlin is not a workflow builder, not a set of connectors, and not a configuration surface. A user signs in, connects their domain and accounts (GSC, GA4, CMS, social, etc.), and Berlin delivers the outcomes — keyword plan, published content, technical fixes, ongoing monitoring. **No conversation is required** for the platform to execute; the user (or their FDM) can steer or inspect, but it is optional.
 
 ---
 
@@ -51,7 +57,7 @@ Berlin owns **all three pillars**. The user arrives at a dashboard, talks to Ber
 
 The three-pillar abstraction is hidden from the end user. What they see is a platform they talk to. The user can optionally bring their own strategy — a team with strong opinions can supply the plan and let Berlin execute against it — but if they don't, Berlin supplies one. **The Tools pillar is internal architecture inside Berlin — not a product that is sold or integrated with separately.**
 
-The practical implication: Berlin is positioned against **hiring an SEO agency**, not against workflow builders or AI dev tools. A customer is choosing between "hire an agency that will own Strategy, Execution, and Tools" and "use Berlin, where an FDM and the platform underneath own all three."
+The practical implication: Berlin sits in the **middle of the tool↔agency spectrum** (see *Where Berlin Sits*). It is not positioned only against hiring an agency, and not only against tools — it is the option for a team that wants a platform to operate on *and* an expert operator (the FDM) executing on it with them. Against the left (tool buyers) Berlin adds the FDM and the execution a tool won't do; against the right (agency buyers) Berlin adds a platform the team operates on, transparency, and pace. "The platform underneath the FDM" undersells it: **platform and FDM are co-equal.**
 
 ---
 
@@ -260,13 +266,15 @@ When an agency engages, Berlin offers a **channel partner discount band** off li
 
 When crafting messaging for a specific audience:
 
-1. Start from Berlin's core value proposition — an AI-native SEO/AEO agency: end-to-end platform underneath that owns Strategy, Execution, and Tools, with an assigned FDM on top who owns the relationship. **Berlin replaces the SEO agency a company would otherwise sign.**
+1. Start from Berlin's core value proposition — a co-equal **platform + FDM** sitting in the middle of the tool↔agency spectrum: an end-to-end platform the team operates on (owning Strategy, Execution, and Tools) *and* an embedded FDM who executes on it with them. **Berlin is neither a tool you wield alone nor an agency you hand off to — it is both halves, together.**
 2. Reference the three-pillar framework when the audience needs the structural argument.
 3. Translate the structural description into the language of the audience's pain and ambition.
 4. **Never add a capability that doesn't exist here.** If something feels missing, update this document first.
 
 ---
 
-_Last updated: 2026-05-15 — elevated the **Strategy Knowledge Base** to a first-class substrate item (Engineering Moat, Tools Layer narrative, Feature Reference). Earlier same day's "curated strategy catalog" reference in the *Audit — Continuous Observability* section unified to the new term; *strategy knowledge base* is now the canonical name for this substrate piece. Earlier same day: split the "Queryable keyword and page store" bullet in the Engineering Moat into two distinct substrate items: **Keyword lake** (queryable for AI) and **Versioned page store** (queryable to agents, with current + historical state). Adopted "keyword lake" as the canonical term for that substrate piece. Propagated the split through the Tools Layer narrative and the feature reference table (now two rows: Keyword Lake, Versioned Page Store). Page versioning is now explicitly documented as a real capability of the page store, not just "fresh and queryable."_
+_Last updated: 2026-06-03 — repositioned to **co-equal product + FDM** and the **tool↔agency spectrum** (Berlin in the middle). Rewrote "Berlin in One Line," added "Where Berlin Sits — The Spectrum," and reframed the "practical implication" paragraph and the "How to Use This Document" lead away from "Berlin replaces the agency" to the middle position. Driven by Sherin's June 2026 FDM-delivery positioning. Open ICP/category/self-serve questions tracked in `_positioning-shift-WIP.md` (company-os root), not yet propagated to `customers.md`/`market.md` structure._
+
+_2026-05-15 — elevated the **Strategy Knowledge Base** to a first-class substrate item (Engineering Moat, Tools Layer narrative, Feature Reference). Earlier same day's "curated strategy catalog" reference in the *Audit — Continuous Observability* section unified to the new term; *strategy knowledge base* is now the canonical name for this substrate piece. Earlier same day: split the "Queryable keyword and page store" bullet in the Engineering Moat into two distinct substrate items: **Keyword lake** (queryable for AI) and **Versioned page store** (queryable to agents, with current + historical state). Adopted "keyword lake" as the canonical term for that substrate piece. Propagated the split through the Tools Layer narrative and the feature reference table (now two rows: Keyword Lake, Versioned Page Store). Page versioning is now explicitly documented as a real capability of the page store, not just "fresh and queryable."_
 
 _2026-05-11 — added the *How Berlin Operates — Audit → Report → Act Loop* section (brand grounding, continuous-audit observability mode, living per-brand report, action backlog with categories); reconciled the two senses of "audit" in *Execution Done for You*; added Brand Profile, Brand Files, Continuous Audit, Audit Report, and Action Backlog to the feature reference; moved Brand Context out of Tools Layer (it's user-facing grounding, not engineering substrate); noted Amplitude as an alternative to GA4 in the dashboard description. Earlier same day: India market exception moved out of pricing; tactical handling lives in `sales.md`._

@@ -4,43 +4,43 @@
 
 ---
 
-## Primary ICP — Traditional Businesses That Default to Agencies
+## Primary ICP — SEO/Marketing-Literate Teams & Founders
 
-**Promoted to primary ICP on April 24, 2026** based on direct observation of where the pain is sharpest.
+**Promoted to primary ICP on June 4, 2026**, replacing the earlier "traditional businesses that default to agencies" framing (now demoted — see *Secondary / Historical* below). This follows the June 2026 decision to double down on the co-equal **platform + FDM** model and position Berlin as the middle of the tool↔agency spectrum (see `product.md` → *Where Berlin Sits*).
 
-**Segment:** Traditional, non-SaaS businesses in the **$500K–$2M MRR band** — warehouses, clinics, trading firms, B2B services, and similar operators — with **no internal SEO-specific resource**, who either:
+**Segment:** SEO/marketing-literate buyers — an in-house SEO or marketing person/team, or a **founder who genuinely understands SEO/marketing** — who want **a platform to operate on *and* an expert operator (FDM) to execute with them**. They are not looking to hand everything off blind (the right-edge agency buyer), and not content to wield a tool alone (the left-edge Ahrefs/Profound buyer). They want both halves.
 
-1. Are actively considering an agency but haven't committed; or
-2. Already work with an agency and are unhappy with the results.
+### Why this is the buyer the new positioning serves
 
-This segment overlaps primarily with **Cell 5 (Lead Gen / Services × Founder)** in the discovery grid, but is broader in vertical scope and is tracked separately as the current primary commercial target.
+- They **appreciate the product**, which is why product-first matters: a literate buyer wants to see and operate the platform, not just be told "an operator will handle it."
+- They feel the **pace problem** acutely — AEO/GEO, new surfaces and ranking signals every quarter — and know they can't keep up solo or with a slow agency.
+- They still want a **human expert** in the loop: an FDM fluent in AI + Berlin, strong at SEO/AEO, and an exceptional experimenter, executing on the platform with them.
 
-### Why this is the sharpest pain we've observed
+### Why Berlin fits
 
-- SEO is a meaningful revenue channel but no one internally owns it.
-- The default path is "hire an agency"; agencies in this band consistently underdeliver. **Among customers already paying an agency, dissatisfaction is near-universal** — an unusually receptive audience for a better-priced alternative that demonstrably does a better job.
-- AEO/GEO is something they've heard about but have no path to acting on.
-
-### Why Berlin + FDM fits
-
-- Berlin executes; the assigned FDM (referred to externally as "dedicated marketer" or "senior strategist") provides the human relationship layer the buyer expects from an agency.
-- Pricing sits materially below an agency retainer — the buyer's anchor point.
-- For the India-specific version of this segment, the pricing maps to local willingness-to-pay, unlocking **physical field sales** (clinics, warehouses, trading firms, B2B services) as a viable channel.
+- **vs. tools (left edge):** Berlin adds the FDM and the execution a tool won't do — the literate buyer gets leverage *and* an operator.
+- **vs. agencies (right edge):** "Replace your agency" still lands — but the wedge is **FDM + agents**. Typical agencies lag in tech and don't have agents; Berlin replaces the agency with a platform + agents + an embedded expert, at agency-fraction cost, with transparency and pace agencies can't match.
 
 ### Buyer persona
 
-Founder/CEO, or Head of Marketing / Operations Lead where one exists. Budget authority is high; decision cycles are fast; buying conversations tend to be face-to-face or call-based, not procurement-led.
-
-### India market reality (don't gloss over this)
-
-Local agencies in India charge **~₹60K/month (~$630)** for full-service scope. Berlin's $499 is **NOT 1/4 of agency cost** in this market. When the price gap is narrow, lead instead with the **marketer-to-client ratio (Berlin's 1:10–15 vs agency's 1:4–8)** and the **AI search authority work** that local agencies don't yet do.
+Head of Marketing / Head of SEO / Demand-Gen Lead where a function exists; or a founder/CEO who personally understands SEO/marketing. Budget authority is high; decision cycles are fast.
 
 ### Discovery focus going forward
 
-- Which verticals inside this segment are sharpest (warehouses, clinics, trading firms, other B2B services)?
-- Geographic concentration — India field-sales motion vs. English-speaking markets globally.
-- Does the "unhappy with existing agency" sub-segment convert faster than "actively considering an agency"?
-- What does the FDM workload actually look like at scale per account?
+- Within the literate-buyer segment, who converts fastest — founders who get SEO, or in-house marketing/SEO leads with a team?
+- What makes a literate buyer choose platform + FDM over (a) keeping their tool stack and doing it themselves, or (b) a tech-forward agency?
+- How much of the platform do they actually want to operate themselves vs. lean on the FDM? (Informs the latent self-serve question — see `product.md`.)
+- What does the FDM workload look like per account when the customer is hands-on?
+
+---
+
+### Secondary / Historical — Traditional Businesses That Default to Agencies
+
+_Promoted to primary on April 24, 2026; **demoted June 4, 2026** when the SEO-literate ICP became primary._
+
+Traditional, non-SaaS businesses ($500K–$2M MRR — warehouses, clinics, trading firms, B2B services) with **no internal SEO resource**, either considering an agency or unhappy with one. Overlaps Cell 5 (Lead Gen / Services × Founder). This segment sits on the **right edge** of the spectrum (hand-it-off agency buyers), which is why it no longer defines the GTM — but it remains real and convertible, and **our first paying customers (Reach Psych, Csuite.so) were acquired here**. Keep servicing and selectively pursuing it; just don't let it drive the current experiment.
+
+**India field-sales motion (parked):** physical field sales to clinics/warehouses/trading firms was built for this segment. The narrow India price gap (local agencies ~₹60K/mo ≈ $630 vs. Berlin's $499) means leading on the **marketer-to-client ratio (Berlin's 1:10–15 vs agency's 1:4–8)** and **AI-search authority work** local agencies don't yet do, rather than on price. Parked while the literate-buyer experiment runs; revisit if this segment is reprioritized.
 
 ---
 
@@ -180,7 +180,7 @@ The three archetypes used in the 6-cell discovery grid are the **active subset**
 
 Canonical paying-customer count and revenue lives in `finance.md`. Ephemeral pipeline state lives in `sales/pipeline.md`.
 
-- **Reach Psych** (reachpsych.com) — Bangalore clinic. Primary ICP. $499/month on Berlin + FDM. Used v1 through its rough UX and chose to continue on v2 at launch — proof both that the India field motion converts and that customers stay through a rough relaunch when the underlying value lands.
+- **Reach Psych** (reachpsych.com) — Bangalore clinic. Acquired under the now-secondary traditional-business segment. $499/month on Berlin + FDM. Used v1 through its rough UX and chose to continue on v2 at launch — proof both that the India field motion converts and that customers stay through a rough relaunch when the underlying value lands.
 - **Csuite.so** — SaaS company. $499/month on Berlin + FDM. Early signal in the SaaS × Founder discovery cell (Cell 1).
 - **miniOrange** (miniorange.com) — Enterprise identity/security. In technical/compliance due diligence on Berlin + FDM.
 
@@ -190,7 +190,10 @@ Canonical paying-customer count and revenue lives in `finance.md`. Ephemeral pip
 
 - **April 20, 2026** — Replaced previous 7-segment framing ("Medium Agencies," "SaaS In-House," "Growth Engineering," etc.) with the cleaner 2-axis grid (archetype × buyer persona) producing 6 cells, each as a discovery hypothesis.
 - **April 24, 2026** — Promoted **traditional businesses** ($500K–$2M MRR, no internal SEO resource) to primary ICP based on direct observation of pain density. The 6-cell grid remains in place for parallel exploration. GTM organized around two motions: **Berlin + FDM** (end customers, primary ICP) and **Berlin for Agencies** (parallel SKU, no FDM).
+- **June 4, 2026** — **Replaced the primary ICP** with **SEO/marketing-literate teams & founders**, following the June 2026 decision to double down on the co-equal platform + FDM model and the tool↔agency spectrum positioning (Berlin = the middle). Traditional businesses demoted to a secondary/historical segment (right edge of the spectrum); India field-sales motion parked. The 6-cell grid (archetype × buyer) is retained — SEO-literacy is now a qualifier layered across the cells. Agency-replacement remains a live wedge, differentiated by FDM + agents (agencies lag in tech). See `_positioning-shift-WIP.md` (company-os root) for the in-flight context.
 
 ---
 
-_Last updated: 2026-05-07_
+_Last updated: 2026-06-04 — replaced primary ICP (traditional businesses → SEO/marketing-literate teams & founders); demoted the traditional-business segment to secondary/historical; parked the India field-sales motion; updated live-customer notes and change log. Driven by Sherin's June 2026 FDM-delivery / spectrum positioning. The 6-cell grid and archetype taxonomy are unchanged._
+
+_2026-05-07 — prior version._

@@ -8,15 +8,21 @@
 
 ## What Berlin Is (Sales Positioning)
 
-Berlin is an **end-to-end AI SEO/AEO platform**. The user talks to a dashboard; Berlin strategizes, sets up execution, and executes. The mental model is three pillars — **Strategy / Execution / Tools** — and Berlin owns all three.
+Berlin is two co-equal things: an **end-to-end AI SEO/AEO platform** the customer's team operates on, and a **dedicated marketer (FDM)** who executes on it with them. The user talks to a dashboard; Berlin strategizes, sets up execution, and executes — and an embedded expert operator drives it alongside the team. The mental model is three pillars — **Strategy / Execution / Tools** — and Berlin owns all three.
+
+**Berlin sits in the middle of a spectrum** (canonical detail in `product.md` → *Where Berlin Sits*):
+
+- **Left — tool buyers** (Ahrefs, Profound, + an agent): skilled SEO operators who want leverage and do the work themselves. Berlin adds the operator and the execution a tool won't do.
+- **Right — agency buyers** (Daydream and a thousand others): teams with no SEO function, or too small to build one, who hand it off. Berlin adds a platform the team operates on, transparency, and pace.
+- **Middle — Berlin:** a platform *and* an expert operator, together. Our buyer is SEO/marketing-literate and wants both.
 
 - The user can optionally bring their own strategy and let Berlin execute.
 - Internal orchestration/inference stack is **internal infrastructure**. It is not a standalone product and should not be pitched as one.
-- The alternative Berlin replaces is **hiring an SEO agency**, not a workflow tool, not a point solution. (In-house marketing teams aren't a competing alternative — they outsource SEO grunt work to agencies anyway, so the agency check still gets written.) When prospects compare Berlin to Ahrefs, SEMrush, Clearscope, etc., gently reframe: those are tools in the stack Berlin already operates; the real decision is "who does our SEO."
+- When prospects compare Berlin to a pure tool (Ahrefs, SEMrush, Profound), don't dismiss the comparison — use the spectrum: those give a skilled operator leverage; Berlin gives platform leverage *plus* an FDM who does the execution. When they compare Berlin to an agency, "replace your agency" still lands — the wedge is **FDM + agents**: typical agencies lag in tech and have no agents, so Berlin delivers the agency's outcome with a platform the team operates on, more transparency, and far more pace.
 
 ### One-line pitch
 
-> "Berlin is an end-to-end AI SEO/AEO platform. Instead of hiring an agency, you talk to Berlin's dashboard — it handles strategy, execution, and the tools underneath, with a dedicated marketer who owns the relationship."
+> "Berlin is a platform your team operates on *plus* a dedicated marketer who executes on it with you — the middle ground between buying a tool and hiring an agency. The platform handles strategy, execution, and the tooling underneath; the marketer drives it alongside your team in a space moving too fast to keep up with solo."
 
 ---
 
@@ -251,7 +257,7 @@ When competing against local agencies whose pricing is close to Berlin's $499 (e
 ### Positioning objections
 
 **"How is this different from hiring an SEO agency?"**
-> "An agency gives you people who use tools to do SEO work. Berlin is the people, the tools, and the process, compressed into a platform you talk to. You get the same output — strategy, content, technical fixes, reporting — faster, fully transparent, and without the retainer structure."
+> "An agency gives you people who use tools to do SEO work — and most agencies are behind on the tech; they don't have agents. Berlin gives you a platform with AI agents doing the volume, plus a dedicated marketer who runs it with you. The same output an agency promises — strategy, content, technical fixes, reporting — but faster, fully transparent in a dashboard you operate, and without the retainer lock-in."
 
 **"Why wouldn't I just hire an in-house SEO lead?"**
 > "A good in-house SEO lead is $120k–$180k fully loaded, takes three months to ramp, and still needs tools. Berlin replaces that hire's output on day one at [tier price]. When you eventually hire, Berlin makes them 3–4x more productive, so it's not wasted."
@@ -357,10 +363,9 @@ Only if genuinely planned, and always paired with a CTA:
 
 ### Positioning
 
-- Don't pitch Berlin as a workflow builder, a "programmable infrastructure," or a tool you build on top of. That's the old positioning. Berlin is an **end-to-end platform**.
+- Don't pitch Berlin as a workflow builder, a "programmable infrastructure," or a tool you build on top of. That's the old positioning. Berlin is a **co-equal platform + FDM**.
 - Don't pitch internal infrastructure (USOL etc.). It's internal.
-- Don't position against Ahrefs / SEMrush as peers. Position against **agencies and in-house hires**.
-- Don't say "we replace your tools" as the headline — say "we replace your agency."
+- Don't flatten Berlin to either end of the spectrum. We are neither "just a better tool than Ahrefs/Profound" nor "just another agency." Use the middle: a platform the team operates on **plus** an FDM who executes on it. Tools (Ahrefs, SEMrush, Profound) are the left edge, agencies the right edge — Berlin is the middle, not a peer of either. (Agency-replacement is still a live wedge — just win it on **FDM + agents**, the tech agencies lack, not on being "cheaper.")
 - Don't use "FDM" or "AEO" in prospect-facing copy. Use "dedicated marketer" and "search."
 
 ### Discovery
@@ -443,4 +448,8 @@ Only if genuinely planned, and always paired with a CTA:
 
 ---
 
-_Last updated: 2026-05-08_
+_Last updated: 2026-06-04 — reconciled with Sherin's clarification that **agency-replacement remains a live wedge, won on FDM + agents** (agencies lag in tech, have no agents). Sharpened the agency comparison in "What Berlin Is," the agency objection response, and the spectrum critical-mistake to affirm agency-replacement rather than drop it. Persona approaches (6 cells) reviewed and largely hold under the refined agency + spectrum positioning given the new SEO-literate ICP; the qualifying "current state" table keeps "Agency" as the core wedge; closing motion unchanged._
+
+_2026-06-03 — repositioned to **co-equal platform + FDM** and the **tool↔agency spectrum** (Berlin in the middle): rewrote "What Berlin Is (Sales Positioning)" and the one-line pitch, and the Positioning critical-mistakes. Canonical spectrum lives in `product.md`._
+
+_2026-05-08 — prior version (agency-replacement positioning)._

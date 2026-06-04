@@ -92,16 +92,25 @@ This explains Berlin's pricing power: customers compare the platform to an agenc
 
 ## Competitor Landscape — The Bucket Map
 
+### Berlin's Category — Forward-Deployed SEO/AEO Platform
+
+Berlin is **not in any of the competitor buckets below** — it defines its own category in the **middle of the tool↔agency spectrum**:
+
+- **Left — tools** (Ahrefs, Profound, + an agent): leverage for SEO-skilled operators who do the work themselves. (Buckets 3 and 4 below.)
+- **Right — agencies** (Daydream and a thousand others): done-for-you for teams with no SEO function. (Bucket 1 below, plus traditional agencies.)
+- **Middle — Berlin: a _Forward-Deployed SEO/AEO Platform_.** AI agents do the volume on a platform the team operates; an embedded marketer (FDM) is deployed alongside them to run it. The name ties to the FDM lineage (Palantir's forward-deployed model): platform + agents + an expert operator, co-equal. The buyer is SEO/marketing-literate and wants both halves — not a tool to wield alone, not an agency to hand off to.
+
+The four competitor buckets below are the surrounding landscape Berlin is read against — none occupy the same category.
+
 The market sorts into four buckets right now:
 
-### Bucket 1 — AI-native SEO agency (the bucket Berlin is in)
+### Bucket 1 — AI-native SEO agency
 
 | Company | Funding | Position |
 |---|---|---|
 | **Daydream** | $21M total ($15M Series A April 2026, WndrCo lead, with First Round Capital and Basis Set Ventures continuing) | Explicitly "AI-native agency for SEO." Proprietary SEO agents + dedicated human Growth Lead per customer. |
-| **Berlin** | Pre-seed | Same shape (platform + FDM), but entering at ~1/4 of agency cost with traditional businesses while Daydream targets enterprise/well-funded startups at agency price points. |
 
-**This is the bucket where Berlin sits.** Agency businesses raising venture money is rare historically — itself a leading indicator of where the category is heading.
+**Daydream is Berlin's nearest venture-funded comparable, but a different category:** Daydream is a pure AI-native *agency* (right edge of the spectrum — done-for-you at agency price points for enterprise/well-funded startups); Berlin is a *Forward-Deployed SEO/AEO Platform* (the middle — a platform the SEO-literate team operates on, plus an FDM who executes on it with them, at ~1/4 of agency cost). Agency businesses raising venture money is rare historically — itself a leading indicator of where the category is heading.
 
 ### Bucket 2 — AI SEO platform that automates SEO (anti-agency, platform-only)
 
@@ -180,7 +189,9 @@ The most relevant named agencies are the established SEO/content shops now repos
 
 ## Why Berlin Wins (Summary)
 
-- **vs. SEO agencies** (the primary alternative): Same three pillars as an AI-native agency — platform underneath, FDM on top — at ~1/4 of the equivalent agency cost, faster to ramp, transparent in the dashboard, AEO/GEO as a first-class capability rather than a learn-on-the-job add-on.
+**The spectrum frame.** The market runs from **tools** on the left (Ahrefs, Profound, + an agent — for SEO-skilled operators who do the work themselves) to **agencies** on the right (Daydream and a thousand others — for teams with no SEO function, or too small to build one). **Berlin is the middle — its own category, a _Forward-Deployed SEO/AEO Platform_: a platform a literate team operates on, plus an FDM who executes on it with them.** Product and FDM are co-equal. Read everything below through that lens — Berlin doesn't win by being a better tool or a cheaper agency; it wins by being the option neither end offers.
+
+- **vs. SEO agencies** (the right edge of the spectrum): Same three pillars as an AI-native agency — platform underneath, FDM on top — at ~1/4 of the equivalent agency cost, faster to ramp, transparent in the dashboard, AEO/GEO as a first-class capability rather than a learn-on-the-job add-on.
 - **vs. Daydream** (the direct AI-native agency competitor): Same category, same shape. Berlin pulls ahead on three wedges:
   1. **ICP and pricing entry:** Daydream targets enterprise/well-funded startups at agency price points; Berlin enters at ~1/4 of agency cost with traditional businesses and walks tiers up.
   2. **Engineering substrate:** Berlin's proprietary crawl, cached data layer, proprietary data routing architecture, and ranking-signal coverage let one FDM serve more accounts per head than Daydream's Growth Lead — surfaces as margin and FDM:client ratio.
@@ -259,4 +270,8 @@ Full source-cited market data, with detailed TAM/SAM/SOM source tables, AEO/GEO 
 
 ---
 
-_Last updated: 2026-05-07_
+_Last updated: 2026-06-04 — named Berlin's own category **"Forward-Deployed SEO/AEO Platform"** (the middle of the tool↔agency spectrum) per Sherin's call. Added a "Berlin's Category" definition at the top of the competitor landscape, removed Berlin from the Bucket 1 "AI-native SEO agency" table (it's now its own category, not a Daydream peer), and threaded the category name through "Why Berlin Wins." The 4-bucket competitor taxonomy is otherwise unchanged._
+
+_2026-06-03 — added the **tool↔agency spectrum** frame (Berlin in the middle, co-equal platform + FDM) to "Why Berlin Wins"; softened the Bucket 1 self-placement. Driven by Sherin's June 2026 FDM-delivery positioning._
+
+_2026-05-07 — prior version._

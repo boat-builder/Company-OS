@@ -35,7 +35,7 @@ The combination — production AI-infrastructure engineering plus having persona
 
 ### What an FDM Is
 
-**FDM = Forward Deployed Marketer**, a concept Palantir popularized in their early enterprise days. In Berlin's model, the FDM is a senior marketer embedded as the human layer on top of the platform — handling everything Berlin can't and owning the customer relationship.
+**FDM = Forward Deployed Marketer**, a concept Palantir popularized in their early enterprise days. In Berlin's model, the FDM is the **human half of a co-equal platform + FDM offering** — a senior marketer embedded alongside the platform, executing on it with the customer, handling everything the agents can't, and owning the relationship. Product and FDM carry equal weight (see `product.md` → *Where Berlin Sits*); the FDM is not a layer bolted onto a product, nor the product a substrate beneath the FDM.
 
 For end customers (the Berlin + FDM offering), the FDM is **part of the core offering, not a premium add-on**. The agency-tier product (Berlin for Agencies) is the only version sold without an FDM — the agency provides that layer themselves.
 
@@ -139,4 +139,6 @@ The offering is rate-limited by FDM capacity — that's why FDM hiring is the hi
 
 ---
 
-_Last updated: 2026-05-07_
+_Last updated: 2026-06-04 — light touch on "What an FDM Is" to reflect the June 2026 **co-equal platform + FDM** positioning (FDM is the human half of a co-equal offering, not a layer on top of the platform). FDM model, ratios, and hiring plan otherwise unchanged. See `product.md` → *Where Berlin Sits* and `_positioning-shift-WIP.md` (company-os root)._
+
+_2026-05-07 — prior version._
