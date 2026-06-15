@@ -2,7 +2,7 @@
 
 > Canonical reference for how Berlin sells. Positioning for sales calls, qualification framework, call structure, persona-specific approaches, objection handling, closing motion, pricing discipline, and the learning log.
 >
-> ICP grid and cell hypotheses live in `customers.md` — referenced here, not duplicated. Sales transcripts and CRM scripts live in `sales/` as referenced artifacts.
+> ICP definition lives in `customers.md` — referenced here, not duplicated. As of June 4, 2026 the ICP was **fully reset** to a single broad starting hypothesis in **SaaS** (the 6-cell grid and the traditional-business segment are retired); sales mechanics below have been reconciled to that. Sales transcripts and CRM scripts live in `sales/` as referenced artifacts.
 
 ---
 
@@ -28,18 +28,18 @@ Berlin is two co-equal things: an **end-to-end AI SEO/AEO platform** the custome
 
 ## Current Go-to-Market Phase
 
-**Status:** First commercial cohort live. Active discovery across the 6-cell ICP grid running in parallel.
+**Status:** Restarting ICP discovery from scratch. First commercial cohort live. Focused on a single broad starting hypothesis in **SaaS** (see `customers.md`).
 
-End-to-end capability (strategy + execution + tools) is in production. Two paying customers on Berlin + FDM at $499/month (Reach Psych, Csuite.so); miniOrange in compliance DD. Sales motion is **founder-led, sales-led**, anchored on **Berlin + FDM** to the primary ICP (traditional businesses) with **India field sales** as the distinctive channel.
+End-to-end capability (strategy + execution + tools) is in production. Two paying customers on Berlin + FDM at $499/month (Reach Psych, Csuite.so — both predate the reset); miniOrange in compliance DD. Sales motion is **founder-led, sales-led**, anchored on **Berlin + FDM** to the SaaS starting hypothesis.
 
-Until a discovery cell is validated (see promotion criteria in `customers.md`), treat every deal as both a sale and a discovery conversation.
+The starting hypothesis is **not** a validated ICP. Until it is (see promotion criteria in `customers.md`), treat every deal as both a sale and a discovery conversation, and narrow toward a tighter ICP.
 
 ### Early-customer / design-partner motion
 
-Available selectively when a prospect sits in a high-priority cell and is willing to trade time for pricing and influence.
+Available selectively when a prospect fits the SaaS starting hypothesis well and is willing to trade time for pricing and influence.
 
 **What the design-partner customer gets:**
-- Preferential pricing locked in (typically 30–50% off list, cell-dependent)
+- Preferential pricing locked in (typically 30–50% off list)
 - Direct input into roadmap and the FDM-led onboarding
 - Weekly access to product/FDM team for the first 8 weeks
 - Priority feature requests
@@ -50,8 +50,8 @@ Available selectively when a prospect sits in a high-priority cell and is willin
 - Honest async feedback (10 min/week)
 - Willingness to actually run their SEO through Berlin
 
-**When to offer:** Prospect is in a priority cell, has clear pain, is a decision-maker, and we want deep learning from their segment.
-**When not to offer:** Prospect is already bought in at list price (don't leave money on the table); prospect is outside the 6 cells; prospect can't commit the time.
+**When to offer:** Prospect fits the SaaS starting hypothesis, has clear pain, is a decision-maker, and we want deep learning to narrow the ICP.
+**When not to offer:** Prospect is already bought in at list price (don't leave money on the table); prospect is outside the SaaS hypothesis; prospect can't commit the time.
 
 ---
 
@@ -62,38 +62,45 @@ When a budget-sensitive prospect won't close at $499 outright, two trial structu
 1. **Free month + 2 prepaid** — first month free, customer prepays months 2 and 3 at $499.
 2. **3 months at $299, then $499** — discounted ramp; price bumps to standard at month 4.
 
-Use these sparingly and only when the discovery cell is validated as priority.
+Use these sparingly and only when the prospect is a strong fit for the SaaS starting hypothesis.
 
 ---
 
-## ICP Placement (Reference, Not Re-defined Here)
+## ICP Qualification (Reference, Not Re-defined Here)
 
-Sales must place every prospect into one of the 6 cells defined in `customers.md`. The grid is **Archetype (3) × Buyer (2)**.
+The ICP is being **rebuilt from scratch** as a single broad starting hypothesis in SaaS (full definition in `customers.md`). Sales must qualify every prospect against that hypothesis and treat every call as discovery that helps narrow it.
 
-| Cell | Archetype | Buyer | Price Tier |
-|------|-----------|-------|------------|
-| 1 | SaaS | Founder | $499–$999 / mo |
-| 2 | SaaS | Marketing Leader / CMO | $2,500–$5,000 / mo |
-| 3 | eCommerce | Founder | $499–$999 / mo |
-| 4 | eCommerce | Marketing Leader / CMO | $2,500–$5,000 / mo |
-| 5 | Lead Gen / Services | Founder | $499–$999 / mo |
-| 6 | Lead Gen / Services | Marketing Leader / CMO | $2,500–$5,000 / mo |
+**The starting hypothesis — qualify for all of these:**
 
-**Out of scope for now:** Marketplaces, Aggregators, Media/Publishers, and pure Agencies reselling SEO. If a prospect is an agency, decline politely or refer — Berlin replaces agencies, it doesn't sell to them. (The Berlin for Agencies SKU exists but is not on the public site and is taken on direct inbound only.)
+- **SaaS company** (the chosen first vertical).
+- **Already doing real SEO** — active SEO work, not starting from zero — but with a **small SEO/marketing team or a founder doing it solo**.
+- **Already using some AI** to do that SEO work.
+- **Owner (founder or marketing leader) understands SEO/AEO well** — a literate buyer who can operate a platform.
+- **~$80k–$1M monthly revenue** ($80k+ qualifies; upper bound loose).
+
+**Two buyer sub-types within the hypothesis** (the live axis to learn on):
+
+| Sub-type | Profile | Price anchor (to test) |
+|----------|---------|------------------------|
+| **Founder-owned** | Founder personally owns/does SEO, small or no team | $499–$999 / mo |
+| **Marketing-leader-owned** | Head of Marketing / SEO lead with a small team and an existing budget | $2,500–$5,000 / mo |
+
+**Out of scope for now:** All non-SaaS verticals (eCommerce, Lead Gen / Services, marketplaces, aggregators, media/publishers); companies below ~$80k MRR; prospects with no real SEO activity yet; and pure agencies reselling SEO. If a prospect is an agency, decline politely or refer — Berlin replaces agencies, it doesn't sell to them. (The Berlin for Agencies SKU exists but is not on the public site and is taken on direct inbound only.)
 
 ---
 
-## Qualifying Questions — Placing the Prospect in the Grid
+## Qualifying Questions — Fit to the Starting Hypothesis
 
-A good discovery call does three things: identifies the **archetype**, identifies the **buyer persona**, and maps the **current state** (DIY / agency / in-house / nothing).
+A good discovery call does four things: confirms the prospect is **SaaS**, confirms they're **already doing SEO with a small team/solo founder and some AI**, identifies the **buyer sub-type** (founder vs marketing leader), and maps the **current state** (DIY / agency / in-house / tools). It also gathers what we need to **narrow the ICP**.
 
-### 1. Archetype — what kind of business?
+### 1. Vertical & SEO maturity — is this our SaaS hypothesis?
 
 > "Tell me about the business — what do you sell, and how do you make money?"
+> "What's your SEO looking like today — how much are you doing, and are you using any AI tools for it?"
 
-Listen for SaaS / eCommerce / Lead Gen-Services. If marketplace, publisher, aggregator, or pure agency — likely out of scope.
+Confirm **SaaS**. If eCommerce, Lead Gen-Services, marketplace, publisher, aggregator, or pure agency — out of scope for this phase. Confirm there's **real SEO activity** (often AI-assisted) run by a **small team or solo founder**. No SEO activity yet = not the hypothesis.
 
-### 2. Buyer persona — Founder or Marketing Leader?
+### 2. Buyer sub-type — Founder or Marketing Leader?
 
 > "What's your role in the business, and who owns SEO today?"
 
@@ -139,22 +146,20 @@ If ambiguous, ask directly: "Do you want to run SEO yourself with Berlin doing t
 
 Founders should say "me." Marketing Leaders should have budget authority in their tier. Anyone else is a proxy — insert yourself into the real decision-maker's next conversation.
 
-### Channel-allocation reframe (traditional businesses)
-
-When traditional-business prospects ask "should I invest in search?", they almost always mean **search vs. ads/social**, not SEO vs. AI Search. Read the question before answering.
-
 ---
 
 ## Qualification Scorecard
 
 | Criteria | Required | Nice to have |
 |---|---|---|
-| Places cleanly in one of the 6 cells | ✓ | |
-| Clear current state (DIY / freelancer / agency / in-house) | ✓ | |
+| SaaS, with real SEO activity (often AI-assisted), small team/solo founder | ✓ | |
+| ~$80k–$1M monthly revenue | ✓ | |
+| Literate owner (founder or marketing leader) who understands SEO/AEO | ✓ | |
+| Clear current state (DIY / freelancer / agency / in-house / tools) | ✓ | |
 | Specific trigger / urgency | ✓ | |
-| Current SEO spend matches tier (or willingness evident) | ✓ | |
+| Current SEO spend matches buyer sub-type anchor (or willingness evident) | ✓ | |
 | Decision-maker on the call | ✓ | |
-| Within a cell currently prioritized for discovery | | ✓ |
+| Trigger is "hit the ceiling of doing SEO with AI tools myself" | | ✓ |
 | Trigger is agency-switch or AI-search panic | | ✓ |
 
 If they're missing any "required," either disqualify or offer a scoped proof-of-value.
@@ -165,7 +170,7 @@ If they're missing any "required," either disqualify or offer a scoped proof-of-
 
 ### Pre-call prep (5 min)
 
-LinkedIn / company site review → pre-classify the cell. Hypothesize trigger and current state.
+LinkedIn / company site review → confirm SaaS + SEO activity, pre-classify buyer sub-type (founder vs marketing leader). Hypothesize trigger and current state.
 
 ### 1. Opening & Rapport (3–5 min)
 
@@ -175,7 +180,7 @@ Thank them, confirm time, light rapport. If they open with "Tell me about Berlin
 
 ### 2. Discovery (12–15 min)
 
-Run the 6 qualifying sections in order: archetype → buyer persona → current state → trigger → budget → decision authority.
+Run the qualifying sections in order: vertical & SEO maturity → buyer sub-type → current state → trigger → budget → decision authority.
 
 ### 3. Positioning & Demo (8–10 min)
 
@@ -202,53 +207,21 @@ See closing section below.
 
 ## Persona-Specific Approaches
 
-### Cell 1 — SaaS × Founder ($499–$999)
+Two buyer sub-types inside the SaaS starting hypothesis. Both already do SEO, often with AI, on a small/solo team — lead with that shared reality.
 
-- **Pain anchors:** Losing organic discovery to ChatGPT/Perplexity; no bandwidth; freelancer burn.
-- **Lead with:** "Berlin is what you'd hire a fractional SEO lead to do, at a fraction of the cost, and without the onboarding."
-- **Emphasize:** AI search visibility, time savings, no-hire execution.
-- **Watch for:** SEO isn't top-3 priority; may stall. Create urgency around AEO/AI-overview decay.
+### SaaS × Founder ($499–$999 anchor)
 
-### Cell 2 — SaaS × Marketing Leader ($2.5k–$5k)
+- **Pain anchors:** Doing SEO themselves with AI tools and hitting a ceiling — quality, time, or AI-search visibility. Losing organic discovery to ChatGPT/Perplexity; no bandwidth to keep pace.
+- **Lead with:** "You're already doing the SEO yourself with AI. Berlin is the platform plus a dedicated marketer who takes it the rest of the way — without the cost or onboarding of a hire."
+- **Emphasize:** AI-search visibility, getting past the DIY-with-AI ceiling, time back, no-hire execution.
+- **Watch for:** SEO isn't always top-3 priority; may stall. Create urgency around AEO/AI-overview decay.
 
-- **Pain anchors:** Underperforming agency, slow reporting, no AI story from current provider.
-- **Lead with:** "Berlin replaces the agency retainer with a platform that does the same work, faster, with full visibility."
-- **Emphasize:** Transparency, speed-to-publish, AEO coverage, no-renewal lock-in.
-- **Watch for:** Political lift of firing an agency. Offer a parallel-pilot path.
+### SaaS × Marketing Leader ($2.5k–$5k anchor)
 
-### Cell 3 — eCommerce × Founder ($499–$999)
-
-- **Pain anchors:** PDP / category page scale; can't keep up; AI shopping surfaces.
-- **Lead with:** "Every unoptimized product page is lost revenue. Berlin optimizes at SKU scale without you hand-editing."
-- **Emphasize:** PDP automation, category structure, AI shopping visibility (ChatGPT Shopping, Google AI Overviews, Perplexity).
-- **Watch for:** App-store mindset — they may expect $29/mo. Anchor on revenue recovered, not tool cost.
-
-### Cell 4 — eCommerce × Marketing Leader ($2.5k–$5k)
-
-- **Pain anchors:** Agency underperformance; enterprise tools (Bloomreach, Conductor) too heavy; AI shopping unknown.
-- **Lead with:** "Berlin replaces the agency and covers what enterprise tools won't — actual execution across SKUs."
-- **Emphasize:** Margin recovery, SKU-scale execution, AEO for shopping.
-- **Watch for:** Entrenched contracts. Ask about renewal date early.
-
-### Cell 5 — Lead Gen / Services × Founder ($499–$999)
-
-- **Pain anchors:** SEO is existential; agency burn; want control + visibility.
-- **Lead with:** "You've been burned by agencies. Berlin gives you the outcome without handing over the wheel."
-- **Emphasize:** Transparency, conversion instrumentation, local/geo if relevant.
-- **Watch for:** Skeptical buyer — lead with proof, not promise. Offer scoped proof-of-value.
-
-### Cell 6 — Lead Gen / Services × Marketing Leader ($2.5k–$5k)
-
-- **Pain anchors:** SEO is one line item among many; needs to be managed without eating their attention.
-- **Lead with:** "Berlin makes SEO a channel you don't have to babysit — results, reports, no weekly agency check-ins."
-- **Emphasize:** Reportability upward, time-back, predictability.
-- **Watch for:** If SEO isn't prioritized internally, may not defend budget. Find the upward reporting angle.
-
-### India / local market
-
-When competing against local agencies whose pricing is close to Berlin's $499 (e.g., India where local agencies charge ~₹60K/mo / ~$630), **don't lead with price**. Lead with:
-- **Marketer-to-client ratio** (Berlin's 1:10–15 vs agency's 1:4–8)
-- **AI search authority work** (most local agencies don't yet do this)
+- **Pain anchors:** Small team already running SEO (often AI-assisted) and capacity-bound; or an underperforming agency with no AI story; slow reporting.
+- **Lead with:** "Your team is already doing real SEO. Berlin gives them a platform that does the volume plus a dedicated marketer who runs it with them — more output, full visibility, no retainer lock-in."
+- **Emphasize:** Transparency, speed-to-publish, AEO coverage, augmenting a small team rather than replacing it, no-renewal lock-in.
+- **Watch for:** If an agency is in place, the political lift of switching — offer a parallel-pilot path.
 
 ---
 
@@ -272,7 +245,7 @@ When competing against local agencies whose pricing is close to Berlin's $499 (e
 > "No. Berlin has its own orchestration, its own ranking-signal stack, its own execution pipelines. LLMs are one component of many. The differentiator is that Berlin actually ships the work — writes, publishes, updates, monitors — not just generates suggestions."
 
 **"How do I know the output quality matches what an agency would produce?"**
-> "Fair question. Two answers: one, we'll show you production output from customers in your archetype on the call. Two, Berlin's output is reviewable — you approve before anything ships, or you don't, depending on how hands-on you want to be."
+> "Fair question. Two answers: one, we'll show you production output from comparable SaaS customers on the call. Two, Berlin's output is reviewable — you approve before anything ships, or you don't, depending on how hands-on you want to be."
 
 **"We have an agency contract until [date]."**
 > "Good to know. Two paths: we can run Berlin in parallel for the last 60 days of your contract so you have a clean comparison before you renew, or we start the day your contract ends. Which fits better?"
@@ -308,7 +281,7 @@ When competing against local agencies whose pricing is close to Berlin's $499 (e
 
 **Rules:** Always book the follow-up before doing the work. One page / one topic / one artifact. No scope creep. Don't offer this more than 3× per week.
 
-### Design-partner close (priority cells only)
+### Design-partner close (strong-fit SaaS prospects only)
 
 > "You're exactly the profile we're learning from right now. I'd like to invite you into our design-partner program — [X]% off locked in, direct input on roadmap, weekly call for 8 weeks. In exchange we need real feedback and willingness to actually run SEO through Berlin. Interested?"
 
@@ -332,9 +305,11 @@ When competing against local agencies whose pricing is close to Berlin's $499 (e
 
 ### Tiers
 
-- **Founder tier — $499–$999 / mo.** Cells 1, 3, 5. Self-serve-leaning with FDM onboarding.
-- **Marketing Leader tier — $2,500–$5,000 / mo.** Cells 2, 4, 6. FDM-led, higher-touch.
-- **Design-partner discount.** 30–50% off list, locked in, for priority cells only.
+- **Founder anchor — $499–$999 / mo.** SaaS founder owns SEO. Self-serve-leaning with FDM onboarding.
+- **Marketing Leader anchor — $2,500–$5,000 / mo.** SaaS marketing leader with a small team. FDM-led, higher-touch.
+- **Design-partner discount.** 30–50% off list, locked in, for high-priority discovery prospects only.
+
+These are anchors to test, not settled tiers — pricing is being re-derived alongside the ICP.
 
 (Full scope-ladder pricing principles live in `product.md`.)
 
@@ -343,7 +318,7 @@ When competing against local agencies whose pricing is close to Berlin's $499 (e
 1. Don't discount casually — discount only via the design-partner lane or the budget-sensitive concession structures.
 2. Reframe to what they're replacing — agency retainer, tool stack, in-house hire.
 3. Connect to a specific outcome they mentioned.
-4. Confirm fit before negotiating — if they're not in the grid, price is a symptom, not the issue.
+4. Confirm fit before negotiating — if they don't fit the SaaS hypothesis, price is a symptom, not the issue.
 
 ### Never say
 
@@ -370,7 +345,7 @@ Only if genuinely planned, and always paired with a CTA:
 
 ### Discovery
 
-- Don't skip cell placement. Every prospect must land in one of the 6 cells before you demo.
+- Don't skip qualification. Every prospect must fit the SaaS starting hypothesis (SaaS, real SEO activity, small team/solo founder, literate owner, ~$80k–$1M MRR) before you demo.
 - Don't skip budget. Ask plainly: "What are you spending on SEO today, across everything?"
 - Don't skip the trigger. **No trigger = no close.**
 - Don't accept a proxy buyer.
@@ -400,13 +375,13 @@ Only if genuinely planned, and always paired with a CTA:
 
 - **Phase 1 — Current state (4 min):** Business, role, SEO today.
 - **Phase 2 — Pain & trigger (4 min):** What hurts, what changed, why now.
-- **Phase 3 — Cell placement (3 min):** Confirm archetype, confirm buyer tier, map tool and spend landscape.
+- **Phase 3 — Fit & sub-type (3 min):** Confirm SaaS + SEO activity, confirm buyer sub-type (founder vs marketing leader), map tool and spend landscape.
 - **Phase 4 — Decision mapping (2 min):** Who signs, what's the process, what's the timeline.
 - **Phase 5 — Success criteria (2 min):** What does "working" look like at 30 and 90 days.
 
 ### Red flags — when to disqualify
 
-- Doesn't fit any of the 6 cells (marketplace, pure agency, media publisher, consumer-app-with-no-SEO)
+- Doesn't fit the SaaS starting hypothesis (non-SaaS vertical, pure agency, no real SEO activity, below ~$80k MRR)
 - $0 current SEO spend with no trigger
 - Proxy buyer with no path to the real decision-maker
 - Unrealistic expectations ("#1 ranking in 2 weeks")
@@ -448,7 +423,9 @@ Only if genuinely planned, and always paired with a CTA:
 
 ---
 
-_Last updated: 2026-06-04 — reconciled with Sherin's clarification that **agency-replacement remains a live wedge, won on FDM + agents** (agencies lag in tech, have no agents). Sharpened the agency comparison in "What Berlin Is," the agency objection response, and the spectrum critical-mistake to affirm agency-replacement rather than drop it. Persona approaches (6 cells) reviewed and largely hold under the refined agency + spectrum positioning given the new SEO-literate ICP; the qualifying "current state" table keeps "Agency" as the core wedge; closing motion unchanged._
+_Last updated: 2026-06-04 (ICP reset) — reconciled all sales mechanics to the **full ICP reset** in `customers.md`: retired the 6-cell grid and traditional-business references; rebuilt ICP qualification, qualifying questions, scorecard, persona approaches, and pricing anchors around the single **SaaS starting hypothesis** (SEO-literate founder/marketing leader already doing SEO with AI on a small/solo team, ~$80k–$1M MRR). Dropped the traditional-business channel-reframe and the India/local-market persona block (motion parked). Positioning, objection handling, and closing motion unchanged._
+
+_2026-06-04 (earlier) — reconciled with Sherin's clarification that **agency-replacement remains a live wedge, won on FDM + agents** (agencies lag in tech, have no agents)._
 
 _2026-06-03 — repositioned to **co-equal platform + FDM** and the **tool↔agency spectrum** (Berlin in the middle): rewrote "What Berlin Is (Sales Positioning)" and the one-line pitch, and the Positioning critical-mistakes. Canonical spectrum lives in `product.md`._
 

@@ -63,7 +63,7 @@ The new surface area for SEO/AEO has roughly 10x'd the workload. Berlin's engine
 The FDM engagement adapts to whether the customer has internal marketing:
 
 1. **Companies with internal marketing teams.** The FDM works alongside the team and upskills them. Once the team is self-sufficient, the customer can move to a lower tier and operate Berlin themselves.
-2. **Companies without marketers.** The FDM acts as the full marketing function on top of Berlin — the model traditional businesses (the primary ICP) typically need.
+2. **Companies without an internal marketing function.** The FDM acts as the full marketing function on top of Berlin.
 
 ### Customer-facing language
 
@@ -91,7 +91,7 @@ The first SEO Strategist (FDM) is the template for the next ones. Role framing m
 | **Book size** | 6 clients |
 | **Scope** | Pure execution / delivery. **No pre-sales, no pitching new business.** |
 | **Location** | Fully remote |
-| **ICP coverage** | eCom, SaaS, local / professional services |
+| **ICP coverage** | SaaS (the chosen first vertical — see `customers.md`) |
 | **Beyond execution** | Build playbooks per client type; run AEO/LLM-visibility experiments; document learnings; feed Berlin product feedback and feature requests |
 | **Cadence** | Weekly client calls minimum |
 | **Application** | jobs@agentberlin.ai — recent SEO experiment, one thing traditional SEO folks are getting wrong about AEO/LLM, LinkedIn or resume. No cover letters. |
@@ -102,23 +102,11 @@ The full public JD lives at `team/Forward-Deployed-SEO-JD.md`.
 
 ---
 
-## Hiring Plan (Funded by Current Raise)
+## Hiring Plan
 
-| Wave | Role | Target month | Notes |
-|------|------|--------------|-------|
-| 1 | First FDM (direct hire) | Month 2 | Above spec |
-| 1 | India field rep (#1) | Month 2 | Physical outreach to traditional businesses |
-| 2 | Full-stack engineer | Month 3 | Platform reliability, integration library |
-| 2 | Second FDM | Month 4 | Via partner agency (or direct, depending) |
-| 3 | India field rep (#2) | Month 5 | Second territory |
-| 3 | Third FDM | Month 6 | |
-| 4 | Second engineer (platform / AI infra) | Month 7 | |
-| 4 | India field rep (#3) | Month 8 | |
-| 4 | Fourth FDM | Month 9 | |
+The current plan is to **hire 2 FDMs now**. (The earlier multi-wave hiring plan and the India field-sales reps have been retired along with the India field-sales motion.)
 
-By M12 the team is roughly **11 people**: 4 FDMs, 3 India field reps, 2 engineers, founder, CMO. **All hires India-based**, where senior talent costs are highly competitive.
-
-The offering is rate-limited by FDM capacity — that's why FDM hiring is the highest-leverage investment in the round.
+The offering is rate-limited by FDM capacity — FDM hiring is the highest-leverage investment.
 
 ---
 
@@ -139,6 +127,8 @@ The offering is rate-limited by FDM capacity — that's why FDM hiring is the hi
 
 ---
 
-_Last updated: 2026-06-04 — light touch on "What an FDM Is" to reflect the June 2026 **co-equal platform + FDM** positioning (FDM is the human half of a co-equal offering, not a layer on top of the platform). FDM model, ratios, and hiring plan otherwise unchanged. See `product.md` → *Where Berlin Sits* and `_positioning-shift-WIP.md` (company-os root)._
+_Last updated: 2026-06-04 (ICP reset) — retired the India field-sales motion and the multi-wave hiring plan; the current plan is to **hire 2 FDMs now**. Removed the India-based M12 team projection and India field reps. Updated delivery-mode-2 wording and the FDM hire's ICP coverage to the new SaaS focus (see `customers.md`). FDM model and operator ratios unchanged._
+
+_2026-06-04 (earlier) — light touch on "What an FDM Is" to reflect the June 2026 **co-equal platform + FDM** positioning (FDM is the human half of a co-equal offering, not a layer on top of the platform). See `product.md` → *Where Berlin Sits*._
 
 _2026-05-07 — prior version._

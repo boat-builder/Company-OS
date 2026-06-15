@@ -12,7 +12,7 @@ Berlin's primary content channels and their roles:
 - **r/agent_seo (Reddit).** Berlin-operated subreddit. Demos of Berlin in action surface here as educational content; community grows as a self-reinforcing distribution channel. Current size: ~4,400 members.
 - **"Agentic AI for SEO" micro-book.** Lead magnet, reference asset, credibility builder.
 - **Meetup series for SEO professionals.** In-person events with heavy live demos against the platform itself.
-- **Outbound (LinkedIn primary, email secondary, X tertiary).** Targeted to agency owners, heads of SEO, and marketing-ops leaders in the ICP, leveraging the founder's growing thought-leadership presence. Digital outbound complements India field sales, not replaces it.
+- **Outbound (LinkedIn primary, email secondary, X tertiary).** Targeted to heads of SEO and marketing-ops leaders in the ICP (plus agency owners for the Berlin for Agencies SKU), leveraging the founder's growing thought-leadership presence.
 - **Partner pages.** `marketing/partners-page/` holds the agency and SaaS landing variants for partner-channel inbound.
 
 ---
@@ -30,10 +30,10 @@ In external content and prospect-facing copy, do not use internal jargon. The tr
 
 - Internal: "FDM" / "Forward Deployed Marketer" → External: **"dedicated marketer"** or **"senior strategist"**.
 - Internal: "AEO" / "GEO" → External: **"AI search"** or **"answer engines"** when audience is non-technical.
-- Internal: discovery-grid cell numbers (Cell 1, Cell 2, etc.) → External: never used; speak in the audience's own role/industry terms.
-
-When traditional-business prospects ask "should I invest in search?", they almost always mean **search vs. ads/social**, not SEO vs. AI Search. Read the question before answering. (Sales-call framing of the same reframe lives in `sales.md` under "Channel-allocation reframe.")
+- Internal: ICP/segment shorthand → External: never used; speak in the audience's own role/industry terms.
 
 ---
 
-_Last updated: 2026-05-12 — trimmed to canonical-only content; content/outbound playbook moved to `marketing/content-playbook.md`._
+_Last updated: 2026-06-04 — removed references tied to the retired India field-sales motion, the discovery-grid cell numbers, and the traditional-business segment (the channel-reframe paragraph and its cross-reference to a now-deleted `sales.md` section), per the June 2026 ICP reset to SEO-literate SaaS (see `customers.md`)._
+
+_2026-05-12 — trimmed to canonical-only content; content/outbound playbook moved to `marketing/content-playbook.md`._

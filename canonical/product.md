@@ -65,7 +65,7 @@ The practical implication: Berlin sits in the **middle of the tool↔agency spec
 
 Berlin is one product, sold in two packages:
 
-1. **Berlin + FDM (end customers).** The core offering for mid-market and traditional businesses. Platform execution plus an assigned Forward Deployed Marketer who shapes strategy, reviews Berlin's output, owns the customer relationship, and surfaces patterns back into Berlin's default playbooks. **FDM is not a premium add-on — it is part of the core offering at this tier.**
+1. **Berlin + FDM (end customers).** The core offering for the end-customer ICP (SEO-literate SaaS teams and founders — see `customers.md`). Platform execution plus an assigned Forward Deployed Marketer who shapes strategy, reviews Berlin's output, owns the customer relationship, and surfaces patterns back into Berlin's default playbooks. **FDM is not a premium add-on — it is part of the core offering at this tier.**
 
 2. **Berlin for Agencies.** A platform-only version sold to SEO/digital agencies running Berlin underneath their own client delivery. This version **does not include an FDM** — the agency provides that layer themselves. Same underlying product, different packaging.
 
@@ -273,7 +273,9 @@ When crafting messaging for a specific audience:
 
 ---
 
-_Last updated: 2026-06-03 — repositioned to **co-equal product + FDM** and the **tool↔agency spectrum** (Berlin in the middle). Rewrote "Berlin in One Line," added "Where Berlin Sits — The Spectrum," and reframed the "practical implication" paragraph and the "How to Use This Document" lead away from "Berlin replaces the agency" to the middle position. Driven by Sherin's June 2026 FDM-delivery positioning. Open ICP/category/self-serve questions tracked in `_positioning-shift-WIP.md` (company-os root), not yet propagated to `customers.md`/`market.md` structure._
+_Last updated: 2026-06-04 (ICP reset) — updated the "Berlin + FDM (end customers)" offering description: replaced "mid-market and traditional businesses" with the current end-customer ICP (SEO-literate SaaS teams and founders — see `customers.md`), per the June 2026 ICP reset. Product capabilities, pillars, and pricing unchanged._
+
+_2026-06-03 — repositioned to **co-equal product + FDM** and the **tool↔agency spectrum** (Berlin in the middle). Rewrote "Berlin in One Line," added "Where Berlin Sits — The Spectrum," and reframed the "practical implication" paragraph and the "How to Use This Document" lead away from "Berlin replaces the agency" to the middle position. Driven by Sherin's June 2026 FDM-delivery positioning._
 
 _2026-05-15 — elevated the **Strategy Knowledge Base** to a first-class substrate item (Engineering Moat, Tools Layer narrative, Feature Reference). Earlier same day's "curated strategy catalog" reference in the *Audit — Continuous Observability* section unified to the new term; *strategy knowledge base* is now the canonical name for this substrate piece. Earlier same day: split the "Queryable keyword and page store" bullet in the Engineering Moat into two distinct substrate items: **Keyword lake** (queryable for AI) and **Versioned page store** (queryable to agents, with current + historical state). Adopted "keyword lake" as the canonical term for that substrate piece. Propagated the split through the Tools Layer narrative and the feature reference table (now two rows: Keyword Lake, Versioned Page Store). Page versioning is now explicitly documented as a real capability of the page store, not just "fresh and queryable."_
 

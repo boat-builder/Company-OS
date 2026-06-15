@@ -1,199 +1,107 @@
 # Customers
 
-> Canonical reference for who Berlin sells to: the primary ICP, the active discovery grid, the underlying archetype taxonomy, and the discipline by which cells get promoted from hypothesis to validated ICP.
+> Canonical reference for who Berlin sells to. As of June 4, 2026 this is a **fresh start**: a single, deliberately-broad starting hypothesis in **SaaS**, which we will narrow into a validated ICP through experiments. Prior ICP framing (the 6-cell grid, the traditional-business segment) has been retired — see *Why We Reset* and the change log.
 
 ---
 
-## Primary ICP — SEO/Marketing-Literate Teams & Founders
+## Starting Hypothesis — SEO-Literate SaaS Teams & Founders
 
-**Promoted to primary ICP on June 4, 2026**, replacing the earlier "traditional businesses that default to agencies" framing (now demoted — see *Secondary / Historical* below). This follows the June 2026 decision to double down on the co-equal **platform + FDM** model and position Berlin as the middle of the tool↔agency spectrum (see `product.md` → *Where Berlin Sits*).
+**Set June 4, 2026.** We are restarting ICP discovery from scratch. This is not a finished ICP — it is the **starting point** we will run experiments against and narrow down. We are choosing **SaaS as the first vertical** to focus on.
 
-**Segment:** SEO/marketing-literate buyers — an in-house SEO or marketing person/team, or a **founder who genuinely understands SEO/marketing** — who want **a platform to operate on *and* an expert operator (FDM) to execute with them**. They are not looking to hand everything off blind (the right-edge agency buyer), and not content to wield a tool alone (the left-edge Ahrefs/Profound buyer). They want both halves.
+### Who we are targeting
 
-### Why this is the buyer the new positioning serves
+A SaaS company where the SEO/marketing function is owned by someone who genuinely understands SEO/AEO, and who is already doing real SEO work but is capacity-constrained. Concretely, the shared behaviors we are targeting:
 
-- They **appreciate the product**, which is why product-first matters: a literate buyer wants to see and operate the platform, not just be told "an operator will handle it."
-- They feel the **pace problem** acutely — AEO/GEO, new surfaces and ranking signals every quarter — and know they can't keep up solo or with a slow agency.
+- **Good SEO activity already** — they are actively doing SEO, not starting from zero — **but a small SEO/marketing team**, or a **founder doing the SEO themselves**.
+- **Already using some AI** to do the SEO work. They've reached for AI tools and feel both the leverage and the ceiling of doing it that way.
+- **The owner (founder or marketing leader) understands SEO/AEO well.** This is a literate buyer who can appreciate and operate a platform, not someone looking to hand it off blind.
+- **Revenue: ~$80k–$1M monthly revenue** (roughly $1M–$12M ARR). $80k+ qualifies; the upper bound is loose. To be tightened by experiments.
+
+### Why this buyer fits the new positioning
+
+This follows the June 2026 decision to double down on the co-equal **platform + FDM** model and position Berlin in the **middle of the tool↔agency spectrum** (see `product.md` → *Where Berlin Sits*). The SEO-literate buyer is exactly the middle of that spectrum:
+
+- They **appreciate the product** — a literate buyer wants to see and operate the platform, which is why product-first matters.
+- They feel the **pace problem** acutely — AEO/GEO, new surfaces and ranking signals every quarter — and know a small team or a solo founder using AI tools can't keep up.
 - They still want a **human expert** in the loop: an FDM fluent in AI + Berlin, strong at SEO/AEO, and an exceptional experimenter, executing on the platform with them.
 
-### Why Berlin fits
+### Why this is only a starting point
 
-- **vs. tools (left edge):** Berlin adds the FDM and the execution a tool won't do — the literate buyer gets leverage *and* an operator.
-- **vs. agencies (right edge):** "Replace your agency" still lands — but the wedge is **FDM + agents**. Typical agencies lag in tech and don't have agents; Berlin replaces the agency with a platform + agents + an embedded expert, at agency-fraction cost, with transparency and pace agencies can't match.
+The behaviors above describe a real, recognizable buyer, but they do **not** yet define a tight ICP. Many SaaS companies fit this description; they differ enormously in headcount, ARR stage, geography, sub-vertical, buyer title, and trigger. The job of the next phase is to run discovery and experiments **inside this starting hypothesis** and narrow it to a validated ICP.
 
-### Buyer persona
+### What we need to discover (and narrow on)
 
-Head of Marketing / Head of SEO / Demand-Gen Lead where a function exists; or a founder/CEO who personally understands SEO/marketing. Budget authority is high; decision cycles are fast.
+- **Buyer:** Within SaaS, who converts faster and stays — a founder who personally gets SEO, or an in-house marketing/SEO leader with a small team?
+- **Stage / size:** Where in the ~$80k–$1M MRR band is the pain sharpest and the willingness-to-pay clearest? Does the upper bound hold?
+- **The AI-usage trigger:** What specifically makes someone already using AI for SEO decide they need platform + FDM instead — hitting a quality ceiling, a time ceiling, an AEO/AI-search gap, or a results plateau?
+- **Sub-vertical inside SaaS:** Which kind of SaaS (developer tools, vertical SaaS, PLG, sales-led, etc.) has the densest, most repeatable pain?
+- **Geography:** US / EU / APAC — where does this buyer cluster and convert?
+- **FDM workload:** What does the per-account FDM workload look like when the customer is SEO-literate and hands-on?
 
-### Discovery focus going forward
+### Promotion criteria — hypothesis → validated ICP
 
-- Within the literate-buyer segment, who converts fastest — founders who get SEO, or in-house marketing/SEO leads with a team?
-- What makes a literate buyer choose platform + FDM over (a) keeping their tool stack and doing it themselves, or (b) a tech-forward agency?
-- How much of the platform do they actually want to operate themselves vs. lean on the FDM? (Informs the latent self-serve question — see `product.md`.)
-- What does the FDM workload look like per account when the customer is hands-on?
-
----
-
-### Secondary / Historical — Traditional Businesses That Default to Agencies
-
-_Promoted to primary on April 24, 2026; **demoted June 4, 2026** when the SEO-literate ICP became primary._
-
-Traditional, non-SaaS businesses ($500K–$2M MRR — warehouses, clinics, trading firms, B2B services) with **no internal SEO resource**, either considering an agency or unhappy with one. Overlaps Cell 5 (Lead Gen / Services × Founder). This segment sits on the **right edge** of the spectrum (hand-it-off agency buyers), which is why it no longer defines the GTM — but it remains real and convertible, and **our first paying customers (Reach Psych, Csuite.so) were acquired here**. Keep servicing and selectively pursuing it; just don't let it drive the current experiment.
-
-**India field-sales motion (parked):** physical field sales to clinics/warehouses/trading firms was built for this segment. The narrow India price gap (local agencies ~₹60K/mo ≈ $630 vs. Berlin's $499) means leading on the **marketer-to-client ratio (Berlin's 1:10–15 vs agency's 1:4–8)** and **AI-search authority work** local agencies don't yet do, rather than on price. Parked while the literate-buyer experiment runs; revisit if this segment is reprioritized.
-
----
-
-## The 6-Cell Discovery Grid
-
-Two axes define the active discovery framework:
-
-- **Archetype** — the prospect's business model, which shapes the SEO problem.
-- **Buyer persona** — who holds the budget and makes the call. Two personas: **Founder** (earlier-stage, hands-on, smaller budget) and **Marketing Leader / CMO** (later-stage, delegates, larger budget).
-
-This produces 6 cells. Each cell has a distinct price tier anchored to the buyer persona's typical budget.
-
-| Cell | Archetype | Buyer | Likely Price Tier | Hypothesis |
-|------|-----------|-------|-------------------|------------|
-| **1** | SaaS | Founder | $499–$999 | Post-PMF SaaS founders anxious about AI search, no SEO hire, tried freelancers |
-| **2** | SaaS | Marketing Leader / CMO | $2,500–$5,000 | In-house marketer at 20–100 person SaaS, unhappy with current agency |
-| **3** | eCommerce | Founder | $499–$999 | Shopify/DTC founder doing SEO themselves, overwhelmed |
-| **4** | eCommerce | Marketing Leader / CMO | $2,500–$5,000 | In-house marketer at mid-market eCom, agency underperforming |
-| **5** | Lead Gen / Services | Founder | $499–$999 | B2B services founder, SEO-dependent, burned by agencies |
-| **6** | Lead Gen / Services | Marketing Leader / CMO | $2,500–$5,000 | In-house marketer at services firm, SEO is a line item |
-
-### Sub-parameters to discover
-
-Within winning cells, these dimensions need to be surfaced through interviews — not guessed. Each could change the actual ICP definition meaningfully.
-
-- **Headcount** — team size, not just company size
-- **Revenue stage** — ARR band, profitability, burn
-- **Geography** — US / EU / APAC / global
-- **Vertical** — specific industry inside the archetype
-- **B2B vs. B2C** — changes the sales motion and the SEO problem
-- **Current SEO maturity** — none / freelancer / agency / in-house
-- **Trigger event** — what makes them start looking (traffic drop, funding round, agency firing, AI panic, etc.)
-- **Budget holder** — title, reporting line, signs vs. recommends
-
-### Promotion criteria
-
-A cell is promoted from *hypothesis* to *validated ICP* when the evidence log shows a consistent pattern across **at least 5 qualified conversations**, including:
+Hold the definition lightly until the evidence log shows a consistent pattern across **at least 5 qualified conversations**, including:
 
 - A repeatable, specific trigger event
-- A clear willingness-to-pay signal at the hypothesized tier
+- A clear willingness-to-pay signal at the proposed tier
 - A named role that holds the budget
-- At least one sub-parameter (vertical, geography, stage) that narrows the cell further
+- At least one sub-parameter (sub-vertical, stage, geography, buyer title) that narrows the hypothesis further
 
-Until then, every cell stays lightweight. **Resist the temptation to write full personas before the data is in.**
+Until then, **resist writing full personas before the data is in.**
 
 ---
 
-## Cell Profiles (Living Hypotheses)
+## Pricing Posture (Starting Point)
 
-### Cell 1 — SaaS × Founder
+Pricing for this segment is being re-derived alongside the ICP and is not yet fixed. SaaS buyers in this band span a founder-led tier and a marketing-leader tier; expect roughly **$499–$999/mo** where a hands-on founder owns SEO, and **$2,500–$5,000/mo** where a marketing leader with a team and an existing budget owns it. Treat these as anchors to test, not settled tiers. Canonical pricing principles live in `product.md`; sales-side pricing discipline lives in `sales.md`.
 
-- **Hypothesis:** Post-PMF SaaS founders anxious about AI search, no SEO hire, tried freelancers and didn't get results.
-- **Price tier:** $499–$999 / month
-- **Why they might buy:** Fear of losing organic discovery to ChatGPT/Perplexity; no in-house expertise; freelancer burn has left them skeptical but still spending.
-- **Why this might not be our ICP:** Founders are time-poor; SEO is rarely top-3; $499–$999 is an awkward middle tier.
-- **Discovery focus:** Which trigger pulls them in — AI search panic, a specific bad freelancer experience, or a competitor outranking them?
-- **Live signal:** **Csuite.so** is paying $499/month — one data point in this cell.
+---
 
-### Cell 2 — SaaS × Marketing Leader / CMO
+## Out of Scope for Now
 
-- **Hypothesis:** In-house marketer at a 20–100 person SaaS, currently working with an agency they're unhappy with.
-- **Price tier:** $2,500–$5,000 / month
-- **Why they might buy:** Agency dissatisfaction (underperformance, slow reporting, no AI story). Budget authority in this range, already allocated externally.
-- **Why this might not be our ICP:** Replacing an agency is a heavy political lift; marketers often renew rather than switch.
-- **Discovery focus:** What does the current agency actually deliver vs. charge? Appetite for platform + FDM hybrid vs. pure agency replacement?
+We are deliberately focusing to learn fast. Not targeted in this phase:
 
-### Cell 3 — eCommerce × Founder
-
-- **Hypothesis:** Shopify / DTC founder doing SEO themselves, overwhelmed by product/category scale.
-- **Price tier:** $499–$999 / month
-- **Why they might buy:** Every unoptimized PDP is lost revenue; AI shopping visibility is a new threat. DIY because agencies are too expensive relative to their margin.
-- **Why this might not be our ICP:** Shopify founders often lean on apps and community playbooks; margin pressure may push them to a $99 tier.
-- **Discovery focus:** What's in their stack? Is AI shopping urgent or a 2027 problem?
-
-### Cell 4 — eCommerce × Marketing Leader / CMO
-
-- **Hypothesis:** In-house marketer at a mid-market eCom company, with an agency that's underperforming.
-- **Price tier:** $2,500–$5,000 / month
-- **Why they might buy:** Real SKU scale, real margin, real expectations. Programmatic SEO and AI shopping are both active problems.
-- **Why this might not be our ICP:** Large eCom often has enterprise tools (Bloomreach, Conductor, BrightEdge) with entrenched contracts. Switching cost is high.
-- **Discovery focus:** Which vertical inside eCom (fashion, home, supplements) has the sharpest pain?
-
-### Cell 5 — Lead Gen / Services × Founder
-
-- **Hypothesis:** B2B services founder whose pipeline depends heavily on SEO, burned by agencies in the past.
-- **Price tier:** $499–$999 / month
-- **Why they might buy:** SEO is existential. Previous agency burn makes them receptive to "platform + control" messaging over "hand it off." Budget is already allocated.
-- **Why this might not be our ICP:** Skeptical buyers who want proof, not promise.
-- **Discovery focus:** What was the agency burn — over-promised results, black-box reporting, poor execution?
-
-### Cell 6 — Lead Gen / Services × Marketing Leader / CMO
-
-- **Hypothesis:** In-house marketer at a services firm where SEO is a line item inside a broader mandate.
-- **Price tier:** $2,500–$5,000 / month
-- **Why they might buy:** Budget authority but SEO is one of many things they own. Need tools that make SEO *manageable* alongside paid, content, events.
-- **Why this might not be our ICP:** If SEO is just a line item, may never get prioritized enough to justify $2.5K–$5K/month.
-- **Discovery focus:** What reporting do they owe upward? Does SEO appear in it?
+- **Other verticals** — eCommerce, Lead Gen / Services, marketplaces, aggregators, media/publishers. SaaS is the chosen first vertical; revisit others once SaaS is validated.
+- **Companies below ~$80k MRR** — too early; budget and SEO maturity usually absent.
+- **Buyers with no real SEO activity yet** — the hypothesis is built on teams already doing SEO, including with AI.
+- **Pure agencies reselling SEO** — Berlin replaces agencies, it doesn't sell to them. (The *Berlin for Agencies* SKU exists as a parallel motion, not an ICP — see below.)
 
 ---
 
 ## Parallel SKU: Berlin for Agencies
 
-A separate packaged offering — **not an ICP** — for SEO / digital agencies running Berlin underneath their own client delivery. No FDM (the agency provides that layer themselves).
-
-Earlier doc framing positioned agencies as a co-primary ICP; that framing is no longer accurate. The April 24, 2026 ICP doc places agencies as a parallel motion / SKU, not an ICP. The public site (agentberlin.ai) does not pitch this SKU — it is offered to agencies only on direct conversation.
-
----
-
-## Deprioritized for Now
-
-- Small agencies (1–4 clients) — budget constraints, limited scale benefits
-- Individual founders doing their own SEO
-- SMB/Startup SEOs — doing 3 jobs, tight budget, limited capacity for new tools
-- AI/ML consultants (niche, low volume)
-- Marketplace founders (too early stage, budget constraints)
-
----
-
-## The 6 Archetypes (Underlying Taxonomy)
-
-Archetype is one axis of prospect categorization, alongside buyer persona, company size, geography, and tech stack. It classifies the prospect's **business model** — which determines the shape of their SEO problem.
-
-The three archetypes used in the 6-cell discovery grid are the **active subset**. The other three remain documented but are not currently targeted.
-
-| Archetype | Description | SEO implication | Status |
-|-----------|-------------|-----------------|--------|
-| **eCommerce** | Sells products directly online. | SEO focuses on product and category pages to drive purchases. Scale (thousands of SKUs), AI shopping visibility, and programmatic SEO are defining problems. | Active |
-| **SaaS** | Sells software. | SEO drives product adoption via educational content, use-case pages, and funnels. Attribution from organic → pipeline, and AI-assisted discovery, are core concerns. | Active |
-| **Lead Gen (Services)** | Generates inquiries for services. | SEO targets high-intent keywords and converts via forms, calls, or bookings. Local/geo intent and conversion instrumentation matter more than volume. | Active |
-| **Marketplace** | Matches buyers and sellers. | SEO scales via listings and category pages; depends on supply-demand liquidity. Indexation and template quality at scale are the main levers. | Documented, not targeted |
-| **Aggregator** | Collects and organizes data from external sources. | SEO captures demand through large-scale, structured pages; no direct transactions. Content freshness, template quality, and scale are the main levers. | Documented, not targeted |
-| **Media/Publisher** | Produces content for consumption. | SEO focuses on traffic volume, freshness, and topical authority. Monetization via ads or subscriptions, so pageview economics drive everything. | Documented, not targeted |
+A separate packaged offering — **not an ICP** — for SEO / digital agencies running Berlin underneath their own client delivery. No FDM (the agency provides that layer themselves). The public site (agentberlin.ai) does not pitch this SKU; it is offered to agencies only on direct inbound conversation.
 
 ---
 
 ## Live Customers and Evidence
 
-Canonical paying-customer count and revenue lives in `finance.md`. Ephemeral pipeline state lives in `sales/pipeline.md`.
+Canonical paying-customer count and revenue lives in `finance.md`. Ephemeral pipeline state lives in `sales/pipeline.md`. These accounts predate the June 4, 2026 reset and were acquired under earlier positioning; treat them as revenue facts, not as ICP evidence for the new hypothesis.
 
-- **Reach Psych** (reachpsych.com) — Bangalore clinic. Acquired under the now-secondary traditional-business segment. $499/month on Berlin + FDM. Used v1 through its rough UX and chose to continue on v2 at launch — proof both that the India field motion converts and that customers stay through a rough relaunch when the underlying value lands.
-- **Csuite.so** — SaaS company. $499/month on Berlin + FDM. Early signal in the SaaS × Founder discovery cell (Cell 1).
-- **miniOrange** (miniorange.com) — Enterprise identity/security. In technical/compliance due diligence on Berlin + FDM.
+- **Reach Psych** (reachpsych.com) — Bangalore clinic. Acquired under the old traditional-business motion. $499/month on Berlin + FDM. Stayed through the v1→v2 relaunch — evidence that customers stay when the value lands, not evidence for the SaaS hypothesis.
+- **Csuite.so** — SaaS company. $499/month on Berlin + FDM. The one live account that sits inside the new SaaS focus.
+- **miniOrange** (miniorange.com) — Enterprise identity/security SaaS. In technical/compliance due diligence on Berlin + FDM.
+
+---
+
+## Why We Reset
+
+The previous ICP work (the archetype × buyer **6-cell discovery grid** and the **traditional-businesses-that-default-to-agencies** primary segment) has been retired, not refined. Two reasons:
+
+1. **We didn't learn much from that space.** Discovery there never produced a validated cell; the evidence stayed thin.
+2. **The positioning changed completely.** The move to the co-equal platform + FDM model and the tool↔agency spectrum (Berlin = the middle, serving the SEO-literate buyer) makes most of the earlier, agency-default learnings inapplicable anyway.
+
+Rather than carry forward stale scaffolding, we are starting clean with one broad SaaS hypothesis and narrowing through experiments.
 
 ---
 
 ## Change Log
 
-- **April 20, 2026** — Replaced previous 7-segment framing ("Medium Agencies," "SaaS In-House," "Growth Engineering," etc.) with the cleaner 2-axis grid (archetype × buyer persona) producing 6 cells, each as a discovery hypothesis.
-- **April 24, 2026** — Promoted **traditional businesses** ($500K–$2M MRR, no internal SEO resource) to primary ICP based on direct observation of pain density. The 6-cell grid remains in place for parallel exploration. GTM organized around two motions: **Berlin + FDM** (end customers, primary ICP) and **Berlin for Agencies** (parallel SKU, no FDM).
-- **June 4, 2026** — **Replaced the primary ICP** with **SEO/marketing-literate teams & founders**, following the June 2026 decision to double down on the co-equal platform + FDM model and the tool↔agency spectrum positioning (Berlin = the middle). Traditional businesses demoted to a secondary/historical segment (right edge of the spectrum); India field-sales motion parked. The 6-cell grid (archetype × buyer) is retained — SEO-literacy is now a qualifier layered across the cells. Agency-replacement remains a live wedge, differentiated by FDM + agents (agencies lag in tech). See `_positioning-shift-WIP.md` (company-os root) for the in-flight context.
+- **April 20, 2026** — Introduced the archetype × buyer-persona **6-cell grid** (now retired).
+- **April 24, 2026** — Promoted **traditional businesses** ($500K–$2M MRR, no internal SEO) to primary ICP (now retired).
+- **June 4, 2026 (earlier)** — Replaced primary ICP with "SEO/marketing-literate teams & founders" layered across the 6-cell grid.
+- **June 4, 2026 (this reset)** — **Full reset.** Retired the 6-cell grid and the traditional-business segment entirely. Restarted ICP discovery from a single broad **starting hypothesis in SaaS**: SEO-literate founders/marketing leaders already doing SEO (often with AI) on a small/solo team, at ~$80k–$1M monthly revenue. SaaS chosen as the first vertical. Everything narrows from here through experiments. Driven by Sherin's decision to restart experiments after the positioning change made prior learnings worthless.
 
 ---
 
-_Last updated: 2026-06-04 — replaced primary ICP (traditional businesses → SEO/marketing-literate teams & founders); demoted the traditional-business segment to secondary/historical; parked the India field-sales motion; updated live-customer notes and change log. Driven by Sherin's June 2026 FDM-delivery / spectrum positioning. The 6-cell grid and archetype taxonomy are unchanged._
-
-_2026-05-07 — prior version._
+_Last updated: 2026-06-04 — full ICP reset. Retired the 6-cell grid and traditional-business segment; established a single SaaS-first starting hypothesis (SEO-literate, AI-using, small-team/founder, ~$80k–$1M MRR) to be narrowed through experiments. Driven by Sherin's restart-experiments call._

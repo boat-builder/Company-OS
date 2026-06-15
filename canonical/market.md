@@ -22,7 +22,7 @@ Berlin targets mid-market and enterprise companies that need SEO/AEO outcomes an
 
 ### Serviceable Obtainable Market (SOM): ~$350M–1B over 3–5 years
 
-Berlin's initial beachhead is mid-market and enterprise companies currently paying agencies, plus the SEO agencies serving them (~25,000 globally).
+Berlin's obtainable market over 3–5 years is mid-market and enterprise companies currently paying agencies, plus the SEO agencies serving them (~25,000 globally). The **current go-to-market entry point** (as of June 2026) is narrower and deliberately so: **SEO-literate SaaS teams and founders** already doing SEO (often with AI) at ~$80k–$1M monthly revenue — the starting hypothesis Berlin is running experiments against to narrow into a validated ICP (see `customers.md`). The broader sizing below is the expansion path, not the first foothold.
 
 - **Conservative:** ~5,000 agencies + ~2,000 enterprise teams × $24K–$60K/yr ACV = **$170–420M**.
 - **Moderate:** 2% of $50B SAM = **~$1B**.
@@ -193,7 +193,7 @@ The most relevant named agencies are the established SEO/content shops now repos
 
 - **vs. SEO agencies** (the right edge of the spectrum): Same three pillars as an AI-native agency — platform underneath, FDM on top — at ~1/4 of the equivalent agency cost, faster to ramp, transparent in the dashboard, AEO/GEO as a first-class capability rather than a learn-on-the-job add-on.
 - **vs. Daydream** (the direct AI-native agency competitor): Same category, same shape. Berlin pulls ahead on three wedges:
-  1. **ICP and pricing entry:** Daydream targets enterprise/well-funded startups at agency price points; Berlin enters at ~1/4 of agency cost with traditional businesses and walks tiers up.
+  1. **ICP and pricing entry:** Daydream targets enterprise/well-funded startups at agency price points; Berlin enters at ~1/4 of agency cost with SEO-literate SaaS teams and founders (its current entry hypothesis) and walks tiers up.
   2. **Engineering substrate:** Berlin's proprietary crawl, cached data layer, proprietary data routing architecture, and ranking-signal coverage let one FDM serve more accounts per head than Daydream's Growth Lead — surfaces as margin and FDM:client ratio.
   3. **Latent self-serve optionality:** Berlin's platform underneath is genuinely autonomous-capable, leaving a self-serve mode available without rebuild; Daydream's pure-agency motion can't easily do that.
 - **vs. GEO/AEO platforms** (Profound, Peec AI, GenFlux, Otterly): They tell you where you're visible. Berlin is the platform that *actually changes where you're visible.*
@@ -270,7 +270,9 @@ Full source-cited market data, with detailed TAM/SAM/SOM source tables, AEO/GEO 
 
 ---
 
-_Last updated: 2026-06-04 — named Berlin's own category **"Forward-Deployed SEO/AEO Platform"** (the middle of the tool↔agency spectrum) per Sherin's call. Added a "Berlin's Category" definition at the top of the competitor landscape, removed Berlin from the Bucket 1 "AI-native SEO agency" table (it's now its own category, not a Daydream peer), and threaded the category name through "Why Berlin Wins." The 4-bucket competitor taxonomy is otherwise unchanged._
+_Last updated: 2026-06-04 (ICP reset) — updated the SOM beachhead and the Daydream "ICP and pricing entry" wedge to reflect the **full ICP reset** in `customers.md`: the current go-to-market entry point is now **SEO-literate SaaS teams and founders** (~$80k–$1M MRR), replacing the retired "traditional businesses" entry framing. TAM/SAM/SOM sizing and the competitor taxonomy are otherwise unchanged._
+
+_2026-06-04 (earlier) — named Berlin's own category **"Forward-Deployed SEO/AEO Platform"** (the middle of the tool↔agency spectrum) per Sherin's call. Added a "Berlin's Category" definition at the top of the competitor landscape, removed Berlin from the Bucket 1 "AI-native SEO agency" table (it's now its own category, not a Daydream peer), and threaded the category name through "Why Berlin Wins." The 4-bucket competitor taxonomy is otherwise unchanged._
 
 _2026-06-03 — added the **tool↔agency spectrum** frame (Berlin in the middle, co-equal platform + FDM) to "Why Berlin Wins"; softened the Bucket 1 self-placement. Driven by Sherin's June 2026 FDM-delivery positioning._
 

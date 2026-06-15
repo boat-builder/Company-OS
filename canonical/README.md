@@ -14,7 +14,7 @@ One `.md` per topical domain. Each file is self-contained and cross-references t
 |------|--------------|
 | [`company.md`](company.md) | Legal entity, governance, banking, registered agent, agreements on file, annual compliance, C-Corp conversion plan |
 | [`product.md`](product.md) | What Berlin is, three-pillar framework, two packaged offerings, capability surfaces, Tools layer, engineering moat, full pricing (Berlin + FDM scope ladder + Berlin for Agencies channel discount band) |
-| [`customers.md`](customers.md) | Primary ICP (SEO/marketing-literate teams & founders), traditional-business segment (secondary/historical), 6-cell discovery grid, 6 archetype taxonomy, cell hypotheses, promotion criteria, India market reality |
+| [`customers.md`](customers.md) | ICP starting hypothesis (SEO-literate SaaS teams & founders, ~$80k–$1M MRR — full reset June 2026), SaaS chosen as first vertical, what-to-narrow-on, promotion criteria, parallel Berlin-for-Agencies SKU, live-customer evidence |
 | [`team.md`](team.md) | Founder bios (Sherin + Rhea), full FDM model, operator ratios, May 2026 partner-agency setup, first FDM hire spec, hiring plan |
 | [`sales.md`](sales.md) | Sales positioning, qualification framework, call structure, persona-specific approaches, objection handling, closing motion, pricing discipline, learning log |
 | [`marketing.md`](marketing.md) | Channels and their roles, adjacent initiatives (micro-influencer program, autonomous affiliate POC), customer-facing language discipline. **Content/outbound playbook lives in `marketing/content-playbook.md`.** |

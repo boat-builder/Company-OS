@@ -18,7 +18,6 @@
   - Software subscriptions: ~$200
   - Founder salary: $0 (founder not taking salary during this phase)
 - **Runway at current burn (pre-raise):** ~10 months
-- **Runway at planned go-to-market burn without raise:** ~2 months — making this raise critical
 
 ---
 
@@ -46,7 +45,7 @@ First commercial cohort is live at **$499/month** ($5,988/year ACV). Two paying 
 
 ## Traction & Metrics
 
-> **Phase:** First commercial cohort committed at launch. Berlin has gone through two repositionings as understanding of the market sharpened — first in late 2025 from a conversational SEO tool to programmable agentic workflow infrastructure; and second in April 2026 to an AI-native SEO/AEO agency (platform + Forward Deployed Marketer) that replaces the SEO agency customers would otherwise sign. The earlier Founding Partner cohort wound down, and one prior agency conversation (CSP Agency) did not close — both surfaced direct evidence that **traditional businesses, not agencies, are the right primary commercial target.** The new agency-shaped offering **publicly relaunched on April 28, 2026** with two customers committed pre-launch at $499/month each.
+> **Phase:** First commercial cohort committed at launch. Berlin has gone through two repositionings as understanding of the market sharpened — first in late 2025 from a conversational SEO tool to programmable agentic workflow infrastructure; and second in April 2026 to an AI-native SEO/AEO agency (platform + Forward Deployed Marketer) that replaces the SEO agency customers would otherwise sign. The earlier Founding Partner cohort wound down, and one prior agency conversation (CSP Agency) did not close — both surfaced direct evidence that **end customers, not agencies, are the right primary commercial target.** The new platform + FDM offering **publicly relaunched on April 28, 2026** with two customers committed pre-launch at $499/month each. (ICP focus has since been reset to SEO-literate SaaS — see `customers.md`.)
 
 ### MRR / ARR
 
@@ -62,8 +61,8 @@ First commercial cohort is live at **$499/month** ($5,988/year ACV). Two paying 
 
 ### Active Customers (Detail)
 
-- **Reach Psych** (reachpsych.com) — Clinic in Bangalore. Committed at launch on Berlin + FDM at $499/month; **used v1 through its rough UX and chose to continue on v2 at launch** — direct proof both that the India field motion converts and that customers stay through a rough relaunch when the underlying value lands. Sits in the primary ICP.
-- **Csuite.so** — SaaS company. Committed at launch on Berlin + FDM at $499/month. Early signal in the SaaS × Founder discovery cell.
+- **Reach Psych** (reachpsych.com) — Clinic in Bangalore. Committed at launch on Berlin + FDM at $499/month; **used v1 through its rough UX and chose to continue on v2 at launch** — proof that customers stay through a rough relaunch when the underlying value lands. Acquired under earlier positioning; predates the June 2026 ICP reset.
+- **Csuite.so** — SaaS company. Committed at launch on Berlin + FDM at $499/month. The one live account that sits inside the current SaaS focus.
 - **miniOrange** (miniorange.com) — Enterprise identity and security. Engaged on Berlin + FDM. Currently in technical/compliance due diligence; actively working through their compliance team toward contract.
 
 ### Public-site logos vs. paying customers — disclosure discipline
@@ -80,7 +79,7 @@ Reach Psych, Csuite.so, miniOrange.
 
 ### Case studies / testimonials
 
-In progress. Anchored on Reach Psych (live, primary-ICP proof for the India field motion) and miniOrange (once compliance is resolved and contract signs).
+In progress. Anchored on Reach Psych (live) and miniOrange (once compliance is resolved and contract signs).
 
 ---
 
@@ -104,77 +103,9 @@ This work was delivered as a **pilot underneath an agency** running Berlin again
 
 ---
 
-## Burn Rate Evolution (Post-Raise)
+## Burn Rate & Projections
 
-Monthly burn scales in phases as the team grows and revenue offsets costs. The $1M raise lets us hire FDM capacity, India field reps, and a second engineer materially earlier than a smaller plan would allow.
-
-| Period | Key cost additions | Monthly burn |
-|--------|-------------------|--------------|
-| **Month 1** (round closes, hiring kicks off) | Baseline operating costs only (infra $250, LLM $300, logistics $300, software $200) | ~$1,050 |
-| **Month 2** (first wave of hires) | + Founder salary ($1,500) + 1 FDM ($2,500) + 1 India field rep ($1,500) | ~$6,500 |
-| **Month 3** | + Full-stack engineer ($2,500) + LLM scaling (~$500) | ~$9,500 |
-| **Month 4** | + 2nd FDM ($2,500) + GTM ramp ($1,000) | ~$13,000 |
-| **Month 5** | + 2nd field rep ($1,500) + GTM ramp ($2,000) | ~$16,500 |
-| **Month 6** | + 3rd FDM ($2,500) + LLM/infra scaling ($1,000) | ~$20,000 |
-| **Month 7** | + 2nd engineer ($2,500) + GTM ($1,500) | ~$24,000 |
-| **Month 8** | + 3rd field rep ($1,500) + GTM ($1,500) | ~$27,000 |
-| **Month 9** | + 4th FDM ($2,500) + GTM ($500) | ~$30,000 |
-| **Months 10–12** (steady state) | LLM/infra scaling, software, marginal GTM lift | $32K → $35K |
-
-By M12 the team is roughly 11 people (4 FDMs, 3 India field reps, 2 engineers, founder, CMO). All hires India-based.
-
----
-
-## Projections — 12-Month Base Case at $1M Raise
-
-Revenue projection is anchored on **April 2026 actuals** ($998 MRR — 2 customers at $499/month) and assumes two sales-led growth engines:
-1. Founder-led and FDM-supported sales into Berlin + FDM (primarily traditional businesses, India field sales as the distinctive channel)
-2. Inbound discovery-grid customers (SaaS, eCom, Lead Gen × Founder/CMO) closing as cells convert
-
-The model holds blended ARPU close to the $499 Entry tier through M12 with only modest cohort mix-shift lift toward the Mid tier. **Material walk up the scope ladder is upside, not base case.** ~5% monthly churn is implicit in net customer adds.
-
-| Month | New adds | Total customers | Blended ARPU | MRR |
-|-------|----------|-----------------|--------------|-----|
-| 1 (Apr '26) | — | 2 *(actual)* | $499 | $998 |
-| 2 (May) | 2 | 4 | $499 | $1,996 |
-| 3 (Jun) | 3 | 7 | $510 | $3,570 |
-| 4 (Jul) | 4 | 11 | $520 | $5,720 |
-| 5 (Aug) | 5 | 16 | $540 | $8,640 |
-| 6 (Sep) | 7 | 23 | $560 | $12,880 |
-| 7 (Oct) | 10 | 33 | $580 | $19,140 |
-| 8 (Nov) | 13 | 46 | $600 | $27,600 |
-| 9 (Dec) | 17 | 63 | $620 | $39,060 |
-| 10 (Jan '27) | 21 | 84 | $635 | $53,340 |
-| 11 (Feb) | 26 | 110 | $645 | $70,950 |
-| 12 (Mar '27) | 30 | 140 | $655 | $91,700 |
-
-**Month 12 ARR run rate: ~$1.1M.**
-
-ARPU mix shift is modest by design — most customers stay at the $499 Entry tier; the lift from $499 to ~$655 by M12 reflects ~25% of new cohorts entering at Mid-tier scope as FDM service depth expands. If a meaningful share of cohorts walk into Heavy ($2,500–$4,000) or Enterprise ($5,000+) tiers, that's upside above the base case.
-
----
-
-## Cash Flow Projection
-
-Starting cash: **$1,010,000** ($1M raise + $10K existing). The company reaches **cash-flow positive at month 8**, with a low point of ~$972K at month 7. **Berlin ends month 12 with more cash than was raised** (~$1.1M) — the round funds growth that compounds rather than just buying runway.
-
-| Month | MRR | Monthly burn | Net cash flow | Cash balance |
-|-------|-----|--------------|---------------|--------------|
-| 0 (start) | — | — | +$1,010,000 | $1,010,000 |
-| 1 | $998 | $1,050 | -$52 | $1,009,948 |
-| 2 | $1,996 | $6,500 | -$4,504 | $1,005,444 |
-| 3 | $3,570 | $9,500 | -$5,930 | $999,514 |
-| 4 | $5,720 | $13,000 | -$7,280 | $992,234 |
-| 5 | $8,640 | $16,500 | -$7,860 | $984,374 |
-| 6 | $12,880 | $20,000 | -$7,120 | $977,254 |
-| 7 | $19,140 | $24,000 | -$4,860 | $972,394 |
-| 8 | $27,600 | $27,000 | +$600 | $972,994 |
-| 9 | $39,060 | $30,000 | +$9,060 | $982,054 |
-| 10 | $53,340 | $32,000 | +$21,340 | $1,003,394 |
-| 11 | $70,950 | $33,500 | +$37,450 | $1,040,844 |
-| 12 | $91,700 | $35,000 | +$56,700 | $1,097,544 |
-
-In a downside scenario (slower customer acquisition, longer enterprise sales cycles, slower hiring ramp), the $1M provides **30+ months of runway** to iterate without fundraising pressure.
+The earlier post-raise burn schedule, 12-month revenue projection, and cash-flow projection have been retired. They were built on the now-defunct assumptions — a multi-wave India field-sales + multi-FDM hiring plan and the discovery-grid GTM — that no longer hold after the June 2026 ICP reset (see `customers.md`). There is no current detailed burn rate or hiring-schedule plan beyond the present build-phase burn (~$1,050/month, above) and the immediate plan to **hire 2 FDMs**. Updated projections will be rebuilt once the SaaS experiments produce a validated ICP; no replacement figures are recorded here in the meantime.
 
 ---
 
@@ -207,9 +138,9 @@ The angel cap is set deliberately at **2x the seed price** as the early-trust di
 
 ## Why Now — The Funding Inflection
 
-Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, the product + FDM offering is defined, and the first commercial cohort is paying — Reach Psych and Csuite.so are live at $499/month each, with miniOrange in compliance due diligence. **What's missing is fuel:** the company is transitioning from validation to scale, and current cash reserves (~$10K) support approximately 2 months of operations at planned commercial spend levels.
+Berlin has spent ~10 months building product through three pivots with under $1,100/month in expenses and zero outside capital. The infrastructure is live, the product + FDM offering is defined, and the first commercial cohort is paying — Reach Psych and Csuite.so are live at $499/month each, with miniOrange in compliance due diligence. **What's missing is fuel:** the company is transitioning from validation to scale, and current cash reserves (~$10K) support roughly 10 months at the present build-phase burn — but not the hiring and GTM investment scaling requires.
 
-The category just got validated in April 2026 by **Daydream's $15M Series A** — first institutional Series A in the AI-native SEO agency shape. The next 6–12 months will fill the bucket. **Berlin is the only other operator in this exact shape with paying customers in market today, and it sits in a structurally distinct lane (mid-market and traditional businesses at ~1/4 of agency cost).** This $1M raise funds the FDM capacity, India field sales reps, second engineering hire, and GTM distribution needed to compound that early-mover advantage into category-defining revenue before the lane fills in.
+The category just got validated in April 2026 by **Daydream's $15M Series A** — first institutional Series A in the AI-native SEO agency shape. The next 6–12 months will fill the bucket. **Berlin is the only other operator in this exact shape with paying customers in market today, and it sits in a structurally distinct lane (platform + FDM at ~1/4 of agency cost).** This $1M raise funds the FDM capacity, engineering, and GTM distribution needed to compound that early-mover advantage into category-defining revenue before the lane fills in.
 
 ---
 
@@ -217,8 +148,8 @@ The category just got validated in April 2026 by **Daydream's $15M Series A** �
 
 | Category | Allocation | Amount | Purpose |
 |----------|:---------:|:------:|---------|
-| **Hiring** | 40% | $400,000 | FDM capacity (4 by M9 — the offering is rate-limited by FDM headcount); India field sales reps (3 by M8); full-stack engineer M3, second engineer (platform / AI infra) M7. All India-based. |
-| **GTM & Distribution** | 30% | $300,000 | India field sales operations (travel, on-ground); content production and community growth (r/agent_seo); micro-influencer program with affiliate payouts; SEO newsletter sponsorships; paid acquisition pilots; conferences and meetups; founder-led direct sales into enterprise accounts |
+| **Hiring** | 40% | $400,000 | FDM capacity — the offering is rate-limited by FDM headcount; the immediate plan is to **hire 2 FDMs**, plus engineering capacity. |
+| **GTM & Distribution** | 30% | $300,000 | Content production and community growth (r/agent_seo); micro-influencer program with affiliate payouts; SEO newsletter sponsorships; paid acquisition pilots; conferences and meetups; founder-led direct sales |
 | **Engineering & Infrastructure** | 15% | $150,000 | Platform reliability, execution runtime improvements, expanding integration library, scaling crawlers (Snake.blue), hardening Berlin + FDM offering and Berlin for Agencies SKU, enterprise-readiness work; cloud and LLM infrastructure scaling (mitigated by continued runtime optimization driving per-task token consumption down) |
 | **Reserve & Operations** | 15% | $150,000 | Strategic reserve for hiring iteration, unexpected costs, extended runway in downside scenarios; LLC → C-Corp conversion, SAFE legal costs, accounting, insurance, enterprise compliance prep (SOC 2 readiness) |
 
@@ -228,7 +159,7 @@ The category just got validated in April 2026 by **Daydream's $15M Series A** �
 
 ## Target Runway
 
-Sized to reach **cash-flow positive by month 8**. In the base case, Berlin never exhausts the raise — revenue catches burn by November 2026, and the company **ends month 12 with ~$1.1M in cash (more than was raised)**. In downside, the $1M provides 30+ months of runway.
+The detailed month-by-month runway model was retired with the burn and projection tables above (it depended on the now-defunct India field-sales + multi-wave hiring plan). At the present build-phase burn (~$1,050/month), existing cash is ~10 months of runway; the $1M raise is sized to fund the FDM hires, engineering, and GTM needed to scale. A refreshed runway model will be rebuilt alongside updated projections once the SaaS experiments produce a validated ICP.
 
 ---
 
@@ -238,14 +169,10 @@ Sized to reach **cash-flow positive by month 8**. In the base case, Berlin never
 |-----------|:--------------:|----------------|
 | Resolve miniOrange compliance, convert to paid | Month 1–2 | Contract signed on Berlin + FDM |
 | Expand within first cohort | Month 1–3 | Reach Psych and Csuite.so on retention; expansion or upsell signal |
-| First wave of FDM + field sales hires | Month 2–4 | 2 FDMs + 2 field reps + 1 engineer onboarded |
-| India field sales producing repeat closes | Month 3–5 | 8+ additional traditional-business customers on Berlin + FDM closed via field motion |
+| Hire 2 FDMs | Month 2–4 | 2 FDMs onboarded; delivery capacity expanded |
+| Validate the SaaS ICP hypothesis | Month 2–5 | Consistent pattern across ≥5 qualified SaaS conversations (see `customers.md` promotion criteria) |
 | Produce 3–5 publishable customer case studies | Month 3–6 | Named logos with quantified results |
 | Publish autonomous affiliate site case study | Month 2–4 | Verifiable organic traffic growth from fully autonomous site |
-| Reach $25K MRR | Month 7–8 | ~45 customers; blended ARPU mix shifting toward Mid tier |
-| Cash-flow positive | Month 8 | Revenue exceeds monthly burn (~$27.6K MRR vs ~$27K burn) |
-| Reach $50K MRR | Month 10 | ~85 customers; clear repeatability on field + inbound motions |
-| Seed-ready traction | Month 10–12 | $70K–$92K MRR, ~$1.1M ARR run rate, $1M+ in the bank |
 
 ---
 
@@ -304,7 +231,7 @@ The company is **100% founder-owned** with no outside investors, no outstanding 
   - End-to-end SEO/AEO execution stack live
   - Proprietary data routing architecture live
   - Integrated keyword database (sourced from leading providers, cached in own DB) and proprietary crawlers operational
-  - Repositioned (April 2026) from agentic workflow infrastructure to end-to-end SEO/AEO platform + FDM offering; primary ICP narrowed to traditional businesses, with parallel agency-tier SKU retained but de-emphasized
+  - Repositioned (April 2026) from agentic workflow infrastructure to end-to-end SEO/AEO platform + FDM offering, with parallel agency-tier SKU retained but de-emphasized (ICP focus subsequently reset to SEO-literate SaaS in June 2026 — see `customers.md`)
   - **Public relaunch (April 28, 2026)** with first commercial cohort committed pre-launch: Reach Psych and Csuite.so on Berlin + FDM at $499/month each; ~$998 MRR live from launch
 
 ---
@@ -315,7 +242,7 @@ The company is **100% founder-owned** with no outside investors, no outstanding 
 |------|------------|--------|------------|
 | **Incumbents add AI/outcome features** | Medium | High | Berlin is built as an end-to-end outcome platform from day one. Incumbents (Ahrefs, Semrush) are data companies — rebuilding as agent-driven outcome-owning platforms requires fundamental architectural and business-model changes. Speed of execution and founder-market fit are key advantages. |
 | **LLM platform risk (OpenAI, Anthropic)** | Low-Medium | Medium | Berlin is LLM-agnostic at the model layer. The agentic runtime can swap underlying models without changing what Berlin does for the customer. |
-| **Mid-market adoption speed** | Medium | Medium | First commercial cohort closed at $499/month within weeks of repositioning, miniOrange in DD — early proof of both the field-sales-driven traditional-business motion and the enterprise motion. Buyers compare Berlin + FDM to an agency retainer or a hire — a faster, clearer buying decision than "should we add another SaaS subscription." |
+| **Adoption speed** | Medium | Medium | First commercial cohort closed at $499/month within weeks of repositioning, miniOrange in DD — early proof of the platform + FDM motion. Buyers compare Berlin + FDM to an agency retainer or a hire — a faster, clearer buying decision than "should we add another SaaS subscription." |
 | **AI search landscape evolving rapidly** | High | Medium | Berlin's architecture treats strategy and execution as first-class with the underlying tool layer swappable — as AI search evolves, Berlin updates default playbooks without customers having to rebuild anything. Proprietary crawl, integrated keyword data, and AEO/GEO coverage position us ahead. |
 | **Data privacy / crawler compliance** | Low-Medium | Medium | Crawlers only access publicly available data, respect robots.txt, collect no personal information. GDPR/CCPA compliance roadmap in progress for enterprise readiness. |
 | **Key-person risk** | Low-Medium | High | Leadership has expanded beyond the single founder — Rhea David has joined as CMO. Additional GTM and engineering hires planned with this raise. Product architecture is modular and well-documented; founder has track record of operating lean and shipping through multiple pivots. |
@@ -331,4 +258,6 @@ The company is **100% founder-owned** with no outside investors, no outstanding 
 
 ---
 
-_Last updated: 2026-05-07_
+_Last updated: 2026-06-04 (ICP reset) — retired the India field-sales motion and the defunct forward models (post-raise burn schedule, 12-month revenue projection, cash-flow projection) that depended on it and on the multi-wave hiring plan; there is no current detailed burn/hiring plan beyond present build-phase burn (~$1,050/mo) and the plan to **hire 2 FDMs**. Reconciled use-of-funds, target runway, milestones, traction notes, why-now, and risks to the June 2026 SaaS-focused ICP reset (see `customers.md`). Round structure, cap table, and legal unchanged. No replacement projection figures were invented._
+
+_2026-05-07 — prior version._
