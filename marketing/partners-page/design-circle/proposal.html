@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Berlin × The Design Circle — Search Partnership Proposal</title>
+<meta name="description" content="A partnership proposal from Berlin to The Design Circle: AI-era search for a clinical-stage women's health brand, built into the website relaunch." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4EDDD;
+    --bg-2:#EFE6D2;
+    --ink:#1B1A16;
+    --ink-soft:#5E5749;
+    --ink-faint:#8A8270;
+    --green:#244035;
+    --green-2:#2E5142;
+    --line:#DBD1BD;
+    --line-soft:#E6DDCB;
+    --card:#FBF7EC;
+    --pill:#16150F;
+    --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
+    --sans:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* grid + gradient texture */
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      linear-gradient(to right, rgba(27,26,22,.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27,26,22,.045) 1px, transparent 1px);
+    background-size:74px 74px;
+    mask-image:linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+  }
+  .blob{
+    position:fixed;top:-180px;right:-160px;width:780px;height:680px;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(closest-side at 35% 40%, rgba(214,170,224,.55), transparent 70%),
+      radial-gradient(closest-side at 70% 30%, rgba(244,196,168,.55), transparent 70%),
+      radial-gradient(closest-side at 60% 70%, rgba(189,201,233,.5), transparent 70%);
+    filter:blur(28px);
+    opacity:.85;
+  }
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  a{color:inherit;text-decoration:none;}
+
+  /* NAV */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(120%) blur(10px);
+    background:rgba(244,237,221,.78);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{display:flex;align-items:center;gap:28px;height:68px;}
+  .logo{font-family:var(--serif);font-style:italic;font-weight:600;font-size:24px;letter-spacing:.2px;}
+  .logo span{font-family:var(--sans);font-style:normal;font-weight:400;font-size:13px;color:var(--ink-faint);letter-spacing:.5px;}
+  .nav-links{display:flex;gap:26px;margin-left:auto;font-size:14.5px;color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--ink);}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:14.5px;font-weight:500;border-radius:999px;
+    padding:11px 20px;border:1px solid transparent;cursor:pointer;white-space:nowrap;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-dark{background:var(--pill);color:#F4EDDD;}
+  .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink);}
+  .nav .btn-dark{margin-left:4px;}
+
+  /* HERO */
+  .hero{padding:74px 0 38px;}
+  .eyebrow{
+    font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);
+    display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:26px;
+  }
+  .eyebrow b{color:var(--green-2);font-weight:600;}
+  .dot{width:4px;height:4px;border-radius:50%;background:var(--ink-faint);display:inline-block;}
+  h1{
+    font-family:var(--serif);font-weight:700;color:var(--ink);
+    font-size:clamp(40px,6.4vw,86px);line-height:1.02;letter-spacing:-.5px;margin:0 0 26px;
+    max-width:15ch;
+  }
+  h1 i{font-style:italic;color:var(--green);font-weight:600;}
+  .lede{font-size:clamp(18px,2vw,21px);color:var(--ink-soft);max-width:62ch;margin:0 0 30px;}
+  .lede b{color:var(--ink);font-weight:600;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:18px;}
+  .cta-row .btn{padding:15px 26px;font-size:15.5px;}
+  .meta{font-size:13.5px;color:var(--ink-faint);}
+  .meta b{color:var(--ink-soft);font-weight:500;}
+
+  /* STAT ROW */
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border-top:1px solid var(--line);margin-top:54px;
+  }
+  .stat{padding:26px 26px 24px;border-right:1px solid var(--line-soft);}
+  .stat:last-child{border-right:none;}
+  .stat .k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;}
+  .stat .v{font-family:var(--serif);font-size:40px;line-height:1;color:var(--ink);margin-bottom:10px;}
+  .stat .v small{font-size:16px;color:var(--ink-soft);}
+  .stat .d{font-size:13.5px;color:var(--ink-soft);line-height:1.45;}
+
+  /* SECTIONS */
+  section.block{padding:64px 0;border-top:1px solid var(--line-soft);}
+  section.block.alt{background:linear-gradient(180deg, rgba(233,222,199,.5), rgba(233,222,199,.15));}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:30px;flex-wrap:wrap;}
+  .sec-num{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--green-2);}
+  h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.08;letter-spacing:-.4px;margin:0;max-width:20ch;}
+  h2 i{font-style:italic;color:var(--green);font-weight:600;}
+  h3{font-family:var(--serif);font-weight:600;font-size:23px;margin:0 0 10px;letter-spacing:-.2px;}
+  p{margin:0 0 18px;}
+  .muted{color:var(--ink-soft);}
+  .lead-p{font-size:19px;color:var(--ink-soft);max-width:70ch;}
+  .lead-p b{color:var(--ink);font-weight:600;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;}
+  .card h3{margin-top:0;}
+  .card p:last-child{margin-bottom:0;}
+  .pill-tag{display:inline-block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-2);background:rgba(36,64,53,.08);border:1px solid rgba(36,64,53,.16);padding:5px 11px;border-radius:999px;margin-bottom:14px;}
+
+  /* TABLES */
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card);}
+  table{width:100%;border-collapse:collapse;min-width:560px;}
+  th,td{text-align:left;padding:15px 20px;border-bottom:1px solid var(--line-soft);vertical-align:top;font-size:15px;}
+  thead th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;background:rgba(0,0,0,.015);}
+  tbody tr:last-child td{border-bottom:none;}
+  td.lbl{font-weight:600;color:var(--ink);}
+  .col-berlin{background:rgba(36,64,53,.05);}
+  th.col-berlin{color:var(--green-2);}
+  .x{color:var(--ink-faint);} .ok{color:var(--green-2);font-weight:600;}
+  .updown .up{color:var(--green-2);} .updown .down{color:#9a4b3b;}
+
+  /* lists */
+  ul.clean{list-style:none;padding:0;margin:0;}
+  ul.clean li{position:relative;padding-left:26px;margin-bottom:14px;color:var(--ink-soft);}
+  ul.clean li b{color:var(--ink);font-weight:600;}
+  ul.clean li::before{content:"";position:absolute;left:2px;top:10px;width:7px;height:7px;border-radius:50%;background:var(--green);}
+
+  /* timeline */
+  .phase{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line-soft);}
+  .phase:first-of-type{border-top:none;}
+  .phase .when{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--green-2);}
+  .phase h3{margin-bottom:6px;}
+
+  /* pricing */
+  .price-card{background:var(--pill);color:#F4EDDD;border-radius:22px;padding:40px;display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;}
+  .price-card .amt{font-family:var(--serif);font-size:62px;line-height:1;}
+  .price-card .amt small{font-size:20px;color:#C9C2AE;}
+  .price-card .sub{color:#C9C2AE;font-size:14.5px;margin-top:10px;}
+  .price-card h3{color:#F4EDDD;}
+  .price-card p{color:#CFC8B4;}
+  .price-card .btn-dark{background:#F4EDDD;color:#16150F;}
+  .price-note{font-size:13.5px;color:var(--ink-faint);margin-top:16px;}
+
+  /* CTA band */
+  .cta-band{text-align:center;padding:70px 0 24px;}
+  .cta-band h2{margin:0 auto 18px;max-width:18ch;}
+  .cta-band .cta-row{justify-content:center;}
+
+  footer{border-top:1px solid var(--line);padding:34px 0 60px;color:var(--ink-faint);font-size:13.5px;}
+  .foot-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:18px;}
+  .foot-logo{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink);}
+
+  .callout{border-left:3px solid var(--green);padding:4px 0 4px 20px;color:var(--ink-soft);font-size:15.5px;margin:8px 0 0;}
+
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .stats{grid-template-columns:1fr 1fr;}
+    .stat:nth-child(2){border-right:none;}
+    .stat{border-bottom:1px solid var(--line-soft);}
+    .grid-2,.cols-3,.price-card{grid-template-columns:1fr;}
+    .phase{grid-template-columns:1fr;gap:6px;}
+    .wrap{padding:0 22px;}
+    h1{max-width:100%;}
+  }
+</style>
+</head>
+<body>
+<div class="blob" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo">Berlin <span>/ proposal</span></div>
+    <nav class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#shift">The shift</a>
+      <a href="#approach">What we do</a>
+      <a href="#vs">Berlin vs agency</a>
+      <a href="#plan">Plan</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <a class="btn btn-dark" href="#next">Next steps →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="wrap hero" id="top">
+  <div class="eyebrow">
+    <span>Partnership Proposal</span><span class="dot"></span>
+    <span>Prepared for <b>The Design Circle</b></span>
+  </div>
+  <h1>Built-in search for a brand the world hasn't <i>met yet.</i></h1>
+  <p class="lede">For a clinical-stage women's health brand — a progesterone-only pill in Phase&nbsp;3 — we make the new website <b>findable across Google and every AI answer engine</b> from the day it launches. Owned end-to-end by Berlin's platform plus a Forward Deployed Marketer, with you in full control and full visibility at every step.</p>
+  <div class="cta-row">
+    <a class="btn btn-dark" href="#overview">Read the proposal →</a>
+    <a class="btn btn-ghost" href="#pricing">Jump to pricing</a>
+  </div>
+  <p class="meta"><b>Prepared by</b> Sherin Thomas, Berlin (Agentic World, LLC) &nbsp;·&nbsp; June 16, 2026 &nbsp;·&nbsp; sherin@agentberlin.ai &nbsp;·&nbsp; agentberlin.ai</p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="k">vs. an agency</div>
+      <div class="v">¼ <small>the cost</small></div>
+      <div class="d">Agency-equivalent scope, a fraction of the retainer.</div>
+    </div>
+    <div class="stat">
+      <div class="k">The audit</div>
+      <div class="v">24/7</div>
+      <div class="d">Always-on. A typical agency checks once a month.</div>
+    </div>
+    <div class="stat">
+      <div class="k">Signals watched</div>
+      <div class="v">80+</div>
+      <div class="d">Tuned to this brand — not a fixed checklist.</div>
+    </div>
+    <div class="stat">
+      <div class="k">AI search coverage</div>
+      <div class="v" style="font-size:30px;">Every</div>
+      <div class="d">Answer engine — ChatGPT, Gemini, Perplexity + Google.</div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="block" id="overview">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>The opportunity, in one&nbsp;minute</h2></div>
+    <div class="grid-2">
+      <div>
+        <p class="lead-p">You're rebuilding this brand's website and you want search built in from the start — not bolted on later, where it backfires and forces a round of rework. <b>That instinct is exactly right</b>, and it's the cheapest, highest-leverage moment to do it.</p>
+        <p class="muted">Berlin would own the search program end-to-end — strategy, execution, and the tooling underneath — run by an AI-native platform plus a dedicated marketer assigned to your account. You stay fully in control and see every step in the dashboard; Berlin owns the execution and the expertise.</p>
+      </div>
+      <div class="card">
+        <span class="pill-tag">Why now is the moment</span>
+        <p class="muted">For a niche, clinical-stage brand, the competitive bar is unusually low (see §03). Meaningful results come <b style="color:var(--ink)">faster and cheaper</b> than in a crowded market — and the first brand to own its categories in AI answers tends to keep them.</p>
+        <p class="muted" style="margin-bottom:0;">A website relaunch is the cheapest moment to get the foundations right — so this is the time to build that position.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SHIFT -->
+<section class="block alt" id="shift">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Search is a <i>different job</i> now</h2></div>
+    <p class="lead-p" style="margin-bottom:28px;">The thing most people still picture as “SEO” — put the right keywords on the page so Google ranks you first — is now a small slice of the work. Two things changed, and they're why baking search into the redesign now is the smart move.</p>
+
+    <div class="grid-2" style="margin-bottom:36px;">
+      <div class="card">
+        <h3>The surface area exploded</h3>
+        <p class="muted" style="margin-bottom:0;">It used to be one engine: Google. Now buyers and clinicians get answers from Google's traditional results, Google AI Mode, AI Overviews, ChatGPT, Perplexity, Gemini and more — each sourcing from different places. Google is still dominant, but it has fallen from ~85%+ to roughly 60–70% as AI assistants take share.</p>
+      </div>
+      <div class="card">
+        <h3>The work moved off the page</h3>
+        <p class="muted" style="margin-bottom:0;">A few years ago ~70% of the effort lived on your own website. Today roughly <b style="color:var(--ink)">60–65% lives off it</b> — because AI answers are assembled from sources the model already trusts, which usually means <i>other people's</i> pages, not yours.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:16px;">SEO then vs. SEO now</h3>
+    <div class="table-scroll" style="margin-bottom:36px;">
+      <table>
+        <thead><tr><th>Then (pre-2024)</th><th class="col-berlin">Now</th></tr></thead>
+        <tbody>
+          <tr><td>One engine to satisfy: Google</td><td class="col-berlin">7–8 surfaces: Google traditional, AI Mode, AI Overviews, ChatGPT, Perplexity, Gemini & more</td></tr>
+          <tr><td>Rank the page = win</td><td class="col-berlin">Get <b>cited inside the AI answer</b> = win. You can rank #1 and still never be recommended.</td></tr>
+          <tr><td>~70% of work on your own site</td><td class="col-berlin">~60–65% of work <b>off</b> your site</td></tr>
+          <tr><td>A stable checklist you could reuse</td><td class="col-berlin">Sources shift monthly — ChatGPT's Wikipedia citations fell ~60%→20%, Reddit rose to ~55% then settled ~33%, LinkedIn climbed to ~33%</td></tr>
+          <tr><td>Keywords</td><td class="col-berlin">Keywords <b>and</b> the real prompts people ask AI — reverse-engineered per topic</td></tr>
+          <tr><td>Links + on-page content</td><td class="col-berlin">Links, content, Reddit/community, YouTube, LinkedIn, niche-blog citations, reviews, per-page schema — all brand-specific</td></tr>
+          <tr><td>Measure rankings & traffic</td><td class="col-berlin">Measure share of voice, AI citations & brand/direct traffic — AI is a <i>recognition</i> engine, not a referral engine</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-bottom:16px;">The extra work that now has to happen</h3>
+    <div class="grid-2">
+      <ul class="clean">
+        <li><b>Optimizing for multiple AI engines</b>, each sourcing answers differently.</li>
+        <li><b>Prompt research</b> — the actual questions buyers ask AI, at scale (thousands of variations), not just keywords.</li>
+        <li><b>Citation-source reverse-engineering</b> — for each answer, finding <i>where</i> the AI pulls from, then working those exact sources.</li>
+        <li><b>Community operations</b> — e.g. a genuine Reddit strategy (aged accounts, karma, no API, heavy moderation) when Reddit dominates a topic.</li>
+      </ul>
+      <ul class="clean">
+        <li><b>AI-crawler hygiene</b> — making sure the bots behind ChatGPT, Perplexity and Google's AI can actually read the site.</li>
+        <li><b>Schema / structured data per page type</b>, so engines understand the brand as an entity.</li>
+        <li><b>Continuous monitoring & re-work</b> — the source mix changes weekly; a one-time project goes stale fast.</li>
+        <li><b>Controlled experimentation</b> — testing approaches across cohorts of pages <i>without</i> tanking live traffic.</li>
+      </ul>
+    </div>
+    <p class="callout">That 7–8× increase in surface area is a real increase in work. A traditional agency either multiplies its team and its price to cover it — or, far more often, doesn't cover it at all and quietly stays inside the old on-page checklist.</p>
+  </div>
+</section>
+
+<!-- ON/OFF PAGE -->
+<section class="block" id="onoff">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>On-page vs. off-page, explained plainly</h2></div>
+    <p class="lead-p" style="margin-bottom:30px;">So you can present it without miscommunicating. Two layers — and the order matters.</p>
+    <div class="grid-2">
+      <div class="card">
+        <span class="pill-tag">Layer 1 · Non-negotiable</span>
+        <h3>On-page — your website</h3>
+        <ul class="clean" style="margin-top:8px;">
+          <li><b>Technical health</b> — readable by search engines <i>and</i> AI crawlers, fast, doesn't break, renders without depending on JavaScript, isn't blocking AI bots.</li>
+          <li><b>Content & structure</b> — the right pages, targeting the right terms and questions, with the schema that makes them citable.</li>
+          <li><b>Positioning consistency</b> — one tight, identical description of the brand, everywhere it appears.</li>
+        </ul>
+        <p class="muted" style="margin:14px 0 0;">This is the foundation. If it's weak, off-page delivers nothing — and it's exactly what we lock in <b style="color:var(--ink)">during the website build, before launch.</b></p>
+      </div>
+      <div class="card">
+        <span class="pill-tag">Layer 2 · Where the modern game is won</span>
+        <h3>Off-page — everywhere else</h3>
+        <p class="muted">What other credible sources say about the brand — now the majority of the work, and <b style="color:var(--ink)">brand-specific, not a checklist.</b></p>
+        <ul class="clean">
+          <li><b>Backlinks</b> — relevant sites linking to you, earned through outreach (and sometimes paid placement).</li>
+          <li><b>The sources AI actually cites</b> — Reddit for one topic, a niche blog for another, YouTube or LinkedIn for a third. We find where the AI sources its answer, then go work those places.</li>
+        </ul>
+        <p class="muted" style="margin-bottom:0;font-size:14.5px;"><i>Real example: for a hormone-therapeutics brand we work with, Reddit was only ~0.3% of relevant results — so we skipped it and went straight to the two or three specialist blogs that dominated, working with their owners directly.</i></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIVE -->
+<section class="block alt" id="benchmark">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>A low, <i>open</i> bar</h2></div>
+    <p class="lead-p" style="margin-bottom:28px;">We'll benchmark the full competitor set in onboarding. As a starting read, here's current search intelligence for two named competitors — <b>Strides</b> and <b>Cosette Pharmaceuticals</b> (SEMrush, US, June 15 2026).</p>
+    <div class="table-scroll" style="margin-bottom:22px;">
+      <table>
+        <thead><tr><th>Metric</th><th>Strides</th><th>Cosette</th><th class="col-berlin">What it tells us</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Authority Score</td><td>36</td><td>31</td><td class="col-berlin">Modest — neither is an unassailable authority.</td></tr>
+          <tr class="updown"><td class="lbl">Organic traffic / mo</td><td>2.3K <span class="up">▲</span></td><td>1.3K <span class="down">▼</span></td><td class="col-berlin">Small footprints; Cosette is <i>declining</i>.</td></tr>
+          <tr class="updown"><td class="lbl">Organic keywords</td><td>530 <span class="down">▼</span></td><td>288 <span class="down">▼</span></td><td class="col-berlin">Few ranking terms, both shrinking — open ground.</td></tr>
+          <tr><td class="lbl">Referring domains</td><td>1.4K</td><td>611</td><td class="col-berlin">Beatable backlink profiles.</td></tr>
+          <tr><td class="lbl">Paid traffic / keywords</td><td>0 / 0</td><td>0 / 0</td><td class="col-berlin">Nobody's even buying visibility here.</td></tr>
+          <tr><td class="lbl">AI visibility</td><td>22</td><td>25</td><td class="col-berlin">Low — AI search is barely contested.</td></tr>
+          <tr><td class="lbl">AI cited pages</td><td>25</td><td>24</td><td class="col-berlin">Very few owned pages are being cited by AI.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Who AI cites today</h3>
+        <p class="muted" style="margin-bottom:0;"><b style="color:var(--ink)">Strides</b> is pulled mostly from YouTube, Reddit and NIH. <b style="color:var(--ink)">Cosette</b> from GoodRx, Drugs.com and NIH. In both cases that's <i>third parties</i>, not their own sites — neither competitor controls its own narrative in AI answers.</p>
+      </div>
+      <div class="card" style="background:rgba(36,64,53,.06);border-color:rgba(36,64,53,.18);">
+        <h3>The takeaway</h3>
+        <p class="muted" style="margin-bottom:0;">The niche is exactly as contestable as you suspected. A clinical-stage brand that does this right can <b style="color:var(--ink)">leapfrog larger players</b> in both Google and AI answers — faster and cheaper than in almost any competitive vertical.</p>
+      </div>
+    </div>
+    <p class="price-note">Root-domain snapshots; large pharma groups sometimes run separate brand sites, which we'd validate in onboarding. The directional story holds.</p>
+  </div>
+</section>
+
+<!-- WHAT BERLIN IS + VS AGENCY -->
+<section class="block" id="approach">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2>What Berlin is</h2></div>
+    <div class="grid-2" style="margin-bottom:40px;">
+      <div>
+        <p class="lead-p">Two things sold as one: <b>an AI-native platform that does the heavy lifting, plus a Forward Deployed Marketer who runs it alongside you</b> — trained to operate the platform and run controlled experiments without putting the live site or its traffic at risk.</p>
+      </div>
+      <div>
+        <p class="muted">The surface area multiplied 7–8×, so the work did too. A normal agency without agents has to multiply its effort — and its price — to keep up. Our platform automates 80–90% of that work; the marketer supplies the judgment, fixes what the agents get wrong, and owns your account.</p>
+        <p class="muted" style="margin-bottom:0;">You operate on the <b style="color:var(--ink)">same dashboard our team does</b> — every run, workflow, finding and action visible. Nothing is a black box.</p>
+      </div>
+    </div>
+
+    <h2 id="vs" style="font-size:clamp(24px,3vw,34px);margin-bottom:8px;">Berlin + marketer <i>vs.</i> a typical agency</h2>
+    <p class="muted" style="margin-bottom:24px;max-width:60ch;">The heart of why Berlin is a better choice than a conventional agency for work like this.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th></th><th>Typical SEO agency</th><th class="col-berlin">Berlin + marketer</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">New surface area (AI search)</td><td class="x">On-page checklist; AI search bolted on, learned on your dime</td><td class="col-berlin"><span class="ok">All 7–8 surfaces</span> covered as core, not an add-on</td></tr>
+          <tr><td class="lbl">How the work scales</td><td class="x">Linearly with headcount — 10× work = 10× cost, or it's skipped</td><td class="col-berlin">Platform automates 80–90% at scale; marketer adds judgment</td></tr>
+          <tr><td class="lbl">Off-page approach</td><td class="x">Generic, reusable checklist</td><td class="col-berlin">Per-brand, reverse-engineered from where AI actually cites</td></tr>
+          <tr><td class="lbl">Keeping up with weekly shifts</td><td class="x">Quarterly playbook; slow to react</td><td class="col-berlin">Always-on monitoring + ongoing research feeding the platform</td></tr>
+          <tr><td class="lbl">Experimentation</td><td class="x">Rare, and risky on a live site</td><td class="col-berlin">Controlled experiments across page cohorts, measured safely</td></tr>
+          <tr><td class="lbl">Transparency</td><td class="x">Monthly PDF; the rest is a black box</td><td class="col-berlin">The same live dashboard your team uses</td></tr>
+          <tr><td class="lbl">What gets measured</td><td class="x">Rankings and traffic</td><td class="col-berlin">Share of voice, AI citations, brand/direct — what proves value</td></tr>
+          <tr><td class="lbl">Price for equivalent scope</td><td class="x">High — low-supply, high-effort work</td><td class="col-berlin">A fraction — the agents do the volume</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="callout" style="margin-top:24px;"><b style="color:var(--ink)">Measurable, experiment-driven search.</b> Most agencies can't tell you which of their actions worked — they ship and hope. Berlin runs changes as controlled experiments, measures which wins, and rolls the winner out across the rest. You can see — and show — <i>why</i> results moved, not just that they did. Very few agencies claim this; almost none can do it.</p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="block alt" id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Relevant experience</h2></div>
+    <p class="lead-p" style="margin-bottom:28px;">On healthcare proof — our most relevant work, and why the method carries straight over:</p>
+    <div class="grid-2">
+      <div class="card"><span class="pill-tag">Healthcare client</span><h3>A clinical psychiatry practice</h3><p class="muted" style="margin-bottom:0;">Healthcare B2C, where the buying decision turns on trust and the answers live in community and directory sources (Reddit, doctor listings) — not just the brand's own site.</p></div>
+      <div class="card" style="background:rgba(36,64,53,.06);border-color:rgba(36,64,53,.18);"><span class="pill-tag">Why it transfers</span><h3>The same trust pattern</h3><p class="muted" style="margin-bottom:0;">A clinical-stage therapy faces the exact “is this safe / does it have side effects / which brand do I trust” question in AI answers. The playbook — earning citation in the sources people and models already trust — is identical.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN: timeline + loop -->
+<section class="block" id="plan">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">07</span><h2>How this fits your website build</h2></div>
+    <p class="lead-p" style="margin-bottom:28px;">Your runway is roughly two months to a live site — but most of the work doesn't have to wait for it. A surprising amount starts <i>now</i>, in parallel with the redesign.</p>
+    <div class="grid-2" style="margin-bottom:10px;">
+      <div class="card">
+        <span class="pill-tag">Starts now · before launch</span>
+        <h3>Foundation + off-page, in parallel</h3>
+        <ul class="clean" style="margin-top:8px;">
+          <li>Hand your web team a concrete technical spec — rendering, crawlability, structured data, AI-bot access, site structure — and review content for search-friendliness before it's written in.</li>
+          <li>Build the <b>positioning doc</b> (see the next section) so the brand reads consistently everywhere.</li>
+          <li><b>Begin off-page community building</b> — Reddit or LinkedIn, depending on where this audience lives. Earning presence in the sources AI cites doesn't need the website to exist yet, and it's the slowest-compounding work — so starting early matters most.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="pill-tag">At / after launch</span>
+        <h3>On the live domain</h3>
+        <p class="muted" style="margin-bottom:0;">On-site execution lands on the new site, and continuous optimization — citations, monitoring, and the experiment loop below — runs at full speed.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:38px 0 8px;">How we run it — the three-phase loop</h3>
+    <p class="muted" style="max-width:64ch;margin-bottom:18px;">Not a one-time project; a continuous loop you watch in the dashboard.</p>
+    <div class="phase">
+      <div class="when">Phase 1</div>
+      <div><h3>Positioning (foundation)</h3><p class="muted" style="margin-bottom:0;">Berlin builds a brand profile from the web; the marketer corrects what the agents get wrong; you approve. The output is a <b>positioning doc</b> that defines how the brand should read <i>across the internet — not just your own site</i> — so neither people nor AI models get a confused or contradictory picture. This is the single, consistent story everything else compounds from.</p></div>
+    </div>
+    <div class="phase">
+      <div class="when">Phase 2</div>
+      <div><h3>Audit</h3><p class="muted" style="margin-bottom:0;">Two streams in parallel — technical/on-page health, and competitive analysis — plus a pass that maps what people actually search and the AI prompts they ask, turned into a prioritized target list we bring back for your approval.</p></div>
+    </div>
+    <div class="phase">
+      <div class="when">Phase 3</div>
+      <div><h3>Report → Act</h3><p class="muted" style="margin-bottom:0;">Findings become a living report and always-on <b>workflows</b> — a typical brand runs ~50–150 monitoring jobs watching the site, competitors and AI presence. From those, the marketer generates and executes the work; anything touching the live site is surfaced for review first.</p></div>
+    </div>
+    <p class="callout" style="margin-top:20px;"><b style="color:var(--ink)">Who owns what:</b> you approve every direction; Berlin owns the execution and the expertise — with every run, finding, and action visible in the dashboard.</p>
+  </div>
+</section>
+
+<!-- EXPECT -->
+<section class="block alt" id="expect">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">08</span><h2>What you can <i>expect</i></h2></div>
+    <div class="grid-2">
+      <div>
+        <p class="muted">We won't put a ranking guarantee on paper — anyone who does is bluffing, because the landscape shifts weekly. What we will commit to:</p>
+        <ul class="clean">
+          <li>For a new brand doing search right, <b>drastic and measurable improvement in the first 3–6 months</b> — not marginal gains.</li>
+          <li><b>Agreed KPIs up front, reviewed at week 4</b>, so you're measuring, not guessing.</li>
+          <li>Because AI search is a recognition engine, we track being <b>recommended</b> — share of voice by topic, AI citations of the brand's own pages, brand/direct traffic — not just raw clicks.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Built for how you report results</h3>
+        <p class="muted">You'll be able to <b style="color:var(--ink)">customize the KPI report</b> to match how you want to show results — on the same live dashboard our team uses.</p>
+        <h3 style="margin-top:22px;">Adjacent, when you want it</h3>
+        <p class="muted" style="margin-bottom:8px;"><b style="color:var(--ink)">PPC</b> — handled through expert consultants we work with; usual sequence is search foundation first, PPC layered on once the site is live.</p>
+        <p class="muted" style="margin-bottom:0;"><b style="color:var(--ink)">Self-serve over time</b> — the platform is built so your team can take on as much of the day-to-day as you want, with Berlin's marketer and agents underneath. Most start fully hands-off and dial it in from there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="block" id="pricing">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Pricing</h2></div>
+    <div class="price-card">
+      <div>
+        <div class="amt">$1,199<small>/month</small></div>
+        <div class="sub">Month-to-month · no lock-in · no setup fee · no separate tool subscriptions for your team to buy.</div>
+      </div>
+      <div>
+        <h3 style="margin-top:0;">What it covers</h3>
+        <p style="margin-bottom:0;">The platform, the execution, and the dedicated marketer — positioning, on-page, off-page, AI-answer monitoring, and reporting. One price, the whole program.</p>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top:24px;">
+      <div>
+        <h3>Why this number for this brand</h3>
+        <p class="muted" style="margin-bottom:0;">Price scales with two things: how many products/pages need optimizing, and how competitive the space is. This is a focused, single-lead-product, niche B2B case — relatively few pages and a low-competition category, so we don't pour effort into expensive off-page acquisition. That keeps it well below the heavy end of our range (large multi-country e-commerce brands with millions of pages run toward ~$12K/mo for exactly the opposite reasons).</p>
+      </div>
+      <div>
+        <h3>A straightforward place to start</h3>
+        <p class="muted" style="margin-bottom:0;">It's priced to be a clear, low-friction starting point — and as additional brands come online, each is scoped on the same logic, with room for a multi-brand arrangement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="block alt" id="next">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">10</span><h2>What we need from you: <i>almost nothing</i></h2></div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Already in hand</h3>
+        <ul class="clean" style="margin-top:8px;">
+          <li><b>The domain</b> — we have it. The platform is ready to anchor the project.</li>
+          <li><b>The brand doc</b> — you've already shared it; we build the positioning doc on top of it.</li>
+          <li><b>The competitor list</b> — it's in the doc you sent. Nothing more to pull together.</li>
+        </ul>
+        <p class="muted" style="margin:14px 0 0;">In other words, there's <b style="color:var(--ink)">nothing left for you to gather</b> — we only need a kickoff.</p>
+      </div>
+      <div class="card" style="background:rgba(36,64,53,.06);border-color:rgba(36,64,53,.18);">
+        <h3>The one next step: kick off</h3>
+        <p class="muted">On kickoff we run the automated audit through Berlin and produce a <b style="color:var(--ink)">first report on the brand's current search position</b> — with the on-page/off-page breakdown spelled out. The full picture takes a marketer a week or two on the system; the initial, shareable read comes quickly.</p>
+        <p class="muted" style="margin-bottom:0;">Pick a kickoff time, or reach Sherin directly at <b style="color:var(--ink)">sherin@agentberlin.ai</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="wrap cta-band">
+  <h2>Let's make this brand <i>findable</i> before it launches.</h2>
+  <div class="cta-row">
+    <a class="btn btn-dark" href="mailto:sherin@agentberlin.ai?subject=Berlin%20%C3%97%20The%20Design%20Circle%20%E2%80%94%20kickoff">Schedule the kickoff →</a>
+    <a class="btn btn-ghost" href="#top">Back to top</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-logo">Berlin</div>
+      <div style="text-align:right;">Berlin — Agentic World, LLC · agentberlin.ai · sherin@agentberlin.ai</div>
+    </div>
+    <p style="margin:0;max-width:80ch;">Prepared for The Design Circle, June 16 2026. Competitor figures sourced from SEMrush domain overviews for strides.com and cosettepharma.com, US market, captured June 15 2026. Market and AI-search statistics reflect Berlin's research as of June 2026. This document is confidential and intended for The Design Circle and its named client.</p>
+  </div>
+</footer>
+</body>
+</html>
