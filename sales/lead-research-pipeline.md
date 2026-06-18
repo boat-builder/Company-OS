@@ -15,23 +15,27 @@ Be cost-aware throughout: pull cheap, high-signal data first; only go deep once 
 
 ***
 
-## 0. Inputs you will receive (from the user prompt)
+## 0. Inputs — assume almost nothing is given; derive the rest
 
-Read these from the prompt before doing anything:
+**The input will be unstructured and sparse.** In practice you will get little more than a **target** — often just a company name, a domain, a person's name, or a LinkedIn/X URL, sometimes dropped in as a messy line of text. Do **not** expect the fields below to be stated, not even the "optional" ones. Your job is to **figure them out yourself** from the company's own pages and the open internet before you start qualifying. Only two things might come from the prompt; everything else you derive.
 
-* **Target** — a company name, domain, person name, or LinkedIn/X URL. It may be sparse (just a name). Resolve it to a **root domain + company** first; if given a person, resolve to the company they belong to.
+**What may come from the prompt:**
 
-* **ICP definition** — who counts as a good fit. This is the qualification yardstick and it is supplied fresh each run (e.g. "SEO-literate, AI-using SaaS teams, 800k–25M ARR, already doing real SEO, with a literate founder or marketing lead"). Read it carefully; every qualification decision maps back to it.
+* **Target (the one thing you can usually count on)** — a company name, domain, person name, or LinkedIn/X URL, possibly buried in free text. Extract it, then **resolve it to a single canonical company + root domain** (if given a person, resolve to the company they currently work at). This resolution is step one of Stage A.
 
-* **Business model / segment** — B2B SaaS, dev tool, ecommerce, marketplace, local services, media, etc. This sets what "normal" looks like for every SEO threshold.
+* **ICP definition (sometimes given, sometimes not)** — who counts as a good fit; the qualification yardstick. If the prompt supplies one, read it carefully and judge against *it*. If it doesn't, fall back to the standing ICP for Berlin (see `seo-literate-ai-using-saas-teams.md`) and say which you used.
 
-* **Geography / language** — drives which market you query SEO data for. Default to US (English) only if nothing is stated, and say you did.
+**What you must derive (do not wait to be told):**
 
-* **Known competitors (optional)** — if given, skip competitor discovery and use them. If not, discover them (Stage B, Phase B7).
+* **Business model / segment** — *figure this out from the company's own site.* Read the homepage, About/About-us, product, and pricing pages and infer whether they're B2B SaaS, a dev tool, ecommerce, a marketplace, local services, media, etc. This sets what "normal" looks like for every SEO threshold, so derive it before any calibration. (Stage A2.)
 
-* **Goal / output expectations (optional)** — e.g. "just qualify", "qualify and draft DM angles", "add to CRM". If unstated, run the full pipeline.
+* **Geography / language / target audience** — *infer from the business.* Who do they sell to and where? Read their positioning, pricing currency, language, and any location cues; if unclear, search the web to confirm the market they operate in. Use the derived market to set the location/language for SEO data. State the market you concluded and why; only default to US (English) if you truly can't tell, and say so.
 
-If the target is a name or person, resolve to the company domain first by searching the web for the official website of the company.
+* **Competitors** — *discover them; never assume they'll be handed to you.* Understand the business's problem statement first, then **search the internet for the keywords or prompts a buyer with that problem would use** — scoped to the same geography and the same target audience — and see who shows up. Corroborate with an AI answer engine (Stage B, Phase B7). The competitor set you derive is the yardstick for qualification.
+
+* **Goal / output expectations** — if the prompt hints at one ("just qualify", "draft DM angles", "add to CRM"), honor it; otherwise run the full pipeline.
+
+**Operating rule:** treat a sparse prompt as normal, not as a blocker. Resolve the target, read the company to understand the business, derive segment / geography / audience / competitors from what you find, and only then qualify. Don't stop to ask for details you can research yourself.
 
 ***
 
@@ -90,9 +94,15 @@ This pipeline assumes you can obtain the following kinds of data. Use whatever t
 
 Resolve the target (name / domain / person / LinkedIn URL) to a single **canonical company and root domain**. If you were given a person, find the company they currently work at and resolve that. Record the resolved domain — every later phase keys off it.
 
-### A2 — Read the company's own pages
+### A2 — Read the company's own pages, and derive the business context
 
-Read the homepage, **About/About-us**, product, pricing, and blog. From these, capture: what the company does, who they sell to, business model, apparent stage/size, and positioning language. The About page is often the single richest source for "what they're about."
+Read the homepage, **About/About-us**, product, pricing, and blog. This is where you **derive the inputs the prompt didn't give you** (Section 0). Capture and explicitly conclude:
+* **What the company does** and **its problem statement** — the buyer pain it solves, in plain language. You'll reuse this to find competitors (B7).
+* **Business model / segment** — infer it (B2B SaaS, dev tool, ecommerce, marketplace, local services, media, etc.). This sets every SEO threshold downstream.
+* **Target audience & geography/language** — who they sell to and where, inferred from positioning, pricing currency, language, and location cues. Confirm with a web search if unclear.
+* **Apparent stage/size** and positioning language.
+
+The About and pricing pages are usually the richest sources. Record what you concluded and the evidence for it — these derived values drive calibration in Stage B.
 
 ### A3 — Map the company's social footprint
 
@@ -156,8 +166,12 @@ For each identified decision-maker, find both their **LinkedIn** and their **X/T
 **Insight:** technical maturity and how they operate SEO (tools reveal sophistication and budget).
 **Correlate:** Strong CWV + a real SEO stack (headless CMS, schema tooling, an SEO platform) = a literate, resourced operator (matches the "literate buyer" ICP). Poor CWV = a concrete, ICP-relevant pain point to lead with. AEO-oriented tech (schema, structured data, llms.txt tooling) = a forward-looking team. **AI-tooling signals** (e.g. evidence they use AI tools for SEO/marketing) directly test the "AI usage" ICP criterion — note any.
 
-### Phase B7 — Competitive gap (competitors discovered via AI answers, NOT a provider's competitor list)
-**Discover:** query an AI answer engine for "top alternatives and competitors to `<company>` for `<segment>`" (and get a second opinion from a different AI engine). Take the named competitors from the answer's cited sources. *Do not* use any SEO provider's "competitors" endpoint — discovery comes from the AI answer, which reflects how the market (and LLMs) actually frame the space. If the prompt already gave competitors, use those.
+### Phase B7 — Competitive gap (competitors you *discover*, NOT a provider's competitor list)
+**Discover (assume none were given):** start from the **problem statement** you derived in A2. Then find competitors two ways and merge the results:
+1. **Search the internet with buyer-intent keywords/prompts** — the actual searches or AI prompts someone with that problem, in that **geography**, serving that **target audience**, would type (e.g. "best `<problem/category>` tool for `<audience>` in `<market>`", "alternatives to `<company>`"). See who consistently ranks/appears. This grounds the set in real demand, not just brand adjacency.
+2. **Corroborate with an AI answer engine** — query for "top alternatives and competitors to `<company>` for `<derived segment/audience>`" and take the named competitors from the cited sources; get a second opinion from a different AI engine.
+
+Keep only competitors that match the same **segment + audience + geography**; drop ones that merely share a keyword. *Do not* use any SEO provider's "competitors" endpoint — discovery should reflect how the market and LLMs actually frame the space. If the prompt did happen to name competitors, fold them in too.
 **Benchmark:** run B1, B2, and B5 (footprint, organic overview, backlink summary) on each competitor.
 **Insight:** the target's standing relative to the leaders in their space — the gap.
 **Correlate:** Express the target's traffic / keyword count / referring domains as a **ratio** to the segment leader and median ("30% of the leader's traffic, 15% of its referring domains"). Ratios are far more meaningful than absolute numbers and sidestep estimation error. The gap size is also the sizing of the opportunity you'd pitch.
