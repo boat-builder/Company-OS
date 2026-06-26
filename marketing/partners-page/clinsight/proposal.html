@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berlin × Clinsight — White-label SEO &amp; AEO for your clinics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F0E2;
+    --ink:#1B1A16;
+    --green:#203D31;
+    --muted:#8B846F;
+    --line:#E2DACA;
+    --line-strong:#D6CDB8;
+    --card:#FBF7EC;
+    --pink:#EAD7E4;
+    --peach:#F5DCC2;
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+    overflow-x:hidden;
+  }
+  /* faint background grid + soft gradient blobs */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:104px 104px;
+    opacity:.45;
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 70%,transparent 100%);
+    mask-image:linear-gradient(180deg,#000 0%,#000 70%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;top:-10%;right:-8%;width:55vw;height:55vw;z-index:0;pointer-events:none;
+    background:radial-gradient(closest-side,rgba(234,215,228,.85),rgba(245,220,194,.45) 55%,transparent 75%);
+    filter:blur(8px);
+  }
+  .wrap{position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:0 40px;}
+  a{color:inherit;text-decoration:none;}
+
+  /* nav */
+  header{position:relative;z-index:2;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:28px 0;}
+  .brand{font-family:var(--serif);font-style:italic;font-size:26px;font-weight:500;}
+  .brand span{font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.04em;color:var(--muted);vertical-align:super;}
+  .navlinks{display:flex;gap:34px;align-items:center;}
+  .navlinks a{font-size:15px;color:var(--ink);opacity:.8;}
+  .navlinks a:hover{opacity:1;}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#F6F0E2;padding:13px 22px;border-radius:40px;font-size:15px;font-weight:500;transition:transform .15s ease;}
+  .pill:hover{transform:translateY(-1px);}
+  .pill.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong);}
+  @media(max-width:860px){.navlinks{display:none;}}
+
+  /* hero */
+  .hero{padding:46px 0 18px;}
+  .eyebrow{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:26px;}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(46px,7.4vw,104px);line-height:.99;letter-spacing:-.01em;}
+  h1 em{font-style:italic;color:var(--green);}
+  .lede{max-width:660px;font-size:19px;color:#33312a;margin-top:30px;}
+  .lede b{font-weight:600;color:var(--ink);}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px;}
+  .cta-row .pill{padding:17px 28px;font-size:16px;}
+  .cta-note{margin-top:18px;font-size:14px;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
+  .cta-note .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);display:inline-block;}
+
+  /* stat band */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line-strong);}
+  .stat{padding:30px 26px 8px 0;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat .lab{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+  .stat .big{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1;}
+  .stat .big small{font-size:15px;font-family:var(--sans);color:var(--muted);font-weight:500;}
+  .stat .sub{font-size:13.5px;color:#5f5a48;margin-top:12px;}
+  @media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr);}.stat{border-right:none;border-bottom:1px solid var(--line);}}
+
+  /* sections */
+  section{padding:90px 0;}
+  .sec-label{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:18px;}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:-.01em;max-width:760px;}
+  h2 em{font-style:italic;color:var(--green);}
+  .sec-intro{max-width:620px;font-size:18px;color:#3a382f;margin-top:22px;}
+
+  /* how it works */
+  .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px;}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 28px;position:relative;}
+  .step .n{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--green);}
+  .step h3{font-family:var(--serif);font-weight:500;font-size:23px;margin:14px 0 10px;}
+  .step p{font-size:15px;color:#4a4738;}
+  .step .arrow{position:absolute;right:-19px;top:50%;transform:translateY(-50%);z-index:3;color:var(--muted);font-size:20px;}
+  @media(max-width:860px){.flow{grid-template-columns:1fr;}.step .arrow{display:none;}}
+
+  /* scope table */
+  .scope{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:54px;}
+  .scope .col{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px;}
+  .scope .col.out{background:transparent;border-style:dashed;}
+  .scope h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px;}
+  .scope .tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .scope ul{list-style:none;margin-top:20px;}
+  .scope li{padding:11px 0 11px 30px;border-top:1px solid var(--line);font-size:15px;position:relative;color:#3a382f;}
+  .scope li:first-of-type{border-top:none;}
+  .scope li::before{position:absolute;left:0;top:11px;font-size:15px;}
+  .scope .col.in li::before{content:"✓";color:var(--green);font-weight:600;}
+  .scope .col.out li::before{content:"—";color:var(--muted);}
+  .scope .col.out li small{display:block;color:var(--muted);font-size:13px;margin-top:2px;}
+  @media(max-width:860px){.scope{grid-template-columns:1fr;}}
+
+  /* pricing */
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:54px;}
+  .price-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:36px 34px;position:relative;}
+  .price-card.feat{border:1.5px solid var(--green);background:linear-gradient(180deg,#FBF7EC,#F4EEDD);}
+  .price-card .badge{position:absolute;top:-13px;left:34px;background:var(--green);color:#F6F0E2;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:30px;}
+  .price-card .plan{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--green);}
+  .price-card .amt{font-family:var(--serif);font-size:54px;font-weight:500;line-height:1;margin:16px 0 4px;}
+  .price-card .amt small{font-family:var(--sans);font-size:16px;color:var(--muted);font-weight:500;}
+  .price-card .per{font-size:14px;color:var(--muted);}
+  .price-card p{font-size:15px;color:#43412f;margin-top:18px;}
+  .price-card ul{list-style:none;margin-top:18px;}
+  .price-card li{font-size:14.5px;padding:8px 0 8px 26px;position:relative;color:#3a382f;}
+  .price-card li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600;}
+  @media(max-width:860px){.price-grid{grid-template-columns:1fr;}}
+
+  /* volume table */
+  .vol{margin-top:36px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+  table{width:100%;border-collapse:collapse;}
+  th,td{text-align:left;padding:18px 26px;font-size:15.5px;border-bottom:1px solid var(--line);}
+  thead th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+  tbody tr:last-child td{border-bottom:none;}
+  td.plan-name{font-family:var(--serif);font-size:18px;}
+  td .num{font-family:var(--serif);font-size:22px;}
+  td .struck{color:var(--muted);text-decoration:line-through;font-size:15px;margin-right:8px;font-family:var(--sans);}
+  .vol-note{margin-top:36px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:14px;padding:24px 28px;display:flex;gap:22px;align-items:center;}
+  .vol-note .vn-label{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:600;white-space:nowrap;}
+  .vol-note p{font-size:15.5px;color:#3a382f;margin:0;}
+  .vol-note p b{color:var(--ink);font-weight:600;}
+  @media(max-width:860px){.vol-note{flex-direction:column;align-items:flex-start;gap:10px;}}
+  .price-fine{font-size:13.5px;color:var(--muted);margin-top:18px;max-width:760px;line-height:1.6;}
+
+  /* timeline */
+  .timeline{margin-top:60px;position:relative;}
+  .tl-track{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;}
+  .tl-track::before{content:"";position:absolute;top:9px;left:5%;right:5%;height:2px;background:linear-gradient(90deg,var(--line-strong),var(--green));}
+  .tl-node{position:relative;padding:0 14px;}
+  .tl-node .dot{width:20px;height:20px;border-radius:50%;background:var(--bg);border:2px solid var(--green);position:relative;z-index:2;margin-bottom:22px;}
+  .tl-node:first-child .dot{background:var(--green);}
+  .tl-node:last-child .dot{background:var(--green);}
+  .tl-node .when{font-family:var(--serif);font-size:19px;color:var(--green);margin-bottom:6px;}
+  .tl-node .what{font-size:14px;color:#4a4738;}
+  @media(max-width:860px){
+    .tl-track{grid-template-columns:1fr;gap:24px;}
+    .tl-track::before{left:9px;right:auto;top:5%;bottom:5%;width:2px;height:auto;}
+    .tl-node{padding:0 0 0 40px;}
+    .tl-node .dot{position:absolute;left:0;top:2px;margin:0;}
+  }
+
+  /* two-up info cards */
+  .info{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:54px;}
+  .info .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px;}
+  .info h3{font-family:var(--serif);font-weight:500;font-size:25px;margin-bottom:14px;}
+  .info p{font-size:15.5px;color:#3f3d31;margin-bottom:12px;}
+  .info .key{color:var(--green);font-weight:600;}
+  @media(max-width:860px){.info{grid-template-columns:1fr;}}
+
+  /* coverage band */
+  .coverage{background:var(--ink);color:#F2ECDD;border-radius:24px;padding:60px 54px;margin-top:30px;}
+  .coverage .sec-label{color:#C9A6BE;}
+  .coverage h2{color:#F6F0E2;}
+  .coverage h2 em{color:#E7C9DC;}
+  .coverage .cov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:44px;border-top:1px solid rgba(255,255,255,.16);padding-top:36px;}
+  .coverage .lab{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#A59C86;margin-bottom:14px;}
+  .coverage .big{font-family:var(--serif);font-size:34px;font-weight:500;line-height:1;}
+  .coverage .sub{font-size:13.5px;color:#B8B09A;margin-top:12px;}
+  @media(max-width:860px){.coverage{padding:40px 28px;}.coverage .cov-grid{grid-template-columns:repeat(2,1fr);gap:24px;}}
+
+  /* next steps */
+  .steps-final{counter-reset:s;margin-top:50px;border-top:1px solid var(--line-strong);}
+  .sf{display:grid;grid-template-columns:54px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start;}
+  .sf .num{font-family:var(--serif);font-size:30px;color:var(--green);}
+  .sf h3{font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:6px;}
+  .sf p{font-size:15.5px;color:#43412f;}
+
+  .closer{text-align:center;padding:96px 0 40px;}
+  .closer h2{margin:0 auto;}
+  .closer .cta-row{justify-content:center;}
+
+  footer{border-top:1px solid var(--line-strong);padding:34px 0;display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--muted);}
+  @media(max-width:860px){footer{flex-direction:column;gap:14px;text-align:center;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <nav>
+      <div class="brand">Berlin <span>× Clinsight</span></div>
+      <div class="navlinks">
+        <a href="#model">How it works</a>
+        <a href="#scope">What's included</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#timeline">Timeline</a>
+      </div>
+      <a href="#next" class="pill">Book the next call →</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">White-label SEO &amp; AEO partnership · prepared for Clinsight</div>
+    <h1>Rank Your Clinics Where Patients Are <em>Now Searching.</em></h1>
+    <p class="lede">A white-label SEO + AEO engine for Clinsight. We run delivery <b>100% end-to-end</b> — across Google, Google AI, ChatGPT, Gemini and Perplexity — behind your brand. You keep the client, the pricing, and the dashboard; <b>we stay invisible.</b></p>
+    <div class="cta-row">
+      <a href="#next" class="pill">Start with one pilot clinic →</a>
+      <a href="#pricing" class="pill ghost">See pricing</a>
+    </div>
+    <div class="cta-note">
+      <span>Your brand, front to back</span><span class="dot"></span>
+      <span>We bill you one flat rate per clinic</span><span class="dot"></span>
+      <span>You set your own client pricing</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="lab">Delivery</div>
+        <div class="big">100<small>% run</small></div>
+        <div class="sub">end-to-end by our agents + Forward Deployed Marketers</div>
+      </div>
+      <div class="stat">
+        <div class="lab">First signals</div>
+        <div class="big">Month 2</div>
+        <div class="sub">clear, visible results from month 4 onward</div>
+      </div>
+      <div class="stat">
+        <div class="lab">AI search coverage</div>
+        <div class="big">Every</div>
+        <div class="sub">answer engine — ChatGPT, Gemini, Perplexity + Google</div>
+      </div>
+      <div class="stat">
+        <div class="lab">Your margin</div>
+        <div class="big">Yours</div>
+        <div class="sub">you quote clients whatever you want; our price is fixed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="model">
+    <div class="sec-label">The partnership model</div>
+    <h2>You own the client. <em>We run the work.</em></h2>
+    <p class="sec-intro">One clean split. Clinsight stays the only brand the clinic ever sees — Berlin is the engine underneath, reachable through your dashboard via our API.</p>
+    <div class="flow">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>You sell &amp; own</h3>
+        <p>Clinsight signs the clinic, sets the price, owns the relationship and the billing. Your brand, start to finish.</p>
+        <div class="arrow">→</div>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>We deliver, hidden</h3>
+        <p>Our agents + FDMs run the full SEO/AEO program end-to-end. The clinic does nothing; they never see Berlin.</p>
+        <div class="arrow">→</div>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>Data flows to you</h3>
+        <p>We expose reports and the actions we take through an API. You build the dashboard the clinic logs into.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCOPE -->
+  <section id="scope">
+    <div class="sec-label">Scope of work</div>
+    <h2>Everything we can run for a clinic — <em>and what we can't.</em></h2>
+    <p class="sec-intro">A clear line so you can set expectations with each clinic. We'll share the full per-clinic checklist at onboarding.</p>
+    <div class="scope">
+      <div class="col in">
+        <span class="tag">Included in every plan</span>
+        <h3>What we run</h3>
+        <ul>
+          <li>Continuous competitive crawl &amp; monitoring (weekly)</li>
+          <li>Technical SEO fixes <em>(requires website access)</em></li>
+          <li>On-page optimization &amp; AEO-optimized articles / blogs</li>
+          <li>Third-party citations &amp; directory presence</li>
+          <li>Backlink campaigns (outreach &amp; placement)</li>
+          <li>Off-site &amp; source-targeted presence — Reddit, UGC, reviews</li>
+          <li>Review-reminder &amp; sentiment-monitoring system</li>
+          <li>Reporting + actions feed via API</li>
+        </ul>
+      </div>
+      <div class="col out">
+        <span class="tag">Not included</span>
+        <h3>Sits with you / the clinic</h3>
+        <ul>
+          <li>Generating reviews <small>We build the reminder system; the clinic asks its patients.</small></li>
+          <li>Payments for backlink placements <small>Pass-through hard cost, billed at actuals.</small></li>
+          <li>Paid directory fees, premium tools, content/image production <small>Pass-through if a clinic needs them.</small></li>
+          <li>Compliance &amp; legal sign-off <small>The clinic's licensed reviewer owns approval (see below).</small></li>
+          <li>Website hosting / rebuilds <small>We optimize the existing site; we don't host it.</small></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="sec-label">Pricing — what Clinsight pays Berlin</div>
+    <h2>Two plans. <em>You mark up from here.</em></h2>
+    <p class="sec-intro">Per clinic, per month. These are <b>your</b> wholesale prices — what you charge the clinic is entirely yours. Both plans run the full SEO <b>and</b> AEO program; the difference is the <b>experimentation layer</b>. We strongly recommend it — controlled testing is what separates ranking in a competitive market from guessing.</p>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="plan">SEO + AEO</div>
+        <div class="amt">$1,200<small>/mo</small></div>
+        <div class="per">per clinic · standalone</div>
+        <p>Our full SEO + AEO program for a clinic, run end-to-end on our proven playbook.</p>
+        <ul>
+          <li>Technical, on-page &amp; content</li>
+          <li>Citations &amp; backlink campaigns</li>
+          <li>AEO across answer engines (ChatGPT, Gemini, Perplexity)</li>
+          <li>Weekly monitoring + review system + reporting</li>
+        </ul>
+      </div>
+      <div class="price-card feat">
+        <div class="badge">Recommended</div>
+        <div class="plan">SEO + AEO + Experiments</div>
+        <div class="amt">$1,800<small>/mo</small></div>
+        <div class="per">per clinic · standalone</div>
+        <p>Everything in the base plan, plus controlled experiments to find what actually moves rankings and AI citations in that clinic's specific market.</p>
+        <ul>
+          <li>Everything in SEO + AEO</li>
+          <li>Controlled Reddit / UGC source experiments</li>
+          <li>Structured A/B testing of tactics</li>
+          <li>Higher effort — strongly recommended in competitive markets</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="vol-note">
+      <span class="vn-label">Multi-clinic</span>
+      <p><b>Committing to several clinics unlocks volume pricing.</b> We'll walk through the numbers on the call — the more of your book we run, the better the per-clinic rate.</p>
+    </div>
+    <p class="price-fine">Prices assume moderately competitive local markets where the leaders aren't running heavy SEO; highly competitive geos are scoped individually and may sit higher. All prices exclude pass-through hard costs (paid placements, directory fees, review generation, content/image production) and any per-clinic compliance overhead. We recommend a 6-month runway per clinic, since results compound and become clearly visible around month 4.</p>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="sec-label">What to expect</div>
+    <h2>SEO compounds — <em>here's the honest curve.</em></h2>
+    <p class="sec-intro">We'd rather set the real expectation than oversell month one. This is also the answer to clinic churn: it's a position you hold and grow, not a one-time fix.</p>
+    <div class="timeline">
+      <div class="tl-track">
+        <div class="tl-node">
+          <div class="dot"></div>
+          <div class="when">Month 1</div>
+          <div class="what">Onboarding, audit, foundation set + quick technical wins.</div>
+        </div>
+        <div class="tl-node">
+          <div class="dot"></div>
+          <div class="when">Month 2</div>
+          <div class="what">First ranking signals — early movement starts to show.</div>
+        </div>
+        <div class="tl-node">
+          <div class="dot"></div>
+          <div class="when">Month 3</div>
+          <div class="what">Momentum builds across keywords and citations.</div>
+        </div>
+        <div class="tl-node">
+          <div class="dot"></div>
+          <div class="when">Month 4+</div>
+          <div class="what">Clear, visible results — the difference clients feel.</div>
+        </div>
+        <div class="tl-node">
+          <div class="dot"></div>
+          <div class="when">Ongoing</div>
+          <div class="what">Hold position + keep experimenting. Stop, and rivals retake it.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEO + COMPLIANCE -->
+  <section style="padding-top:30px;">
+    <div class="info">
+      <div class="card">
+        <h3>One clinic per market</h3>
+        <p>The local map has only ~3 top slots — so <span class="key">no one can put two competing clinics first at the same time.</span> Our policy is one clinic per city + specialty.</p>
+        <p>It's a feature, not a limit: it <span class="key">protects your clients</span> from the rival down the street buying the same edge from us. If you already have two competing clinics, we differentiate them by sub-specialty, service line, or neighborhood so they win <em>different</em> searches.</p>
+      </div>
+      <div class="card">
+        <h3>Compliance &amp; approvals</h3>
+        <p>Healthcare content needs sign-off before it goes live. The clinic's <span class="key">designated licensed reviewer approves and owns compliance</span> — we draft, they verify.</p>
+        <p>To keep delivery moving, we recommend a <span class="key">2–3 business-day approval window</span>. For markets like India with lighter requirements, this can be streamlined.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE BAND -->
+  <section style="padding-top:30px;">
+    <div class="coverage">
+      <div class="sec-label">Why this beats a traditional agency</div>
+      <h2>Built AI-native — <em>we see what they can't.</em></h2>
+      <div class="cov-grid">
+        <div>
+          <div class="lab">Vs. an agency</div>
+          <div class="big">¼ the cost</div>
+          <div class="sub">agency-equivalent scope, a fraction of the retainer</div>
+        </div>
+        <div>
+          <div class="lab">Monitoring</div>
+          <div class="big">24 / 7</div>
+          <div class="sub">always-on — agencies check once a month</div>
+        </div>
+        <div>
+          <div class="lab">Source intelligence</div>
+          <div class="big">80+</div>
+          <div class="sub">signals watched per clinic, tuned — not a fixed checklist</div>
+        </div>
+        <div>
+          <div class="lab">AI answer engines</div>
+          <div class="big">Mapped</div>
+          <div class="sub">we see which sources the models cite for a category, and get clinics into them</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section id="next">
+    <div class="sec-label">How we get started</div>
+    <h2>One pilot, then scale the ones <em>that work.</em></h2>
+    <div class="steps-final">
+      <div class="sf">
+        <div class="num">1</div>
+        <div>
+          <h3>Pick one pilot clinic</h3>
+          <p>You've already shared one — we've run the audit and report. We start there, prove the motion, and learn the market.</p>
+        </div>
+      </div>
+      <div class="sf">
+        <div class="num">2</div>
+        <div>
+          <h3>Grant access &amp; set the approver</h3>
+          <p>Website access for technical fixes, and a named reviewer for compliance sign-off. We handle everything else.</p>
+        </div>
+      </div>
+      <div class="sf">
+        <div class="num">3</div>
+        <div>
+          <h3>Commit the cohort, unlock volume pricing</h3>
+          <p>Once the pilot is live and you commit 3+ clinics, volume pricing ($1,000 / $1,500) applies across the cohort — one clinic per market.</p>
+        </div>
+      </div>
+      <div class="sf">
+        <div class="num">4</div>
+        <div>
+          <h3>We wire up the API</h3>
+          <p>We expose reports + actions; you build the dashboard your clients log into. Roughly a day of integration once a clinic is live.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="closer">
+    <h2>Ready to put the first clinic <em>on the map?</em></h2>
+    <div class="cta-row">
+      <a href="#" class="pill">Book the next call →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="brand">Berlin <span>/services</span></div>
+    <div>White-label SEO &amp; AEO · prepared for Clinsight · confidential</div>
+  </footer>
+</div>
+</body>
+</html>
