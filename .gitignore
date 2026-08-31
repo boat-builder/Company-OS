@@ -38,3 +38,6 @@
 __pycache__/
 
 .env
+
+# Deck build scratch (node_modules symlinks into local runtime cache)
+.deck-build/
