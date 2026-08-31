@@ -13,7 +13,8 @@ One `.md` per topical domain. Each file is self-contained and cross-references t
 | File | What's in it |
 |------|--------------|
 | [`company.md`](company.md) | Legal entity, governance, banking, registered agent, agreements on file, annual compliance, C-Corp conversion plan |
-| [`product.md`](product.md) | What Berlin is, three-pillar framework, two packaged offerings, capability surfaces, Tools layer, engineering moat, full pricing (Berlin + FDM scope ladder + Berlin for Agencies channel discount band) |
+| [`product.md`](product.md) | **What Berlin does** — brand grounding, the Audit→Report→Act operating loop, and the Feature Reference (sole source of truth for the capability set). Descriptive only; makes no positioning claims. Carries an AEO-repositioning banner. |
+| [`engineering.md`](engineering.md) | Internal Tools layer, engineering moat (Go agentic runtime, strategy knowledge base, Snake.blue, keyword lake, versioned page store, data routing, 80+ signals), substrate reference table. Internal/investor only — never customer-facing |
 | [`customers.md`](customers.md) | ICP starting hypothesis (SEO-literate SaaS teams & founders, ~$80k–$1M MRR — full reset June 2026), SaaS chosen as first vertical, what-to-narrow-on, promotion criteria, parallel Berlin-for-Agencies SKU, live-customer evidence |
 | [`team.md`](team.md) | Founder bios (Sherin + Rhea), full FDM model, operator ratios, May 2026 partner-agency setup, first FDM hire spec, hiring plan |
 | [`sales.md`](sales.md) | Sales positioning, qualification framework, call structure, persona-specific approaches, objection handling, closing motion, pricing discipline, learning log |
@@ -49,10 +50,16 @@ After this canonical/ directory was built, several previously-de-facto-canonical
 ## How to maintain this
 
 - **Update canonical first.** When a fact changes, change the relevant file here. Then propagate to derivative artifacts (decks, landing pages, outreach templates).
-- **One topic, one home.** Pricing belongs in `product.md`. Founder bio belongs in `team.md`. Don't duplicate facts across canonical files — cross-reference.
+- **One topic, one home.** Engineering substrate belongs in `engineering.md`. Founder bio belongs in `team.md`. Don't duplicate facts across canonical files — cross-reference.
+- **Keep product descriptive and positioning persuasive — in different files.** `product.md` documents what the product does and should be verifiable against the running system. Claims about who it's for, what it replaces, and why it wins are positioning and do not belong there.
+- **Positioning and pricing currently have no canonical home.** Both were removed on 2026-07-28 pending the AEO re-derivation — see `product.md` → *Positioning* and *Pricing*. Do not restore stale versions into another file; give them a home only when they are rebuilt.
 - **Cite the file, not the artifact.** When briefing yourself, the FDM team, contractors, or LLMs, point them at the canonical file by path. Decks come and go; canonical persists.
 
 ---
 
 _Created: 2026-05-07_
-_Last updated: 2026-05-12 — `marketing.md` trimmed to canonical-only content (channels, initiatives, language discipline); content/outbound playbook extracted to `marketing/content-playbook.md`._
+_Last updated: 2026-07-28 (later) — **removed positioning from canonical entirely**, alongside pricing. `product.md` is now a purely descriptive capability document: the operating loop plus a single consolidated Feature Reference. The prose/table duplication (Capability Surfaces vs. Feature Reference vs. Operational Infrastructure) was collapsed into one table. Positioning and pricing get rebuilt and rehomed as part of the AEO repositioning; until then neither is documented anywhere in canonical, by decision. Historical versions at `git show 45c6407:canonical/product.md`._
+
+_2026-07-28 — split `product.md` (was doing four jobs: positioning, product spec, engineering architecture, pricing). Engineering substrate extracted to `engineering.md`; pricing removed from canonical entirely (derived for the SEO/AEO scope, invalid under the AEO direction — to be re-derived and rehomed; historical version at `git show 45c6407:canonical/product.md`). Positioning narrative deliberately left in `product.md` pending the AEO repositioning rewrite. `product.md` now carries an AEO-repositioning banner._
+
+_2026-05-12 — `marketing.md` trimmed to canonical-only content (channels, initiatives, language discipline); content/outbound playbook extracted to `marketing/content-playbook.md`._
