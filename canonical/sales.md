@@ -10,7 +10,7 @@
 
 Berlin is two co-equal things: an **end-to-end AI SEO/AEO platform** the customer's team operates on, and a **dedicated marketer (FDM)** who executes on it with them. The user talks to a dashboard; Berlin strategizes, sets up execution, and executes — and an embedded expert operator drives it alongside the team. The mental model is three pillars — **Strategy / Execution / Tools** — and Berlin owns all three.
 
-**Berlin sits in the middle of a spectrum** (canonical detail in `product.md` → *Where Berlin Sits*):
+**Berlin sits in the middle of a spectrum** (⚠️ the canonical version of this framing was removed on 2026-07-28 pending AEO re-derivation — see `product.md` → *Positioning*. What follows is sales' own working copy, not canonical, and is expected to change):
 
 - **Left — tool buyers** (Ahrefs, Profound, + an agent): skilled SEO operators who want leverage and do the work themselves. Berlin adds the operator and the execution a tool won't do.
 - **Right — agency buyers** (Daydream and a thousand others): teams with no SEO function, or too small to build one, who hand it off. Berlin adds a platform the team operates on, transparency, and pace.
@@ -311,7 +311,7 @@ Two buyer sub-types inside the SaaS starting hypothesis. Both already do SEO, of
 
 These are anchors to test, not settled tiers — pricing is being re-derived alongside the ICP.
 
-(Full scope-ladder pricing principles live in `product.md`.)
+(The full scope ladder was removed from canonical on 2026-07-28 pending re-derivation for the AEO direction — see `product.md` → *Pricing*. Do not quote tier numbers from memory until it is rebuilt.)
 
 ### If they push back on price
 
