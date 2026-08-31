@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<!--
+  QUERY DRILL — a single self-contained file. No server, no build step.
+  Open it in a browser and it runs.
+
+  >>> TO ADD QUESTIONS: scroll to the QUERY BANK near the top of <body>. <<<
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Query Drill — Pre-Purchase Query Framework</title>
+<style>
+  :root{
+    --paper:#FBFAF7;
+    --paper-2:#F3F1EC;
+    --card:#FFFFFF;
+    --ink:#17171B;
+    --ink-2:#4A4A55;
+    --ink-3:#8A8A96;
+    --rule:#DEDAD1;
+    --rule-2:#EAE6DE;
+
+    --aware:#C0762A;      --aware-bg:#FBF0E2;
+    --family:#1C7A6E;     --family-bg:#E4F1EE;
+    --intent:#6144C0;     --intent-bg:#EDE9FA;
+
+    --good:#2F7D4F;       --good-bg:#E7F3EB;
+    --bad:#B4483C;        --bad-bg:#FAECEA;
+
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+
+    --shadow:0 1px 2px rgba(23,23,27,.04), 0 8px 28px rgba(23,23,27,.06);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding:0 20px 80px;
+  }
+  .wrap{max-width:860px;margin:0 auto}
+
+  /* ---------- header ---------- */
+  header{
+    display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;
+    padding:30px 0 18px;
+  }
+  .title{
+    font-family:var(--mono); font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink-3);
+  }
+  .title b{color:var(--ink);font-weight:600}
+  .spacer{flex:1}
+  .score{
+    font-family:var(--mono); font-size:12px; color:var(--ink-2);
+    letter-spacing:.02em; white-space:nowrap;
+  }
+  .score .pct{color:var(--ink);font-weight:600}
+  .linkbtn{
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-3);
+    background:none; border:0; padding:4px 0; cursor:pointer;
+    border-bottom:1px solid var(--rule);
+  }
+  .linkbtn:hover{color:var(--ink)}
+
+  /* ---------- progress rail ---------- */
+  .rail{
+    display:flex; gap:3px; margin:0 0 26px; flex-wrap:wrap;
+  }
+  .tick{
+    flex:1 1 10px; min-width:8px; height:6px; border-radius:2px;
+    background:var(--rule-2); border:0; padding:0; cursor:pointer;
+    transition:transform .12s ease, background .15s ease;
+  }
+  .tick:hover{transform:scaleY(1.9)}
+  .tick.done-3{background:var(--good)}
+  .tick.done-2{background:#C8A23C}
+  .tick.done-1{background:#DB9A6B}
+  .tick.done-0{background:var(--bad)}
+  .tick.current{outline:2px solid var(--ink);outline-offset:2px}
+
+  /* ---------- card ---------- */
+  .card{
+    background:var(--card); border:1px solid var(--rule);
+    border-radius:14px; box-shadow:var(--shadow);
+    padding:34px 34px 8px;
+  }
+  .counter{
+    font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-3); margin-bottom:14px;
+  }
+  .query{
+    font-family:var(--serif); font-size:clamp(26px,4.2vw,38px);
+    line-height:1.2; letter-spacing:-.015em; margin:0 0 6px;
+    text-wrap:balance;
+  }
+  .query::before{content:"\201C"}
+  .query::after{content:"\201D"}
+  .srcline{
+    font-family:var(--mono); font-size:11px; color:var(--ink-3);
+    margin:0 0 4px; min-height:17px;
+  }
+
+  /* ---------- axis rows ---------- */
+  .axis{ padding:22px 0; border-top:1px solid var(--rule-2) }
+  .axis:first-of-type{margin-top:20px}
+  .axishead{
+    display:flex; align-items:center; gap:10px; margin-bottom:12px;
+  }
+  .axisname{
+    font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600;
+  }
+  .axisdot{width:7px;height:7px;border-radius:50%;flex:none}
+  .axisq{
+    font-size:13px; color:var(--ink-3);
+    font-family:var(--sans);
+  }
+  .mark{
+    margin-left:auto; font-family:var(--mono); font-size:11px;
+    letter-spacing:.08em; text-transform:uppercase; font-weight:600;
+    opacity:0; transition:opacity .2s ease;
+  }
+  .mark.show{opacity:1}
+  .mark.ok{color:var(--good)}
+  .mark.no{color:var(--bad)}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    font-family:var(--sans); font-size:14px; line-height:1.25;
+    padding:9px 14px; border-radius:999px; cursor:pointer;
+    background:var(--paper); color:var(--ink-2);
+    border:1px solid var(--rule);
+    transition:background .12s ease, border-color .12s ease, color .12s ease, transform .08s ease;
+    text-align:left;
+  }
+  .chip:hover:not(:disabled){border-color:var(--ink-3);color:var(--ink)}
+  .chip:active:not(:disabled){transform:scale(.97)}
+  .chip:disabled{cursor:default}
+  .chip .num{
+    font-family:var(--mono); font-size:10px; color:var(--ink-3);
+    margin-right:7px; letter-spacing:.04em;
+  }
+  .chip.sel{ font-weight:600 }
+  .chip.sel .num{opacity:.55}
+
+  /* selected, pre-check — tinted in the axis colour */
+  .axis[data-axis="awareness"] .chip.sel{background:var(--aware-bg);border-color:var(--aware);color:var(--aware)}
+  .axis[data-axis="question_type"] .chip.sel{background:var(--family-bg);border-color:var(--family);color:var(--family)}
+  .axis[data-axis="intent"] .chip.sel{background:var(--intent-bg);border-color:var(--intent);color:var(--intent)}
+
+  /* post-check */
+  .chip.correct,
+  .axis .chip.sel.correct{
+    background:var(--good-bg); border-color:var(--good); color:var(--good); font-weight:600;
+  }
+  .chip.wrong,
+  .axis .chip.sel.wrong{
+    background:var(--bad-bg); border-color:var(--bad); color:var(--bad); font-weight:600;
+    text-decoration:line-through; text-decoration-thickness:1px;
+  }
+  .chip.missed{
+    background:transparent; border-color:var(--good); border-style:dashed;
+    color:var(--good); font-weight:600; text-decoration:none;
+  }
+  .chip.dim{opacity:.34}
+  .chip .tag{
+    font-family:var(--mono); font-size:10px; letter-spacing:.08em;
+    text-transform:uppercase; margin-left:8px; opacity:.8;
+  }
+
+  .why{
+    margin-top:12px; font-size:14.5px; line-height:1.6; color:var(--ink-2);
+    border-left:2px solid var(--rule); padding:2px 0 2px 14px;
+    display:none;
+  }
+  .why.show{display:block}
+  .axis[data-axis="awareness"] .why.show{border-left-color:var(--aware)}
+  .axis[data-axis="question_type"] .why.show{border-left-color:var(--family)}
+  .axis[data-axis="intent"] .why.show{border-left-color:var(--intent)}
+
+  /* ---------- footer bar ---------- */
+  .bar{
+    display:flex; align-items:center; gap:12px;
+    border-top:1px solid var(--rule); margin-top:8px;
+    padding:18px 0; flex-wrap:wrap;
+  }
+  .nav{
+    font-family:var(--sans); font-size:14px; font-weight:500;
+    padding:10px 16px; border-radius:9px; cursor:pointer;
+    background:var(--paper); border:1px solid var(--rule); color:var(--ink-2);
+  }
+  .nav:hover:not(:disabled){border-color:var(--ink-3);color:var(--ink)}
+  .nav:disabled{opacity:.35;cursor:default}
+  .check{
+    font-family:var(--sans); font-size:15px; font-weight:600;
+    padding:11px 30px; border-radius:9px; cursor:pointer;
+    background:var(--ink); color:var(--paper); border:1px solid var(--ink);
+    min-width:150px;
+  }
+  .check:disabled{background:var(--paper-2);color:var(--ink-3);border-color:var(--rule);cursor:default}
+  .check.again{background:var(--paper);color:var(--ink-2);border-color:var(--rule);font-weight:500}
+  .kbd{
+    font-family:var(--mono); font-size:10.5px; color:var(--ink-3);
+    letter-spacing:.06em; margin-left:auto;
+  }
+  .kbd i{font-style:normal;border:1px solid var(--rule);border-radius:4px;padding:1px 5px;margin:0 1px}
+
+  /* ---------- cheat sheet ---------- */
+  details.sheet{margin-top:22px;border-top:1px solid var(--rule);padding-top:16px}
+  details.sheet summary{
+    font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-3); cursor:pointer; list-style:none;
+  }
+  details.sheet summary::-webkit-details-marker{display:none}
+  details.sheet summary::before{content:"+ ";font-weight:600}
+  details.sheet[open] summary::before{content:"\2212 "}
+  details.sheet summary:hover{color:var(--ink)}
+  .sheetgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:18px}
+  .sheetcol h4{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.12em;
+    text-transform:uppercase; margin:0 0 9px;
+  }
+  .sheetcol dl{margin:0;font-size:13.5px;line-height:1.5}
+  .sheetcol dt{font-weight:600;color:var(--ink)}
+  .sheetcol dd{margin:0 0 9px;color:var(--ink-3)}
+
+  .done{
+    text-align:center; padding:44px 20px 30px;
+    font-family:var(--serif); font-size:22px; color:var(--ink-2);
+  }
+  .problems{
+    background:var(--bad-bg); border:1px solid var(--bad); color:var(--bad);
+    border-radius:10px; padding:14px 18px; margin:0 0 20px; font-size:14px; line-height:1.5;
+  }
+  .problems ul{margin:8px 0 0;padding-left:20px}
+  .problems li{margin-bottom:3px;font-family:var(--mono);font-size:12px}
+  .toast{
+    position:fixed; left:50%; bottom:26px; transform:translate(-50%,20px);
+    background:var(--ink); color:var(--paper); font-family:var(--mono);
+    font-size:11.5px; letter-spacing:.06em; padding:10px 18px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:560px){
+    .card{padding:24px 20px 6px;border-radius:12px}
+    body{padding:0 12px 60px}
+    .kbd{display:none}
+    .check{flex:1}
+  }
+</style>
+</head>
+<body>
+
+<!-- ==========================================================================
+     QUERY BANK  —  this is the only part you edit to add questions.
+     ==========================================================================
+     Append an object to the array. Nothing else in the file changes.
+
+     id             unique string, never reuse one. Saved scores are keyed on it,
+                    so changing an id makes that query count as unanswered again.
+     query          the search query, exactly as a searcher would type it
+     awareness      problem_aware | solution_aware | product_aware | most_aware
+     question_type  problems_and_symptoms | category_education | use_cases |
+                    fit_and_constraints | comparisons | objections_risks |
+                    pricing_procurement | brand_validation
+     intent         informational | commercial | transactional | navigational
+     why            one line per axis, shown only for the axes you got wrong.
+                    Optional — omit it and the drill just marks right/wrong.
+     source         small print revealed after Check. Optional.
+
+     Skeleton to copy:
+
+       {
+         "id": "",
+         "query": "",
+         "awareness": "",
+         "question_type": "",
+         "intent": "",
+         "why": { "awareness": "", "question_type": "", "intent": "" },
+         "source": ""
+       },
+
+     The drill validates this list on load and will tell you on the page if an
+     id is duplicated or a label is misspelt, rather than failing silently.
+========================================================================== -->
+<script>
+const FRAMEWORK_QUERIES = [
+  {
+    "id": "traffic-declining",
+    "query": "Why is organic traffic declining?",
+    "awareness": "problem_aware",
+    "question_type": "problems_and_symptoms",
+    "intent": "informational",
+    "why": {
+      "awareness": "A symptom is named but no solution category is — the searcher has not yet reached 'I need an agency / an audit / a migration plan'.",
+      "question_type": "The subject is a diagnosis: what went wrong and why. §3 lists this exact query under Problems and symptoms.",
+      "intent": "The searcher wants to understand a cause, not to evaluate or buy anything yet."
+    },
+    "source": "framework.md §3"
+  },
+  {
+    "id": "what-tech-seo-agency-does",
+    "query": "What does a technical SEO agency do?",
+    "awareness": "solution_aware",
+    "question_type": "category_education",
+    "intent": "informational",
+    "why": {
+      "awareness": "'Technical SEO agency' is a solution category, not a provider. Knows a type of solution exists, has not settled on one — §2's definition of solution-aware.",
+      "question_type": "The answer has to explain what the category is and how it works. §3 lists this query under Category education.",
+      "intent": "Learning what something is. No option is being weighed."
+    },
+    "source": "framework.md §3"
+  },
+  {
+    "id": "marketplace-strategy",
+    "query": "SEO strategy for launching a marketplace",
+    "awareness": "solution_aware",
+    "question_type": "use_cases",
+    "intent": "informational",
+    "why": {
+      "awareness": "The category is assumed and no provider is named — the searcher is past 'what is this' but not into a shortlist.",
+      "question_type": "A solution applied to a specific goal and situation. §3 lists this query under Use cases, outcomes and workflows.",
+      "intent": "The result wanted is an approach to understand and follow, not a supplier to pick."
+    },
+    "source": "framework.md §3"
+  },
+  {
+    "id": "best-agency-b2b-saas",
+    "query": "Best SEO agency for B2B SaaS",
+    "awareness": "solution_aware",
+    "question_type": "fit_and_constraints",
+    "intent": "commercial",
+    "why": {
+      "awareness": "§7 records this exact query as solution_aware. No supplier is named — 'best X for Y' surveys a category.",
+      "question_type": "The job is matching an option to a specific context — B2B SaaS. §3 lists this query under Fit, constraints and 'best for'.",
+      "intent": "Investigating and shortlisting options. §7 records this query as commercial."
+    },
+    "source": "framework.md §3, §7"
+  },
+  {
+    "id": "agency-vs-inhouse",
+    "query": "SEO agency vs in-house team",
+    "awareness": "solution_aware",
+    "question_type": "comparisons",
+    "intent": "commercial",
+    "why": {
+      "awareness": "§2: the line to product-aware is named options, not comparison. Comparing generic approaches means choosing a category, not a supplier — still solution-aware.",
+      "question_type": "Two approaches set against each other. §3 lists this query under Comparisons and alternatives.",
+      "intent": "Weighing two routes before committing — evaluation, not learning and not acting."
+    },
+    "source": "framework.md §2, §3"
+  },
+  {
+    "id": "migration-damage-rankings",
+    "query": "Can a site migration damage rankings?",
+    "awareness": "solution_aware",
+    "question_type": "objections_risks",
+    "intent": "informational",
+    "why": {
+      "awareness": "Migration is understood as a category of work, but the question is asked of the category at large — no shortlist is implied, so nothing is assumed beyond the category.",
+      "question_type": "Reducing uncertainty about a downside. §3 lists this query under Objections, risks and feasibility.",
+      "intent": "A yes-and-why answer would satisfy it. Nothing is being compared or bought."
+    },
+    "source": "framework.md §3, §5"
+  },
+  {
+    "id": "enterprise-audit-cost",
+    "query": "How much does an enterprise SEO audit cost?",
+    "awareness": "solution_aware",
+    "question_type": "pricing_procurement",
+    "intent": "informational",
+    "why": {
+      "awareness": "An audit is a known category; no provider named. Asking the price of a category is not the same as asking a supplier for a price.",
+      "question_type": "§3 lists this query under Pricing and procurement: the answer has to deal in money.",
+      "intent": "§4 uses cost queries to make exactly this point: an open 'how much does it cost' is informational. 'Enterprise' names a service tier, not the searcher's own situation — the commercial version would size that situation, as 'pricing for a 50-page B2B site' does."
+    },
+    "source": "framework.md §3, §4"
+  },
+  {
+    "id": "acme-reviews",
+    "query": "Acme SEO agency reviews",
+    "awareness": "product_aware",
+    "question_type": "brand_validation",
+    "intent": "commercial",
+    "why": {
+      "awareness": "A competitor brand is named. §2: a competitor-branded query is normally product-aware, not most aware of us.",
+      "question_type": "Reviews, reputation and proof. §3 lists this query under Brand validation and due diligence.",
+      "intent": "Checking a shortlisted supplier before deciding — evaluation, not action."
+    },
+    "source": "framework.md §2, §3"
+  },
+  {
+    "id": "hire-enterprise-agency",
+    "query": "Hire an enterprise SEO agency",
+    "awareness": "solution_aware",
+    "question_type": "pricing_procurement",
+    "intent": "transactional",
+    "why": {
+      "awareness": "§2 uses this query as its worked example: transactional but still solution-aware, because no provider is named. Rule 4 — do not infer awareness from intent.",
+      "question_type": "Inferred, not stated. The subject of the query is engaging a supplier, and §3's Pricing and procurement is the type that covers contracts, commercial terms and buying requirements. 'Fit and best for' is arguable if you read 'enterprise' as the constraint — a case where §8 rule 7 applies: prefer a consistent, explainable label over false precision.",
+      "intent": "§2 calls it transactional outright — the searcher wants to complete an action. Note that this does not drag awareness with it (§8, rule 4)."
+    },
+    "source": "framework.md §2 (awareness and intent stated; question type inferred)"
+  },
+  {
+    "id": "acme-vs-corvus",
+    "query": "Acme vs Corvus",
+    "awareness": "product_aware",
+    "question_type": "comparisons",
+    "intent": "commercial",
+    "why": {
+      "awareness": "§2: comparing named suppliers is product-aware. Acme and Corvus both stand in for competitors (§5), so it is not most aware.",
+      "question_type": "Two named providers set against each other.",
+      "intent": "A shortlist is being resolved — the definition of commercial investigation."
+    },
+    "source": "framework.md §2, §5"
+  },
+  {
+    "id": "pricing-50-page-b2b",
+    "query": "SEO agency pricing for a 50-page B2B site",
+    "awareness": "solution_aware",
+    "question_type": "pricing_procurement",
+    "intent": "commercial",
+    "why": {
+      "awareness": "No provider named. §5's second table holds this row at solution-aware alongside the other two pricing queries.",
+      "question_type": "Money, and what the specifics do to it.",
+      "intent": "§4: same subject, three different pages. §5: this one sizes their situation — evaluation rather than a general explainer."
+    },
+    "source": "framework.md §4, §5"
+  },
+  {
+    "id": "request-audit-quote",
+    "query": "Request an SEO audit quote",
+    "awareness": "solution_aware",
+    "question_type": "pricing_procurement",
+    "intent": "transactional",
+    "why": {
+      "awareness": "Held still at solution-aware in §5's second table — the query names no provider even though it is ready to act.",
+      "question_type": "Commercial terms and buying requirements.",
+      "intent": "§5: the answer is a form and a response time. An action is being completed."
+    },
+    "source": "framework.md §4, §5"
+  },
+  {
+    "id": "northstar-soc2",
+    "query": "Northstar SOC 2 report",
+    "awareness": "most_aware",
+    "question_type": "brand_validation",
+    "intent": "navigational",
+    "why": {
+      "awareness": "Northstar stands in for our own brand (§5). The label is earned by the second half of §2's definition — looking for final information before acting — not by the brand name alone (§8, rule 4).",
+      "question_type": "A compliance artefact is proof. Reviews, reputation, proof and trust sit under Brand validation and due diligence.",
+      "intent": "§4: the searcher wants to reach a particular page, and it survives the scope filter because the destination is part of a purchase decision rather than account access. 'Northstar login' is the version that gets cut."
+    },
+    "source": "framework.md §4, §5"
+  },
+  {
+    "id": "what-audit-involves",
+    "query": "What does a technical SEO audit involve?",
+    "awareness": "solution_aware",
+    "question_type": "category_education",
+    "intent": "informational",
+    "why": {
+      "awareness": "§5's first table holds all three rows at solution-aware — the same knowledge assumed throughout.",
+      "question_type": "§5: the answer has to cover what the audit involves, step by step, and what it produces.",
+      "intent": "Understanding a process. Nothing is being weighed or bought."
+    },
+    "source": "framework.md §5"
+  },
+  {
+    "id": "how-long-seo-takes",
+    "query": "How long does SEO take to show results?",
+    "awareness": "solution_aware",
+    "question_type": "objections_risks",
+    "intent": "informational",
+    "why": {
+      "awareness": "§5: no provider in mind — explain the shape of the work. It sits between 'Can a traffic drop recover on its own?' (problem-aware) and the Acme query (product-aware).",
+      "question_type": "Timing uncertainty is an objection. §5: honest timelines with evidence, a realistic curve.",
+      "intent": "Learning what to expect."
+    },
+    "source": "framework.md §5"
+  },
+  {
+    "id": "agency-cost-average",
+    "query": "How much does an SEO agency cost on average?",
+    "awareness": "solution_aware",
+    "question_type": "pricing_procurement",
+    "intent": "informational",
+    "why": {
+      "awareness": "No provider named; the category is assumed.",
+      "question_type": "§5: real numbers — ranges, what drives them, what is excluded.",
+      "intent": "§4 and §5 both use this query as the informational corner of the pricing trio: a page of ranges and what moves them."
+    },
+    "source": "framework.md §4, §5"
+  },
+  {
+    "id": "traffic-drop-recover",
+    "query": "Can a traffic drop recover on its own?",
+    "awareness": "problem_aware",
+    "question_type": "objections_risks",
+    "intent": "informational",
+    "why": {
+      "awareness": "§5: no category vocabulary — the answer has to explain what recovery depends on before it can be useful.",
+      "question_type": "§5's third table holds all three rows at Objections, risks and feasibility. This one asks whether action is even needed.",
+      "intent": "Understanding what happens next."
+    },
+    "source": "framework.md §5"
+  },
+  {
+    "id": "acme-code-freeze",
+    "query": "Does an Acme migration need a code freeze?",
+    "awareness": "product_aware",
+    "question_type": "objections_risks",
+    "intent": "informational",
+    "why": {
+      "awareness": "§5: a shortlist exists — answer the detail for that provider. The brand is evidence of that shortlist, not a reading of awareness (§8, rule 4): what makes it product-aware is that the question only makes sense once a provider has been chosen.",
+      "question_type": "Implementation effort and risk, for a named provider.",
+      "intent": "Still a question with an answer, not a comparison and not an action — which is the point of §5's third table: form and subject fixed, depth varies."
+    },
+    "source": "framework.md §5"
+  },
+  {
+    "id": "best-crm-10-person",
+    "query": "Best CRM for a 10-person sales team",
+    "awareness": "solution_aware",
+    "question_type": "fit_and_constraints",
+    "intent": "commercial",
+    "why": {
+      "awareness": "CRM is a category, not a supplier.",
+      "question_type": "Matching an option to a stated context — team size.",
+      "intent": "Shortlisting. One of four queries that share solution-aware + commercial and still need four different pages."
+    },
+    "source": "framework-review.md"
+  },
+  {
+    "id": "crm-monthly-billing",
+    "query": "Which CRMs allow month-to-month billing?",
+    "awareness": "solution_aware",
+    "question_type": "pricing_procurement",
+    "intent": "commercial",
+    "why": {
+      "awareness": "No supplier named.",
+      "question_type": "Contract terms are a buying requirement, not a feature question. 'Fit and best for' is arguable, but the constraint here is commercial, which is what separates it from 'best CRM for a 10-person sales team'.",
+      "intent": "Filtering a field of options against a commercial constraint."
+    },
+    "source": "framework-review.md"
+  },
+  {
+    "id": "crm-risky-migrate",
+    "query": "Which CRMs are risky to migrate onto mid-quarter?",
+    "awareness": "solution_aware",
+    "question_type": "objections_risks",
+    "intent": "commercial",
+    "why": {
+      "awareness": "A category-wide question — no supplier named.",
+      "question_type": "Risk and timing. The subject is what could go wrong.",
+      "intent": "The risk is being used to rule options in or out, which makes it evaluation rather than pure learning."
+    },
+    "source": "framework-review.md"
+  },
+  {
+    "id": "crm-vs-marketing-automation",
+    "query": "CRM vs marketing automation platform",
+    "awareness": "solution_aware",
+    "question_type": "comparisons",
+    "intent": "commercial",
+    "why": {
+      "awareness": "Two categories, no suppliers — framework.md §2's rule that comparing generic approaches stays solution-aware.",
+      "question_type": "Comparing substitutes.",
+      "intent": "Choosing between routes before committing."
+    },
+    "source": "framework-review.md (with framework.md §2)"
+  }
+];
+</script>
+<!-- ===================== END OF QUERY BANK ================================ -->
+
+<div class="wrap">
+
+  <header>
+    <div class="title"><b>Query Drill</b> &nbsp;·&nbsp; Pre-purchase query framework</div>
+    <div class="spacer"></div>
+    <div class="score" id="score">—</div>
+    <button class="linkbtn" id="resetBtn" title="Delete all saved answers from this browser">Reset</button>
+  </header>
+
+  <div class="rail" id="rail"></div>
+
+  <div class="card" id="card">
+    <div class="counter" id="counter"></div>
+    <h1 class="query" id="query"></h1>
+    <div class="srcline" id="srcline"></div>
+
+    <div class="axis" data-axis="awareness">
+      <div class="axishead">
+        <span class="axisdot" style="background:var(--aware)"></span>
+        <span class="axisname" style="color:var(--aware)">Awareness stage</span>
+        <span class="axisq">How much do they already know?</span>
+        <span class="mark" id="mark-awareness"></span>
+      </div>
+      <div class="chips" id="chips-awareness"></div>
+      <div class="why" id="why-awareness"></div>
+    </div>
+
+    <div class="axis" data-axis="question_type">
+      <div class="axishead">
+        <span class="axisdot" style="background:var(--family)"></span>
+        <span class="axisname" style="color:var(--family)">Question type</span>
+        <span class="axisq">What is the answer about?</span>
+        <span class="mark" id="mark-question_type"></span>
+      </div>
+      <div class="chips" id="chips-question_type"></div>
+      <div class="why" id="why-question_type"></div>
+    </div>
+
+    <div class="axis" data-axis="intent">
+      <div class="axishead">
+        <span class="axisdot" style="background:var(--intent)"></span>
+        <span class="axisname" style="color:var(--intent)">Search intent</span>
+        <span class="axisq">What kind of result would satisfy them?</span>
+        <span class="mark" id="mark-intent"></span>
+      </div>
+      <div class="chips" id="chips-intent"></div>
+      <div class="why" id="why-intent"></div>
+    </div>
+
+    <div class="bar">
+      <button class="nav" id="prevBtn">&larr; Prev</button>
+      <button class="check" id="checkBtn" disabled>Check</button>
+      <button class="nav" id="nextBtn">Next &rarr;</button>
+      <span class="kbd"><i>1–8</i> pick &nbsp; <i>&crarr;</i> check &nbsp; <i>&larr;</i><i>&rarr;</i> move</span>
+    </div>
+  </div>
+
+  <details class="sheet">
+    <summary>Cheat sheet</summary>
+    <div class="sheetgrid" id="sheet"></div>
+  </details>
+
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ------------------------------------------------------------------ *
+   * The three axes. Order here is the order the chips appear.
+   * ------------------------------------------------------------------ */
+  const AXES = [
+    { key:"awareness", label:"Awareness stage", options:[
+      ["problem_aware","Problem-aware","Recognises a problem or symptom but may not know the solution category."],
+      ["solution_aware","Solution-aware","Knows that a type of solution exists but has not settled on a provider or product."],
+      ["product_aware","Product-aware","Knows one or more specific, named products or providers and is evaluating them."],
+      ["most_aware","Most aware","Knows our offering and is looking for final information or a path to act."]
+    ]},
+    { key:"question_type", label:"Question type", options:[
+      ["problems_and_symptoms","Problems and symptoms","Diagnosing a pain, failure or undesired outcome."],
+      ["category_education","Category education","Understanding a solution category and how it works."],
+      ["use_cases","Use cases and workflows","Applying a solution to a goal, situation or process."],
+      ["fit_and_constraints","Fit and ‘best for’","Finding the right option for a specific context."],
+      ["comparisons","Comparisons and alternatives","Comparing approaches, providers or substitutes."],
+      ["objections_risks","Objections and risks","Reducing uncertainty about risk, effort, timing or implementation."],
+      ["pricing_procurement","Pricing and procurement","Cost, contracts, commercial terms and buying requirements."],
+      ["brand_validation","Brand validation","Reviews, reputation, proof, case studies and trust."]
+    ]},
+    { key:"intent", label:"Search intent", options:[
+      ["informational","Informational","Learn or understand something."],
+      ["commercial","Commercial","Investigate or evaluate options."],
+      ["transactional","Transactional","Complete an action."],
+      ["navigational","Navigational","Reach a particular website or page."]
+    ]}
+  ];
+  const AXIS_BY_KEY = Object.fromEntries(AXES.map(a=>[a.key,a]));
+  const labelOf = (axis,val)=>{
+    const o = AXIS_BY_KEY[axis].options.find(o=>o[0]===val);
+    return o ? o[1] : val;
+  };
+
+  /* ------------------------------------------------------------------ *
+   * State. Answers persist; order is reshuffled on every load.
+   * ------------------------------------------------------------------ */
+  const STORE_KEY = "queryDrill.v1";
+  const DATA = (typeof FRAMEWORK_QUERIES !== "undefined" ? FRAMEWORK_QUERIES : []).slice();
+
+  /* Validate the query bank so a typo in a hand-added entry is visible on the
+     page rather than silently marking you wrong forever. */
+  function validate(list){
+    const problems = [];
+    const seen = new Set();
+    list.forEach((q,i)=>{
+      const where = 'entry ' + (i+1) + ' (' + (q && q.id ? '"'+q.id+'"' : 'no id') + ')';
+      if (!q || typeof q !== "object") return problems.push(where + ": not an object");
+      if (!q.id) problems.push(where + ": missing “id”");
+      else if (seen.has(q.id)) problems.push(where + ": duplicate id — ids must be unique");
+      else seen.add(q.id);
+      if (!q.query) problems.push(where + ": missing “query”");
+      AXES.forEach(a=>{
+        if (!q[a.key]) problems.push(where + ": missing “" + a.key + "”");
+        else if (!a.options.some(o=>o[0]===q[a.key]))
+          problems.push(where + ": “" + a.key + "” is “" + q[a.key] + "”, which is not one of " + a.options.map(o=>o[0]).join(", "));
+      });
+    });
+    return problems;
+  }
+
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(STORE_KEY) || "{}") || {}; }
+  catch(e){ saved = {}; }
+
+  function persist(){
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(saved)); }
+    catch(e){ /* private mode — the drill still works, it just won't survive a refresh */ }
+  }
+
+  function shuffle(a){
+    for(let i=a.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      [a[i],a[j]] = [a[j],a[i]];
+    }
+    return a;
+  }
+
+  const deck = shuffle(DATA.slice());
+  // pending[id] = {awareness, question_type, intent} — picks not yet checked
+  const pending = {};
+  let idx = deck.findIndex(q => !saved[q.id]);
+  if (idx < 0) idx = 0;
+
+  const $ = id => document.getElementById(id);
+
+  /* ------------------------------------------------------------------ *
+   * Build the chips once; re-style them on each render.
+   * ------------------------------------------------------------------ */
+  AXES.forEach(axis=>{
+    const box = $("chips-"+axis.key);
+    axis.options.forEach(([val,label,def],i)=>{
+      const b = document.createElement("button");
+      b.className = "chip";
+      b.dataset.val = val;
+      b.title = def;
+      b.innerHTML = '<span class="num">'+(i+1)+'</span>'+label+'<span class="tag"></span>';
+      b.addEventListener("click", ()=>pick(axis.key,val));
+      box.appendChild(b);
+    });
+  });
+
+  /* cheat sheet */
+  $("sheet").innerHTML = AXES.map(a=>
+    '<div class="sheetcol"><h4 style="color:var(--'+
+      (a.key==="awareness"?"aware":a.key==="question_type"?"family":"intent")+
+    ')">'+a.label+'</h4><dl>'+
+      a.options.map(o=>'<dt>'+o[1]+'</dt><dd>'+o[2]+'</dd>').join("")+
+    '</dl></div>'
+  ).join("");
+
+  /* ------------------------------------------------------------------ */
+  const cur = () => deck[idx];
+  const isChecked = q => !!saved[q.id];
+  const picksFor = q => saved[q.id] ? saved[q.id].picks : (pending[q.id] || {});
+
+  function pick(axisKey, val){
+    const q = cur();
+    if (isChecked(q)) return;              // locked once checked
+    pending[q.id] = pending[q.id] || {};
+    pending[q.id][axisKey] = (pending[q.id][axisKey] === val) ? undefined : val;
+    render();
+  }
+
+  function check(){
+    const q = cur();
+    const p = pending[q.id] || {};
+    if (AXES.some(a=>!p[a.key])) return;
+    saved[q.id] = {
+      picks: { awareness:p.awareness, question_type:p.question_type, intent:p.intent },
+      score: AXES.filter(a=>p[a.key]===q[a.key]).length,
+      at: Date.now()
+    };
+    persist();
+    render();
+  }
+
+  function go(n){
+    if (n<0 || n>=deck.length) return;
+    idx = n;
+    render();
+  }
+
+  function resetAll(){
+    if (!confirm("Delete every saved answer in this browser and start over?")) return;
+    saved = {};
+    Object.keys(pending).forEach(k=>delete pending[k]);
+    try { localStorage.removeItem(STORE_KEY); } catch(e){}
+    shuffle(deck);
+    idx = 0;
+    render();
+    toast("Cleared — deck reshuffled");
+  }
+
+  let toastTimer;
+  function toast(msg){
+    const t = $("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>t.classList.remove("show"), 1700);
+  }
+
+  /* ------------------------------------------------------------------ */
+  function render(){
+    const q = cur();
+    if (!q){
+      $("card").innerHTML = '<div class="done">The query bank is empty.<br><span style="font-size:14px;font-family:var(--sans)">Add an entry to <code>FRAMEWORK_QUERIES</code> near the top of this file.</span></div>';
+      return;
+    }
+    const done = isChecked(q);
+    const picks = picksFor(q);
+
+    $("counter").textContent = "Query " + (idx+1) + " of " + deck.length;
+    $("query").textContent = q.query;
+    $("srcline").textContent = done ? (q.source ? "Source: " + q.source : "") : "";
+
+    AXES.forEach(axis=>{
+      const picked = picks[axis.key];
+      const truth  = q[axis.key];
+      const right  = done && picked === truth;
+
+      $("chips-"+axis.key).querySelectorAll(".chip").forEach(chip=>{
+        const v = chip.dataset.val;
+        chip.className = "chip";
+        chip.disabled = done;
+        chip.querySelector(".tag").textContent = "";
+        if (!done){
+          if (v === picked) chip.classList.add("sel");
+        } else {
+          if (v === picked && right){ chip.classList.add("sel","correct"); }
+          else if (v === picked)    { chip.classList.add("sel","wrong"); }
+          else if (v === truth)     { chip.classList.add("missed"); chip.querySelector(".tag").textContent = "correct"; }
+          else                      { chip.classList.add("dim"); }
+        }
+      });
+
+      const mark = $("mark-"+axis.key);
+      mark.className = "mark" + (done ? " show " + (right ? "ok" : "no") : "");
+      mark.textContent = done ? (right ? "✓ Correct" : "✕ " + labelOf(axis.key, truth)) : "";
+
+      const why = $("why-"+axis.key);
+      const text = q.why && q.why[axis.key];
+      if (done && !right && text){ why.textContent = text; why.className = "why show"; }
+      else { why.textContent = ""; why.className = "why"; }
+    });
+
+    /* buttons */
+    const ready = AXES.every(a=>picks[a.key]);
+    const btn = $("checkBtn");
+    if (done){
+      const s = saved[q.id].score;
+      btn.textContent = s===3 ? "3 / 3 — Next →" : s + " / 3 — Next →";
+      btn.className = "check again";
+      btn.disabled = idx >= deck.length-1;
+    } else {
+      btn.textContent = "Check";
+      btn.className = "check";
+      btn.disabled = !ready;
+    }
+    $("prevBtn").disabled = idx === 0;
+    $("nextBtn").disabled = idx === deck.length-1;
+
+    renderRail();
+    renderScore();
+  }
+
+  function renderRail(){
+    const rail = $("rail");
+    if (rail.children.length !== deck.length){
+      rail.innerHTML = "";
+      deck.forEach((q,i)=>{
+        const t = document.createElement("button");
+        t.className = "tick";
+        t.addEventListener("click", ()=>go(i));
+        rail.appendChild(t);
+      });
+    }
+    deck.forEach((q,i)=>{
+      const t = rail.children[i];
+      const rec = saved[q.id];
+      t.className = "tick" + (rec ? " done-" + rec.score : "") + (i===idx ? " current" : "");
+      t.title = (i+1) + ". " + q.query + (rec ? "  — " + rec.score + "/3" : "  — unanswered");
+    });
+  }
+
+  function renderScore(){
+    const recs = deck.map(q=>saved[q.id]).filter(Boolean);
+    if (!recs.length){ $("score").textContent = "0 of " + deck.length + " answered"; return; }
+    const pts = recs.reduce((s,r)=>s+r.score,0);
+    const max = recs.length*3;
+    const perfect = recs.filter(r=>r.score===3).length;
+    $("score").innerHTML =
+      recs.length + " of " + deck.length + " answered &nbsp;·&nbsp; " +
+      '<span class="pct">' + Math.round(pts/max*100) + "%</span> of labels &nbsp;·&nbsp; " +
+      perfect + " clean";
+  }
+
+  /* ------------------------------------------------------------------ */
+  $("checkBtn").addEventListener("click", ()=>{
+    isChecked(cur()) ? go(idx+1) : check();
+  });
+  $("prevBtn").addEventListener("click", ()=>go(idx-1));
+  $("nextBtn").addEventListener("click", ()=>go(idx+1));
+  $("resetBtn").addEventListener("click", resetAll);
+
+  document.addEventListener("keydown", e=>{
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+
+    if (e.key === "ArrowLeft"){ e.preventDefault(); return go(idx-1); }
+    if (e.key === "ArrowRight"){ e.preventDefault(); return go(idx+1); }
+    if (e.key === "Enter"){
+      e.preventDefault();
+      return isChecked(cur()) ? go(idx+1) : check();
+    }
+    /* 1–8 fills the first axis still empty, so you can type 2 6 1 straight through */
+    if (/^[1-8]$/.test(e.key)){
+      const q = cur();
+      if (isChecked(q)) return;
+      const picks = pending[q.id] || {};
+      const axis = AXES.find(a=>!picks[a.key]) || AXES[AXES.length-1];
+      const opt = axis.options[Number(e.key)-1];
+      if (opt){ e.preventDefault(); pick(axis.key, opt[0]); }
+    }
+  });
+
+  const problems = validate(DATA);
+  if (problems.length){
+    const box = document.createElement("div");
+    box.className = "problems";
+    box.innerHTML = "<b>The query bank has " + problems.length + " problem" +
+      (problems.length>1?"s":"") + ".</b> Fix these in the QUERY BANK block at the top of this file:<ul><li>" +
+      problems.map(p=>p.replace(/[<>&]/g, c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]))).join("</li><li>") +
+      "</li></ul>";
+    document.querySelector(".wrap").insertBefore(box, document.getElementById("rail"));
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
