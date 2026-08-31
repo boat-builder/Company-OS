@@ -1,0 +1,70 @@
+<svg viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .serif { font-family: Georgia, 'Times New Roman', serif; }
+      .mono  { font-family: 'DejaVu Sans Mono', 'Courier New', monospace; }
+      .sans  { font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- canvas -->
+  <rect x="0" y="0" width="1200" height="1200" fill="#FFFFFF"/>
+  <rect x="3" y="3" width="1194" height="1194" fill="none" stroke="#0A0A0A" stroke-width="6"/>
+
+  <!-- title band -->
+  <text x="600" y="98" text-anchor="middle" class="serif" font-size="62" font-weight="700" fill="#0A0A0A">AEO / GEO &#8212; The Four Options</text>
+  <text x="600" y="138" text-anchor="middle" class="mono" font-size="22" letter-spacing="3" fill="#6B6B6B">THE CATEGORY MAP, COMPLETED</text>
+  <line x1="3" y1="162" x2="1197" y2="162" stroke="#0A0A0A" stroke-width="6"/>
+
+  <!-- grid dividers -->
+  <line x1="600" y1="162" x2="600" y2="1197" stroke="#0A0A0A" stroke-width="6"/>
+  <line x1="3" y1="680" x2="1197" y2="680" stroke="#0A0A0A" stroke-width="6"/>
+
+  <!-- ================= BOX A : BUY A PLATFORM ================= -->
+  <rect x="6" y="162" width="591" height="80" fill="#0A0A0A"/>
+  <text x="301" y="216" text-anchor="middle" class="mono" font-size="34" font-weight="700" letter-spacing="2" fill="#FFFFFF">BUY A PLATFORM</text>
+  <text x="44" y="330" class="sans" font-size="29" font-weight="700" fill="#0A0A0A">You operate the tool yourself.</text>
+  <text x="44" y="392" class="sans" font-size="25" fill="#3A3A3A">Real control &#8212; but the work stays</text>
+  <text x="44" y="428" class="sans" font-size="25" fill="#3A3A3A">on your plate.</text>
+  <rect x="44" y="588" width="290" height="46" fill="none" stroke="#0A0A0A" stroke-width="3"/>
+  <text x="60" y="619" class="mono" font-size="22" font-weight="700" letter-spacing="1" fill="#0A0A0A">YOU OPERATE IT</text>
+
+  <!-- ================= BOX B : BUILD YOUR OWN ================= -->
+  <rect x="603" y="162" width="591" height="80" fill="#0A0A0A"/>
+  <text x="898" y="216" text-anchor="middle" class="mono" font-size="34" font-weight="700" letter-spacing="2" fill="#FFFFFF">BUILD YOUR OWN</text>
+  <text x="641" y="330" class="sans" font-size="29" font-weight="700" fill="#0A0A0A">You're the engineer, strategist,</text>
+  <text x="641" y="366" class="sans" font-size="29" font-weight="700" fill="#0A0A0A">and QA.</text>
+  <text x="641" y="428" class="sans" font-size="25" fill="#3A3A3A">Total flexibility. Basically a</text>
+  <text x="641" y="464" class="sans" font-size="25" fill="#3A3A3A">full-time job.</text>
+  <rect x="641" y="588" width="250" height="46" fill="none" stroke="#0A0A0A" stroke-width="3"/>
+  <text x="657" y="619" class="mono" font-size="22" font-weight="700" letter-spacing="1" fill="#0A0A0A">YOU BUILD IT</text>
+
+  <!-- ================= BOX C : HIRE AN AGENCY ================= -->
+  <rect x="6" y="680" width="591" height="80" fill="#0A0A0A"/>
+  <text x="301" y="734" text-anchor="middle" class="mono" font-size="34" font-weight="700" letter-spacing="2" fill="#FFFFFF">HIRE AN AGENCY</text>
+  <text x="44" y="848" class="sans" font-size="29" font-weight="700" fill="#0A0A0A">You hand the whole thing off.</text>
+  <text x="44" y="910" class="sans" font-size="25" fill="#3A3A3A">Convenient &#8212; a black box at</text>
+  <text x="44" y="946" class="sans" font-size="25" fill="#3A3A3A">~4&#215; the price.</text>
+  <rect x="44" y="1106" width="310" height="46" fill="none" stroke="#0A0A0A" stroke-width="3"/>
+  <text x="60" y="1137" class="mono" font-size="22" font-weight="700" letter-spacing="1" fill="#0A0A0A">YOU HAND IT OFF</text>
+
+  <!-- ================= BOX D : FORWARD-DEPLOYED (highlight) ================= -->
+  <rect x="603" y="683" width="591" height="511" fill="#0A0A0A"/>
+  <rect x="603" y="683" width="591" height="10" fill="#2F6BFF"/>
+  <text x="898" y="744" text-anchor="middle" class="mono" font-size="33" font-weight="700" letter-spacing="2" fill="#FFFFFF">FORWARD-DEPLOYED</text>
+  <line x1="641" y1="772" x2="1157" y2="772" stroke="#3C3C3C" stroke-width="2"/>
+
+  <!-- the 4th tag -->
+  <rect x="641" y="792" width="150" height="36" fill="#2F6BFF"/>
+  <text x="654" y="817" class="mono" font-size="20" font-weight="700" letter-spacing="2" fill="#FFFFFF">THE 4TH</text>
+
+  <text x="641" y="884" class="sans" font-size="26" font-weight="700" fill="#FFFFFF">A platform does the volume. A</text>
+  <text x="641" y="918" class="sans" font-size="26" font-weight="700" fill="#FFFFFF">Forward-Deployed Marketer (FDM)</text>
+  <text x="641" y="952" class="sans" font-size="26" font-weight="700" fill="#FFFFFF">operates it <tspan font-style="italic">with</tspan> you &#8212; co-equal.</text>
+  <text x="641" y="1004" class="sans" font-size="24" fill="#BFBFBF">Agents scale. The human owns</text>
+  <text x="641" y="1036" class="sans" font-size="24" fill="#BFBFBF">the judgment.</text>
+
+  <rect x="641" y="1086" width="470" height="46" fill="#FFFFFF"/>
+  <text x="657" y="1117" class="mono" font-size="21" font-weight="700" letter-spacing="1" fill="#0A0A0A">WE'RE IN THE ROOM WITH YOU</text>
+  <text x="641" y="1168" class="mono" font-size="18" fill="#8A8A8A">Palantir's model, applied to SEO / AEO.</text>
+</svg>
