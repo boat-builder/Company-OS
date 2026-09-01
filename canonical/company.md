@@ -1,83 +1,68 @@
 # Company
 
-> Canonical reference for Berlin's legal entity, governance, banking, and compliance state. Anything that touches the corporate shell — incorporation details, agreements on file, annual filings — lives here.
+> Canonical reference for the corporate shell — names, the entity being formed, what has to be in place at formation, and the standing commercial relationships that will need to sit under it.
 
 ---
 
-## Identity
+## Names and what each one means
 
-- **Trading name:** Agent Berlin (referred to as "Berlin")
-- **Legal name:** Agentic World, LLC
-- **Entity type:** Limited Liability Company (LLC)
-- **State of formation:** Delaware (via Stripe Atlas)
-- **Formation date:** May 16, 2025
-- **DE File Number:** 10198329
-- **DE SR#:** 20252384030
-- **County:** New Castle
-- **EIN:** 32-0815200
-- **IRS Name Control:** AGEN
-- **EIN effective date:** May 30, 2025
-- **Sole Member & Manager:** Sherin Thomas
-- **Website:** agentberlin.ai
-- **Founder contact:** Sherin Thomas — sherin@agentberlin.ai · +91 890 474 5603
+Two names, and they are not interchangeable. Getting them wrong in a contract or on a website is expensive, so the distinction is recorded here first.
+
+| Name | What it is | Status |
+|------|-----------|--------|
+| **AEOxoxo** (`aeoxoxo.ai`) | The product and the public-facing brand. Everything we sell is AEOxoxo. | Live |
+| **Swayful** (`swayful.ai`) | The company — a broader marketing ecosystem, of which AEOxoxo is the first product. | Being formed |
+
+**Use AEOxoxo in anything customer-facing.** Swayful is the corporate name and should not appear in sales material, the product, or outbound until the entity exists and a decision has been made about how the two names relate publicly.
 
 ---
 
-## Registered Agent
+## Structure
 
-- **Agent:** Legalinc Corporate Services Inc.
-- **Address:** 131 Continental Dr, Suite 305, Newark, DE 19713
-- **Plan active through:** May 16, 2026 (auto-renews 28 days before incorporation date)
+- **Shape:** Indian private limited company with a US subsidiary.
+- **Status:** Registration in progress, expected within weeks. No filings completed, no jurisdiction confirmed for the US subsidiary, no share allocation agreed.
 
-## Registered Address
-
-1111B S Governors Ave, Ste 29991, Dover, DE 19904
+Until it exists, nothing about the corporate structure is settled, and no equity can be issued.
 
 ---
 
-## Banking
+## What has to be in place at formation
 
-- **Bank:** Mercury (via Choice Financial Group)
-- **Account type:** Checking
+A checklist, not a record — none of this is done. Ordered roughly by how expensive it is to leave undone.
 
----
-
-## Governance Summary
-
-The Operating Agreement is a standard Stripe Atlas single-member LLC agreement.
-
-- **Management:** Manager-managed. Sherin Thomas is the sole initial Manager.
-- **Authorized Units:** 10,000,000. No additional classes without Manager + Majority Interest consent.
-- **Voting:** One vote per unit held.
-- **Termination:** Requires written consent of Managers and a Majority Interest vote.
-- **Officers:** Managers may appoint officers (CEO, Secretary, etc.) at any time.
-- **Limited Liability:** Members/Managers are not personally liable for company debts.
-- **Tax treatment:** Defaults to disregarded entity (single-member); reported on personal return (Schedule C).
+1. **Founder agreements and equity.** Split, vesting, cliffs. See [`team.md`](team.md).
+2. **IP assignment for all three cofounders.** Confidentiality and invention-assignment agreements. Work contributed before these are signed is assigned to no entity, and that is the position today.
+3. **The India / US split.** Which entity employs whom, which one contracts with customers, and which one holds the IP. This decides almost everything downstream, including how the vendor contracts below get papered.
+4. **Banking.** Operating accounts under the new entity in both jurisdictions.
+5. **Vendor contracts reassigned.** Everything in the next section is contracted today under an arrangement that will not survive formation.
+6. **Customer contracts and payment processing.** Whatever exists must be novated or re-signed.
+7. **Counsel.** A cross-border parent/subsidiary arrangement is not a thing to design without a lawyer. Nothing here has been reviewed by one.
+8. **Terms of service and privacy policy.** Drafted and live, and not reviewed by counsel. They will need the new entity named on them regardless.
 
 ---
 
-## Agreements on File
+## Standing commercial relationships
 
-- **Operating Agreement** — Standard Stripe Atlas single-member LLC operating agreement, effective May 16, 2025.
-- **CIIAA (Confidential Information and Invention Assignment Agreement)** — Signed by Sherin Thomas as Service Provider, effective May 19, 2025. Covers IP assignment, confidentiality, non-solicitation (12 months post-termination), and invention disclosure.
-- **Certificate of Formation** — Filed with Delaware Division of Corporations on May 16, 2025; approved and authenticated May 19, 2025 (Authentication: 203722446).
+These bind whoever is operating, and all of them will need to be re-papered under the new entity:
 
----
+- **DataForSEO** — commercial API subscription (keyword and SERP data).
+- **Semrush** — keyword data source.
+- **OpenAI** and **Anthropic** — API accounts.
+- **Cloud** — standard provider agreements.
+- **Stripe** — payment processing.
 
-## Annual Compliance
-
-- **Delaware Franchise Tax:** $300 flat fee for LLCs, due June 1 each year.
-- **Registered Agent Renewal:** Auto-renews annually through Stripe Atlas / Legalinc.
-- **Federal Tax:** Single-member LLC defaults to disregarded entity — reported on personal return (Schedule C) unless otherwise elected.
+Open-source dependencies are MIT/Apache licensed. No GPL-licensed dependencies are in use.
 
 ---
 
-## C-Corp Conversion
+## Open decisions
 
-Planned but not yet scheduled. Most institutional investors and accelerators require a Delaware C-Corp. Founder is prepared to convert if required by lead investor or accelerator terms; SAFE documents can include a conversion covenant. Standard practice: form a new C-Corp and roll the LLC assets into it prior to or concurrent with closing.
-
-A 10% option pool is planned for future hires and advisors, to be established at the C-Corp conversion. 409A valuation will be completed at conversion if applicable.
+1. **The India / US split.** Item 3 above. Unresolved and blocking most of the rest of the checklist.
+2. **Cofounder equity.** Omar Marks and Nitin Venugopal are cofounders (see [`team.md`](team.md)); no split is agreed or documented. Cannot be issued until the entity exists, which makes formation the forcing function.
+3. **Option pool.** Whether one is established at formation and at what size.
+4. **How Swayful and AEOxoxo relate publicly.** One brand with a parent behind it, or two visible names. Affects the site, contracts, invoices and email addresses.
+5. **Contact addresses.** Nothing on `aeoxoxo.ai` is recorded here yet.
 
 ---
 
-_Last updated: 2026-05-07_
+_Last updated: 2026-09-01_

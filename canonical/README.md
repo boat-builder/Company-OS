@@ -1,65 +1,63 @@
 # Canonical
 
-> **This is the source of truth for everything about Berlin.**
+> **This is the source of truth for everything about AEOxoxo.**
 >
-> Investor decks, sales calls, marketing copy, hiring conversations, and any other downstream artifact should derive from these files — never the other way around. If you find a fact in a deck or a doc that contradicts what's here, this directory wins. If you find an important fact that *isn't* here yet, update the canonical file first, then propagate.
+> Decks, sales calls, marketing copy, hiring conversations and every other downstream artifact derive from these files — never the other way around. If a fact in a deck contradicts what's here, this directory wins. If an important fact isn't here yet, update the canonical file first, then propagate.
+
+**Naming, in one line:** **AEOxoxo** (`aeoxoxo.ai`) is the product and the public brand. **Swayful** (`swayful.ai`) is the company — an Indian private limited with a US subsidiary, currently being formed. See [`company.md`](company.md).
 
 ---
 
 ## Files
 
-One `.md` per topical domain. Each file is self-contained and cross-references the others where relevant.
+Six files, one per domain. Each is self-contained and cross-references the others rather than duplicating them.
 
 | File | What's in it |
 |------|--------------|
-| [`company.md`](company.md) | Legal entity, governance, banking, registered agent, agreements on file, annual compliance, C-Corp conversion plan |
-| [`product.md`](product.md) | **What Berlin does** — brand grounding, the Audit→Report→Act operating loop, and the Feature Reference (sole source of truth for the capability set). Descriptive only; makes no positioning claims. Carries an AEO-repositioning banner. |
-| [`engineering.md`](engineering.md) | Internal Tools layer, engineering moat (Go agentic runtime, strategy knowledge base, Snake.blue, keyword lake, versioned page store, data routing, 80+ signals), substrate reference table. Internal/investor only — never customer-facing |
-| [`customers.md`](customers.md) | ICP starting hypothesis (SEO-literate SaaS teams & founders, ~$80k–$1M MRR — full reset June 2026), SaaS chosen as first vertical, what-to-narrow-on, promotion criteria, parallel Berlin-for-Agencies SKU, live-customer evidence |
-| [`team.md`](team.md) | Founder bios (Sherin + Rhea), full FDM model, operator ratios, May 2026 partner-agency setup, first FDM hire spec, hiring plan |
-| [`sales.md`](sales.md) | Sales positioning, qualification framework, call structure, persona-specific approaches, objection handling, closing motion, pricing discipline, learning log |
-| [`marketing.md`](marketing.md) | Channels and their roles, adjacent initiatives (micro-influencer program, autonomous affiliate POC), customer-facing language discipline. **Content/outbound playbook lives in `marketing/content-playbook.md`.** |
-| [`market.md`](market.md) | TAM/SAM/SOM, AEO/GEO inflection, traffic shift, labor-addressable reframing, Berlin's category (Forward-Deployed SEO/AEO Platform — the tool↔agency spectrum middle), competitor landscape (4 buckets), why-now narrative, VC validation |
-| [`finance.md`](finance.md) | Current state, revenue model, traction, flagship case, projections, cash flow, round structure, use of funds, cap table, risks |
+| [`company.md`](company.md) | The two names and what each means, the Swayful structure, the formation checklist, standing vendor relationships, and the corporate open decisions |
+| [`team.md`](team.md) | The three cofounders, who owns what, departures, and the equity/IP open decisions |
+| [`product.md`](product.md) | **High-level only.** What AEOxoxo is, what we sell, the four-step product, the honest position on causes, the seven platform entities, how it's operated, language rules. Links out to the full specs |
+| [`engineering.md`](engineering.md) | The nine-system substrate, the `aeo` API layer and its data model, deliberate constraints, and the recorded gaps |
+| [`market.md`](market.md) | AI-search inflection data, traffic and conversion shift, the competitor landscape as sourced fact, VC validation, defensibility |
+| [`gtm.md`](gtm.md) | Current commercial state and pilot constraints, legacy accounts, the open ICP question and its promotion criteria, sales craft, objection inventory, marketing channels |
 
 ---
 
-## What lives outside canonical
+## The full product definition lives outside canonical
 
-The existing top-level folders (`team/`, `marketing/`, `sales/`, `customers/`, `product/`, `finance/`, `legal/`) keep **non-canonical artifacts** — assets, templates, transcripts, deck HTML, recruitment posters, ephemeral state — referenced by name from canonical files. Examples:
+Two documents in [`../product/`](../product/) define the product in detail. They are authoritative and `product.md` links to them rather than restating them:
 
-- `team/Forward-Deployed-SEO-JD.md` — public JD (asset; canonical role spec is in `team.md`)
-- `team/linkedin_poster.html`, `team/whatsapp_poster.html` — recruitment posters
-- `marketing/partners-page/` — partner-channel landing pages
-- `marketing/content-playbook.md` — content philosophy, audience discipline, funnel framing, execution craft, outbound-from-content (operational playbook; canonical channel facts are in `marketing.md`)
-- `sales/transcripts/` — raw call transcripts
-- `tools/closex/` — Close CRM CLI (sibling to `tools/calx/` and `tools/stripex/`)
-- `sales/llm-instructions.prompt` — LLM prompt for sales-call assist
-- `sales/pipeline.md` — ephemeral active-deal tracker
-- `finance/funding-page/index.html` — investor-facing HTML deck
-- `product/berlin-market-research-final.md` — detailed source-cited market data appendix backing `market.md`
+- **`product/framework.md`** — the classification vocabulary: three axes, every value, the rules for assigning them. Answers *what is this question?*
+- **`product/aeo-product-spec.md`** — the v1 spec: measurement, diagnosis, the causes list, pilot constraints, and the evidence base with its source tiers. Answers *what do we do about it?*
 
----
+The division is strict so neither has to be maintained twice. The framework changes when the taxonomy is wrong; the spec changes when the product is wrong.
 
-## What's deletable
-
-After this canonical/ directory was built, several previously-de-facto-canonical files become **derivative** — their content fully lives here now. See the audit at the bottom of this README before deleting anything. The current investor docs in particular (`finance/base-investment-document.md`, `finance/investor-deck-plan.md`) are now derivative and can be regenerated from canonical/ rather than maintained in parallel.
+Other non-canonical material — transcripts, deck HTML, landing pages, templates, tooling — lives outside `canonical/` and is referenced by path from canonical files. Today that is `product/` and a scatter of loose files at the repo root; those have not been organised and this README does not pretend they have been.
 
 ---
 
 ## How to maintain this
 
-- **Update canonical first.** When a fact changes, change the relevant file here. Then propagate to derivative artifacts (decks, landing pages, outreach templates).
-- **One topic, one home.** Engineering substrate belongs in `engineering.md`. Founder bio belongs in `team.md`. Don't duplicate facts across canonical files — cross-reference.
-- **Keep product descriptive and positioning persuasive — in different files.** `product.md` documents what the product does and should be verifiable against the running system. Claims about who it's for, what it replaces, and why it wins are positioning and do not belong there.
-- **Positioning and pricing currently have no canonical home.** Both were removed on 2026-07-28 pending the AEO re-derivation — see `product.md` → *Positioning* and *Pricing*. Do not restore stale versions into another file; give them a home only when they are rebuilt.
-- **Cite the file, not the artifact.** When briefing yourself, the FDM team, contractors, or LLMs, point them at the canonical file by path. Decks come and go; canonical persists.
+- **Update canonical first.** Change the fact here, then propagate to decks, pages and templates.
+- **One topic, one home.** Substrate belongs in `engineering.md`. Bios belong in `team.md`. Cross-reference; don't duplicate.
+- **Keep `product.md` descriptive and high-level.** Detail goes in `product/`. Claims about who it's for and why it wins are positioning and belong in neither until positioning is rebuilt.
+- **Mark open decisions explicitly.** Every file ends with an *Open decisions* section listing what is genuinely undecided. An honest gap is more useful than an invented answer — and a file built on a foundation that was itself never settled is worse than no file.
+- **Don't restore stale material.** Positioning, pricing and the ICP have no canonical home right now, by decision. Give them one when they exist, not before.
+- **Cite the file, not the artifact.** When briefing a cofounder, a contractor or an LLM, point at the path. Decks come and go.
 
 ---
 
-_Created: 2026-05-07_
-_Last updated: 2026-07-28 (later) — **removed positioning from canonical entirely**, alongside pricing. `product.md` is now a purely descriptive capability document: the operating loop plus a single consolidated Feature Reference. The prose/table duplication (Capability Surfaces vs. Feature Reference vs. Operational Infrastructure) was collapsed into one table. Positioning and pricing get rebuilt and rehomed as part of the AEO repositioning; until then neither is documented anywhere in canonical, by decision. Historical versions at `git show 45c6407:canonical/product.md`._
+## What is unresolved right now
 
-_2026-07-28 — split `product.md` (was doing four jobs: positioning, product spec, engineering architecture, pricing). Engineering substrate extracted to `engineering.md`; pricing removed from canonical entirely (derived for the SEO/AEO scope, invalid under the AEO direction — to be re-derived and rehomed; historical version at `git show 45c6407:canonical/product.md`). Positioning narrative deliberately left in `product.md` pending the AEO repositioning rewrite. `product.md` now carries an AEO-repositioning banner._
+Pulled up from the individual files, because these block work elsewhere:
 
-_2026-05-12 — `marketing.md` trimmed to canonical-only content (channels, initiatives, language discipline); content/outbound playbook extracted to `marketing/content-playbook.md`._
+1. **Swayful is not yet formed**, and the India / US split is undecided. Nothing about the corporate structure is settled until it is. → [`company.md`](company.md)
+2. **No equity split and no IP assignment for any cofounder.** Everything built today is assigned to no entity. → [`team.md`](team.md)
+3. **No validated ICP.** The spec's pilot profile is a pilot constraint, not an ICP claim. → `gtm.md`
+4. **No pricing.** → `gtm.md`
+5. **No repos, hosting or deploy path recorded** for any of the nine engineering systems. → `engineering.md`
+6. **Market sizing must be re-derived** against the AEO market rather than the SEO one. → `market.md`
+
+---
+
+_Last updated: 2026-09-01 — rebuilt for the AEOxoxo direction. Prior canonical files are in git history._

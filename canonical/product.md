@@ -1,148 +1,113 @@
 # Product
 
-> **The source of truth for what Berlin does.** Descriptive, not persuasive — everything here should be verifiable against the running product. If a capability is missing, add it here first, then propagate to decks, sales material, and marketing copy.
+> **High-level source of truth for what AEOxoxo is and what we sell.** Descriptive, not persuasive — everything here should be verifiable against the running product.
 >
-> Engineering substrate → [`engineering.md`](engineering.md). Market, category, and competitors → [`market.md`](market.md).
+> This file is deliberately short. The full product definition lives in two documents in [`../product/`](../product/) and is not restated here:
+>
+> - **[`product/framework.md`](../product/framework.md)** — the classification vocabulary. What a question *is*.
+> - **[`product/aeo-product-spec.md`](../product/aeo-product-spec.md)** — the v1 product spec. What we *do* about it.
+>
+> Engineering substrate → [`engineering.md`](engineering.md). Market and competitors → [`market.md`](market.md). Commercial motion → [`gtm.md`](gtm.md).
 
-***
+---
 
-## What Berlin Is
+## What AEOxoxo is
 
-Berlin is an AEO engine that a human operator drives in partnership with an agent. The operator brings judgment and intent; Berlin brings the brand's full context, the data, the reusable procedures, and the execution.
+A company wants to be recommended when a potential customer asks an AI assistant a question. **We tell them whether that is happening, why it is or is not, and what to do about it.**
 
-The product is deliberately **human-in-the-loop**. An operator working with an agent — not an agent running unattended.
+That is the whole product in a sentence. Everything below is how.
 
-***
+---
 
-## Two Kinds of Execution: Agents and Workflows
+## What we sell today
 
-Everything Berlin does runs as either an **agent** or a **workflow**. The distinction matters, because it determines what can run on its own.
+**An analyst-delivered consultation report.** We run the measurement and the diagnosis, and hand over findings and a ranked action register in a client account on our platform. There are no embedded people at the client, and the client does not operate the tooling themselves.
 
-**Agents are intelligent.** They reason, decide, and handle work that can't be specified in advance — reading a brand's context, judging what matters, writing a report, deciding what actions to create. That intelligence comes from an LLM, which means every agent run costs tokens, and tokens are the binding constraint on how much Berlin can run unattended.
+The report is the deliverable. The platform exists because we need an account for Search Console and analytics permissions anyway, and because a live page beats a PDF attachment.
 
-**Workflows are deterministic.** No LLM, no intelligence, no token cost. A workflow pulls a body of data, analyses it programmatically, applies rules, and writes out an intermediate report file. Because it costs nothing per run, **a workflow can be scheduled and left to run on its own.**
+Pilot constraints — how many, who, and what scope — are in [`gtm.md`](gtm.md) and spec §3.
 
-The two compose. Workflows do the cheap, repetitive, high-volume analysis on a schedule and leave their output behind. Agents then read those intermediate reports and do the expensive, judgement-heavy part — creating actions, writing and updating reports for stakeholders. This is how Berlin gets continuous coverage of a brand without paying for continuous intelligence.
+---
 
-***
+## The product in four steps
 
-## The Fundamental Pieces
+The order matters, and the report is read in the same order: outcome first, then the analysis that produced it.
 
-Berlin is built from seven first-class entities. Everything else in the product composes these.
+**1. The map.** "Are we visible in AI search?" is not answerable — visible to whom, asking what? So every question a potential customer might ask in the client's category is sorted into buckets. **128 buckets**, produced by classifying each question three ways at once: awareness stage × question type × search intent. Above the buckets sits the **topic** — a business goal the client actually cares about, which they give us. Each topic gets its own 128.
 
-### 1. Brand Profile
+The bucket rule: everything inside a bucket should be improvable by roughly the same kind of work. If that holds, a weak bucket is a work order.
 
-When a user adds a domain, Berlin researches the brand from the open internet and from the brand's own website, and assembles a structured profile: name and description, industries, business model, company size, target customer segments, geographies, competitors, and a hierarchical topic tree describing what the brand is about. The user reviews and corrects it.
+The three axes, every value on them, and why a third axis is needed at all are defined in the framework and **nowhere else**.
 
-**This research is not automatic.** It runs when the operator triggers it — it is packaged as a saved skill the operator invokes. Berlin does not act on a brand without someone asking it to.
+**2. Symptoms.** For each bucket we ask the AI engines the real questions and record what comes back. Mentioned? Cited? Recommended? Recommended *first*? Who instead? Six measurements — cross-engine baseline, the answer-participation funnel, retrieval-gap diagnosis, recommendation stance, competitive displacement, and answer accuracy / brand-narrative risk. Symptoms are observed facts and require no guesswork.
 
-### 2. Brand Files
+**3. Causes.** Symptoms say where you are losing, not why. Twenty conditions in six families — Access, Clarity, Substance, Trust, Off-site, and a conditional family — covering the client's site, their data, and how the rest of the internet talks about them. Causes are hypotheses until tested.
 
-The brand profile is a structured input space, and structured spaces never fit everything. Anything without a field of its own — brand tone, keyword priorities, internal playbooks, style guides, product taxonomies — becomes a **brand file** attached to the brand.
+Causes arrive from two directions: that list worked top-down, and the **field watch** — crawling and diffing every competitor and the platforms that feed answers in a category, week over week. The second is much harder to reproduce and is where the advantage sits.
 
-The mechanic that makes this work: **file names and a short overview of each file's contents are exposed to the agent at runtime.** The agent sees a catalogue of what's available and pulls the specific file it needs, rather than having everything forced into its context.
+**4. Actions.** A register in which every recommendation states the prompt and engine affected, what the answer says today with evidence, the stage at which it failed, the proposed fix, the leading indicator, effort and owner, **how confident we are in the diagnosis**, and how we will retest.
 
-Berlin auto-generates a *Brand Context* file from the research pass; every other file is added by the customer or the FDM. The upload surface is a heavily used FDM tool, not an edge case. The file set shapes every downstream decision: which procedures get run, how reports read, what actions get generated.
+---
 
-### 3. Skills
+## The honest position
 
-**Skills are saved, reusable procedures for agents.** When an operator works out how to do something well — run a brand research pass, produce a competitor gap analysis, build an audit report — they save it as a skill, and it becomes reusable across every other brand in the system.
+This is a product constraint, not a marketing note, and it governs everything written or said about the product.
 
-This is what makes the operator model scale. The operator doesn't re-derive method per account and doesn't have to get the instructions right each time; they invoke a skill that already encodes the method. Skills accumulate as an asset: every account benefits from work done on any other account.
+**We can measure symptoms with confidence. We cannot yet state which causes drive which symptoms.** Nobody can — the engines do not publish their pipelines. Some causes have documented platform backing; most are widely believed and untested. The causes list is a research programme, not a checklist of known truths.
 
-### 4. Workflows
+The rule that follows: **state symptoms as findings, state causes as diagnosis with reasoning attached, and never present a correlational vendor study as a mechanism.** Spec §2.2 and the evidence-tier appendix exist to make this checkable.
 
-**Workflows are scheduled, deterministic analysis jobs.** They pull data, analyse it programmatically, and write an intermediate report an agent can later act on. No LLM, so no token cost, so they can run continuously without a human present.
+---
 
-Workflows are **created agentically** — the operator works with the agent to build a workflow and put it on a schedule, rather than writing it by hand. Once scheduled, the workflow runs itself and keeps depositing fresh analysis for the agents to pick up.
+## What the platform is built from
 
-### 5. Actions
+Seven first-class entities. Everything else composes these.
 
-**Actions are the things to act on.** Berlin's agent generates them; another agent or a human executes them. Each action has a short imperative title, a description tied to a specific finding, and a category: **off-site citation work, content create, content update, technical fix, validation, custom**.
+| Entity | What it is |
+|--------|-----------|
+| **Brand profile** | Structured profile researched from the open internet and the brand's own site — industries, business model, segments, geographies, competitors, and a hierarchical topic tree. Operator-triggered, reviewed and corrected by a human. |
+| **Brand files** | Everything the structured profile has no field for — tone, keyword priorities, playbooks, style guides, taxonomies. File names and short overviews are exposed to the agent at runtime, so it pulls what it needs instead of carrying everything in context. |
+| **Skills** | Saved, reusable procedures for agents. Method gets encoded once and reused across every brand, so an operator invokes rather than re-derives. |
+| **Workflows** | Scheduled, deterministic analysis jobs. No LLM, so no token cost, so they run continuously without a human present, depositing intermediate analysis for agents to pick up. Created agentically rather than written by hand. |
+| **Actions** | Discrete, well-scoped work items tied to a specific finding. Categories: off-site citation, content create, content update, technical fix, validation, custom. Some execute against connected systems; the rest route to review. |
+| **Reports** | The stakeholder-facing analysis. Stays current as new signal lands. |
+| **Integrations** | Two kinds. *Per-brand*, connected once by the customer: Search Console, GA, Bing Webmaster Tools, CMS, LinkedIn, Reddit. *Platform-level*, always available: Google Search, ChatGPT search, Perplexity search, exposed directly to the agent — this is how analysis stays grounded in what is live rather than a stale index. The full data-source list is in [`engineering.md`](engineering.md) → *unified data and action layer*. |
 
-Some actions execute automatically against connected systems — publishing to the CMS, fixing internal linking, updating metadata. The rest route to the Review Center for human approval.
+**Two kinds of execution.** Agents reason and cost tokens; workflows are deterministic and cost nothing. Workflows do the cheap, high-volume, scheduled analysis and leave output behind; agents read it and do the judgement-heavy part. That composition is how a brand gets continuous coverage without paying for continuous intelligence.
 
-### 6. Reports
+**Two senses of "audit."** The *brand research pass* builds the grounding layer. The *AEO audit* is the ongoing analysis that produces reports and actions. Different things.
 
-**Reports are the stakeholder-facing analysis** — the AEO audit, distinct from the initial brand research that produces the grounding. A report says what is happening in the AEO space for the brand and lets stakeholders track KPIs over time. Reports stay current as new signal arrives and surface in the Report Center.
+Platform surfaces: dashboard, report centre, review centre with configurable oversight, scheduling, and teams/organisations with shared credits and permissions.
 
-Note the two senses of *audit* inside Berlin: the **brand research pass** builds the grounding layer, while the **AEO audit** is the ongoing analysis that produces reports and actions. They are different things.
+---
 
-### 7. Integrations
+## How it is operated
 
-Integrations are what let Berlin see and act beyond its own database. They come in two kinds.
+The product is exposed as an **SDK and a CLI over one client, plus an MCP server** (see [`engineering.md`](engineering.md) for the API layer and its constraints). The preferred operator surface today is **Claude**, with the tools connected and pre-built skills ready to run.
 
-**Per-brand — connected by the customer.** Google Search Console, Google Analytics, Bing Webmaster Tools, CMS platforms, and social accounts including LinkedIn and Reddit. Single authentication, connected once per brand.
+**This is a cost decision.** The same volume of agent work through the API costs a great deal more than a flat monthly Claude subscription with the tooling connected, and pre-built skills mean an operator cannot get the invocation wrong.
 
-**Platform-level — always available, not brand-specific.** Google Search, ChatGPT search, and Perplexity search, exposed directly to the agent. This is how Berlin inspects live SERPs and AI answers: who currently ranks for a query, what the AI engines actually say about a brand or its competitors, and how that changes.
+**The tradeoff is honest: full automation is not possible this way.** Workflows run on their own, but agent runs need someone at the keyboard. The CLI + MCP shape is not a workaround bolted on for Claude — it is the same architecture the internal agentic loop uses, which is where this goes once token cost stops binding.
 
-Integrations are the reason Berlin's analysis is grounded in what is live right now rather than in a stale index.
+---
 
-***
+## Language rules
 
-## How Berlin Is Operated
+- **Say *prompts*, not *keywords*, in front of a client.** The underlying data is keyword data; the client's world is prompts, and "keyword" signals repackaged SEO.
+- **On the field watch, describe what the client learns, never how we obtain it.** A competitor with an engineering team could build crawl-and-diff quickly. The defensible part is knowing where to look and what a change means.
+- Where a document records uncertainty, that uncertainty is real and should not be smoothed over in client-facing material.
 
-### Claude is the operator interface
+---
 
-Berlin is exposed as a **CLI** and as an **MCP server**. The preferred operator surface today is **Claude**, with Berlin's tools connected into it and pre-built skills ready to run.
+## Open decisions
 
-**This is a deliberate cost decision.** Running the same volume of agent work through the API would cost a great deal of money. A $200/month Claude subscription with Berlin connected into it does the same work at a flat, predictable cost. Pre-built skills mean the operator can't get the invocation wrong.
-
-**The tradeoff is honest: complete automation is not possible this way.** Agent runs need someone sitting in front of Claude to trigger them. Workflows still run on their own — they cost no tokens — but the intelligent half of the loop waits for a human.
-
-### The same architecture runs internally
-
-The CLI + MCP shape isn't a workaround bolted on for Claude. It is the same architecture Berlin's own agentic loop uses when it runs inside our system. **That internal loop is where we want to be** once token cost stops being the binding constraint — same skills, same workflows, same files, same actions, with no human required at the keyboard.
-
-***
-
-## The Operating Loop — Audit → Report → Act
-
-### Audit
-
-Berlin watches a brand-shaped slice of the SEO/AEO surface, composed from a vetted library of strategy patterns maintained by Berlin's research team. The composition is what makes it personalised: a brand-new website mostly gets content work; an established brand with weak topical authority gets review-presence, citation, and authority tracking; a regulated industry gets a different shape again. Much of this watching runs as scheduled workflows.
-
-### Report
-
-Signal is synthesised into a living per-brand report — findings and prioritised focus areas, kept current as new signal lands. The report is the bridge between *what we're seeing* and *what to do about it*.
-
-### Act
-
-From the report, Berlin generates discrete, well-scoped actions, each grounded in a specific finding. Many auto-execute against connected systems; the rest route through the Review Center.
-
-The three are a cycle, not an onboarding sequence. The brand profile and brand files keep tuning behaviour as the brand evolves. The FDM owns the loop end-to-end for their assigned accounts and can shape any phase.
-
-***
-
-## What Berlin Knows About a Brand
-
-When a brand is connected, two collection processes run continuously behind it.
-
-* **Keyword collection.** Traditional keyword data — volume, difficulty, ranking — pulled from sources like Semrush and cached in Berlin's own database. Customers never need their own third-party subscriptions.
-
-* **Page crawling.** Every page of the brand's site *and its competitors' sites*, crawled on a recurring cadence and stored with full version history.
-
-Both feed a **semantic index** — keywords and pages indexed by meaning, so the agent can ask questions of them rather than run exact-match lookups. What that unlocks:
-
-* **Idea → volume.** Point at an interesting idea and get the cluster of keywords around it, with their volumes.
-* **Does this already exist?** Instantly check whether the brand already has a page covering a topic, before commissioning a new one.
-* **What changed.** Because crawls recur and are versioned, compare the brand or any competitor against their state at the last crawl.
-* **What competitors just published.** See new competitor pages as they appear, and decide whether we should have that page too.
-
-### Beyond the brand's own website
-
-AEO is not won on the brand's own domain alone. Berlin exposes **off-page and third-party surfaces** to the agent — Reddit, LinkedIn, YouTube and others — tracking off-site activity for the brand *and* its competitors, not just on-site work.
-
-***
-
-## The Platform
-
-**Dashboard.** The customer- and stakeholder-facing surface. Progress, reports, and actions surface here. It is not the operator's working surface — that's Claude.
-
-**Report Center.** Centralised collection of every output Berlin produces.
-
-**Review Center and oversight controls.** Before an action affects a live system, Berlin surfaces what it intends to do. Teams configure how much oversight they want — every action, or only certain categories.
-
-**Scheduling.** Workflows and data collection run on schedules without human initiation. Agent runs are operator-triggered under the current model.
-
-**Teams and organisations.** Add team members, manage access, share credits. Multiple projects — one per brand — within the same org. Work can be shared and standardised across teams, clients, and projects, with permissions and governance at the platform level.
+1. **Post-purchase questions** are out of scope. Bringing them in means a ninth question type and 144 buckets rather than 128. Needs deciding rather than drifting.
+2. **Geography.** "Near me" questions carry no location in the text. Fine for a single-location client, unsolved for a multi-location brand.
+3. **Forward-looking claims.** We cannot yet say "do these four things and you move from position five to two." We will be able to once enough engagements have run.
+4. **A single headline number.** Clients want one number to move. Averaging bucket positions destroys the information that makes the buckets useful. Unresolved.
+5. **The eight question types are the least settled part of the framework** and are not yet validated against real client data. Expect to add one.
+6. **Positioning and pricing have no canonical home, by decision.** Neither exists. Give them a file only when they do — do not let a version of either accumulate inside another file in the meantime. Pricing is tracked as an open decision in [`gtm.md`](gtm.md).
+
+---
+
+_Last updated: 2026-09-01_
