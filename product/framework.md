@@ -39,7 +39,9 @@ Queries from potential customers who are identifying a problem, exploring soluti
 ### Exclude
 
 * **Unaware audiences.** They produce little identifiable search demand related to the problem.
+
 * **Post-purchase activity.** Onboarding, product usage, customer support and troubleshooting.
+
 * **Irrelevant navigation.** Login, account and documentation queries intended for existing customers.
 
 **The filter runs first, every time.** Before anyone assigns a single label, the query has to survive the scope check. If it fails it does not get a partial label — it leaves the dataset.
@@ -72,12 +74,12 @@ Each query is classified three ways. The three answers together place it in exac
 
 How much the searcher already knows, and therefore how much the answer has to explain before it is any use. Adapted from Eugene Schwartz's five stages; we use four and drop "completely unaware", because people at that stage produce little identifiable search demand related to the problem.
 
-| Stage              | The searcher…                                                                     | Example question                                  |
-| :----------------- | :-------------------------------------------------------------------------------- | :------------------------------------------------ |
-| **Problem-aware**  | recognises a problem or symptom but may not know a category of solution exists    | "why do my sales reps keep losing track of leads" |
-| **Solution-aware** | knows a type of solution exists but has not settled on a provider or product      | "what does a CRM actually do"                     |
-| **Product-aware**  | knows one or more *specific, named* products or providers and is evaluating them  | "is Corvus any good for small teams"              |
-| **Most aware**     | knows Northstar's offering and wants final information or a path to act           | "Northstar free trial length"                     |
+| Stage              | The searcher…                                                                    | Example question                                  |
+| :----------------- | :------------------------------------------------------------------------------- | :------------------------------------------------ |
+| **Problem-aware**  | recognises a problem or symptom but may not know a category of solution exists   | "why do my sales reps keep losing track of leads" |
+| **Solution-aware** | knows a type of solution exists but has not settled on a provider or product     | "what does a CRM actually do"                     |
+| **Product-aware**  | knows one or more *specific, named* products or providers and is evaluating them | "is Corvus any good for small teams"              |
+| **Most aware**     | knows Northstar's offering and wants final information or a path to act          | "Northstar free trial length"                     |
 
 **The dividing line that gets missed most often** is between solution-aware and product-aware, and it is *named options* — not comparison. Comparing generic approaches is still solution-aware: someone asking "CRM vs a shared inbox", or "SEO agency vs in-house team", is choosing a category, not a supplier. Comparing named suppliers — "Acme vs Corvus" — is product-aware.
 
@@ -112,16 +114,16 @@ This axis gets the most space, because it is the least self-evident of the three
 
 It is read off the question itself, not off the person behind it. "How much does a CRM cost on average?" is a pricing question because *the answer has to deal in money*. That is true no matter who asks it or what they do next.
 
-| Question type                                 | What it covers                                            | Examples                                                                          |
-| :-------------------------------------------- | :-------------------------------------------------------- | :-------------------------------------------------------------------------------- |
-| **Problems and symptoms**                     | Diagnosing a pain, failure or unwanted outcome            | "why is our organic traffic declining" · "why does our payroll keep running late" |
-| **Category education and solution discovery** | Understanding what a type of solution is and how it works | "what is an applicant tracking system" · "what does a technical SEO agency do"    |
-| **Use cases, outcomes and workflows**         | Applying a solution to a specific goal or process         | "how to track a renewal pipeline in a CRM" · "SEO strategy for a marketplace launch" |
-| **Fit, constraints and 'best for'**           | Finding the right option for a particular situation       | "best CRM for a 10-person sales team" · "best SEO agency for B2B SaaS"            |
-| **Comparisons and alternatives**              | Weighing approaches, providers or substitutes             | "Acme vs Corvus" · "SEO agency vs in-house team"                                  |
+| Question type                                 | What it covers                                                    | Examples                                                                               |
+| :-------------------------------------------- | :---------------------------------------------------------------- | :------------------------------------------------------------------------------------- |
+| **Problems and symptoms**                     | Diagnosing a pain, failure or unwanted outcome                    | "why is our organic traffic declining" · "why does our payroll keep running late"      |
+| **Category education and solution discovery** | Understanding what a type of solution is and how it works         | "what is an applicant tracking system" · "what does a technical SEO agency do"         |
+| **Use cases, outcomes and workflows**         | Applying a solution to a specific goal or process                 | "how to track a renewal pipeline in a CRM" · "SEO strategy for a marketplace launch"   |
+| **Fit, constraints and 'best for'**           | Finding the right option for a particular situation               | "best CRM for a 10-person sales team" · "best SEO agency for B2B SaaS"                 |
+| **Comparisons and alternatives**              | Weighing approaches, providers or substitutes                     | "Acme vs Corvus" · "SEO agency vs in-house team"                                       |
 | **Objections, risks and feasibility**         | Reducing uncertainty about risk, effort, timing or implementation | "can a CRM migration lose historic deal data" · "can a site migration damage rankings" |
-| **Pricing and procurement**                   | Cost, contracts, commercial terms, buying requirements    | "how much does a CRM cost per seat" · "how much does an enterprise SEO audit cost" |
-| **Brand validation and due diligence**        | Reviews, reputation, proof, case studies, is this company real | "Northstar customer reviews" · "Acme SEO agency reviews"                          |
+| **Pricing and procurement**                   | Cost, contracts, commercial terms, buying requirements            | "how much does a CRM cost per seat" · "how much does an enterprise SEO audit cost"     |
+| **Brand validation and due diligence**        | Reviews, reputation, proof, case studies, is this company real    | "Northstar customer reviews" · "Acme SEO agency reviews"                               |
 
 ### 5.1 Why two axes are not enough
 
@@ -162,10 +164,10 @@ The instinct is that these are the same measurement wearing three hats — that 
 
 All **solution-aware**, all **informational**. Same knowledge assumed, same kind of result wanted:
 
-| Query                                         | Question type                             | What the answer has to cover                                |
-| :-------------------------------------------- | :---------------------------------------- | :----------------------------------------------------------- |
-| "what does a technical SEO audit involve?"    | Category education and solution discovery | What the audit involves, step by step, and what it produces |
-| "how long does SEO take to show results?"     | Objections, risks and feasibility         | Honest timelines with evidence — a realistic curve          |
+| Query                                          | Question type                             | What the answer has to cover                                |
+| :--------------------------------------------- | :---------------------------------------- | :---------------------------------------------------------- |
+| "what does a technical SEO audit involve?"     | Category education and solution discovery | What the audit involves, step by step, and what it produces |
+| "how long does SEO take to show results?"      | Objections, risks and feasibility         | Honest timelines with evidence — a realistic curve          |
 | "how much does an SEO agency cost on average?" | Pricing and procurement                   | Real numbers: ranges, what drives them, what is excluded    |
 
 ### Depth and subject fixed — the form varies
@@ -173,7 +175,7 @@ All **solution-aware**, all **informational**. Same knowledge assumed, same kind
 All **solution-aware**, all **pricing and procurement**. Same knowledge assumed, same subject:
 
 | Intent        | Query                                          | The same query, another category       | What the answer looks like           |
-| :------------ | :--------------------------------------------- | :-------------------------------------- | :------------------------------------ |
+| :------------ | :--------------------------------------------- | :------------------------------------- | :----------------------------------- |
 | Informational | "how much does an SEO agency cost on average?" | "average CRM cost per seat"            | A page of ranges and what moves them |
 | Commercial    | "SEO agency pricing for a 50-page B2B site"    | "CRM pricing for a 50-seat sales team" | A page that sizes their situation    |
 | Transactional | "request an SEO audit quote"                   | "request a CRM quote"                  | A form and a response time           |
@@ -183,7 +185,7 @@ All **solution-aware**, all **pricing and procurement**. Same knowledge assumed,
 All **informational**, all **objections, risks and feasibility**. Same kind of result, same subject:
 
 | Awareness stage | Query                                        | The same query, another category            | What the answer has to assume                            |
-| :-------------- | :-------------------------------------------- | :-------------------------------------------- | :--------------------------------------------------------- |
+| :-------------- | :------------------------------------------- | :------------------------------------------ | :------------------------------------------------------- |
 | Problem-aware   | "can a traffic drop recover on its own?"     | "can a lead-tracking problem fix itself"    | No category vocabulary; explain what recovery depends on |
 | Solution-aware  | "how long does SEO take to show results?"    | "how long does a CRM rollout usually take"  | No provider in mind; explain the shape of the work       |
 | Product-aware   | "does an Acme migration need a code freeze?" | "does an Acme migration need a data freeze" | A shortlist exists; answer the detail for that provider  |
@@ -197,7 +199,9 @@ Past solution-aware, a named provider is usually what marks the shift, so awaren
 When an assignment feels ambiguous, alter the query and see which label shifts:
 
 * Alter what the searcher is assumed to know already → the **awareness stage** shifted.
+
 * Alter what the answer has to be about → the **question type** shifted.
+
 * Alter the kind of result that would satisfy them → the **intent** shifted.
 
 If nothing shifts, the label was never really in doubt.
@@ -226,8 +230,11 @@ Switching domain deliberately — the examples so far have been SEO and CRM; thi
 > **Question:** "why do our job adverts get so few qualified applicants"
 
 * **Awareness:** Problem-aware — they have a symptom, no solution category in mind.
+
 * **Question type:** Problems and symptoms — the answer has to diagnose something.
+
 * **Intent:** Informational — they want to understand, not to buy today.
+
 * **Position:** Problem-aware / Problems and symptoms / Informational.
 
 Now the second question from the same person, two weeks later:
@@ -235,8 +242,11 @@ Now the second question from the same person, two weeks later:
 > **Question:** "Acme vs Corvus for a 200-person company"
 
 * **Awareness:** Product-aware — two named providers, so a shortlist exists. Note that the earlier question and this one are both comparisons in spirit, but only this one names options, which is what moves the stage.
+
 * **Question type:** Comparisons and alternatives — with *fit, constraints and 'best for'* as a legitimate secondary, since "for a 200-person company" is a constraint the answer must handle. This is exactly the case the rules allow a second type for.
+
 * **Intent:** Commercial — they are evaluating, not yet acting.
+
 * **Position:** a different one entirely.
 
 Same buyer, same topic, two positions. **This is why we classify questions rather than people.** A single buyer moves through many positions, and asking "which bucket is this customer in" is the wrong question.
