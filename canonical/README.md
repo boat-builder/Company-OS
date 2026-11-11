@@ -14,7 +14,7 @@ Six files, one per domain. Each is self-contained and cross-references the other
 
 | File | What's in it |
 |------|--------------|
-| [`company.md`](company.md) | The two names and what each means, the Swayful structure, the formation checklist, standing vendor relationships, and the corporate open decisions |
+| [`company.md`](company.md) | The two names and what each means, the Swayful structure, the company's address and phone, the formation checklist, standing vendor relationships, and the corporate open decisions |
 | [`team.md`](team.md) | The three cofounders, who owns what, departures, and the equity/IP open decisions |
 | [`product.md`](product.md) | **High-level only.** What AEOxoxo is, what we sell, the four-step product, the honest position on causes, the seven platform entities, how it's operated, language rules. Links out to the full specs |
 | [`engineering.md`](engineering.md) | The nine-system substrate, the `aeo` API layer and its data model, deliberate constraints, and the recorded gaps |
