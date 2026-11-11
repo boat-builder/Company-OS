@@ -1,6 +1,6 @@
 # Company
 
-> Canonical reference for the corporate shell — names, the entity being formed, what has to be in place at formation, and the standing commercial relationships that will need to sit under it.
+> Canonical reference for the corporate shell — names, the entity being formed, its address and phone, what has to be in place at formation, and the standing commercial relationships that will need to sit under it.
 
 ---
 
@@ -23,6 +23,21 @@ Two names, and they are not interchangeable. Getting them wrong in a contract or
 - **Status:** Registration in progress, expected within weeks. No filings completed, no jurisdiction confirmed for the US subsidiary, no share allocation agreed.
 
 Until it exists, nothing about the corporate structure is settled, and no equity can be issued.
+
+---
+
+## Address and phone
+
+The company's address and phone number. Use these exactly as written on registration filings, contracts, invoices and vendor accounts.
+
+**Address**
+
+> Flat-324, Mahaveer Rhyolite Apartment,
+> Nyanappanahalli Main Road, South Bannerghatta Road,
+> Bengaluru South, Bengaluru-560076,
+> Karnataka, India.
+
+**Phone:** 8971143488 (international: +91 89711 43488)
 
 ---
 
@@ -61,7 +76,7 @@ Open-source dependencies are MIT/Apache licensed. No GPL-licensed dependencies a
 2. **Cofounder equity.** Omar Marks and Nitin Venugopal are cofounders (see [`team.md`](team.md)); no split is agreed or documented. Cannot be issued until the entity exists, which makes formation the forcing function.
 3. **Option pool.** Whether one is established at formation and at what size.
 4. **How Swayful and AEOxoxo relate publicly.** One brand with a parent behind it, or two visible names. Affects the site, contracts, invoices and email addresses. One input to weigh: inbound leads and people searching the category reward a descriptive product name, while selling through relationships runs on the company name.
-5. **Contact addresses.** Nothing on `aeoxoxo.ai` is recorded here yet.
+5. **Contact details on `aeoxoxo.ai`.** The address and phone above are recorded. Nothing has been decided about whether they appear on the site, which name they appear under (item 4), or which email addresses are used.
 
 ---
 
