@@ -3,6 +3,9 @@
 .claude/
 .DS_Store
 
+# Doklin workspace link (cloud sync config)
+.doklin/
+
 # AI coding assistant config dirs (skill distribution)
 .adal/
 .agents/

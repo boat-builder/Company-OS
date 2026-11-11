@@ -60,9 +60,9 @@ Open-source dependencies are MIT/Apache licensed. No GPL-licensed dependencies a
 1. **The India / US split.** Item 3 above. Unresolved and blocking most of the rest of the checklist.
 2. **Cofounder equity.** Omar Marks and Nitin Venugopal are cofounders (see [`team.md`](team.md)); no split is agreed or documented. Cannot be issued until the entity exists, which makes formation the forcing function.
 3. **Option pool.** Whether one is established at formation and at what size.
-4. **How Swayful and AEOxoxo relate publicly.** One brand with a parent behind it, or two visible names. Affects the site, contracts, invoices and email addresses.
+4. **How Swayful and AEOxoxo relate publicly.** One brand with a parent behind it, or two visible names. Affects the site, contracts, invoices and email addresses. One input to weigh: inbound leads and people searching the category reward a descriptive product name, while selling through relationships runs on the company name.
 5. **Contact addresses.** Nothing on `aeoxoxo.ai` is recorded here yet.
 
 ---
 
-_Last updated: 2026-09-01_
+_Last updated: 2026-11-11_

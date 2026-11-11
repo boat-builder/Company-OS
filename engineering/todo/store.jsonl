@@ -1,0 +1,6 @@
+{"doklin":"store","v":1,"name":"todo"}
+{"t":"field","id":"status","name":"Status","type":"select"}
+{"t":"option","field":"status","name":"Backlog","rank":"a0","color":"grey"}
+{"t":"option","field":"status","name":"Done","rank":"a2","color":"green"}
+{"t":"option","field":"status","name":"In progress","rank":"a1","color":"blue"}
+{"t":"view","id":"board","kind":"kanban","name":"Board","groupBy":"status"}

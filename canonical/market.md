@@ -130,6 +130,12 @@ Not head-on with an analyst-delivered report, but relevant as demand evidence, a
 | **Daydream** (withdaydream.com) | $21M total ($15M Series A April 2026, WndrCo lead; First Round Capital, Basis Set Ventures continuing) | Explicitly an "AI-native agency for SEO": proprietary agents plus a dedicated human Growth Lead per customer, done-for-you at agency price points. |
 | **Reach / Reach AI Labs** (usereach.ai) | ~$3.6M seed | "Not a tool, not an agency": platform + custom agents + a dedicated senior human per client. Retainers €5K/mo (<€2M revenue) → €7.5K/mo (€2–20M) → €12K/mo (>€20M), 3-month minimum. Clients incl. ColdIQ, Indie Campers, Carro, Fidelidade. |
 | **Gushwork** | see above | Hybrid service-to-platform. |
+| **Graphite** (graphite.io, Graphite Growth) | No funding on record; services-funded. 120+ people across 15+ countries, 100+ clients. Retainer with a 12-month minimum; pricing unpublished, third-party estimates $10–40K/month | Research-driven growth agency run by Ethan Smith. AEO service covers prompt research, citation-ready content, reputation, technical AEO, and offsite and Reddit work. Analyses data from the client's own tracking tool rather than selling measurement. Clients incl. Webflow, Notion, n8n, HoneyBook, Credit Karma, MasterClass; "Series B through public companies". |
+| **Pedowitz Group** (pedowitzgroup.com) | Six-month programmes; published tiers Foundation $100–120K/yr, Growth $145–180K/yr, Enterprise $200K+/yr | B2B marketing agency. Sells an "AXO Diagnostic" (weeks 1–2, 40+ queries across Claude, ChatGPT, Perplexity and Gemini) as the front end of an AEO content-production engagement. |
+
+> **Graphite publishes method, not just service.** Two of its findings bear on our own spec. **Grounding rate:** many prompt-tracking tools force web search, so every response comes back with citations. Unforced, only 58% of ChatGPT responses to entity-comparison prompts showed search evidence, and visibility differed by roughly 20 points on prompts that never search naturally (100 prompts × 100 responses × 2 settings) [Observational — Graphite, Aug 2026]. Their recommendation is to measure the share of runs in which a prompt triggers search, and not to rely on citation-based strategies where that share is low. If it holds, the third-party source map (spec C17) has little to act on for low-grounding prompts; this has not been assessed against the spec. **Sampling:** modelling visibility as Binomial with Wilson intervals, 10 responses per prompt gave a 5.6% mean absolute error, with little gained beyond that [Observational — Graphite, Apr 2026]. The spec lists its ~10-run target as a judgement call; this is a published basis for it. Their AEO proof is thinner than their method: of four published case studies only Webflow is AEO, and the other three are 2018–2023 SEO engagements republished in October 2025 [Documented].
+>
+> **Pedowitz's AXO Diagnostic, as published.** Eight named modules, of which four measure: problem vocabulary (the client's wording vs the buyer's), symptom-based query presence, persona variance (the same query across three personas) and competitive problem ownership. The other four are remediation, packaging, the LLM panel and trend history. They roll into a 0–100 score, `AXO = AI Presence × 0.38 + Problem Coverage × 0.32 + (100 − Persona Variance) × 0.15 + (100 − Content Gap) × 0.15`, tiered Strong Position (70–100), Developing (45–69) and Critical Gap (0–44) [Documented]. Presence and coverage carry 70% of the score, competitive ownership carries none, and the persona angle is a 15% penalty term. No sampling, repeat-run or measurement definitions are published, and three different versions of the framework appear across their own pages [Our observation].
 
 > **Why Daydream reads as a different category.** Daydream sells continuous done-for-you execution with an embedded human Growth Lead at agency price points; Reach sells the same shape on a monthly retainer. AEOxoxo sells a bounded, analyst-delivered measurement and diagnosis engagement, with no embedded humans and no claim to replace an agency. On that reading both are demand signals and plausible *customers* for a diagnosis they do not want to build. The competitive frame as a whole is unresolved (see **Open decisions**), so treat this as the current reading rather than a settled classification.
 
@@ -137,6 +143,16 @@ Not head-on with an analyst-delivered report, but relevant as demand evidence, a
 
 - **DIY stacks** (n8n, Make, Zapier, DataForSEO, raw LLM prompting). Require engineering effort, provide no structured measurement, and cannot produce repeated, controlled runs. They are what a technical marketer does *instead* of buying — a real substitute at the low end, not a competing vendor.
 - **In-house teams.** Not a distinct alternative to size; they are the buyer.
+
+### Figures that don't survive checking
+
+Widely repeated and wrong, as of a check on 14 September 2026. Don't carry these into anything external.
+
+- **Daydream.** The "$70M ARR with fewer than 20 employees" figure belongs to OpenArt, a Daydream customer; Daydream's own ARR is not disclosed. A different company also called Daydream (Julie Bornstein's AI e-commerce search, $50M seed, June 2024) is unrelated, so don't merge the funding.
+- **Graphite.** `graphite.io` is the growth agency above. `graphite.dev` is a code-review tool (~$52M raised, ~$5.3M ARR). Most "Graphite" revenue and funding figures in the usual databases belong to the code-review company.
+- **AirOps.** ~$60–62.5M total, with no round after the November 2025 Series B. Sacra's "May 2026 round of $55.5M" and "$118M total" look like misreadings of a cumulative figure. Claims that AirOps lacks SOC 2 are false; it publishes SOC 2 Type II.
+- **Gushwork.** Not a Y Combinator company. The "1000+ companies" headline doesn't reconcile with 300+ paying customers and ~$1.5M ARR as of February 2026; treat the customer count as softer than the revenue.
+- **Agency pricing estimates.** Daydream's ~$15K/month and Graphite's $10–40K/month come from competitor-published comparison blogs with their own SEO incentives. Directionally plausible, not vendor-confirmed.
 
 ---
 
@@ -232,4 +248,4 @@ These are decisions, not research tasks. Each blocks something downstream.
 
 ---
 
-_Last updated: 2026-09-01_
+_Last updated: 2026-11-11 — added Graphite, Pedowitz Group and the figure corrections from the 14 September 2026 competitor research._
