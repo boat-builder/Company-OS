@@ -1,0 +1,1778 @@
+<title>Keyword Topic Classification</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Expanded:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* ---------- tokens: light is the base, every colour declared here ---------- */
+:root{
+  --ground:#edf0f3; --surface:#fafbfc; --surface-2:#e4e9ee; --sunken:#e7ebef;
+  --ink:#131a22; --ink-2:#59646f; --ink-3:#8794a0;
+  --rule:#d3dae1; --rule-2:#c0cad3;
+  --c-berlin:#2e6e96; --c-proxy:#207a6c; --c-worker:#9c4f70;
+  --c-human:#4a5561;  --c-agent:#a85f08;
+  --c-berlin-bg:#e2edf4; --c-proxy-bg:#dcefeb; --c-worker-bg:#f6e5ec;
+  --c-human-bg:#e5e9ed; --c-agent-bg:#f8eada;
+  --yes:#26705a; --no:#8794a0; --bar:#a85f08;
+  --plot:#f6f8f9; --grid:#dde3e8;
+  --shadow:0 1px 2px rgba(19,26,34,.06),0 6px 18px -10px rgba(19,26,34,.22);
+  --btn-fg:#fff;
+  --display:"Archivo","Archivo Expanded",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#11161b; --surface:#181e25; --surface-2:#212a33; --sunken:#0d1216;
+    --ink:#dee5ec; --ink-2:#95a2ae; --ink-3:#6c7a86;
+    --rule:#28323b; --rule-2:#374350;
+    --c-berlin:#6cb2da; --c-proxy:#4cbfa8; --c-worker:#dd8bab;
+    --c-human:#9aa7b3;  --c-agent:#e8a244;
+    --c-berlin-bg:#16303f; --c-proxy-bg:#123430; --c-worker-bg:#38202b;
+    --c-human-bg:#222b33; --c-agent-bg:#3a2a12;
+    --yes:#4cbf98; --no:#7d8b97; --bar:#e8a244;
+    --plot:#151b21; --grid:#232d36;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.7);
+    --btn-fg:#1a1206;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#11161b; --surface:#181e25; --surface-2:#212a33; --sunken:#0d1216;
+  --ink:#dee5ec; --ink-2:#95a2ae; --ink-3:#6c7a86;
+  --rule:#28323b; --rule-2:#374350;
+  --c-berlin:#6cb2da; --c-proxy:#4cbfa8; --c-worker:#dd8bab;
+  --c-human:#9aa7b3;  --c-agent:#e8a244;
+  --c-berlin-bg:#16303f; --c-proxy-bg:#123430; --c-worker-bg:#38202b;
+  --c-human-bg:#222b33; --c-agent-bg:#3a2a12;
+  --yes:#4cbf98; --no:#7d8b97; --bar:#e8a244;
+  --plot:#151b21; --grid:#232d36;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.7);
+  --btn-fg:#1a1206;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:var(--body); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased; margin:0;
+}
+h1,h2,h3,h4{font-family:var(--display); font-weight:600; text-wrap:balance; margin:0; line-height:1.15}
+code,kbd,.mono{font-family:var(--mono); font-size:.85em; font-variant-ligatures:none}
+a{color:var(--c-berlin)}
+:focus-visible{outline:2px solid var(--c-agent); outline-offset:3px; border-radius:3px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* ---------- shell ---------- */
+.wrap{max-width:1360px; margin:0 auto; padding:0 24px 96px}
+.doc{display:grid; grid-template-columns:184px minmax(0,1fr); gap:0 48px; align-items:start}
+.rail{position:sticky; top:74px; padding-top:8px; display:flex; flex-direction:column; gap:22px}
+.col{min-width:0; max-width:73ch}
+.bleed{max-width:none; width:min(1080px,calc(100vw - 48px)); margin-left:0}
+@media (max-width:1020px){
+  .doc{grid-template-columns:1fr}
+  .rail{position:static; flex-direction:row; flex-wrap:wrap; gap:14px; border-bottom:1px solid var(--rule); padding-bottom:18px; margin-bottom:24px}
+  .col{max-width:none}
+}
+
+/* ---------- masthead ---------- */
+.top{
+  position:sticky; top:0; z-index:60; background:color-mix(in srgb,var(--ground) 92%,transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--rule);
+}
+.top-in{max-width:1360px; margin:0 auto; padding:9px 24px; display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.top-name{font-family:var(--display); font-weight:700; font-size:12.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-2); white-space:nowrap}
+.lens{display:flex; gap:6px; flex-wrap:wrap; margin-left:auto; align-items:center}
+.lens-lbl{font-family:var(--display); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3)}
+.chip{
+  font-family:var(--display); font-size:11.5px; font-weight:600; letter-spacing:.045em;
+  border:1px solid var(--rule-2); background:var(--surface); color:var(--ink-2);
+  padding:4px 10px; border-radius:2px; cursor:pointer; display:inline-flex; align-items:center; gap:6px;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.chip .dot{width:7px; height:7px; border-radius:50%; background:currentColor; flex:none}
+.chip[data-c="berlin"]{color:var(--c-berlin)} .chip[data-c="proxy"]{color:var(--c-proxy)}
+.chip[data-c="worker"]{color:var(--c-worker)} .chip[data-c="human"]{color:var(--c-human)}
+.chip[data-c="agent"]{color:var(--c-agent)}
+.chip:hover{border-color:currentColor}
+.chip[aria-pressed="true"]{background:var(--surface-2); border-color:currentColor; box-shadow:inset 0 0 0 1px currentColor}
+
+/* component lens: dim what the selected component does not own */
+body[data-lens] [data-c]{opacity:.26; filter:saturate(.25); transition:opacity .2s,filter .2s}
+body[data-lens="berlin"] [data-c~="berlin"],
+body[data-lens="proxy"]  [data-c~="proxy"],
+body[data-lens="worker"] [data-c~="worker"],
+body[data-lens="human"]  [data-c~="human"],
+body[data-lens="agent"]  [data-c~="agent"]{opacity:1; filter:none}
+
+/* ---------- hero ---------- */
+.hero{padding:52px 0 40px; border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--display); font-size:11.5px; font-weight:600; letter-spacing:.19em; text-transform:uppercase; color:var(--c-agent); margin:0 0 18px}
+h1{font-size:clamp(38px,6.4vw,68px); font-weight:700; letter-spacing:-.022em; max-width:15ch}
+.deck{font-size:19.5px; line-height:1.56; color:var(--ink-2); max-width:62ch; margin:22px 0 0}
+.deck strong{color:var(--ink); font-weight:600}
+.facts{display:flex; flex-wrap:wrap; gap:0; margin-top:34px; border-top:1px solid var(--rule)}
+.fact{padding:14px 26px 12px 0; margin-right:26px; border-right:1px solid var(--rule); min-width:112px}
+.fact:last-child{border-right:0}
+.fact b{display:block; font-family:var(--mono); font-size:23px; font-weight:500; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.fact span{font-family:var(--display); font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3)}
+
+/* ---------- rail ---------- */
+.rail h4{font-family:var(--display); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:9px; font-weight:600}
+.toc{display:flex; flex-direction:column; gap:2px}
+.toc a{font-family:var(--display); font-size:13px; color:var(--ink-2); text-decoration:none; padding:2px 0; display:flex; gap:9px}
+.toc a:hover{color:var(--c-agent)}
+.toc a i{font-style:normal; font-family:var(--mono); font-size:11px; color:var(--ink-3); width:16px; flex:none}
+
+/* ---------- sections ---------- */
+section{padding-top:56px; scroll-margin-top:82px}
+.kicker{font-family:var(--display); font-size:11px; font-weight:600; letter-spacing:.17em; text-transform:uppercase; color:var(--ink-3); margin:0 0 12px; display:flex; align-items:center; gap:10px}
+.kicker::after{content:""; height:1px; background:var(--rule); flex:1}
+h2{font-size:31px; letter-spacing:-.016em; margin-bottom:14px}
+h3{font-size:20px; letter-spacing:-.008em; margin:34px 0 10px}
+h4.mini{font-family:var(--display); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin:26px 0 8px}
+p{margin:0 0 17px}
+.lede{font-size:19px; color:var(--ink-2); margin-bottom:22px}
+ul,ol{margin:0 0 17px; padding-left:22px}
+li{margin-bottom:8px}
+hr{border:0; border-top:1px solid var(--rule); margin:44px 0}
+
+/* ---------- glossary terms ---------- */
+.term{
+  font:inherit; color:inherit; background:none; border:0; padding:0; cursor:help;
+  border-bottom:1.5px dotted var(--c-agent); text-underline-offset:3px;
+}
+.term:hover{background:var(--c-agent-bg)}
+#tip{
+  position:absolute; z-index:200; max-width:340px; background:var(--surface); color:var(--ink);
+  border:1px solid var(--rule-2); border-top:2px solid var(--c-agent); box-shadow:var(--shadow);
+  padding:13px 15px; font-size:14.5px; line-height:1.5; border-radius:2px; pointer-events:none;
+}
+#tip[hidden]{display:none}
+#tip b{font-family:var(--display); font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--c-agent); display:block; margin-bottom:5px}
+#tip .src{font-family:var(--mono); font-size:11.5px; color:var(--ink-3); display:block; margin-top:8px}
+
+/* ---------- owner badge ---------- */
+.owner{
+  display:inline-flex; align-items:center; gap:6px; font-family:var(--display);
+  font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+  padding:3px 8px; border-radius:2px; white-space:nowrap; vertical-align:middle;
+}
+.owner .dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.o-berlin{color:var(--c-berlin); background:var(--c-berlin-bg)}
+.o-proxy{color:var(--c-proxy); background:var(--c-proxy-bg)}
+.o-worker{color:var(--c-worker); background:var(--c-worker-bg)}
+.o-human{color:var(--c-human); background:var(--c-human-bg)}
+.o-agent{color:var(--c-agent); background:var(--c-agent-bg)}
+
+/* ---------- cast grid ---------- */
+.cast{display:grid; grid-template-columns:repeat(auto-fit,minmax(228px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); margin:26px 0}
+.cast article{background:var(--surface); padding:19px 18px 20px; display:flex; flex-direction:column; gap:9px}
+.cast h3{margin:0; font-size:16.5px}
+.cast .lang{font-family:var(--mono); font-size:11.5px; color:var(--ink-3)}
+.cast p{font-size:14.5px; line-height:1.5; margin:0; color:var(--ink-2)}
+.cast .does{list-style:none; padding:0; margin:4px 0 0; font-family:var(--display); font-size:12.5px; display:flex; flex-direction:column; gap:5px}
+.cast .does li{margin:0; padding-left:15px; position:relative; color:var(--ink-2)}
+.cast .does li::before{content:"—"; position:absolute; left:0; color:var(--ink-3)}
+.cast .top-stripe{height:3px; margin:-19px -18px 4px}
+
+/* ---------- figures ---------- */
+figure{margin:30px 0; background:var(--surface); border:1px solid var(--rule); padding:22px 22px 16px; border-radius:2px}
+figure .scroller{overflow-x:auto}
+figure svg{display:block; max-width:100%; height:auto; min-width:1000px}
+figcaption{font-size:14.5px; color:var(--ink-2); margin-top:14px; padding-top:12px; border-top:1px solid var(--rule); line-height:1.5}
+figcaption b{font-family:var(--display); font-weight:600; color:var(--ink)}
+.fig-svg text{font-family:var(--display); fill:var(--ink)}
+.fig-svg .lane-lbl{font-size:11.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase}
+.fig-svg .col-lbl{font-size:11.5px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; fill:var(--ink-3)}
+.fig-svg .box-t{font-size:12.5px; font-weight:600}
+.fig-svg .box-s{font-size:11px; fill:var(--ink-2); font-family:var(--mono)}
+.fig-svg .edge-lbl{font-size:10.5px; fill:var(--ink-3); font-family:var(--mono)}
+.fig-svg .note{font-size:11.5px; fill:var(--ink-2); font-style:italic; font-family:var(--body)}
+
+/* ---------- data table ---------- */
+.tbl-wrap{overflow-x:auto; margin:24px 0}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:600px}
+th,td{text-align:left; padding:10px 14px 10px 0; border-bottom:1px solid var(--rule); vertical-align:top}
+th{font-family:var(--display); font-size:11px; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-3); font-weight:600; border-bottom:1px solid var(--rule-2)}
+td code{color:var(--ink)}
+tbody tr:hover{background:var(--surface)}
+tbody tr.hl td{background:var(--c-agent-bg)}
+table.stages td.num{font-family:var(--mono); color:var(--ink-3); width:28px}
+table.stages td{padding-top:8px;padding-bottom:8px}
+tbody tr.hl td:first-child{box-shadow:inset 3px 0 0 var(--c-agent)}
+
+/* ---------- callouts ---------- */
+.rule-box{background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--c-agent); padding:18px 20px; margin:26px 0; border-radius:2px}
+.rule-box .rl{font-family:var(--display); font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--c-agent); font-weight:600; margin-bottom:7px}
+.rule-box p{margin:0; font-size:16px}
+.rule-box p+p{margin-top:11px; font-size:14.5px; color:var(--ink-2)}
+
+details.more{border:1px solid var(--rule); background:var(--surface); border-radius:2px; margin:20px 0; overflow:hidden}
+details.more>summary{
+  cursor:pointer; padding:12px 16px; font-family:var(--display); font-size:13px; font-weight:600;
+  display:flex; align-items:center; gap:9px; list-style:none; color:var(--ink-2);
+}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"+"; font-family:var(--mono); color:var(--c-agent); font-size:15px; width:12px}
+details.more[open]>summary::before{content:"–"}
+details.more[open]>summary{border-bottom:1px solid var(--rule); color:var(--ink)}
+details.more>summary:hover{background:var(--surface-2)}
+.more-body{padding:16px 18px 6px; font-size:15px}
+.more-body p{margin-bottom:13px}
+.more-body pre{margin:0 0 13px}
+
+pre{
+  background:var(--sunken); border:1px solid var(--rule); padding:13px 15px; overflow-x:auto;
+  font-family:var(--mono); font-size:12.5px; line-height:1.6; border-radius:2px; color:var(--ink);
+}
+pre .c{color:var(--ink-3)} pre .k{color:var(--c-agent)} pre .s{color:var(--c-proxy)}
+p code,li code,td code{background:var(--sunken); padding:1px 5px; border-radius:2px; border:1px solid var(--rule)}
+
+/* ---------- status pills ---------- */
+.pill{font-family:var(--display); font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:2px 7px; border-radius:2px; vertical-align:middle; white-space:nowrap}
+.p-ship{background:var(--c-proxy-bg); color:var(--c-proxy)}
+.p-plan{background:var(--surface-2); color:var(--ink-3); border:1px dashed var(--rule-2)}
+</style>
+
+<div class="top">
+  <div class="top-in">
+    <span class="top-name">Keyword Topic Classification</span>
+    <div class="lens">
+      <span class="lens-lbl">Lens</span>
+      <button class="chip" data-c="human"  aria-pressed="false"><span class="dot"></span>bifrost UI</button>
+      <button class="chip" data-c="berlin" aria-pressed="false"><span class="dot"></span>Berlin</button>
+      <button class="chip" data-c="proxy"  aria-pressed="false"><span class="dot"></span>Proxy</button>
+      <button class="chip" data-c="worker" aria-pressed="false"><span class="dot"></span>Worker</button>
+      <button class="chip" data-c="agent"  aria-pressed="false"><span class="dot"></span>Agent</button>
+    </div>
+  </div>
+</div>
+
+<div id="tip" hidden></div>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">Engineering walkthrough &nbsp;/&nbsp; agentberlin</p>
+  <h1>Filing a million keywords under fifteen topics</h1>
+  <p class="deck">Customers give us their topics. Our job is to put every keyword under the right one — cheaply, reliably, and honestly about the ones that fit nowhere. This page follows the whole path: <strong>where each vector is created, which machine multiplies them, who writes which file, and how a meaningless similarity number becomes a decision you can defend.</strong></p>
+  <div class="facts">
+    <div class="fact"><b>10–20</b><span>topics per brand</span></div>
+    <div class="fact"><b>10<sup>5</sup>–10<sup>6</sup></b><span>keywords per brand</span></div>
+    <div class="fact"><b>~100</b><span>LLM labels per topic</span></div>
+    <div class="fact"><b>0.96</b><span>default precision target</span></div>
+    <div class="fact"><b>2</b><span>implementations of the sweep</span></div>
+  </div>
+</header>
+
+<div class="doc">
+  <nav class="rail" aria-label="Contents">
+    <div>
+      <h4>Contents</h4>
+      <div class="toc">
+        <a href="#cast"><i>·</i>The cast</a>
+        <a href="#flow"><i>·</i>The whole flow</a>
+        <a href="#s1"><i>01</i>Topics</a>
+        <a href="#s2"><i>02</i>Freshness</a>
+        <a href="#s3"><i>03</i>Prototypes</a>
+        <a href="#s4"><i>04</i>Build</a>
+        <a href="#s5"><i>05</i>Scoring</a>
+        <a href="#s6"><i>06</i>Sample pool</a>
+        <a href="#s7"><i>07</i>Verdicts</a>
+        <a href="#s8"><i>08</i>The sweep</a>
+        <a href="#s9"><i>09</i>Shrinkage</a>
+        <a href="#s10"><i>10</i>Assignment</a>
+        <a href="#twice"><i>·</i>Written twice</a>
+        <a href="#storage"><i>·</i>Where it lives</a>
+        <a href="#rules"><i>·</i>Five rules</a>
+        <a href="#glossary"><i>·</i>Glossary</a>
+      </div>
+    </div>
+    <div>
+      <h4>Reading aid</h4>
+      <p style="font-size:13px;line-height:1.5;color:var(--ink-3);margin:0;font-family:var(--display)">Dotted words are internal terms — hover for a definition. The <em>Lens</em> chips above dim everything a component does not own.</p>
+    </div>
+  </nav>
+
+  <main class="col">
+
+<section id="cast">
+  <p class="kicker">Who is in the system</p>
+  <h2>Five components, and the line between them</h2>
+  <p class="lede">Nothing here is new architecture. Classification adds endpoints to layers that already existed — but the split of work between them is deliberate, and it is the thing to learn first.</p>
+
+  <div class="cast">
+    <article data-c="human">
+      <div class="top-stripe" style="background:var(--c-human)"></div>
+      <h3>bifrost UI</h3>
+      <span class="lang">React + TypeScript · browser</span>
+      <p>The operator's screen. Every action that changes <em>what the corpus and the topics are</em> is a button here, on a screen that shows what will change before it is pressed.</p>
+      <ul class="does">
+        <li>Parses the CSV in the browser</li>
+        <li>Shows "your topics have changed"</li>
+        <li>Owns Sync&nbsp;topics and Build</li>
+      </ul>
+    </article>
+    <article data-c="berlin">
+      <div class="top-stripe" style="background:var(--c-berlin)"></div>
+      <h3>Berlin backend</h3>
+      <span class="lang">Go + Postgres · always-on</span>
+      <p>The product database, and the source of truth for topics. Customers create and edit them here. It also hosts <code>/aeo</code>, the narrow door the agent talks through.</p>
+      <ul class="does">
+        <li>Stores topics: name, description, parent</li>
+        <li>Computes the two <button class="term" data-t="fingerprint">fingerprints</button></li>
+        <li>Serves <code>/service</code> to bifrost</li>
+      </ul>
+    </article>
+    <article data-c="proxy">
+      <div class="top-stripe" style="background:var(--c-proxy)"></div>
+      <h3>bifrost proxy</h3>
+      <span class="lang">Go · always-on</span>
+      <p>The front door to bifrost, and increasingly a reader in its own right. It answers from shared storage without waking anything, and it owns the placement table that decides which machine a job lands on.</p>
+      <ul class="does">
+        <li>Answers all ingestion: upload, topic sync</li>
+        <li>Serves <code>status</code>, <code>sample</code>, <code>verdicts</code>, <code>unprocessed</code></li>
+        <li>Runs the <button class="term" data-t="sweep">sweep</button> in Go</li>
+        <li>Routes builds→GPU, everything else→CPU</li>
+      </ul>
+    </article>
+    <article data-c="worker">
+      <div class="top-stripe" style="background:var(--c-worker)"></div>
+      <h3>bifrost worker</h3>
+      <span class="lang">Python · GPU (scale-to-zero) or CPU</span>
+      <p>Where models and indexes live. Two flavours of the same code: one GPU machine cluster-wide that scales from zero to run builds, and a 16&nbsp;GB CPU worker that runs <code>assign</code>.</p>
+      <ul class="does">
+        <li>GPU: <button class="term" data-t="prototype">prototypes</button>, index, scoring</li>
+        <li>CPU: <code>assign</code> — tiers 1 and 2</li>
+        <li>Holds no Berlin credential</li>
+      </ul>
+    </article>
+    <article data-c="agent">
+      <div class="top-stripe" style="background:var(--c-agent)"></div>
+      <h3>The LLM agent</h3>
+      <span class="lang">aeo SDK + CLI → <code>/aeo</code></span>
+      <p>Owns <em>what the keywords mean</em>. It reads state, judges a few hundred keywords, and writes the answers back. It cannot upload, build, or sync — those are a human's to press.</p>
+      <ul class="does">
+        <li><code>status · sample · verdicts</code></li>
+        <li><code>assign · unprocessed</code></li>
+        <li>Never causes a sync or a build</li>
+      </ul>
+    </article>
+  </div>
+
+  <h3>Three machines, and the sizes that decide most arguments</h3>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th style="width:20%"></th><th style="width:34%">Shape</th><th>Lifecycle</th></tr></thead>
+    <tbody>
+      <tr><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>1 vCPU, 2 GB, one replica</td><td>Always on, and it is the machine serving the UI — so anything put here competes for that memory with every page load, and an OOM takes the UI with it. The scan semaphore (four slots) exists to bound exactly this.</td></tr>
+      <tr><td><span class="owner o-worker"><span class="dot"></span>CPU worker</span></td><td>8 vCPU, 16 GB (Fargate)</td><td>Scale-to-zero; self-kills after 6 minutes idle.</td></tr>
+      <tr><td><span class="owner o-worker"><span class="dot"></span>GPU worker</span></td><td>g6/g5/g4dn.xlarge, 1 GPU, on-demand, ASG <code>max_size = 1</code></td><td>Scale-to-zero, stopped by the proxy 5 minutes after a build completes. <strong>One GPU cluster-wide</strong> — brand B's build queues behind brand A's, so every non-build job sent here is a job that can block a build after a multi-minute cold start.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="rule-box" data-c="human agent">
+    <div class="rl">The line that explains the whole surface</div>
+    <p>The human owns what the corpus and the topics <em>are</em>. The agent owns what the keywords <em>mean</em>.</p>
+    <p>Upload, build and topic sync are operator buttons. Judging whether a keyword belongs to a topic is the agent's. That single line predicts, for any new endpoint, which side of the wall it belongs on.</p>
+  </div>
+</section>
+
+<section id="flow">
+  <p class="kicker">The whole flow</p>
+  <h2>Ingestion derives nothing; one job derives everything</h2>
+  <p>The pipeline turns on a single distinction, and it is worth getting before anything else. <strong>Bringing data in</strong> — a keyword upload, a topic sync, a GSC sync — writes down what it was given and stops. <strong>Deriving anything from it</strong> — prototypes, an index, scores, assignments — happens only in a job somebody explicitly triggered.</p>
+  <p>That is the invariant being protected: <em>nothing derived happens by surprise</em>. It also means every derived file has exactly one writer, which is what lets these jobs sit on different machines without a lock between them.</p>
+
+  <figure class="bleed" data-c="human berlin proxy worker agent">
+    <div class="scroller">
+    <svg class="fig-svg" viewBox="0 0 1180 486" role="img" aria-label="Swimlane diagram by machine. Ingestion — the keyword upload and the topic sync — is answered entirely by the always-on proxy and derives nothing. One explicitly triggered build on the GPU does three things in order: puts the pulled topics in force, embeds and indexes new keywords, and scores the corpus. The agent then calibrates through the proxy and calls assign, which runs on the CPU worker.">
+      <defs>
+        <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,1 L9,5 L0,9 z" fill="var(--ink-3)"/>
+        </marker>
+        <marker id="ar1b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,1 L9,5 L0,9 z" fill="var(--c-agent)"/>
+        </marker>
+      </defs>
+
+      <rect x="8" y="100" width="1164" height="84" fill="var(--surface-2)" opacity=".35"/>
+      <rect x="8" y="268" width="1164" height="72" fill="var(--surface-2)" opacity=".35"/>
+      <g stroke="var(--rule)" stroke-width="1">
+        <line x1="8" y1="36" x2="1172" y2="36"/><line x1="8" y1="100" x2="1172" y2="100"/>
+        <line x1="8" y1="184" x2="1172" y2="184"/><line x1="8" y1="268" x2="1172" y2="268"/>
+        <line x1="8" y1="340" x2="1172" y2="340"/><line x1="8" y1="412" x2="1172" y2="412"/>
+        <line x1="160" y1="36" x2="160" y2="412"/>
+      </g>
+
+      <g class="col-lbl">
+        <text x="172" y="22">1 · Ingest</text>
+        <text x="432" y="22">2 · Build</text>
+        <text x="692" y="22">3 · Calibrate</text>
+        <text x="932" y="22">4 · Assign, then tier 3</text>
+      </g>
+      <g class="lane-lbl" text-anchor="end">
+        <text x="150" y="66" fill="var(--c-human)">bifrost UI</text>
+        <text x="150" y="138" fill="var(--c-proxy)">Proxy</text>
+        <text x="150" y="222" fill="var(--c-worker)">GPU worker</text>
+        <text x="150" y="300" fill="var(--c-worker)">CPU worker</text>
+        <text x="150" y="372" fill="var(--c-agent)">Agent</text>
+      </g>
+      <g class="box-s" text-anchor="end" fill="var(--ink-3)">
+        <text x="150" y="81">browser</text>
+        <text x="150" y="153">Go · always on · 2 GB</text>
+        <text x="150" y="237">1 in the cluster</text>
+        <text x="150" y="315">Fargate · 16 GB</text>
+        <text x="150" y="387">aeo keywords</text>
+      </g>
+
+      <g data-c="human">
+        <rect x="172" y="46" width="240" height="44" fill="var(--c-human-bg)" stroke="var(--c-human)"/>
+        <text class="box-t" x="184" y="64">[ Upload keywords ] [ Sync topics ]</text>
+        <text class="box-s" x="184" y="80">two buttons, one screen</text>
+        <rect x="432" y="46" width="240" height="44" fill="var(--c-human-bg)" stroke="var(--c-human)"/>
+        <text class="box-t" x="444" y="64">[ Build ]</text>
+        <text class="box-s" x="444" y="80">the only derived-data trigger</text>
+      </g>
+
+      <g data-c="proxy">
+        <rect x="172" y="110" width="240" height="64" fill="var(--surface)" stroke="var(--rule-2)"/>
+        <rect x="172" y="110" width="3" height="64" fill="var(--c-proxy)"/>
+        <text class="box-t" x="184" y="129">write down what was given</text>
+        <text class="box-s" x="184" y="145">keywords.jsonl · topic_pull.json</text>
+        <text class="box-s" x="184" y="161" fill="var(--c-proxy)">derives nothing · wakes nothing</text>
+
+        <rect x="692" y="110" width="220" height="64" fill="var(--surface)" stroke="var(--rule-2)"/>
+        <rect x="692" y="110" width="3" height="64" fill="var(--c-proxy)"/>
+        <text class="box-t" x="704" y="129">status · sample · verdicts</text>
+        <text class="box-s" x="704" y="145">served from shared storage</text>
+        <text class="box-s" x="704" y="161" fill="var(--c-proxy)">no worker, dozens of times</text>
+
+        <rect x="932" y="110" width="226" height="64" fill="var(--surface)" stroke="var(--rule-2)"/>
+        <rect x="932" y="110" width="3" height="64" fill="var(--c-proxy)"/>
+        <text class="box-t" x="944" y="129">unprocessed · verdicts</text>
+        <text class="box-s" x="944" y="145">slices unassigned.jsonl</text>
+        <text class="box-s" x="944" y="161" fill="var(--c-proxy)">the tier-3 loop stays free</text>
+      </g>
+
+      <g data-c="worker">
+        <rect x="432" y="194" width="240" height="64" fill="var(--c-worker-bg)" stroke="var(--c-worker)" stroke-width="1.5"/>
+        <text class="box-s" x="444" y="212" fill="var(--ink)">① prototypes · health · version</text>
+        <text class="box-s" x="444" y="228" fill="var(--ink)">② embed + index new keywords</text>
+        <text class="box-s" x="444" y="244" fill="var(--ink)">③ score the corpus</text>
+
+        <rect x="932" y="276" width="226" height="52" fill="var(--c-worker-bg)" stroke="var(--c-worker)" stroke-width="1.5"/>
+        <text class="box-t" x="944" y="295">assign</text>
+        <text class="box-s" x="944" y="311">bars → tier 1 → tier 2 → noise</text>
+      </g>
+
+      <g data-c="agent">
+        <rect x="692" y="350" width="220" height="52" fill="var(--surface)" stroke="var(--c-agent)"/>
+        <text class="box-t" x="704" y="369">judge ~100 per topic</text>
+        <text class="box-s" x="704" y="385">the only LLM spend so far</text>
+        <rect x="932" y="350" width="226" height="52" fill="var(--surface)" stroke="var(--c-agent)"/>
+        <text class="box-t" x="944" y="369">judge the remainder</text>
+        <text class="box-s" x="944" y="385">then assign again</text>
+      </g>
+
+      <g stroke="var(--ink-3)" stroke-width="1.4" fill="none" marker-end="url(#ar1)">
+        <line x1="292" y1="90" x2="292" y2="107"/>
+        <line x1="552" y1="90" x2="552" y2="191"/>
+        <polyline points="412,142 422,142 422,226 428,226"/>
+        <line x1="802" y1="347" x2="802" y2="177"/>
+        <line x1="802" y1="177" x2="802" y2="347"/>
+        <line x1="1045" y1="347" x2="1045" y2="331"/>
+        <line x1="1045" y1="276" x2="1045" y2="177"/>
+      </g>
+      <g class="edge-lbl">
+        <text x="428" y="136">reads the pull</text>
+        <text x="428" y="150">and the inventory</text>
+        <text x="558" y="115">GPU</text>
+        <text x="1051" y="230">writes</text>
+        <text x="1051" y="244">unassigned.jsonl</text>
+      </g>
+
+      <g data-c="human">
+        <path d="M676,226 L700,226 L700,92" stroke="var(--c-agent)" stroke-width="1.4" fill="none" marker-end="url(#ar1b)"/>
+        <text class="edge-lbl" x="706" y="86" fill="var(--c-agent)">health report → a human reads it</text>
+      </g>
+
+      <text class="note" x="8" y="436">Two axes, deliberately not welded into one. <tspan font-style="normal" font-weight="600">What may write derived data:</tspan> only an explicitly triggered job — never ingestion, never a read.</text>
+      <text class="note" x="8" y="454"><tspan font-style="normal" font-weight="600">Which machine:</tspan> the GPU if and only if the job runs the embedding model over the corpus. Scoring is a numpy matmul that would run at the same speed on a</text>
+      <text class="note" x="8" y="472">CPU; it is inside the build because the build owns the derived files, not because a card helps.</text>
+    </svg>
+    </div>
+
+    <figcaption><b>Figure 1 — Ingestion writes; one job derives.</b> Read the rows as machines and the columns as time. Everything that brings external data in is answered by the always-on proxy and stops there. Exactly one explicitly triggered job — the build — produces every derived file, which is what makes each of those files have a single writer.</figcaption>
+  </figure>
+
+  <h3>The whole pass, stage by stage</h3>
+  <p>Seventeen steps, and the column that matters most is <em>Machine</em>: only two rows wake anything.</p>
+  <div class="tbl-wrap">
+  <table class="stages">
+    <thead><tr><th>#</th><th>Stage</th><th>Machine</th><th>Triggered by</th><th>Gate right after</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>Upload keywords (CSV / Semrush)</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Human · UI</td><td>—</td></tr>
+      <tr><td class="num">2</td><td>GSC keyword sync</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Human · UI</td><td>—</td></tr>
+      <tr><td class="num">3</td><td>Sync topics — pull and store, nothing derived</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Human · UI</td><td>—</td></tr>
+      <tr><td class="num">4</td><td><b>BUILD</b> — prototypes, health check, version stamp, embed keywords, index, score</td><td><span class="owner o-worker"><span class="dot"></span>GPU</span></td><td>Human · UI</td><td><b>Human.</b> The health report lands here</td></tr>
+      <tr><td class="num">5</td><td><code>status</code></td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Agent</td><td><b>Agent judgment.</b> Warnings mean stop</td></tr>
+      <tr><td class="num">6</td><td><code>sample</code></td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Agent</td><td><b>LLM</b></td></tr>
+      <tr><td class="num">7</td><td><em>LLM judges the sample</em></td><td><span class="owner o-agent"><span class="dot"></span>Offboard</span></td><td>Agent</td><td>—</td></tr>
+      <tr><td class="num">8</td><td><code>verdicts</code> (calibration)</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Agent</td><td><b>Sufficiency.</b> ~100 labels/topic</td></tr>
+      <tr><td class="num">9</td><td><b>ASSIGN</b> — derive bars, tier 1, tier 2, verdict answers, noise</td><td><span class="owner o-worker"><span class="dot"></span>CPU worker</span></td><td>Agent (<code>--target</code>)</td><td>—</td></tr>
+      <tr><td class="num">10</td><td><code>unprocessed</code></td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Agent</td><td><b>LLM</b></td></tr>
+      <tr><td class="num">11</td><td><em>LLM judges the remainder</em></td><td><span class="owner o-agent"><span class="dot"></span>Offboard</span></td><td>Agent</td><td>—</td></tr>
+      <tr><td class="num">12</td><td><code>verdicts</code> (tier 3)</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Agent</td><td>Loop 10→12 until empty</td></tr>
+      <tr><td class="num">13</td><td><b>ASSIGN again</b> — folds the tier-3 answers in, refits the bars</td><td><span class="owner o-worker"><span class="dot"></span>CPU worker</span></td><td>Agent</td><td>—</td></tr>
+      <tr><td class="num">14</td><td><code>status</code></td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Agent</td><td><b>Agent judgment.</b> New verdicts to fold in = run 13 again</td></tr>
+      <tr><td class="num">15</td><td><code>pending-intent</code></td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Agent</td><td><b>LLM</b></td></tr>
+      <tr><td class="num">16</td><td><em>LLM judges intents</em></td><td><span class="owner o-agent"><span class="dot"></span>Offboard</span></td><td>Agent</td><td>—</td></tr>
+      <tr><td class="num">17</td><td><code>set-intent</code></td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Agent</td><td>Loop 15→17 until empty</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>The gates are three different kinds, and the difference matters.</strong> The one after step 4 is a <em>human</em> gate and the only one that can send you backwards — the health check reports near-duplicate topics, and fixing those means editing topics in the product, then re-syncing and re-building. The ones after 6, 10 and 15 are <em>LLM</em> gates: each is a read whose entire purpose is to be judged. The ones after 5, 8 and 14 are <em>agent judgment</em> rather than steps.</p>
+</section>
+
+<section id="s1">
+  <p class="kicker">Stage 01 · <span style="color:var(--c-berlin)">Berlin</span></p>
+  <h2>Topics live in Postgres, and stay there</h2>
+  <p><span class="owner o-berlin"><span class="dot"></span>Berlin</span> A topic is a row the customer owns: a <strong>name</strong>, a one-or-two-sentence <strong>description</strong>, and an optional <strong>parent</strong>. That is the source of truth, and nothing in bifrost ever writes back to it.</p>
+  <p>The description is not decoration. A name alone — "Running" — is a weak anchor for an embedding; name plus description is what actually gets turned into a vector two stages from here. Onboarding writes the first draft and the customer edits it.</p>
+
+  <h3>Two fingerprints, because two different things go stale</h3>
+  <p>Every topic is hashed over exactly the content that would invalidate downstream work — name, description, parentage — and nothing that would not. Those per-topic hashes roll up into one set-wide hash. One hash function used at two scales, so the two can never disagree about what counts as a change.</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th style="width:30%">Fingerprint</th><th>Moves when</th><th>What it protects</th></tr></thead>
+    <tbody>
+      <tr><td><code>set.fingerprint</code></td><td>anything in the set moves</td><td>Prototypes, scores and assignments — all of which weigh every topic against every other, so a new column can change any keyword's best topic. Redone <em>whole</em>, and cheaply.</td></tr>
+      <tr><td><code>topic.fingerprint</code></td><td>only that topic's own name, description or parent moves</td><td><button class="term" data-t="verdict">Verdicts</button> — the expensive axis. Adding a sixteenth topic must not cost the other fifteen their labels.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Sitting alongside them is the <button class="term" data-t="version">topic-set version</button> — a counter (<code>v3</code>) stamped when the set-wide fingerprint moves. <strong>Content decides what is still valid; the counter is what a person can read.</strong> "Computed against v2, current is v3" is a sentence a human or an agent can act on; a content hash gives no ordering, because a revert produces an older hash.</p>
+
+  <details class="more" data-c="berlin">
+    <summary>The leaf rule — which topics actually compete</summary>
+    <div class="more-body">
+      <p>Topics are a one-level tree. Classification targets the <button class="term" data-t="leaf">leaf topics</button>: every child, plus any parent that has no children. A parent <em>with</em> children never competes as its own prototype — its vector would be a near-duplicate of its own children's, which is exactly the failure the health check exists to catch, and its keyword set is definitionally the union of theirs.</p>
+      <p>Parents are still sent in the payload, because the tree is what the customer sees and a rollup that cannot name its parent is a rollup nobody can read.</p>
+      <pre><span class="c">// backend/internal/topicset/topicset.go</span>
+<span class="k">type</span> Topic <span class="k">struct</span> {
+    Value       <span class="s">string</span>   <span class="c">// no row id — bifrost keys everything by value</span>
+    Description <span class="s">string</span>
+    Parent      <span class="s">string</span>
+    Leaf        <span class="s">bool</span>     <span class="c">// competes for keywords</span>
+    Fingerprint <span class="s">string</span>   <span class="c">// what labels are filed under</span>
+}</pre>
+    </div>
+  </details>
+</section>
+
+<section id="s2">
+  <p class="kicker">Stage 02 · <span style="color:var(--c-proxy)">Proxy</span></p>
+  <h2>The freshness check that wakes nothing</h2>
+  <p><span class="owner o-proxy"><span class="dot"></span>Proxy</span> When someone opens the keyword screen, the proxy asks Berlin for the current set-wide fingerprint and compares it with the one stored beside the brand's keyword index. One HTTP call, a 10-second timeout, no model loaded, no machine started.</p>
+  <p>That featherweight-ness is the whole point. <strong>It runs on every page load</strong>, so change is always visible and never surprising: the UI can say <em>"the topics in the dashboard have moved since these keywords were classified"</em> without anything spinning up. If Berlin is briefly unreachable the page still renders what it knows and says what it could not check — a page that shows nothing because a backend hiccuped is worse than one that is honest about the gap.</p>
+  <div class="rule-box" data-c="proxy human">
+    <div class="rl">A mismatch never auto-resolves</div>
+    <p>A changed fingerprint shows the user their topics have changed. It does not silently re-sync anything.</p>
+    <p>The user resolves it with a button on that same screen. Change is visible, and resolving it is a person's decision — because a sync followed by a build re-stamps the version every existing assignment records having been measured against.</p>
+  </div>
+</section>
+
+<section id="s3">
+  <p class="kicker">Stage 03 · <span style="color:var(--c-human)">UI</span> → <span style="color:var(--c-proxy)">Proxy</span></p>
+  <h2>Sync topics: one request, one file, nothing derived</h2>
+  <p><span class="owner o-human"><span class="dot"></span>UI</span> <span class="owner o-proxy"><span class="dot"></span>Proxy</span> Pressing <strong>Sync topics</strong> is the only way a sync ever happens — no agent, no schedule, no other screen. And it is smaller than it sounds: <strong>one request to Berlin and one file write.</strong> No model is loaded, no worker is woken, and nothing is derived.</p>
+  <p>The proxy already holds <code>BERLIN_SERVICE_TOKEN</code> and already calls that exact endpoint on every page load for the freshness check, so the button is as fast as the backend's answer. What it writes is Berlin's payload verbatim, to <code>classification/topic_pull.json</code>.</p>
+
+  <h3>Two files, because they have two different authors</h3>
+  <p>The <em>pull</em> and the <em>set in force</em> are deliberately separate files rather than one document two things write to:</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th style="width:24%">File</th><th style="width:20%">Written by</th><th>What it is</th></tr></thead>
+    <tbody>
+      <tr><td><code>topic_pull.json</code></td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td>Berlin's payload as sent. The topics the customer has right now.</td></tr>
+      <tr><td><code>topic_set.json</code></td><td><span class="owner o-worker"><span class="dot"></span>Build</span></td><td>What a build actually embedded, naming the pull it was built from, with the version stamped.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Comparing the two answers <strong>"is a build due?"</strong> from two local files, with nothing to ask anyone — and neither side ever read-modify-writes the other's work. It is also the shape that survives the planned move to an admin UI: when bifrost is eventually <em>pushed</em> to rather than pulling, a push replaces one proxy handler and nothing else. A pull that lived inside the build would leave no door to replace, and would park a backend credential on the GPU permanently.</p>
+
+  <div class="rule-box" data-c="proxy human">
+    <div class="rl">A mismatch never auto-resolves</div>
+    <p>A changed fingerprint shows the user their topics have changed. It does not silently re-sync, and syncing does not silently rebuild.</p>
+    <p>Both are buttons, because the version a build stamps is the version every existing assignment records having been measured against.</p>
+  </div>
+</section>
+
+<section id="s4">
+  <p class="kicker">Stage 04 · <span style="color:var(--c-proxy)">Proxy</span> ingests, <span style="color:var(--c-worker)">GPU</span> derives</p>
+  <h2>Upload on the proxy, build on the GPU</h2>
+  <p><span class="owner o-human"><span class="dot"></span>UI</span> <span class="owner o-proxy"><span class="dot"></span>Proxy</span> The CSV is parsed <em>in the browser</em> — counts shown, nothing sent until the operator presses the button — and the append is answered by the proxy. Two rules make the corpus cheap:</p>
+  <ul>
+    <li><strong>Uploads append.</strong> Re-sending a known keyword is a no-op. No upload can delete a keyword.</li>
+    <li><strong>Builds add, never wipe.</strong> Already indexed → skipped. New → embedded and indexed. Re-running with nothing new is a no-op.</li>
+  </ul>
+  <p>The upload sits on the proxy for a reason that is <strong>latency, not cost</strong>: a thirty-second worker task is fractions of a cent, but on a worker the upload can sit behind a cold start — and this is the button people press most. The one part that scales with the corpus is the dedup set held in memory while the batch is checked against it, roughly 150–200&nbsp;MB for a million-keyword brand. That is the same shape as the intent read the proxy already serves, and it takes a slot from the same scan budget.</p>
+  <p>It is also the one job in the system that <em>reads what it writes</em>, so it needs ordering rather than just a single writer. The proxy's per-brand single-flight lock provides it: two uploads for the same brand cannot interleave, and the second gets a busy response and retries.</p>
+
+  <h3>The build is one job with three steps, and the order is load-bearing</h3>
+  <p><span class="owner o-worker"><span class="dot"></span>GPU worker</span> A build ends <em>"prototypes current, indexed and scored"</em>:</p>
+  <ol>
+    <li><strong>Put the pulled topics in force</strong> — a <button class="term" data-t="prototype">prototype</button> per leaf topic, the <button class="term" data-t="health">health check</button>, the version stamp.</li>
+    <li><strong>Embed and index the new keywords</strong> — the only step that genuinely needs a card.</li>
+    <li><strong>Score the corpus</strong> against the prototypes now in force.</li>
+  </ol>
+  <p>Prototypes first, so the scoring at the end is against the topics in force; the index second, so that same pass sees the keywords this build just added. <strong>Both of the things that can invalidate a score are settled before the score is computed</strong> — which is why there is no second job and no handoff.</p>
+  <p>Prototype embedding does not need a GPU on its own merits; it is a few dozen short texts. It is here because it <em>invalidates the scores</em>, and the scores are the build's to write. <strong>Keeping the writer singular is the point; the card is incidental.</strong> That is also why the version is stamped here and nowhere else: stamping it in a job that might then fail to score would leave a version in force that nothing on disk is scored against — a state that reads as current and is not.</p>
+  <p>The GPU needs no credential for any of this. The build reads the stored topic pull off shared storage and never contacts Berlin, so no worker task definition carries <code>BERLIN_SERVICE_TOKEN</code>.</p>
+
+  <details class="more" data-c="proxy worker">
+    <summary>Placement is two rules, and welding them was the original mistake</summary>
+    <div class="more-body">
+      <p>"The build writes derived data, and the build runs on the GPU" reads as one rule. Once welded, the GPU starts to look like an <em>ownership</em> boundary, and every new piece of derived data has to argue for a card it does not need. They are separate:</p>
+      <p><strong>Axis 1 — what may write derived data.</strong> Only an explicitly triggered job. Never as a side effect of ingestion, never by a read.</p>
+      <p><strong>Axis 2 — which machine.</strong> The GPU if and only if the job runs the embedding model over the corpus. Everything else runs where it fits. Hardware economics, carrying no meaning about ownership.</p>
+      <p><code>assign</code> is the case that proves they are separate: it writes derived data, so it is explicitly triggered; it runs no model, so it is not GPU work. And it cannot ride the build under any arrangement — the first build for a brand happens before a single calibration label exists, so there are no bars for tiers 1 and 2 to apply.</p>
+      <pre><span class="c">// bifrost-proxy/internal/handlers/placement.go</span>
+<span class="k">var</span> gpuPaths = []<span class="s">string</span>{
+    <span class="s">"/build/start"</span>,
+    <span class="s">"/build/status/"</span>,
+}
+<span class="c">// everything else that reaches a worker → CPU.</span>
+<span class="c">// Scoring is absent: it is never a job, so there is nothing to route.</span></pre>
+      <p>An operator-only <code>?workerType=</code> override survives for emergencies and is logged as the documented deviation it is. Nothing in the client, the CLI or the UI sets it.</p>
+    </div>
+  </details>
+</section>
+
+<section id="s5">
+  <p class="kicker">Stage 05 · <span style="color:var(--c-worker)">Worker</span></p>
+  <h2>Scoring: one matrix multiply, at the tail of the build</h2>
+  <p><span class="owner o-worker"><span class="dot"></span>GPU worker</span> This is the arithmetic half, and it is the cheapest step in the system. Every keyword vector is multiplied against every topic prototype. Because both sides are L2-normalised, the dot product <em>is</em> the cosine similarity. For each keyword the pass records four things and nothing else: its <strong>best topic</strong>, that <strong>score</strong>, its <strong>runner-up</strong>, and the <button class="term" data-t="margin">margin</button> between them.</p>
+  <p>No bar is applied here. Nothing is assigned. Scoring only produces the numbers that calibration and the tiers later read.</p>
+
+  <figure class="bleed" data-c="worker">
+    <div class="scroller">
+    <svg class="fig-svg" viewBox="0 0 1180 386" role="img" aria-label="Diagram: a K by 1024 matrix of keyword vectors multiplied by a 1024 by T matrix of topic prototypes gives a K by T score matrix; one keyword's row of scores is shown as fifteen cosine values in a narrow band, with the best at 0.874, the runner-up at 0.841, and a margin of 0.033 between them.">
+      <defs>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,1 L9,5 L0,9 z" fill="var(--ink-3)"/>
+        </marker>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="6" height="6" fill="var(--surface-2)"/>
+          <line x1="0" y1="0" x2="0" y2="6" stroke="var(--rule-2)" stroke-width="1"/>
+        </pattern>
+      </defs>
+
+      <text class="col-lbl" x="20" y="22">The multiply</text>
+
+      <!-- A -->
+      <rect x="20" y="40" width="196" height="118" fill="url(#hatch)" stroke="var(--c-worker)" stroke-width="1.5"/>
+      <text class="box-t" x="20" y="176">keyword vectors</text>
+      <text class="box-s" x="20" y="192">K × 1024 · float32</text>
+      <text class="box-s" x="20" y="206" fill="var(--ink-3)">vectors.npy · ~4 GB at 10⁶</text>
+      <text class="box-t" x="238" y="105" font-size="20" fill="var(--ink-3)">×</text>
+
+      <!-- B -->
+      <rect x="262" y="40" width="52" height="118" fill="url(#hatch)" stroke="var(--c-worker)" stroke-width="1.5"/>
+      <text class="box-t" x="262" y="176">prototypes</text>
+      <text class="box-s" x="262" y="192">1024 × T</text>
+      <text class="box-s" x="262" y="206" fill="var(--ink-3)">T ≈ 15 · never &gt; 100</text>
+      <text class="box-t" x="336" y="105" font-size="20" fill="var(--ink-3)">=</text>
+
+      <!-- C -->
+      <rect x="360" y="40" width="52" height="118" fill="var(--c-worker-bg)" stroke="var(--c-worker)" stroke-width="1.5"/>
+      <text class="box-t" x="360" y="176">scores</text>
+      <text class="box-s" x="360" y="192">K × T</text>
+      <text class="box-s" x="360" y="206" fill="var(--ink-3)">chunked 50,000 rows</text>
+
+      <!-- callout to the row -->
+      <line x1="360" y1="72" x2="412" y2="72" stroke="var(--c-agent)" stroke-width="2"/>
+      <path d="M412,72 L470,72 L470,254 L512,254" stroke="var(--c-agent)" stroke-width="1.4" fill="none" stroke-dasharray="4 3" marker-end="url(#ar2)"/>
+      <text class="edge-lbl" x="424" y="66" fill="var(--c-agent)">one keyword's row</text>
+
+      <!-- detail: the narrow band -->
+      <text class="col-lbl" x="520" y="22">What one row actually looks like</text>
+      <text class="box-s" x="520" y="42" fill="var(--ink-2)">"best running shoes for flat feet" against 15 topic prototypes</text>
+
+      <line x1="536" y1="254" x2="1150" y2="254" stroke="var(--rule-2)" stroke-width="1.5"/>
+      <g stroke="var(--rule-2)" stroke-width="1">
+        <line x1="536" y1="254" x2="536" y2="262"/><line x1="689" y1="254" x2="689" y2="262"/>
+        <line x1="843" y1="254" x2="843" y2="262"/><line x1="996" y1="254" x2="996" y2="262"/>
+        <line x1="1150" y1="254" x2="1150" y2="262"/>
+      </g>
+      <g class="box-s" fill="var(--ink-3)" text-anchor="middle">
+        <text x="536" y="276">0.60</text><text x="689" y="276">0.70</text><text x="843" y="276">0.80</text>
+        <text x="996" y="276">0.90</text><text x="1150" y="276">1.00</text>
+      </g>
+      <text class="box-s" x="843" y="296" text-anchor="middle" fill="var(--ink-2)">cosine similarity — and every one of the fifteen lands in the same narrow band</text>
+
+      <!-- 13 other topics -->
+      <g stroke="var(--ink-3)" stroke-width="1.6" opacity=".55">
+        <line x1="704" y1="238" x2="704" y2="254"/><line x1="731" y1="238" x2="731" y2="254"/>
+        <line x1="748" y1="238" x2="748" y2="254"/><line x1="766" y1="238" x2="766" y2="254"/>
+        <line x1="781" y1="238" x2="781" y2="254"/><line x1="795" y1="238" x2="795" y2="254"/>
+        <line x1="808" y1="238" x2="808" y2="254"/><line x1="817" y1="238" x2="817" y2="254"/>
+        <line x1="829" y1="238" x2="829" y2="254"/><line x1="838" y1="238" x2="838" y2="254"/>
+        <line x1="852" y1="238" x2="852" y2="254"/><line x1="864" y1="238" x2="864" y2="254"/>
+        <line x1="877" y1="238" x2="877" y2="254"/>
+      </g>
+      <text class="edge-lbl" x="704" y="230">13 other topics</text>
+
+      <!-- runner-up -->
+      <line x1="908" y1="196" x2="908" y2="254" stroke="var(--ink-2)" stroke-width="2"/>
+      <circle cx="908" cy="196" r="4.5" fill="var(--surface)" stroke="var(--ink-2)" stroke-width="2"/>
+      <text class="box-s" x="900" y="184" text-anchor="end" fill="var(--ink-2)">runner-up</text>
+      <text class="box-s" x="900" y="170" text-anchor="end" fill="var(--ink)">Trail Running · 0.841</text>
+
+      <!-- best -->
+      <line x1="959" y1="140" x2="959" y2="254" stroke="var(--c-agent)" stroke-width="2.5"/>
+      <circle cx="959" cy="140" r="5.5" fill="var(--c-agent)"/>
+      <text class="box-s" x="970" y="128" fill="var(--c-agent)">best topic</text>
+      <text class="box-s" x="970" y="114" fill="var(--ink)">Running Shoes · 0.874</text>
+
+      <!-- margin bracket -->
+      <path d="M908,214 L908,222 L959,222 L959,214" stroke="var(--c-agent)" stroke-width="1.4" fill="none"/>
+      <text class="box-s" x="933" y="238" text-anchor="middle" fill="var(--c-agent)">margin 0.033</text>
+
+      <text class="note" x="520" y="330">0.874 is not "good". Until a few hundred of this brand's own keywords have been judged, it is</text>
+      <text class="note" x="520" y="348">a number with no units — which is what stages 06 to 09 exist to fix.</text>
+      <text class="note" x="20" y="330">Incremental, the same way indexing is: a</text>
+      <text class="note" x="20" y="348">keyword already scored against the version</text>
+      <text class="note" x="20" y="366">in force is skipped, so re-running repairs.</text>
+    </svg>
+    </div>
+    <figcaption><b>Figure 2 — The only heavy arithmetic in the system.</b> The expensive axis is keywords; the axis that stays small is topics. A million keywords against fifteen prototypes is a result matrix a fraction of the size of the inputs, which is why this rides along at the tail of a job rather than earning a machine of its own.</figcaption>
+  </figure>
+
+  <div class="rule-box" data-c="worker proxy">
+    <div class="rl">Rule · scoring is never a job</div>
+    <p>Scoring never gets its own trigger, its own job or its own machine. It is the last thing the build does before it exits.</p>
+    <p>Two things can change the score matrix — new keyword vectors and a new topic set — and both are now <em>steps of the same build</em>, settled before step three runs. So the pass happens once, at that build's tail. Repair needs no special verb either: scoring skips what already has a score against the current version, exactly as indexing skips what is already indexed.</p>
+    <p><strong>It is on the GPU by inheritance, not by merit.</strong> This is a numpy matmul against a matrix that never exceeds a hundred columns; it would run at the same speed on a CPU. It is here because the build owns the derived files, and an earlier draft that put it on a separate topic-sync job made that job a second writer of the score files — an overlap that had to be papered over with a cross-machine mutex, and one of two ways <code>status</code> came to report a corpus as scored when it was not.</p>
+  </div>
+</section>
+
+<section id="s6">
+  <p class="kicker">Stage 06 · <span style="color:var(--c-worker)">Worker</span> writes, <span style="color:var(--c-proxy)">Proxy</span> serves</p>
+  <h2>The sample pool: choosing what is worth judging</h2>
+  <p><span class="owner o-worker"><span class="dot"></span>Worker</span> Before it exits, the scoring pass writes a second, much smaller file: up to <strong>400 candidates per topic</strong>, chosen from across the score range. This is the file <code>sample</code> later slices.</p>
+  <p>It is written here for the same reason scoring is: picking which keywords are worth an LLM's judgment means looking at <em>every</em> keyword's score, which is a full pass over the corpus. Doing it once, on the machine that has just finished that pass anyway, turns <code>sample</code> into a prefix of a small file — <strong>a genuinely free read on the always-on side</strong>, rather than a million-row scan every time an agent asks for something to label.</p>
+
+  <h3>The pool's shape, and the one judgment in that module</h3>
+  <p>Sorted by score, a topic's keywords are boring at both ends: the top of the range is obviously the topic and the bottom obviously is not, so labels spent there buy nothing. The bar sits in the fuzzy middle, so that is where the labels go.</p>
+  <figure data-c="worker">
+    <svg class="fig-svg" viewBox="0 0 720 176" role="img" aria-label="Bar chart of the sample pool's band weights: ten percent from the lowest scores, twenty percent from the lower-middle, forty percent from the middle, twenty percent from the upper-middle, ten percent from the highest.">
+      <text class="col-lbl" x="10" y="16">Sample pool band weights &nbsp;·&nbsp; (1, 2, 4, 2, 1)</text>
+      <g>
+        <rect x="20" y="106" width="120" height="22" fill="var(--surface-2)" stroke="var(--rule-2)"/>
+        <rect x="152" y="84" width="120" height="44" fill="var(--surface-2)" stroke="var(--rule-2)"/>
+        <rect x="284" y="40" width="120" height="88" fill="var(--c-agent-bg)" stroke="var(--c-agent)" stroke-width="1.5"/>
+        <rect x="416" y="84" width="120" height="44" fill="var(--surface-2)" stroke="var(--rule-2)"/>
+        <rect x="548" y="106" width="120" height="22" fill="var(--surface-2)" stroke="var(--rule-2)"/>
+      </g>
+      <g class="box-s" text-anchor="middle" fill="var(--ink-2)">
+        <text x="80" y="100">10%</text><text x="212" y="78">20%</text>
+        <text x="344" y="34" fill="var(--c-agent)">40%</text>
+        <text x="476" y="78">20%</text><text x="608" y="100">10%</text>
+      </g>
+      <line x1="20" y1="128" x2="668" y2="128" stroke="var(--rule-2)" stroke-width="1.5"/>
+      <g class="box-s" text-anchor="middle" fill="var(--ink-3)">
+        <text x="80" y="146">lowest scores</text><text x="212" y="146">·</text>
+        <text x="344" y="146" fill="var(--c-agent)">the fuzzy middle</text>
+        <text x="476" y="146">·</text><text x="608" y="146">highest scores</text>
+      </g>
+      <text class="note" x="20" y="168">The extremes are kept, not dropped: a sweep with no confident negatives in it cannot tell a bar from a floor.</text>
+    </svg>
+    <figcaption><b>Figure 3 — Where the labels go.</b> The pool is written interleaved across these bands, which is what makes any <em>prefix</em> of a topic's candidates already spread across the range — so <code>sample</code> can just take the first N. <strong>These weights are not only a sampling decision.</strong> They make the labels a stratified sample, which the sweep has to correct for — see <a href="#s8">stage 08</a>, where getting that wrong was a real bug.</figcaption>
+  </figure>
+</section>
+
+<section id="s7">
+  <p class="kicker">Stage 07 · <span style="color:var(--c-agent)">Agent</span> → <span style="color:var(--c-proxy)">Proxy</span></p>
+  <h2>Verdicts: a few hundred yes/no answers</h2>
+  <p><span class="owner o-agent"><span class="dot"></span>Agent</span> <span class="owner o-proxy"><span class="dot"></span>Proxy</span> The agent calls <code>sample</code>, gets back (keyword, best-topic) pairs, and answers exactly one question per pair: <strong>does this keyword really belong to this topic — yes or no?</strong> Never "rank these topics." A per-topic yes/no is what makes a genuinely multi-topic keyword expressible as two independent yeses.</p>
+  <p>Those answers go back through <code>verdicts</code> into an append-only cache. The cost is a few hundred quick judgments per brand — <strong>not one call per keyword</strong>.</p>
+
+  <h3>Keyed by (keyword, topic fingerprint) — the load-bearing decision</h3>
+  <p>Every verdict carries the score it was judged at, and that score is a cosine against one topic's <em>prototype</em>. Edit that topic's description and the prototype moves, so a label recorded at <code>0.83</code> now belongs to a keyword scoring <code>0.71</code>. Sweeping both into one bar fits a threshold across two coordinate systems and produces a plausible, wrong number with nothing to catch it. The label can also stop meaning what it meant: rewrite "road running shoes" to "all running footwear including trail" and a <em>no</em> becomes a <em>yes</em>.</p>
+  <p>None of that is true of a topic nobody touched. So the key is the <strong>topic's own fingerprint</strong>, not the set version — and that turns "only the affected topics are re-labelled" from a predicate someone has to evaluate into a <strong>path on disk</strong>:</p>
+  <pre>classification/verdicts/
+├── <span class="s">a3f9c1…</span>/   <span class="c">Running Shoes, untouched → all 112 labels still here</span>
+├── <span class="s">7b21e4…</span>/   <span class="c">Trail Running, untouched → 94 labels still here</span>
+└── <span class="k">e0d4aa…</span>/   <span class="c">Barefoot, description edited → fresh, empty directory</span>
+    <span class="c">                     the old 88 labels are not deleted — they sit</span>
+    <span class="c">                     under the old hash, and a revert finds them again</span></pre>
+  <ul>
+    <li>An <strong>untouched</strong> topic resolves to the directory it always did.</li>
+    <li>An <strong>edited</strong> topic resolves to a fresh empty one, and reads as unlabelled.</li>
+    <li>A <strong>reverted</strong> topic hashes back to its own labels and finds them waiting.</li>
+    <li>Nothing is ever deleted to make any of that true.</li>
+  </ul>
+
+  <details class="more" data-c="proxy">
+    <summary>Why it is one file per batch, not one file appended to</summary>
+    <div class="more-body">
+      <p>This store is written by the always-on proxy and read by both the proxy and the worker, on a shared filesystem, with no lock between them. Appending to a single file across two machines risks interleaved lines. A file per batch cannot interleave, cannot half-append, and makes a crashed write a file that is simply skipped.</p>
+      <p>Re-recording is idempotent — reads keep the newest record per key and drop the rest — which is what makes the whole surface safe to retry.</p>
+      <p>One store, three writers, and that is deliberate: a verdict is the same fact wherever it comes from. In <strong>calibration</strong> the bar is not set yet, so the verdict is <em>evidence</em> for where it goes. In <strong>tier 3</strong> the bar was applied and came up empty, so the verdict <em>is</em> the assignment. In <strong>verification</strong> the keyword is already filed, so it is a <em>confirmation</em>. A keyword labelled during calibration that resurfaces in tier 3 is already answered, for free.</p>
+    </div>
+  </details>
+</section>
+
+<style>
+.lab{background:var(--surface); border:1px solid var(--rule-2); border-top:3px solid var(--c-agent); border-radius:2px; margin:30px 0; overflow:hidden}
+.lab-head{padding:16px 20px 14px; border-bottom:1px solid var(--rule); display:flex; flex-wrap:wrap; gap:16px 22px; align-items:flex-end}
+.lab-title{font-family:var(--display); font-weight:600; font-size:15px; margin-right:auto}
+.lab-title span{display:block; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--c-agent); font-weight:600; margin-bottom:3px}
+.ctl{display:flex; flex-direction:column; gap:5px}
+.ctl label{font-family:var(--display); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-3); font-weight:600}
+.ctl select,.ctl input[type=range]{font:inherit; font-family:var(--display); font-size:13px}
+.ctl select{background:var(--ground); color:var(--ink); border:1px solid var(--rule-2); padding:5px 8px; border-radius:2px}
+.ctl input[type=range]{width:150px; accent-color:var(--c-agent)}
+.ctl .val{font-family:var(--mono); font-size:12.5px; color:var(--ink); font-variant-numeric:tabular-nums}
+.btn{
+  font-family:var(--display); font-size:12.5px; font-weight:600; letter-spacing:.05em;
+  background:var(--c-agent); color:var(--btn-fg); border:0; padding:8px 15px; border-radius:2px; cursor:pointer;
+}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent; color:var(--ink-2); border:1px solid var(--rule-2)}
+.btn.ghost:hover{filter:none; background:var(--surface-2)}
+.seg{display:inline-flex; border:1px solid var(--rule-2); border-radius:2px; overflow:hidden}
+.seg button{font-family:var(--display); font-size:12px; font-weight:600; padding:6px 11px; background:var(--surface); color:var(--ink-2); border:0; cursor:pointer}
+.seg button+button{border-left:1px solid var(--rule-2)}
+.seg button[aria-checked="true"]{background:var(--c-agent); color:var(--btn-fg)}
+.seg button:hover:not([aria-checked="true"]){background:var(--surface-2)}
+.lab-plot{padding:8px 12px 0; overflow-x:auto}
+.lab-plot svg{display:block; min-width:640px; width:100%; height:auto}
+.readout{display:grid; grid-template-columns:repeat(auto-fit,minmax(112px,1fr)); border-top:1px solid var(--rule); background:var(--ground)}
+.readout div{padding:12px 16px; border-right:1px solid var(--rule)}
+.readout div:last-child{border-right:0}
+.readout .k{font-family:var(--display); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); font-weight:600; display:block; margin-bottom:3px}
+.readout .v{font-family:var(--mono); font-size:19px; font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.readout .s{font-family:var(--display); font-size:11.5px; color:var(--ink-3); display:block; margin-top:1px}
+#sweep-say{padding:13px 20px 15px; font-size:14.5px; line-height:1.5; border-top:1px solid var(--rule); color:var(--ink-2)}
+#sweep-say b{color:var(--ink); font-family:var(--display); font-weight:600}
+.sw-handle{cursor:ew-resize}
+.sw-handle:focus-visible rect{stroke:var(--ink); stroke-width:2}
+</style>
+
+<section id="s8">
+  <p class="kicker">Stage 08 · <span style="color:var(--c-proxy)">Proxy (Go)</span> and <span style="color:var(--c-worker)">Worker (Python)</span></p>
+  <h2>The sweep: where the bar actually comes from</h2>
+  <p class="lede">This is the step the whole design turns on, and the one whose name explains the least. Here is what it does.</p>
+  <p>A cosine from the embedding model lives in a narrow band that shifts from brand to brand <em>and</em> from topic to topic, so <code>0.85</code> is neither strict nor lenient until this brand's own keywords say which. <strong>A hardcoded bar is a precision nobody measured, applied to a corpus nobody looked at.</strong></p>
+  <p>So instead: take one topic's labelled (score, yes/no) pairs, sort them by score, and <button class="term" data-t="sweep">walk a candidate bar down</button> the range. At every stop, measure the precision you would get — the share of labels at or above the bar that were a <em>yes</em>. Take the <strong>lowest</strong> bar that still meets the target, because every step down admits more keywords, and the point is coverage at a stated accuracy rather than accuracy alone.</p>
+
+  <div class="lab bleed" data-c="proxy worker agent">
+    <div class="lab-head">
+      <div class="lab-title"><span>Interactive</span>Drag the bar, or run the sweep</div>
+      <div class="ctl">
+        <label for="sw-topic">Topic</label>
+        <select id="sw-topic">
+          <option value="0">Running Shoes</option>
+          <option value="1">Trail Running</option>
+          <option value="2">Barefoot &amp; Minimalist (thin)</option>
+        </select>
+      </div>
+      <div class="ctl">
+        <label id="sw-mode-lbl">How labels are counted</label>
+        <div class="seg" role="radiogroup" aria-labelledby="sw-mode-lbl">
+          <button type="button" id="sw-plain" role="radio" aria-checked="false">Plainly</button>
+          <button type="button" id="sw-weighted" role="radio" aria-checked="true">Weighted by band</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <label for="sw-target">Target · <span class="val" id="sw-target-v">0.96</span></label>
+        <input type="range" id="sw-target" min="0.85" max="0.995" step="0.005" value="0.96">
+      </div>
+      <div class="ctl">
+        <label>&nbsp;</label>
+        <div style="display:flex;gap:7px">
+          <button class="btn" id="sw-run">Run the sweep</button>
+          <button class="btn ghost" id="sw-reset">Reset</button>
+        </div>
+      </div>
+    </div>
+    <div class="lab-plot">
+      <svg id="sweep" viewBox="0 0 880 462" role="img" aria-label="Interactive chart. Top: the labelled sample plotted by cosine score, judged-yes above and judged-no below, split by a draggable bar. Middle: the five sampling bands, each showing its share of the topic, its share of the labels, and the weight that corrects between them. Bottom: precision measured at every candidate bar, drawn against the true corpus precision, so the gap the plain count opens up is visible.">
+        <defs>
+          <clipPath id="clipStrip"><rect x="96" y="54" width="754" height="112"/></clipPath>
+          <clipPath id="clipCurve"><rect x="96" y="312" width="754" height="100"/></clipPath>
+        </defs>
+        <text class="col-lbl" x="16" y="20">The labelled sample</text>
+
+        <rect x="96" y="54" width="754" height="54" fill="var(--plot)"/>
+        <rect x="96" y="112" width="754" height="54" fill="var(--plot)"/>
+        <rect id="sw-shade" x="600" y="54" width="250" height="112" fill="var(--c-agent)" opacity=".07"/>
+        <g id="sw-bandlines"></g>
+        <text class="box-s" x="88" y="85" text-anchor="end" fill="var(--yes)">judged YES</text>
+        <text class="box-s" x="88" y="143" text-anchor="end" fill="var(--no)">judged NO</text>
+        <g id="sw-dots" clip-path="url(#clipStrip)"></g>
+
+        <line x1="96" y1="178" x2="850" y2="178" stroke="var(--rule-2)" stroke-width="1.5"/>
+        <g id="sw-xticks"></g>
+        <g id="sw-xlabels"></g>
+
+        <text class="col-lbl" x="16" y="212">Sampling bands &#183; the shortlist is drawn 10 / 20 / 40 / 20 / 10</text>
+        <g id="sw-ribbon"></g>
+        <text class="box-s" x="96" y="280" fill="var(--ink-3)">Each band is a fifth of the topic, so the cells are equal &#8212; the dashed dividers above show where those fifths fall.</text>
+
+        <text class="col-lbl" x="16" y="300">Precision at each candidate bar</text>
+        <rect x="96" y="312" width="754" height="100" fill="var(--plot)"/>
+        <g id="sw-ygrid"></g>
+        <polygon id="sw-gap" points="" fill="var(--c-agent)" opacity=".14" clip-path="url(#clipCurve)"/>
+        <polyline id="sw-truth" fill="none" stroke="var(--c-proxy)" stroke-width="1.8" stroke-dasharray="5 4" points="" clip-path="url(#clipCurve)"/>
+        <polyline id="sw-curve" fill="none" stroke="var(--ink)" stroke-width="1.8" points="" clip-path="url(#clipCurve)"/>
+        <line id="sw-targetline" x1="96" y1="340" x2="850" y2="340" stroke="var(--ink-3)" stroke-width="1.2" stroke-dasharray="2 3"/>
+        <text id="sw-targetlbl" class="box-s" x="104" y="354" fill="var(--ink-3)">target</text>
+        <circle id="sw-solved" cx="600" cy="340" r="6" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <circle id="sw-curdot" cx="600" cy="340" r="4.5" fill="var(--c-agent)"/>
+
+        <g class="box-s">
+          <line x1="516" y1="296" x2="540" y2="296" stroke="var(--ink)" stroke-width="1.8"/>
+          <text id="sw-legend-m" x="546" y="300" fill="var(--ink-2)">measured</text>
+          <line x1="680" y1="296" x2="704" y2="296" stroke="var(--c-proxy)" stroke-width="1.8" stroke-dasharray="5 4"/>
+          <text x="710" y="300" fill="var(--c-proxy)">corpus truth</text>
+        </g>
+
+        <line id="sw-bar" x1="600" y1="48" x2="600" y2="418" stroke="var(--bar)" stroke-width="2.5"/>
+        <g id="sw-handle" class="sw-handle" tabindex="0" role="slider" aria-label="Candidate bar position" aria-valuemin="0.62" aria-valuemax="0.97" aria-valuenow="0.8">
+          <rect x="586" y="30" width="28" height="16" rx="2" fill="var(--bar)"/>
+          <path d="M594,36 L590,38 L594,40 M606,36 L610,38 L606,40" stroke="var(--surface)" stroke-width="1.6" fill="none"/>
+        </g>
+        <text id="sw-barlbl" class="box-s" x="620" y="42" fill="var(--bar)">bar 0.800</text>
+
+        <text class="box-s" x="16" y="440" fill="var(--ink-3)">Everything right of the bar is what this topic would claim. Sample data, generated to sit in the same narrow</text>
+        <text class="box-s" x="16" y="454" fill="var(--ink-3)">cosine band as real E5 scores, with a 4,000-keyword corpus behind each topic so the truth line is computable.</text>
+      </svg>
+    </div>
+    <div class="readout">
+      <div><span class="k">Bar</span><span class="v" id="ro-bar">&#8212;</span><span class="s" id="ro-bar-s">candidate</span></div>
+      <div><span class="k">Measured</span><span class="v" id="ro-prec">&#8212;</span><span class="s" id="ro-prec-s">from the labels</span></div>
+      <div><span class="k">Corpus truth</span><span class="v" id="ro-true">&#8212;</span><span class="s" id="ro-true-s">what assignment delivers</span></div>
+      <div><span class="k">Error</span><span class="v" id="ro-gap">&#8212;</span><span class="s" id="ro-gap-s">measured minus truth</span></div>
+      <div><span class="k">Evidence</span><span class="v" id="ro-lab">&#8212;</span><span class="s" id="ro-lab-s">labels</span></div>
+    </div>
+    <p id="sweep-say">Drag the amber bar, or press <b>Run the sweep</b>. Then switch between <b>Plainly</b> and <b>Weighted by band</b> and watch the solid line move onto the dashed one.</p>
+  </div>
+
+  <h3>The shortlist is stratified, so counting labels plainly measures the wrong thing</h3>
+  <p>Here is a bug that lived in this code, and it is worth understanding because it is the kind that survives review: both halves were individually correct.</p>
+  <p>The shortlist deliberately takes <strong>fewer keywords from the top of the range</strong>, where the answer is obviously yes, and more from the middle, where the bar sits. That is the right way to spend labels. But it means the labels are a <button class="term" data-t="stratified">stratified sample</button>, not a uniform draw — and the sweep was counting them as though they were uniform.</p>
+  <p>The top quintile holds 20% of a topic’s keywords and supplies 10% of its labels; the middle quintile holds 20% and supplies 40%. So the region with the highest yes-rate is counted at <em>half</em> its true weight and the murky middle at <em>double</em>. Measured precision therefore comes out lower than the corpus would actually deliver.</p>
+
+  <p>Take a topic whose five bands run 100%, 95%, 70%, 30%, 5% yes, and a bar admitting the top three:</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Band, by score</th><th>Share of the topic</th><th>Share of the labels</th><th>Yes rate</th><th>Weight</th></tr></thead>
+    <tbody>
+      <tr><td>1 &#183; top</td><td>20%</td><td>10%</td><td>100%</td><td><code>0.20 / 0.10 = &#215;2.0</code></td></tr>
+      <tr><td>2</td><td>20%</td><td>20%</td><td>95%</td><td><code>&#215;1.0</code></td></tr>
+      <tr><td>3 &#183; middle</td><td>20%</td><td>40%</td><td>70%</td><td><code>0.20 / 0.40 = &#215;0.5</code></td></tr>
+      <tr><td>4</td><td>20%</td><td>20%</td><td>30%</td><td><code>&#215;1.0</code></td></tr>
+      <tr><td>5 &#183; bottom</td><td>20%</td><td>10%</td><td>5%</td><td><code>&#215;2.0</code></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <pre>what the corpus actually delivers   (100 + 95 + 70) / 3                      = <span class="s">88.3%</span>
+counting the labels plainly         (10&#183;1.00 + 20&#183;0.95 + 40&#183;0.70) / 70         = <span class="k">81.4%</span>   <span class="c">6.9 points low</span>
+weighting each label by its band    (20&#183;1.00 + 20&#183;0.95 + 20&#183;0.70) / 60         = <span class="s">88.3%</span>   <span class="c">the correction is exact</span></pre>
+
+  <p>Three consequences, and only the last one is obvious:</p>
+  <ul>
+    <li><strong>The bar lands higher than the target needs</strong>, because the sweep keeps walking up looking for a precision the sample structurally cannot show it.</li>
+    <li><strong>Fewer keywords get filed</strong> — coverage paid for an error nobody could see.</li>
+    <li><strong>The reported precision was not the precision assignment would deliver.</strong> The error is in the safe direction, which is exactly why it survived: nothing broke, and the headline number was simply wrong.</li>
+  </ul>
+
+  <div class="rule-box" data-c="worker proxy">
+    <div class="rl">The correction</div>
+    <p>Each label counts for its band&#8217;s share of the topic divided by its band&#8217;s share of the labels &#8212; the standard estimator for a stratified sample.</p>
+    <p>Every pool row now carries <code>band</code> and <code>band_share</code>; the verdict copies both; the sweep weights each label on the worker and the proxy alike. <code>support</code> and <code>positives</code> stay <em>plain</em> counts, because they say how much evidence there was, not what it measured &#8212; and over a topic whose labels reach every band the weights sum to its label count, so <button class="term" data-t="shrinkage">shrinkage</button> is untouched. Weighting changes what a label <em>says</em>, not how much evidence the topic <em>brings</em>.</p>
+  </div>
+
+  <p>Two rules came with it, and both are about refusing to half-apply a correction:</p>
+  <ul>
+    <li><strong>A label with no band is not evidence.</strong> It is dropped from the sweep entirely rather than counted unweighted &#8212; a correction applied to some labels and not others is worse than none, and nothing quietly switches a topic back to the old arithmetic.</li>
+    <li><strong>Only <code>calibration</code> verdicts are swept.</strong> Any verdict whose pair is in the pool picks up a score whatever its source, so once tier 3 lands, a tier-3 verdict on a pool keyword would have walked into the calibration evidence on the strength of that score alone. Source, not the presence of a score, is what makes a label evidence.</li>
+  </ul>
+
+  <p><strong>One number on this page still needs reading carefully.</strong> <em>Coverage</em> &#8212; when you see it quoted against a sample rather than a corpus &#8212; is the share of the <em>labelled shortlist</em> a bar claims, not the share of the corpus. The shortlist is middle-heavy by construction, so it over-represents borderline keywords; a bar that claims a quarter of the shortlist still claims most of the keywords that actually score high. That is the same stratification, read on the other axis.</p>
+
+
+  <p><strong>Read that coverage number carefully.</strong> It is the share of the <em>labelled sample</em> the bar claims, not the share of the corpus — and the two are deliberately different. The sample pool is concentrated in the fuzzy middle precisely because that is where the bar lives, so it over-represents borderline keywords by construction. A bar that claims a quarter of the sample can still claim most of the keywords that actually score high.</p>
+  <p>Two properties of that walk are easy to miss and both are in the code:</p>
+  <ul>
+    <li><strong>Precision is not monotonic in the bar</strong>, so the sweep walks the whole list and keeps the <em>deepest</em> qualifying point rather than stopping at the first dip.</li>
+    <li><strong>A cut is only considered between distinct scores.</strong> A bar that splits two keywords with identical scores is not a bar the assignment step could apply.</li>
+  </ul>
+  <p>And when a topic cannot reach the target on <em>any</em> cut — not even its single highest-scoring labelled keyword is a yes often enough — the answer is <code>nil</code>. That is a real finding about a topic and is reported as one; the caller falls back to the brand-wide bar rather than inventing a number.</p>
+
+  <div class="rule-box" data-c="agent">
+    <div class="rl">What the agent names, and what it does not</div>
+    <p>The agent says <em>"96% precision"</em>. It never says <em>"0.83"</em>.</p>
+    <p>The target travels with the call as an argument; nothing on disk stores a threshold. There is deliberately no <code>set-threshold</code> endpoint, because a saved threshold is a number that drifts out of step with the topic-set version it was measured against — and this way there is nothing to drift.</p>
+  </div>
+</section>
+
+<section id="s9">
+  <p class="kicker">Stage 09 · <span style="color:var(--c-proxy)">Proxy</span> / <span style="color:var(--c-worker)">Worker</span></p>
+  <h2>Shrinkage: what to do about a topic with nine labels</h2>
+  <p>Budgeting ~100 labels per topic is affordable because there are fifteen topics, not a thousand. But the budget cannot fix a topic the <em>corpus</em> is thin on: a topic owning 40 keywords cannot yield 100 labels however much we are willing to spend.</p>
+  <p>Fitting a bar to what it does yield is worse than not splitting at all — a bar set by noise misfiles every keyword near it. So each topic's measured optimum is <button class="term" data-t="shrinkage">shrunk</button> toward the brand-wide bar in proportion to the evidence behind it:</p>
+  <pre>bar = (n · own_bar + k · brand_bar) / (n + k)        <span class="c">k = 20</span></pre>
+  <p>Continuous, with no minimum-label cutoff to argue about. And the reported precision is re-measured <em>at the shrunk bar</em>, never carried over from the sweep — because the shrunk bar is the one that will actually be applied, and reporting the precision of a bar nobody uses is how a system ends up with a measured accuracy that is not the accuracy anyone gets.</p>
+
+  <figure data-c="proxy worker">
+    <svg class="fig-svg" viewBox="0 0 720 250" role="img" aria-label="Curve showing how much a topic's bar leans on the brand-wide bar as its label count rises: at 9 labels it is 69 percent the brand's, at 20 labels half, at 40 labels a third, and at 100 labels only 17 percent.">
+      <text class="col-lbl" x="10" y="16">How much a topic leans on the brand bar &nbsp;·&nbsp; w = 20 / (n + 20)</text>
+      <line x1="60" y1="40" x2="60" y2="182" stroke="var(--rule-2)"/>
+      <line x1="60" y1="182" x2="690" y2="182" stroke="var(--rule-2)"/>
+      <g class="box-s" fill="var(--ink-3)" text-anchor="end">
+        <text x="52" y="44">100%</text><text x="52" y="115">50%</text><text x="52" y="186">0%</text>
+      </g>
+      <g stroke="var(--grid)" stroke-width="1"><line x1="60" y1="111" x2="690" y2="111"/></g>
+      <polyline fill="none" stroke="var(--c-worker)" stroke-width="2.2"
+        points="60,40 71,55 86,71 107,88 128,99 149,108 170,115 191,121 212,126 233,130 254,133 275,136 296,139 317,141 338,143 359,145 380,147 401,148 422,150 443,151 464,152 485,153 506,154 527,155 548,156 569,157 590,158 611,158 632,159 653,160 674,160 690,161"/>
+      <g>
+        <circle cx="107" cy="88" r="4" fill="var(--c-agent)"/>
+        <text class="box-s" x="114" y="84" fill="var(--ink)">n=9 → 69% brand</text>
+        <circle cx="170" cy="115" r="4" fill="var(--c-agent)"/>
+        <text class="box-s" x="177" y="111" fill="var(--ink)">n=20 → half and half</text>
+        <circle cx="296" cy="139" r="4" fill="var(--c-agent)"/>
+        <text class="box-s" x="303" y="135" fill="var(--ink)">n=40 → 33% (reported as “thin”)</text>
+        <circle cx="674" cy="160" r="4.5" fill="var(--c-proxy)"/>
+        <text class="box-s" x="668" y="176" text-anchor="end" fill="var(--c-proxy)">n=100 → 17%: standing on its own measurement</text>
+      </g>
+      <g class="box-s" fill="var(--ink-3)" text-anchor="middle">
+        <text x="60" y="200">0</text><text x="270" y="200">40</text><text x="480" y="200">80</text><text x="690" y="200">120</text>
+        <text x="375" y="220" fill="var(--ink-2)">labels recorded for the topic</text>
+      </g>
+      <text class="note" x="10" y="242">At the ~100 labels the design budgets, a topic is 83% its own number. The blend is a safety net for the few genuinely thin topics, not the main mechanism.</text>
+    </svg>
+    <figcaption><b>Figure 4 — Evidence decides how much a topic is trusted.</b> Note what this conditions on: keyword count decides how much to trust a topic's <em>measurement</em>. What drives the bar itself is how <em>specific</em> the topic is — a large topic can be sprawling and a small one tight.</figcaption>
+  </figure>
+</section>
+
+<section id="s10">
+  <p class="kicker">Stage 10 · <span style="color:var(--c-worker)">CPU worker</span> + <span style="color:var(--c-agent)">Agent</span> &nbsp;<span class="pill p-ship">Shipped</span></p>
+  <h2>Assignment: three tiers, cheapest first, and an honest remainder</h2>
+  <p>Everything up to here is measurement. <code>assign</code> is the call that writes topics onto keywords. It derives each topic's bar from the recorded verdicts at the target the call names, then walks every keyword in the inventory. <strong>No LLM runs inside it</strong> — all the language work sits on either side: judging the sample before, settling the remainder after.</p>
+  <p>It is the one classification verb with no button, and deliberately so. The only judgment in it is the precision target, which the design keeps an <em>argument, not stored state</em>. A UI button would have to get that number from somewhere — hardcode a default, which is a precision nobody chose, or persist the last one, which is the drifting state the design refused. The target is also chosen from what <code>status</code> just reported about per-topic bars, which is agent context.</p>
+
+  <figure class="bleed" data-c="worker agent">
+    <div class="scroller">
+    <svg class="fig-svg" viewBox="0 0 1180 268" role="img" aria-label="A bar showing the corpus divided into four parts: tier one direct assignment, tier two neighbour propagation, tier three LLM classification, and an honestly unassigned noise bucket. Each part is described in a card below it.">
+      <text class="col-lbl" x="20" y="18">Every keyword in the inventory</text>
+      <g>
+        <rect x="20" y="30" width="627" height="38" fill="var(--c-worker-bg)" stroke="var(--c-worker)"/>
+        <rect x="647" y="30" width="91" height="38" fill="var(--c-worker-bg)" stroke="var(--c-worker)" opacity=".7"/>
+        <rect x="738" y="30" width="137" height="38" fill="var(--c-agent-bg)" stroke="var(--c-agent)"/>
+        <rect x="875" y="30" width="285" height="38" fill="var(--surface-2)" stroke="var(--rule-2)" stroke-dasharray="4 3"/>
+      </g>
+      <g class="box-t" fill="var(--ink)">
+        <text x="34" y="55">Tier 1 — direct</text>
+        <text x="659" y="55" font-size="11">Tier 2</text>
+        <text x="750" y="55" font-size="11.5">Tier 3 — LLM</text>
+        <text x="889" y="55">Noise</text>
+      </g>
+      <g stroke="var(--ink-3)" stroke-width="1" fill="none" stroke-dasharray="3 3">
+        <path d="M333,68 L333,86 L160,86 L160,104"/>
+        <path d="M692,68 L692,86 L460,86 L460,104"/>
+        <path d="M806,68 L806,86 L750,86 L750,104"/>
+        <path d="M1017,68 L1017,86 L1030,86 L1030,104"/>
+      </g>
+      <g>
+        <rect x="20" y="104" width="280" height="126" fill="var(--surface)" stroke="var(--rule-2)"/>
+        <rect x="20" y="104" width="280" height="3" fill="var(--c-worker)"/>
+        <rect x="320" y="104" width="280" height="126" fill="var(--surface)" stroke="var(--rule-2)"/>
+        <rect x="320" y="104" width="280" height="3" fill="var(--c-worker)"/>
+        <rect x="620" y="104" width="260" height="126" fill="var(--surface)" stroke="var(--rule-2)"/>
+        <rect x="620" y="104" width="260" height="3" fill="var(--c-agent)"/>
+        <rect x="900" y="104" width="260" height="126" fill="var(--surface)" stroke="var(--rule-2)"/>
+        <rect x="900" y="104" width="260" height="3" fill="var(--rule-2)"/>
+      </g>
+      <g class="box-t">
+        <text x="34" y="128">Clears its topic's bar</text>
+        <text x="334" y="128">Its neighbours agree</text>
+        <text x="634" y="128">An LLM reads it</text>
+        <text x="914" y="128">Belongs to none of them</text>
+      </g>
+      <g class="box-s" fill="var(--ink-2)">
+        <text x="34" y="148">Score above the bar, margin above 0.01.</text>
+        <text x="34" y="163">Comparisons against numbers that</text>
+        <text x="34" y="178">already exist. This is the bulk.</text>
+        <text x="34" y="202" fill="var(--c-worker)">CPU worker · free</text>
+        <text x="34" y="220" fill="var(--ink-3)">A second topic clearing its own bar too</text>
+
+        <text x="334" y="148">Falls short, so look at its nearest</text>
+        <text x="334" y="163">neighbours in ann_hnsw.bin. If the</text>
+        <text x="334" y="178">confident ones strongly agree, inherit.</text>
+        <text x="334" y="202" fill="var(--c-worker)">CPU worker · free</text>
+        <text x="334" y="220" fill="var(--ink-3)">Catches “zero drop” → Running Shoes</text>
+
+        <text x="634" y="148">The remainder, judged in batches and</text>
+        <text x="634" y="163">posted back through verdicts. An input</text>
+        <text x="634" y="178">to the next assign, not a step inside it.</text>
+        <text x="634" y="202" fill="var(--c-agent)">The agent · the only per-keyword cost</text>
+        <text x="634" y="220" fill="var(--ink-3)">Fed by unassigned.jsonl, resumable</text>
+
+        <text x="914" y="148">Not “the algorithm gave up” — these</text>
+        <text x="914" y="163">genuinely belong to none of the topics</text>
+        <text x="914" y="178">this customer tracks.</text>
+        <text x="914" y="202" fill="var(--ink-3)">Expect it to be large</text>
+        <text x="914" y="220" fill="var(--ink-3)">Fix is a scoped upload, not more topics</text>
+      </g>
+      <text class="note" x="20" y="256">Widths are illustrative. The real driver of tier-3 spend is not the topic count but the gap between the corpus and the topics — a brand that uploads its whole industry pays more than one whose upload is already focused.</text>
+    </svg>
+    </div>
+    <figcaption><b>Figure 5 — Cheapest tier first, and a <em>no</em> outranks all of them.</b> Tiers 1 and 2 cost nothing per keyword; only tier 3 pays a third party. Every assignment is stored with the tier that made it, the score, the margin and the topic-set version — so a misfiling is attributable rather than mysterious. Because <code>assign</code> recomputes rather than accumulates, re-running it after tier 3 folds those answers in and refits the bars.</figcaption>
+  </figure>
+
+  <div class="rule-box" data-c="worker agent">
+    <div class="rl">A recorded <em>no</em> is a veto, at every tier</div>
+    <p>Whatever loop wrote it, a judgment that this keyword does not belong to this topic outranks a score above the bar and a neighbourhood agreeing.</p>
+    <p>The veto used to apply only to tier 2, so a keyword the embedding put confidently in the wrong place was re-filed under the denied topic on <em>every</em> run — and the phase-4 verification pass would have asked about it forever. It now vetoes the <strong>(keyword, topic) pair</strong> rather than the keyword: a denied runner-up drops the second topic and leaves the primary standing; a denied primary sends the keyword to the tiers that <em>ask</em> rather than infer. It does not promote the runner-up in the primary's place even where that runner-up clears its own bar — what a denial contradicts is the ranking tier 1 stands on.</p>
+    <p>It is applied inside tier 1 rather than at the moment of writing, because the map tier 2 votes from is built out of what tier 1 filed: <strong>a keyword nobody should have filed must not go on to be evidence for filing its neighbours.</strong></p>
+  </div>
+
+  <h3>Why <code>assign</code> runs on the CPU worker</h3>
+  <p>Tiers 1 and 2 are a single pass and cannot be split — tier 2 propagates from what tier 1 filed, so it reads tier 1's output. It is not GPU work in any sense: <code>hnswlib</code> is CPU-only, with no CUDA build anywhere in this stack, so a card would run tier 2 at exactly the same speed, after a cold start, on the one instance builds queue for.</p>
+  <p>And it is not proxy work, for a concrete reason. hnswlib stores the vectors inside the index: at <code>M=64</code> and 1024 dimensions that is roughly <strong>4.6&nbsp;KB per element</strong> — about 1.15&nbsp;GB at 250k keywords and <strong>4.6&nbsp;GB at a million</strong>. The proxy has 2&nbsp;GB in total, shared with the UI. Tier 1 alone would fit; tier 2 does not, and not by a small margin. So: the CPU worker, where there are 16&nbsp;GB.</p>
+  <p><code>assign</code> needs one guard and has it: <strong>it refuses while a keyword build for the brand is running</strong>, because a build's tail rewrites the score table it walks and appends to the index tier 2 queries. It is a refusal before anything is read or written, not a lock — the proxy's single-flight lock cannot cover this, since that lock covers the request that <em>starts</em> a build, not the build, which runs on for minutes on another machine.</p>
+
+  <h3>Multi-topic, and how we know it is real</h3>
+  <p>Ranking always produces a second place, so "has a runner-up" means nothing — every keyword has one. The test is that <strong>both topics independently clear their own bar</strong>: topic B would have confidently claimed the keyword even if topic A did not exist.</p>
+  <ul>
+    <li>"protein powder for weight loss" scores above the bar against <em>both</em> Protein Supplements and Weight Loss → two owners.</li>
+    <li>"running shoes for women" scores high on one topic while its runner-up sits far below that topic's bar → one owner, and the runner-up is never shown as anything.</li>
+  </ul>
+  <p>The definition self-limits: in a healthy topic set only a small slice of keywords clears two bars. If a large share does, that is not a multi-topic corpus — it is the health check telling us two topics overlap and should be merged.</p>
+</section>
+
+<section id="twice">
+  <p class="kicker">The one duplication we chose</p>
+  <h2>The sweep is written twice, on purpose</h2>
+  <p><span class="owner o-proxy"><span class="dot"></span>Go</span> <span class="owner o-worker"><span class="dot"></span>Python</span> <code>status</code> must answer without waking a worker. <code>assign</code> runs <em>on</em> the worker and needs the same arithmetic. So the sweep, the shrinkage and the point selection exist twice: <strong>in Python on the worker and in Go on the always-on proxy</strong>, constants included.</p>
+  <p>They are held together by test cases that mirror each other name for name. A change to either side that does not land on both makes a topic's bar depend on which door you read it through — and the mirrored test is what fails first.</p>
+  <p>That is not theoretical. The three highlighted pairs below landed <em>with</em> the band-weighting fix, hand-computed on both sides — the mechanism working as intended, rather than one implementation quietly drifting ahead of the other.</p>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th style="width:50%">Python · <code>bifrost/tests/test_calibration.py</code></th><th>Go · <code>internal/classification/calibration_test.go</code></th></tr></thead>
+    <tbody>
+      <tr><td><code>test_the_bar_is_the_lowest_point_that_still_meets_the_target</code></td><td><code>TestBarIsTheLowestPointThatMeetsTheTarget</code></td></tr>
+      <tr><td><code>test_a_dip_in_precision_does_not_stop_the_sweep</code></td><td><code>TestADipInPrecisionDoesNotStopTheSweep</code></td></tr>
+      <tr><td><code>test_identical_scores_are_never_split_by_a_bar</code></td><td><code>TestIdenticalScoresAreNeverSplitByABar</code></td></tr>
+      <tr><td><code>test_a_topic_that_cannot_reach_the_target_falls_back_to_the_brand</code></td><td><code>TestATopicThatCannotReachTheTargetFallsBackToTheBrand</code></td></tr>
+      <tr><td><code>test_a_topic_with_no_labels_at_all_still_appears</code></td><td><code>TestATopicWithNoLabelsStillAppears</code></td></tr>
+      <tr><td><code>test_a_thin_topic_is_pulled_toward_the_brand_bar</code></td><td><code>TestAThinTopicIsPulledTowardTheBrandBar</code></td></tr>
+      <tr><td><code>test_precision_is_measured_at_the_bar_that_will_be_applied</code></td><td><code>TestPrecisionIsMeasuredAtTheBarThatWillBeApplied</code></td></tr>
+      <tr><td><code>test_a_tier_three_verdict_sits_out_the_sweep</code></td><td><code>TestATierThreeVerdictSitsOutTheSweep</code></td></tr>
+      <tr class="hl"><td><code>test_the_sweep_weights_labels_by_sampling_band</code></td><td><code>TestTheSweepWeightsLabelsBySamplingBand</code></td></tr>
+      <tr class="hl"><td><code>test_a_scored_label_without_a_band_is_not_evidence</code></td><td><code>TestAScoredLabelWithoutABandIsNotEvidence</code></td></tr>
+      <tr class="hl"><td><code>test_band_shares_that_match_the_sample_change_nothing</code></td><td><code>TestBandSharesThatMatchTheSampleChangeNothing</code></td></tr>
+      <tr><td><code>test_the_target_travels_with_the_call</code></td><td><code>TestTheTargetTravelsWithTheCall</code></td></tr>
+      <tr><td><code>test_warnings_name_the_topic_that_needs_more_labels</code></td><td><code>TestWarningsNameTheTopicThatNeedsMoreLabels</code></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <details class="more" data-c="proxy worker">
+    <summary>The collapse we deliberately did not take</summary>
+    <div class="more-body">
+      <p><code>assign</code> could fetch its bars from the proxy's <code>status</code> rather than computing them, leaving Go as the only implementation. It only works in that direction — dropping the <em>Go</em> copy would mean waking a worker to answer <code>status</code>, which the design forbids.</p>
+      <p>It trades a duplication that a test catches for a worker-to-proxy dependency on a number the worker has every input to compute locally. Worth revisiting if the sweep ever needs changing more than once; not worth doing pre-emptively.</p>
+    </div>
+  </details>
+</section>
+
+<section id="surface">
+  <p class="kicker">The agent's door</p>
+  <h2>One group, workflow verbs, no project parameter</h2>
+  <p>The agent drives everything through <code>aeo keywords</code> — one CLI group, one SDK namespace, on Berlin's <code>/aeo</code> route. The token carries the project, so <strong>no call ever takes a project parameter</strong>. Nothing about embeddings, index files, prototypes or storage layout leaks through: <code>status</code> answers "what state is this brand's classification in", not "what files are on disk".</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th><code>aeo keywords …</code></th><th>What it does</th><th>Kind</th><th>Answered by</th><th></th></tr></thead>
+    <tbody>
+      <tr><td><code>status</code></td><td>Topic-set version, whether scoring is current, health warnings, per-topic bars and the precision measured for each</td><td>Free read</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy · Go</span></td><td><span class="pill p-ship">Shipped</span></td></tr>
+      <tr><td><code>sample</code></td><td>Keywords to label, spread across the score range <em>and</em> across topics</td><td>Free read</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy · Go</span></td><td><span class="pill p-ship">Shipped</span></td></tr>
+      <tr><td><code>verdicts</code></td><td>Record yes/no labels into the append-only cache</td><td>Write</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy · Go</span></td><td><span class="pill p-ship">Shipped</span></td></tr>
+      <tr><td><code>assign</code></td><td>Derive the bars at the named target, then file the corpus: tiers 1 and 2, the keywords a verdict already answered, and the honest remainder</td><td>Compute · metered</td><td><span class="owner o-worker"><span class="dot"></span>CPU worker</span></td><td><span class="pill p-ship">Shipped</span></td></tr>
+      <tr><td><code>unprocessed</code></td><td>The remainder, in batches — the feed for tier 3. Slices <code>unassigned.jsonl</code> rather than re-deriving a corpus-wide difference</td><td>Free read</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td><span class="pill p-ship">Shipped</span></td></tr>
+      <tr><td><code>pending-intent</code></td><td>Keywords no source has assigned a search intent to, with corpus-wide coverage</td><td>Free read</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy · Go</span></td><td><span class="pill p-ship">Shipped</span></td></tr>
+      <tr><td><code>set-intent</code></td><td>Record intents in bulk from JSONL</td><td>Write</td><td><span class="owner o-proxy"><span class="dot"></span>Proxy · Go</span></td><td><span class="pill p-ship">Shipped</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>What is absent is the point.</strong> Upload, topic sync, build and the scoring that rides on the build have no verb here — by design, not by omission. Topic sync and build are the ones worth stating outright: they exist, an agent can read their results, and an agent cannot cause either. An agent that could build would be an agent that could quietly re-stamp the version every existing assignment was measured against.</p>
+  <p><strong>Only two things in the whole pass wake a machine</strong> — the build, and <code>assign</code>. Everything else is answered by the proxy from shared storage. And <code>assign</code> is called twice per pass rather than once per batch: the second call is not a repair, it is how tier-3 judgments sitting in the verdict store get written onto keywords. That is the property to defend — an agent alternates a read and a write dozens of times per pass, and a container start inside that loop would cost more in machine-minutes than the labelling costs in tokens.</p>
+  <p>Every call carries the topic-set version, and a stale one is <strong>rejected loudly</strong> rather than silently mixed into the current era. The agent cannot resolve staleness on its own — syncing is a human's button — so the rejection is also the handoff: it stops and says the topics moved.</p>
+</section>
+
+<section id="storage">
+  <p class="kicker">Where it lives</p>
+  <h2>One directory per brand, on the shared volume</h2>
+  <p>There is no keyword table in Postgres and we are not adding one: a brand's corpus runs to millions of rows, and <strong>keyword text is the only identity a keyword has</strong>. Everything a keyword accumulates lives in stores keyed by that text, <em>beside</em> the append-only inventory rather than as columns on it — which is what lets those be written and rewritten without the inventory ever being edited.</p>
+  <pre>&lt;brand&gt;/
+├── keywords.jsonl              <span class="c">the inventory · append-only            proxy (upload)</span>
+├── attributes/
+│   └── intent.jsonl            <span class="c">keyed by keyword text                  proxy</span>
+├── build/latest/kw/
+│   ├── meta.parquet            <span class="c">keyword text                           build</span>
+│   ├── vectors.npy             <span class="c">E5 embeddings, L2-normalised           build</span>
+│   ├── ann_hnsw.bin            <span class="c">neighbour graph — tier 2 reads it      build</span>
+│   └── index_meta.json         <span class="c">                                       build</span>
+└── classification/
+    ├── topic_pull.json         <span class="k">Berlin's payload as sent               proxy (sync)</span>
+    ├── topic_set.json          <span class="c">what a build embedded + version        build</span>
+    ├── prototypes.npy          <span class="c">one vector per leaf topic              build</span>
+    ├── scores.parquet          <span class="c">best · score · runner-up · margin      build</span>
+    ├── scores_meta.json        <span class="c">version scored against, distribution   build</span>
+    ├── sample_pool.jsonl       <span class="c">≤400 candidates per topic              build</span>
+    ├── assignments.jsonl       <span class="c">the filed corpus, with its tier        assign</span>
+    ├── unassigned.jsonl        <span class="c">the remainder, as unprocessed serves   assign</span>
+    ├── assignment_meta.json    <span class="c">bars, target, per-tier counts          assign</span>
+    ├── verdicts/
+    │   └── &lt;topic-fingerprint&gt;/
+    │       └── &lt;batch&gt;.jsonl   <span class="k">proxy, and only the proxy</span>
+    └── runs/                   <span class="c">durable record of every run</span></pre>
+
+  <h3>One writer per file, which is what lets the jobs sit on different machines</h3>
+  <p>Jobs can live on different machines exactly when their write sets do not overlap. Every file above has one writer:</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th style="width:22%">Job</th><th>Writes</th><th style="width:26%">Reads</th></tr></thead>
+    <tbody>
+      <tr><td><b>Topic sync</b><br><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td><code>classification/topic_pull.json</code></td><td>—</td></tr>
+      <tr><td><b>Keyword upload</b><br><span class="owner o-proxy"><span class="dot"></span>Proxy</span></td><td><code>keywords.jsonl</code></td><td>the same file, to deduplicate</td></tr>
+      <tr><td><b>Build</b><br><span class="owner o-worker"><span class="dot"></span>GPU</span></td><td><code>prototypes.npy</code>, <code>topic_set.json</code>, <code>build/latest/kw/*</code>, <code>scores.parquet</code>, <code>scores_meta.json</code>, <code>sample_pool.jsonl</code></td><td>the topic pull</td></tr>
+      <tr><td><b>Assign</b><br><span class="owner o-worker"><span class="dot"></span>CPU worker</span></td><td><code>assignments.jsonl</code>, <code>unassigned.jsonl</code>, <code>assignment_meta.json</code></td><td>scores, verdicts, <code>ann_hnsw.bin</code></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The upload is the only entry that reads what it writes, so it is the only one needing <em>ordering</em> rather than just a single writer — which the proxy's per-brand single-flight lock provides. Everything else appends or replaces a file nothing else touches.</p>
+  <p>One more detail worth knowing before you read anything on disk: <strong>the manifest a build writes carries its own leaf topics, in prototype row order</strong>, rather than deferring to the pull for them. A later sync can rename or reorder topics at any time, and a reader that took its column names from a newer pull would label one build's vectors with another build's topics.</p>
+
+  <div class="rule-box" data-c="proxy worker">
+    <div class="rl">Rule · two writers would be one too many</div>
+    <p>The intent store has exactly one writer: the proxy. The verdict store, the same.</p>
+    <p>The UI uploads keywords to the worker and intents to the proxy as two calls rather than one, and the worker serves the two intent <em>reads</em> for a local checkout but never the write. Two implementations of a read can drift harmlessly; two implementations of a write corrupt a store.</p>
+  </div>
+</section>
+
+<section id="rules">
+  <p class="kicker">The load-bearing rules</p>
+  <h2>Five sentences that decide most arguments</h2>
+  <p>If you remember nothing else from this page, these settle the majority of "where should this go?" questions before they turn into a design discussion.</p>
+
+  <div class="rule-box" data-c="worker proxy">
+    <div class="rl">01 · Placement, on two axes that must not be welded</div>
+    <p><strong>What may write derived data:</strong> only an explicitly triggered job — never ingestion, never a read. <strong>Which machine:</strong> the GPU if and only if the job runs the embedding model over the corpus.</p>
+    <p>The first is an ownership rule; the second is hardware economics. Welding them into "the build writes derived data, and the build runs on the GPU" makes the card read as a permissions boundary, and every new piece of derived data then has to argue for hardware it does not need. <code>assign</code> is the proof they are separate: derived, so explicitly triggered; no model, so no card.</p>
+  </div>
+  <div class="rule-box" data-c="worker">
+    <div class="rl">02 · Scoring</div>
+    <p>Scoring never gets its own trigger, its own job or its own machine — it is the last thing the build does before it exits.</p>
+    <p>Both things that can invalidate a score — new keyword vectors and a new topic set — are steps of that same build, settled before the score is computed. By the time anyone hands the brand to an agent, the scores are already sitting there.</p>
+  </div>
+  <div class="rule-box" data-c="human agent">
+    <div class="rl">03 · Ownership</div>
+    <p>The human owns what the corpus and the topics <em>are</em>; the agent owns what the keywords <em>mean</em>.</p>
+    <p>Upload, sync and build are buttons on a screen that shows what will change. <code>assign</code> is the one derived job the agent triggers, and it stays that way because its only judgment — the precision target — is agent context, and a button would have to invent or persist that number.</p>
+  </div>
+  <div class="rule-box" data-c="proxy worker">
+    <div class="rl">04 · Nothing derived happens by surprise</div>
+    <p>Ingestion writes down what it was given and stops.</p>
+    <p>That is what gives every derived file a single writer, which is in turn what lets these jobs sit on different machines with no lock between them. The one exception proves it: the keyword upload reads what it writes, so it gets ordering from the proxy's per-brand single-flight lock.</p>
+  </div>
+  <div class="rule-box" data-c="proxy">
+    <div class="rl">05 · Cost</div>
+    <p>Every cost is paid once per keyword, full stop.</p>
+    <p>Uploads append; builds skip what is indexed; scoring skips what is scored; verdicts are cached per (keyword, topic fingerprint) so post-processing skips what is processed. Nothing in the pipeline can wipe accumulated work — the old "rebuild" flow is gone from the code, and keyword deletion, if it is ever needed, will be an explicit admin operation rather than a side effect.</p>
+  </div>
+</section>
+
+<section id="state">
+  <p class="kicker">Where the code is today</p>
+  <h2>Shipped, and what is next</h2>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th style="width:16%">Phase</th><th>What it delivers</th><th style="width:16%">State</th></tr></thead>
+    <tbody>
+      <tr><td><b>1 · Topics reach bifrost</b></td><td>Description column; Berlin's <code>/service</code> group with per-topic and set-wide fingerprints; the pull path on bifrost; the UI's "your topics have changed" notice and Sync&nbsp;topics button; placement as proxy policy; the topic health check; <code>aeo keywords status</code>.</td><td><span class="pill p-ship">Shipped</span></td></tr>
+      <tr><td><b>2 · Scoring and calibration</b></td><td>The scoring pass with durable run records; <code>sample</code> and <code>verdicts</code>; the verdict cache keyed per topic fingerprint; per-topic bars with shrinkage; the sweep in both Python and Go with the mirrored tests; the calibration playbook.</td><td><span class="pill p-ship">Shipped</span></td></tr>
+      <tr><td><b>3 · Assignment</b></td><td><code>assign</code> (tiers 1 and 2), tier 3 folded in from the verdict store, the two-bar multi-topic rule, the noise bucket, <code>unprocessed</code> as the resumable feed, full coverage in <code>status</code>, and a recorded <em>no</em> as a veto at every tier.</td><td><span class="pill p-ship">Shipped</span></td></tr>
+      <tr><td><b>4 · Attributes + verification</b></td><td>Query family and the branded/competitor tag; the piggybacked "was this filed right?" question; the measured per-tier error rate; confirmed examples feeding back into prototypes.</td><td><span class="pill p-plan">Next</span><br><span style="font-size:13px;color:var(--ink-3)">search intent shipped early</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>Search intent jumped the queue</strong>, for a reason specific to it: most of it arrives free. A Semrush export already carries an intent column, so those keywords are answered during upload before anyone pays for a token; only keywords from Search Console, a hand-written list or a competitor export need an LLM. The vocabulary is closed and it is Semrush's four — <em>commercial, informational, navigational, transactional</em> — and a keyword may carry more than one, so the question asked of an LLM is per-intent, never "pick one".</p>
+
+  <div class="rule-box" data-c="agent">
+    <div class="rl">The accuracy flywheel</div>
+    <p>The classic weakness of classification is that wrong assignments are invisible. A noise bin is visible; a misfiled keyword is not.</p>
+    <p>Phase 4 converts that into a measured number. The attribute pass already puts each keyword in front of an LLM, so it adds one nearly-free question — <em>"this was filed under topic X — does that look right?"</em> A <em>no</em> is never silently re-filed; it goes back through tier 3, and we log which tier made the original call. Because bars are derived from the verdict store rather than passed in, <code>assign</code> then gets better on its own: the same call at the same target, run after a few thousand confirmed examples have accumulated, fits tighter bars without anyone re-tuning anything.</p>
+  </div>
+</section>
+
+<section id="glossary">
+  <p class="kicker">Reference</p>
+  <h2>The words we use internally</h2>
+  <p class="lede">These appear throughout the codebase, the CLI help and the playbooks. Dotted terms above link here.</p>
+  <dl class="gloss">
+    <div id="g-prototype"><dt>Prototype</dt><dd>The vector that stands for a topic. Not the name alone — a name is a weak anchor — but <strong>name plus description</strong> embedded together, and later a few confirmed example keywords. One per leaf topic, all of them in <code>prototypes.npy</code>.<span class="src">bifrost/core/classification.py · embed_prototypes()</span></dd></div>
+    <div id="g-sweep"><dt>Sweep</dt><dd>Walking a candidate bar down a topic's labelled scores and measuring, at each stop, the precision you would get. The output is the <em>lowest</em> bar that still meets the target. Not a search over a model — just a sorted walk over a few hundred yes/no answers, each one <strong>weighted by the band it was sampled from</strong> so the number describes the corpus rather than the shortlist.<span class="src">bifrost/core/calibration.py · internal/classification/calibration.go</span></dd></div>
+    <div id="g-bar"><dt>Bar</dt><dd>The score a keyword must clear to be filed under a topic. One per topic, derived by the sweep at a named precision target, then shrunk toward the brand-wide bar in proportion to the evidence behind it. Never hardcoded, never stored.<span class="src">TopicBar{ Bar, Precision, OwnBar, Labels, Shrinkage, Thin }</span></dd></div>
+    <div id="g-margin"><dt>Margin</dt><dd>The gap between a keyword's best topic and its runner-up. A big margin means "clearly this topic"; a tiny one means "could be either". The margin bar stays global at <code>0.01</code> — a margin is a comparison <em>between</em> two topics, so it belongs to neither and there is nothing per-topic to fit.<span class="src">marginBar = 0.01</span></dd></div>
+    <div id="g-verdict"><dt>Verdict</dt><dd>One LLM answer to one question: <em>does this keyword belong to this topic — yes or no?</em> Stored with the score it was judged at. Three loops write them (calibration, tier 3, verification) and they are the same fact in all three; what differs is only who reads it.<span class="src">bifrost/core/verdicts.py · sources: calibration | tier3 | verification</span></dd></div>
+    <div id="g-fingerprint"><dt>Fingerprint</dt><dd>A hash over exactly the content that would invalidate downstream work — a topic's name, description and parentage — and nothing that would not. Two scales: one per topic (what labels are filed under) and one for the whole set (what prototypes, scores and assignments are keyed to).<span class="src">backend/internal/topicset/topicset.go</span></dd></div>
+    <div id="g-version"><dt>Topic-set version</dt><dd>A counter (<code>v3</code>) stamped when the set-wide fingerprint moves. Content decides what is still valid; the version is what a person can read and what eras are ordered by — which a content hash cannot give, since a revert produces an older hash.<span class="src">classification/topic_set.json · topic_set_version</span></dd></div>
+    <div id="g-shrinkage"><dt>Shrinkage</dt><dd>Blending a topic's own measured bar with the brand-wide one, weighted by how many labels back it: <code>w = 20/(n+20)</code>. Continuous, so there is no minimum-label cutoff to argue about. A topic below 40 labels is additionally reported as <em>thin</em>, purely so a reader knows which numbers to trust.<span class="src">shrink() — mirrored in Python and Go</span></dd></div>
+    <div id="g-leaf"><dt>Leaf topic</dt><dd>A topic that actually competes for keywords: every child, plus any parent with no children. A parent <em>with</em> children never gets a prototype — it would near-duplicate its own children's, and its keyword set is the union of theirs anyway.<span class="src">topicset.Topic.Leaf</span></dd></div>
+    <div id="g-health"><dt>Topic health check</dt><dd>Every prototype against every other, run as step one of a build (it used to ride the topic sync, which is also when it embedded prototypes; both moved). Pairs above <code>0.95</code> cosine are reported as near-duplicates. A warning, never a decision — merging topics is an edit in the product. Near-duplicate topics are the single most common way a whole corpus ends up ambiguous, and a warning here is a stop sign for calibration.<span class="src">DUPLICATE_SIMILARITY_THRESHOLD = 0.95 · reported to the human who pressed Build</span></dd></div>
+    <div id="g-matmul"><dt>Matmul</dt><dd>Matrix multiply. Because keyword vectors and prototypes are both L2-normalised, the dot product between them <em>is</em> the cosine similarity — so scoring the entire corpus against every topic is a single multiply, chunked 50,000 keywords at a time to bound the working set.<span class="src">SCORE_CHUNK = 50_000</span></dd></div>
+    <div id="g-hnsw"><dt>HNSW graph</dt><dd>The approximate-nearest-neighbour index the keyword build produces (<code>ann_hnsw.bin</code>). Tier 2 reads it: a keyword that falls short of its bar inherits a topic when its confidently-assigned neighbours strongly agree — free, and it catches vocabulary the topic name does not share ("zero drop" → Running Shoes). It is also what decides where <code>assign</code> runs: hnswlib keeps the vectors inside the index, ~4.6 KB per element, so a million keywords is ~4.6 GB against the proxy's 2 GB.<span class="src">build/latest/kw/ann_hnsw.bin · M=64, dim=1024</span></dd></div>
+    <div id="g-veto"><dt>Veto</dt><dd>A recorded <em>no</em> outranks a score above the bar and a neighbourhood agreeing, at every tier. It rules out the <strong>(keyword, topic) pair</strong>, not the keyword: a denied runner-up drops the second topic, a denied primary sends the keyword to the tiers that ask rather than infer, and the runner-up is never promoted in its place.<span class="src">_tier_one() / _denied() in assignment.py</span></dd></div>
+    <div id="g-pull"><dt>Topic pull</dt><dd>Berlin's topic payload as sent, written verbatim to <code>topic_pull.json</code> by the proxy when someone presses Sync&nbsp;topics. Distinct from <code>topic_set.json</code>, which is what a build actually embedded and names the pull it came from. Comparing the two answers "is a build due?" from two local files.<span class="src">classification/topic_pull.json</span></dd></div>
+    <div id="g-stratified"><dt>Stratified sample</dt><dd>A sample drawn at deliberately different rates from different slices of a population — here, 10/20/40/20/10 across a topic's five score quintiles. It buys more information per label than a uniform draw, but <strong>you can no longer just count</strong>: each label has to be weighted by its slice's share of the population over its share of the sample, or the measurement describes the sample rather than the corpus.<span class="src">_weigh() / weigh() — mirrored in Python and Go</span></dd></div>
+    <div id="g-band"><dt>Sampling band</dt><dd>Which score quintile of a topic a shortlisted keyword was drawn from — band 0 is the highest-scoring fifth, band 4 the lowest. The scoring pass stamps <code>band</code> and <code>band_share</code> onto every pool row; <code>verdicts</code> copies both onto the label. A label without them is not evidence and is dropped from the sweep.<span class="src">_band_of(rank, total) in scoring.py</span></dd></div>
+    <div id="g-pool"><dt>Sample pool</dt><dd>Up to 400 candidates per topic, written by the scoring pass and interleaved across five score bands (10/20/40/20/10%). Each row carries its band and that band's share of the topic, so the sweep can weight the labels back to the corpus. <code>sample</code> serves prefixes of it, which is what keeps that call a free read instead of a corpus scan.<span class="src">POOL_PER_TOPIC = 400 · BAND_WEIGHTS = (1,2,4,2,1)</span></dd></div>
+    <div id="g-noise"><dt>Noise bucket</dt><dd>Keywords that belong to none of the topics this customer tracks. Not "the algorithm gave up" — an honest and often <em>large</em> answer, because fifteen topics do not span a million-keyword corpus. A keyword forced into the nearest of fifteen buckets is worse than one left out of all of them.<span class="src">the remainder after tiers 1–3</span></dd></div>
+    <div id="g-stz"><dt>Scale-to-zero</dt><dd>The GPU machine runs only while a build does, then shuts down. It is why builds are pinned to the GPU without hesitation — we pay for minutes, not for a card sitting idle — and why waking one to answer a read would cost more than the read.<span class="src">handlers/placement.go · gpuPaths</span></dd></div>
+  </dl>
+</section>
+
+<style>
+.gloss{margin:24px 0 0; display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule)}
+.gloss>div{background:var(--surface); padding:16px 18px; display:grid; grid-template-columns:170px minmax(0,1fr); gap:0 24px}
+.gloss dt{font-family:var(--display); font-weight:600; font-size:15px}
+.gloss dd{margin:0; font-size:15px; line-height:1.55; color:var(--ink-2)}
+.gloss dd strong{color:var(--ink)}
+.gloss .src{display:block; font-family:var(--mono); font-size:11.5px; color:var(--ink-3); margin-top:7px}
+@media (max-width:640px){.gloss>div{grid-template-columns:1fr; gap:6px}}
+footer{margin-top:64px; padding-top:22px; border-top:1px solid var(--rule); font-size:13.5px; color:var(--ink-3); font-family:var(--display)}
+footer a{color:var(--c-proxy)}
+</style>
+
+<footer>
+  <p>Design of record: <code>docs/keyword-topic-classification.md</code>. Runbooks: <code>docs/playbooks/keyword-calibration.md</code>, <code>docs/playbooks/keyword-classification.md</code>. Implementations: <code>bifrost/bifrost/core/{classification,scoring,calibration,verdicts,assignment}.py</code>, <code>bifrost-proxy/internal/{classification,handlers,berlin}</code>, <code>backend/internal/{topicset,handlers/aeo}</code>.</p>
+  <p>Sample data in the interactive chart is generated to behave like real E5 cosines; every constant quoted on this page is the one in the code.</p>
+</footer>
+
+  </main>
+</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ---------------- component lens ---------------- */
+var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+chips.forEach(function(chip){
+  chip.addEventListener('click', function(){
+    var on = chip.getAttribute('aria-pressed') === 'true';
+    chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+    if(on){ delete document.body.dataset.lens; }
+    else { chip.setAttribute('aria-pressed','true'); document.body.dataset.lens = chip.dataset.c; }
+  });
+});
+
+/* ---------------- glossary tooltips ---------------- */
+var tip = document.getElementById('tip'), pinned = null;
+function showTip(el){
+  var entry = document.getElementById('g-' + el.dataset.t);
+  if(!entry) return;
+  var dd = entry.querySelector('dd').cloneNode(true);
+  var src = dd.querySelector('.src'); var srcText = src ? src.textContent : '';
+  if(src) src.remove();
+  tip.innerHTML = '';
+  var b = document.createElement('b'); b.textContent = entry.querySelector('dt').textContent;
+  tip.appendChild(b);
+  var body = document.createElement('span'); body.innerHTML = dd.innerHTML; tip.appendChild(body);
+  if(srcText){ var s = document.createElement('span'); s.className = 'src'; s.textContent = srcText; tip.appendChild(s); }
+  tip.hidden = false;
+  var r = el.getBoundingClientRect(), tr = tip.getBoundingClientRect();
+  var left = r.left + window.scrollX;
+  var maxLeft = window.scrollX + document.documentElement.clientWidth - tr.width - 14;
+  if(left > maxLeft) left = maxLeft;
+  if(left < window.scrollX + 10) left = window.scrollX + 10;
+  var top = r.bottom + window.scrollY + 8;
+  if(r.bottom + tr.height + 20 > window.innerHeight && r.top > tr.height + 16){
+    top = r.top + window.scrollY - tr.height - 8;
+  }
+  tip.style.left = left + 'px'; tip.style.top = top + 'px';
+}
+function hideTip(){ if(!pinned){ tip.hidden = true; } }
+Array.prototype.forEach.call(document.querySelectorAll('.term'), function(el){
+  el.addEventListener('mouseenter', function(){ if(!pinned) showTip(el); });
+  el.addEventListener('mouseleave', hideTip);
+  el.addEventListener('focus', function(){ showTip(el); });
+  el.addEventListener('blur', function(){ pinned = null; hideTip(); });
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    if(pinned === el){ pinned = null; tip.hidden = true; }
+    else { pinned = el; showTip(el); }
+  });
+});
+document.addEventListener('click', function(e){
+  if(pinned && !e.target.closest('.term')){ pinned = null; tip.hidden = true; }
+});
+
+/* ---------------- the sweep ---------------- */
+var svg = document.getElementById('sweep');
+if(!svg) return;
+
+var PX0 = 96, PX1 = 850, SMIN = 0.62, SMAX = 0.97;
+var PY0 = 312, PY1 = 412, PMIN = 0.50, PMAX = 1.00;
+var RIB_Y = 220, RIB_H = 44;
+var SHRINK_K = 20, THIN = 40;
+var BAND_WEIGHTS = [1, 2, 4, 2, 1];
+
+function x(s){ return PX0 + (Math.max(SMIN, Math.min(SMAX, s)) - SMIN) / (SMAX - SMIN) * (PX1 - PX0); }
+function sAt(px){ return SMIN + (Math.max(PX0, Math.min(PX1, px)) - PX0) / (PX1 - PX0) * (SMAX - SMIN); }
+function yP(p){ return PY1 - (Math.max(PMIN, Math.min(PMAX, p)) - PMIN) / (PMAX - PMIN) * (PY1 - PY0); }
+function el(name, attrs){
+  var n = document.createElementNS('http://www.w3.org/2000/svg', name);
+  for(var k in attrs) n.setAttribute(k, attrs[k]);
+  return n;
+}
+function mulberry32(a){
+  return function(){
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    var t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+/* A corpus per topic, so the true precision at any cut is computable and the
+   shortlist can be drawn from it the way scoring draws one: 10/20/40/20/10
+   across the topic's own score quintiles. */
+var SPECS = [
+  { name:'Running Shoes',         N:4000, n:400, centre:0.812, spread:0.030, mid:0.804, steep:110, seed:7  },
+  { name:'Trail Running',         N:4000, n:360, centre:0.826, spread:0.028, mid:0.818, steep:120, seed:19 },
+  { name:'Barefoot & Minimalist', N:900,  n:11,  centre:0.798, spread:0.032, mid:0.792, steep:100, seed:41 }
+];
+
+function makeTopic(spec){
+  var rnd = mulberry32(spec.seed), corpus = [];
+  for(var i = 0; i < spec.N; i++){
+    var g = (rnd() + rnd() + rnd() - 1.5) / 0.7;
+    corpus.push({ score: Math.round(Math.max(0.665, Math.min(0.948, spec.centre + spec.spread * g)) * 1e6) / 1e6, jitter: rnd() });
+  }
+  corpus.sort(function(a, b){ return b.score - a.score; });
+  var total = corpus.length, sizes = [0,0,0,0,0], edges = [];
+  corpus.forEach(function(k, rank){
+    k.band = Math.min(4, Math.floor(rank * 5 / total));      // band 0 = highest scores
+    k.yes = rnd() < 1 / (1 + Math.exp(-spec.steep * (k.score - spec.mid)));
+    sizes[k.band]++;
+  });
+  for(var b = 1; b < 5; b++) edges.push(corpus[Math.floor(b * total / 5)].score);
+
+  /* the stratified draw */
+  var wsum = BAND_WEIGHTS.reduce(function(a, b){ return a + b; }, 0), sample = [];
+  for(var band = 0; band < 5; band++){
+    var members = corpus.filter(function(k){ return k.band === band; });
+    var take = Math.min(members.length, Math.round(spec.n * BAND_WEIGHTS[band] / wsum));
+    for(var j = 0; j < take; j++){
+      var src = members[Math.floor((j + 0.5) * members.length / take)];
+      sample.push({ score:src.score, label:src.yes, band:band, bandShare:sizes[band] / total, jitter:src.jitter });
+    }
+  }
+  /* weight = band's share of the topic / band's share of the labels */
+  var perBand = [0,0,0,0,0];
+  sample.forEach(function(r){ perBand[r.band]++; });
+  sample.forEach(function(r){ r.weight = r.bandShare * sample.length / perBand[r.band]; });
+
+  return { name:spec.name, corpus:corpus, sample:sample, sizes:sizes, perBand:perBand, edges:edges, total:total };
+}
+var TOPICS = SPECS.map(makeTopic);
+var BRAND = TOPICS.reduce(function(all, t){ return all.concat(t.sample); }, []);
+
+/* Ported from _sweep_one() in bifrost/core/calibration.py and sweepOne() in
+   internal/classification/calibration.go. Precision at a cut is the WEIGHTED
+   share of yeses at or above it; support and positives stay plain counts. */
+function sweepOne(pairs, target, weighted){
+  if(!pairs.length) return null;
+  var ordered = pairs.slice().sort(function(a, b){ return b.score - a.score; });
+  var best = null, positives = 0, weightYes = 0, weightAll = 0;
+  for(var i = 0; i < ordered.length; i++){
+    var w = weighted ? ordered[i].weight : 1;
+    weightAll += w;
+    if(ordered[i].label){ positives++; weightYes += w; }
+    if(i + 1 < ordered.length && ordered[i + 1].score === ordered[i].score) continue;
+    var precision = weightYes / weightAll;
+    if(precision >= target) best = { bar:ordered[i].score, precision:precision, support:i + 1, positives:positives };
+  }
+  return best;
+}
+function precisionAt(pairs, bar, weighted){
+  var wAll = 0, wYes = 0, above = 0, yes = 0;
+  pairs.forEach(function(p){
+    if(p.score >= bar){
+      var w = weighted ? p.weight : 1;
+      wAll += w; above++;
+      if(p.label){ wYes += w; yes++; }
+    }
+  });
+  return above === 0 ? null : { precision: wYes / wAll, above: above, yes: yes };
+}
+function truthAt(corpus, bar){
+  var above = 0, yes = 0;
+  corpus.forEach(function(k){ if(k.score >= bar){ above++; if(k.yes) yes++; } });
+  return above === 0 ? null : { precision: yes / above, above: above };
+}
+
+var state = { topic: 0, target: 0.96, bar: 0.80, weighted: true, anim: null };
+
+(function(){
+  var xt = document.getElementById('sw-xticks'), xl = document.getElementById('sw-xlabels');
+  [0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95].forEach(function(s){
+    xt.appendChild(el('line', { x1:x(s), y1:178, x2:x(s), y2:185, stroke:'var(--rule-2)' }));
+    var t = el('text', { x:x(s), y:198, 'text-anchor':'middle', class:'box-s', fill:'var(--ink-3)' });
+    t.textContent = s.toFixed(2); xl.appendChild(t);
+  });
+  var lab = el('text', { x:88, y:198, 'text-anchor':'end', class:'box-s', fill:'var(--ink-2)' });
+  lab.textContent = 'cosine'; xl.appendChild(lab);
+  var yg = document.getElementById('sw-ygrid');
+  [0.50, 0.60, 0.70, 0.80, 0.90, 1.00].forEach(function(p){
+    yg.appendChild(el('line', { x1:PX0, y1:yP(p), x2:PX1, y2:yP(p), stroke:'var(--grid)' }));
+    var t = el('text', { x:PX0 - 8, y:yP(p) + 3.5, 'text-anchor':'end', class:'box-s', fill:'var(--ink-3)' });
+    t.textContent = (p * 100).toFixed(0) + '%'; yg.appendChild(t);
+  });
+})();
+
+var dotsG = document.getElementById('sw-dots');
+function drawTopic(){
+  var t = TOPICS[state.topic];
+
+  dotsG.innerHTML = '';
+  t.sample.forEach(function(p){
+    var cx = x(p.score), cy = p.label ? 60 + p.jitter * 42 : 118 + p.jitter * 42;
+    var node = p.label
+      ? el('circle', { cx:cx, cy:cy, r:3.4, fill:'var(--yes)' })
+      : el('circle', { cx:cx, cy:cy, r:3.4, fill:'none', stroke:'var(--no)', 'stroke-width':1.5 });
+    node.dataset.score = p.score;
+    dotsG.appendChild(node);
+  });
+
+  /* band dividers + the ribbon that names each band's two shares and its weight */
+  var lines = document.getElementById('sw-bandlines'), rib = document.getElementById('sw-ribbon');
+  lines.innerHTML = ''; rib.innerHTML = '';
+  t.edges.forEach(function(e){
+    lines.appendChild(el('line', { x1:x(e), y1:54, x2:x(e), y2:166, stroke:'var(--rule-2)', 'stroke-dasharray':'2 3' }));
+  });
+  // Each band holds a fifth of the topic, so the cells are equal width; drawing
+  // them on the score axis would crush the middle three, which is exactly the
+  // bunching the dashed dividers above are there to show.
+  var cw = (PX1 - PX0) / 5;
+  var NAMES = ['lowest', '', 'middle', '', 'top'];
+  for(var slot = 0; slot < 5; slot++){
+    var b = 4 - slot;                       // band 0 is the highest-scoring fifth
+    var left = PX0 + slot * cw;
+    var weight = t.perBand[b] ? (t.sizes[b] / t.total) * t.sample.length / t.perBand[b] : 0;
+    var fill = t.perBand[b] === 0 ? 'var(--surface-2)'
+             : (weight > 1.02 ? 'var(--c-proxy-bg)' : (weight < 0.98 ? 'var(--c-agent-bg)' : 'var(--surface-2)'));
+    rib.appendChild(el('rect', { x:left, y:RIB_Y, width:cw, height:RIB_H, fill:fill, stroke:'var(--rule-2)' }));
+    var big = el('text', { x:left + cw / 2, y:RIB_Y + 18, 'text-anchor':'middle', class:'box-t', fill:'var(--ink)' });
+    big.textContent = t.perBand[b] ? '×' + weight.toFixed(2) : 'no labels';
+    rib.appendChild(big);
+    var l2 = el('text', { x:left + cw / 2, y:RIB_Y + 32, 'text-anchor':'middle', class:'box-s', fill:'var(--ink-2)' });
+    l2.setAttribute('font-size', '9.5');
+    l2.textContent = (t.sizes[b] / t.total * 100).toFixed(0) + '% of topic · '
+                   + (t.perBand[b] / t.sample.length * 100).toFixed(0) + '% of labels';
+    rib.appendChild(l2);
+    if(NAMES[slot]){
+      var l3 = el('text', { x:left + cw / 2, y:RIB_Y + 42, 'text-anchor':'middle', class:'box-s', fill:'var(--ink-3)' });
+      l3.setAttribute('font-size', '9');
+      l3.textContent = NAMES[slot] + ' scores';
+      rib.appendChild(l3);
+    }
+  }
+}
+
+function drawCurves(){
+  var t = TOPICS[state.topic];
+  var ordered = t.sample.slice().sort(function(a, b){ return b.score - a.score; });
+  var cuts = [], seen = null;
+  ordered.forEach(function(p){ if(p.score !== seen){ cuts.push(p.score); seen = p.score; } });
+
+  var measured = [], truth = [];
+  cuts.forEach(function(c){
+    var m = precisionAt(t.sample, c, state.weighted), tr = truthAt(t.corpus, c);
+    if(m) measured.push([c, m.precision]);
+    if(tr) truth.push([c, tr.precision]);
+  });
+  function step(pts){
+    var out = [];
+    for(var i = 0; i < pts.length; i++){
+      out.push([x(pts[i][0]), yP(pts[i][1])]);
+      out.push([(i + 1 < pts.length) ? x(pts[i + 1][0]) : PX0, yP(pts[i][1])]);
+    }
+    return out;
+  }
+  var mp = step(measured), tp = step(truth);
+  document.getElementById('sw-curve').setAttribute('points', mp.map(function(q){ return q.join(','); }).join(' '));
+  document.getElementById('sw-truth').setAttribute('points', tp.map(function(q){ return q.join(','); }).join(' '));
+  document.getElementById('sw-gap').setAttribute('points',
+    mp.concat(tp.slice().reverse()).map(function(q){ return q.join(','); }).join(' '));
+}
+
+function render(){
+  var t = TOPICS[state.topic], pairs = t.sample, bar = state.bar, target = state.target, bx = x(bar);
+
+  document.getElementById('sw-bar').setAttribute('x1', bx);
+  document.getElementById('sw-bar').setAttribute('x2', bx);
+  document.getElementById('sw-handle').querySelector('rect').setAttribute('x', bx - 14);
+  document.getElementById('sw-handle').querySelector('path')
+    .setAttribute('d', 'M' + (bx - 6) + ',36 L' + (bx - 10) + ',38 L' + (bx - 6) + ',40 M' + (bx + 6) + ',36 L' + (bx + 10) + ',38 L' + (bx + 6) + ',40');
+  document.getElementById('sw-handle').setAttribute('aria-valuenow', bar.toFixed(3));
+  var lbl = document.getElementById('sw-barlbl'), flip = bx > PX1 - 90;
+  lbl.textContent = 'bar ' + bar.toFixed(4);
+  lbl.setAttribute('x', flip ? bx - 20 : bx + 20);
+  lbl.setAttribute('text-anchor', flip ? 'end' : 'start');
+  var shade = document.getElementById('sw-shade');
+  shade.setAttribute('x', bx); shade.setAttribute('width', Math.max(0, PX1 - bx));
+  Array.prototype.forEach.call(dotsG.childNodes, function(node){
+    node.setAttribute('opacity', parseFloat(node.dataset.score) >= bar ? '1' : '0.28');
+  });
+
+  var tl = document.getElementById('sw-targetline');
+  tl.setAttribute('y1', yP(target)); tl.setAttribute('y2', yP(target));
+  var tlbl = document.getElementById('sw-targetlbl');
+  tlbl.setAttribute('y', yP(target) + 13);
+  tlbl.textContent = 'target ' + (target * 100).toFixed(1) + '%';
+
+  var here = precisionAt(pairs, bar, state.weighted);
+  var plainHere = precisionAt(pairs, bar, false);
+  var truth = truthAt(t.corpus, bar);
+  var cur = document.getElementById('sw-curdot');
+  if(here){ cur.setAttribute('cx', bx); cur.setAttribute('cy', yP(here.precision)); cur.setAttribute('opacity', '1'); }
+  else cur.setAttribute('opacity', '0');
+
+  var own = sweepOne(pairs, target, state.weighted);
+  var otherBar = sweepOne(pairs, target, !state.weighted);
+  var brand = sweepOne(BRAND, target, state.weighted);
+  var solved = document.getElementById('sw-solved');
+  if(own){ solved.setAttribute('cx', x(own.bar)); solved.setAttribute('cy', yP(own.precision)); solved.setAttribute('opacity', '1'); }
+  else solved.setAttribute('opacity', '0');
+
+  var n = pairs.length, yes = pairs.filter(function(p){ return p.label; }).length;
+  var w = SHRINK_K / (n + SHRINK_K);
+  var shrunk = (own && brand) ? (1 - w) * own.bar + w * brand.bar : (own ? own.bar : (brand ? brand.bar : null));
+
+  document.getElementById('ro-bar').textContent = bar.toFixed(4);
+  document.getElementById('ro-bar-s').textContent = own && Math.abs(bar - own.bar) < 0.0005 ? 'the swept optimum' : 'candidate cut';
+  document.getElementById('ro-prec').textContent = here ? (here.precision * 100).toFixed(1) + '%' : '—';
+  document.getElementById('ro-prec-s').textContent = state.weighted ? 'weighted by band' : 'plain label count';
+  document.getElementById('ro-true').textContent = truth ? (truth.precision * 100).toFixed(1) + '%' : '—';
+  document.getElementById('ro-true-s').textContent = truth ? truth.above.toLocaleString() + ' keywords claimed' : 'nothing claimed';
+  var gap = (here && truth) ? (here.precision - truth.precision) * 100 : null;
+  document.getElementById('ro-gap').textContent = gap === null ? '—' : (gap >= 0 ? '+' : '') + gap.toFixed(1) + ' pt';
+  document.getElementById('ro-gap-s').textContent = gap === null ? '' : (Math.abs(gap) < 1.25 ? 'within sampling noise' : (gap < 0 ? 'reads strict' : 'reads lenient'));
+  document.getElementById('ro-lab').textContent = n;
+  document.getElementById('ro-lab-s').textContent = yes + ' yes · ' + (n - yes) + ' no';
+
+  var say = document.getElementById('sweep-say'), html;
+  if(!own){
+    html = '<b>' + t.name + ' cannot reach ' + (target * 100).toFixed(1) + '% at any cut.</b> Not even its highest-scoring labelled keyword is a yes often enough. The sweep returns nothing rather than inventing a number, and this topic falls back entirely to the brand-wide bar.';
+  } else if(!state.weighted){
+    html = '<b>Counting plainly, the sweep lands at ' + own.bar.toFixed(4) + '.</b> At the cut you are on it measures ' + (plainHere ? (plainHere.precision * 100).toFixed(1) : '—') + '%, while the corpus actually delivers ' + (truth ? (truth.precision * 100).toFixed(1) : '—') + '% — the amber gap between the two lines. The shortlist gives the top band half the labels its size warrants, so the measurement reads strict and the bar is pushed up.';
+    if(otherBar && Math.abs(otherBar.bar - own.bar) > 0.0005){
+      html += ' Weighting moves the bar to <b>' + otherBar.bar.toFixed(4) + '</b>, claiming ' + (truthAt(t.corpus, otherBar.bar).above - truthAt(t.corpus, own.bar).above).toLocaleString() + ' more keywords at the same real accuracy.';
+    }
+  } else if(Math.abs(bar - own.bar) < 0.0005){
+    html = '<b>This is the answer the sweep returns.</b> ' + own.bar.toFixed(4) + ' is the <em>lowest</em> cut whose weighted precision still holds ' + (own.precision * 100).toFixed(1) + '%, and the corpus confirms it at ' + (truth ? (truth.precision * 100).toFixed(1) : '—') + '%. It claims ' + (truth ? truth.above.toLocaleString() : '?') + ' of the topic’s ' + t.total.toLocaleString() + ' keywords.';
+  } else if(here && here.precision >= target){
+    html = '<b>This cut meets the target, but it is not the answer.</b> It measures ' + (here.precision * 100).toFixed(1) + '% and claims ' + (truth ? truth.above.toLocaleString() : '?') + ' keywords. The sweep keeps walking down to ' + own.bar.toFixed(4) + ', which still holds the target while claiming more — coverage at a stated accuracy, not accuracy alone.';
+  } else {
+    html = '<b>Below target.</b> At ' + bar.toFixed(4) + ' the weighted precision is ' + (here.precision * 100).toFixed(1) + '% and the corpus would deliver ' + (truth ? (truth.precision * 100).toFixed(1) : '—') + '%. The sweep would not stop here.';
+  }
+  if(own && otherBar && state.weighted){
+    var dw = truthAt(t.corpus, own.bar), dp = truthAt(t.corpus, otherBar.bar);
+    if(dw && dp && dw.above - dp.above > 0){
+      html += ' Counting plainly would stop at ' + otherBar.bar.toFixed(4) + ' instead, filing <b>' + (dw.above - dp.above).toLocaleString() + ' fewer keywords</b> at no better real accuracy.';
+    } else if(Math.abs(own.bar - otherBar.bar) < 1e-9){
+      html += ' <span style="color:var(--ink-3)">At this target the bar sits high in the top band, where the shortlist samples closest to the corpus, so both ways of counting land on the same cut. Drag the target down toward 0.85 — the bar moves into the over-sampled middle and the gap opens to several points.</span>';
+    }
+  }
+  if(n < THIN && brand && own){
+    html += '<br><br>And with only ' + n + ' labels, this topic’s bar is <b>' + (w * 100).toFixed(0) + '% the brand-wide one</b>: the swept ' + own.bar.toFixed(4) + ' blends with the brand’s ' + brand.bar.toFixed(3) + ' to give an applied bar of <b>' + shrunk.toFixed(4) + '</b>. A bar fitted to ' + n + ' labels is a number set by noise. Note that shrinkage uses the plain label count — weighting changes what a label says, not how much evidence there is.';
+  }
+  say.innerHTML = html;
+}
+
+function setBar(v){ state.bar = Math.max(SMIN, Math.min(SMAX, Math.round(v * 1e6) / 1e6)); render(); }
+
+var dragging = false;
+function pxFromEvent(e){ var box = svg.getBoundingClientRect(); return (e.clientX - box.left) / box.width * 880; }
+svg.addEventListener('pointerdown', function(e){
+  var px = pxFromEvent(e);
+  if(px < PX0 - 20 || px > PX1 + 20) return;
+  dragging = true; svg.setPointerCapture(e.pointerId);
+  if(state.anim){ cancelAnimationFrame(state.anim); state.anim = null; }
+  setBar(sAt(px));
+});
+svg.addEventListener('pointermove', function(e){ if(dragging) setBar(sAt(pxFromEvent(e))); });
+svg.addEventListener('pointerup', function(e){ dragging = false; try{ svg.releasePointerCapture(e.pointerId); }catch(err){} });
+svg.addEventListener('pointercancel', function(){ dragging = false; });
+document.getElementById('sw-handle').addEventListener('keydown', function(e){
+  var step = e.shiftKey ? 0.02 : 0.002;
+  if(e.key === 'ArrowLeft'){ setBar(state.bar - step); e.preventDefault(); }
+  else if(e.key === 'ArrowRight'){ setBar(state.bar + step); e.preventDefault(); }
+  else if(e.key === 'Home'){ setBar(SMIN); e.preventDefault(); }
+  else if(e.key === 'End'){ setBar(SMAX); e.preventDefault(); }
+});
+
+document.getElementById('sw-topic').addEventListener('change', function(e){
+  state.topic = parseInt(e.target.value, 10);
+  drawTopic(); drawCurves(); render();
+});
+document.getElementById('sw-target').addEventListener('input', function(e){
+  state.target = parseFloat(e.target.value);
+  document.getElementById('sw-target-v').textContent = state.target.toFixed(3).replace(/0$/, '');
+  render();
+});
+function setMode(weighted){
+  state.weighted = weighted;
+  document.getElementById('sw-weighted').setAttribute('aria-checked', weighted ? 'true' : 'false');
+  document.getElementById('sw-plain').setAttribute('aria-checked', weighted ? 'false' : 'true');
+  drawCurves(); render();
+}
+document.getElementById('sw-plain').addEventListener('click', function(){ setMode(false); });
+document.getElementById('sw-weighted').addEventListener('click', function(){ setMode(true); });
+
+function runSweep(){
+  var own = sweepOne(TOPICS[state.topic].sample, state.target, state.weighted);
+  var to = own ? own.bar : SMIN, from = SMAX;
+  if(state.anim){ cancelAnimationFrame(state.anim); state.anim = null; }
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ setBar(to); return; }
+  var t0 = performance.now(), dur = 1500;
+  (function stepAnim(now){
+    var k = Math.min(1, (now - t0) / dur);
+    setBar(from + (to - from) * (k * k * (3 - 2 * k)));
+    if(k < 1) state.anim = requestAnimationFrame(stepAnim); else state.anim = null;
+  })(t0);
+}
+document.getElementById('sw-run').addEventListener('click', runSweep);
+document.getElementById('sw-reset').addEventListener('click', function(){
+  if(state.anim){ cancelAnimationFrame(state.anim); state.anim = null; }
+  setBar(0.80);
+});
+
+drawTopic(); drawCurves();
+var first = sweepOne(TOPICS[0].sample, 0.96, true);
+setBar(first ? first.bar : 0.80);
+})();
+</script>

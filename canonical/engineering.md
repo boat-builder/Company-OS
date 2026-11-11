@@ -26,6 +26,12 @@ Nine systems. Each is real and running unless noted. Together they are the reaso
 
 **Caveat on the strategy knowledge base.** It was described as maintained by an in-house research team. Whether that team exists in any form today is unconfirmed — see *Gaps* below. The asset is real; the maintenance arrangement needs restating.
 
+**Deeper docs outside canonical.**
+
+- How keywords are filed under a brand's topics in bifrost: [`engineering/keywords-topics.html`](../engineering/keywords-topics.html), with the guide to choosing a topic list in [`engineering/selecting-topic-prompt.md`](../engineering/selecting-topic-prompt.md).
+- A change-tracking product built on the crawler: [`product/bluesnake-change-tracking-spec.md`](../product/bluesnake-change-tracking-spec.md). The spec calls the crawler *Bluesnake*; this file calls it *Snake.blue*. One name should win.
+- The engineering backlog is the Doklin board in [`engineering/todo/`](../engineering/todo/).
+
 ---
 
 ## The AEOxoxo API layer
@@ -81,4 +87,4 @@ The largest weakness in canonical. None of the following is recorded anywhere, w
 
 ---
 
-_Last updated: 2026-09-01_
+_Last updated: 2026-11-11_
